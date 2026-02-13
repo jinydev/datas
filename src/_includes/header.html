@@ -1,11 +1,18 @@
 <div class="docs-header">
     <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <!-- Left Toggle (Sidebar) -->
+        <button class="btn btn-icon navbar-toggler d-md-none me-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+            <span class="bi bi-list"></span>
+        </button>
+
         <a class="navbar-brand" href="{{ site.baseurl }}/">
             <!-- logo -->
             <img src="{{ site.baseurl }}/assets/images/brand/logo/logo.svg" alt="Geeks" />
         </a>
 
-        <div class="mx-auto order-md-2 d-none d-md-block">
+        <!-- Header Nav Links (Collapsible) -->
+        <div class="collapse navbar-collapse mx-auto order-md-2" id="headerNavbar">
             <ul class="navbar-nav">
                 {% for item in site.data.navigation.main %}
                 <li class="nav-item">
@@ -22,9 +29,11 @@
             <div class="d-flex align-items-center">
                 <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
                 <div>
+                    <!-- Right Toggle (Header Menu) -->
                     <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        data-bs-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="bi bi-three-dots-vertical"></span>
                     </button>
                 </div>
             </div>
