@@ -1,2 +1,18 @@
 *.pdf
 *.jpeg
+
+/data2
+/파이썬으로_배우는_데이터분석입문
+/빅데이터분석기사26
+/[(파이썬으로 배우는 데이터분석 입문) 코드와 콘텐츠]
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+
+# Ruby
+Gemfile.lock
+.bundle/

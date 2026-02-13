@@ -1,0 +1,25 @@
+title: "빅데이터 분석 (Big Data Analysis)"
+description: "파이썬으로 배우는 데이터 분석 입문 강의 노트"
+author: "Hojin"
+theme: minimal-mistakes-jekyll
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-gist
+
+# Theme Settings
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Navigation
+nav_sort: 'priorities'
+
+# Build Settings
+destination: docs
+source: src
+url: "https://datas.jiny.dev"
+baseurl: ""
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
