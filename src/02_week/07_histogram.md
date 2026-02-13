@@ -1,3 +1,8 @@
+---
+layout: default
+title: "2주차 6강: 히스토그램 (Histogram)"
+---
+
 # 2주차 6강: 히스토그램 (Histogram)
 
 > **학습목표**: 데이터의 **분포(Distribution)**를 파악하는 히스토그램을 이해하고, 도수분포표(Frequency Distribution)의 개념과 함께 실습해 봅니다.

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "14주차 2강: 최종 실전 모의고사 (Final Exam)"
+---
+
 # 14주차 2강: 최종 실전 모의고사 (Final Exam)
 
 ## 14.2.1. 문제 1. Pandas 기초

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "12주차 3강: 문자를 숫자로 (Feature Engineering)"
+---
+
 # 12주차 3강: 문자를 숫자로 (Feature Engineering)
 
 컴퓨터는 '사과', '바나나' 같은 글자를 이해하지 못합니다. 숫자로 바꿔줘야 합니다.

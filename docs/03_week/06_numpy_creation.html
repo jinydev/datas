@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>3주차 2강: 배열 생성 심화 (Array Creation Deep Dive) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link active">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="3주차-2강-배열-생성-심화-array-creation-deep-dive">3주차 2강: 배열 생성 심화 (Array Creation Deep Dive)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 파이썬 리스트를 Numpy 배열로 변환하는 기초부터, <code class="language-plaintext highlighter-rouge">zeros</code>, <code class="language-plaintext highlighter-rouge">ones</code>, <code class="language-plaintext highlighter-rouge">arange</code>, <code class="language-plaintext highlighter-rouge">linspace</code> 등 다양한 함수를 활용하여 효율적으로 배열을 초기화하는 방법을 마스터합니다.</p>
+</blockquote>
+
+<h2 id="321-리스트로-배열-만들기-from-list">3.2.1. 리스트로 배열 만들기 (From List)</h2>
+
+<p>가장 기본적인 방법은 기존의 파이썬 리스트를 넘파이 배열로 변환하는 것입니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-1-리스트-vs-넘파이-배열">[그림 1] 리스트 vs 넘파이 배열</h3>
+<p>리스트는 다양한 물건을 담는 <strong>가방</strong>이라면, 넘파이 배열은 규격화된 화물을 싣는 <strong>컨테이너 트럭</strong>입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 1. 파이썬 리스트 (아이템 가방)
+</span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># 2. 넘파이 배열 (화물 트럭 적재)
+</span><span class="n">my_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">)</span>       <span class="c1"># [1 2 3 4 5] (쉼표가 사라짐!)
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">my_arr</span><span class="p">))</span> <span class="c1"># &lt;class 'numpy.ndarray'&gt;
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3211-넘파이의-핵심-ndarray">3.2.1.1. 넘파이의 핵심: ndarray</h3>
+<p><code class="language-plaintext highlighter-rouge">ndarray</code>는 <strong>N-Dimension Array(N차원 배열)</strong>의 줄임말입니다. 파이썬 리스트와는 근본부터 다릅니다.</p>
+
+<ul>
+  <li><strong>동일한 데이터 타입 (Homogeneous)</strong>: 리스트는 숫자, 문자, 객체를 막 섞을 수 있지만, <code class="language-plaintext highlighter-rouge">ndarray</code>는 오직 <strong>한 종류</strong>만 담아야 합니다. (그래야 계산이 빠릅니다!)</li>
+  <li><strong>연속된 메모리 배치 (Contiguous Memory)</strong>: 데이터가 메모리에 빈틈없이 붙어있어, CPU가 순식간에 읽어들일 수 있습니다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>주의</strong>: 배열에는 <strong>동일한 타입</strong>의 데이터만 들어갈 수 있습니다. 숫자와 문자를 섞으면 모두 문자로 변해버립니다!</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3212-ndarray의-주요-속성-attributes">3.2.1.2. ndarray의 주요 속성 (Attributes)</h3>
+<p>배열의 ‘신상 정보’를 확인하는 필수 속성들입니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ndim</code>: 차원의 수 (Number of Dimensions) -&gt; 1, 2, 3…</li>
+  <li><code class="language-plaintext highlighter-rouge">shape</code>: 배열의 모양 (행, 열) -&gt; (2, 3) 등 튜플로 표시</li>
+  <li><code class="language-plaintext highlighter-rouge">dtype</code>: 데이터 타입 (Data Type) -&gt; <code class="language-plaintext highlighter-rouge">int64</code>, <code class="language-plaintext highlighter-rouge">float64</code>, <code class="language-plaintext highlighter-rouge">&lt;U32</code> 등</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span>   <span class="c1"># 1 (1차원)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (5,) (원소 5개짜리 1차원 배열)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c1"># int64 (64비트 정수)
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>Q. <code class="language-plaintext highlighter-rouge">&lt;U32</code>가 뭔가요?</strong></p>
+  <ul>
+    <li>숫자와 문자가 섞여서 <strong>문자열(String)</strong>로 변했을 때 자주 보이는 타입입니다.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">&lt;</code></strong>: 리틀 엔디안(Little Endian) 방식 (메모리 저장 순서)</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">U</code></strong>: 유니코드(Unicode) 문자열</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">32</code></strong>: 최대 32글자까지 저장 가능 (가장 긴 문자열 기준)</li>
+    <li>즉, <strong>“최대 32글자짜리 유니코드 문자열”</strong>이라는 뜻입니다.</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="322-초기화-함수-완전-정복-zeros-ones-full">3.2.2. 초기화 함수 완전 정복 (Zeros, Ones, Full)</h2>
+
+<p>배열을 만들 때 값을 미리 채워서 만들 수도 있습니다. 게임 맵을 초기화하거나, 이미지를 처리할 때 필수적입니다.</p>
+
+<h3 id="3221-0으로-채우기-npzeros">3.2.2.1. 0으로 채우기: <code class="language-plaintext highlighter-rouge">np.zeros()</code></h3>
+<p>아직 아무것도 없는 빈 땅(초기화된 맵)을 만들 때 가장 많이 사용합니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Zeros ["np.zeros(3)"]
+        Z1[0] --- Z2[0] --- Z3[0]
+        style Z1 fill:#eee,stroke:#333
+        style Z2 fill:#eee,stroke:#333
+        style Z3 fill:#eee,stroke:#333
+    end
+</code></pre>
+<ul>
+  <li><strong>기계학습</strong>: 초기 가중치(Weight)를 0으로 설정할 때</li>
+  <li><strong>이미지 처리</strong>: 검은색 배경을 만들 때 (0 = 검은색)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0으로 채워진 길이 5의 벡터 (Float 타입이 기본)
+</span><span class="n">zero_vector</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">zero_vector</span><span class="p">)</span>  <span class="c1"># [0. 0. 0. 0. 0.]
+</span>
+<span class="c1"># 2x3 크기의 행렬 (2행 3열)
+</span><span class="n">zero_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">zero_matrix</span><span class="p">)</span>
+<span class="c1"># [[0. 0. 0.]
+#  [0. 0. 0.]]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3222-1로-채우기-npones">3.2.2.2. 1로 채우기: <code class="language-plaintext highlighter-rouge">np.ones()</code></h3>
+<p>모든 값을 1로 초기화합니다. 곱셈 연산의 항등원(곱해도 값이 변하지 않음)이 필요한 경우 사용합니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Ones ["np.ones(3)"]
+        O1[1] --- O2[1] --- O3[1]
+        style O1 fill:#ff9,stroke:#333
+        style O2 fill:#ff9,stroke:#333
+        style O3 fill:#ff9,stroke:#333
+    end
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">one_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">one_matrix</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3223-특정-값으로-채우기-npfull">3.2.2.3. 특정 값으로 채우기: <code class="language-plaintext highlighter-rouge">np.full()</code></h3>
+<p>원하는 값으로 가득 채웁니다. (예: 기본 경험치 100을 모든 유저에게 부여)</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Full ["np.full(3, 7)"]
+        F1[7] --- F2[7] --- F3[7]
+        style F1 fill:#ccf,stroke:#333
+        style F2 fill:#ccf,stroke:#333
+        style F3 fill:#ccf,stroke:#333
+    end
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 4개의 공간에 100을 채움
+</span><span class="n">full_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">full_arr</span><span class="p">)</span> <span class="c1"># [100 100 100 100]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="323-연속된-값-생성하기-arange--linspace">3.2.3. 연속된 값 생성하기 (Arange &amp; Linspace)</h2>
+
+<p>규칙적인 수열을 만들 때 사용합니다.</p>
+
+<h3 id="3231-범위-지정-nparange">3.2.3.1. 범위 지정: <code class="language-plaintext highlighter-rouge">np.arange()</code></h3>
+<p>파이썬의 <code class="language-plaintext highlighter-rouge">range()</code>와 똑같지만, 결과가 배열(Array)입니다. <strong>간격(Step)</strong>을 소수로 줄 수 있다는 장점이 있습니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">np.arange(시작, 끝, 간격)</code> (끝 값은 포함되지 않음!)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0부터 10 미만까지 2씩 증가
+</span><span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+<span class="c1"># [0 2 4 6 8]
+</span>
+<span class="c1"># 소수점 간격도 가능!
+</span><span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span> 
+<span class="c1"># [0. 0.2 0.4 0.6 0.8]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3232-등분하기-nplinspace">3.2.3.2. 등분하기: <code class="language-plaintext highlighter-rouge">np.linspace()</code></h3>
+<p>시작과 끝을 포함하여, <strong>정해진 개수만큼 균등하게(Linear space)</strong> 나눕니다. 그래프 그릴 때 X축 좌표를 만들 때 필수입니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">np.linspace(시작, 끝, 개수)</code></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0부터 10까지 정확히 5개로 나누기
+</span><span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1"># [ 0.   2.5  5.   7.5 10. ]
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>Q. arange와 linspace의 차이가 뭔가요?</strong></p>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">arange</code>: <strong>간격(Step)</strong>이 중요할 때 (예: 2m씩 이동)</li>
+    <li><code class="language-plaintext highlighter-rouge">linspace</code>: <strong>개수(Count)</strong>가 중요할 때 (예: 10초 동안 100장의 프레임 필요)</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: <code class="language-plaintext highlighter-rouge">np.array()</code>로 리스트를 배열로 변환합니다.</li>
+  <li><strong>[핵심 2]</strong>: <code class="language-plaintext highlighter-rouge">zeros</code>, <code class="language-plaintext highlighter-rouge">ones</code>, <code class="language-plaintext highlighter-rouge">full</code>로 특정 값으로 채워진 배열을 빠르게 만듭니다.</li>
+  <li><strong>[핵심 3]</strong>: 초기화 함수들을 쓰면 반복문 없이도 거대한 배열을 순식간에 생성할 수 있습니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

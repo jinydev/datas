@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>1주차 2강: 데이터 분석 언어와 파이썬의 미래 | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link active">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="1주차-2강-데이터-분석-언어와-파이썬의-미래">1주차 2강: 데이터 분석 언어와 파이썬의 미래</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 일반 개발 언어와 데이터 분석 언어의 차이를 이해하고, 파이썬과 R의 특징을 비교하며, 우리가 왜 파이썬을 선택했는지 명확히 합니다.</p>
+</blockquote>
+
+<h2 id="121-개발-언어-vs-데이터-분석-언어">1.2.1. 개발 언어 vs 데이터 분석 언어</h2>
+
+<p>프로그래밍 언어는 크게 <strong>시스템/애플리케이션 구축</strong>을 위한 언어와 <strong>데이터 분석/통계</strong>를 위한 언어로 나눌 수 있습니다.</p>
+
+<p>물론 경계가 흐릿하지만, 주된 목적이 다릅니다.</p>
+
+<h3 id="1211-일반-개발-언어-java-c-c-등">1.2.1.1. 일반 개발 언어 (Java, C++, C# 등)</h3>
+<ul>
+  <li><strong>주목적</strong>: “무엇을 <strong>만들</strong> 것인가?” (Build)</li>
+  <li><strong>특징</strong>:
+    <ul>
+      <li>시스템의 안정성, 보안, 속도, 유지보수성이 최우선입니다.</li>
+      <li>엄격한 문법과 복잡한 구조를 가집니다.</li>
+      <li><strong>비유</strong>: 자동차를 만드는 <strong>엔지니어</strong>의 도구 (도면, 용접기, 프레스 기계)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="1212-데이터-분석-언어-python-r-sql">1.2.1.2. 데이터 분석 언어 (Python, R, SQL)</h3>
+
+<ul>
+  <li><strong>주목적</strong>: “데이터에서 <strong>무엇을 발견</strong>할 것인가?” (Insights)</li>
+  <li>
+    <p><strong>특징</strong>:</p>
+
+    <ul>
+      <li>데이터를 빠르게 로드하고, 변환하고, 시각화하는 것이 최우선입니다.</li>
+      <li>문법이 상대적으로 직관적이고 결과를 바로 확인할 수 있는 대화형(Interactive) 환경을 선호합니다.</li>
+      <li><strong>비유</strong>: 자동차를 타고 목적지를 찾아가는 <strong>네비게이터</strong>의 도구 (지도, 나침반, GPS)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="122-데이터-분석의-양대-산맥-python-vs-r">1.2.2. 데이터 분석의 양대 산맥: Python vs R</h2>
+
+<p>데이터 분석을 시작할 때 가장 많이 하는 질문입니다. <em>“파이썬을 배워야 하나요, R을 배워야 하나요?”</em></p>
+
+<h3 id="1221-r-언어">1.2.2.1. R 언어</h3>
+<ul>
+  <li><strong>탄생 배경</strong>: 통계학자들이 통계 분석을 위해 만든 언어입니다.</li>
+  <li><strong>장점</strong>:
+    <ul>
+      <li>통계 분석 기능이 매우 강력하고 전문적입니다.</li>
+      <li>데이터 시각화(ggplot2)가 매우 아름답고 강력합니다.</li>
+      <li>논문 작성이나 연구 목적으로 많이 사용됩니다.</li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>:
+    <ul>
+      <li>웹 개발이나 시스템 연동 등 범용 프로그래밍에는 적합하지 않습니다.</li>
+      <li>딥러닝/머신러닝의 최신 트렌드 반영이 파이썬보다 한 박자 느립니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="1222-파이썬-python">1.2.2.2. 파이썬 (Python)</h3>
+
+<ul>
+  <li><strong>탄생 배경</strong>: 귀도 반 로섬이 “읽기 쉬운 코드”를 목표로 만든 범용 프로그래밍 언어입니다.</li>
+  <li><strong>장점</strong>:
+    <ul>
+      <li><strong>범용성</strong>: 데이터 분석뿐만 아니라 웹 개발, 게임, 자동화 등 못 하는 게 없습니다.</li>
+      <li><strong>AI 생태계</strong>: 텐서플로우(TensorFlow), 파이토치(PyTorch) 등 딥러닝 라이브러리의 표준입니다.</li>
+      <li><strong>접착제 언어(Glue Language)</strong>: 다른 언어(C, C++)로 만들어진 모듈을 쉽게 가져다 쓸 수 있습니다.</li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>:
+    <ul>
+      <li>통계 전용 기능은 R보다 조금 부족할 수 있습니다(전통적인 통계 분석).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="요약-비교표">요약 비교표</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">구분</th>
+      <th style="text-align: left">R</th>
+      <th style="text-align: left">Python</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>주사용자</strong></td>
+      <td style="text-align: left">통계학자, 데이터 분석가(연구 중심)</td>
+      <td style="text-align: left">개발자, 데이터 과학자, AI 엔지니어</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>강점</strong></td>
+      <td style="text-align: left">통계 분석, 시각화, 보고서 작성</td>
+      <td style="text-align: left">머신러닝, 딥러닝, 웹 개발, 자동화</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>학습 난이도</strong></td>
+      <td style="text-align: left">초반에 통계 지식이 필요할 수 있음</td>
+      <td style="text-align: left">문법이 직관적이라 입문이 쉬움</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>트렌드</strong></td>
+      <td style="text-align: left">학계/연구소에서 꾸준히 사용</td>
+      <td style="text-align: left"><strong>산업계/IT 기업에서 압도적 사용</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="123-우리는-왜-파이썬을-선택했는가-storytelling">1.2.3. 우리는 왜 파이썬을 선택했는가? (Storytelling)</h2>
+
+<p><strong>첫 번째 단계는 ‘자동화와 효율성’입니다.</strong>
+여러분이 파이썬을 처음 배우게 되면, 가장 먼저 엑셀 반복 작업을 자동화하거나 웹사이트의 뉴스 기사를 수집(크롤링)하는 일부터 시작할 수 있습니다. 
+R이나 다른 언어로는 웹사이트를 만들거나 게임을 개발하는 것이 어렵지만, <strong>파이썬은 가능합니다.</strong> 
+즉, 파이썬을 배우는 것은 단순한 도구를 넘어서 <strong>“나만의 만능 디지털 비서”</strong>를 고용하는 것과 같습니다. 이는 여러분의 업무 효율을 비약적으로 높여줄 것입니다.</p>
+
+<p><strong>두 번째 단계는 ‘데이터 분석가로의 성장’입니다.</strong>
+기초 문법이 익숙해지면, 이제 수백만 줄의 엑셀 데이터를 파이썬의 Pandas 라이브러리로 단 1초 만에 불러와서 처리할 수 있게 됩니다. 
+또한 Matplotlib이나 Seaborn을 활용해 복잡한 데이터를 아름다운 시각화 그래프로 표현하여 상사나 교수님을 놀라게 만들 수도 있죠. 
+이 단계에 이르면 파이썬은 단순한 비서를 넘어, 여러분의 <strong>“강력한 분석 도구”</strong>가 되어 데이터 속에 숨겨진 의미를 찾아주는 나침반 역할을 하게 됩니다.</p>
+
+<p><strong>마지막 단계는 ‘AI 엔지니어라는 미래’입니다.</strong>
+우리가 파이썬을 선택한 가장 중요한 이유이기도 합니다. 현재 전 세계의 모든 최신 인공지능 기술(ChatGPT, 알파고 등)은 파이썬을 기반으로 움직입니다. 
+여러분이 나중에 <em>“나도 인공지능을 만들어보고 싶어”</em>라고 생각했을 때, 파이썬을 이미 알고 있다면 별도의 언어 학습 없이 바로 AI 모델링을 시작할 수 있습니다. 
+만약 다른 언어를 사용하고 있다면 다시 파이썬을 배워야 하는 번거로움이 생깁니다. 
+결국, 우리가 파이썬을 선택한 이유는 <strong>여러분의 가능성을 제한하지 않고, 미래로 연결되는 가장 넓은 문</strong>이기 때문입니다.</p>
+
+<h2 id="124-파이썬으로-무엇을-할-수-있을까-roadmap">1.2.4. 파이썬으로 무엇을 할 수 있을까? (Roadmap)</h2>
+<p>이번 학기, 우리는 파이썬이라는 우주선에 탑승했습니다. 우리의 여행 경로는 다음과 같습니다.</p>
+
+<ol>
+  <li><strong>기초 다지기 (Week 1~2)</strong>: 파이썬 문법과 친해지기.</li>
+  <li><strong>데이터 다루기 (Week 3~10)</strong>: Numpy와 Pandas로 데이터를 자유자재로 주무르기.</li>
+  <li><strong>미래 예측하기 (Week 11~14)</strong>: 머신러닝으로 붓꽃 종류를 분류하고, 집값을 예측하는 AI 모델 만들기.</li>
+</ol>
+
+<p>자, 이제 파이썬이라는 마법 지팡이를 쥐러 가볼까요?</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

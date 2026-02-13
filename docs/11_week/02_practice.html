@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>11주차 2강: 미래를 예측해 보자 (Linear Regression) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link active">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="11주차-2강-미래를-예측해-보자-linear-regression">11주차 2강: 미래를 예측해 보자 (Linear Regression)</h1>
+
+<h2 id="1121-데이터-분리-traintest-split">11.2.1. 데이터 분리 (Train/Test Split)</h2>
+
+<p>모의고사를 풀면서 공부했는데, 수능 문제로 똑같은 모의고사가 나오면 실력을 제대로 평가할 수 있을까요?
+그래서 데이터를 두 개로 나눕니다.</p>
+
+<ul>
+  <li><strong>학습 데이터 (Train Set)</strong>: 공부할 때 쓰는 문제집 (80%).</li>
+  <li><strong>테스트 데이터 (Test Set)</strong>: 최종 실력 평가용 수능 문제 (20%).</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 공부 시간(X)과 점수(y) 데이터
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]).</span><span class="nf">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># 데이터 나누기 (8:2 비율)
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="nf">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">학습용 개수:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span> <span class="c1"># 8개
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">테스트용 개수:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span> <span class="c1"># 2개
+</span></code></pre></div></div>
+
+<h2 id="1122-선형-회귀-모델-학습">11.2.2. 선형 회귀 모델 학습</h2>
+
+<blockquote>
+  <p><strong>Q. 공부를 12시간 하면 몇 점을 받을까?</strong></p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># 1. 모델 생성
+</span><span class="n">model</span> <span class="o">=</span> <span class="nc">LinearRegression</span><span class="p">()</span>
+
+<span class="c1"># 2. 모델 학습 (공부 시키기) -&gt; fit(문제, 정답)
+</span><span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># 3. 예측하기 (시험 보기) -&gt; predict(새로운 문제)
+</span><span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">predict</span><span class="p">([[</span><span class="mi">12</span><span class="p">]])</span> <span class="c1"># 2차원 배열로 넣어야 함
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">12시간 공부 시 예상 점수:</span><span class="sh">"</span><span class="p">,</span> <span class="n">prediction</span><span class="p">)</span>
+<span class="c1"># [120.]
+</span></code></pre></div></div>
+
+<p>기계가 <code class="language-plaintext highlighter-rouge">점수 = 10 * 시간</code>이라는 규칙을 스스로 찾아냈습니다!</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

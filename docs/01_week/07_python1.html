@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>1주차 2강: 파이썬 기초 1 (Python Basics 1) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link active">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="1주차-2강-파이썬-기초-1-python-basics-1">1주차 2강: 파이썬 기초 1 (Python Basics 1)</h1>
+
+<blockquote>
+  <p><strong>학습 목표</strong></p>
+  <ol>
+    <li>파이썬의 기본 구조와 실행 방법을 이해합니다.</li>
+    <li><strong>변수(Variable)</strong>와 <strong>자료형(Data Type)</strong>의 개념을 익힙니다.</li>
+    <li><strong>입출력(Input/Output)</strong>과 <strong>문자열(String)</strong>을 다루는 방법을 배웁니다.</li>
+  </ol>
+</blockquote>
+
+<h2 id="121-파이썬의-시작-hello-world">1.2.1. 파이썬의 시작 (Hello World)</h2>
+
+<p>프로그래밍의 전통에 따라 첫 번째 코드는 화면에 인사를 출력하는 것입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, Python!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">print()</code>: 괄호 안의 내용을 화면에 출력하는 <strong>함수(Function)</strong>입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">"Hello, Python!"</code>: 따옴표(<code class="language-plaintext highlighter-rouge">"</code>)로 감싸진 글자를 <strong>문자열(String)</strong>이라고 합니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="122-변수와-자료형-variables--data-types">1.2.2. 변수와 자료형 (Variables &amp; Data Types)</h2>
+
+<h3 id="1221-변수-variable">1.2.2.1. 변수 (Variable)</h3>
+<p>변수는 데이터를 담는 <strong>그릇</strong>입니다. 그릇에 이름을 붙여서 데이터를 저장하고 꺼내 씁니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Antigravity</span><span class="sh">"</span>
+<span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hp</span> <span class="o">=</span> <span class="mf">100.5</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">=</code> 등호는 “같다”는 뜻이 아니라, <strong>“오른쪽의 값을 왼쪽 변수에 넣어라(할당해라)”</strong>는 뜻입니다.</li>
+</ul>
+
+<h3 id="1222-자료형-data-type">1.2.2.2. 자료형 (Data Type)</h3>
+<p>변수에 담기는 데이터의 종류입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">자료형</th>
+      <th style="text-align: left">설명</th>
+      <th style="text-align: left">예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>int</strong> (Integer)</td>
+      <td style="text-align: left">정수 (소수점 없음)</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">-5</code>, <code class="language-plaintext highlighter-rouge">100</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>float</strong> (Floating-point)</td>
+      <td style="text-align: left">실수 (소수점 있음)</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">3.14</code>, <code class="language-plaintext highlighter-rouge">100.5</code>, <code class="language-plaintext highlighter-rouge">-0.01</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>str</strong> (String)</td>
+      <td style="text-align: left">문자열 (텍스트)</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">"Hello"</code>, <code class="language-plaintext highlighter-rouge">'Python'</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>bool</strong> (Boolean)</td>
+      <td style="text-align: left">참/거짓 (논리값)</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">True</code>, <code class="language-plaintext highlighter-rouge">False</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 자료형 확인하기: type() 함수
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>   <span class="c1"># &lt;class 'str'&gt;
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">level</span><span class="p">))</span>  <span class="c1"># &lt;class 'int'&gt;
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="123-기본-연산-basic-operations">1.2.3. 기본 연산 (Basic Operations)</h2>
+
+<p>컴퓨터는 계산기(Computer)에서 유래했습니다. 기본적인 사칙연산을 해봅시다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 덧셈: 13
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 뺄셈: 7
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 곱셈: 30
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 나눗셈: 3.3333... (결과는 항상 실수)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 몫: 3 (정수 나눗셈)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 나머지: 1 (중요! 짝수/홀수 판별 등에 사용)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 거듭제곱: 1000 (10의 3승)
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="124-문자열-다루기-string-manipulation">1.2.4. 문자열 다루기 (String Manipulation)</h2>
+
+<p>데이터 분석에서 텍스트 데이터 처리는 매우 중요합니다.</p>
+
+<h3 id="1241-문자열-연결">1.2.4.1. 문자열 연결</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">first_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Harry</span><span class="sh">"</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Potter</span><span class="sh">"</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="n">last_name</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span> <span class="c1"># Harry Potter
+</span></code></pre></div></div>
+
+<h3 id="1242-f-string-포맷팅">1.2.4.2. f-string (포맷팅)</h3>
+<p>문자열 안에 변수를 쏙 집어넣는 가장 편리한 방법입니다. 문자열 앞에 <code class="language-plaintext highlighter-rouge">f</code>를 붙이고, 변수를 <code class="language-plaintext highlighter-rouge">{}</code> 안에 넣으세요.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Iron Man</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">I am </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">, and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 출력: I am Iron Man, and I am 45 years old.
+</span></code></pre></div></div>
+
+<h3 id="1243-인덱싱과-슬라이싱-indexing--slicing">1.2.4.3. 인덱싱과 슬라이싱 (Indexing &amp; Slicing)</h3>
+<p>문자열의 특정 부분을 뽑아냅니다. <strong>파이썬은 숫자를 0부터 셉니다.</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ABCDEFG</span><span class="sh">"</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># 첫 번째 글자: 'A'
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># 두 번째 글자: 'B'
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 마지막 글자: 'G'
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 0번부터 3번 '직전'까지: 'ABC' (0, 1, 2)
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>[실습]</strong> 자신의 이름과 나이를 변수에 저장하고, f-string을 사용하여 자기소개를 출력해 보세요.</p>
+</blockquote>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

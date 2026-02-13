@@ -1,3 +1,8 @@
+---
+layout: default
+title: "5주차 5강: 원하는 것만 쏙쏙 (Fancy Indexing)"
+---
+
 # 5주차 5강: 원하는 것만 쏙쏙 (Fancy Indexing)
 
 ## 6.2.1. 인덱스 배열 사용하기

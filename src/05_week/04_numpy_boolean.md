@@ -1,3 +1,8 @@
+---
+layout: default
+title: "5주차 4강: 조건으로 검색하기 (Boolean Indexing)"
+---
+
 # 5주차 4강: 조건으로 검색하기 (Boolean Indexing)
 
 ## 6.1.1. 마스크(Mask)의 개념

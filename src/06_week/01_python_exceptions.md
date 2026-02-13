@@ -1,3 +1,8 @@
+---
+layout: default
+title: "6주차 1강: 예외 처리 (Exception Handling)"
+---
+
 # 6주차 1강: 예외 처리 (Exception Handling)
 
 > **학습목표**: 프로그램 실행 중 발생하는 에러(예외)를 우아하게 처리하여, 프로그램이 갑자기 멈추는 것을 방지하는 방법을 배웁니다.

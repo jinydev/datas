@@ -1,3 +1,8 @@
+---
+layout: default
+title: "4주차 3강: 배열 합치기 (Concatenation)"
+---
+
 # 4주차 3강: 배열 합치기 (Concatenation)
 
 > **학습목표**: 여러 개의 배열을 하나로 합치는 가장 기본적인 방법인 `concatenate`, `vstack`, `hstack`을 마스터합니다.

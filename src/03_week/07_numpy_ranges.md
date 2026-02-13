@@ -1,3 +1,8 @@
+---
+layout: default
+title: "3주차 3강: 수열 생성과 모양 변경 (Ranges & Reshape)"
+---
+
 # 3주차 3강: 수열 생성과 모양 변경 (Ranges & Reshape)
 
 > **학습목표**: `arange`와 `linspace`로 데이터를 생성하고, `reshape`를 통해 자유자재로 모양(차원)을 바꾸는 방법을 익힙니다. 이 3가지는 데이터 분석의 가장 기초적인 "삼총사"입니다.

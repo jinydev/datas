@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>9주차 3강: 정밀 타격 loc와 iloc (Indexing) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link active">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="9주차-3강-정밀-타격-loc와-iloc-indexing">9주차 3강: 정밀 타격 loc와 iloc (Indexing)</h1>
+
+<p>판다스에서 가장 헷갈리는 것이 <code class="language-plaintext highlighter-rouge">loc</code>와 <code class="language-plaintext highlighter-rouge">iloc</code>입니다. 이 둘의 차이만 알면 인덱싱은 끝입니다.</p>
+
+<h2 id="931-이름으로-찾기-loc-label-location">9.3.1. 이름으로 찾기: <code class="language-plaintext highlighter-rouge">loc</code> (Label location)</h2>
+
+<blockquote>
+  <p><strong>규칙</strong>: <code class="language-plaintext highlighter-rouge">df.loc[행이름, 열이름]</code>
+“철수(행)의 영어(열) 점수는?”</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 인덱스를 이름으로 설정
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">set_index</span><span class="p">(</span><span class="sh">'</span><span class="s">이름</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># 철수의 영어 점수
+</span><span class="n">score</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="sh">'</span><span class="s">철수</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">영어</span><span class="sh">'</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">철수 영어:</span><span class="sh">"</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> <span class="c1"># 100
+</span>
+<span class="c1"># 영희부터 민수까지, 국어 점수만
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="sh">'</span><span class="s">영희</span><span class="sh">'</span><span class="p">:</span><span class="sh">'</span><span class="s">민수</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">국어</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+<blockquote>
+  <p><strong>주의</strong>: <code class="language-plaintext highlighter-rouge">loc</code>의 슬라이싱은 <strong>끝 이름도 포함</strong>합니다! (‘민수’ 포함)</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="932-위치번호로-찾기-iloc-integer-location">9.3.2. 위치(번호)로 찾기: <code class="language-plaintext highlighter-rouge">iloc</code> (Integer location)</h2>
+
+<blockquote>
+  <p><strong>규칙</strong>: <code class="language-plaintext highlighter-rouge">df.iloc[행번호, 열번호]</code>
+“0번째 줄의, 1번째 칸 값은?”</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0행(철수) 1열(영어) (국어가 0열, 영어가 1열이라고 가정 시)
+</span><span class="n">score</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</code></pre></div></div>
+<blockquote>
+  <p><strong>주의</strong>: <code class="language-plaintext highlighter-rouge">iloc</code>의 슬라이싱은 리스트처럼 <strong>끝 번호 미포함</strong>입니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="933-비교-요약">9.3.3. 비교 요약</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">구분</th>
+      <th style="text-align: left"><code class="language-plaintext highlighter-rouge">loc</code></th>
+      <th style="text-align: left"><code class="language-plaintext highlighter-rouge">iloc</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>기준</strong></td>
+      <td style="text-align: left"><strong>이름 (Label)</strong></td>
+      <td style="text-align: left"><strong>순서 번호 (Index)</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>슬라이싱</strong></td>
+      <td style="text-align: left">끝 포함 (<code class="language-plaintext highlighter-rouge">'A':'C'</code> -&gt; A, B, C)</td>
+      <td style="text-align: left">끝 미포함 (<code class="language-plaintext highlighter-rouge">0:3</code> -&gt; 0, 1, 2)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>비유</strong></td>
+      <td style="text-align: left">“강남구 역삼동” (주소)</td>
+      <td style="text-align: left">“위도 37.5, 경도 127.0” (GPS 좌표)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: (내용 채우기)</li>
+  <li><strong>[핵심 2]</strong>: (내용 채우기)</li>
+  <li><strong>[핵심 3]</strong>: (내용 채우기)</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

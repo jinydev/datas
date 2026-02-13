@@ -1,3 +1,8 @@
+---
+layout: default
+title: "8주차 1강: 엑셀보다 강력한 도구 (Intro to Pandas)"
+---
+
 # 8주차 1강: 엑셀보다 강력한 도구 (Intro to Pandas)
 
 ## 8.1.1. Pandas란 무엇인가?

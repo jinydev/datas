@@ -1,3 +1,8 @@
+---
+layout: default
+title: "9주차 2강: 열과 행 선택하기 (Selection)"
+---
+
 # 9주차 2강: 열과 행 선택하기 (Selection)
 
 ## 9.2.1. 열(Column) 선택하기

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "7주차 2강: 실전 모의고사 (Mock Exam)"
+---
+
 # 7주차 2강: 실전 모의고사 (Mock Exam)
 
 다음 문제들을 코드로 작성하여 해결해 보세요.

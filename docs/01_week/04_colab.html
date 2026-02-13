@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>1주차 환경설정: Google Colab 가이드 | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link active">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="1주차-환경설정-google-colab-가이드">1주차 환경설정: Google Colab 가이드</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 클라우드 기반 분석 환경인 Google Colab의 특징을 이해하고, 기본적인 사용법과 데이터 연동 방법을 익힙니다.</p>
+</blockquote>
+
+<h2 id="121-google-colab-완전-정복">1.2.1. Google Colab 완전 정복</h2>
+
+<blockquote>
+  <p><strong>Google Colab (Colaboratory)</strong>: 구글이 제공하는 클라우드 기반의 주피터 노트북(Jupyter Notebook) 개발 환경입니다. 별도의 설치 없이 브라우저에서 바로 파이썬 코드를 작성하고 실행할 수 있습니다.</p>
+</blockquote>
+
+<h3 id="1211-주요-특징-및-장점-key-features">1.2.1.1. 주요 특징 및 장점 (Key Features)</h3>
+<p>왜 전 세계 데이터 분석가들이 Colab을 사랑할까요?</p>
+
+<ol>
+  <li><strong>접근성 (Accessibility)</strong>: 인터넷만 되면 어디서든(카페, 학교, 집) 코딩이 가능합니다. 태블릿이나 스마트폰에서도 코드를 확인할 수 있습니다.</li>
+  <li><strong>무료 컴퓨팅 자원 (Free GPU/TPU)</strong>:
+    <ul>
+      <li>딥러닝 학습에는 고성능 그래픽 카드(GPU)가 필수적인데, Colab은 이를 무료로 제공합니다.</li>
+      <li>마치 “고사양 게이밍 PC”를 원격으로 빌려 쓰는 것과 같습니다.</li>
+    </ul>
+  </li>
+  <li><strong>협업 용이성 (Collaboration)</strong>:
+    <ul>
+      <li>구글 문서를 공유하듯이 동료와 코드를 실시간으로 공유하고 댓글을 남길 수 있습니다.</li>
+      <li>“짝 프로그래밍”에 최적화된 도구입니다.</li>
+    </ul>
+  </li>
+  <li><strong>라이브러리 사전 설치</strong>:
+    <ul>
+      <li>Pandas, Numpy, Matplotlib, Scikit-learn, TensorFlow 등 데이터 분석에 필요한 대부분의 도구가 이미 설치되어 있습니다. <code class="language-plaintext highlighter-rouge">import</code>만 하면 바로 쓸 수 있죠!</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="1212-colab-시작하기-getting-started">1.2.1.2. Colab 시작하기 (Getting Started)</h3>
+<ol>
+  <li><strong>접속</strong>: <a href="https://colab.research.google.com/">Google Colab</a> 사이트에 접속합니다. (구글 계정 로그인 필요)</li>
+  <li><strong>새 노트 생성</strong>:
+    <ul>
+      <li>우측 하단의 <code class="language-plaintext highlighter-rouge">새 노트(New Notebook)</code> 버튼을 클릭합니다.</li>
+      <li>또는 파일 메뉴에서 <code class="language-plaintext highlighter-rouge">파일 &gt; 새 노트</code>를 선택합니다.</li>
+    </ul>
+
+    <p><img src="./img/image-20260211183405728.png" alt="새 노트 생성" /></p>
+  </li>
+  <li><strong>파일 이름 변경</strong>:
+    <ul>
+      <li>좌측 상단의 <code class="language-plaintext highlighter-rouge">Untitled0.ipynb</code>를 클릭하여 <code class="language-plaintext highlighter-rouge">Week01_Practice.ipynb</code>로 변경합니다.</li>
+    </ul>
+
+    <p><img src="./img/image-20260211183443855.png" alt="파일 이름 변경" /></p>
+  </li>
+  <li><strong>런타임 연결</strong>:
+    <ul>
+      <li>우측 상단의 <code class="language-plaintext highlighter-rouge">연결</code> 버튼을 클릭하여 할당된 자원(RAM, 디스크)을 연결합니다.</li>
+    </ul>
+
+    <p><img src="./img/image-20260211183509131.png" alt="엔진 연결" /></p>
+  </li>
+</ol>
+
+<h3 id="1213-코드-작성-및-실행-basic-usage">1.2.1.3. 코드 작성 및 실행 (Basic Usage)</h3>
+<p>Colab은 <strong>셀(Cell)</strong> 단위로 작동합니다. 레고 블록처럼 셀을 쌓아서 프로그램을 만듭니다.</p>
+
+<p><img src="./img/image-20260211183736184.png" alt="셀 구조" /></p>
+
+<ul>
+  <li><strong>코드 셀 (Code Cell)</strong>:
+    <ul>
+      <li>파이썬 코드를 작성하는 공간입니다.</li>
+      <li>실행: <code class="language-plaintext highlighter-rouge">Shift + Enter</code> (실행 후 다음 셀로 이동) 또는 <code class="language-plaintext highlighter-rouge">Ctrl + Enter</code> (실행 후 제자리).</li>
+      <li>예시:
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, Colab!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>텍스트 셀 (Text Cell)</strong>:
+    <ul>
+      <li>설명, 메모, 이미지를 넣는 공간입니다.</li>
+      <li><strong>마크다운(Markdown)</strong> 문법을 지원하여 예쁘게 문서를 꾸밀 수 있습니다. (제목, 리스트, 볼드체 등)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="1214-파일-업로드-및-데이터-처리">1.2.1.4. 파일 업로드 및 데이터 처리</h3>
+<p>로컬 컴퓨터에 있는 엑셀 파일이나 이미지(csv, xlsx, jpg 등)를 Colab으로 올려서 분석할 수 있습니다.</p>
+
+<ol>
+  <li>좌측 사이드바의 <strong>폴더 아이콘(파일)</strong>을 클릭합니다.</li>
+  <li>
+    <p><strong>업로드 아이콘</strong>(종이에 위로 화살표)을 클릭하여 파일을 선택하거나, 파일을 드래그 앤 드롭합니다.</p>
+
+    <p><img src="./img/image-20260211184427620.png" alt="파일 업로드" /></p>
+  </li>
+  <li>코드로 불러오기:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+    
+<span class="c1"># 'data.csv' 파일을 업로드했다고 가정
+# df = pd.read_csv('data.csv')
+# print(df.head())
+</span></code></pre></div>    </div>
+    <blockquote>
+      <p><strong>주의</strong>: 이렇게 업로드한 파일은 런타임이 종료(브라우저 종료 후 일정 시간 경과)되면 <strong>삭제</strong>됩니다. 중요한 데이터는 구글 드라이브에 저장해야 합니다.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h3 id="1215-구글-드라이브-연동-google-drive-mount">1.2.1.5. 구글 드라이브 연동 (Google Drive Mount)</h3>
+<p>데이터를 안전하게 보관하고, 지속적으로 사용하려면 구글 드라이브를 현재 노트북에 “연결(Mount)”해야 합니다.</p>
+
+<ol>
+  <li><strong>방법 1: 아이콘 클릭</strong>
+    <ul>
+      <li>좌측 파일 탭에서 <strong>드라이브 마운트</strong> 아이콘(폴더에 구글 드라이브 로고)을 클릭합니다.</li>
+      <li>팝업 창에서 권한을 허용합니다.</li>
+    </ul>
+  </li>
+  <li><strong>방법 2: 코드 실행</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="sh">'</span><span class="s">/content/drive</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>실행하면 <code class="language-plaintext highlighter-rouge">/content/drive/MyDrive/</code> 경로에 내 구글 드라이브의 모든 파일이 나타납니다.</li>
+      <li>이제 드라이브에 있는 파일을 불러오거나, 분석 결과를 드라이브에 영구 저장할 수 있습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="1216-노트북-저장-및-내보내기-saving--exporting">1.2.1.6. 노트북 저장 및 내보내기 (Saving &amp; Exporting)</h3>
+<p>열심히 짠 코드를 잃어버리면 안 되겠죠?</p>
+
+<ul>
+  <li><strong>자동 저장</strong>: 구글 문서처럼 Colab은 작업 내용을 주기적으로 구글 드라이브에 자동 저장합니다. (<code class="language-plaintext highlighter-rouge">파일 &gt; 저장</code>으로 수동 저장도 가능)</li>
+  <li><strong>GitHub 사본 저장</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">파일 &gt; GitHub에 사본 저장</code>을 선택하면 내 GitHub 리포지토리에 바로 커밋할 수 있습니다. 포트폴리오 관리에 유용합니다.</li>
+    </ul>
+  </li>
+  <li><strong>다운로드</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">파일 &gt; 다운로드 &gt; .ipynb 다운로드</code>: 주피터 노트북 파일로 저장 (VS Code 등에서 실행 가능).</li>
+      <li><code class="language-plaintext highlighter-rouge">파일 &gt; 다운로드 &gt; .py 다운로드</code>: 순수 파이썬 스크립트로 저장.</li>
+    </ul>
+  </li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

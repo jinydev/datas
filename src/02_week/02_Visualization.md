@@ -1,3 +1,8 @@
+---
+layout: default
+title: "2주차 1강: 데이터 시각화란? (Introduction)"
+---
+
 # 2주차 1강: 데이터 시각화란? (Introduction)
 
 > **학습목표**: 데이터 시각화의 중요성을 이해하고(앤스콤의 4분할), 파이썬의 대표적인 시각화 라이브러리인 Matplotlib의 기본 구조(Figure, Axes)를 익힙니다.

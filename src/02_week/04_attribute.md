@@ -1,3 +1,8 @@
+---
+layout: default
+title: "2주차 3강: 그래프 속성과 스타일링 (Attributes & Styling)"
+---
+
 # 2주차 3강: 그래프 속성과 스타일링 (Attributes & Styling)
 
 > **학습목표**: Matplotlib의 핵심 속성(`Attribute`)들을 이해하고, 이를 조합하여 나만의 멋진 그래프를 디자인합니다.

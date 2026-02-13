@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>8주차 4강: 시리즈 심화 (Advanced Series) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link active">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="8주차-4강-시리즈-심화-advanced-series">8주차 4강: 시리즈 심화 (Advanced Series)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 시리즈(Series)의 데이터를 분석하는 핵심 함수들을 익히고, <code class="language-plaintext highlighter-rouge">Matplotlib</code>를 활용해 데이터를 시각화하는 방법을 배웁니다.</p>
+</blockquote>
+
+<h2 id="841-데이터-파악하기">8.4.1. 데이터 파악하기</h2>
+
+<p>데이터가 어떤 값들로 구성되어 있는지 확인하는 함수들입니다. (범주형 데이터에 특히 유용!)</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="1-고유값-확인-unique-nunique">1. 고유값 확인: <code class="language-plaintext highlighter-rouge">unique()</code>, <code class="language-plaintext highlighter-rouge">nunique()</code></h3>
+<p>중복을 제거한 값들의 목록과 개수를 확인합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">gender</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">'</span><span class="s">남</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">여</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">남</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">남</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">여</span><span class="sh">'</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">gender</span><span class="p">.</span><span class="nf">unique</span><span class="p">())</span>   <span class="c1"># ['남' '여'] (종류 확인)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">gender</span><span class="p">.</span><span class="nf">nunique</span><span class="p">())</span>  <span class="c1"># 2 (종류 개수)
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="2-빈도수-세기-value_counts">2. 빈도수 세기: <code class="language-plaintext highlighter-rouge">value_counts()</code></h3>
+<p>각 값이 몇 번 등장했는지 세어줍니다. <strong>데이터 분석에서 가장 많이 쓰는 함수 Top 3</strong> 안에 듭니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">gender</span><span class="p">.</span><span class="nf">value_counts</span><span class="p">())</span>
+<span class="c1"># 남    3
+# 여    2
+# dtype: int64
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="842-함수-적용하기-map-apply">8.4.2. 함수 적용하기: <code class="language-plaintext highlighter-rouge">map()</code>, <code class="language-plaintext highlighter-rouge">apply()</code></h2>
+
+<h3 id="1-데이터-매핑-map">1. 데이터 매핑: <code class="language-plaintext highlighter-rouge">map()</code></h3>
+<p>딕셔너리를 사용해 데이터를 1:1로 변환할 때 씁니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '남' -&gt; 0, '여' -&gt; 1 로 변경
+</span><span class="n">gender_map</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">남</span><span class="sh">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="sh">'</span><span class="s">여</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">gender</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="n">gender_map</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+<span class="c1"># 0    0
+# 1    1
+# ...
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="2-함수-적용-apply">2. 함수 적용: <code class="language-plaintext highlighter-rouge">apply()</code></h3>
+<p>모든 원소에 복잡한 함수를 적용하고 싶을 때 씁니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mask_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s">*</span><span class="sh">"</span> <span class="o">+</span> <span class="n">name</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">'</span><span class="s">홍길동</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">임꺽정</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">신사임당</span><span class="sh">'</span><span class="p">])</span>
+<span class="n">masked</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="n">mask_name</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">masked</span><span class="p">)</span>
+<span class="c1"># 0    홍*동
+# 1    임*정
+# 2    신*임당
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="843-시리즈-시각화-visualization">8.4.3. 시리즈 시각화 (Visualization)</h2>
+
+<p>판다스는 <code class="language-plaintext highlighter-rouge">matplotlib</code>와 찰떡궁합입니다. 시리즈 뒤에 <code class="language-plaintext highlighter-rouge">.plot()</code>만 붙이면 바로 그림이 그려집니다.</p>
+
+<h3 id="1-막대-그래프-bar-plot">1. 막대 그래프 (Bar Plot)</h3>
+<p>범주형 데이터의 빈도수를 시각화할 때 최고입니다. <code class="language-plaintext highlighter-rouge">value_counts()</code>와 함께 쓰세요.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># 1. 데이터 준비
+</span><span class="n">favorite_fruit</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">'</span><span class="s">사과</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">바나나</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">사과</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">포도</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">바나나</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">사과</span><span class="sh">'</span><span class="p">])</span>
+
+<span class="c1"># 2. 빈도수 계산 및 시각화
+</span><span class="n">counts</span> <span class="o">=</span> <span class="n">favorite_fruit</span><span class="p">.</span><span class="nf">value_counts</span><span class="p">()</span>
+<span class="n">counts</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="sh">'</span><span class="s">bar</span><span class="sh">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">yellow</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">purple</span><span class="sh">'</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># 3. 꾸미기
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">과일 선호도 조사</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">과일</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">인원 수</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># x축 글자 똑바로
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: <code class="language-plaintext highlighter-rouge">value_counts()</code>는 데이터의 분포를 확인하는 가장 강력한 도구입니다.</li>
+  <li><strong>[핵심 2]</strong>: <code class="language-plaintext highlighter-rouge">map()</code>과 <code class="language-plaintext highlighter-rouge">apply()</code>를 사용하면 데이터를 내 입맛대로 변환할 수 있습니다.</li>
+  <li><strong>[핵심 3]</strong>: <code class="language-plaintext highlighter-rouge">Series.plot()</code>을 사용하면 복잡한 코드 없이도 데이터를 바로 시각화할 수 있습니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -16,3 +16,13 @@ vendor/
 # Ruby
 Gemfile.lock
 .bundle/
+
+# Logs and System
+build_log.txt
+.DS_Store
+Thumbs.db
+
+# Dependencies
+/vendor/
+/.bundle/
+/.jekyll-cache/

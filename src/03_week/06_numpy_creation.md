@@ -1,3 +1,8 @@
+---
+layout: default
+title: "3주차 2강: 배열 생성 심화 (Array Creation Deep Dive)"
+---
+
 # 3주차 2강: 배열 생성 심화 (Array Creation Deep Dive)
 
 > **학습목표**: 파이썬 리스트를 Numpy 배열로 변환하는 기초부터, `zeros`, `ones`, `arange`, `linspace` 등 다양한 함수를 활용하여 효율적으로 배열을 초기화하는 방법을 마스터합니다.

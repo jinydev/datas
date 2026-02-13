@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>2주차 1강: 파이썬 기초 2 (Python Basics 2) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link active">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="2주차-1강-파이썬-기초-2-python-basics-2">2주차 1강: 파이썬 기초 2 (Python Basics 2)</h1>
+
+<blockquote>
+  <p><strong>학습 목표</strong></p>
+  <ol>
+    <li>다양한 데이터를 관리하는 <strong>리스트(List)</strong>와 <strong>딕셔너리(Dictionary)</strong>를 학습합니다.</li>
+    <li><strong>조건문(if)</strong>과 <strong>반복문(for)</strong>을 통해 프로그램의 흐름을 제어하는 로직을 익힙니다.</li>
+  </ol>
+</blockquote>
+
+<h2 id="211-자료구조-더-깊게-파기-data-structures">2.1.1. 자료구조 더 깊게 파기 (Data Structures)</h2>
+
+<p>프로그래밍에서 데이터는 혼자 존재하기보다 여러 개가 뭉쳐서 존재할 때가 많습니다. (예: 학생 명단, 일주일치 날씨, 장바구니 목록 등)
+이런 데이터들을 효율적으로 담고 관리하기 위한 바구니를 <strong>자료구조(Data Structure)</strong>라고 합니다.</p>
+
+<h3 id="2111-리스트-list-순서가-있는-가방">2.1.1.1. 리스트 (List): 순서가 있는 가방</h3>
+<p>리스트는 가장 많이 사용되는 자료구조로, <strong>순서(Order)</strong>를 가지고 데이터를 나열하여 저장합니다. 대괄호 <code class="language-plaintext highlighter-rouge">[]</code>를 사용하여 만듭니다.</p>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li>순서가 있다 (인덱싱 가능).</li>
+  <li>내용을 바꿀 수 있다 (수정, 추가, 삭제 가능).</li>
+  <li>어떤 자료형이든 담을 수 있다 (숫자, 문자, 리스트 등).</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 아이템 목록 생성
+</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">포션</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">장검</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">방패</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="c1"># 1. 데이터 접근 (인덱싱 &amp; 슬라이싱)
+# 파이썬의 순서는 0부터 시작합니다.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># 첫 번째 아이템: 포션
+</span><span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># 두 번째 아이템: 장검
+</span><span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 뒤에서 첫 번째: 방패
+</span>
+<span class="c1"># 2. 데이터 추가 (append)
+</span><span class="n">items</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">"</span><span class="s">지도</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 리스트의 맨 끝에 '지도'를 추가합니다.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="c1"># ['포션', '장검', '방패', '지도']
+</span>
+<span class="c1"># 3. 데이터 삭제 (remove)
+</span><span class="n">items</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="sh">"</span><span class="s">포션</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># '포션'이라는 값을 찾아 지웁니다.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="c1"># ['장검', '방패', '지도']
+</span>
+<span class="c1"># 4. 데이터 길이 확인 (len)
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span> <span class="c1"># 3
+</span></code></pre></div></div>
+
+<h3 id="2112-딕셔너리-dictionary-이름표가-붙은-금고">2.1.1.2. 딕셔너리 (Dictionary): 이름표가 붙은 금고</h3>
+<p>리스트가 번호(0, 1, 2…)로 데이터를 찾았다면, 딕셔너리는 <strong>이름(Key)</strong>으로 데이터(Value)를 찾습니다. 중괄호 <code class="language-plaintext highlighter-rouge">{}</code>를 사용하며, <code class="language-plaintext highlighter-rouge">Key: Value</code> 쌍으로 이루어져 있습니다.</p>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li>순서보다는 <strong>키(Key)</strong>가 중요하다.</li>
+  <li>키(Key)는 중복될 수 없다. (주민등록번호나 ID처럼 유일해야 함)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 캐릭터 정보 생성 (Key: Value)
+</span><span class="n">profile</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Antigravity</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">level</span><span class="sh">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">hp</span><span class="sh">"</span><span class="p">:</span> <span class="mi">100</span>
+<span class="p">}</span>
+
+<span class="c1"># 1. 데이터 접근 (Key로 Value 찾기)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span> <span class="c1"># 결과: Antigravity
+</span><span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">hp</span><span class="sh">"</span><span class="p">])</span>   <span class="c1"># 결과: 100
+</span>
+<span class="c1"># 2. 데이터 수정
+</span><span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">level</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span> <span class="c1"># level을 11로 변경
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">레벨 업! 현재 레벨: </span><span class="si">{</span><span class="n">profile</span><span class="p">[</span><span class="sh">'</span><span class="s">level</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 3. 새로운 데이터 추가
+</span><span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">job</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Wizard</span><span class="sh">"</span> <span class="c1"># job이라는 Key와 Wizard라는 Value 추가
+</span><span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="212-제어문-control-flow">2.1.2. 제어문 (Control Flow)</h2>
+
+<p>지금까지는 코드가 위에서 아래로 순서대로 실행되었습니다. 하지만 실제 프로그램은 상황에 따라 다른 일을 하거나, 같은 일을 반복해야 합니다. 이를 제어하는 것이 <strong>제어문</strong>입니다.</p>
+
+<h3 id="2121-조건문-if-elif-else-만약에">2.1.2.1. 조건문 (if-elif-else): “만약에…”</h3>
+<p>주어진 조건이 <strong>참(True)</strong>인지 <strong>거짓(False)</strong>인지에 따라 실행할 코드를 결정합니다.</p>
+<ul>
+  <li><strong>들여쓰기(Indentation)</strong>가 매우 중요합니다! (보통 스페이스 4칸 또는 탭 1번)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hp</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># 조건 1: 체력이 20 이하니?
+</span><span class="k">if</span> <span class="n">hp</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">⚠️ 위험! 포션을 사용하세요!</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 참일 때 실행
+</span>    
+<span class="c1"># 조건 2: (위 조건이 아니고) 체력이 50 이하니?
+</span><span class="k">elif</span> <span class="n">hp</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">주의! 체력을 관리하세요.</span><span class="sh">"</span><span class="p">)</span>   <span class="c1"># 조건 1은 거짓, 조건 2는 참일 때 실행
+</span>    
+<span class="c1"># 그 외 모든 경우
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">상태 양호. 전투를 계속합니다.</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 위 모든 조건이 거짓일 때 실행
+</span></code></pre></div></div>
+
+<h3 id="2122-반복문-for-loop-계속해">2.1.2.2. 반복문 (for loop): “계속해…”</h3>
+<p>특정 코드를 반복해서 실행하고 싶을 때 사용합니다. 리스트의 모든 아이템을 하나씩 꺼내보거나, 숫자를 세면서 반복할 수 있습니다.</p>
+
+<p><strong>1. 리스트 순회 (Items in List)</strong>
+리스트 안에 있는 아이템을 하나씩 꺼내서 변수(<code class="language-plaintext highlighter-rouge">monster</code>)에 담아 반복합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">monsters</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Slime</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Orc</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Dragon</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">monster</span> <span class="ow">in</span> <span class="n">monsters</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">야생의 </span><span class="si">{</span><span class="n">monster</span><span class="si">}</span><span class="s">가 나타났다!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="c1"># 첫 번째 반복: monster = "Slime"
+</span>    <span class="c1"># 두 번째 반복: monster = "Orc"
+</span>    <span class="c1"># 세 번째 반복: monster = "Dragon"
+</span></code></pre></div></div>
+
+<p><strong>2. 숫자 범위 반복 (range)</strong>
+숫자를 만들어주는 <code class="language-plaintext highlighter-rouge">range(시작, 끝, 간격)</code> 함수와 함께 사용합니다.</p>
+<ul>
+  <li>주의: <strong>끝 번호는 포함되지 않습니다!</strong> (1, 6)이면 1부터 5까지입니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1부터 5까지 카운트다운
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">카운트다운: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Tip: 0부터 9까지 반복하려면 range(10)이라고만 써도 됩니다.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="213-종합-실습-텍스트-rpg-전투-시스템">2.1.3. 종합 실습: 텍스트 RPG 전투 시스템</h2>
+
+<p>지금까지 배운 리스트, 반복문, 조건문을 모두 사용하여 간단한 게임 로직을 만들어 봅시다.</p>
+
+<p><strong>시나리오:</strong></p>
+<ol>
+  <li>플레이어의 체력은 100입니다.</li>
+  <li>몬스터 리스트에는 슬라임과 늑대가 있습니다.</li>
+  <li>각 몬스터를 순서대로 만납니다. (반복문)</li>
+  <li>몬스터에게 랜덤하게 공격을 받습니다. (변수, 연산)</li>
+  <li>체력이 0 이하가 되면 게임 오버입니다. (조건문, break)</li>
+  <li>살아남으면 승리 메시지를 출력합니다.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span> <span class="c1"># 랜덤 숫자를 뽑기 위한 모듈
+</span>
+<span class="n">player_hp</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">monsters</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Slime</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Wolf</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Dragon</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">⚔️ 모험을 시작합니다!</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">monster</span> <span class="ow">in</span> <span class="n">monsters</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- </span><span class="si">{</span><span class="n">monster</span><span class="si">}</span><span class="s">와의 전투 시작! ---</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="c1"># 10에서 50 사이의 랜덤 데미지 생성
+</span>    <span class="n">damage</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> 
+    <span class="n">player_hp</span> <span class="o">=</span> <span class="n">player_hp</span> <span class="o">-</span> <span class="n">damage</span>
+    
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">으악! </span><span class="si">{</span><span class="n">monster</span><span class="si">}</span><span class="s">에게 </span><span class="si">{</span><span class="n">damage</span><span class="si">}</span><span class="s">의 데미지를 입었습니다.</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="c1"># 체력 체크
+</span>    <span class="k">if</span> <span class="n">player_hp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">체력이 </span><span class="si">{</span><span class="n">player_hp</span><span class="si">}</span><span class="s">이 되었습니다.</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">💀 Game Over... 눈앞이 캄캄해집니다.</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">break</span> <span class="c1"># 반복문을 즉시 종료하고 빠져나갑니다.
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">휴... 남은 체력: </span><span class="si">{</span><span class="n">player_hp</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 반복문이 정상적으로 끝났을 때만 실행 (break로 안 끊겼을 때)
+# 다만 여기서는 간단하게 체력으로 확인합니다.
+</span><span class="k">if</span> <span class="n">player_hp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">🎉 축하합니다! 모든 몬스터를 물리치고 승리했습니다!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

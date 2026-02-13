@@ -1,3 +1,8 @@
+---
+layout: default
+title: "2주차 5강: 막대그래프 (Bar Plot)"
+---
+
 # 2주차 5강: 막대그래프 (Bar Plot)
 
 > **학습목표**: 범주형 데이터(Category)의 크기를 비교하는 막대그래프를 이해하고, 세로형(Vertical)과 가로형(Horizontal)으로 표현하는 방법을 익힙니다.

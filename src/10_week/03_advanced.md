@@ -1,3 +1,8 @@
+---
+layout: default
+title: "10주차 3강: 화려한 시각화 (Seaborn)"
+---
+
 # 10주차 3강: 화려한 시각화 (Seaborn)
 
 ## 10.3.1. Pandas 내장 그래프 (`plot`)

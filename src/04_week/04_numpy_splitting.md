@@ -1,3 +1,8 @@
+---
+layout: default
+title: "4주차 4강: 배열 나누기 (Splitting)"
+---
+
 # 4주차 4강: 배열 나누기 (Splitting)
 
 > **학습목표**: 합쳤던 배열을 다시 나누는 `split`, `vsplit`, `hsplit`뿐만 아니라, 불균등하게 나누는 `array_split`과 3차원 분할 `dsplit`까지 완벽하게 익힙니다.

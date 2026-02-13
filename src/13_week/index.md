@@ -1,3 +1,8 @@
+---
+layout: default
+title: "13주차: 군집 분석과 모델 튜닝"
+---
+
 # 13주차: 군집 분석과 모델 튜닝
 
 ## 학습 목표 (Learning Objectives)
@@ -7,15 +12,15 @@
 
 ## 강의 내용 (Course Content)
 
-### [01. 끼리끼리 모여라 (K-Means Clustering)](./01_theory.md)
+### [01. 끼리끼리 모여라 (K-Means Clustering)](./01_theory.html)
 - 비지도 학습의 대표주자, K-Means.
 - K값 설정의 중요성 (Elbow Method).
 - 실루엣 계수(Silhouette Score)로 평가하기.
 
-### [02. 모의고사는 여러 번 (Cross Validation)](./02_practice.md)
+### [02. 모의고사는 여러 번 (Cross Validation)](./02_practice.html)
 - K-Fold 교차 검증: 데이터를 K등분해서 돌아가며 시험 보기.
 - 과대적합 방지와 일반화 성능 측정.
 
-### [03. 최강의 모델 만들기 (Grid Search)](./03_advanced.md)
+### [03. 최강의 모델 만들기 (Grid Search)](./03_advanced.html)
 - 하이퍼파라미터(Hyperparameter)란? (모델의 설정값).
 - Grid Search: 가능한 모든 조합을 다 시도해 보기 (완전 탐색).

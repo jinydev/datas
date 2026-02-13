@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>1주차 1강: 데이터 분석이란? | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link active">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="1주차-1강-데이터-분석이란">1주차 1강: 데이터 분석이란?</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 데이터 분석의 정의와 필요성을 이해하고, DIKW 피라미드와 다양한 데이터 유형(정량/정성, 정형/비정형)을 구분할 수 있습니다.</p>
+</blockquote>
+
+<h2 id="111-데이터-분석이란-무엇인가-why-data-analysis">1.1.1. 데이터 분석이란 무엇인가? (Why Data Analysis?)</h2>
+
+<blockquote>
+  <p><strong>데이터 분석(Data Analysis)</strong>: 원석 같은 데이터를 가공하여 보석 같은 <strong>통찰력(Insight)</strong>을 발견하는 과정입니다.</p>
+</blockquote>
+
+<p>우리가 살고 있는 세상은 데이터로 가득 차 있습니다. 여러분이 유튜브에서 영상을 볼 때, 인스타그램에서 ‘좋아요’를 누를 때, 편의점에서 물건을 살 때마다 데이터가 생성됩니다.</p>
+
+<h3 id="1111-데이터-정보-지식-지혜-dikw-피라미드">1.1.1.1. 데이터, 정보, 지식, 지혜 (DIKW 피라미드)</h3>
+<p>데이터가 가치를 가지려면 <strong>가공</strong>되어야 합니다. 이를 설명하는 모델이 <strong>DIKW 피라미드</strong>입니다.</p>
+
+<ol>
+  <li><strong>데이터 (Data)</strong>: 가공되지 않은 순수한 수치나 사실.
+    <ul>
+      <li><em>예시: 온라인 노트북 가격 100만 원, 오프라인 매장 가격 150만 원.</em></li>
+    </ul>
+  </li>
+  <li><strong>정보 (Information)</strong>: 데이터를 가공하여 의미를 부여한 것.
+    <ul>
+      <li><em>예시: 온라인 쇼핑몰이 오프라인 매장보다 노트북 가격이 더 저렴하다.</em></li>
+    </ul>
+  </li>
+  <li><strong>지식 (Knowledge)</strong>: 정보를 구조화하고 경험과 결합하여 내재화한 것.
+    <ul>
+      <li><em>예시: 나는 노트북을 온라인에서 구매할 것이다. (더 저렴하니까)</em></li>
+    </ul>
+  </li>
+  <li><strong>지혜 (Wisdom)</strong>: 지식을 바탕으로 도출한 창의적 아이디어이자 통찰력.
+    <ul>
+      <li><em>예시: 다른 전자제품들도 온라인 쇼핑이 오프라인보다 저렴할 것이다.</em></li>
+    </ul>
+  </li>
+</ol>
+
+<pre><code class="language-mermaid">graph BT
+    A["데이터 (Data)"] --&gt; B["정보 (Information)"]
+    B --&gt; C["지식 (Knowledge)"]
+    C --&gt; D["지혜 (Wisdom)"]
+    style A fill:#f9f,stroke:#333
+    style B fill:#bbf,stroke:#333
+    style C fill:#bfb,stroke:#333
+    style D fill:#fbf,stroke:#333
+</code></pre>
+
+<h3 id="1112-데이터의-유형-types-of-data">1.1.1.2. 데이터의 유형 (Types of Data)</h3>
+<p>데이터는 그 형태와 성격에 따라 다음과 같이 나눌 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">구분</th>
+      <th style="text-align: left">정량적 데이터 (Quantitative)</th>
+      <th style="text-align: left">정성적 데이터 (Qualitative)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>형태</strong></td>
+      <td style="text-align: left">수치, 도형, 기호</td>
+      <td style="text-align: left">문자, 언어, 설명</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>특징</strong></td>
+      <td style="text-align: left">객관적, 계산 가능</td>
+      <td style="text-align: left">주관적, 함축적 의미</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>예시</strong></td>
+      <td style="text-align: left">온도, 몸무게, 주가, 나이</td>
+      <td style="text-align: left">영화 리뷰, 뉴스 기사, SNS 게시글</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>또한, 저장 형태에 따라 다음과 같이 분류합니다.</p>
+
+<ol>
+  <li><strong>정형 데이터 (Structured)</strong>: 엑셀이나 데이터베이스(DB)처럼 고정된 틀(행과 열)에 저장된 데이터. (연산 가능)</li>
+  <li><strong>반정형 데이터 (Semi-structured)</strong>: 형태는 있지만 연산이 불가능한 데이터. (HTML, XML, JSON 로그 등)</li>
+  <li><strong>비정형 데이터 (Unstructured)</strong>: 형태가 없고 구조화되지 않은 데이터. (텍스트, 이미지, 음성, 동영상 등)
+    <blockquote>
+      <p><strong>빅데이터 시대</strong>에는 비정형 데이터의 비중이 급격히 늘어나고 있으며, 이를 분석하는 기술(AI, 텍스트 마이닝)이 중요해지고 있습니다.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h3 id="1113-왜-데이터-분석이-필요한가요">1.1.1.3. 왜 데이터 분석이 필요한가요?</h3>
+<p>게임에서 보스 몬스터를 잡으러 간다고 상상해 봅시다.</p>
+<ul>
+  <li><strong>데이터가 없는 경우</strong>: 아무 정보 없이 맨몸으로 돌진합니다. (승률 희박 📉)</li>
+  <li><strong>데이터가 있는 경우</strong>: 보스의 약점 속성, 패턴, 체력 수치를 알고 공략합니다. (승률 상승 📈)</li>
+</ul>
+
+<p>이처럼 데이터 분석은 <strong>불확실한 미래를 예측하고, 더 나은 의사결정을 내리기 위한 나침반</strong> 역할을 합니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    A["데이터 수집"] --&gt; B["데이터 전처리"]
+    B --&gt; C["데이터 분석 및 모델링"]
+    C --&gt; D["결과 해석 및 시각화"]
+    D --&gt; E["의사결정 (Action)"]
+</code></pre>
+
+<p>이러한 데이터 분석방법에 대하여 파이썬 코드를 통하여 학습해 보도록 하겠습니다.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

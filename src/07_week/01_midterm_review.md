@@ -1,3 +1,8 @@
+---
+layout: default
+title: "7주차 1강: 전반기 총정리 (Review)"
+---
+
 # 7주차 1강: 전반기 총정리 (Review)
 
 ## 7.1.1. 파이썬과 분석 환경 (Week 1)

@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>6주차 4강: 고급 배열 합치기 (Advanced Stacking) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link active">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="6주차-4강-고급-배열-합치기-advanced-stacking">6주차 4강: 고급 배열 합치기 (Advanced Stacking)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 차원을 늘리면서 합치는 <code class="language-plaintext highlighter-rouge">stack</code>, 기둥처럼 세워서 합치는 <code class="language-plaintext highlighter-rouge">column_stack</code>, 그리고 단축 문법인 <code class="language-plaintext highlighter-rouge">np.c_</code>, <code class="language-plaintext highlighter-rouge">np.r_</code>을 익혀 고수처럼 데이터를 다룹니다.</p>
+</blockquote>
+
+<h2 id="661-새로운-차원으로-쌓기-npstack">6.6.1. 새로운 차원으로 쌓기: <code class="language-plaintext highlighter-rouge">np.stack()</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">concatenate</code>는 기존 차원을 유지하면서 붙이지만, <code class="language-plaintext highlighter-rouge">stack</code>은 <strong>새로운 차원(축)을 하나 더 만들면서</strong> 묶습니다.</p>
+<ul>
+  <li>비유: 종이(2D)를 겹쳐서 책(3D)을 만드는 과정</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-1-stack-동작-원리-axis0">[그림 1] stack 동작 원리 (axis=0)</h3>
+<p>1차원 배열 두 개를 겹쳐서 2차원으로 만듭니다.</p>
+
+<pre><code class="language-mermaid">graph TD
+    subgraph Stack ["np.stack((A, B))"]
+        A[1, 2, 3]
+        B[4, 5, 6]
+        Result["[[1, 2, 3],&lt;br&gt; [4, 5, 6]]"]
+        
+        A --"포개기"--&gt; Result
+        B --"포개기"--&gt; Result
+        
+        style A fill:#ff9,stroke:#333
+        style B fill:#ccf,stroke:#333
+        style Result fill:#eef,stroke:#333,stroke-width:4px
+    end
+</code></pre>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="662-기둥-세우기-npcolumn_stack">6.6.2. 기둥 세우기: <code class="language-plaintext highlighter-rouge">np.column_stack()</code></h2>
+
+<p>1차원 배열들을 마치 <strong>기둥(Column)</strong>처럼 세워서 옆으로 붙입니다.
+<code class="language-plaintext highlighter-rouge">vstack</code>을 한 뒤 전치(Transpose)한 것과 비슷하거나, 2차원에서의 <code class="language-plaintext highlighter-rouge">hstack</code>과 비슷하게 동작하여 헷갈리기 쉽습니다.</p>
+
+<ul>
+  <li><strong>핵심</strong>: 1차원 리스트들을 <strong>세로로 세워</strong> 표(DataFrame)를 만들 때 가장 많이 씁니다!</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">id_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">score_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
+
+<span class="c1"># 각각을 세로 기둥으로 세워서 합침
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">column_stack</span><span class="p">((</span><span class="n">id_list</span><span class="p">,</span> <span class="n">score_list</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># [[ 1 80]
+#  [ 2 90]
+#  [ 3 75]]
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>비교</strong>: <code class="language-plaintext highlighter-rouge">row_stack()</code>도 있지만, 이는 <code class="language-plaintext highlighter-rouge">vstack()</code>과 사실상 같아서 잘 안 씁니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="663-마법의-단축키-npr_--npc_">6.6.3. 마법의 단축키: <code class="language-plaintext highlighter-rouge">np.r_</code> &amp; <code class="language-plaintext highlighter-rouge">np.c_</code></h2>
+
+<p>함수 이름도 길고 괄호도 치기 귀찮을 때 쓰는 ‘초고수용 단축 문법’입니다.
+대괄호 <code class="language-plaintext highlighter-rouge">[]</code>를 사용한다는 점이 특이합니다.</p>
+
+<h3 id="6631-npr_-row-wise">6.6.3.1. <code class="language-plaintext highlighter-rouge">np.r_</code> (Row-wise)</h3>
+<p>행(Row) 방향으로 합칩니다. <code class="language-plaintext highlighter-rouge">hstack</code>과 비슷하게 동작합니다 (1차원 기준).</p>
+<ul>
+  <li><strong>R</strong>ow -&gt; <strong>R</strong>ight (옆으로 길어짐)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create directly
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [1 2 3 4 5 6]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="6632-npc_-column-wise">6.6.3.2. <code class="language-plaintext highlighter-rouge">np.c_</code> (Column-wise)</h3>
+<p>열(Column) 방향으로 합칩니다. <code class="language-plaintext highlighter-rouge">column_stack</code>과 똑같습니다.</p>
+<ul>
+  <li><strong>C</strong>olumn -&gt; 기둥 세우기</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># 두 배열을 기둥으로 세워 붙이기
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="c1"># [[1 4]
+#  [2 5]
+#  [3 6]]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: <code class="language-plaintext highlighter-rouge">np.stack()</code>은 차원을 하나 높이면서 배열을 포갭니다. (종이 묶기)</li>
+  <li><strong>[핵심 2]</strong>: <code class="language-plaintext highlighter-rouge">np.column_stack()</code>은 1차원 배열을 <strong>기둥(Column)</strong>으로 세워서 합칩니다. (표 만들기 필수)</li>
+  <li><strong>[핵심 3]</strong>: <code class="language-plaintext highlighter-rouge">np.c_[]</code>는 <code class="language-plaintext highlighter-rouge">column_stack</code>을 아주 짧게 쓸 수 있는 마법의 단축키입니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

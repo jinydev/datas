@@ -1,3 +1,8 @@
+---
+layout: default
+title: "6주차 4강: 고급 배열 합치기 (Advanced Stacking)"
+---
+
 # 6주차 4강: 고급 배열 합치기 (Advanced Stacking)
 
 > **학습목표**: 차원을 늘리면서 합치는 `stack`, 기둥처럼 세워서 합치는 `column_stack`, 그리고 단축 문법인 `np.c_`, `np.r_`을 익혀 고수처럼 데이터를 다룹니다.

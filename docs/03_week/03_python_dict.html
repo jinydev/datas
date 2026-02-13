@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>3주차 3강: 파이썬 딕셔너리 심화 (Python Dictionary Deep Dive) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link active">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="3주차-3강-파이썬-딕셔너리-심화-python-dictionary-deep-dive">3주차 3강: 파이썬 딕셔너리 심화 (Python Dictionary Deep Dive)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 딕셔너리의 내부 구조(Hash Table)를 이해하고, 리스트와의 차이점을 명확히 알며, 데이터를 효율적으로 다루는 고급 테크닉을 익힙니다.</p>
+</blockquote>
+
+<h2 id="331-배열의-진화-순차-배열-vs-연관-배열">3.3.1. 배열의 진화: 순차 배열 vs 연관 배열</h2>
+
+<p>프로그래밍에서 데이터를 저장하는 방식은 크게 두 가지로 나뉩니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3311-순차-배열-sequential-array--리스트">3.3.1.1. 순차 배열 (Sequential Array) = 리스트</h3>
+<ul>
+  <li><strong>특징</strong>: 데이터가 순서대로 나열되어 있으며, <strong>인덱스(번호)</strong>로 접근합니다.</li>
+  <li><strong>단점</strong>: “사과”가 어디 있는지 찾으려면 첫 번째 칸부터 끝까지 다 열어봐야 합니다. (속도: O(N))</li>
+  <li><strong>비유</strong>: <strong>기차</strong> (1호차, 2호차… 순서대로 연결됨)</li>
+</ul>
+
+<p><img src="./img/sequential_search.png" alt="순차 검색 (기차 칸 확인)" /></p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3312-연관-배열-associative-array--딕셔너리">3.3.1.2. 연관 배열 (Associative Array) = 딕셔너리</h3>
+<ul>
+  <li><strong>특징</strong>: 데이터가 <strong>키(Key)</strong>와 <strong>값(Value)</strong>의 쌍으로 저장됩니다. 순서는 중요하지 않습니다.</li>
+  <li><strong>장점</strong>: “사과”라는 <strong>이름표(Key)</strong>만 알면, 위치를 바로 알 수 있습니다. (속도: O(1))</li>
+  <li><strong>비유</strong>: <strong>사물함</strong> (번호키만 알면 내 물건을 바로 찾음)</li>
+</ul>
+
+<p><img src="./img/hash_search.png" alt="해시 검색 (사물함 바로 열기)" /></p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="332-리스트-vs-딕셔너리-비교-list-vs-dict">3.3.2. 리스트 vs 딕셔너리 비교 (List vs Dict)</h2>
+
+<p>상황에 따라 적절한 자료구조를 선택하는 것이 실력입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">비교 항목</th>
+      <th style="text-align: left">리스트 (List)</th>
+      <th style="text-align: left">딕셔너리 (Dictionary)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>순서 (Order)</strong></td>
+      <td style="text-align: left">있음 (Index 0, 1, 2…)</td>
+      <td style="text-align: left">있음 (Python 3.7+ 부터 입력 순서 유지)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>접근 방법</strong></td>
+      <td style="text-align: left">인덱스 (<code class="language-plaintext highlighter-rouge">ls[0]</code>)</td>
+      <td style="text-align: left">키 (<code class="language-plaintext highlighter-rouge">dt['key']</code>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>검색 속도</strong></td>
+      <td style="text-align: left">느림 (데이터 많을수록 느려짐)</td>
+      <td style="text-align: left"><strong>매우 빠름</strong> (데이터 많아도 즉시 찾음)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>중복 허용</strong></td>
+      <td style="text-align: left">값 중복 O</td>
+      <td style="text-align: left">키 중복 X (값은 중복 가능)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>사용 예시</strong></td>
+      <td style="text-align: left">시계열 데이터, 로그 기록</td>
+      <td style="text-align: left">회원 정보, 설정값, 전화번호부</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Tip</strong>: “이름으로 뭔가를 찾아야 한다”면 무조건 딕셔너리를 쓰세요!</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="333-빈번하게-쓰이는-메서드-useful-methods">3.3.3. 빈번하게 쓰이는 메서드 (Useful Methods)</h2>
+
+<h3 id="3331-get-안전하게-값-가져오기">3.3.3.1. get(): 안전하게 값 가져오기</h3>
+<p>없는 키를 찾으면 에러(<code class="language-plaintext highlighter-rouge">KeyError</code>) 대신 <code class="language-plaintext highlighter-rouge">None</code>이나 기본값을 반환합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">profile</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Antigravity</span><span class="sh">'</span><span class="p">}</span>
+
+<span class="c1"># print(profile['age']) # KeyError! (프로그램 멈춤)
+</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">profile</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># 'age' 키가 없으면 20을 반환
+</span><span class="nf">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="c1"># 20
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3332-keys-values-items-조회하기">3.3.3.2. keys(), values(), items(): 조회하기</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">keys()</code>: 키 목록만 가져옴</li>
+  <li><code class="language-plaintext highlighter-rouge">values()</code>: 값 목록만 가져옴</li>
+  <li><code class="language-plaintext highlighter-rouge">items()</code>: 키와 값을 튜플 쌍으로 가져옴 (반복문에서 자주 사용)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">math</span><span class="sh">'</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="sh">'</span><span class="s">eng</span><span class="sh">'</span><span class="p">:</span> <span class="mi">85</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">subject</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># math: 90
+# eng: 85
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3333-update-딕셔너리-합치기">3.3.3.3. update(): 딕셔너리 합치기</h3>
+<p>두 개의 딕셔너리를 하나로 합칩니다. 키가 겹치면 뒤의 값으로 덮어씁니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="sh">'</span><span class="s">z</span><span class="sh">'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># {'x': 1, 'y': 3, 'z': 4} ('y'는 3으로 업데이트됨)
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="334-딕셔너리-컴프리헨션-dict-comprehension">3.3.4. 딕셔너리 컴프리헨션 (Dict Comprehension)</h2>
+
+<p>리스트 컴프리헨션처럼 딕셔너리도 한 줄로 만들 수 있습니다. 전처리에서 <strong>매핑(Mapping)</strong> 테이블을 만들 때 매우 유용합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">Alice</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Bob</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Charlie</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">]</span>
+
+<span class="c1"># 두 리스트를 합쳐서 딕셔너리로!
+</span><span class="n">student_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">id_num</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_num</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ids</span><span class="p">)}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">student_dict</span><span class="p">)</span>
+<span class="c1"># {'Alice': 101, 'Bob': 102, 'Charlie': 103}
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: 딕셔너리는 <strong>키(Key)와 값(Value)</strong> 쌍으로 데이터를 저장합니다.</li>
+  <li><strong>[핵심 2]</strong>: 해시(Hash) 구조 덕분에 <strong>검색 속도가 매우 빠릅니다.</strong> (O(1))</li>
+  <li><strong>[핵심 3]</strong>: <code class="language-plaintext highlighter-rouge">items()</code>, <code class="language-plaintext highlighter-rouge">keys()</code>, <code class="language-plaintext highlighter-rouge">values()</code>로 반복문에서 쉽게 다룰 수 있습니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

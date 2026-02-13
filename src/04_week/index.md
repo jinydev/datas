@@ -1,3 +1,8 @@
+---
+layout: default
+title: "4주차: Numpy 배열 형태 다루기 (Shape Manipulation)"
+---
+
 # 4주차: Numpy 배열 형태 다루기 (Shape Manipulation)
 
 ## 학습 목표 (Learning Objectives)
@@ -10,27 +15,27 @@
 
 ## 강의 내용 (Course Content)
 
-### [01. 파이썬 함수 (Python Functions)](./01_python_functions.md)
+### [01. 파이썬 함수 (Python Functions)](./01_python_functions.html)
 - 함수 정의와 호출.
 - 입력(Parameter)과 출력(Return).
 
-### [02. 모양 바꾸기 (Reshape & Flatten)](./02_numpy_reshape.md)
+### [02. 모양 바꾸기 (Reshape & Flatten)](./02_numpy_reshape.html)
 - `reshape()`: 행렬 모양 변경.
 - `flatten()`: 1차원으로 펴기.
 
-### [03. 배열 합치기 (Concatenation)](./03_numpy_concatenation.md)
+### [03. 배열 합치기 (Concatenation)](./03_numpy_concatenation.html)
 - `concatenate()`: 만능 결합.
 - `vstack`, `hstack`: 수직/수평 결합.
 
-### [04. 배열 나누기 (Splitting)](./04_numpy_splitting.md)
+### [04. 배열 나누기 (Splitting)](./04_numpy_splitting.html)
 - `split()`: 등분하기.
 - `vsplit`, `hsplit`: 행/열 자르기.
 
-### [05. 데이터 자르기 (Slicing)](./05_numpy_slicing.md)
+### [05. 데이터 자르기 (Slicing)](./05_numpy_slicing.html)
 - 범위 지정(`:`)을 통한 데이터 추출.
 - 다차원 배열 슬라이싱.
 
-### [06. 데이터 콕 집기 (Indexing)](./06_numpy_indexing.md)
+### [06. 데이터 콕 집기 (Indexing)](./06_numpy_indexing.html)
 - 좌표(`[row, col]`)로 접근하기.
 - 마이너스 인덱싱.
 

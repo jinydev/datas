@@ -1,3 +1,8 @@
+---
+layout: default
+title: "6주차 2강: 운에 맡기세요 (Random & Visualization)"
+---
+
 # 6주차 2강: 운에 맡기세요 (Random & Visualization)
 
 ## 6.3.1. 난수 생성 삼총사

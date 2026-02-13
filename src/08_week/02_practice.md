@@ -1,3 +1,8 @@
+---
+layout: default
+title: "8주차 2강: 데이터프레임 만들기 (Creation)"
+---
+
 # 8주차 2강: 데이터프레임 만들기 (Creation)
 
 ## 8.2.1. 딕셔너리로 만들기 (Dictionary to DataFrame)

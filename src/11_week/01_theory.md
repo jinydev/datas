@@ -1,3 +1,8 @@
+---
+layout: default
+title: "11주차 1강: 기계가 학습을 한다고? (ML Overview)"
+---
+
 # 11주차 1강: 기계가 학습을 한다고? (ML Overview)
 
 ## 11.1.1. 머신러닝(Machine Learning)이란?

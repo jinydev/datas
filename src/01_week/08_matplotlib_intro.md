@@ -1,6 +1,11 @@
+---
+layout: default
+title: "1주차 3강: 데이터 시각화 맛보기 (Matplotlib Teaser)"
+---
+
 # 1주차 3강: 데이터 시각화 맛보기 (Matplotlib Teaser)
 
-[🏠 전체 강의 목록](../index.md) | [🗓️ 1주차 강의 목록](./index.md)
+[🏠 전체 강의 목록](../index.html) | [🗓️ 1주차 강의 목록](./index.html)
 
 ---
 

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "8주차 4강: 시리즈 심화 (Advanced Series)"
+---
+
 # 8주차 4강: 시리즈 심화 (Advanced Series)
 
 > **학습목표**: 시리즈(Series)의 데이터를 분석하는 핵심 함수들을 익히고, `Matplotlib`를 활용해 데이터를 시각화하는 방법을 배웁니다.

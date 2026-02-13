@@ -1,3 +1,8 @@
+---
+layout: default
+title: "4주차 1강: 모양 바꾸기 (Reshape & Flatten)"
+---
+
 # 4주차 1강: 모양 바꾸기 (Reshape & Flatten)
 
 > **학습목표**: 데이터의 개수(Size)는 유지하면서, 차원과 모양(Shape)을 자유자재로 바꾸는 `reshape`와 `flatten`을 마스터합니다.

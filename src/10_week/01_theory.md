@@ -1,3 +1,8 @@
+---
+layout: default
+title: "10주차 1강: 구멍 난 데이터 수리하기 (Missing Values)"
+---
+
 # 10주차 1강: 구멍 난 데이터 수리하기 (Missing Values)
 
 ## 10.1.1. 결측치(NaN)란?

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "14주차 1강: 후반기 총정리 (Review)"
+---
+
 # 14주차 1강: 후반기 총정리 (Review)
 
 ## 14.1.1. Pandas 데이터 분석 (Week 8~10)

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "7주차 3강: 정답 및 해설 (Solutions)"
+---
+
 # 7주차 3강: 정답 및 해설 (Solutions)
 
 ## 7.3.1. 문제 1. 시각화 기초

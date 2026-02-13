@@ -1,3 +1,8 @@
+---
+layout: default
+title: "6주차: 분석을 위한 고급 도구 (Advanced Tools)"
+---
+
 # 6주차: 분석을 위한 고급 도구 (Advanced Tools)
 
 ## 학습 목표 (Learning Objectives)
@@ -8,19 +13,19 @@
 
 ## 강의 내용 (Course Content)
 
-### [01. 예외 처리 (Exception Handling)](./01_python_exceptions.md)
+### [01. 예외 처리 (Exception Handling)](./01_python_exceptions.html)
 - `try-except` 블록.
 - 에러를 예측하고 대응하기.
 
-### [02. 운에 맡기세요 (Random Generation)](./02_numpy_random.md)
+### [02. 운에 맡기세요 (Random Generation)](./02_numpy_random.html)
 - `np.random` 모듈 활용.
 - `rand`, `randint`, `randn`의 차이.
 
-### [03. 모듈과 라이브러리 (Modules & Libraries)](./03_python_modules.md)
+### [03. 모듈과 라이브러리 (Modules & Libraries)](./03_python_modules.html)
 - `import` 구문의 이해.
 - 파이썬 생태계 활용하기.
 
-### [04. 고급 배열 합치기 (Advanced Stacking)](./04_numpy_advanced_combination.md)
+### [04. 고급 배열 합치기 (Advanced Stacking)](./04_numpy_advanced_combination.html)
 - `stack`, `column_stack`.
 - `np.r_`, `np.c_` 단축 문법.
 

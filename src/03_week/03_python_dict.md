@@ -1,3 +1,8 @@
+---
+layout: default
+title: "3주차 3강: 파이썬 딕셔너리 심화 (Python Dictionary Deep Dive)"
+---
+
 # 3주차 3강: 파이썬 딕셔너리 심화 (Python Dictionary Deep Dive)
 
 > **학습목표**: 딕셔너리의 내부 구조(Hash Table)를 이해하고, 리스트와의 차이점을 명확히 알며, 데이터를 효율적으로 다루는 고급 테크닉을 익힙니다.

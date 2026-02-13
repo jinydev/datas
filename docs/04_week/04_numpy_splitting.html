@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>4주차 4강: 배열 나누기 (Splitting) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link active">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="4주차-4강-배열-나누기-splitting">4주차 4강: 배열 나누기 (Splitting)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 합쳤던 배열을 다시 나누는 <code class="language-plaintext highlighter-rouge">split</code>, <code class="language-plaintext highlighter-rouge">vsplit</code>, <code class="language-plaintext highlighter-rouge">hsplit</code>뿐만 아니라, 불균등하게 나누는 <code class="language-plaintext highlighter-rouge">array_split</code>과 3차원 분할 <code class="language-plaintext highlighter-rouge">dsplit</code>까지 완벽하게 익힙니다.</p>
+</blockquote>
+
+<h2 id="671-기본-나누기-npsplit">6.7.1. 기본 나누기: <code class="language-plaintext highlighter-rouge">np.split()</code></h2>
+
+<p>하나의 배열을 여러 조각으로 쪼갭니다. 가장 엄격한 함수입니다.
+<code class="language-plaintext highlighter-rouge">numpy.split(배열, 나눌_개수_또는_인덱스, axis)</code></p>
+
+<blockquote>
+  <p><strong>주의</strong>: <code class="language-plaintext highlighter-rouge">np.split</code>은 <strong>똑같은 크기로 나누어 떨어지지 않으면 에러</strong>가 발생합니다! (엄격함)</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-1-3등분-하기-정확히-떨어짐">[그림 1] 3등분 하기 (정확히 떨어짐)</h3>
+<p>길이가 6인 배열을 정확히 3개로 나눕니다.</p>
+
+<pre><code class="language-mermaid">graph TD
+    subgraph Original ["원본 (6,)"]
+        Arr[1, 2, 3, 4, 5, 6]
+    end
+    
+    subgraph Split ["3등분 결과"]
+        S1[1, 2]
+        S2[3, 4]
+        S3[5, 6]
+    end
+    
+    Arr ==&gt;|split(3)| S1
+    Arr ==&gt;|split(3)| S2
+    Arr ==&gt;|split(3)| S3
+    
+    style Arr fill:#eee,stroke:#333
+    style S1 fill:#ff9,stroke:#333
+    style S2 fill:#ff9,stroke:#333
+    style S3 fill:#ff9,stroke:#333
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># [0 1 2 3 4 5]
+</span>
+<span class="c1"># 3개의 동일한 크기로 나누기
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="c1"># [array([0, 1]), array([2, 3]), array([4, 5])]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="672-수직으로-자르기-npvsplit">6.7.2. 수직으로 자르기: <code class="language-plaintext highlighter-rouge">np.vsplit()</code></h2>
+
+<p><strong>“Vertical Split”</strong> (수직 분할)</p>
+
+<p>케이크를 층별로 떼어내는 것과 같습니다. <strong>행 단위</strong>로 자릅니다. <code class="language-plaintext highlighter-rouge">split(axis=0)</code>과 같습니다.</p>
+<ul>
+  <li><strong>용도</strong>: 데이터를 100개씩 배치(Batch)로 나눌 때 유용합니다.</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="673-수평으로-자르기-nphsplit">6.7.3. 수평으로 자르기: <code class="language-plaintext highlighter-rouge">np.hsplit()</code></h2>
+
+<p><strong>“Horizontal Split”</strong> (수평 분할)</p>
+
+<p>식빵을 잘라서 샌드위치를 만드는 것처럼 <strong>옆으로(열 단위)</strong> 자릅니다. <code class="language-plaintext highlighter-rouge">split(axis=1)</code>과 같습니다.</p>
+<ul>
+  <li><strong>용도</strong>: 하나의 표에서 <strong>입력 데이터(X)</strong>와 <strong>정답 데이터(y)</strong>를 분리할 때 자주 쓰입니다.</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-2-x와-y-분리하기">[그림 2] X와 y 분리하기</h3>
+<p>5열짜리 데이터에서 앞 4열(X)과 뒤 1열(y)을 분리합니다.</p>
+
+<pre><code class="language-mermaid">graph TD
+    subgraph Data ["전체 데이터 (5열)"]
+        direction LR
+        Col1[Col 1] --- Col2[Col 2] --- Col3[Col 3] --- Col4[Col 4] --- Col5[Target]
+        style Col1 fill:#ccf
+        style Col2 fill:#ccf
+        style Col3 fill:#ccf
+        style Col4 fill:#ccf
+        style Col5 fill:#f99
+    end
+    
+    Data --&gt;|hsplit| X["입력값 X (4열)"]
+    Data --&gt;|hsplit| y["정답값 y (1열)"]
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># 좌우로 2등분
+</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">hsplit</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">왼쪽:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">left</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">오른쪽:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="674-불균등하게-자르기-nparray_split">6.7.4. 불균등하게 자르기: <code class="language-plaintext highlighter-rouge">np.array_split()</code></h2>
+
+<p><strong>“유연한 나누기”</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">np.split</code>과 달리, <strong>똑같이 나누어 떨어지지 않아도</strong> 에러를 내지 않고 최대한 비슷하게 나눠줍니다.
+남는 자투리는 앞쪽 배열들에 하나씩 더 얹어줍니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-3-사탕-7개를-3명에게-나누기">[그림 3] 사탕 7개를 3명에게 나누기</h3>
+<p>7개를 3명에게 나누면 <code class="language-plaintext highlighter-rouge">2개, 2개, 2개</code>를 주고 <code class="language-plaintext highlighter-rouge">1개</code>가 남습니다. 남은 1개는 첫 번째 사람에게 줍니다.
+결과: <code class="language-plaintext highlighter-rouge">3개 / 2개 / 2개</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># [0, 1, 2, 3, 4, 5, 6] (7개)
+</span>
+<span class="c1"># 3개로 나누기 (7 나누기 3은 딱 떨어지지 않음)
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="c1"># [array([0, 1, 2]), array([3, 4]), array([5, 6])]
+# (3개, 2개, 2개로 나뉨)
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>Tip</strong>: 실전 데이터 분석에서는 데이터 개수가 딱 떨어지지 않는 경우가 많으므로 <code class="language-plaintext highlighter-rouge">split</code>보다 <code class="language-plaintext highlighter-rouge">array_split</code>이 더 안전할 수 있습니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="675-깊이로-자르기-npdsplit">6.7.5. 깊이로 자르기: <code class="language-plaintext highlighter-rouge">np.dsplit()</code></h2>
+
+<p><strong>“Depth Split”</strong> (깊이 분할)</p>
+
+<p>3차원 배열(큐브)에서 <strong>깊이(Depth, axis=2)</strong> 방향으로 자릅니다. 마치 식빵을 슬라이스 치는 것과 같습니다.
+이미지 처리(RGB 채널 분리) 등에서 사용됩니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-4-컬러-이미지-채널-분리">[그림 4] 컬러 이미지 채널 분리</h3>
+<p>(높이, 너비, 채널) 형태의 이미지에서 R, G, B 채널을 각각 분리합니다.</p>
+
+<pre><code class="language-mermaid">graph TD
+    subgraph Cube ["3차원 이미지 (RGB)"]
+        RGB[R+G+B 겹침]
+    end
+    
+    subgraph Channels ["채널 분리"]
+        R[Red 채널]
+        G[Green 채널]
+        B[Blue 채널]
+    end
+    
+    Cube --&gt;|dsplit| R
+    Cube --&gt;|dsplit| G
+    Cube --&gt;|dsplit| B
+    
+    style Cube fill:#eee,stroke:#333
+    style R fill:#fcc,stroke:#333
+    style G fill:#cfc,stroke:#333
+    style B fill:#ccf,stroke:#333
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2x2 크기의 3채널(RGB) 이미지라고 가정
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># 채널별로 쪼개기
+</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dsplit</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Red shape:</span><span class="sh">"</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># (2, 2, 1)
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: <code class="language-plaintext highlighter-rouge">np.split</code>은 공평하게 나누지만, 개수가 안 맞으면 에러가 납니다.</li>
+  <li><strong>[핵심 2]</strong>: <code class="language-plaintext highlighter-rouge">np.array_split</code>은 개수가 안 맞아도 알아서 <strong>유연하게(자투리 처리)</strong> 나눠줍니다.</li>
+  <li><strong>[핵심 3]</strong>: 방향에 따라 <code class="language-plaintext highlighter-rouge">vsplit</code>(수직), <code class="language-plaintext highlighter-rouge">hsplit</code>(수평), <code class="language-plaintext highlighter-rouge">dsplit</code>(깊이/3차원)을 골라 쓰면 됩니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

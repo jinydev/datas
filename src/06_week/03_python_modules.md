@@ -1,3 +1,8 @@
+---
+layout: default
+title: "6주차 3강: 모듈과 라이브러리 (Modules & Libraries)"
+---
+
 # 6주차 3강: 모듈과 라이브러리 (Modules & Libraries)
 
 > **학습목표**: 다른 사람이 만든 코드를 가져다 쓰는 **모듈(Module)**과 **라이브러리(Library)**의 개념을 이해하고, `import` 구문을 능숙하게 사용합니다.

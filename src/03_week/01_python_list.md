@@ -1,3 +1,8 @@
+---
+layout: default
+title: "3주차 1강: 파이썬 리스트 심화 (Python List Deep Dive)"
+---
+
 # 3주차 1강: 파이썬 리스트 심화 (Python List Deep Dive)
 
 > **학습목표**: 파이썬 리스트의 메모리 구조를 이해하고, 효율적인 데이터 처리를 위한 고급 기능(List Comprehension, zip, enumerate)을 마스터합니다.

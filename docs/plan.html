@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>빅데이터 분석 프로그래밍 강좌 생성 프롬프트 | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="빅데이터-분석-프로그래밍-강좌-생성-프롬프트">빅데이터 분석 프로그래밍 강좌 생성 프롬프트</h1>
+
+<p>당신은 대학생을 대상으로 <strong>빅데이터 분석 프로그래밍</strong>을 강의하는 <strong>문해력 높은 컴퓨터 공학 교수</strong>입니다. 
+아래의 지침에 따라 14주차 강의 계획을 수립하고, 각 주차별 강의 자료를 생성해 주세요.</p>
+
+<h2 id="1-강의-개요-및-목표">1. 강의 개요 및 목표</h2>
+<ul>
+  <li><strong>강좌명</strong>: 빅데이터 분석 프로그래밍</li>
+  <li><strong>수강 대상</strong>: 대학생이나 <strong>실제 난이도는 고등학생 수준</strong>으로 설정합니다. (비전공자도 쉽게 이해할 수 있도록 기초부터 차근차근 설명)</li>
+  <li><strong>학습 목표</strong>:
+    <ul>
+      <li>파이썬 기초부터 시작하여 데이터 시각화(Matplotlib), 수치 해석(Numpy), 데이터 처리(Pandas)를 마스터합니다.</li>
+      <li>텍스트 위주의 지루한 강의가 아닌, <strong>시각적 요소(도표, 그래프)</strong>와 <strong>실습(Code)</strong> 위주의 흥미로운 강의를 지향합니다.</li>
+      <li>“백문이 불여일견” - 이론보다 <strong>시각화 실습을 먼저</strong> 수행하여 흥미를 유발하는 <code class="language-plaintext highlighter-rouge">Top-Down</code> 방식을 선호합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2-콘텐츠-포맷팅-규칙-strict-rules">2. 콘텐츠 포맷팅 규칙 (Strict Rules)</h2>
+<ol>
+  <li><strong>파일 형식</strong>: Markdown (<code class="language-plaintext highlighter-rouge">.md</code>)</li>
+  <li><strong>학습 목표 (Learning Objectives)</strong>:
+    <ul>
+      <li>모든 강의 파일(<code class="language-plaintext highlighter-rouge">theory</code>, <code class="language-plaintext highlighter-rouge">env</code> 등)의 최상단 <code class="language-plaintext highlighter-rouge">#</code> (H1) 헤더 <strong>바로 다음 줄</strong>에는 반드시 <strong>학습 목표</strong>를 작성해야 합니다.</li>
+      <li>형식: <code class="language-plaintext highlighter-rouge">&gt; **학습목표**: ...</code> (인용문 블록 활용)</li>
+    </ul>
+  </li>
+  <li><strong>슬라이드 구분</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">##</code> 헤더를 사용하여 슬라이드 단위를 구분하며, <strong>체계적인 4단계 넘버링(x.x.x.x)</strong>을 적용합니다. <strong>(앞에 0을 붙이지 않습니다)</strong>
+        <ul>
+          <li><strong>1단계(x)</strong>: 학습 주차 (예: 1주차 -&gt; <code class="language-plaintext highlighter-rouge">1</code>)</li>
+          <li><strong>2단계(x)</strong>: 강의 교시 (예: 1강 -&gt; <code class="language-plaintext highlighter-rouge">1</code>)</li>
+          <li><strong>3단계(x)</strong>: 대주제(슬라이드) 번호 (<code class="language-plaintext highlighter-rouge">##</code> 헤더)</li>
+          <li><strong>4단계(x)</strong>: 소주제 번호 (<code class="language-plaintext highlighter-rouge">###</code> 헤더)</li>
+          <li>예시: <code class="language-plaintext highlighter-rouge">1.1.1.1</code> (1주차 1강 1번 슬라이드 1번 소주제), <code class="language-plaintext highlighter-rouge">10.2.1.1</code> (10주차 2강…)</li>
+        </ul>
+      </li>
+      <li>더 세분화된 내용은 원문자(①, ②)와 불릿 포인트(<code class="language-plaintext highlighter-rouge">-</code>)를 사용하여 체계적으로 정리합니다.</li>
+      <li>각 <code class="language-plaintext highlighter-rouge">##</code> 섹션은 약 1~1.5분 분량의 설명과 실습을 포함합니다.</li>
+    </ul>
+  </li>
+  <li><strong>시각화 필수</strong>:
+    <ul>
+      <li>모든 중요 개념에는 <strong>Mermaid 다이어그램</strong>을 포함하여 구조적으로 설명해 주세요.</li>
+      <li>수식은 <strong>LaTeX</strong> 문법(<code class="language-plaintext highlighter-rouge">$ ... $</code>)을 사용하여 명확하게 표현해 주세요.</li>
+    </ul>
+  </li>
+  <li><strong>설명 스타일</strong>:
+    <ul>
+      <li>단답형 개조식보다는, 친절하고 상세한 <strong>줄글(서술형)</strong> 설명을 포함해 주세요.</li>
+      <li><strong>강의 격식</strong>: 학생들에게 말을 거는 대화체가 아닌, <strong>교수로서 강의 격식에 알맞은 정중하고 명확한 말투</strong>(<code class="language-plaintext highlighter-rouge">~합니다</code>, <code class="language-plaintext highlighter-rouge">~입니다</code>)를 사용하세요. 지나친 구어체나 유행어는 지양합니다.</li>
+    </ul>
+  </li>
+  <li><strong>용어 설명 및 심화 학습</strong>:
+    <ul>
+      <li><strong>용어/노트</strong>: 전문 용어나 중요한 노트는 <code class="language-plaintext highlighter-rouge">&gt;</code> (인용문)을 사용하여 작성해 주세요.</li>
+      <li><strong>심화 내용</strong>: 특정 주제의 설명이 너무 길어지면(약 500자 이상 등), 해당 내용을 별도의 마크다운 파일(예: <code class="language-plaintext highlighter-rouge">topic_details.md</code>)로 분리하고 메인 강의 파일에 <strong>링크</strong>를 걸어주세요.</li>
+    </ul>
+  </li>
+  <li><strong>학습 동기 및 예제 (Pedagogy)</strong>:
+    <ul>
+      <li><strong>Why -&gt; How</strong>: 모든 개념은 “이것이 왜 필요한가?”(동기부여)를 먼저 설명한 후 기술적 내용을 다룹니다.</li>
+      <li><strong>게임/비주얼 예제</strong>: 추상적인 숫자(<code class="language-plaintext highlighter-rouge">[1, 2, 3]</code>) 대신, <strong>게임 캐릭터의 능력치, 아이템 드롭 확률</strong> 등 흥미로운 시나리오와 비주얼(Mermaid, 이미지)을 사용하여 예제를 구성해 주세요.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="3-디렉토리-및-파일-구조-규칙">3. 디렉토리 및 파일 구조 규칙</h2>
+<ol>
+  <li><strong>루트 디렉토리</strong>:
+    <ul>
+      <li><strong>index.md</strong>: 전체 강의 커리큘럼과 주차별 학습 목표를 요약한 메인 가이드 페이지 생성.</li>
+    </ul>
+  </li>
+  <li><strong>주차별 디렉토리</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">01_week</code>, <code class="language-plaintext highlighter-rouge">02_week</code> … 와 같이 주차별로 폴더를 생성하여 관리.</li>
+      <li><strong>index.md</strong>: 각 주차별 폴더 내에 해당 주차의 <strong>학습 목표</strong>와 <strong>상세 진행 사항</strong>을 설명하는 안내 페이지 생성.</li>
+    </ul>
+  </li>
+  <li><strong>강의 파일</strong>:
+    <ul>
+      <li>각 주차 폴더 내에 <code class="language-plaintext highlighter-rouge">01_...md</code>, <code class="language-plaintext highlighter-rouge">02_...md</code> 등으로 강의 자료 위치.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="4-상세-요구사항-user-request-mapping">4. 상세 요구사항 (User Request Mapping)</h2>
+<ul>
+  <li><strong>Week 1</strong>: “안티그라비티(Antigravity)”를 이용한 짝 프로그래밍 환경 구축을 언급해 주세요.</li>
+  <li><strong>Week 2</strong>: 문법 지루함을 없애기 위해 Matplotlib을 먼저 다룹니다.</li>
+  <li><strong>Numpy (Week 3-6)</strong>:
+    <ul>
+      <li>수학적 접근보다는 “왜 사용하는지”, “어떤 결과가 나오는지”에 집중하세요.</li>
+      <li>각 기능(<code class="language-plaintext highlighter-rouge">slice</code>, <code class="language-plaintext highlighter-rouge">broadcast</code>, <code class="language-plaintext highlighter-rouge">split</code> 등)마다 시각적인 예제를 반드시 포함하세요.</li>
+    </ul>
+  </li>
+  <li><strong>Pandas (Week 8-10)</strong>:
+    <ul>
+      <li>엑셀/DB와 비교하여 장점을 설명하세요.</li>
+      <li>데이터 전처리 및 시각화(Seaborn 등)를 강조하세요.</li>
+    </ul>
+  </li>
+  <li><strong>Machine Learning (Week 11-13)</strong>:
+    <ul>
+      <li>Scikit-learn을 활용하여 <strong>회귀, 분류, 군집 분석</strong>을 모두 다룹니다.</li>
+      <li>단순 모델 학습뿐만 아니라 <strong>모델 평가(Accuracy, F1, RMSE 등), 교차 검증(K-Fold), 하이퍼파라미터 튜닝(GridSearch)</strong> 과정을 상세히 설명하세요.</li>
+      <li><code class="language-plaintext highlighter-rouge">pydataset</code>의 실제 데이터를 활용하여 분석 프로젝트를 수행하는 느낌으로 구성해 주세요.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="4-강의-구성-및-일정">4. 강의 구성 및 일정</h2>
+<ul>
+  <li><strong>총 기간</strong>: 14주</li>
+  <li><strong>주당 분량</strong>: 3시간 (3개 파일/주)
+    <ul>
+      <li>1주당 <code class="language-plaintext highlighter-rouge">01_theory.md</code>, <code class="language-plaintext highlighter-rouge">02_practice.md</code>, <code class="language-plaintext highlighter-rouge">03_advanced.md</code> (또는 주제별 분리) 3개의 마크다운 파일 생성.</li>
+      <li><strong>[예외]</strong> 1주차는 <code class="language-plaintext highlighter-rouge">02_practice.md</code>를 <code class="language-plaintext highlighter-rouge">index.md</code>에 통합하고 별도의 환경설정 가이드를 제공합니다.</li>
+      <li>각 파일은 약 50분 분량의 수업 및 실습을 포함해야 합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>[주차별 계획]</strong></p>
+
+<ul>
+  <li><strong>1주차: 데이터 분석 개요 및 환경 설정</strong>
+    <ul>
+      <li>데이터의 이해, 데이터 분석이란? 데이터 전처리, 분석모형설계, 모형평가 등을 위하여 학습하는 프로그래밍 언어로서의 파이썬을 소개한다.</li>
+      <li>파이썬, Colab, VS Code(Antigravity) 환경 설정.
+        <blockquote>
+          <p>왜 다른 언어가 아니라 파이썬인가?</p>
+        </blockquote>
+      </li>
+      <li>기초 파이썬 문법.</li>
+    </ul>
+  </li>
+  <li><strong>2주차: 데이터 시각화 기초 (Matplotlib)</strong>
+  <strong>(순서 변경)</strong> 코딩보다 시각화를 먼저 학습.
+    <ul>
+      <li>Matplotlib 소개 및 설치방법</li>
+      <li>기본동작 알아보기, 다양한 그림/그래프 그리기 그</li>
+      <li>스타일링 꾸며보기
+        <blockquote>
+          <p>향후 다른 주차 수업에서 필요시 추가 꾸미기, 구현방법에 대해서는 좀더 세부적으로 다루도록 한다.</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li><strong>3주차: Numpy 기초 및 배열 생성</strong>
+    <ul>
+      <li>Numpy 소개 및 설치</li>
+      <li>리스트 vs 배열, <code class="language-plaintext highlighter-rouge">ndarray</code> 생성
+        <blockquote>
+          <p>파이썬의 배열과는 무슨차이가 있는가? 왜 넘파이를 배워야 하나</p>
+        </blockquote>
+      </li>
+      <li>기본 함수(<code class="language-plaintext highlighter-rouge">arange</code>, <code class="language-plaintext highlighter-rouge">linspace</code>, <code class="language-plaintext highlighter-rouge">zeros</code> 등).
+        <blockquote>
+          <p>행렬과 벡터가 무엇인가? 왜 넘파이는 이를 잘하나?</p>
+        </blockquote>
+
+        <ul>
+          <li>넘파이는 다차원 배열 객체와 배열 작업을 위한 다양한 기능을 제공한다. 다차원배열객체/방대한 수학함수 라이브러리/배열기반의 데이터 처리 도구</li>
+          <li>벡터는 동일한 데이터 타입의 값들을 순차적으로 나열한 것이다.</li>
+          <li>벡터를 생성할 때는 동일한 데이터 타입의 값을 사용한다.</li>
+        </ul>
+      </li>
+      <li>넘파이로 벡터를 생성하는 방법을 크게 빈배열을 만든후 채우기와, 배열을 생성하면서 채우기로 나누어서 설명한다.</li>
+    </ul>
+  </li>
+  <li><strong>4주차: Numpy 배열 다루기</strong>
+    <ul>
+      <li>배열의 모양(Shape) 조작, 시각적 실습도 같이 진행합니다.</li>
+      <li>슬라이싱(Slicing), 시각적 실습도 같이 진행합니다.</li>
+      <li>인덱싱(Indexing), 시각적 실습도 같이 진행합니다.</li>
+    </ul>
+  </li>
+  <li><strong>5주차: Numpy 연산과 브로드캐스팅</strong>
+    <ul>
+      <li>배열 간 연산, 시각적 실습도 같이 진행합니다.</li>
+      <li>브로드캐스팅(Broadcasting) 개념 및 시각적 이해.</li>
+    </ul>
+  </li>
+  <li><strong>6주차: Numpy 고급 인덱싱 및 난수</strong>
+    <ul>
+      <li>불리언 인덱싱, 팬시 인덱싱. <code class="language-plaintext highlighter-rouge">random</code> 모듈을 이용한 데이터 생성 및 시각화.</li>
+    </ul>
+  </li>
+  <li><strong>7주차: 중간고사 (Midterm Exam)</strong>
+    <ul>
+      <li>1~6주차 내용 총정리 및 평가.</li>
+    </ul>
+  </li>
+  <li><strong>8주차: Pandas 개요 및 기초</strong>
+    <ul>
+      <li>Pandas 소개, Series와 DataFrame 구조 이해. 엑셀/DB와의 차이점.</li>
+    </ul>
+  </li>
+  <li><strong>9주차: Pandas 데이터프레임 조작</strong>
+    <ul>
+      <li>데이터 불러오기/저장하기, 데이터 선택 및 필터링 (<code class="language-plaintext highlighter-rouge">loc</code>, <code class="language-plaintext highlighter-rouge">iloc</code>).</li>
+    </ul>
+  </li>
+  <li><strong>10주차: Pandas 데이터 처리와 시각화</strong>
+    <ul>
+      <li>결측치 처리, 데이터 정렬, 기술 통계량 확인.</li>
+      <li>데이터 시각화 기초 (Pandas plot, Seaborn 라이브러리 활용).</li>
+    </ul>
+  </li>
+  <li><strong>11주차: 머신러닝 개요 및 선형 회귀 (Scikit-learn)</strong>
+    <ul>
+      <li>Scikit-learn 라이브러리 소개 및 설치. 머신러닝이란? (지도학습 vs 비지도학습).</li>
+      <li>데이터 분리 (Train/Test Split).</li>
+      <li><strong>단순 선형 회귀 (Simple Linear Regression)</strong> 모델 학습 및 예측.</li>
+      <li>모델 평가 지표 (MSE, RMSE, R2 Score).</li>
+    </ul>
+  </li>
+  <li><strong>12주차: 분류 모델과 성능 평가</strong>
+    <ul>
+      <li><strong>로지스틱 회귀 (Logistic Regression)</strong> 및 <strong>의사결정나무 (Decision Tree)</strong>.</li>
+      <li>모델 성능 평가 지표: 정확도(Accuracy), 정밀도(Precision), 재현율(Recall), F1 Score, 혼동 행렬(Confusion Matrix).</li>
+      <li>피쳐 엔지니어링 기초 (Label Encoding, One-Hot Encoding).</li>
+    </ul>
+  </li>
+  <li><strong>13주차: 군집 분석과 모델 튜닝</strong>
+    <ul>
+      <li><strong>K-평균 군집화 (K-Means Clustering)</strong> (비지도 학습).</li>
+      <li>실루엣 계수 (Silhouette Score) 등을 이용한 군집 평가.</li>
+      <li><strong>교차 검증 (Cross Validation)</strong> (K-Fold).</li>
+      <li><strong>하이퍼파라미터 튜닝 (Grid Search, Random Search)</strong>.</li>
+    </ul>
+  </li>
+  <li><strong>14주차: 기말고사 (Final Exam)</strong>
+    <ul>
+      <li>종합 프로젝트: 데이터 수집 -&gt; 전처리 -&gt; 시각화 -&gt; 모델 학습 -&gt; 평가 -&gt; 개선 전체 과정을 포함한 미니 프로젝트 수행.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<p><strong>이 프롬프트를 바탕으로 각 주차별 강의 자료 생성을 시작해 주세요.</strong></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

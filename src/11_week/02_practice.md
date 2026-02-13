@@ -1,3 +1,8 @@
+---
+layout: default
+title: "11주차 2강: 미래를 예측해 보자 (Linear Regression)"
+---
+
 # 11주차 2강: 미래를 예측해 보자 (Linear Regression)
 
 ## 11.2.1. 데이터 분리 (Train/Test Split)

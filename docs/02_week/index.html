@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>2주차: 데이터 시각화 기초 (Matplotlib) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link active"
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link active">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="2주차-데이터-시각화-기초-matplotlib">2주차: 데이터 시각화 기초 (Matplotlib)</h1>
+
+<blockquote>
+  <p><strong>학습 목표 (Learning Objectives)</strong></p>
+  <ol>
+    <li><strong>파이썬 기초 정복</strong>: 변수, 리스트, 딕셔너리, 제어문 등 데이터 분석에 필수적인 파이썬 문법을 마스터합니다.</li>
+    <li><strong>시각화의 필요성</strong>: 데이터를 숫자로만 보지 않고, 그림으로 표현해야 하는 이유를 이해합니다.</li>
+    <li><strong>Matplotlib 기초</strong>: 파이썬의 대표적인 시각화 라이브러리인 Matplotlib의 기본 사용법을 익힙니다.</li>
+    <li><strong>그래프 그리기</strong>: 선 그래프, 막대그래프, 산점도 등 다양한 형태의 그래프를 직접 그려봅니다.</li>
+  </ol>
+</blockquote>
+
+<h2 id="강의-내용-course-content">강의 내용 (Course Content)</h2>
+
+<h3 id="01-파이썬-기초-2-python-basics-2"><a href="./01_python2.html">01. 파이썬 기초 2 (Python Basics 2)</a></h3>
+<ul>
+  <li><strong>리스트와 딕셔너리</strong>: 여러 데이터를 한 번에 다루는 법.</li>
+  <li><strong>제어문(Control Flow)</strong>: 조건문(if)과 반복문(for)으로 프로그램의 논리 만들기.</li>
+  <li><strong>실습</strong>: 간단한 텍스트 전투 시스템 만들기.</li>
+</ul>
+
+<h3 id="02-데이터-시각화란-introduction"><a href="./02_Visualization.html">02. 데이터 시각화란? (Introduction)</a></h3>
+<ul>
+  <li>왜 코딩보다 시각화를 먼저 배울까?</li>
+  <li>Matplotlib 설치 및 기본 구조 이해.</li>
+  <li><code class="language-plaintext highlighter-rouge">Figure</code>와 <code class="language-plaintext highlighter-rouge">Axes</code>의 개념 (도화지와 축).</li>
+</ul>
+
+<h3 id="03-기본-그래프-그리기-basic-plots"><a href="./03_plots.html">03. 기본 그래프 그리기 (Basic Plots)</a></h3>
+<ul>
+  <li>선 그래프 (Line Plot): 변화의 추세 확인.</li>
+  <li>막대그래프 (Bar Plot): 크기 비교.</li>
+  <li>산점도 (Scatter Plot): 데이터 간의 관계 파악.</li>
+</ul>
+
+<h3 id="04-그래프-스타일링-attributes--styling"><a href="./04_attribute.html">04. 그래프 스타일링 (Attributes &amp; Styling)</a></h3>
+<ul>
+  <li>제목, 라벨, 범례 추가하기.</li>
+  <li>선 색상, 스타일, 마커 변경하기.</li>
+  <li>게임 캐릭터 스탯 비교 시각화 실습.</li>
+</ul>
+
+<h3 id="05-산점도-scatter-plot"><a href="./05_scatter.html">05. 산점도 (Scatter Plot)</a></h3>
+<ul>
+  <li>두 변수 간의 <strong>상관관계(Correlation)</strong> 파악하기.</li>
+  <li>점의 색상과 크기(Bubble Chart) 활용하기.</li>
+</ul>
+
+<h3 id="06-막대그래프-bar-plot"><a href="./06_bar.html">06. 막대그래프 (Bar Plot)</a></h3>
+<ul>
+  <li>범주형 데이터의 <strong>비교(Comparison)</strong>.</li>
+  <li>세로형(Vertical) vs 가로형(Horizontal).</li>
+</ul>
+
+<h3 id="07-히스토그램-histogram"><a href="./07_histogram.html">07. 히스토그램 (Histogram)</a></h3>
+<ul>
+  <li>수치형 데이터의 <strong>분포(Distribution)</strong> 확인하기.</li>
+  <li>도수분포표(Frequency Table)와 구간(Bin) 설정.</li>
+</ul>
+
+<h3 id="08-피규어와-서브플롯-figure--subplots"><a href="./08_subplot.html">08. 피규어와 서브플롯 (Figure &amp; Subplots)</a></h3>
+<ul>
+  <li><strong>Figure</strong>(전체 창)와 <strong>Axes</strong>(그래프 영역)의 해부학.</li>
+  <li>여러 그래프 한 번에 그리기 (<code class="language-plaintext highlighter-rouge">subplot</code>, <code class="language-plaintext highlighter-rouge">subplots</code>, <code class="language-plaintext highlighter-rouge">add_subplot</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">tight_layout()</code>으로 예쁜 레이아웃 만들기.</li>
+</ul>
+
+<hr />
+
+<h2 id="23-정리-summary">2.3. 정리 (Summary)</h2>
+
+<p>이번 주차에는 파이썬의 핵심 문법을 다지고, 데이터 시각화의 기초를 닦았습니다.</p>
+
+<ol>
+  <li><strong>파이썬 기초 2</strong>:
+    <ul>
+      <li><strong>리스트 &amp; 딕셔너리</strong>: 데이터를 체계적으로 관리하는 법.</li>
+      <li><strong>제어문 (if, for)</strong>: 프로그램의 흐름을 조종하는 마법.</li>
+    </ul>
+  </li>
+  <li><strong>데이터 시각화 (Matplotlib)</strong>:
+    <ul>
+      <li><strong>백문이 불여일견</strong>: 데이터를 숫자가 아닌 그림으로 표현해야 하는 이유.</li>
+      <li><strong>기본 그래프</strong>: 선(Trend), 산점도(Relation), 막대(Comparison) 그래프 그리기.</li>
+      <li><strong>스타일링</strong>: 제목, 축 레이블, 색상, 한글 폰트 설정으로 완성도 높이기.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>다음 주차(<strong>Week 3</strong>)에는 데이터 분석의 필수 엔진인 <strong>Numpy</strong>를 본격적으로 다룹니다. 배열(Array)의 세계로 떠나볼까요? 🛥️</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

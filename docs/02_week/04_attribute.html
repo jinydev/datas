@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>2주차 3강: 그래프 속성과 스타일링 (Attributes & Styling) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link active">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="2주차-3강-그래프-속성과-스타일링-attributes--styling">2주차 3강: 그래프 속성과 스타일링 (Attributes &amp; Styling)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: Matplotlib의 핵심 속성(<code class="language-plaintext highlighter-rouge">Attribute</code>)들을 이해하고, 이를 조합하여 나만의 멋진 그래프를 디자인합니다.</p>
+</blockquote>
+
+<h2 id="231-주요-속성-key-attributes">2.3.1. 주요 속성 (Key Attributes)</h2>
+
+<p>그래프를 꾸미는 것은 마치 캐릭터를 커스터마이징하는 것과 같습니다. Matplotlib이 제공하는 다양한 옵션을 알아봅시다.</p>
+
+<h3 id="2311-색상-color-c">2.3.1.1. 색상 (Color, <code class="language-plaintext highlighter-rouge">c</code>)</h3>
+<p>선의 색상을 지정합니다. 색상 이름이나 HEX 코드를 사용할 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">색상 이름 (Name)</th>
+      <th style="text-align: left">설명</th>
+      <th style="text-align: left">HEX 코드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'b'</code> 또는 <code class="language-plaintext highlighter-rouge">'blue'</code></td>
+      <td style="text-align: left">파란색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#0000FF</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'g'</code> 또는 <code class="language-plaintext highlighter-rouge">'green'</code></td>
+      <td style="text-align: left">초록색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#008000</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'r'</code> 또는 <code class="language-plaintext highlighter-rouge">'red'</code></td>
+      <td style="text-align: left">빨간색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#FF0000</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'c'</code> 또는 <code class="language-plaintext highlighter-rouge">'cyan'</code></td>
+      <td style="text-align: left">청록색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#00FFFF</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'m'</code> 또는 <code class="language-plaintext highlighter-rouge">'magenta'</code></td>
+      <td style="text-align: left">자주색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#FF00FF</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'y'</code> 또는 <code class="language-plaintext highlighter-rouge">'yellow'</code></td>
+      <td style="text-align: left">노란색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#FFFF00</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'k'</code> 또는 <code class="language-plaintext highlighter-rouge">'black'</code></td>
+      <td style="text-align: left">검은색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#000000</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'w'</code> 또는 <code class="language-plaintext highlighter-rouge">'white'</code></td>
+      <td style="text-align: left">흰색</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">#FFFFFF</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2312-마커-marker-marker">2.3.1.2. 마커 (Marker, <code class="language-plaintext highlighter-rouge">marker</code>)</h3>
+<p>데이터 포인트의 위치를 표시하는 도형입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">마커</th>
+      <th style="text-align: left">설명</th>
+      <th style="text-align: left">예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'.'</code></td>
+      <td style="text-align: left">점 (Point)</td>
+      <td style="text-align: left">작은 점</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'o'</code></td>
+      <td style="text-align: left">원 (Circle)</td>
+      <td style="text-align: left">동그라미</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'v'</code></td>
+      <td style="text-align: left">역삼각형</td>
+      <td style="text-align: left">아래쪽 화살표</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'^'</code></td>
+      <td style="text-align: left">삼각형</td>
+      <td style="text-align: left">위쪽 화살표</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'s'</code></td>
+      <td style="text-align: left">사각형 (Square)</td>
+      <td style="text-align: left">네모</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'*'</code></td>
+      <td style="text-align: left">별 (Star)</td>
+      <td style="text-align: left">별 모양</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'+'</code></td>
+      <td style="text-align: left">플러스</td>
+      <td style="text-align: left">더하기 기호</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2313-선-스타일-linestyle-ls">2.3.1.3. 선 스타일 (Linestyle, <code class="language-plaintext highlighter-rouge">ls</code>)</h3>
+<p>선의 모양을 결정합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">스타일</th>
+      <th style="text-align: left">설명</th>
+      <th style="text-align: left">모양</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'-'</code></td>
+      <td style="text-align: left">실선 (Solid)</td>
+      <td style="text-align: left">──────</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'--'</code></td>
+      <td style="text-align: left">파선 (Dashed)</td>
+      <td style="text-align: left">——</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">':'</code></td>
+      <td style="text-align: left">점선 (Dotted)</td>
+      <td style="text-align: left">……</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">'-.'</code></td>
+      <td style="text-align: left">쇄선 (Dash-dot)</td>
+      <td style="text-align: left">-.-.-.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2314-기타-속성">2.3.1.4. 기타 속성</h3>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">linewidth</code> (lw)</strong>: 선의 굵기 (기본값: 1.5)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">markersize</code> (ms)</strong>: 마커의 크기</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">alpha</code></strong>: 투명도 (0.0 ~ 1.0 사이, 0은 투명, 1은 불투명)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">label</code></strong>: 범례에 표시될 이름</li>
+</ul>
+
+<hr />
+
+<h2 id="232-실습-스타일링-종합-예제">2.3.2. [실습] 스타일링 종합 예제</h2>
+
+<p>위에서 배운 속성들을 모두 사용하여 그래프를 꾸며봅시다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># 데이터 준비
+</span><span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">price</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">170</span><span class="p">]</span>
+
+<span class="c1"># 그래프 그리기 (속성 대잔치!)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">days</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> 
+         <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">green</span><span class="sh">'</span><span class="p">,</span>          <span class="c1"># 선 색상: 초록
+</span>         <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span>             <span class="c1"># 마커: 원
+</span>         <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">--</span><span class="sh">'</span><span class="p">,</span>         <span class="c1"># 선 스타일: 점선
+</span>         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>            <span class="c1"># 선 굵기: 2
+</span>         <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>          <span class="c1"># 마커 크기: 10
+</span>         <span class="n">markerfacecolor</span><span class="o">=</span><span class="sh">'</span><span class="s">yellow</span><span class="sh">'</span><span class="p">,</span> <span class="c1"># 마커 내부 색상: 노랑
+</span>         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>              <span class="c1"># 투명도: 0.8
+</span>         <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Stock Price</span><span class="sh">'</span><span class="p">)</span>    <span class="c1"># 범례 이름
+</span>
+<span class="c1"># 제목 및 축 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Styling Practice</span><span class="sh">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Day</span><span class="sh">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Price ($)</span><span class="sh">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># 그리드와 범례
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">:</span><span class="sh">'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Y축에만 점선 그리드
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="sh">'</span><span class="s">upper left</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 범례 위치 지정
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="233-도전-게임-캐릭터-스탯-비교">2.3.3. [도전] 게임 캐릭터 스탯 비교</h2>
+
+<p>두 캐릭터의 능력치를 한 그래프에 그려서 비교해 봅시다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데이터: 레벨에 따른 체력 변화
+</span><span class="n">level</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">hero_hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">240</span><span class="p">]</span>    <span class="c1"># 용사 체력
+</span><span class="n">monster_hp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">]</span>  <span class="c1"># 몬스터 체력
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># 용사: 파란색 실선, 원 마커
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">hero_hp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Hero</span><span class="sh">'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="sh">'</span><span class="s">-</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 몬스터: 빨간색 쇄선, X 마커
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">monster_hp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Monster</span><span class="sh">'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="sh">'</span><span class="s">-.</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 꾸미기
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Hero vs Monster HP Growth</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Level</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">HP</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># 그래프 저장하기 (dpi=300 고해상도)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="sh">'</span><span class="s">hero_vs_monster.png</span><span class="sh">'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>인사이트</strong>: 레벨 3부터 몬스터의 성장세가 가파릅니다. 초반 공략이 중요하겠군요!</p>
+</blockquote>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

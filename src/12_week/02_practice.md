@@ -1,3 +1,8 @@
+---
+layout: default
+title: "12주차 2강: 시험 점수가 다가 아니다 (Performance Metrics)"
+---
+
 # 12주차 2강: 시험 점수가 다가 아니다 (Performance Metrics)
 
 ## 12.2.1. 정확도(Accuracy)의 함정

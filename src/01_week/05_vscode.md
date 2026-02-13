@@ -1,3 +1,8 @@
+---
+layout: default
+title: "1주차 환경설정: VS Code 가이드"
+---
+
 # 1주차 환경설정: VS Code 가이드
 
 > **학습목표**: 로컬 데이터 분석 환경인 VS Code를 설치하고, Python 및 Jupyter 확장 프로그램을 설정하여 분석 환경을 구축합니다.

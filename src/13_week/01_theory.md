@@ -1,3 +1,8 @@
+---
+layout: default
+title: "13주차 1강: 끼리끼리 모여라 (K-Means Clustering)"
+---
+
 # 13주차 1강: 끼리끼리 모여라 (K-Means Clustering)
 
 ## 13.1.1. K-Means 원리

@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>3주차 3강: 수열 생성과 모양 변경 (Ranges & Reshape) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link active">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="3주차-3강-수열-생성과-모양-변경-ranges--reshape">3주차 3강: 수열 생성과 모양 변경 (Ranges &amp; Reshape)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: <code class="language-plaintext highlighter-rouge">arange</code>와 <code class="language-plaintext highlighter-rouge">linspace</code>로 데이터를 생성하고, <code class="language-plaintext highlighter-rouge">reshape</code>를 통해 자유자재로 모양(차원)을 바꾸는 방법을 익힙니다. 이 3가지는 데이터 분석의 가장 기초적인 “삼총사”입니다.</p>
+</blockquote>
+
+<h2 id="331-규칙적인-수열-nparange">3.3.1. 규칙적인 수열: <code class="language-plaintext highlighter-rouge">np.arange()</code></h2>
+<p><strong>“징검다리 건너기 (Step)”</strong></p>
+
+<p>시작점에서 도착점 전까지, 정해진 보폭(Step)으로 껑충껑충 뛰어갑니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="문법-nparange시작-끝-보폭">[문법] <code class="language-plaintext highlighter-rouge">np.arange(시작, 끝, 보폭)</code></h3>
+<ul>
+  <li><strong>시작 (Start)</strong>: 여기서부터 출발!</li>
+  <li><strong>끝 (Stop)</strong>: 여기까지 가는데, <strong>이 숫자는 포함하지 않아요.</strong> (도착지점 바로 앞에서 멈춤)</li>
+  <li><strong>보폭 (Step)</strong>: 몇 칸씩 건너뛸까요?</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-1-개구리-점프">[그림 1] 개구리 점프</h3>
+<p>개구리가 0번 잎에서 시작해서 10번 잎을 향해 2칸씩 뜁니다. (10번에는 도착하지 못해요!)</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Arange ["np.arange(0, 10, 2)"]
+        S0((0)) --"+2"--&gt; S2((2)) --"+2"--&gt; S4((4)) --"+2"--&gt; S6((6)) --"+2"--&gt; S8((8)) --"Stop"--&gt; S10((10))
+        style S0 fill:#cfc,stroke:#333
+        style S2 fill:#cfc,stroke:#333
+        style S4 fill:#cfc,stroke:#333
+        style S6 fill:#cfc,stroke:#333
+        style S8 fill:#cfc,stroke:#333
+        style S10 fill:#f99,stroke:#333,stroke-dasharray: 5 5
+    end
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 0부터 9까지 1씩 증가 (기본)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>        <span class="c1"># [0 1 2 3 4 5 6 7 8 9]
+</span>
+<span class="c1"># 1부터 9까지 2씩 건너뛰기
+</span><span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># [1 3 5 7 9]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="332-구간-나누기-nplinspace">3.3.2. 구간 나누기: <code class="language-plaintext highlighter-rouge">np.linspace()</code></h2>
+<p><strong>“케이크 똑같이 자르기 (Count)”</strong></p>
+
+<p>시작점과 끝점을 포함해서, 원하는 조각 개수만큼 정확하게 나눕니다.</p>
+
+<h3 id="문법-nplinspace시작-끝-개수">[문법] <code class="language-plaintext highlighter-rouge">np.linspace(시작, 끝, 개수)</code></h3>
+<ul>
+  <li><strong>시작 (Start)</strong>: 케이크 왼쪽 끝</li>
+  <li><strong>끝 (Stop)</strong>: 케이크 오른쪽 끝 (<strong>포함됩니다!</strong>)</li>
+  <li><strong>개수 (Count)</strong>: 몇 개의 점으로 나눌까요?</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-2-케이크-자르기">[그림 2] 케이크 자르기</h3>
+<p>0cm부터 10cm까지, 점 5개를 찍어서 등분합니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Linspace ["np.linspace(0, 10, 5)"]
+        P1[0.0] --- P2[2.5] --- P3[5.0] --- P4[7.5] --- P5[10.0]
+        style P1 fill:#ff9,stroke:#333
+        style P2 fill:#ff9,stroke:#333
+        style P3 fill:#ff9,stroke:#333
+        style P4 fill:#ff9,stroke:#333
+        style P5 fill:#ff9,stroke:#333
+    end
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0부터 100까지 5등분
+</span><span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1"># [  0.  25.  50.  75. 100.]
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <p><strong>비교</strong>: <code class="language-plaintext highlighter-rouge">arange</code>는 보폭(Step)을 정해주고, <code class="language-plaintext highlighter-rouge">linspace</code>는 개수(Count)를 정해줍니다. 그래프를 그릴 때는 주로 <code class="language-plaintext highlighter-rouge">linspace</code>를 사용해 X축 데이터를 부드럽게 생성합니다.</p>
+</blockquote>
+
+<h3 id="3321-시각화-사인-곡선-그리기">3.3.2.1. 시각화: 사인 곡선 그리기</h3>
+
+<p><code class="language-plaintext highlighter-rouge">linspace</code>를 이용해 수학 그래프를 아주 쉽게 그릴 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># 0부터 2pi(약 6.28)까지 100개의 점을 찍습니다.
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Sine Wave using linspace</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="333-모양-바꾸기-reshape">3.3.3. 모양 바꾸기: <code class="language-plaintext highlighter-rouge">reshape()</code></h2>
+<p><strong>“긴 찰흙 뱀을 반듯한 사각형으로 빚기”</strong></p>
+
+<p>보통 <code class="language-plaintext highlighter-rouge">arange</code>로 만든 1줄짜리 긴 배열을, 마트의 계란판처럼 행과 열이 있는 형태로 바꿀 때 사용합니다.</p>
+
+<h3 id="규칙-총-개수는-변하지-않아요">[규칙] 총 개수는 변하지 않아요!</h3>
+<p>길이가 12인 찰흙은 <code class="language-plaintext highlighter-rouge">3x4=12</code> 또는 <code class="language-plaintext highlighter-rouge">2x6=12</code>로만 만들 수 있습니다. <code class="language-plaintext highlighter-rouge">3x5=15</code>로는 못 만들어요 (찰흙이 모자라니까요!).</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그림-3-1줄-서기---2줄-서기">[그림 3] 1줄 서기 -&gt; 2줄 서기</h3>
+<p>0부터 5까지 한 줄로 서있던 숫자들이, 2줄 3칸 대형으로 다시 섭니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Original ["1차원 (Shape: 6,)"]
+        A[0] --- B[1] --- C[2] --- D[3] --- E[4] --- F[5]
+    end
+
+    subgraph Reshaped ["2차원 (Shape: 2, 3)"]
+        R1[0] --- R2[1] --- R3[2]
+        R4[3] --- R5[4] --- R6[5]
+    end
+    
+    Original ==&gt; Reshaped
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 0부터 11까지 숫자를 만듭니다 (총 12개)
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="c1"># [ 0  1  2  3  4  5  6  7  8  9 10 11]
+</span>
+<span class="c1"># 2. 3행 4열로 모양을 바꿉니다 (3 x 4 = 12 OK!)
+</span><span class="n">matrix</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<span class="c1"># [[ 0  1  2  3]
+#  [ 4  5  6  7]
+#  [ 8  9 10 11]]
+</span>
+<span class="c1"># 3. 꿀팁: -1을 쓰면 자동 계산!
+# "행은 네가 알아서 계산하고(-1), 열은 4개로 맞춰줘"
+</span><span class="n">auto_matrix</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
+<span class="c1"># 결과는 위와 똑같이 (3, 4)가 됩니다.
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>요약</strong>:</p>
+  <ol>
+    <li><code class="language-plaintext highlighter-rouge">arange</code>: <strong>몇 칸씩</strong> 갈래? (Step)</li>
+    <li><code class="language-plaintext highlighter-rouge">linspace</code>: <strong>몇 개로</strong> 나눌래? (Count)</li>
+    <li><code class="language-plaintext highlighter-rouge">reshape</code>: <strong>모양</strong>을 바꿔줘! (단, 개수는 맞아야 함)</li>
+  </ol>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: <code class="language-plaintext highlighter-rouge">arange</code>는 <strong>보폭(Step)</strong>을 지정해 수열을 만들고, <code class="language-plaintext highlighter-rouge">linspace</code>는 <strong>개수(Count)</strong>를 지정해 균등하게 나눕니다.</li>
+  <li><strong>[핵심 2]</strong>: <code class="language-plaintext highlighter-rouge">reshape</code>는 데이터의 총 개수를 유지하면서 <strong>차원과 모양</strong>을 바꿉니다.</li>
+  <li><strong>[핵심 3]</strong>: <code class="language-plaintext highlighter-rouge">-1</code>을 활용하면 나머지 차원을 자동으로 계산해주어 편리합니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

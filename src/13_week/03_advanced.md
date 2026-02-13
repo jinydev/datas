@@ -1,3 +1,8 @@
+---
+layout: default
+title: "13주차 3강: 최강의 모델 만들기 (Grid Search)"
+---
+
 # 13주차 3강: 최강의 모델 만들기 (Grid Search)
 
 ## 13.3.1. 하이퍼파라미터 튜닝

@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>2주차 2강: 기본 그래프 그리기 (Basic Plots) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link active">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="2주차-2강-기본-그래프-그리기-basic-plots">2주차 2강: 기본 그래프 그리기 (Basic Plots)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: Matplotlib을 사용하여 선 그래프, 막대그래프, 산점도 등 기본적인 시각화 차트를 그리는 코드를 실습하고 데이터 패턴을 확인합니다.</p>
+</blockquote>
+
+<h2 id="220-준비하기-preparation">2.2.0. 준비하기 (Preparation)</h2>
+
+<h3 id="2201-한글-폰트-설정-및-버전-확인">2.2.0.1. 한글 폰트 설정 및 버전 확인</h3>
+<p>그래프에 한글을 표시하기 위한 설정과 현재 설치된 Matplotlib의 버전을 확인합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib</span>
+
+<span class="c1"># 1. 버전 확인
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Matplotlib Version: </span><span class="si">{</span><span class="n">matplotlib</span><span class="p">.</span><span class="n">__version__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 2. 한글 폰트 설정 (Mac: AppleGothic, Windows: Malgun Gothic)
+# 이 코드는 그래프를 그리기 전에 한 번만 실행하면 됩니다.
+</span><span class="kn">import</span> <span class="n">platform</span>
+<span class="k">if</span> <span class="n">platform</span><span class="p">.</span><span class="nf">system</span><span class="p">()</span> <span class="o">==</span> <span class="sh">'</span><span class="s">Darwin</span><span class="sh">'</span><span class="p">:</span> <span class="c1"># Mac
+</span>    <span class="n">plt</span><span class="p">.</span><span class="nf">rc</span><span class="p">(</span><span class="sh">'</span><span class="s">font</span><span class="sh">'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="sh">'</span><span class="s">AppleGothic</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">platform</span><span class="p">.</span><span class="nf">system</span><span class="p">()</span> <span class="o">==</span> <span class="sh">'</span><span class="s">Windows</span><span class="sh">'</span><span class="p">:</span> <span class="c1"># Windows
+</span>    <span class="n">plt</span><span class="p">.</span><span class="nf">rc</span><span class="p">(</span><span class="sh">'</span><span class="s">font</span><span class="sh">'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="sh">'</span><span class="s">Malgun Gothic</span><span class="sh">'</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="sh">'</span><span class="s">axes.unicode_minus</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># 마이너스 기호 깨짐 방지
+</span></code></pre></div></div>
+
+<h2 id="221-선-그래프-line-plot-마법사의-마나-변화">2.2.1. 선 그래프 (Line Plot): 마법사의 마나 변화</h2>
+
+<blockquote>
+  <p><strong>선 그래프</strong>: 시간에 따른 <strong>변화의 추세(Trend)</strong>를 볼 때 가장 좋습니다.</p>
+</blockquote>
+
+<h3 id="2211-단계-1-간단한-선-차트-그리기">2.2.1.1. [단계 1] 간단한 선 차트 그리기</h3>
+<p>아무런 꾸밈없이 데이터만으로 그래프를 그려봅니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데이터 준비 (시간, 현재 MP)
+</span><span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 기본 그래프 그리기
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span> <span class="c1"># 새로운 도화지 생성
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mp</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="2212-단계-2-그래프-속성-변형하여-꾸미기">2.2.1.2. [단계 2] 그래프 속성 변형하여 꾸미기</h3>
+<p>다양한 속성(제목, 색상, 마커, 선 스타일)을 추가하여 정보를 명확하게 전달합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># 그래프 크기 설정 (가로 8, 세로 5)
+</span>
+<span class="c1"># 속성 추가: 색상(color), 마커(marker), 선 스타일(linestyle), 라벨(label)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">purple</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">--</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Mana Point</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># 제목 및 축 레이블 설정 (fontsize로 글자 크기 조절)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Time vs Mana (Battle)</span><span class="sh">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Time (sec)</span><span class="sh">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Mana Point</span><span class="sh">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>  <span class="c1"># 격자 표시
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">()</span>    <span class="c1"># 범례 표시
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>해석</strong>: 보라색 점선으로 표현하니 마법의 신비로움(?)이 더 잘 느껴지나요? 시간이 갈수록 MP가 0을 향해 일정하게 감소하는 것을 볼 수 있습니다.</li>
+</ul>
+
+<h2 id="222-막대그래프-bar-plot-직업별-공격력-비교">2.2.2. 막대그래프 (Bar Plot): 직업별 공격력 비교</h2>
+
+<blockquote>
+  <p><strong>막대그래프</strong>: 여러 그룹 간의 <strong>크기 비교(Comparison)</strong>에 적합합니다.</p>
+</blockquote>
+
+<h3 id="2221-시나리오-전사-마법사-도적의-공격력-비교">2.2.2.1. 시나리오: 전사, 마법사, 도적의 공격력 비교</h3>
+<p>우리 파티원들의 공격력을 비교해 봅시다. 누가 딜러인지 확인해 볼까요?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데이터 준비
+</span><span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">Warrior</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Mage</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Rogue</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">damage</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">120</span><span class="p">]</span>
+
+<span class="c1"># 그래프 그리기
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">bar</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">damage</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>해석</strong>: Mage(마법사)의 공격력이 가장 높고, Rogue(도적)가 가장 낮음을 바로 알 수 있습니다.</li>
+</ul>
+
+<h2 id="223-산점도-scatter-plot-명중률과-데미지의-관계">2.2.3. 산점도 (Scatter Plot): 명중률과 데미지의 관계</h2>
+
+<blockquote>
+  <p><strong>산점도</strong>: 두 변수 간의 <strong>상관관계(Correlation)</strong>를 파악할 때 유용합니다. 점을 흩뿌려 놓은 모양입니다.</p>
+</blockquote>
+
+<h3 id="2231-시나리오-무기의-무게와-공격력의-관계">2.2.3.1. 시나리오: 무기의 무게와 공격력의 관계</h3>
+<p>무기가 무거우면 공격력이 높을까요? 10개의 무기를 조사해 봤습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데이터 준비
+</span><span class="n">weight</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>  <span class="c1"># 무게
+</span><span class="n">power</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">105</span><span class="p">]</span>  <span class="c1"># 공격력
+</span>
+<span class="sb">``</span><span class="err">`</span><span class="n">python</span>
+<span class="c1"># 그래프 크기 설정 (화면 크기 조절)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># 가로 10인치, 세로 6인치
+</span>
+<span class="c1"># 산점도 그리기 (alpha: 투명도 0~1)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Weapon Weight vs Power</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Weight (kg)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Power</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>Tip</strong>: <code class="language-plaintext highlighter-rouge">alpha</code> 값을 낮추면 점이 겹쳐도 밀도를 파악하기 좋습니다. <code class="language-plaintext highlighter-rouge">figsize</code>는 그래프의 전체 크기를 조절합니다.</p>
+  </li>
+  <li>
+    <p><strong>해석</strong>: 점들이 오른쪽 위로 올라가는 모양입니다. 즉, <strong>“무게가 무거울수록 공격력도 강해진다”</strong>는 양의 상관관계를 발견했습니다!</p>
+  </li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

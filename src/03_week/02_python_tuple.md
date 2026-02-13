@@ -1,3 +1,8 @@
+---
+layout: default
+title: "3주차 2강: 파이썬 튜플 심화 (Python Tuple Deep Dive)"
+---
+
 # 3주차 2강: 파이썬 튜플 심화 (Python Tuple Deep Dive)
 
 > **학습목표**: 튜플의 불변성(Immutability)이 왜 중요한지 이해하고, 패킹과 언패킹을 활용하여 코드를 간결하게 작성하는 방법을 배웁니다.

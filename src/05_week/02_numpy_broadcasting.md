@@ -1,3 +1,8 @@
+---
+layout: default
+title: "5주차 2강: 브로드캐스팅의 마법 (Broadcasting)"
+---
+
 # 5주차 2강: 브로드캐스팅의 마법 (Broadcasting)
 
 > **학습목표**: 크기가 다른 배열끼리 연산할 때, Numpy가 알아서 **형태를 맞춰주는(Shape Matching)** 브로드캐스팅의 원리를 시각적으로 이해합니다.

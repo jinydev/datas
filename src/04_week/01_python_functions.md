@@ -1,3 +1,8 @@
+---
+layout: default
+title: "5주차 1강: 파이썬 함수 (Python Functions)"
+---
+
 # 5주차 1강: 파이썬 함수 (Python Functions)
 
 > **학습 목표**

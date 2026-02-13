@@ -1,3 +1,8 @@
+---
+layout: default
+title: "3주차 1강: Numpy란 무엇인가? (Introduction)"
+---
+
 # 3주차 1강: Numpy란 무엇인가? (Introduction)
 
 > **학습목표**: 대용량 데이터 처리를 위한 Numpy의 필요성을 이해하고, 리스트와 배열의 차이점 및 벡터/행렬의 개념을 시각적으로 학습합니다.

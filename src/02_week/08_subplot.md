@@ -1,3 +1,8 @@
+---
+layout: default
+title: "2주차 7강: 피규어와 서브플롯 (Figure & Subplots)"
+---
+
 # 2주차 7강: 피규어와 서브플롯 (Figure & Subplots)
 
 > **학습목표**: Matplotlib의 도화지(`Figure`)와 그래프 영역(`Axes`)을 이해하고, 여러 개의 그래프를 한 화면에 배치(`Subplot`)하는 다양한 방법을 익힙니다.

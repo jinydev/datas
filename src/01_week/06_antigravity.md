@@ -1,4 +1,9 @@
-[🏠 전체 강의 목록](../index.md) | [🗓️ 1주차 강의 목록](./index.md)
+---
+layout: default
+title: "1주차 환경설정: Vibe Coding & Antigravity"
+---
+
+[🏠 전체 강의 목록](../index.html) | [🗓️ 1주차 강의 목록](./index.html)
 
 ---
 

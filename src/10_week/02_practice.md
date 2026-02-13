@@ -1,3 +1,8 @@
+---
+layout: default
+title: "10주차 2강: 줄 세우기 (Sorting & Stats)"
+---
+
 # 10주차 2강: 줄 세우기 (Sorting & Stats)
 
 ## 10.2.1. 데이터 정렬하기 (`sort_values`)

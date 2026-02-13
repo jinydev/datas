@@ -1,3 +1,8 @@
+---
+layout: default
+title: "12주차 1강: 이메일이 스팸인가요? (Classification Models)"
+---
+
 # 12주차 1강: 이메일이 스팸인가요? (Classification Models)
 
 ## 12.1.1. 로지스틱 회귀 (Logistic Regression)

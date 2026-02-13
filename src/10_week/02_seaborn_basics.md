@@ -1,3 +1,8 @@
+---
+layout: default
+title: "10주차 2강: 시본 기초 및 관계 시각화 (Seaborn Basics)"
+---
+
 # 10주차 2강: 시본 기초 및 관계 시각화 (Seaborn Basics)
 
 > **학습목표**: Matplotlib보다 더 예쁘고 강력한 **Seaborn** 라이브러리의 기초를 다지고, 두 변수 간의 관계(Relational Plot)를 그리는 법을 배웁니다.

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "9주차 3강: 정밀 타격 loc와 iloc (Indexing)"
+---
+
 # 9주차 3강: 정밀 타격 loc와 iloc (Indexing)
 
 판다스에서 가장 헷갈리는 것이 `loc`와 `iloc`입니다. 이 둘의 차이만 알면 인덱싱은 끝입니다.

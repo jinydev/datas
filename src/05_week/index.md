@@ -1,3 +1,8 @@
+---
+layout: default
+title: "5주차: Numpy 연산과 논리 (Operations & Logic)"
+---
+
 # 5주차: Numpy 연산과 논리 (Operations & Logic)
 
 ## 학습 목표 (Learning Objectives)
@@ -9,23 +14,23 @@
 
 ## 강의 내용 (Course Content)
 
-### [01. 배열끼리의 연산 (Element-wise)](./01_numpy_operation.md)
+### [01. 배열끼리의 연산 (Element-wise)](./01_numpy_operation.html)
 - 사칙연산(`+`, `-`, `*`, `/`).
 - 반복문보다 빠른 이유 (벡터화).
 
-### [02. 브로드캐스팅 (Broadcasting)](./02_numpy_broadcasting.md)
+### [02. 브로드캐스팅 (Broadcasting)](./02_numpy_broadcasting.html)
 - 형상이 다른 배열 간의 연산 규칙.
 - 자동 확장(Stretch) 원리.
 
-### [03. 데이터 요약하기 (Aggregation)](./03_numpy_aggregation.md)
+### [03. 데이터 요약하기 (Aggregation)](./03_numpy_aggregation.html)
 - `sum`, `mean`, `max`, `min`.
 - 축(Axis) 기준 집계.
 
-### [04. 조건으로 검색하기 (Boolean Indexing)](./04_numpy_boolean.md)
+### [04. 조건으로 검색하기 (Boolean Indexing)](./04_numpy_boolean.html)
 - 조건문(`arr > 50`)을 마스크로 활용하기.
 - 필터링(Filtering)의 핵심 원리.
 
-### [05. 원하는 것만 쏙쏙 (Fancy Indexing)](./05_numpy_fancy.md)
+### [05. 원하는 것만 쏙쏙 (Fancy Indexing)](./05_numpy_fancy.html)
 - 인덱스 리스트를 활용한 비연속적 선택.
 - 데이터 재정렬(Reordering).
 

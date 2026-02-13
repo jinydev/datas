@@ -1,3 +1,8 @@
+---
+layout: default
+title: "1주차 환경설정: Google Colab 가이드"
+---
+
 # 1주차 환경설정: Google Colab 가이드
 
 > **학습목표**: 클라우드 기반 분석 환경인 Google Colab의 특징을 이해하고, 기본적인 사용법과 데이터 연동 방법을 익힙니다.

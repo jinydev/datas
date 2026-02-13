@@ -1,3 +1,8 @@
+---
+layout: default
+title: "12주차: 분류 모델과 성능 평가"
+---
+
 # 12주차: 분류 모델과 성능 평가
 
 ## 학습 목표 (Learning Objectives)
@@ -7,15 +12,15 @@
 
 ## 강의 내용 (Course Content)
 
-### [01. 이메일이 스팸인가요? (Classification Models)](./01_theory.md)
+### [01. 이메일이 스팸인가요? (Classification Models)](./01_theory.html)
 - **로지스틱 회귀 (Logistic Regression)**: 이름은 회귀지만 사실은 분류기입니다. (0과 1 사이의 확률).
 - **의사결정나무 (Decision Tree)**: 스무고개 하듯이 질문을 던져 분류합니다.
 
-### [02. 시험 점수가 다가 아니다 (Performance Metrics)](./02_practice.md)
+### [02. 시험 점수가 다가 아니다 (Performance Metrics)](./02_practice.html)
 - 정확도(Accuracy)의 함정: 찍어도 90점을 받는 시험이 있다면?
 - 혼동 행렬(Confusion Matrix) 이해하기.
 - 정밀도(Precision), 재현율(Recall), F1-Score.
 
-### [03. 문자를 숫자로 (Feature Engineering)](./03_advanced.md)
+### [03. 문자를 숫자로 (Feature Engineering)](./03_advanced.html)
 - **Label Encoding**: 일렬로 번호 매기기 (S=0, M=1, L=2).
 - **One-Hot Encoding**: 오직 하나만 1로 만들기 (Apple=[1,0,0]).

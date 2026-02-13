@@ -1,3 +1,8 @@
+---
+layout: default
+title: "8주차 5강: 데이터프레임 심화 (Advanced DataFrame)"
+---
+
 # 8주차 5강: 데이터프레임 심화 (Advanced DataFrame)
 
 > **학습목표**: 데이터프레임을 내 마음대로 정렬하고, 수정하고, 요약하는 고급 기술을 익히고 시각화까지 연결해 봅니다.

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "1주차 2강: 파이썬 기초 1 (Python Basics 1)"
+---
+
 # 1주차 2강: 파이썬 기초 1 (Python Basics 1)
 
 > **학습 목표**

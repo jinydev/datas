@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>2주차 1강: 데이터 시각화란? (Introduction) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link active">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link ">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="2주차-1강-데이터-시각화란-introduction">2주차 1강: 데이터 시각화란? (Introduction)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 데이터 시각화의 중요성을 이해하고(앤스콤의 4분할), 파이썬의 대표적인 시각화 라이브러리인 Matplotlib의 기본 구조(Figure, Axes)를 익힙니다.</p>
+</blockquote>
+
+<h2 id="211-왜-시각화를-먼저-배울까요-why-visualization-first">2.1.1. 왜 시각화를 먼저 배울까요? (Why Visualization First?)</h2>
+
+<blockquote>
+  <p><strong>데이터 시각화(Data Visualization)</strong>: 데이터의 숨겨진 패턴과 이야기를 찾아내는 <strong>탐정의 돋보기</strong>입니다.</p>
+</blockquote>
+
+<p>보통 프로그래밍 수업은 지루한 문법부터 시작합니다. 하지만 우리는 반대로 합니다. <strong>눈에 보이는 결과물</strong>을 먼저 만들어보면 흥미가 생기고, 더 복잡한 코드도 배우고 싶어지기 때문입니다.</p>
+
+<h3 id="2111-숫자-vs-그림-numbers-vs-pictures">2.1.1.1. 숫자 vs 그림 (Numbers vs Pictures)</h3>
+<p>다음 두 가지 정보를 비교해 보세요.</p>
+
+<p><strong>[정보 A: 숫자]</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</code></pre></div></div>
+<p>그냥 숫자들이 커지는구나… 정도만 알 수 있습니다.</p>
+
+<p><strong>[정보 B: 그래프]</strong>
+(우상향하는 화살표나 그래프 이미지를 상상해 보세요 📈)
+한눈에 “아! 성장이 가파르게 이루어지고 있구나!”라고 직관적으로 느낄 수 있습니다.</p>
+
+<h3 id="2112-앤스콤의-4분할-anscombes-quartet">2.1.1.2. 앤스콤의 4분할 (Anscombe’s Quartet)</h3>
+<p>유명한 예시로 ‘앤스콤의 4분할’이 있습니다. 평균, 분산 등 통계 수치는 모두 같지만, 그래프를 그려보면 전혀 다른 모양을 가진 4개의 데이터셋입니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    A[데이터셋 1, 2, 3, 4] --&gt; B{통계 분석}
+    B --&gt; C[평균 같음&lt;br&gt;분산 같음&lt;br&gt;상관계수 같음]
+    C -- "숫자만 보면?" --&gt; D[똑같은 데이터네? (오해)]
+    
+    A --&gt; E{시각화}
+    E --&gt; F[모양 1: 선형&lt;br&gt;모양 2: 곡선&lt;br&gt;모양 3: 이상치&lt;br&gt;모양 4: 수직선]
+    F -- "그려 보면?" --&gt; G[전혀 다르네! (진실)]
+    
+    style D fill:#ffcccc,stroke:#333
+    style G fill:#ccffcc,stroke:#333
+</code></pre>
+
+<p><strong>즉, 숫자는 거짓말을 할 수 있지만 그리면 진실이 드러납니다.</strong></p>
+
+<hr />
+
+<h2 id="212-matplotlib-소개-및-다양한-플롯-introduction--plot-types">2.1.2. Matplotlib 소개 및 다양한 플롯 (Introduction &amp; Plot Types)</h2>
+
+<h3 id="2121-matplotlib란">2.1.2.1. Matplotlib란?</h3>
+<blockquote>
+  <p><strong>“Matplotlib는 파이썬에서 정적, 애니메이션, 대화형 시각화를 생성하는 포괄적인 라이브러리입니다.”</strong>
+(Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.)</p>
+</blockquote>
+
+<p>데이터 분석가들이 가장 먼저 배우는 시각화 도구로, 마치 <strong>디지털 도화지와 물감</strong>과 같습니다.</p>
+
+<h3 id="2122-다양한-플롯-유형-plot-types">2.1.2.2. 다양한 플롯 유형 (Plot Types)</h3>
+<p>데이터의 성격에 따라 적절한 그래프를 선택해야 합니다.</p>
+
+<pre><code class="language-mermaid">mindmap
+  root((데이터 시각화&lt;br&gt;선택 가이드))
+    비교(Comparison)
+      막대그래프(Bar)
+      라인차트(Line) - 추세
+    관계(Relationship)
+      산점도(Scatter)
+      히트맵(Heatmap)
+    분포(Distribution)
+      히스토그램(Histogram)
+      박스플롯(Boxplot)
+    구성(Composition)
+      파이차트(Pie)
+      누적막대(Stacked Bar)
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">플롯 유형 (Plot Type)</th>
+      <th style="text-align: left">설명 (Description)</th>
+      <th style="text-align: left">용도 (Usage)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>선 플롯 (Line Plot)</strong></td>
+      <td style="text-align: left">데이터 포인트들을 선으로 연결한 그래프</td>
+      <td style="text-align: left">📈 시계열 데이터, 추세 변화 확인</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>산점도 (Scatter Plot)</strong></td>
+      <td style="text-align: left">두 변수 간의 관계를 점으로 표현</td>
+      <td style="text-align: left">🌌 상관관계 파악 (예: 키와 몸무게)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>막대그래프 (Bar Chart)</strong></td>
+      <td style="text-align: left">범주별 데이터의 크기를 막대로 표현</td>
+      <td style="text-align: left">📊 데이터 비교 (예: 반별 성적)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>히스토그램 (Histogram)</strong></td>
+      <td style="text-align: left">데이터의 <strong>분포(Distribution)</strong>를 표현</td>
+      <td style="text-align: left">⛰️ 데이터가 몰려있는 구간 확인</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>파이 차트 (Pie Chart)</strong></td>
+      <td style="text-align: left">전체 데이터 중 각 부분의 <strong>비율(Proportion)</strong> 표현</td>
+      <td style="text-align: left">🥧 점유율 확인 (예: 선거 득표율)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>등고선 플롯 (Contour Plot)</strong></td>
+      <td style="text-align: left">3차원 데이터를 2차원 평면에 등고선으로 표현</td>
+      <td style="text-align: left">🗺️ 지형, 높이, 밀도 표현</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2123-라이브러리-설치-및-불러오기">2.1.2.3. 라이브러리 설치 및 불러오기</h3>
+<p>Colab에는 이미 설치되어 있지만, 로컬 환경(VS Code)에서는 설치가 필요합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>matplotlib
+</code></pre></div></div>
+
+<p>보통 <code class="language-plaintext highlighter-rouge">plt</code>라는 별명(alias)으로 줄여서 부릅니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="213-matplotlib의-기본-구조-anatomy-of-a-plot">2.1.3. Matplotlib의 기본 구조 (Anatomy of a Plot)</h2>
+
+<p>그림을 그리기 위해 도구의 명칭을 정확히 알아야 합니다.</p>
+
+<pre><code class="language-mermaid">classDiagram
+    class Figure {
+        전체 도화지
+        (Title, Legends)
+    }
+    class Axes {
+        실제 그래프 영역
+        (Plotting Area)
+    }
+    class Axis {
+        X축, Y축
+        (Ruler)
+    }
+    
+    Figure *-- Axes : 포함 (1개 이상)
+    Axes *-- Axis : 포함 (X, Y)
+    
+    note for Figure "가장 큰 틀\n(Window)"
+    note for Axes "서브플롯\n(Subplot)"
+</code></pre>
+
+<ul>
+  <li><strong>Figure (그림)</strong>: 전체 도화지입니다. 그래프가 그려지는 가장 큰 틀입니다.</li>
+  <li><strong>Axes (축)</strong>: 실제 그래프가 그려지는 영역입니다. 하나의 Figure 안에 여러 개의 Axes(서브플롯)가 들어갈 수 있습니다.</li>
+  <li><strong>Axis (축 눈금)</strong>: X축(X-Axis)과 Y축(Y-Axis)입니다.</li>
+</ul>
+
+<p>다음 시간부터 이 도구들을 이용해 본격적으로 그림을 그려보겠습니다. 🎨</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "14주차 3강: 정답 및 해설 (Solutions)"
+---
+
 # 14주차 3강: 정답 및 해설 (Solutions)
 
 ## 14.3.1. 문제 1. Pandas 기초

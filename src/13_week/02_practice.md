@@ -1,3 +1,8 @@
+---
+layout: default
+title: "13주차 2강: 모의고사는 여러 번 (Cross Validation)"
+---
+
 # 13주차 2강: 모의고사는 여러 번 (Cross Validation)
 
 ## 13.2.1. K-Fold 교차 검증

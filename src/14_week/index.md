@@ -1,3 +1,8 @@
+---
+layout: default
+title: "14주차: 기말고사 (Final Exam)"
+---
+
 # 14주차: 기말고사 (Final Exam)
 
 ## 안내 사항 (Introduction)
@@ -6,13 +11,13 @@
 
 ## 강의 내용 (Course Content)
 
-### [01. 후반기 총정리 (Review)](./01_theory.md)
+### [01. 후반기 총정리 (Review)](./01_theory.html)
 - Week 8~10: Pandas 데이터 분석 및 전처리.
 - Week 11~13: 머신러닝 (회귀, 분류, 군집화) 및 튜닝.
 
-### [02. 최종 실전 모의고사 (Final Exam)](./02_practice.md)
+### [02. 최종 실전 모의고사 (Final Exam)](./02_practice.html)
 - 실전 데이터 분석 문제 (타이타닉 생존자 예측 등).
 - 데이터 로드부터 학습, 평가까지 End-to-End 구현.
 
-### [03. 정답 및 해설 (Solutions)](./03_advanced.md)
+### [03. 정답 및 해설 (Solutions)](./03_advanced.html)
 - 상세 풀이 및 모범 답안 코드.

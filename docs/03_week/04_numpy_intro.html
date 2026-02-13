@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- Libs CSS -->
+    <link href="/assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="/assets/css/geeks-QcmHcVVb.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <title>3주차 1강: Numpy란 무엇인가? (Introduction) | 빅데이터 분석 (Big Data Analysis)</title>
+</head>
+
+<body class="bg-white">
+    <!-- Main wrapper -->
+    <div class="docs-main-wrapper">
+        <div class="docs-header">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+        <a class="navbar-brand" href="/">
+            <!-- logo -->
+            <img src="/assets/images/brand/logo/logo.svg" alt="Geeks" />
+        </a>
+
+        <div class="mx-auto order-md-2 d-none d-md-block">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/01_week/">
+                        1주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/02_week/">
+                        2주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/03_week/">
+                        3주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/04_week/">
+                        4주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/05_week/">
+                        5주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/06_week/">
+                        6주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/07_week/">
+                        7주차 (중간)
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/08_week/">
+                        8주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/09_week/">
+                        9주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/10_week/">
+                        10주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/11_week/">
+                        11주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/12_week/">
+                        12주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/13_week/">
+                        13주차
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/14_week/">
+                        14주차 (기말)
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center order-md-3">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/jinydev/datas" class="btn btn-outline-dark me-2" target="_blank">GitHub</a>
+                <div>
+                    <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- left sidebar -->
+        <aside class="docs-nav-sidebar">
+    <div class="py-5"></div>
+    <div class="docs-nav">
+        <nav class="navbar navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column" id="sidebarnav">
+                    <li class="navbar-header mt-4">
+                        <h5 class="heading">Lecture Notes</h5>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/"
+                            class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/01_week/"
+                            class="nav-link ">
+                            1주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/02_week/"
+                            class="nav-link ">
+                            2주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/03_week/"
+                            class="nav-link active">
+                            3주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/04_week/"
+                            class="nav-link ">
+                            4주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/05_week/"
+                            class="nav-link ">
+                            5주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/06_week/"
+                            class="nav-link ">
+                            6주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/07_week/"
+                            class="nav-link ">
+                            7주차 (중간)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/08_week/"
+                            class="nav-link ">
+                            8주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/09_week/"
+                            class="nav-link ">
+                            9주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/10_week/"
+                            class="nav-link ">
+                            10주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/11_week/"
+                            class="nav-link ">
+                            11주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/12_week/"
+                            class="nav-link ">
+                            12주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/13_week/"
+                            class="nav-link ">
+                            13주차
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/14_week/"
+                            class="nav-link ">
+                            14주차 (기말)
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+        <!-- Wrapper -->
+        <main class="docs-wrapper">
+            <section class="container-fluid">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div class="docs-content">
+                            <h1 id="3주차-1강-numpy란-무엇인가-introduction">3주차 1강: Numpy란 무엇인가? (Introduction)</h1>
+
+<blockquote>
+  <p><strong>학습목표</strong>: 대용량 데이터 처리를 위한 Numpy의 필요성을 이해하고, 리스트와 배열의 차이점 및 벡터/행렬의 개념을 시각적으로 학습합니다.</p>
+</blockquote>
+
+<h2 id="311-파이썬-리스트-vs-넘파이-배열-list-vs-array">3.1.1. 파이썬 리스트 vs 넘파이 배열 (List vs Array)</h2>
+
+<blockquote>
+  <p><strong>Numpy (Numerical Python)</strong>: 파이썬에서 <strong>과학 계산</strong>을 위해 만들어진 핵심 라이브러리입니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="왜-굳이-numpy-array를-또-배워야-할까요">왜 굳이 <code class="language-plaintext highlighter-rouge">numpy array</code>를 또 배워야 할까요?</h2>
+
+<p>우리는 이미 파이썬 <code class="language-plaintext highlighter-rouge">list</code>를 배웠습니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="그-이유를-이사짐-나르기로-비유해-봅니다">그 이유를 <code class="language-plaintext highlighter-rouge">이사짐 나르기</code>로 비유해 봅니다.</h3>
+<ul>
+  <li>
+    <p><strong>파이썬 리스트</strong>: <strong>승용차</strong>입니다.</p>
+
+    <p>사람도 태우고, 짐도 싣고, 반려견도 태울 수 있습니다(다양한 자료형 허용). 하지만 짐을 많이 싣기엔 느리고 비효율적입니다.</p>
+  </li>
+</ul>
+
+<p>[그림: 파이썬 리스트 - 승용차]
+<img src="./img/python_list_car.png" alt="Python List Car Analogy" /></p>
+
+<ul>
+  <li>
+    <p><strong>넘파이 배열</strong>: <strong>대형 화물 트럭</strong>입니다.</p>
+
+    <p>오직 “규격화된 화물(동일한 자료형)”만 실을 수 있지만, 엄청나게 많은 양을 <strong>매우 빠르게</strong> 나를 수 있습니다.</p>
+  </li>
+</ul>
+
+<p>[그림: 넘파이 배열 - 화물 트럭]
+<img src="./img/numpy_array_truck.png" alt="NumPy Array Truck Analogy" /></p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="3112-구조적-차이와-속도-memory-layout">3.1.1.2. 구조적 차이와 속도 (Memory Layout)</h3>
+
+<p>기계(컴퓨터) 입장에서는 데이터가 저장된 방식이 속도를 결정합니다.
+복잡한 그림 대신, 간단한 모형으로 비교해 봅시다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="그림-1-파이썬-리스트의-구조-data-scatter">[그림 1] 파이썬 리스트의 구조 (Data Scatter)</h4>
+<p>데이터가 메모리 여기저기에 흩어져 있습니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    List[파이썬 리스트] --주소--&gt; Item1((정수 1))
+    List --주소--&gt; Item2((정수 2))
+    List --주소--&gt; Item3((정수 3))
+    
+    style List fill:#f9f,stroke:#333
+    style Item1 fill:#fff,stroke:#333,stroke-dasharray: 5 5
+    style Item2 fill:#fff,stroke:#333,stroke-dasharray: 5 5
+    style Item3 fill:#fff,stroke:#333,stroke-dasharray: 5 5
+</code></pre>
+<ul>
+  <li><strong>비효율</strong>: 데이터를 찾으러 여기저기 이동해야 합니다. (Pointer Chasing)</li>
+  <li><strong>유연함</strong>: 아무거나 담을 수 있습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="그림-2-넘파이-배열의-구조-continuous-memory">[그림 2] 넘파이 배열의 구조 (Continuous Memory)</h4>
+<p>데이터가 한 곳에 빈틈없이 붙어 있습니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    Array[넘파이 배열] --&gt; Block["1 | 2 | 3 | 4 | 5"]
+    
+    style Array fill:#ccf,stroke:#333
+    style Block fill:#cfc,stroke:#333
+</code></pre>
+<ul>
+  <li><strong>고효율</strong>: 한 번에 덩어리째 읽어서 계산합니다. (Cache Friendly)</li>
+  <li><strong>고속</strong>: 이것이 바로 <strong>벡터화 연산(Vectorization)</strong>의 비결입니다.</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="313-설치-및-불러오기">3.1.3. 설치 및 불러오기</h2>
+
+<p>Matplotlib과 마찬가지로 설치 후 <code class="language-plaintext highlighter-rouge">np</code>라는 별칭으로 불러옵니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>numpy
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span> <span class="c1"># 버전 확인
+</span></code></pre></div></div>
+
+<p>이제 우리는 <strong>슈퍼카(Numpy)</strong>의 시동을 걸 준비가 되었습니다. 화려한 데이터 핸들링 기술을 익혀봅시다. 🏎️</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="정리-summary">정리 (Summary)</h2>
+
+<p>이 강의에서 배운 핵심 내용을 요약해 봅시다.</p>
+
+<ul>
+  <li><strong>[핵심 1]</strong>: Numpy는 대량의 데이터를 빠르게 처리하는 <strong>수치 계산 라이브러리</strong>입니다. (C언어 기반)</li>
+  <li><strong>[핵심 2]</strong>: 파이썬 리스트보다 <strong>메모리를 적게 쓰고 속도가 훨씬 빠릅니다.</strong></li>
+  <li><strong>[핵심 3]</strong>: 모든 요소가 <strong>같은 데이터 타입(dtype)</strong>이어야 한다는 규칙이 있습니다.</li>
+</ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Table of Contents) -->
+                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="sidebar-nav-fixed position-fixed" style="top: 3.5rem; right: 1rem; width: 14%;">
+                            <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semibold fs-6">Contents</span>
+                            <ul class="list-unstyled" id="toc">
+                                <!-- TOC items generated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="/assets/js/vendors/darkMode.js"></script>
+
+    <!-- Theme JS -->
+    <script src="/assets/js/geeks-DYfUURBV.js"></script>
+
+    <!-- TOC & ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.docs-content');
+            const toc = document.getElementById('toc');
+            if (!content || !toc) return;
+
+            const headers = content.querySelectorAll('h2, h3');
+            if (headers.length === 0) return;
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'header-' + index;
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#' + header.id;
+                link.textContent = header.textContent;
+                link.classList.add('nav-link', 'd-block', 'py-1', 'ps-4'); // Bootstrap/Geeks styles
+
+                if (header.tagName === 'H3') {
+                    link.classList.add('ps-5', 'fs-6'); // Indent H3
+                } else {
+                    link.classList.add('fw-bold'); // Bold H2
+                }
+
+                li.appendChild(link);
+                toc.appendChild(li);
+            });
+        });
+    </script>
+
+    <!-- MathJax for Latex -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Mermaid for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        mermaid.initialize({
+            startOnLoad: false
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all code blocks with language-mermaid
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+            mermaidBlocks.forEach((block, index) => {
+                const pre = block.parentElement;
+                const content = block.textContent;
+
+                // Create a div for mermaid to render into
+                const div = document.createElement('div');
+                div.classList.add('mermaid');
+                div.textContent = content;
+                div.id = 'mermaid-' + index;
+
+                // Replace pre with div
+                pre.replaceWith(div);
+            });
+
+            // Run mermaid
+            mermaid.run({
+                querySelector: '.mermaid'
+            });
+        });
+    </script>
+</body>
+
+</html>

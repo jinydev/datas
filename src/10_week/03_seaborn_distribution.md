@@ -1,3 +1,8 @@
+---
+layout: default
+title: "10주차 3강: 분포와 범주형 시각화 (Distribution & Categorical Plot)"
+---
+
 # 10주차 3강: 분포와 범주형 시각화 (Distribution & Categorical Plot)
 
 > **학습목표**: 데이터가 어떻게 퍼져있는지(분포) 확인하고, 그룹(범주) 간의 차이를 비교하는 고급 시각화 기법을 익힙니다.
