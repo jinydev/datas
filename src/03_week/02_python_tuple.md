@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 2강: 파이썬 튜플 심화 (Python Tuple Deep Dive)"
 ---
 

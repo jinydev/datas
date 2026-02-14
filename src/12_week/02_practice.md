@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "12주차 2강: 시험 점수가 다가 아니다 (Performance Metrics)"
 ---
 

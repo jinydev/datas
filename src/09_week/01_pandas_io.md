@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차 1강: 데이터 불러오기/저장하기 (I/O)"
 ---
 

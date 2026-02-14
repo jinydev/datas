@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차 4강: 데이터 수정 및 정렬 (Modification)"
 ---
 

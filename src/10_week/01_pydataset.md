@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 1강: 다양한 예제 데이터 (PyDataset)"
 ---
 

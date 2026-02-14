@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차: 판다스 기초 (Pandas Basics)"
 ---
 

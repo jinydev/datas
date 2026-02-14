@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "12주차: 분류 모델과 성능 평가"
 ---
 

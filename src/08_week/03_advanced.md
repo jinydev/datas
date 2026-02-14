@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 3강: 데이터 정찰하기 (Inspection)"
 ---
 

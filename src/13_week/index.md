@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "13주차: 군집 분석과 모델 튜닝"
 ---
 

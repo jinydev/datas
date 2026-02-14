@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "11주차 3강: 얼마나 잘 맞췄을까? (Evaluation)"
 ---
 

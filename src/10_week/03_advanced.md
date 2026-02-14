@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 3강: 화려한 시각화 (Seaborn)"
 ---
 

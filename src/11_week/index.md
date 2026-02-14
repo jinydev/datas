@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "11주차: 머신러닝 개요 및 선형 회귀"
 ---
 

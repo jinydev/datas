@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 2강: 데이터프레임 만들기 (Creation)"
 ---
 

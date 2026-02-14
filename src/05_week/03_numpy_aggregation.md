@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "5주차 3강: 데이터 요약하기 (Aggregation)"
 ---
 

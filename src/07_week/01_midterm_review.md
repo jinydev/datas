@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "7주차 1강: 전반기 총정리 (Review)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차 3강: 데이터 검색과 필터링 (Query & Filtering)"
 ---
 

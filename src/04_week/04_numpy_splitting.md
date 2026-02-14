@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "4주차 4강: 배열 나누기 (Splitting)"
 ---
 

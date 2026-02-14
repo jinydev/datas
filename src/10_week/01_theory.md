@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 1강: 구멍 난 데이터 수리하기 (Missing Values)"
 ---
 

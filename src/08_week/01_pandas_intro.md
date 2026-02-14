@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 1강: 판다스란 무엇인가? (Pandas Intro)"
 ---
 

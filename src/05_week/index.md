@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "5주차: Numpy 연산과 논리 (Operations & Logic)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "12주차 3강: 문자를 숫자로 (Feature Engineering)"
 ---
 

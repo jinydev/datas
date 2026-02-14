@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "4주차 3강: 배열 합치기 (Concatenation)"
 ---
 

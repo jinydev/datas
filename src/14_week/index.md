@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "14주차: 기말고사 (Final Exam)"
 ---
 

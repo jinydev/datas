@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "1주차 3강: 데이터 분석의 과정과 학습 로드맵"
 ---
 

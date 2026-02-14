@@ -1,7 +1,7 @@
 title: "빅데이터 분석 (Big Data Analysis)"
 description: "파이썬으로 배우는 데이터 분석 입문 강의 노트"
 author: "Hojin"
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll # Removed
 
 plugins:
   - jekyll-feed
@@ -10,7 +10,7 @@ plugins:
   - jekyll-gist
 
 # Theme Settings
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# minimal_mistakes_skin: "default" # Removed
 
 # Navigation
 nav_sort: 'priorities'
@@ -28,4 +28,25 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "docs"
+
+# Sass 설정
+sass:
+  load_paths:
+    - _sass
+    - ../node_modules/bootstrap/scss
+
+# GitHub Pages 호환성을 위한 설정
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github/
+  - .git/
+  - README.md
+  - package.json
+  - package-lock.json

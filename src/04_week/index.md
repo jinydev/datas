@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "4주차: Numpy 배열 형태 다루기 (Shape Manipulation)"
 ---
 

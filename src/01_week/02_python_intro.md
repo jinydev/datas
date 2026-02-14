@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "1주차 2강: 데이터 분석 언어와 파이썬의 미래"
 ---
 

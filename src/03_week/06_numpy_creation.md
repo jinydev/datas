@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 2강: 배열 생성 심화 (Array Creation Deep Dive)"
 ---
 

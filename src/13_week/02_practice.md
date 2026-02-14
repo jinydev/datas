@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "13주차 2강: 모의고사는 여러 번 (Cross Validation)"
 ---
 

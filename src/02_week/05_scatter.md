@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 4강: 산점도 (Scatter Plot)"
 ---
 

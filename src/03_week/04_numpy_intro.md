@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 1강: Numpy란 무엇인가? (Introduction)"
 ---
 

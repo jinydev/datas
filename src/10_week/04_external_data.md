@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 4강: 외부 데이터 활용하기 (External Data)"
 ---
 

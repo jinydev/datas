@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 3강: 수열 생성과 모양 변경 (Ranges & Reshape)"
 ---
 

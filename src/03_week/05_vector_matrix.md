@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 2강: 벡터와 행렬 (Vector & Matrix)"
 ---
 

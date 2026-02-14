@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 1강: 데이터 시각화란? (Introduction)"
 ---
 

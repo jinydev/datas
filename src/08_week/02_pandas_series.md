@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 2강: 시리즈 (Series)"
 ---
 

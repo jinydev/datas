@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 2강: 시본 기초 및 관계 시각화 (Seaborn Basics)"
 ---
 

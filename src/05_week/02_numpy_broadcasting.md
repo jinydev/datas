@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "5주차 2강: 브로드캐스팅의 마법 (Broadcasting)"
 ---
 

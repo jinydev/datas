@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차: 데이터 시각화 기초 (Matplotlib)"
 ---
 

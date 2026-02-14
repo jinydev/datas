@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "14주차 2강: 최종 실전 모의고사 (Final Exam)"
 ---
 

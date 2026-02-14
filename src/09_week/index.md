@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차: 데이터프레임 조작 (Data Manipulation)"
 ---
 

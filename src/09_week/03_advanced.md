@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차 3강: 정밀 타격 loc와 iloc (Indexing)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 7강: 피규어와 서브플롯 (Figure & Subplots)"
 ---
 

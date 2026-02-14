@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "13주차 3강: 최강의 모델 만들기 (Grid Search)"
 ---
 

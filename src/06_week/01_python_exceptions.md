@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "6주차 1강: 예외 처리 (Exception Handling)"
 ---
 

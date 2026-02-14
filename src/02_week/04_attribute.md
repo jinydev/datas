@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 3강: 그래프 속성과 스타일링 (Attributes & Styling)"
 ---
 

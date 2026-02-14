@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차 2강: 데이터 확인 및 통계 (Info & Statistics)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "5주차 1강: 배열끼리의 연산 (Element-wise)"
 ---
 

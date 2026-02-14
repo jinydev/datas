@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 3강: 분포와 범주형 시각화 (Distribution & Categorical Plot)"
 ---
 

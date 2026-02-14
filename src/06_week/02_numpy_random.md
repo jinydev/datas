@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "6주차 2강: 운에 맡기세요 (Random & Visualization)"
 ---
 

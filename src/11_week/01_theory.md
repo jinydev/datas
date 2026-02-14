@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "11주차 1강: 기계가 학습을 한다고? (ML Overview)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "5주차 4강: 조건으로 검색하기 (Boolean Indexing)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "11주차 2강: 미래를 예측해 보자 (Linear Regression)"
 ---
 

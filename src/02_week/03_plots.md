@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 2강: 기본 그래프 그리기 (Basic Plots)"
 ---
 

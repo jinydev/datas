@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "13주차 1강: 끼리끼리 모여라 (K-Means Clustering)"
 ---
 

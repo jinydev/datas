@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "14주차 1강: 후반기 총정리 (Review)"
 ---
 

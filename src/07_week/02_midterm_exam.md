@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "7주차 2강: 실전 모의고사 (Mock Exam)"
 ---
 

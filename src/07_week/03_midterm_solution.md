@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "7주차 3강: 정답 및 해설 (Solutions)"
 ---
 

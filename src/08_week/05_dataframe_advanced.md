@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 5강: 데이터프레임 심화 (Advanced DataFrame)"
 ---
 

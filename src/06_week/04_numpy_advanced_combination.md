@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "6주차 4강: 고급 배열 합치기 (Advanced Stacking)"
 ---
 

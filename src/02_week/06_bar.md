@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 5강: 막대그래프 (Bar Plot)"
 ---
 

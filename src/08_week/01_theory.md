@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 1강: 엑셀보다 강력한 도구 (Intro to Pandas)"
 ---
 

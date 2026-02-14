@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 1강: 파이썬 리스트 심화 (Python List Deep Dive)"
 ---
 

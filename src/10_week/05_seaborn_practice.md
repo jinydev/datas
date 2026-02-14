@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 5강: 시각화 종합 실습 (Seaborn Practice)"
 ---
 

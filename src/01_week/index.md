@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "1주차: 데이터 분석 개요 및 환경 설정"
 ---
 

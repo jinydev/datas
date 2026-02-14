@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "4주차 6강: 데이터 콕 집기 (Indexing)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차 3강: 파이썬 딕셔너리 심화 (Python Dictionary Deep Dive)"
 ---
 

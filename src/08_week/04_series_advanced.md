@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 4강: 시리즈 심화 (Advanced Series)"
 ---
 

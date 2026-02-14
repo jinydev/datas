@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차: 데이터 처리와 시각화 (Preprocessing & Visualization)"
 ---
 

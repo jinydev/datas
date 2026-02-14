@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "9주차 5강: 객체지향 프로그래밍 (OOP)"
 ---
 

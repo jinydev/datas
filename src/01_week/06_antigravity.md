@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "1주차 환경설정: Vibe Coding & Antigravity"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 6강: 히스토그램 (Histogram)"
 ---
 

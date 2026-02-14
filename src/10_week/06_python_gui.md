@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 6강: 파이썬 GUI 프로그래밍 (Tkinter)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "6주차 3강: 모듈과 라이브러리 (Modules & Libraries)"
 ---
 

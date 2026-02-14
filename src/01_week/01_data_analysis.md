@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "1주차 1강: 데이터 분석이란?"
 ---
 

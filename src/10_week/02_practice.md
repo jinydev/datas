@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "10주차 2강: 줄 세우기 (Sorting & Stats)"
 ---
 

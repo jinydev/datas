@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "5주차 5강: 원하는 것만 쏙쏙 (Fancy Indexing)"
 ---
 

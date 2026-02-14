@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "8주차 6강: 파이썬 파일 입출력 (File I/O)"
 ---
 

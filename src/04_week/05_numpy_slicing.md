@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "4주차 5강: 데이터 자르기 (Slicing)"
 ---
 

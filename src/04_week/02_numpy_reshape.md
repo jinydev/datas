@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "4주차 1강: 모양 바꾸기 (Reshape & Flatten)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "6주차: 분석을 위한 고급 도구 (Advanced Tools)"
 ---
 

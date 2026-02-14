@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "3주차: Numpy 기초 및 배열 생성"
 ---
 

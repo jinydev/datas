@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "빅데이터 분석 (Big Data Analysis)"
 permalink: /
 ---

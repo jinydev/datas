@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "2주차 1강: 파이썬 기초 2 (Python Basics 2)"
 ---
 

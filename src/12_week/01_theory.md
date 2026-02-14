@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "12주차 1강: 이메일이 스팸인가요? (Classification Models)"
 ---
 

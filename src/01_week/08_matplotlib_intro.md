@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "1주차 3강: 데이터 시각화 맛보기 (Matplotlib Teaser)"
 ---
 
