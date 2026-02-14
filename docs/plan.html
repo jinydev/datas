@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>빅데이터 분석 프로그래밍 강좌 생성 프롬프트</title>
   <meta name="title" content="빅데이터 분석 프로그래밍 강좌 생성 프롬프트" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="빅데이터 분석 프로그래밍 강좌 생성 프롬프트"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/plan.html">
+  <meta property="og:url" content="http://localhost:4000/plan.html">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="빅데이터 분석 프로그래밍 강좌 생성 프롬프트"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/plan.html" />
-<meta property="og:url" content="https://datas.jiny.dev/plan.html" />
+<link rel="canonical" href="http://localhost:4000/plan.html" />
+<meta property="og:url" content="http://localhost:4000/plan.html" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="빅데이터 분석 프로그래밍 강좌 생성 프롬프트" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"빅데이터 분석 프로그래밍 강좌 생성 프롬프트","url":"https://datas.jiny.dev/plan.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"빅데이터 분석 프로그래밍 강좌 생성 프롬프트","url":"http://localhost:4000/plan.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -34,9 +34,9 @@
 
   <style>
     blockquote {
-      border-left: solid 5px #ffe69c;
+      border-left: solid 5px #dee2e6;
       padding: 5px 10px;
-      background-color: #fff3cd;
+      background-color: #f8f9fa;
     }
   </style>
 
@@ -66,7 +66,8 @@
     }
 
     img {
-      width: 100%;
+      max-width: 100%;
+      height: auto;
       vertical-align: top
     }
 
@@ -115,7 +116,7 @@
 
 <body>
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
-    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
 
       <!-- Mobile: Left Toggle (Browse) -->
       <div class="bd-navbar-toggle d-lg-none">
@@ -295,17 +296,19 @@
     </nav>
   </header>
 
-  <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
     <aside class="bd-sidebar scrollBar">
-        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
-        </div>
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
 
-        <div class="offcanvas-body">
-            <!-- 네비게이션 -->
-            <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
   <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
     <li class="bd-links-group py-2">
       <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
@@ -314,119 +317,850 @@
       <ul class="list-unstyled fw-normal pb-2 small">
         
         <li>
+          
           <a href="/"
             class="bd-links-link d-inline-block rounded ">
             Home
           </a>
+          
         </li>
         
         <li>
-          <a href="/01_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
             1주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/01_week/"
+                  class="bd-links-link d-inline-block rounded ">
+                  1주차 하기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/01_data_analysis.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  1.1.1. 데이터 분석이란?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/02_python_intro.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  1.1.2. 왜 파이썬인가?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/03_process.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  1.1.3. 데이터 분석의 과정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/04_colab.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  1.2.1. Google Colab 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/05_vscode.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  1.2.2. VS Code 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/06_antigravity.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  1.2.3. 바이브 코딩 & 안티그래비티
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/07_python1.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 파이썬 기초 1
+                </a>
+              </li>
+              
+              <li>
+                <a href="/01_week/08_matplotlib_intro.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 데이터 시각화 맛보기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/02_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
             2주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/02_week/01_python2.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 파이썬 기초 2
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/02_Visualization.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 데이터 시각화란?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/03_plots.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 기본 그래프 그리기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/04_attribute.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 그래프 스타일링
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/05_scatter.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  05. 산점도
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/06_bar.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  06. 막대그래프
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/07_histogram.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  07. 히스토그램
+                </a>
+              </li>
+              
+              <li>
+                <a href="/02_week/08_subplot.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  08. 피규어와 서브플롯
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/03_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
             3주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/03_week/01_python_list.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 파이썬 리스트 심화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/03_week/02_python_tuple.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 파이썬 튜플 심화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/03_week/03_python_dict.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 파이썬 딕셔너리 심화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/03_week/04_numpy_intro.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. Numpy란 무엇인가?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/03_week/05_vector_matrix.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  05. 벡터와 행렬
+                </a>
+              </li>
+              
+              <li>
+                <a href="/03_week/06_numpy_creation.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  06. 배열 생성하기 1 (채우기)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/03_week/07_numpy_ranges.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  07. 배열 생성하기 2 (범위)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/04_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
             4주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/04_week/01_python_functions.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 파이썬 함수
+                </a>
+              </li>
+              
+              <li>
+                <a href="/04_week/02_numpy_reshape.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 모양 바꾸기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/04_week/03_numpy_concatenation.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 배열 합치기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/04_week/04_numpy_splitting.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 배열 나누기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/04_week/05_numpy_slicing.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  05. 데이터 자르기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/04_week/06_numpy_indexing.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  06. 데이터 콕 집기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/05_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
             5주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/05_week/01_numpy_operation.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 배열끼리의 연산
+                </a>
+              </li>
+              
+              <li>
+                <a href="/05_week/02_numpy_broadcasting.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 브로드캐스팅
+                </a>
+              </li>
+              
+              <li>
+                <a href="/05_week/03_numpy_aggregation.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 데이터 요약하기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/05_week/04_numpy_boolean.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 조건으로 검색하기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/05_week/05_numpy_fancy.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  05. 원하는 것만 쏙쏙
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/06_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
             6주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/06_week/01_python_exceptions.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 예외 처리
+                </a>
+              </li>
+              
+              <li>
+                <a href="/06_week/02_numpy_random.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 운에 맡기세요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/06_week/03_python_modules.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 모듈과 라이브러리
+                </a>
+              </li>
+              
+              <li>
+                <a href="/06_week/04_numpy_advanced_combination.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 고급 배열 합치기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/07_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
             7주차 (중간)
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/07_week/01_midterm_review.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 전반기 총정리
+                </a>
+              </li>
+              
+              <li>
+                <a href="/07_week/02_midterm_exam.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 실전 모의고사
+                </a>
+              </li>
+              
+              <li>
+                <a href="/07_week/03_midterm_solution.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 정답 및 해설
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/08_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
             8주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/08_week/01_pandas_intro.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 판다스란 무엇인가?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/08_week/02_pandas_series.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 시리즈 (Series)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/08_week/03_pandas_dataframe.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 데이터프레임 (DataFrame)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/08_week/04_series_advanced.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 시리즈 심화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/08_week/05_dataframe_advanced.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  05. 데이터프레임 심화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/08_week/06_python_file_io.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  06. 파이썬 파일 입출력
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/09_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
             9주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/09_week/01_pandas_io.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 데이터 불러오기/저장하기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/09_week/02_pandas_info_stats.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 데이터 확인 및 통계
+                </a>
+              </li>
+              
+              <li>
+                <a href="/09_week/03_pandas_query.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 데이터 검색과 필터링
+                </a>
+              </li>
+              
+              <li>
+                <a href="/09_week/04_pandas_modification.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 데이터 수정 및 정렬
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/10_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
             10주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/10_week/01_pydataset.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 다양한 예제 데이터
+                </a>
+              </li>
+              
+              <li>
+                <a href="/10_week/02_seaborn_basics.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 시본 기초 및 관계 시각화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/10_week/03_seaborn_distribution.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 분포와 범주형 시각화
+                </a>
+              </li>
+              
+              <li>
+                <a href="/10_week/04_external_data.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  04. 외부 데이터 활용하기
+                </a>
+              </li>
+              
+              <li>
+                <a href="/10_week/05_seaborn_practice.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  05. 시각화 종합 실습
+                </a>
+              </li>
+              
+              <li>
+                <a href="/10_week/06_python_gui.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  06. 파이썬 GUI 프로그래밍
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/11_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-12"
+            aria-expanded="false">
             11주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-12">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/11_week/01_theory.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 기계가 학습을 한다고?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/11_week/02_practice.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 미래를 예측해 보자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/11_week/03_advanced.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 얼마나 잘 맞췄을까?
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/12_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-13"
+            aria-expanded="false">
             12주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-13">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/12_week/01_theory.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 이메일이 스팸인가요?
+                </a>
+              </li>
+              
+              <li>
+                <a href="/12_week/02_practice.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 시험 점수가 다가 아니다
+                </a>
+              </li>
+              
+              <li>
+                <a href="/12_week/03_advanced.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 문자를 숫자로
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/13_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-14"
+            aria-expanded="false">
             13주차
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-14">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/13_week/01_theory.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 끼리끼리 모여라
+                </a>
+              </li>
+              
+              <li>
+                <a href="/13_week/02_practice.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 모의고사는 여러 번
+                </a>
+              </li>
+              
+              <li>
+                <a href="/13_week/03_advanced.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 최강의 모델 만들기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
         <li>
-          <a href="/14_week/"
-            class="bd-links-link d-inline-block rounded ">
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-15"
+            aria-expanded="false">
             14주차 (기말)
-          </a>
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-15">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/14_week/01_theory.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  01. 후반기 총정리
+                </a>
+              </li>
+              
+              <li>
+                <a href="/14_week/02_practice.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  02. 최종 실전 모의고사
+                </a>
+              </li>
+              
+              <li>
+                <a href="/14_week/03_advanced.html"
+                  class="bd-links-link d-inline-block rounded ">
+                  03. 정답 및 해설
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
         </li>
         
       </ul>
     </li>
   </ul>
 </nav>
-        </div>
+            </div>
         </div>
     </aside>
 
     <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/%20/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page">빅데이터 분석 프로그래밍 강좌 생성 프롬프트</li>
+        
+        
+        
+    </ol>
+</nav>
         <div class="bd-content ps-lg-2">
     <h1 id="빅데이터-분석-프로그래밍-강좌-생성-프롬프트">빅데이터 분석 프로그래밍 강좌 생성 프롬프트</h1>
 
@@ -689,9 +1423,9 @@
     </div>  
 </div>
 
-    
+
         <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
-  
+
   <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
     data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
     서브목차
@@ -701,7 +1435,7 @@
   </button>
 
   <strong class="d-none d-md-block h6 my-2">서브목차</strong>
-  <hr class="d-none d-md-block my-2">
+
   <div class="collapse bd-toc-collapse" id="tocContents">
     <nav id="TableOfContents">
       <!--
