@@ -29,7 +29,7 @@ for chapter in chapters:
     chap_title = get_title(chap_md)
     res.append(f"  - title: \"{chap_title}\"")
     res.append(f"    url: /python/{chapter}/")
-    res.append(f"    children:")
+    res.append(f"    subitems:")
     
     subdirs = []
     for sub in os.scandir(chap_dir):

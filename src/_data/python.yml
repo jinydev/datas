@@ -1,7 +1,7 @@
 main:
   - title: "3.1 파이썬 언어 기초 (Python Basics)"
     url: /python/01_basic/
-    children:
+    subitems:
       - title: "3.1.1 데이터 분석 언어와 파이썬의 미래"
         url: /python/01_basic/01_python_intro/
       - title: "3.1.2 주석과 상수"
@@ -18,9 +18,9 @@ main:
         url: /python/01_basic/07_built_in_functions/
       - title: "3.1.8 내장 모듈 math 활용"
         url: /python/01_basic/08_math_module/
-  - title: "제목 없음"
+  - title: "3.2 제어 흐름 (Control Flow)"
     url: /python/02_control_flow/
-    children:
+    subitems:
       - title: "3.2.1 조건문 if"
         url: /python/02_control_flow/01_if_statement/
       - title: "3.2.2 match 구문"
@@ -29,20 +29,20 @@ main:
         url: /python/02_control_flow/03_for_loop/
       - title: "3.2.4 반복문 while"
         url: /python/02_control_flow/04_while_loop/
-      - title: "3.2.4 예외 처리"
+      - title: "3.2.5 예외 처리"
         url: /python/02_control_flow/05_exceptions/
-  - title: "제목 없음"
+  - title: "3.3 함수 (Functions)"
     url: /python/03_functions/
-    children:
+    subitems:
       - title: "3.3.1 함수란 무엇인가?"
         url: /python/03_functions/01_function_concepts/
       - title: "3.3.2 함수 선언과 사용"
         url: /python/03_functions/02_function_usage/
       - title: "3.3.3 변수 스코프와 람다 함수"
         url: /python/03_functions/03_lambda_functions/
-  - title: "제목 없음"
+  - title: "3.4 자료 구조 (Data Structures)"
     url: /python/04_data_structures/
-    children:
+    subitems:
       - title: "3.4.1 리스트"
         url: /python/04_data_structures/01_list/
       - title: "3.4.2 사전"
@@ -53,9 +53,9 @@ main:
         url: /python/04_data_structures/04_set/
       - title: "3.4.5 수정 불가능(immutable)과 함수 hash() id()"
         url: /python/04_data_structures/05_immutable_hash_id/
-  - title: "제목 없음"
+  - title: "3.5 객체지향 프로그래밍 (OOP)"
     url: /python/05_oop/
-    children:
+    subitems:
       - title: "3.5.1 클래스와 인스턴스"
         url: /python/05_oop/01_class_instance/
       - title: "3.5.2 상속과 다형성"
@@ -64,7 +64,7 @@ main:
         url: /python/05_oop/03_abstraction_interface/
   - title: "3.7 파일 입출력 (File I/O)"
     url: /python/07_file_io/
-    children:
+    subitems:
   - title: "3.8 GUI 프로그래밍 (Tkinter)"
     url: /python/08_gui_programming/
-    children:
+    subitems:
