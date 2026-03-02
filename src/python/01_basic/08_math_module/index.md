@@ -22,18 +22,18 @@ title: "3.1.8 내장 모듈 math 활용"
 | 천정과 바닥값, 내림      | `ceil()` `floor()` `trunc()`       |
 | 삼각 함수                | `sin()` `cos()` `tan()`            |
 
-이미 보았듯이 먼저 모듈 `math`를 메모리에 적재(load)하기 위해 구문 `import math as m`을 사용한다. 여기서 `m`을 별명(alias)으로 지정해 `m.함수()`를 사용한다. 
+이미 보았듯이 먼저 모듈 `math`를 메모리에 적재(load)하기 위해 구문 `import math as m`을 사용합니다. 여기서 `m`을 별명(alias)으로 지정해 `m.함수()`를 사용합니다. 
 
 ## math 모듈의 함수들
 
 ### 수학 상수들
-math 모듈에는 다양한 수학 상수들이 정의되어 있다. 
-다음 `m.pi`, `m.e`로 원주율과 자연수를 참조한다.
+math 모듈에는 다양한 수학 상수들이 정의되어 있습니다. 
+다음 `m.pi`, `m.e`로 원주율과 자연수를 참조합니다.
 
 ```python
 import math as m
 
-m.pi, m.e
+print(m.pi, m.e)
 ```
 **출력:**
 ```
@@ -42,33 +42,33 @@ m.pi, m.e
 
 ### 제곱근과 지수, 로그 함수
 
-함수 `m.sqrt(4)` 호출은 4의 제곱근인 2를 반환한다.
+함수 `m.sqrt(4)` 호출은 4의 제곱근인 2를 반환합니다.
 
 ```python
-m.sqrt(4)
+print(m.sqrt(4))
 ```
 
 ### 천정과 바닥값, 내림 함수
-함수 `m.ceil(3.7)` 호출은 3.7 이상의 가장 가까운 정수인 4를 반환한다. 함수 `ceil(a)`는 `a`의 천정 값이라고 한다.
+함수 `m.ceil(3.7)` 호출은 3.7 이상의 가장 가까운 정수인 4를 반환합니다. 함수 `ceil(a)`는 `a`의 크지 않은 최소 정수 (올림) 입니다.
 
 ```python
-m.ceil(3.7)
-m.ceil(3.1)
-m.ceil(-3.7)
-m.ceil(-3.1)
+print(m.ceil(3.7))
+print(m.ceil(3.1))
+print(m.ceil(-3.7))
+print(m.ceil(-3.1))
 ```
 
-함수 `m.floor(3.7)` 호출은 3.7 이하인 가장 가까운 정수인 3을 반환한다. 함수 `floor(a)`는 `a`의 바닥 값이라고 한다.
+함수 `m.floor(3.7)` 호출은 3.7 이하인 가장 가까운 정수인 3을 반환합니다. 함수 `floor(a)`는 `a`의 작지 않은 최대 정수 (내림) 입니다.
 
 ```python
-m.floor(3.7)
-m.floor(3.1)
-m.floor(-3.7)
-m.floor(-3.1)
+print(m.floor(3.7))
+print(m.floor(3.1))
+print(m.floor(-3.7))
+print(m.floor(-3.1))
 ```
 
-함수 `m.trunc(3.1415)` 호출은 소수점 이하을 버린다.
+함수 `m.trunc(3.1415)` 호출은 소수점 이하를 버립니다.
 
 ```python
-m.trunc(3.1415)
+print(m.trunc(3.1415))
 ```

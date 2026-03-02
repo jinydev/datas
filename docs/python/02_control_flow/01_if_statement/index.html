@@ -692,9 +692,9 @@
 <p>파이썬의 조건문이 실행되는 논리적인 흐름을 아래의 다이어그램으로 살펴볼 수 있습니다. 조건이 참(True)인지 거짓(False)인지에 따라 프로그램의 판별 경로가 엇갈리게 됩니다.</p>
 
 <pre><code class="language-mermaid">graph TD
-    A([Start]) --&gt; B{조건식 평가&lt;br/&gt;(예: n % 2 == 0)}
-    B -- True --&gt; C[if 블록 실행&lt;br/&gt;(예: 짝수 출력)]
-    B -- False --&gt; D[else/elif 블록 확인&lt;br/&gt;또는 건너뜀]
+    A([Start]) --&gt; B{"조건식 평가&lt;br/&gt;(예: n % 2 == 0)"}
+    B -- True --&gt; C["if 블록 실행&lt;br/&gt;(예: 짝수 출력)"]
+    B -- False --&gt; D["else/elif 블록 확인&lt;br/&gt;또는 건너뜀"]
     C --&gt; E([End])
     D --&gt; E
 </code></pre>

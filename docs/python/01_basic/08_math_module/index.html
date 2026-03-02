@@ -717,17 +717,17 @@
   </tbody>
 </table>
 
-<p>이미 보았듯이 먼저 모듈 <code class="language-plaintext highlighter-rouge">math</code>를 메모리에 적재(load)하기 위해 구문 <code class="language-plaintext highlighter-rouge">import math as m</code>을 사용한다. 여기서 <code class="language-plaintext highlighter-rouge">m</code>을 별명(alias)으로 지정해 <code class="language-plaintext highlighter-rouge">m.함수()</code>를 사용한다.</p>
+<p>이미 보았듯이 먼저 모듈 <code class="language-plaintext highlighter-rouge">math</code>를 메모리에 적재(load)하기 위해 구문 <code class="language-plaintext highlighter-rouge">import math as m</code>을 사용합니다. 여기서 <code class="language-plaintext highlighter-rouge">m</code>을 별명(alias)으로 지정해 <code class="language-plaintext highlighter-rouge">m.함수()</code>를 사용합니다.</p>
 
 <h2 id="math-모듈의-함수들">math 모듈의 함수들</h2>
 
 <h3 id="수학-상수들">수학 상수들</h3>
-<p>math 모듈에는 다양한 수학 상수들이 정의되어 있다. 
-다음 <code class="language-plaintext highlighter-rouge">m.pi</code>, <code class="language-plaintext highlighter-rouge">m.e</code>로 원주율과 자연수를 참조한다.</p>
+<p>math 모듈에는 다양한 수학 상수들이 정의되어 있습니다. 
+다음 <code class="language-plaintext highlighter-rouge">m.pi</code>, <code class="language-plaintext highlighter-rouge">m.e</code>로 원주율과 자연수를 참조합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span> <span class="k">as</span> <span class="n">m</span>
 
-<span class="n">m</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">m</span><span class="p">.</span><span class="n">e</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">m</span><span class="p">.</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3.141592653589793, 2.718281828459045)
@@ -735,31 +735,31 @@
 
 <h3 id="제곱근과-지수-로그-함수">제곱근과 지수, 로그 함수</h3>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">m.sqrt(4)</code> 호출은 4의 제곱근인 2를 반환한다.</p>
+<p>함수 <code class="language-plaintext highlighter-rouge">m.sqrt(4)</code> 호출은 4의 제곱근인 2를 반환합니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h3 id="천정과-바닥값-내림-함수">천정과 바닥값, 내림 함수</h3>
-<p>함수 <code class="language-plaintext highlighter-rouge">m.ceil(3.7)</code> 호출은 3.7 이상의 가장 가까운 정수인 4를 반환한다. 함수 <code class="language-plaintext highlighter-rouge">ceil(a)</code>는 <code class="language-plaintext highlighter-rouge">a</code>의 천정 값이라고 한다.</p>
+<p>함수 <code class="language-plaintext highlighter-rouge">m.ceil(3.7)</code> 호출은 3.7 이상의 가장 가까운 정수인 4를 반환합니다. 함수 <code class="language-plaintext highlighter-rouge">ceil(a)</code>는 <code class="language-plaintext highlighter-rouge">a</code>의 크지 않은 최소 정수 (올림) 입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mf">3.7</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mf">3.1</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.7</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mf">3.7</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mf">3.1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.7</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.1</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">m.floor(3.7)</code> 호출은 3.7 이하인 가장 가까운 정수인 3을 반환한다. 함수 <code class="language-plaintext highlighter-rouge">floor(a)</code>는 <code class="language-plaintext highlighter-rouge">a</code>의 바닥 값이라고 한다.</p>
+<p>함수 <code class="language-plaintext highlighter-rouge">m.floor(3.7)</code> 호출은 3.7 이하인 가장 가까운 정수인 3을 반환합니다. 함수 <code class="language-plaintext highlighter-rouge">floor(a)</code>는 <code class="language-plaintext highlighter-rouge">a</code>의 작지 않은 최대 정수 (내림) 입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="mf">3.7</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="mf">3.1</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.7</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="mf">3.7</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="mf">3.1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.7</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.1</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">m.trunc(3.1415)</code> 호출은 소수점 이하을 버린다.</p>
+<p>함수 <code class="language-plaintext highlighter-rouge">m.trunc(3.1415)</code> 호출은 소수점 이하를 버립니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">.</span><span class="nf">trunc</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">trunc</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">))</span>
 </code></pre></div></div>
 
 

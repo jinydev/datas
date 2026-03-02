@@ -18,9 +18,9 @@ title: "3.2.1 조건문 if"
 
 ```mermaid
 graph TD
-    A([Start]) --> B{조건식 평가<br/>(예: n % 2 == 0)}
-    B -- True --> C[if 블록 실행<br/>(예: 짝수 출력)]
-    B -- False --> D[else/elif 블록 확인<br/>또는 건너뜀]
+    A([Start]) --> B{"조건식 평가<br/>(예: n % 2 == 0)"}
+    B -- True --> C["if 블록 실행<br/>(예: 짝수 출력)"]
+    B -- False --> D["else/elif 블록 확인<br/>또는 건너뜀"]
     C --> E([End])
     D --> E
 ```
