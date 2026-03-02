@@ -1,185 +1,90 @@
 main:
   - title: Home
     url: /
-  - title: 1주차
-    url: /01_week/
+  - title: "1. 데이터 분석의 이해"
+    url: /intro/
     subitems:
-      - title: 1주차 하기
-        url: /01_week/
-      - title: 1.1.1. 데이터 분석이란?
-        url: /01_week/01_data_analysis.html
-      - title: 1.1.2. 왜 파이썬인가?
-        url: /01_week/02_python_intro.html
-      - title: 1.1.3. 데이터 분석의 과정
-        url: /01_week/03_process.html
-      - title: 1.2.1. Google Colab 설정
-        url: /01_week/04_colab.html
-      - title: 1.2.2. VS Code 설정
-        url: /01_week/05_vscode.html
-      - title: 1.2.3. 바이브 코딩 & 안티그래비티
-        url: /01_week/06_antigravity.html
-      - title: 03. 파이썬 기초 1
-        url: /01_week/07_python1.html
-      - title: 04. 데이터 시각화 맛보기
-        url: /01_week/08_matplotlib_intro.html
-  - title: 2주차
-    url: /02_week/
+      - title: "1. 데이터 분석 학습 개요 (왜 필요한가?)"
+        url: /intro/01_why_data_analysis/
+      - title: "3. 데이터 분석의 완성과 통찰력"
+        url: /intro/03_insight_and_conclusion/
+      - title: "5. 데이터의 세분화와 구조"
+        url: /intro/05_data_types/
+      - title: "6. 빅데이터의 3V 특성"
+        url: /intro/06_bigdata_characteristics/
+      - title: "8. 클라우드 컴퓨팅과 빅데이터"
+        url: /intro/08_bigdata_and_cloud/
+      - title: "10. AI 시대의 생존 무기와 직업 윤리"
+        url: /intro/10_ai_era_survival/
+  - title: "2. 데이터 분석 환경 구축"
+    url: /setup/
     subitems:
-      - title: 01. 파이썬 기초 2
-        url: /02_week/01_python2.html
-      - title: 02. 데이터 시각화란?
-        url: /02_week/02_Visualization.html
-      - title: 03. 기본 그래프 그리기
-        url: /02_week/03_plots.html
-      - title: 04. 그래프 스타일링
-        url: /02_week/04_attribute.html
-      - title: 05. 산점도
-        url: /02_week/05_scatter.html
-      - title: 06. 막대그래프
-        url: /02_week/06_bar.html
-      - title: 07. 히스토그램
-        url: /02_week/07_histogram.html
-      - title: 08. 피규어와 서브플롯
-        url: /02_week/08_subplot.html
-  - title: 3주차
-    url: /03_week/
+      - title: "1. 윈도우(Windows) 파이썬 설치 가이드"
+        url: /setup/01_windows/
+      - title: "2. 맥(macOS) 파이썬 설치 가이드"
+        url: /setup/02_mac/
+      - title: "3. 리눅스(Linux) 및 서버 파이썬 설치 가이드"
+        url: /setup/03_linux/
+      - title: "4. 아나콘다(Anaconda)와 주피터 노트북"
+        url: /setup/04_anaconda/
+      - title: "5. 파이썬 가상환경(Virtual Environment)"
+        url: /setup/05_venv/
+      - title: "구글 코랩(Google Colab) 환경 설정 및 사용법"
+        url: /setup/06_colab/
+      - title: "7. VS Code(Visual Studio Code)"
+        url: /setup/07_vscode/
+      - title: "8. 파이썬 필수 데이터 분석 패키지 설치 (Windows 기준)"
+        url: /setup/08_packages/
+  - title: "3. 파이썬 시작"
+    url: /python/
     subitems:
-      - title: 01. 파이썬 리스트 심화
-        url: /03_week/01_python_list.html
-      - title: 02. 파이썬 튜플 심화
-        url: /03_week/02_python_tuple.html
-      - title: 03. 파이썬 딕셔너리 심화
-        url: /03_week/03_python_dict.html
-      - title: 04. Numpy란 무엇인가?
-        url: /03_week/04_numpy_intro.html
-      - title: 05. 벡터와 행렬
-        url: /03_week/05_vector_matrix.html
-      - title: 06. 배열 생성하기 1 (채우기)
-        url: /03_week/06_numpy_creation.html
-      - title: 07. 배열 생성하기 2 (범위)
-        url: /03_week/07_numpy_ranges.html
-  - title: 4주차
-    url: /04_week/
-    subitems:
-      - title: 01. 파이썬 함수
-        url: /04_week/01_python_functions.html
-      - title: 02. 모양 바꾸기
-        url: /04_week/02_numpy_reshape.html
-      - title: 03. 배열 합치기
-        url: /04_week/03_numpy_concatenation.html
-      - title: 04. 배열 나누기
-        url: /04_week/04_numpy_splitting.html
-      - title: 05. 데이터 자르기
-        url: /04_week/05_numpy_slicing.html
-      - title: 06. 데이터 콕 집기
-        url: /04_week/06_numpy_indexing.html
-  - title: 5주차
-    url: /05_week/
-    subitems:
-      - title: 01. 배열끼리의 연산
-        url: /05_week/01_numpy_operation.html
-      - title: 02. 브로드캐스팅
-        url: /05_week/02_numpy_broadcasting.html
-      - title: 03. 데이터 요약하기
-        url: /05_week/03_numpy_aggregation.html
-      - title: 04. 조건으로 검색하기
-        url: /05_week/04_numpy_boolean.html
-      - title: 05. 원하는 것만 쏙쏙
-        url: /05_week/05_numpy_fancy.html
-  - title: 6주차
-    url: /06_week/
-    subitems:
-      - title: 01. 예외 처리
-        url: /06_week/01_python_exceptions.html
-      - title: 02. 운에 맡기세요
-        url: /06_week/02_numpy_random.html
-      - title: 03. 모듈과 라이브러리
-        url: /06_week/03_python_modules.html
-      - title: 04. 고급 배열 합치기
-        url: /06_week/04_numpy_advanced_combination.html
-  - title: 7주차 (중간)
-    url: /07_week/
-    subitems:
-      - title: 01. 전반기 총정리
-        url: /07_week/01_midterm_review.html
-      - title: 02. 실전 모의고사
-        url: /07_week/02_midterm_exam.html
-      - title: 03. 정답 및 해설
-        url: /07_week/03_midterm_solution.html
-  - title: 8주차
-    url: /08_week/
-    subitems:
-      - title: 01. 판다스란 무엇인가?
-        url: /08_week/01_pandas_intro.html
-      - title: 02. 시리즈 (Series)
-        url: /08_week/02_pandas_series.html
-      - title: 03. 데이터프레임 (DataFrame)
-        url: /08_week/03_pandas_dataframe.html
-      - title: 04. 시리즈 심화
-        url: /08_week/04_series_advanced.html
-      - title: 05. 데이터프레임 심화
-        url: /08_week/05_dataframe_advanced.html
-      - title: 06. 파이썬 파일 입출력
-        url: /08_week/06_python_file_io.html
-  - title: 9주차
-    url: /09_week/
-    subitems:
-      - title: 01. 데이터 불러오기/저장하기
-        url: /09_week/01_pandas_io.html
-      - title: 02. 데이터 확인 및 통계
-        url: /09_week/02_pandas_info_stats.html
-      - title: 03. 데이터 검색과 필터링
-        url: /09_week/03_pandas_query.html
-      - title: 04. 데이터 수정 및 정렬
-        url: /09_week/04_pandas_modification.html
-  - title: 10주차
-    url: /10_week/
-    subitems:
-      - title: 01. 다양한 예제 데이터
-        url: /10_week/01_pydataset.html
-      - title: 02. 시본 기초 및 관계 시각화
-        url: /10_week/02_seaborn_basics.html
-      - title: 03. 분포와 범주형 시각화
-        url: /10_week/03_seaborn_distribution.html
-      - title: 04. 외부 데이터 활용하기
-        url: /10_week/04_external_data.html
-      - title: 05. 시각화 종합 실습
-        url: /10_week/05_seaborn_practice.html
-      - title: 06. 파이썬 GUI 프로그래밍
-        url: /10_week/06_python_gui.html
-  - title: 11주차
-    url: /11_week/
-    subitems:
-      - title: 01. 기계가 학습을 한다고?
-        url: /11_week/01_theory.html
-      - title: 02. 미래를 예측해 보자
-        url: /11_week/02_practice.html
-      - title: 03. 얼마나 잘 맞췄을까?
-        url: /11_week/03_advanced.html
-  - title: 12주차
-    url: /12_week/
-    subitems:
-      - title: 01. 이메일이 스팸인가요?
-        url: /12_week/01_theory.html
-      - title: 02. 시험 점수가 다가 아니다
-        url: /12_week/02_practice.html
-      - title: 03. 문자를 숫자로
-        url: /12_week/03_advanced.html
-  - title: 13주차
-    url: /13_week/
-    subitems:
-      - title: 01. 끼리끼리 모여라
-        url: /13_week/01_theory.html
-      - title: 02. 모의고사는 여러 번
-        url: /13_week/02_practice.html
-      - title: 03. 최강의 모델 만들기
-        url: /13_week/03_advanced.html
-  - title: 14주차 (기말)
-    url: /14_week/
-    subitems:
-      - title: 01. 후반기 총정리
-        url: /14_week/01_theory.html
-      - title: 02. 최종 실전 모의고사
-        url: /14_week/02_practice.html
-      - title: 03. 정답 및 해설
-        url: /14_week/03_advanced.html
+      - title: "00. 파이썬과 데이터 분석의 미래"
+        url: /python/01_basic/01_python_intro/
+      - title: "01. 주석과 상수"
+        url: /python/01_basic/02_comments_constants/
+      - title: "02. 변수와 대입"
+        url: /python/01_basic/03_variables_assignment/
+      - title: "03. 변수 이름 조건"
+        url: /python/01_basic/04_variable_naming/
+      - title: "04. 자료형과 연산자"
+        url: /python/01_basic/05_data_types_operators/
+      - title: "05. 다양한 연산자"
+        url: /python/01_basic/06_various_operators/
+      - title: "06. 내장 함수 활용"
+        url: /python/01_basic/07_built_in_functions/
+      - title: "07. 내장 모듈 math 활용"
+        url: /python/01_basic/08_math_module/
+      - title: "08. 조건문 if"
+        url: /python/02_control_flow/01_if_statement/
+      - title: "09. match 구문"
+        url: /python/02_control_flow/02_match_statement/
+      - title: "10. 반복문 for와 while"
+        url: /python/02_control_flow/03_for_while_loops/
+      - title: "11. 함수란 무엇인가?"
+        url: /python/03_functions/01_function_concepts/
+      - title: "12. 함수 선언과 사용"
+        url: /python/03_functions/02_function_usage/
+      - title: "13. 변수 스코프와 람다 함수"
+        url: /python/03_functions/03_lambda_functions/
+      - title: "14. 리스트"
+        url: /python/04_data_structures/01_list/
+      - title: "15. 사전"
+        url: /python/04_data_structures/02_dictionary/
+      - title: "16. 튜플"
+        url: /python/04_data_structures/03_tuple/
+      - title: "17. 집합"
+        url: /python/04_data_structures/04_set/
+      - title: "18. 수정 불가능(immutable)과 함수 hash() id()"
+        url: /python/04_data_structures/05_immutable_hash_id/
+      - title: "19. 클래스와 인스턴스"
+        url: /python/05_oop/01_class_instance/
+      - title: "20. 상속과 다형성"
+        url: /python/05_oop/02_inheritance_polymorphism/
+      - title: "21. 추상화와 인터페이스"
+        url: /python/05_oop/03_abstraction_interface/
+  - title: "4. 넘파이(Numpy)"
+    url: /numpy/
+  - title: "5. 시각화 (Matplotlib)"
+    url: /mathplotlib/
+  - title: "6. 판다스(Pandas)"
+    url: /pandas/

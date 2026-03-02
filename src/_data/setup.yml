@@ -1,0 +1,23 @@
+main:
+- title: '2.1 윈도우(Windows) 파이썬 설치 가이드'
+  url: '/setup/01_windows/'
+- title: '2.2 맥(macOS) 파이썬 설치 가이드'
+  url: '/setup/02_mac/'
+- title: '2.3 리눅스(Linux) 및 서버 파이썬 설치 가이드'
+  url: '/setup/03_linux/'
+- title: '2.4 아나콘다(Anaconda)와 주피터 노트북 환경 설정'
+  url: '/setup/04_anaconda/'
+  subitems:
+  - title: '2.4 아나콘다 설치 과정'
+    url: '/setup/04_anaconda/install.html'
+- title: '2.5 파이썬 가상환경(Virtual Environment) 완벽 이해'
+  url: '/setup/05_venv/'
+- title: '2.6 구글 코랩(Google Colab) 환경 설정 및 사용법'
+  url: '/setup/06_colab/'
+- title: '2.7 개발 끝판왕 VS Code 코딩 환경 구축'
+  url: '/setup/07_vscode/'
+- title: '2.8 파이썬 필수 데이터 분석 패키지 설치 (Windows 기준)'
+  url: '/setup/08_packages/'
+  subitems:
+  - title: '2.8 데이터 시각화 맛보기 (Matplotlib Teaser)'
+    url: '/setup/08_packages/08_matplotlib_intro.html'

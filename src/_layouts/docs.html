@@ -21,7 +21,14 @@ layout: bootstrap
 
     <main class="bd-main order-1">
         {% include breadcrumb.html %}
-        {{content}}
+        <div class="bd-content ps-lg-4">
+            {{content}}
+
+            <!-- 구글 애드센스 출력 -->
+            <div class="mt-5">
+                {% include adsense.html %}
+            </div>
+        </div>
 
         {% include bookmark.html %}
     </main>

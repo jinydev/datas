@@ -1,0 +1,49 @@
+---
+layout: pandas
+title: "6.2.5 딕셔너리의 테이블 데이터 사용"
+---
+
+## 6.2.5 딕셔너리의 테이블 데이터 사용
+
+다음처럼 dict 형태의 자료를 사용하면 키가 데이터프레임 열의 제목인 레이블이 된다. 열은 입력한 순서대로 들어간다.
+
+```python
+df = pd.DataFrame({'numbers': [1, 2, 3], 'colors': ['red', 'white', 'blue']})
+print(df)
+```
+
+index는 기본 인덱스인 `RangeIndex()`이다.
+
+```python
+df.index
+# 6.2.5 RangeIndex(start=0, stop=3, step=1)
+```
+
+열은 문자열 `object` 유형의 `Index`임을 알 수 있다.
+
+```python
+df.columns
+# 6.2.5 Index(['numbers', 'colors'], dtype='object')
+```
+
+다음처럼 `index`를 지정해 행의 `index` 레이블을 지정할 수 있다.
+
+```python
+df = pd.DataFrame({'국어': [82, 76, 67], '수학': [99, 87, 78]},
+                  index=['김국진', '신영희', '이길순'])
+print(df)
+```
+
+위에서 행 제목인 `index`는 문자열 `object` 유형의 `Index`임을 알 수 있다.
+
+```python
+df.index
+# 6.2.5 Index(['김국진', '신영희', '이길순'], dtype='object')
+```
+
+위에서 열 제목인 `columns`도 문자열 `object` 유형의 `Index`임을 알 수 있다.
+
+```python
+df.columns
+# 6.2.5 Index(['국어', '수학'], dtype='object')
+```

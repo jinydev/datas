@@ -295,7 +295,8 @@
           <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
             {% for item in site.data.header_nav %}
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="{{ item.url }}">{{ item.title }}</a>
+              <a class="nav-link py-2 px-0 px-lg-2 {% if page.url contains item.url %}active{% endif %}"
+                href="{{ item.url }}">{{ item.title }}</a>
             </li>
             {% endfor %}
           </ul>

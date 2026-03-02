@@ -1,0 +1,70 @@
+main:
+  - title: "3.1 파이썬 언어 기초 (Python Basics)"
+    url: /python/01_basic/
+    children:
+      - title: "3.1.1 데이터 분석 언어와 파이썬의 미래"
+        url: /python/01_basic/01_python_intro/
+      - title: "3.1.2 주석과 상수"
+        url: /python/01_basic/02_comments_constants/
+      - title: "3.1.3 변수와 대입"
+        url: /python/01_basic/03_variables_assignment/
+      - title: "3.1.4 변수 이름 조건"
+        url: /python/01_basic/04_variable_naming/
+      - title: "3.1.5 자료형(Data Types)의 이해"
+        url: /python/01_basic/05_data_types_operators/
+      - title: "3.1.6 다양한 연산자"
+        url: /python/01_basic/06_various_operators/
+      - title: "3.1.7 내장 함수와 메서드 활용"
+        url: /python/01_basic/07_built_in_functions/
+      - title: "3.1.8 내장 모듈 math 활용"
+        url: /python/01_basic/08_math_module/
+  - title: "제목 없음"
+    url: /python/02_control_flow/
+    children:
+      - title: "3.2.1 조건문 if"
+        url: /python/02_control_flow/01_if_statement/
+      - title: "3.2.2 match 구문"
+        url: /python/02_control_flow/02_match_statement/
+      - title: "3.2.3 반복문 for"
+        url: /python/02_control_flow/03_for_loop/
+      - title: "3.2.4 반복문 while"
+        url: /python/02_control_flow/04_while_loop/
+      - title: "3.2.4 예외 처리"
+        url: /python/02_control_flow/05_exceptions/
+  - title: "제목 없음"
+    url: /python/03_functions/
+    children:
+      - title: "3.3.1 함수란 무엇인가?"
+        url: /python/03_functions/01_function_concepts/
+      - title: "3.3.2 함수 선언과 사용"
+        url: /python/03_functions/02_function_usage/
+      - title: "3.3.3 변수 스코프와 람다 함수"
+        url: /python/03_functions/03_lambda_functions/
+  - title: "제목 없음"
+    url: /python/04_data_structures/
+    children:
+      - title: "3.4.1 리스트"
+        url: /python/04_data_structures/01_list/
+      - title: "3.4.2 사전"
+        url: /python/04_data_structures/02_dictionary/
+      - title: "3.4.3 튜플"
+        url: /python/04_data_structures/03_tuple/
+      - title: "3.4.4 집합"
+        url: /python/04_data_structures/04_set/
+      - title: "3.4.5 수정 불가능(immutable)과 함수 hash() id()"
+        url: /python/04_data_structures/05_immutable_hash_id/
+  - title: "제목 없음"
+    url: /python/05_oop/
+    children:
+      - title: "3.5.1 클래스와 인스턴스"
+        url: /python/05_oop/01_class_instance/
+      - title: "3.5.2 상속과 다형성"
+        url: /python/05_oop/02_inheritance_polymorphism/
+      - title: "3.5.3 추상화와 인터페이스"
+        url: /python/05_oop/03_abstraction_interface/
+  - title: "3.7 파일 입출력 (File I/O)"
+    url: /python/07_file_io/
+    children:
+  - title: "3.8 GUI 프로그래밍 (Tkinter)"
+    url: /python/08_gui_programming/
+    children:

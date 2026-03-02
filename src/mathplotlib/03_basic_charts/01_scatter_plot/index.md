@@ -1,0 +1,122 @@
+---
+layout: mathplotlib
+title: "5.3.1 산점도"
+---
+
+## 5.3.1 산점도와 막대 그래프
+
+### 5.3.1 산점도
+
+#### ① 산점도 개요와 함수 plot()
+
+산점도(scatter plot)는 두 연속형 변수 좌표상의 점을 표시해 이 두 변수 사이의 관계를 나타내는 그래프이다. x좌표와 y좌표 (x, y)의 값이 (3, 7), (5, 10)인 2개의 점을 그리는 간단한 산점도를 그려보자. 첫 번째 인자는 두 점의 x 값만 모은 리스트이며, 두 번째가 y 값 리스트인 것에 주의하자.
+
+> `scatter(x, y, ...)` 인자: x = [x1, x2, x3, ...], y = [y1, y2, y3, ...]
+> * 좌표 (x1, y1), (x2, y2), (x3, y3) ... 점을 그리기
+
+다음 코드처럼 `scatter()` 인자로 `[3, 5]`, `[7, 10]`으로 기술해 실행한다.
+
+```python
+%config InlineBackend.figure_format = 'retina' # matplotlib 그림을 선명하게 그리기 위한 설정
+
+import matplotlib.pyplot as plt
+
+plt.scatter([3, 5], [7, 10]) # x좌표와 y좌표 (x, y)의 값이 (3, 7), (5, 10)인 2개의 점을 그리는 간단한 산점도
+plt.show()
+```
+
+함수 `scatter(x, y)`는 적어도 인자는 2개여야 한다. 다음 코드처럼 `range()` 함수를 사용하면 다수의 좌표로 간단히 산점도를 그릴 수 있다.
+
+```python
+plt.scatter(range(1, 5), range(5, 9))
+plt.show()
+```
+
+다음은 x와 y 모두 시퀀스 인자를 사용한 코드이다. 5개의 좌표 (3, 13), (4, 14), (5, 15), (6, 16), (7, 17)를 그린 산점도이다.
+
+```python
+plt.scatter(range(3, 8), range(13, 18))
+plt.show()
+```
+
+인자 x와 y의 목록 길이는 반드시 같아야 한다. 다르면 오류(`ValueError: x and y must be the same size`)가 발생한다.
+
+```python
+# 5.3.1 plt.scatter(range(3, 7), range(13, 18)) # x는 4개, y는 5개이므로 오류 발생
+# 5.3.1 plt.show()
+```
+
+#### ② 내장 데이터 기니피그의 치아 성장 ToothGrowth
+
+패키지 `pydataset`의 내장 데이터 `ToothGrowth`에서 산점도를 그려 두 변수의 관계를 알아보자. `ToothGrowth`는 60개의 관측 값과 3개의 변수로 구성된 동물 기니피그의 치아성장 세포에 대한 비타민 C의 영향을 설명한 자료이다.
+
+```python
+from pydataset import data
+
+tg = data('ToothGrowth')
+tg.info()
+```
+
+다음은 치아성장 세포의 상위 5개의 데이터이다.
+
+```python
+tg.head()
+```
+
+matplotlib에서 제목과 레이블을 한글로 표시하려면 다음처럼 주피터 노트북에서 matplotlib의 한글 처리를 위한 코드가 필요하다.
+
+```python
+import matplotlib.pyplot as plt
+
+# 5.3.1 한글 처리를 위한 코드
+plt.rc('font', family='Malgun Gothic') # 폰트 지정
+plt.rc('axes', unicode_minus=False) # 음수 - 표시
+# 5.3.1 plt.rcParams['font.family'] = 'Malgun Gothic'
+# 5.3.1 plt.rcParams['axes.unicode_minus'] = False
+```
+
+다음 코드로 두 변수 `dose`(비타민 용량), `len`(치아세포 길이)의 상관 관계 산점도를 그릴 수 있다. 결과를 통해 비타민 용량이 증가할수록 치아세포 길이가 길어지는 것을 알 수 있다.
+
+plt.scatter(tg.dose, tg.len)
+plt.title("기니피그의 비타민과 치아성장 관계")
+plt.xlabel("비타민 용량")
+plt.ylabel("치아성장 세포길이")
+
+plt.show()
+```
+
+#### ③ 실전 예제: 버블 차트 (Size Variation)
+
+산점도에서 점의 **크기(s)**를 다르게 지정하면 3차원의 정보를 평면에 표현할 수 있습니다. (X축, Y축, 크기) 이렇게 크기로 정보를 표현하는 그래프를 **버블 차트(Bubble Chart)**라고도 합니다.
+
+```python
+# 5.3.1 데이터 준비
+x = [10, 20, 30, 40, 50]
+y = [20, 30, 10, 50, 40]
+size = [100, 200, 500, 1000, 300] # 점의 크기 (면적을 의미함)
+
+plt.figure(figsize=(6, 4))
+# 5.3.1 s: 점 크기 배열 매핑, alpha: 투명도 (점이 겹칠 때 밀도를 확인하기 유용함)
+plt.scatter(x, y, s=size, c='green', alpha=0.5) 
+
+plt.title("버블 차트 예제")
+plt.show()
+```
+
+#### ④ Seaborn을 활용한 세련된 산점도
+
+**[비유로 이해하기: Why Seaborn?]**
+Matplotlib가 도화지에 붓으로 하나하나 직접 그리는 것이라면, **Seaborn**은 최신 유행 테마가 적용된 "고급 템플릿"을 쓰는 것과 같습니다. `sns.set_theme(style="darkgrid")` 한 줄이면 차트가 훨씬 예뻐지며, `hue` 옵션을 통해 제3의 변수(예: 성별, 종류)를 색상으로 순식간에 구분할 수 있습니다.
+
+```python
+import seaborn as sns
+from pydataset import data
+
+tips = data('tips')
+sns.set_theme(style="darkgrid")
+
+# 5.3.1 x축: 총 청구액, y축: 팁, hue: 색깔로 구분할 기준 (성별)
+sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')
+plt.title("총 청구액과 팁의 관계 (성별 구분)")
+plt.show()
+```

@@ -34,7 +34,6 @@ defaults:
 sass:
   load_paths:
     - _sass
-    - ../node_modules/bootstrap/scss
 
 # GitHub Pages 호환성을 위한 설정
 exclude:

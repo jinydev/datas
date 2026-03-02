@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃</title>
+  <meta name="title" content="5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://datas.jiny.dev/mathplotlib/01_matplotlib_basics/04_gridspec_layout/">
+
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃" />
+<meta name="author" content="Hojin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
+<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
+<link rel="canonical" href="https://datas.jiny.dev/mathplotlib/01_matplotlib_basics/04_gridspec_layout/" />
+<meta property="og:url" content="https://datas.jiny.dev/mathplotlib/01_matplotlib_basics/04_gridspec_layout/" />
+<meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃","url":"https://datas.jiny.dev/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/intro/">소개하기</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/setup/">학습환경</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/python/">파이썬 기초</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/numpy/">넘파이</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 active"
+                href="/mathplotlib/">시각화</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/pandas/">판다스</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/datas" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+    <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+        <li class="bd-links-group py-2">
+            <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                강의 목차
+            </strong>
+            <ul class="list-unstyled fw-normal pb-2 small">
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1"
+                        aria-expanded="false">
+                        5.0 데이터 분석 패키지 시작하기
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-1">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/mathplotlib/00_data_analysis_packages/01_pandas_visualization/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.0.1 패키지 판다스와 시각화 라이브러리 설치
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.0.3 토이 데이터와 데이터프레임 활용
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0  w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-2"
+                        aria-expanded="true">
+                        5.1 Matplotlib 기초
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse show" id="collapse-2">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/mathplotlib/01_matplotlib_basics/01_visualization_intro/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.1.1 데이터 시각화 개요
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/01_matplotlib_basics/02_simple_line_plot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.1.2 간단한 직선 그래프 그리기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/01_matplotlib_basics/03_figure_subplot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.1.3 figure와 서브플롯
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"
+                                    class="bd-links-link d-inline-block rounded active">
+                                    5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/01_matplotlib_basics/05_styling/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.1.5 그래프 속성과 스타일링
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-3"
+                        aria-expanded="false">
+                        5.2 Seaborn과 데이터셋
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-3">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/mathplotlib/02_seaborn_dataset/01_pydataset_intro/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.2.1 pydataset 소개
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/02_seaborn_dataset/02_pydataset_install/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.2.2 패키지 pydataset 설치
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/02_seaborn_dataset/03_pydataset_import/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.2.3 pydataset 주요 자료 가져오기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.2.4 seaborn으로 그래프 그리기
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4"
+                        aria-expanded="false">
+                        5.3 기본 그래프 (점, 선, 막대)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-4">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/mathplotlib/03_basic_charts/01_scatter_plot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.3.1 산점도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/03_basic_charts/02_line_plot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.3.2 선 그리기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/03_basic_charts/03_bar_plot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.3.3 막대 그래프
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5"
+                        aria-expanded="false">
+                        5.4 분포와 비율 차트
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-5">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/mathplotlib/04_distribution_charts/01_box_plot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.4.1 상자그림
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/04_distribution_charts/02_histogram/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.4.2 히스토그램
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/04_distribution_charts/03_pie_chart/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.4.3 파이 차트
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6"
+                        aria-expanded="false">
+                        5.5 고급 통계 시각화
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-6">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/mathplotlib/05_advanced_charts/01_violin_plot/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.5.1 바이올린 플롯
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/05_advanced_charts/02_correlation_viz/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.5.2 상관관계 시각화
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/mathplotlib/">5. 시각화 (Matplotlib)</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/mathplotlib/01_matplotlib_basics/">01 matplotlib basics</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page">5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃</li>
+        
+        
+        
+    </ol>
+</nav>
+        <div class="bd-content ps-lg-4">
+            <h2 id="514-맞춤형-서브플롯">5.1.4 맞춤형 서브플롯</h2>
+
+<h3 id="514-gridspec을-사용한-맞춤형-figure-레이아웃">5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃</h3>
+
+<h4 id="-gridspec-개요">① GridSpec 개요</h4>
+
+<p>다음은 위에서 실습한 <code class="language-plaintext highlighter-rouge">plt.subplots</code>으로 2행 2열의 레이아웃을 그린 코드와 결과이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">matplotlib.gridspec.GridSpec</code> 클래스는 서브플롯을 배치할 그리드의 형상을 지정하는 데 사용된다. 이를 위해서는 행과 열의 개수를 설정해야 한다. 선택적으로 서브플롯 레이아웃 매개변수 조정도 수행할 수 있다. 다음은 클래스 <code class="language-plaintext highlighter-rouge">matplotlib.gridspec.GridSpec</code>의 인자 설명이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">class matplotlib.gridspec.GridSpec(nrows, ncols, figure=None, left=None, bottom=None, right=None, top=None, wspace=None, hspace=None, width_ratios=None, height_ratios=None)</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">nrows</code>: 그리드의 행 수를 나타내는 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">ncols</code>: 그리드의 열 수를 나타내는 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">figure</code>: 그림을 그리는 데 사용되는 선택적 매개변수</li>
+  <li><code class="language-plaintext highlighter-rouge">left, right, top, bottom</code>: 그림 너비 또는 높이의 일부로 서브플롯의 범위를 정의하는 데 사용되는 선택적 매개변수</li>
+  <li><code class="language-plaintext highlighter-rouge">wspace</code>: 서브플롯 사이의 너비 공간을 예약하는 데 사용되는 선택적 부동 소수점 인수</li>
+  <li><code class="language-plaintext highlighter-rouge">hspace</code>: 서브플롯 사이의 높이 공간을 예약하는 데 사용되는 선택적 부동 소수점 인수</li>
+  <li><code class="language-plaintext highlighter-rouge">width_ratios</code>: 열의 너비 비율을 나타내는 선택적 매개변수</li>
+  <li><code class="language-plaintext highlighter-rouge">height_ratios</code>: 행의 높이 비율을 나타내는 선택적 매개변수</li>
+</ul>
+
+<p>위와 같은 2행 2열의 레이아웃을 <code class="language-plaintext highlighter-rouge">GridSpec</code>으로 코딩해 보자. 다음처럼 <code class="language-plaintext highlighter-rouge">GridSpec</code> 인스턴스를 별도로 만든 다음, <code class="language-plaintext highlighter-rouge">GridSpec</code> 인스턴스의 요소를 <code class="language-plaintext highlighter-rouge">add_subplot()</code> 메서드에 전달하여 서브플롯 객체를 생성해야 한다. <code class="language-plaintext highlighter-rouge">GridSpec</code>의 요소는 일반적으로 numpy 배열과 동일한 방식으로 참조된다.</p>
+
+<p>다음은 2행 2열의 레이아웃을 <code class="language-plaintext highlighter-rouge">GridSpec</code>으로 만든 내용과 결과이다. 사실 이러한 2행 2열의 단순한 배치를 만들려면 <code class="language-plaintext highlighter-rouge">GridSpec</code>보다 위 방식이 더 간편하다. 여기에서는 <code class="language-plaintext highlighter-rouge">GridSpec</code>의 설명을 위해 그린 레이아웃이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib.gridspec</span> <span class="k">as</span> <span class="n">gridspec</span>
+
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">spec2</span> <span class="o">=</span> <span class="n">gridspec</span><span class="p">.</span><span class="nc">GridSpec</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig2</span><span class="p">)</span>
+
+<span class="n">f2_ax1</span> <span class="o">=</span> <span class="n">fig2</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">f2_ax2</span> <span class="o">=</span> <span class="n">fig2</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">f2_ax3</span> <span class="o">=</span> <span class="n">fig2</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">f2_ax4</span> <span class="o">=</span> <span class="n">fig2</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><img src="img/page_019.png" alt="2행 2열 GridSpec 레이아웃" /></p>
+
+<h4 id="-gridspec을-활용한-다양한-그리드-레이아웃">② GridSpec을 활용한 다양한 그리드 레이아웃</h4>
+
+<p><code class="language-plaintext highlighter-rouge">GridSpec</code>의 장점은 행과 열에 걸쳐 있는 하위 그림을 만들 수 있다는 점이다. 위의 <code class="language-plaintext highlighter-rouge">gridspec.GridSpec</code> 대신에 메서드 <code class="language-plaintext highlighter-rouge">figure.add_gridspec</code>를 사용할 수 있다. 다음은 3행 3열의 그리드 배치를 만드는 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>3행 3열의 배치에서 각 서브플롯이 차지할 그리드 사양 객체를 선택하기 위한 NumPy 슬라이싱 구문을 사용한다. 즉, <code class="language-plaintext highlighter-rouge">gs[0, :]</code>은 0행과 모든 열의 배치하는 서브플롯이 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f3_ax1</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+</code></pre></div></div>
+
+<p>다음은 <code class="language-plaintext highlighter-rouge">GridSpec</code>의 슬라이싱 방법으로 다양한 배치를 만든 코드와 결과이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib.gridspec</span> <span class="k">as</span> <span class="n">gridspec</span>
+
+<span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">f3_ax1</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">f3_ax1</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">gs[0, :]</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f3_ax2</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f3_ax2</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">gs[1, :-1]</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f3_ax3</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f3_ax3</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">gs[1:, -1]</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f3_ax4</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">f3_ax4</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">gs[-1, 0]</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f3_ax5</span> <span class="o">=</span> <span class="n">fig3</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">f3_ax5</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">gs[-1, -2]</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="img/page_020.png" alt="GridSpec 다양한 배치" /></p>
+
+<p>다음 <code class="language-plaintext highlighter-rouge">from</code> 문장을 사용하면 <code class="language-plaintext highlighter-rouge">GridSpec</code>을 바로 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+</code></pre></div></div>
+
+<p>다음은 8행, 39열의 배치 형태의 <code class="language-plaintext highlighter-rouge">GridSpec</code>이며, <code class="language-plaintext highlighter-rouge">plt.subplot(gs)</code>으로 그림이 가능하다. 다음 서브플롯 <code class="language-plaintext highlighter-rouge">ax1</code>은 슬라이싱 배열 참조 <code class="language-plaintext highlighter-rouge">gs[:6, :35]</code>를 통해 0행에서 5행까지, 0열에서 34열까지를 통합하는 배치를 만들 수 있다. 마찬가지로 <code class="language-plaintext highlighter-rouge">ax2</code>는 6행에서 마지막 행까지, 모든 열을 통합하는 배치를 만들 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gs</span> <span class="o">=</span> <span class="nc">GridSpec</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">39</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[:</span><span class="mi">6</span><span class="p">,</span> <span class="p">:</span><span class="mi">35</span><span class="p">])</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">6</span><span class="p">:,</span> <span class="p">:])</span>
+</code></pre></div></div>
+
+<p>다음은 6행, 35열의 난수와 2행, 39열의 이미지를 <code class="language-plaintext highlighter-rouge">GridSpec</code>으로 레이아웃을 배치해 그린 그림이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">gs</span> <span class="o">=</span> <span class="nc">GridSpec</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">39</span><span class="p">)</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[:</span><span class="mi">6</span><span class="p">,</span> <span class="p">:</span><span class="mi">35</span><span class="p">])</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">6</span><span class="p">:,</span> <span class="p">:])</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">39</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h4 id="-axesannotate로-텍스트-추가">③ axes.annotate()로 텍스트 추가</h4>
+
+<p>다음은 그리드를 그리면서 메서드 <code class="language-plaintext highlighter-rouge">axes.annotate</code>로 서브플롯 내부에 텍스트를 표시하는 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig4</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">spec4</span> <span class="o">=</span> <span class="n">fig4</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">anno_opts</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span>
+                 <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f4_ax1</span> <span class="o">=</span> <span class="n">fig4</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec4</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">f4_ax1</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">GridSpec[0, 0]</span><span class="sh">'</span><span class="p">,</span> <span class="o">**</span><span class="n">anno_opts</span><span class="p">)</span>
+
+<span class="n">fig4</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec4</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]).</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">GridSpec[1, 0]</span><span class="sh">'</span><span class="p">,</span> <span class="o">**</span><span class="n">anno_opts</span><span class="p">)</span>
+<span class="n">fig4</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec4</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]).</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">GridSpec[1, 1]</span><span class="sh">'</span><span class="p">,</span> <span class="o">**</span><span class="n">anno_opts</span><span class="p">)</span>
+<span class="n">fig4</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec4</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]).</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">GridSpec[0, 1]</span><span class="sh">'</span><span class="p">,</span> <span class="o">**</span><span class="n">anno_opts</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="img/page_022.png" alt="axes.annotate() 예제" /></p>
+
+<h4 id="-가로와-세로-비율로-레이아웃-배치">④ 가로와 세로 비율로 레이아웃 배치</h4>
+
+<p>서브플롯의 가로와 세로 길이 비율을 각각 지정하는 옵션으로 <code class="language-plaintext highlighter-rouge">width_ratios</code> 및 <code class="language-plaintext highlighter-rouge">height_ratios</code> 매개변수를 제공한다. 인자 유형은 상대 비율의 숫자 목록이다. 즉 <code class="language-plaintext highlighter-rouge">width_ratios=[2, 4, 8]</code>과 <code class="language-plaintext highlighter-rouge">width_ratios=[1, 2, 4]</code>는 같은 의미이다.</p>
+
+<p>다음은 가로와 세로를 각각 <code class="language-plaintext highlighter-rouge">widths = [2, 3, 1.5]</code>와 <code class="language-plaintext highlighter-rouge">heights = [1, 3, 2]</code>로 지정해 3행 3열로 배치한 서브플롯이다. 가로와 세로가 독립적인 값이므로 가로에서 소수를 빼고 <code class="language-plaintext highlighter-rouge">widths = [4, 6, 3]</code>으로 해도 같은 결과가 나온다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig5</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">widths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">spec5</span> <span class="o">=</span> <span class="n">fig5</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                          <span class="n">width_ratios</span><span class="o">=</span><span class="n">widths</span><span class="p">,</span>
+                          <span class="n">height_ratios</span><span class="o">=</span><span class="n">heights</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig5</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">spec5</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">])</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Width: {}</span><span class="se">\n</span><span class="s">Height: {}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">widths</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">heights</span><span class="p">[</span><span class="n">row</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="img/page_023.png" alt="가로 세로 비율 레이아웃" /></p>
+
+<h4 id="-gridspec_kw-키워드-인자-활용">⑤ gridspec_kw 키워드 인자 활용</h4>
+
+<p>함수 <code class="language-plaintext highlighter-rouge">subplot()</code>의 키워드 인자 <code class="language-plaintext highlighter-rouge">gridspec_kw</code>에서도 속성 <code class="language-plaintext highlighter-rouge">width_ratios</code> 및 <code class="language-plaintext highlighter-rouge">height_ratios</code>를 사용할 수 있다. 구조체 <code class="language-plaintext highlighter-rouge">gridspec_kw</code>를 만들어 인자로 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">widths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">gs_kw</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span><span class="n">width_ratios</span><span class="o">=</span><span class="n">widths</span><span class="p">,</span> <span class="n">height_ratios</span><span class="o">=</span><span class="n">heights</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음 코드는 이전 코드와 같은 기능의 함수 <code class="language-plaintext highlighter-rouge">plt.subplots(ncols=3, nrows=3, constrained_layout=True, gridspec_kw=gs_kw)</code>를 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">widths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">gs_kw</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span><span class="n">width_ratios</span><span class="o">=</span><span class="n">widths</span><span class="p">,</span> <span class="n">height_ratios</span><span class="o">=</span><span class="n">heights</span><span class="p">)</span>
+
+<span class="n">fig6</span><span class="p">,</span> <span class="n">f6_axes</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                             <span class="n">gridspec_kw</span><span class="o">=</span><span class="n">gs_kw</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">f6_axes</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Width: {}</span><span class="se">\n</span><span class="s">Height: {}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">widths</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">heights</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="img/page_024.png" alt="gridspec_kw 활용" /></p>
+
+<h4 id="-그리드-서브플롯의-추가와-삭제">⑥ 그리드 서브플롯의 추가와 삭제</h4>
+
+<p><code class="language-plaintext highlighter-rouge">GridSpec</code>과 <code class="language-plaintext highlighter-rouge">get_gridspec</code> 방법은 서브플롯을 이용하여 대부분의 서브플롯을 만든 후 일부를 제거하고 결합하는 것이 편리하다. 다음 코드로 3행 3열의 그리드 배치를 만들 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig7</span><span class="p">,</span> <span class="n">f7_axs</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음 코드처럼 메서드 <code class="language-plaintext highlighter-rouge">get_gridspec()</code>의 결과를 <code class="language-plaintext highlighter-rouge">gs</code>에 저장해 서브플롯으로 추가할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig7</span><span class="p">,</span> <span class="n">f7_axs</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">f7_axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">get_gridspec</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">gs</span><span class="p">)</span>
+<span class="c1"># 5.1.4 GridSpec(3, 3)
+</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">f7_axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">get_gridspec</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">gs</span><span class="p">)</span>
+<span class="c1"># 5.1.4 GridSpec(3, 3)
+</span></code></pre></div></div>
+
+<p>다음은 2행 3열과 3행 3열의, 2개 서브플롯을 제거하는 문장이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f7_axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">remove</span><span class="p">()</span>
+<span class="n">f7_axs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">remove</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>다시 다음 문장으로 두 서브플롯 영역에 하나의 서브플롯을 추가하는 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">axbig</span> <span class="o">=</span> <span class="n">fig7</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>다음은 전체 코드와 결과이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig7</span><span class="p">,</span> <span class="n">f7_axs</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">f7_axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">get_gridspec</span><span class="p">()</span>
+
+<span class="c1"># 5.1.4 remove the underlying axes
+# 5.1.4 for ax in f7_axs[1:, -1]:
+# 5.1.4 ax.remove()
+</span>
+<span class="n">f7_axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">remove</span><span class="p">()</span>
+<span class="n">f7_axs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">remove</span><span class="p">()</span>
+
+<span class="n">axbig</span> <span class="o">=</span> <span class="n">fig7</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axbig</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">Big Axes </span><span class="se">\n</span><span class="s">GridSpec[1:, -1]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+               <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">fig7</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/page_026.png" alt="서브플롯 추가와 삭제" /></p>
+
+<h4 id="-gridspec의-세부-조정">⑦ GridSpec의 세부 조정</h4>
+
+<p><code class="language-plaintext highlighter-rouge">GridSpec</code>을 명시적으로 사용하면 <code class="language-plaintext highlighter-rouge">GridSpec</code>을 생성하면서 하위 플롯의 레이아웃 매개변수를 조정할 수 있다. 이 옵션은 서브플롯 크기를 조정하거나 그림을 채우기 위해 <code class="language-plaintext highlighter-rouge">figure.tight_layout()</code>이나 <code class="language-plaintext highlighter-rouge">constrained layout</code>으로 호환되지 않는다.</p>
+
+<p>인자 <code class="language-plaintext highlighter-rouge">left</code>는 전체 그림의 왼쪽 위치를, <code class="language-plaintext highlighter-rouge">right</code>는 오른쪽 위치를 비율로 나타낸다. 즉 왼쪽 반 정도만 사용하도록 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gs1</span> <span class="o">=</span> <span class="n">fig8</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.48</span><span class="p">,</span>
+                        <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음은 <code class="language-plaintext highlighter-rouge">fig8.add_gridspec()</code>으로 전체 레이아웃 조정하고 다시 <code class="language-plaintext highlighter-rouge">fig8.add_subplot()</code>으로 3개의 서브플롯을 그리는 코드와 결과이다. 다음은 <code class="language-plaintext highlighter-rouge">subplots_adjust</code>와 유사하지만 지정된 <code class="language-plaintext highlighter-rouge">GridSpec</code>에서 생성된 하위 플롯에만 영향을 미친다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig8</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">gs1</span> <span class="o">=</span> <span class="n">fig8</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.48</span><span class="p">,</span>
+                        <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">f8_ax1</span> <span class="o">=</span> <span class="n">fig8</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs1</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">f8_ax2</span> <span class="o">=</span> <span class="n">fig8</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f8_ax3</span> <span class="o">=</span> <span class="n">fig8</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><img src="img/page_027.png" alt="GridSpec 세부 조정" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig9</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">gs1</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.48</span><span class="p">,</span>
+                        <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">f9_ax1</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs1</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span> <span class="c1"># 1~2행, 모든 열에 걸친 서브플롯
+</span><span class="n">f9_ax1</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">f9_ax1 -&gt; gs1[:-1, :]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f9_ax2</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 3행에 1~2열에 걸친 서브플롯
+</span><span class="n">f9_ax2</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">f9_ax2 -&gt; gs1[-1, :-1]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f9_ax3</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 3행 3열 서브플롯
+</span><span class="n">f9_ax3</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">gs1[-1, -1]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">gs2</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.55</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
+                        <span class="n">hspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">f9_ax4</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs2</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 모든 행, 1~2열에 걸친 서브플롯
+</span><span class="n">f9_ax4</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">f9_ax4 -&gt; gs2[:, :-1]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f9_ax5</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs2</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 1~2행과 3열에 걸친 서브플롯
+</span><span class="n">f9_ax5</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">gs2[:-1, -1]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">f9_ax6</span> <span class="o">=</span> <span class="n">fig9</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 3행 3열 서브플롯
+</span><span class="n">f9_ax6</span><span class="p">.</span><span class="nf">annotate</span><span class="p">(</span><span class="sh">'</span><span class="s">gs2[-1, -1]</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="sh">'</span><span class="s">axes fraction</span><span class="sh">'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/page_028.png" alt="GridSpec 세부 조정 2" /></p>
+
+<h4 id="-subplotspec을-사용하는-gridspec">⑧ SubplotSpec을 사용하는 GridSpec</h4>
+
+<p>메서드 <code class="language-plaintext highlighter-rouge">subgridspec()</code>으로 <code class="language-plaintext highlighter-rouge">GridSpec</code>을 생성할 수 있으며, 이 경우 해당 레이아웃 매개변수는 지정된 <code class="language-plaintext highlighter-rouge">SubplotSpec</code>의 인자로 설정된다.</p>
+
+<p>다음으로 1행 2열의 그리드를 배치할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gs0</span> <span class="o">=</span> <span class="n">fig10</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 1행 2열
+</span></code></pre></div></div>
+
+<p>1열 객체인 <code class="language-plaintext highlighter-rouge">gs0[0]</code>의 메서드 <code class="language-plaintext highlighter-rouge">subgridspec(2, 3)</code>의 호출로 1열 내부에 2행 3열의 서브플롯을 그릴 수 있다. 2열 객체인 <code class="language-plaintext highlighter-rouge">gs0[1]</code>의 <code class="language-plaintext highlighter-rouge">subgridspec(3, 2)</code>의 호출로 2열 내부에 3행 2열의 서브플롯을 그릴 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gs00</span> <span class="o">=</span> <span class="n">gs0</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 1열 내부에 2행 3열의 서브플롯
+</span><span class="n">gs01</span> <span class="o">=</span> <span class="n">gs0</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 2열 내부에 3행 2열의 서브플롯
+</span></code></pre></div></div>
+
+<p>다음은 1열 내부에 2행 3열의 서브플롯, 2열 내부에 3행 2열의 서브플롯을 그리는 내용과 결과이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="n">fig10</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">gs0</span> <span class="o">=</span> <span class="n">fig10</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 1행 2열
+</span>
+<span class="n">gs00</span> <span class="o">=</span> <span class="n">gs0</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 1열 내부에 2행 3열의 서브플롯
+</span><span class="n">gs01</span> <span class="o">=</span> <span class="n">gs0</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 2열 내부에 3행 2열의 서브플롯
+</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">fig10</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs00</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+        <span class="n">fig10</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="n">gs01</span><span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><img src="img/page_029.png" alt="SubplotSpec 중첩" /></p>
+
+<h4 id="-subplotspec을-사용해-중첩된-그리드-배치">⑨ SubplotSpec을 사용해 중첩된 그리드 배치</h4>
+
+<p>다음 코드는 외부 4 x 4 그리드의 각각의 내부에 다시 내부 3 x 3 그리드를 표현한 그림이다. 각각의 그리드에는 외부와 내부의 서브플롯을 참조할 수 있는 첨자를 보이게 하고 있다. 다음이 외부 4 x 4 그리드를 만든 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">outer_grid</span> <span class="o">=</span> <span class="n">fig11</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음은 16개의 <code class="language-plaintext highlighter-rouge">outer_grid[a, b]</code>에서 <code class="language-plaintext highlighter-rouge">subgridspec(3, 3, ...)</code>으로 내부에 다시 3 x 3의 그리드를 만드는 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inner_grid</span> <span class="o">=</span> <span class="n">outer_grid</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="n">inner_grid</span><span class="p">.</span><span class="nf">subplots</span><span class="p">()</span> <span class="c1"># Create all subplots for the inner grid.
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">numpy</code>에 있는 <code class="language-plaintext highlighter-rouge">ndenumerate(arr)</code>은 배열 첨자 좌표와 해당 값의 쌍을 만드는 반복자(iterator)를 반환한다. 다음처럼 <code class="language-plaintext highlighter-rouge">for</code> 반복에서 두 개의 변수 <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">x</code>로 받아 출력하면 내용을 이해할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">ndenumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">2</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">3</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">4</span>
+</code></pre></div></div>
+
+<p>또한, 다음으로 16개의 <code class="language-plaintext highlighter-rouge">outer_grid[a, b]</code>를 순회하면서 각각 3 x 3의 모든 서브플롯에서 외부와 내부의 서브플롯을 참조할 수 있는 텍스트를 호출해 자리를 보이게 하고 있다. 또한, 모든 눈금(ticks)은 없도록 지정한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">ndenumerate</span><span class="p">(</span><span class="n">axs</span><span class="p">):</span>
+    <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">'</span><span class="s">out[</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s">]</span><span class="sh">'</span><span class="p">,</span> <span class="sa">f</span><span class="sh">'</span><span class="s">in[</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s">]</span><span class="sh">'</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span> <span class="c1"># 눈금 없애기
+</span></code></pre></div></div>
+
+<p>다음이 전체 코드와 결과이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">fig11</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">outer_grid</span> <span class="o">=</span> <span class="n">fig11</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="c1"># gridspec inside gridspec
+</span>        <span class="n">inner_grid</span> <span class="o">=</span> <span class="n">outer_grid</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">axs</span> <span class="o">=</span> <span class="n">inner_grid</span><span class="p">.</span><span class="nf">subplots</span><span class="p">()</span> <span class="c1"># Create all subplots for the inner grid.
+</span>
+        <span class="nf">for </span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">ndenumerate</span><span class="p">(</span><span class="n">axs</span><span class="p">):</span>
+            <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">'</span><span class="s">out[</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s">]</span><span class="sh">'</span><span class="p">,</span> <span class="sa">f</span><span class="sh">'</span><span class="s">in[</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s">]</span><span class="sh">'</span>
+            <span class="n">ax</span><span class="p">.</span><span class="nf">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+            <span class="n">ax</span><span class="p">.</span><span class="nf">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+            <span class="n">ax</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span> <span class="c1"># 눈금 없애기
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/page_031.png" alt="SubplotSpec 중첩 그리드 텍스트" /></p>
+
+<h4 id="-subplotspec을-사용해-중첩된-그리드-배치에-기하학적인-그래프-그리기">⑩ SubplotSpec을 사용해 중첩된 그리드 배치에 기하학적인 그래프 그리기</h4>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">sin()</code>과 <code class="language-plaintext highlighter-rouge">cos()</code> 함수를 사용해 다양한 그림을 그려보자. 다음에서 구현한 함수를 <code class="language-plaintext highlighter-rouge">squiggle_xy(1, 2, 1, 3)</code>로 호출해 <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">y</code>의 값을 얻어 플롯해 보면 기하학적인 그림이 그려진다. 네 개의 인자를 정수로 적정하게 바꾸면 다양한 기하학적인 문양이 만들어진다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="k">def</span> <span class="nf">squiggle_xy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">b</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="o">*</span><span class="nf">squiggle_xy</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/page_032.png" alt="기하학적 그래프" /></p>
+
+<p>다음은 16개의 <code class="language-plaintext highlighter-rouge">outer_grid[a, b]</code>에서 <code class="language-plaintext highlighter-rouge">subgridspec(3, 3, ...)</code>으로 내부에 다시 3 x 3의 그리드를 만드는 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inner_grid</span> <span class="o">=</span> <span class="n">outer_grid</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="n">inner_grid</span><span class="p">.</span><span class="nf">subplots</span><span class="p">()</span> <span class="c1"># Create all subplots for the inner grid.
+</span></code></pre></div></div>
+
+<p>또한, 다음으로 16개의 <code class="language-plaintext highlighter-rouge">outer_grid[a, b]</code>를 순회하면서 각각 3 x 3의 모든 서브플롯에서 기하학적인 그림을 그리고 모든 눈금(ticks)은 없도록 지정한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">ndenumerate</span><span class="p">(</span><span class="n">axs</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="o">*</span><span class="nf">squiggle_xy</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+</code></pre></div></div>
+
+<p>다음이 전체 코드와 결과이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib.gridspec</span> <span class="kn">import</span> <span class="n">GridSpec</span>
+
+<span class="k">def</span> <span class="nf">squiggle_xy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">b</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">fig11</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">outer_grid</span> <span class="o">=</span> <span class="n">fig11</span><span class="p">.</span><span class="nf">add_gridspec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="c1"># gridspec inside gridspec
+</span>        <span class="n">inner_grid</span> <span class="o">=</span> <span class="n">outer_grid</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">].</span><span class="nf">subgridspec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">axs</span> <span class="o">=</span> <span class="n">inner_grid</span><span class="p">.</span><span class="nf">subplots</span><span class="p">()</span> <span class="c1"># Create all subplots for the inner grid.
+</span>
+        <span class="nf">for </span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">ndenumerate</span><span class="p">(</span><span class="n">axs</span><span class="p">):</span>
+            <span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="o">*</span><span class="nf">squiggle_xy</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">ax</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+
+        <span class="c1"># show only the outside spines
+</span>        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fig11</span><span class="p">.</span><span class="nf">get_axes</span><span class="p">():</span>
+            <span class="n">ss</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">get_subplotspec</span><span class="p">()</span>
+            <span class="n">ax</span><span class="p">.</span><span class="n">spines</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="nf">set_visible</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="nf">is_first_row</span><span class="p">())</span>
+            <span class="n">ax</span><span class="p">.</span><span class="n">spines</span><span class="p">.</span><span class="n">bottom</span><span class="p">.</span><span class="nf">set_visible</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="nf">is_last_row</span><span class="p">())</span>
+            <span class="n">ax</span><span class="p">.</span><span class="n">spines</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="nf">set_visible</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="nf">is_first_col</span><span class="p">())</span>
+            <span class="n">ax</span><span class="p">.</span><span class="n">spines</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="nf">set_visible</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="nf">is_last_col</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>내부 외곽선을 보이지 않게 처리하는 부분(마지막 <code class="language-plaintext highlighter-rouge">for</code> 문장)이 없는 경우, 다음처럼 보인다.</p>
+
+<p><img src="img/page_034.png" alt="기하학적 중첩 그리드" /></p>
+
+
+            <!-- 구글 애드센스 출력 -->
+            <div class="mt-5">
+                <!-- 구글 애드센스 (여기에 본인의 코드 입력) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+        </div>
+
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    서브목차
+    <svg class="bi d-md-none ms-2" aria-hidden="true">
+      <use xlink:href="#chevron-expand"></use>
+    </svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">서브목차</strong>
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <nav id="TableOfContents">
+      <!--
+      <ul>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#cdn-links">CDN links</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+        <li><a href="#js-components">JS components</a></li>
+        <li><a href="#important-globals">Important globals</a>
+          <ul>
+            <li><a href="#html5-doctype">HTML5 doctype</a></li>
+            <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+            <li><a href="#box-sizing">Box-sizing</a></li>
+            <li><a href="#reboot">Reboot</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      -->
+    </nav>
+  </div>
+</div>
+    </main>
+</div>
+
+  <footer class="container">
+  <hr class="mt-5 mb-3">
+  <div class="row align-items-center pb-3">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <p class="mb-0 text-secondary">Copyright 2017~2026 JinyDev. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+      <a href="mailto:infohojin@naver.com" class="text-decoration-none text-secondary">Contact</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+
+</body>
+
+</html>

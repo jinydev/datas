@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120" viewBox="0 0 300 120">
+  <!-- Background -->
+  <rect width="300" height="120" rx="12" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  
+  <!-- Variable a (The Box - Left Side) -->
+  <rect x="40" y="30" width="60" height="60" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2" stroke-dasharray="4"/>
+  <text x="70" y="110" font-family="Consolas, monospace" font-size="13" fill="#6c757d" text-anchor="middle">변수 a</text>
+  
+  <!-- Equals symbol -->
+  <text x="150" y="68" font-family="Consolas, monospace" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">=</text>
+  
+  <!-- The Value (3) with animation (Right to Left) -->
+  <g>
+    <!-- Animation definitions for the group -->
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="210 40; 210 40; 130 40; 50 40; 50 40; 50 40" 
+      keyTimes="0; 0.15; 0.3; 0.6; 0.75; 1" 
+      dur="3s" 
+      repeatCount="indefinite" />
+      
+    <!-- Opacity and scale animation via CSS inside SVG -->
+    <style>
+      .val-circle {
+        animation: fadeScale 3s infinite ease-in-out;
+      }
+      @keyframes fadeScale {
+        0% { opacity: 0; transform: scale(0.5); transform-origin: center; }
+        15% { opacity: 1; transform: scale(1); transform-origin: center; }
+        30% { opacity: 1; transform: scale(1); transform-origin: center; }
+        60% { opacity: 1; transform: scale(1); transform-origin: center; }
+        75% { opacity: 0; transform: scale(0.5); transform-origin: center; }
+        100% { opacity: 0; transform: scale(0.5); transform-origin: center; }
+      }
+    </style>
+    
+    <!-- The actual circle and text -->
+    <g class="val-circle">
+      <circle cx="20" cy="20" r="20" fill="#198754" />
+      <text x="20" y="26" font-family="Consolas, monospace" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+    </g>
+  </g>
+</svg>

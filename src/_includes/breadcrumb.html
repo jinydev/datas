@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb" class="mt-3">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ " /" | relative_url }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
         {% assign crumbs = page.url | split: '/' %}
         {% assign current_path = "" %}
         {% for crumb in crumbs offset: 1 %}

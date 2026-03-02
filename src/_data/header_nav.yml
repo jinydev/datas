@@ -1,10 +1,13 @@
-- title: 입문
-  url: /part01/
-- title: 분석
-  url: /part02/
-- title: 응용
-  url: /part03
-- title: 응용
-  url: /part04
-- title: 파이썬
+- title: 소개하기
+  url: /intro/
+- title: 학습환경
+  url: /setup/
+- title: 파이썬 기초
   url: /python/
+- title: 넘파이
+  url: /numpy/
+- title: 시각화
+  url: /mathplotlib/
+- title: 판다스
+  url: /pandas/
+
