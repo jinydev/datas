@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.3.3 변수 스코프와 람다 함수</title>
   <meta name="title" content="3.3.3 변수 스코프와 람다 함수" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.3.3 변수 스코프와 람다 함수"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/03_functions/03_lambda_functions/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/03_functions/03_lambda_functions/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.3.3 변수 스코프와 람다 함수"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/03_functions/03_lambda_functions/" />
-<meta property="og:url" content="http://localhost:4000/python/03_functions/03_lambda_functions/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/03_functions/03_lambda_functions/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/03_functions/03_lambda_functions/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.3.3 변수 스코프와 람다 함수" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.3.3 변수 스코프와 람다 함수","url":"http://localhost:4000/python/03_functions/03_lambda_functions/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.3.3 변수 스코프와 람다 함수","url":"https://datas.jiny.dev/python/03_functions/03_lambda_functions/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="333-변수-스코프와-람다-함수">3.3.3 변수 스코프와 람다 함수</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 함수 내부 코드와 바깥세상을 엄격히 가로막는 <strong>‘변수의 유효 범위(Scope)’</strong> 개념과 닫힌 문을 부수는 <code class="language-plaintext highlighter-rouge">global</code> 키워드의 작동 원리를 명확히 파악합니다. 더 나아가, <code class="language-plaintext highlighter-rouge">def</code>로 이름표조차 붙일 시간 없이 즉석에서 1줄로 생성하고 폐기하는 강력한 일회용 익명 함수, <strong>람다(Lambda)</strong>의 용도를 전격 해부합니다.</p>
+
 <p>함수를 작성하다 보면 데이터의 생존 범위(스코프)와, 아주 짧게 쓰고 버릴 익명 함수가 필요한 순간이 옵니다.</p>
 
 <h2 id="변수의-유효-범위-scope와-global-키워드">변수의 유효 범위 (Scope)와 Global 키워드</h2>
@@ -745,6 +748,9 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>
 <span class="c1"># [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 </span></code></pre></div></div>
+
+<h2 id="정리">정리</h2>
+<p>함수 안에서 탄생한 변수는 절대 바깥에서 함부로 부를 수 없다는 스코프(Scope)의 한계와 그 안전성을 뼈저리게 체감했습니다. 또한, 아주 찰나의 데이터 정렬(<code class="language-plaintext highlighter-rouge">sort(key=...)</code>) 등에서 사용하기 위해 무거운 <code class="language-plaintext highlighter-rouge">def</code> 선언문 대신 깃털처럼 가벼운 <code class="language-plaintext highlighter-rouge">lambda</code>를 사용하는 테크닉은, 여러분을 우아하고 날렵한 중급 파이썬 코더로 만들어 줄 강력한 열쇠입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

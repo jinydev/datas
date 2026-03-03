@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.8 GUI 프로그래밍 (Tkinter)</title>
   <meta name="title" content="3.8 GUI 프로그래밍 (Tkinter)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.8 GUI 프로그래밍 (Tkinter)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/08_gui_programming/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/08_gui_programming/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.8 GUI 프로그래밍 (Tkinter)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/08_gui_programming/" />
-<meta property="og:url" content="http://localhost:4000/python/08_gui_programming/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/08_gui_programming/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/08_gui_programming/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.8 GUI 프로그래밍 (Tkinter)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.8 GUI 프로그래밍 (Tkinter)","url":"http://localhost:4000/python/08_gui_programming/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.8 GUI 프로그래밍 (Tkinter)","url":"https://datas.jiny.dev/python/08_gui_programming/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -672,6 +672,9 @@
 
 <h2 id="8-파이썬-gui-프로그래밍-tkinter">8. 파이썬 GUI 프로그래밍 (Tkinter)</h2>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 우중충한 터미널 검은 화면을 벗어나, 파이썬 설치 시 함께 기본 제공되는 <code class="language-plaintext highlighter-rouge">Tkinter</code> 라이브러리를 통해 마우스로 클릭하고 조작할 수 있는 <strong>직관적인 윈도우 그래픽 화면 창(GUI)</strong>을 띄우는 법을 가볍게 배웁니다. 라벨과 버튼(Widget)을 조립하고, 그 이벤트를 내장 함수에 연결하는 기초 이벤트 드리븐(Event-Driven) 방식 구조의 맛을 봅니다.</p>
+
 <p>파이썬 기본 내장 라이브러리인 <strong>Tkinter</strong>를 사용하여 마우스로 클릭할 수 있는 <strong>윈도우 프로그램</strong>을 만들어 봅니다. 분석한 데이터를 친구에게 보여주거나 고객용 툴을 만들 때, 검은 화면(터미널)보다는 윈도우 UI 창이 훨씬 대중적이고 멋집니다.</p>
 
 <h3 id="첫-번째-윈도우-만들기">첫 번째 윈도우 만들기</h3>
@@ -736,6 +739,9 @@
 
 <span class="n">root</span><span class="p">.</span><span class="nf">mainloop</span><span class="p">()</span>
 </code></pre></div></div>
+
+<h2 id="정리">정리</h2>
+<p>수백 줄의 알고리즘으로 화려한 결과를 뽑아내도, 결국 일반 사용자 고객에게 건네줄 때는 무뚝뚝한 검은 콘솔 창 대신 친숙한 윈도우 화면과 큼지막한 버튼 하나로 예쁘게 포장해 주어야 그 소프트웨어의 가치가 궁극적으로 빛이 납니다. 이 장에서 가볍게 다룬 <code class="language-plaintext highlighter-rouge">Tkinter</code>의 구조적인 화면 구성(위젯 배치) 및 무한 대기 순환(Mainloop) 원리는, 훗날 더 방대하고 세련된 PyQt나 웹 기반 대시보드(Streamlit 등)로 넘어가기 위한 아주 튼튼하면서도 중요한 인터페이스 사고력 뼈대가 될 것입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

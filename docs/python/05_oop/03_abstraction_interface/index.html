@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.5.3 추상화와 인터페이스</title>
   <meta name="title" content="3.5.3 추상화와 인터페이스" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.5.3 추상화와 인터페이스"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/05_oop/03_abstraction_interface/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/05_oop/03_abstraction_interface/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.5.3 추상화와 인터페이스"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/05_oop/03_abstraction_interface/" />
-<meta property="og:url" content="http://localhost:4000/python/05_oop/03_abstraction_interface/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/05_oop/03_abstraction_interface/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/05_oop/03_abstraction_interface/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.5.3 추상화와 인터페이스" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.5.3 추상화와 인터페이스","url":"http://localhost:4000/python/05_oop/03_abstraction_interface/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.5.3 추상화와 인터페이스","url":"https://datas.jiny.dev/python/05_oop/03_abstraction_interface/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="353-추상화와-인터페이스-abstraction--interface">3.5.3 추상화와 인터페이스 (Abstraction &amp; Interface)</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 몸통 구현 없이 오직 자식 클래스가 반드시 지켜야 할 뼈대(규칙)만 세워두는 <strong>‘추상 베이스 클래스(ABC)’</strong>의 통제 목적을 파악합니다. 파이썬만의 느슨하고 자유로운 ‘덕 타이핑(Duck Typing)’ 문화 속에서도, 대형 프로젝트의 에러를 원천 봉쇄하기 위해 견고한 <strong>인터페이스(Interface) 계약</strong>을 어떻게 코드로 강제 조항화하는지 익힙니다.</p>
+
 <p>설계가 복잡한 대형 시스템을 개발하다 보면 어떤 클래스들은 직접 인스턴스화하여 사용하기 위함이 아니라, 오직 수많은 <strong>하위 클래스들이 반드시 지켜야 할 ‘엄격한 틀과 규칙’을 정의하는 데에만 목적</strong>을 두는 경우가 있습니다. 상속과 다형성의 심화 과정인 <strong>추상화(Abstraction)</strong>에 대해 알아봅시다.</p>
 
 <p><img src="/assets/images/oop/03_abstraction.png" alt="Interface Blueprint Concept" />
@@ -770,6 +773,9 @@
   <li>하위 개발자는 본인의 용도에 맞게 그 틀 안을 구체적인 코드로 채워 완성한다.</li>
   <li>이를 통해 설계자는 시스템의 일관성을 100% 보장하면서도 다형성 파이프라인(파츠 조립)을 유지할 수 있다.</li>
 </ol>
+
+<h2 id="정리">정리</h2>
+<p>단순히 혼자서 작은 스크립트를 짤 때는 추상화 같은 깐깐한 통제 장치가 오히려 거추장스러울 수 있습니다. 그러나 100명의 개발자가 협업하는 대규모 프레임워크나 외부 라이브러리(API) 환경에서는 “이 클래스 이름과 규격만큼은 하늘이 두 쪽 나도 무조건 빠짐없이 구현해 놔!”라고 강제하는 이 인터페이스(Interface) 계약서야말로 런타임 쇼크 에러를 100% 막아내는 최후의 철책선임을 깊이 새겨두면 좋습니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

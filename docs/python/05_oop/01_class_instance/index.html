@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.5.1 클래스와 인스턴스</title>
   <meta name="title" content="3.5.1 클래스와 인스턴스" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.5.1 클래스와 인스턴스"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/05_oop/01_class_instance/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/05_oop/01_class_instance/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.5.1 클래스와 인스턴스"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/05_oop/01_class_instance/" />
-<meta property="og:url" content="http://localhost:4000/python/05_oop/01_class_instance/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/05_oop/01_class_instance/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/05_oop/01_class_instance/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.5.1 클래스와 인스턴스" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.5.1 클래스와 인스턴스","url":"http://localhost:4000/python/05_oop/01_class_instance/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.5.1 클래스와 인스턴스","url":"https://datas.jiny.dev/python/05_oop/01_class_instance/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="351-클래스와-인스턴스-class--instance">3.5.1 클래스와 인스턴스 (Class &amp; Instance)</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 객체를 잉태하는 붕어빵 틀인 <strong>‘클래스(Class)’</strong>와 그 틀에서 찍혀 나온 구체적인 실체인 <strong>‘인스턴스(Instance)’</strong>의 차이를 명확하게 깨우칩니다. 객체의 초기 상태를 세팅하는 생성자(<code class="language-plaintext highlighter-rouge">__init__</code>)의 역할과, 모든 객체 내부 메서드 파라미터에 반드시 등장하는 <code class="language-plaintext highlighter-rouge">self</code> 키워드의 진짜 의미를 가장 투명하게 이해합니다.</p>
+
 <p>파이썬의 세계에서는 <strong>모든 것이 객체(Object)</strong>입니다. 숫자, 문자열, 리스트, 나아가 함수까지도 모두 객체입니다. 이 객체를 만들어내는 공장이자 설계도가 바로 <strong>클래스(Class)</strong>입니다. 이번 단원에서는 클래스와 인스턴스의 개념, 그리고 이들을 구성하는 기본 요소에 대해 알아봅니다.</p>
 
 <p><img src="/assets/images/oop/01_class_instance.png" alt="Class and Instance Concept Focus" />
@@ -760,6 +763,9 @@
 </code></pre></div></div>
 
 <p>이와 같이 클래스를 활용하면 데이터(속성)와 그것을 통제하는 로직(메서드)을 하나의 깔끔한 덩어리(객체)로 <strong>캡슐화</strong>하여 관리할 수 있습니다. 코드가 복잡해질수록 이러한 분리 방식은 엄청난 유지보수성의 향상을 가져옵니다.</p>
+
+<h2 id="정리">정리</h2>
+<p>우리는 이 장을 통해 파이썬이 세상을 바라보는 방식인 “모든 것은 객체(Object)다”라는 철학을 코드로 직접 증명했습니다. 자동차라는 추상적인 개념(Class) 하나만 잘 설계해 두면, 빨간 마티즈(Instance 1)와 파란 그랜저(Instance 2)를 코드 단 두 줄만으로 무한정 찍어내어 각각 완전히 다른 상태(속성)로 격리 관리할 수 있다는 이 엄청난 생산성을 반드시 기억하시기 바랍니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

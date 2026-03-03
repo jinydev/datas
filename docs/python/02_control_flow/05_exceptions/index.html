@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.2.5 예외 처리</title>
   <meta name="title" content="3.2.5 예외 처리" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.2.5 예외 처리"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/02_control_flow/05_exceptions/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/02_control_flow/05_exceptions/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.2.5 예외 처리"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/02_control_flow/05_exceptions/" />
-<meta property="og:url" content="http://localhost:4000/python/02_control_flow/05_exceptions/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/02_control_flow/05_exceptions/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/02_control_flow/05_exceptions/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.2.5 예외 처리" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.2.5 예외 처리","url":"http://localhost:4000/python/02_control_flow/05_exceptions/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.2.5 예외 처리","url":"https://datas.jiny.dev/python/02_control_flow/05_exceptions/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="325-예외-처리">3.2.5 예외 처리</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 프로그램 실행 중 발생하는 예기치 못한 에러를 안전하게 방어하고 복구하는 <strong><code class="language-plaintext highlighter-rouge">try-except</code> 예외 처리</strong> 구문의 중요성과 작동 원리를 이해합니다. 더 나아가, 무조건 실행되어야 하는 <code class="language-plaintext highlighter-rouge">finally</code> 블록의 역할과, 고의로 에러를 발생시키는 <code class="language-plaintext highlighter-rouge">raise</code> 키워드의 개념을 파악하여 실전처럼 견고한 코드를 작성하는 법을 익힙니다.</p>
+
 <p><img src="./img/exception_anim.svg" alt="예외 처리 동작 원리: 에러가 발생하면 비상망으로 떨어지고, 무조건 최종 블록을 거쳐가는 애니메이션" />
 <em>(예외 처리 개념도: 초록색 정상 점은 <code class="language-plaintext highlighter-rouge">try</code> 블록을 무사히 거쳐 <code class="language-plaintext highlighter-rouge">finally</code>로 빠져나가지만, 빨간색 에러 점은 중간에 번개(에러)를 맞고 비상망(<code class="language-plaintext highlighter-rouge">except</code>)으로 떨어져 처리된 후 빠져나가는 두 갈래 흐름을 묘사한 애니메이션)</em></p>
 
@@ -765,6 +768,9 @@
 </code></pre></div></div>
 
 <p>이렇게 <code class="language-plaintext highlighter-rouge">raise</code>를 활용하면 내 코드를 활용하는 다른 모듈 쪽으로, 현재 통제권 바깥에서 부적절한 처리가 발생했음을 명확히 통보해 줄 수 있습니다.</p>
+
+<h2 id="정리">정리</h2>
+<p>지금까지 우리는 에러를 단순히 피해야 할 두려운 존재로 여겼지만, <code class="language-plaintext highlighter-rouge">try-except-finally</code>라는 튼튼한 방어망을 치고 나면 에러마저도 프로그램의 정상적인 제어 흐름 안으로 편입시킬 수 있습니다. 특히 크롤링 머신이나 데이터를 임포트하는 기능을 24시간 가동시켜야 할 실무에서, 이 예외 처리 로직은 서버가 죽지 않고 버티게 해 주는 가장 든든한 생명줄 역할을 톡톡히 해낼 것입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

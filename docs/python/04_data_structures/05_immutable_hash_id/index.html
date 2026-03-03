@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.4.5 수정 불가능(immutable)과 함수 hash() id()</title>
   <meta name="title" content="3.4.5 수정 불가능(immutable)과 함수 hash() id()" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.4.5 수정 불가능(immutable)과 함수 hash() id()"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/04_data_structures/05_immutable_hash_id/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/04_data_structures/05_immutable_hash_id/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.4.5 수정 불가능(immutable)과 함수 hash() id()"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/04_data_structures/05_immutable_hash_id/" />
-<meta property="og:url" content="http://localhost:4000/python/04_data_structures/05_immutable_hash_id/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/04_data_structures/05_immutable_hash_id/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/04_data_structures/05_immutable_hash_id/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.4.5 수정 불가능(immutable)과 함수 hash() id()" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.4.5 수정 불가능(immutable)과 함수 hash() id()","url":"http://localhost:4000/python/04_data_structures/05_immutable_hash_id/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.4.5 수정 불가능(immutable)과 함수 hash() id()","url":"https://datas.jiny.dev/python/04_data_structures/05_immutable_hash_id/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="345-수정-불가능immutable과-함수-hash-id">3.4.5 수정 불가능(immutable)과 함수 hash() id()</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 파이썬 코어의 깊숙한 내부 메모리 지형에서 값이 절대로 변할 수 없는(Immutable) 객체 무리들이 어떠한 수학적 암표 처리 과정을 거쳐 절대 변조되지 않는 보안 식별자(<strong>Hash</strong>)를 보장받는지 그 심연의 근본 원리를 관찰합니다. 특수 내장 함수 <code class="language-plaintext highlighter-rouge">id()</code>를 직접 호출함으로써, 포장지 껍데기(값 구조)가 아닌 진짜 메모리 속의 유일한 하드웨어적 실체를 눈으로 추적 비교하는 개발자의 아주 깊고 단단한 기본기를 다집니다.</p>
+
 <p>파이썬에서 수정 불가능하다는 immutable(불변)은 변경할 수 없는 객체를 가리킨다. immutable 객체는 생성된 후에 그 값을 변경할 수 없다. 예를 들어, 정수(<code class="language-plaintext highlighter-rouge">int</code>), 부동소수점(<code class="language-plaintext highlighter-rouge">float</code>), 문자열(<code class="language-plaintext highlighter-rouge">str</code>), 튜플(<code class="language-plaintext highlighter-rouge">tuple</code>) 등은 immutable 객체이다. 이러한 객체는 생성되면 값을 변경할 수 없으며, 변경하려고 하면 새로운 객체가 생성된다.</p>
 
 <p>수정 불가능한 immutable 속성은 객체의 안전성과 불변성을 보장하여 예상치 못한 변경으로부터 객체를 보호한다. 따라서 파이썬에서는 해시 가능한 객체만 딕셔너리의 키나 집합의 원소로 사용할 수 있는데, 이러한 제한은 immutable한 특성을 가진 객체에 의해 부여된다.</p>
@@ -732,6 +735,9 @@
 </code></pre></div></div>
 
 <p>따라서, immutable한 객체와 함수 <code class="language-plaintext highlighter-rouge">id()</code>를 함께 사용하면 객체의 메모리 위치를 확인하여 두 객체가 동일한 값을 가리키는지 여부를 쉽게 판단할 수 있다.</p>
+
+<h2 id="정리">정리</h2>
+<p>“왜 편리무쌍한 딕셔너리의 Key 자리 스폿이나 깐깐한 중복 방지망인 Set 괄호 속에는 유연한 수정 리스트를 통째로 절대 밀어 넣고 우겨넣어 등록할 수 없을까?”라는 흔하고 숱한 파이썬 초보 입문자들의 거대한 한계 의문은 여기서 깨달은 해시(Hash)의 변형 불가 룰의 쇠고랑을 직시함으로써 완전히 해갈되었습니다. 변수가 가리키고 매달린 메모리 공간의 실제 위치 주소(<code class="language-plaintext highlighter-rouge">id</code>)를 아는 것은 나중에 머신러닝 데이터 객체 덩어리를 잘라 복사하고 붙이는 정제 과정에서 어처구니 없는 원본 훼손 사고를 막아내는 가장 중대한 기본 소양이 됩니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

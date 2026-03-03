@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.4.4 집합</title>
   <meta name="title" content="3.4.4 집합" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.4.4 집합"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/04_data_structures/04_set/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/04_data_structures/04_set/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.4.4 집합"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/04_data_structures/04_set/" />
-<meta property="og:url" content="http://localhost:4000/python/04_data_structures/04_set/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/04_data_structures/04_set/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/04_data_structures/04_set/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.4.4 집합" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.4.4 집합","url":"http://localhost:4000/python/04_data_structures/04_set/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.4.4 집합","url":"https://datas.jiny.dev/python/04_data_structures/04_set/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="344-집합">3.4.4 집합</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 투입된 순서와는 아무런 상관 없이 오로지 고유한 본질 데이터만 담아두어 100% 중복 유입을 철폐해 버리는 <strong>‘집합(Set)’</strong>의 아주 독특한 물리 구조를 학습합니다. 무수한 두 데이터 집단 간에 공통점(교집합)이나 차이점(차집합)을 도출하는 벤 다이어그램 수준의 수학적 연산을 파이썬 코드로 어떻게 짧고 간결하게 부르는지 익힙니다.</p>
+
 <h2 id="집합-개요와-활용">집합 개요와 활용</h2>
 
 <p>파이썬의 집합(set)은 중복된 원소가 없는 순서가 없는 자료형이다. 집합은 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code> 안에 쉼표 <code class="language-plaintext highlighter-rouge">,</code>로 구분된 값을 넣어 생성한다. 수정 불가능한 집합 원소는 추가나 삭제가 가능하다. 즉, 집합 자체는 수정 가능하다. 집합의 원소는 중복을 허용하지 않으므로 멤버쉽 검사와 중복 제거에 주로 사용될 수 있다. 집합은 값의 중복을 허용하지 않기 때문에 중복된 데이터를 제거하는 데 유용하다.</p>
@@ -791,6 +794,9 @@ set()
 <p><strong>출력:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{(1, 2)}
 </code></pre></div></div>
+
+<h2 id="정리">정리</h2>
+<p>수백만 건의 난잡한 고객 ID 데이터나 중구난방 로그 기록을 엑셀로 마주했을 때, 그 방대함 속에서 오직 “딱 한 번이라도 방문(구매)한 적이 있는 유니크(Unique)한 유저 아이디 리스트” 하나 번뜩이며 뽑아내려 할 때 이 Set이 단연코 가장 위력적인 원픽 무기가 됩니다. 복잡하고 구질구질하게 중계를 짜넣는 중첩 <code class="language-plaintext highlighter-rouge">for</code> 루프문 작성은 깔끔하게 포기하고 단 한 번의 형 변환(<code class="language-plaintext highlighter-rouge">set()</code>)만으로 중복을 일격 거세 파괴하는 쾌감을 앞으로 현업 로직에서 마음껏 누려 보시기 바랍니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

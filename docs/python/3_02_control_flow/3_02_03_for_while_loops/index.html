@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.2.3 반복문 for와 while</title>
   <meta name="title" content="3.2.3 반복문 for와 while" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.2.3 반복문 for와 while"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/3_02_control_flow/3_02_03_for_while_loops/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/3_02_control_flow/3_02_03_for_while_loops/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.2.3 반복문 for와 while"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/3_02_control_flow/3_02_03_for_while_loops/" />
-<meta property="og:url" content="http://localhost:4000/python/3_02_control_flow/3_02_03_for_while_loops/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/3_02_control_flow/3_02_03_for_while_loops/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/3_02_control_flow/3_02_03_for_while_loops/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.2.3 반복문 for와 while" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.2.3 반복문 for와 while","url":"http://localhost:4000/python/3_02_control_flow/3_02_03_for_while_loops/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.2.3 반복문 for와 while","url":"https://datas.jiny.dev/python/3_02_control_flow/3_02_03_for_while_loops/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="323-반복문-for와-while">3.2.3 반복문 for와 while</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 주어진 집합 데이터를 처음부터 끝까지 순회하는 <code class="language-plaintext highlighter-rouge">for</code> 문과, 조건이 참인 동안 끝없이 회전하는 <code class="language-plaintext highlighter-rouge">while</code> 문의 기본적인 반복 제어 원리를 구조적으로 배웁니다.</p>
+
 <p><img src="img/loops_concept.png" alt="반복문의 개념: 조건을 만족할 때까지 끝없이 도는 쳇바퀴나 톱니바퀴" /></p>
 
 <p>타 프로그래밍 언어들은 루프(Loop)를 매우 중요하게 취급합니다. 왜냐하면 반복 작업 처리에 반복문 이외의 대안이 거의 없기 때문입니다. 반면 파이썬은 <strong>리스트 내포(List Comprehension)</strong>와 패키지의 <strong>벡터화 연산(ex Numpy)</strong>을 통해 반복 작업을 보다 간결하게 치환하는 경우가 많습니다. 그럼에도 불구하고 핵심 제어 구조인 <code class="language-plaintext highlighter-rouge">for</code>와 <code class="language-plaintext highlighter-rouge">while</code> 반복문은 흐름 명확성에 큰 이점이 있어 매우 기본적으로 알아야 합니다.</p>
@@ -804,6 +807,9 @@ Name: Bob, Age: 22살
 </span><span class="k">if</span> <span class="n">player_hp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">🎉 축하합니다! 모든 몬스터를 물리치고 승리했습니다!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
+
+<h2 id="정리">정리</h2>
+<p><code class="language-plaintext highlighter-rouge">for</code>와 <code class="language-plaintext highlighter-rouge">while</code> 같은 반복문은 타 언어 대비 파이썬이 가지는 간결함에도 불구하고 절대 뺄 수 없는 핵심 논리 제어 구조입니다. 무한 루프 탈출을 통제하는 <code class="language-plaintext highlighter-rouge">break</code> 명령어와, 데이터를 우아하게 짝지어 순회하게 돕는 <code class="language-plaintext highlighter-rouge">zip()</code> 함수 등을 결합해 실전과 같은 매끄러운 코드를 작성해 보시기 바랍니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

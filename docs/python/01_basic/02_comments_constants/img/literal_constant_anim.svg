@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .text-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #666; }
+      .text-code { font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: #d63384; }
+      
+      /* Literal Animation */
+      @keyframes floatLiteral {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      .literal-group { animation: floatLiteral 3s ease-in-out infinite; }
+      
+      /* Constant Box Animation */
+      @keyframes lockBox {
+        0% { stroke: #3b82f6; stroke-width: 3; }
+        50% { stroke: #10b981; stroke-width: 5; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5)); }
+        100% { stroke: #3b82f6; stroke-width: 3; }
+      }
+      .constant-box {
+        fill: #eff6ff;
+        rx: 15;
+        animation: lockBox 4s ease-in-out infinite;
+      }
+      
+      /* Value Transfer Animation */
+      @keyframes moveValue {
+        0% { opacity: 0; transform: translateX(-50px); }
+        20% { opacity: 1; transform: translateX(0); }
+        80% { opacity: 1; transform: translateX(0); }
+        100% { opacity: 0; transform: translateX(0); }
+      }
+      .moving-value { animation: moveValue 4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc" rx="10" />
+
+  <!-- Left Side: Literal -->
+  <g transform="translate(150, 200)">
+    <circle cx="0" cy="0" r="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="4" stroke-dasharray="8 4" />
+    <text x="0" y="-110" class="text-label" text-anchor="middle">리터럴 (Literal)</text>
+    <text x="0" y="-85" class="text-desc" text-anchor="middle">코드에 직접 적힌 '값' 그 자체</text>
+    
+    <g class="literal-group">
+      <text x="0" y="10" class="text-code" text-anchor="middle" font-size="32">3.14159</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Constant -->
+  <g transform="translate(600, 200)">
+    <rect x="-100" y="-70" width="200" height="140" class="constant-box" />
+    <text x="0" y="-110" class="text-label" text-anchor="middle">상수 (Constant)</text>
+    <text x="0" y="-85" class="text-desc" text-anchor="middle">변하지 않기로 약속한 '이름(변수)'</text>
+    
+    <rect x="-80" y="-55" width="160" height="30" rx="5" fill="#1e293b" />
+    <text x="0" y="-33" class="text-code" fill="#f8fafc" text-anchor="middle">PI_VALUE</text>
+    
+    <g class="moving-value">
+      <text x="0" y="40" class="text-code" text-anchor="middle" font-size="28">3.14159</text>
+    </g>
+    
+    <path d="M 60,-40 Q 80,0 60,40" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Arrow connecting them -->
+  <g transform="translate(375, 200)">
+    <path d="M -90,0 L 70,0" stroke="#94a3b8" stroke-width="4" fill="none" marker-end="url(#arrow)" />
+    <text x="-10" y="-20" class="text-desc" text-anchor="middle" font-weight="bold">대입 (Assignment)</text>
+    <text x="-10" y="25" class="text-code" text-anchor="middle" font-size="16">PI_VALUE = 3.14159</text>
+  </g>
+
+  <!-- Arrow Marker Definition -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+</svg>

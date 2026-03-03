@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.1.1 데이터 분석 언어와 파이썬의 미래</title>
   <meta name="title" content="3.1.1 데이터 분석 언어와 파이썬의 미래" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.1.1 데이터 분석 언어와 파이썬의 미래"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/01_basic/01_python_intro/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/01_basic/01_python_intro/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.1.1 데이터 분석 언어와 파이썬의 미래"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/01_basic/01_python_intro/" />
-<meta property="og:url" content="http://localhost:4000/python/01_basic/01_python_intro/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/01_basic/01_python_intro/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/01_basic/01_python_intro/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.1.1 데이터 분석 언어와 파이썬의 미래" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.1.1 데이터 분석 언어와 파이썬의 미래","url":"http://localhost:4000/python/01_basic/01_python_intro/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.1.1 데이터 분석 언어와 파이썬의 미래","url":"https://datas.jiny.dev/python/01_basic/01_python_intro/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -723,7 +723,7 @@
 </ul>
 
 <blockquote>
-  <p><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg" alt="R 언어 로고" /></p>
+  <p><img src="./img/image-20260303224414727.png" alt="R 언어 로고" height="120" /></p>
 </blockquote>
 
 <ul>
@@ -737,7 +737,7 @@
 </ul>
 
 <blockquote>
-  <p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="파이선 언어 로고" /></p>
+  <p><img src="./img/image-20260303224451116.png" alt="파이썬 언어 로고" height="120" /></p>
 </blockquote>
 
 <ul>
@@ -785,6 +785,31 @@
   </tbody>
 </table>
 
+<h2 id="데이터-분석-도구의-한계성-sql을-넘어-파이썬이-필요한-이유">데이터 분석 도구의 한계성: SQL을 넘어 파이썬이 필요한 이유</h2>
+
+<p>데이터 분석의 첫걸음으로 엑셀(Excel)만큼이나 많이 배우는 것이 바로 <strong>SQL(구조화된 질의어)</strong>을 이용한 <strong>관계형 데이터베이스(RDBMS: MySQL, Oracle 등)</strong> 다루기입니다. SQL은 창고에 차곡차곡 예쁘게 정리된 정형 데이터를 빠르고 정확하게 조건에 맞춰 추출해 내는 데 완벽한 성능을 자랑합니다. 
+하지만 지금의 <strong>‘빅데이터(Big Data)’</strong> 시대에서는 정형화된 데이터베이스와 SQL만으로는 명확한 한계에 부딪히게 되며, 파이썬이 필수적인 구원투수로 등판합니다.</p>
+
+<p><strong>1. 비정형 데이터(Unstructured Data) 처리 능력</strong></p>
+<ul>
+  <li><strong>SQL의 한계</strong>: 관계형 데이터베이스는 엑셀처럼 표(Table) 형태로 각인된 정형 데이터만 다룰 수 있습니다.</li>
+  <li><strong>파이썬의 강점</strong>: 폭발하는 빅데이터의 80% 이상은 웹페이지 텍스트, 사람들의 SNS 댓글, 이미지, 각종 센서의 불규칙한 로그 데이터 등 생김새가 일정하지 않은 ‘비정형 데이터’입니다. 파이썬은 풍부한 크롤링(웹 수집) 라이브러리와 텍스트 마이닝 도구를 통해 이 거친 원석들을 손쉽게 긁어모으고, 분석 가능한 정형 데이터로 깔끔하게 가공(전처리)할 수 있습니다.</li>
+</ul>
+
+<p><strong>2. 통계적 연산과 예측 모델링 (Machine Learning)</strong></p>
+<ul>
+  <li><strong>SQL의 한계</strong>: 단순한 덧셈, 그룹별 평균(GROUP BY) 정도는 훌륭히 수행하지만, 복잡한 선형 대수 행렬 연산이나 미래를 예측하는 통계적 모델링을 쿼리문으로 길게 짜는 것은 사실상 불가능에 가깝습니다.</li>
+  <li><strong>파이썬의 강점</strong>: 파이썬은 <code class="language-plaintext highlighter-rouge">Numpy</code>, <code class="language-plaintext highlighter-rouge">Scipy</code>, <code class="language-plaintext highlighter-rouge">Scikit-learn</code>과 같은 기계학습/데이터 과학 전용 라이브러리를 통해 과거의 데이터를 학습시켜 미래를 예측하는 지도/비지도 학습 알고리즘을 단 몇 줄의 코드로 우아하게 구현해 냅니다.</li>
+</ul>
+
+<p><strong>3. 데이터 파이프라인의 통합 자동화</strong></p>
+<ul>
+  <li><strong>SQL의 한계</strong>: 목적에 맞는 데이터를 추출해 내는 일회성 질의나 대시보드 연동에는 매우 강하지만, 수만 개의 파일 변경을 추적하거나 외부 네트워크 서버에서 데이터를 실시간으로 가져오는 등의 시스템 프로그래밍은 어렵습니다.</li>
+  <li><strong>파이썬의 강점</strong>: 파이썬은 그 자체로 ‘강력한 범용 프로그래밍 언어’이기 때문에 이 모든 과정을 조율 가능합니다. 외부 API로 데이터를 받아오고 -&gt; SQL에 접속해 기존 정보를 합치고 -&gt; 딥러닝 예측 모델을 돌린 뒤 -&gt; 결과 그래프를 그려 담당자에게 매일 이메일로 자동 발송하는 <strong>‘A to Z 통합 워크플로우’</strong>를 처음부터 끝까지 혼자서 묶어낼 수 있는 초강력 접착제입니다.</li>
+</ul>
+
+<p>요약하자면, <strong>SQL이 거대한 창고에서 원하는 물건 박스를 오차 없이 빨리 찾아오는 ‘지게차’</strong>라면, <strong>파이썬은 창고 밖의 거친 재료들을 직접 캐내고, 다듬고, 조립하여 완전히 새로운 AI 인공지능 예측 모델을 찍어내는 ‘종합 만능 공장’</strong>이라고 할 수 있습니다.</p>
+
 <h2 id="우리는-왜-파이썬을-선택했는가-roadmap">우리는 왜 파이썬을 선택했는가? (Roadmap)</h2>
 
 <p>결론적으로 우리가 이번 과정에서 <strong>파이썬에 집중하는 이유</strong>는 매우 명확합니다.<br />
@@ -801,9 +826,18 @@
 
 <p>이번 커리큘럼은 아주 견고한 파이썬이라는 뼈대(Week 1~2)를 세우고, 그 위에 빅 데이터를 담아낼 판다스라는 든든한 근육(Week 3~10)을 붙인 뒤, 스스로 학습하여 미래를 예측하는 머신러닝이라는 뇌(Week 11~14)를 무리 없이 작동시키는 완벽한 테크 트리, 위대한 마스터 플랜의 숭고한 시작점(Basecamp)입니다. 앞으로 우리 여정에 함께 할 파이썬, 지금 바로 시작하겠습니다.</p>
 
-<h2 id="학습-정리">학습 정리</h2>
-<p>데이터 분석을 위한 도구 및 언어에 대해서 알아 보았습니다.</p>
+<h2 id="파이썬-창시자-귀도-반-로섬-guido-van-rossum">파이썬 창시자: 귀도 반 로섬 (Guido van Rossum)</h2>
 
+<p>파이썬은 네덜란드 출신의 컴퓨터 프로그래머 <strong>귀도 반 로섬(Guido van Rossum)</strong>이 1989년 크리스마스 연휴에 취미 삼아 만들기 시작한 언어입니다. 
+그는 영국의 코미디 프로그램인 ‘몬티 파이썬의 날아다니는 서커스(Monty Python’s Flying Circus)’의 골수팬이었는데, 여기서 이름을 따와 언어의 이름을 <strong>‘파이썬(Python)’</strong>이라고 지었습니다.</p>
+
+<p>파이썬의 핵심 철학은 <strong>“읽기 쉽고, 누구나 작성하기 쉬운 코드를 지향한다”</strong>는 것입니다. 이처럼 사용자 친화적인 철학 덕분에 파이썬은 오늘날 프로그래밍 입문자부터 세계 최고의 AI 전문가까지 모두가 사랑하는 도구가 되었습니다. 귀도 반 로섬은 오랫동안 파이썬의 발전을 이끌며 ‘자비로운 종신 독재자(BDFL, Benevolent Dictator For Life)’라는 애칭으로 불리기도 했습니다.</p>
+
+<p><img src="./img/image-20260303223934159.png" alt="귀도 반 로섬" />
+<em>(파이썬의 창시자, 귀도 반 로섬)</em></p>
+
+<h2 id="정리">정리</h2>
+<p>데이터 분석용 맞춤 언어의 특성과 함께, 왜 전 세계가 AI와 빅데이터의 표준으로 R 대신 파이썬을 선택했는지 체감했습니다. 무한한 범용성과 압도적인 생태계, 그리고 ‘사람이 읽기 쉬운 코드’를 지향한 귀도 반 로섬의 철학이 담긴 이 언어는 여러분의 데이터 분석 커리어를 여는 완벽한 마스터키가 될 것입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

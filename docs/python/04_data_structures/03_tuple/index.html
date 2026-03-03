@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.4.3 튜플</title>
   <meta name="title" content="3.4.3 튜플" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.4.3 튜플"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/python/04_data_structures/03_tuple/">
+  <meta property="og:url" content="https://datas.jiny.dev/python/04_data_structures/03_tuple/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.4.3 튜플"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/python/04_data_structures/03_tuple/" />
-<meta property="og:url" content="http://localhost:4000/python/04_data_structures/03_tuple/" />
+<link rel="canonical" href="https://datas.jiny.dev/python/04_data_structures/03_tuple/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/04_data_structures/03_tuple/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.4.3 튜플" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.4.3 튜플","url":"http://localhost:4000/python/04_data_structures/03_tuple/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.4.3 튜플","url":"https://datas.jiny.dev/python/04_data_structures/03_tuple/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -680,6 +680,9 @@
         <div class="bd-content ps-lg-4">
             <h1 id="343-튜플">3.4.3 튜플</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 일단 틀이 만들어진 후 내용물이 절대 외부 조작에 의해 긁히거나 변형, 수정되지 않는(Immutable) <strong>‘튜플(Tuple)’</strong>의 보안 및 태생적 안전성의 가치를 명확히 파악합니다. 더 나아가 이 굳건한 성질을 이용해 데이터를 간편히 가방에 싸고 또 한 번에 푸는 마법 같은 <strong>패킹(Packing)과 언패킹(Unpacking)</strong> 문법의 짜릿함을 몸소 체험하게 됩니다.</p>
+
 <h2 id="튜플-개요와-활용">튜플 개요와 활용</h2>
 
 <p>파이썬의 튜플(tuple)은 리스트와 유사하지만, 한 번 생성되면 변경할 수 없는(immutable) 시퀀스 자료형이다. 튜플은 괄호 <code class="language-plaintext highlighter-rouge">( )</code>로 표현되며, 각 요소는 쉼표 <code class="language-plaintext highlighter-rouge">,</code>로 구분된다. 튜플은 다음과 같은 특징을 갖는다.</p>
@@ -763,6 +766,9 @@
 </span></code></pre></div></div>
 
 <p>수정할 필요가 없는 정적 데이터를 다룰 때는 습관적으로 리스트 <code class="language-plaintext highlighter-rouge">[]</code> 대신 튜플 <code class="language-plaintext highlighter-rouge">()</code>을 사용하는 것이 더 파이썬다운 효율적인 코딩 습관(Pythonic)입니다.</p>
+
+<h2 id="정리">정리</h2>
+<p>프로그래밍 초보일 때는 단순하게 값의 추가나 뺄셈조차 마음대로 안 되는 답답하고 낡은 리스트의 하위 호환 구조 정도로 치부하기 쉽습니다. 그러나 이 엄격한 <strong>‘수정 불가능성(Immutable)’</strong>이야말로 치명적인 메모리 데이터 변조 해킹이나 의도치 않은 시스템 크래시를 원천 차단하는 가장 믿음직한 방패막 역할을 수행합니다. 게다가 차지하는 메모리 용량마저 몹시 슬림한 이 튜플 메커니즘의 언패킹 미학을 사랑하게 된다면 비로소 진정한 ‘파이써닉(Pythonic)’한 개발의 미학에 눈을 뜬 것입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->
