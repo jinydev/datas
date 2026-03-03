@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.4.3 데이터종류</title>
   <meta name="title" content="1.4.3 데이터종류" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.4.3 데이터종류"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/04_understanding_data/03_data_types/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/04_understanding_data/03_data_types/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.4.3 데이터종류"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/04_understanding_data/03_data_types/" />
-<meta property="og:url" content="http://localhost:4000/intro/04_understanding_data/03_data_types/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/04_understanding_data/03_data_types/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/04_understanding_data/03_data_types/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.4.3 데이터종류" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.4.3 데이터종류","url":"http://localhost:4000/intro/04_understanding_data/03_data_types/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.4.3 데이터종류","url":"https://datas.jiny.dev/intro/04_understanding_data/03_data_types/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded active">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -819,6 +812,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="143-좋은-지혜는-좋은-데이터에서-출발한다">1.4.3 좋은 지혜는 좋은 데이터에서 출발한다</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 기반암이 곧대해야 훌륭한 성이 지어지듯, 데이터 분석의 뼈대가 되는 데이터의 기본 성질을 학습합니다. 특히 기계가 쉽게 연산할 수 있는 ‘정량적(Quantitative) 데이터’와 문맥과 사람의 감정이 섞인 ‘정성적(Qualitative) 데이터’를 명확히 구분할 수 있는 안목을 기릅니다.</p>
+
+<h2 id="좋은-데이터">좋은 데이터</h2>
 <p>건축을 할 때 바닥의 기반암이 약하면 꼭대기의 성은 무너지고 맙니다. DIKW 피라미드도 마찬가지입니다.</p>
 
 <p>처음에 수집한 데이터(Data)가 쓰레기이거나 거짓말투성이라면, 아무리 뛰어난 기술로 가공해도 꼭대기의 지혜(Wisdom)는 무너진 오답이 되고 맙니다. (Garbage In, Garbage Out)</p>
@@ -858,62 +855,15 @@
 
 <p><img src="../img/qualitative_data.png" alt="정성 데이터" /></p>
 
-<h2 id="현대-분석에서의-정성적-데이터의-중요성">현대 분석에서의 정성적 데이터의 중요성</h2>
-
-<p>과거 컴퓨터는 숫자(정량적)만 계산할 줄 알았지만, 지금은 챗GPT 같은 AI의 발달로 수십만 개의 ‘상품 리뷰 글(정성적 데이터)’을 분석해 “이 상품에 대한 사람들의 반응은 긍정 80%, 부정 20% 입니다”라고 변환해 냅니다.</p>
-
-<p>이를 텍스트 마이닝(Text Mining)이라고 부릅니다.</p>
-
-<p><img src="../img/data_tree_classification.png" alt="데이터 개념" /></p>
-
-<h2 id="데이터-나무의-가지치기-정형-데이터의-세분화">데이터 나무의 가지치기: 정형 데이터의 세분화</h2>
-
-<p>방금 배운 ‘숫자형(정량적)’ 데이터 안에서도 특징에 따라 이름표를 달리 붙여줍니다.</p>
-
-<p>우리가 컴퓨터에게 평균을 구하게 할 것인지, 아니면 그냥 개수만 세게 할 것인지 명확히 가르쳐줘야 컴퓨터가 헷갈리지 않기 때문입니다.</p>
-
-<p>데이터 분석가는 크게 수치형(Numeric)과 범주형(Categorical)으로 나무를 나눕니다.</p>
-
-<p><img src="../img/data_tree.png" alt="데이터의 가지치기" /></p>
-
-<h2 id="수치형-데이터-1-연속형continuous">수치형 데이터 1: 연속형(Continuous)</h2>
-
-<p>끊어지지 않고 소수점 끝까지 무한하게 이어지는(연속되는) 숫자 데이터입니다.</p>
+<h2 id="정리">정리</h2>
+<p>“좋은 데이터가 좋은 지혜(Wisdom)를 낳는다(GIGO).” 분석의 세계에서 절대 변하지 않는 대원칙입니다.</p>
 
 <ul>
-  <li>사람의 키 (173cm, 173.5cm, 173.56cm…)</li>
-  <li>온도 (24.1도, -5.3도)</li>
+  <li><strong>분석의 첫걸음</strong>: 우리가 수집한 데이터가 자로 잴 수 있는 <strong>정량적 데이터</strong>(숫자, 금액, 개수)인지, 문자와 감정이 섞인 <strong>정성적 데이터</strong>(리뷰, 색상, 맛)인지 감별해 내는 것이 모든 데이터 분석의 가장 중요한 첫 단추입니다.</li>
+  <li><strong>분석 도구의 선택</strong>: 정량적 데이터는 엑셀이나 파이썬의 기본 통계 공식만으로도 쉽게 분석하지만, 정성적 데이터는 앞으로 배울 자연어 처리(NLP)나 AI 텍스트 마이닝 같은 보다 복잡한 기술을 적용해야 합니다.</li>
 </ul>
 
-<p>이러한 <strong>연속형 데이터</strong>는 더하거나 평균을 내는 덧셈, 뺄셈, 나눗셈 계산이 완벽하게 성립합니다.</p>
-
-<p><img src="../img/continuous_data_chart.png" alt="데이터 개념" /></p>
-
-<h2 id="수치형-데이터-2-이산형discrete">수치형 데이터 2: 이산형(Discrete)</h2>
-
-<p>주사위를 굴릴 때 나오는 눈의 수처럼, 1개, 2개, 3개 딱딱 셀 수 있게 끊어지는 숫자입니다.</p>
-
-<ul>
-  <li>우리 집 강아지 마리 수 (1.5마리는 불가능하죠?)</li>
-  <li>홈페이지 방문자 수 (1,024명)</li>
-</ul>
-
-<p>이러한 <strong>이산형 데이터</strong> 역시 평균이나 총합을 구하는 계산이 전부 가능합니다.</p>
-
-<p><img src="../img/discrete_data_counting.png" alt="데이터 개념" /></p>
-
-<h2 id="범주형-데이터-1-명목형nominal">범주형 데이터 1: 명목형(Nominal)</h2>
-
-<p>범주형은 말 그대로 카테고리(범주)를 나누는 데이터입니다. 첫 번째로 <strong>명목형(Nominal)</strong>은 ‘순서와 높낮이가 없는 순수한 구분’을 위해 번호를 매긴 것입니다.</p>
-
-<ul>
-  <li>혈액형 (A, B, O, AB)</li>
-  <li>성별 (남=1, 여=2)</li>
-</ul>
-
-<p><img src="../img/nominal_data_categories.png" alt="데이터 개념" /></p>
-
-<p>여기서 남자가 1, 여자가 2라고 해서 여자가 남자보다 2배 더 높다는 뜻이 아닙니다. 단순히 구분을 위해 표기한 숫자에 불과합니다.</p>
+<p>무작정 숫자만 들여다보는 것이 아니라, 이 데이터가 말하고자 하는 고유한 ‘성질’을 파악하는 순간 비로소 여러분은 훌륭한 데이터 분석가로 한 걸음 내딛게 됩니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

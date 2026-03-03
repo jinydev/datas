@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.9 인공지능과 거대언어모델(LLM)</title>
   <meta name="title" content="1.9 인공지능과 거대언어모델(LLM)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.9 인공지능과 거대언어모델(LLM)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/09_ai_and_llm/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/09_ai_and_llm/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.9 인공지능과 거대언어모델(LLM)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/09_ai_and_llm/" />
-<meta property="og:url" content="http://localhost:4000/intro/09_ai_and_llm/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/09_ai_and_llm/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/09_ai_and_llm/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.9 인공지능과 거대언어모델(LLM)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.9 인공지능과 거대언어모델(LLM)","url":"http://localhost:4000/intro/09_ai_and_llm/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.9 인공지능과 거대언어모델(LLM)","url":"https://datas.jiny.dev/intro/09_ai_and_llm/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -809,13 +802,23 @@
         <div class="bd-content ps-lg-4">
             <h1 id="19-인공지능과-거대언어모델llm">1.9 인공지능과 거대언어모델(LLM)</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 데이터라는 막강한 밥(연료)을 먹고 성장하여 이제는 새로운 지식을 무에서 유로 창조해 내는 <strong>인공지능(AI)과 생성형 AI(Generative AI)</strong>의 진화 과정을 이해합니다. 나아가 세상을 뒤흔든 챗GPT의 두뇌, <strong>대규모 언어 모델(LLM)</strong>의 작동 원리를 파악합니다.</p>
+
+<h2 id="목차">목차</h2>
 <p>이 장에서는 다음의 주제들을 학습합니다:</p>
 
-<ul>
-  <li><a href="./01_overview/">1.9.1 개요 및 도입</a></li>
-  <li><a href="./02_ai_history/">1.9.2 AI가 만드는 넷플릭스 유니버스</a></li>
-  <li><a href="./03_generative_ai_llm/">1.9.3 거대한 앵무새 모델 (LLM의 원리)</a></li>
-</ul>
+<h3 id="191-개요-및-도입"><a href="./01_overview/">1.9.1 개요 및 도입</a></h3>
+<p>인간의 지능을 뛰어넘은 알파고 쇼크부터 시작해, AI를 똑똑하게 키워내는 유일무이한 완벽한 교과서가 바로 ‘빅데이터’임을 확인합니다.</p>
+
+<h3 id="192-ai가-만드는-넷플릭스-유니버스"><a href="./02_ai_history/">1.9.2 AI가 만드는 넷플릭스 유니버스</a></h3>
+<p>정해진 답을 판별하던 과거를 지나 그림을 그리고 소설을 쓰는 ‘생성형 AI’ 패러다임의 극적인 전환점과 그 중심에 선 언어 모델의 폭발력을 살펴봅니다.</p>
+
+<h3 id="193-거대한-앵무새-모델-llm의-원리"><a href="./03_generative_ai_llm/">1.9.3 거대한 앵무새 모델 (LLM의 원리)</a></h3>
+<p>수십억 권의 문장을 통째로 집어삼킨 뒤 “다음 단어의 가장 높은 확률”을 계산하여 소름 돋게 자연스러운 대화를 완성해 내는 챗GPT(LLM)의 고도화된 통계적 원리를 파헤칩니다.</p>
+
+<h2 id="정리">정리</h2>
+<p>인공지능(AI)은 어느 날 갑자기 하늘에서 떨어진 마법의 마술 지팡이가 아닙니다. 그것은 수십 년간 엔지니어들이 묵묵히 쌓아 올린 방대한 ‘빅데이터’라는 거대한 댐 위에서, 엄청난 돈과 하드웨어 인프라(클라우드/GPU)를 갈아 넣어 만들어낸 극강의 ‘통계 확률 기계’이자 엄청난 규모의 ‘데이터 분석 모델’ 그 자체입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

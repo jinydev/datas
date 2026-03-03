@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.9.3 거대한 앵무새 모델 (LLM의 원리)</title>
   <meta name="title" content="1.9.3 거대한 앵무새 모델 (LLM의 원리)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.9.3 거대한 앵무새 모델 (LLM의 원리)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/09_ai_and_llm/03_generative_ai_llm/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/09_ai_and_llm/03_generative_ai_llm/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.9.3 거대한 앵무새 모델 (LLM의 원리)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/09_ai_and_llm/03_generative_ai_llm/" />
-<meta property="og:url" content="http://localhost:4000/intro/09_ai_and_llm/03_generative_ai_llm/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/09_ai_and_llm/03_generative_ai_llm/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/09_ai_and_llm/03_generative_ai_llm/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.9.3 거대한 앵무새 모델 (LLM의 원리)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.9.3 거대한 앵무새 모델 (LLM의 원리)","url":"http://localhost:4000/intro/09_ai_and_llm/03_generative_ai_llm/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.9.3 거대한 앵무새 모델 (LLM의 원리)","url":"https://datas.jiny.dev/intro/09_ai_and_llm/03_generative_ai_llm/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -818,6 +811,10 @@
 </nav>
         <div class="bd-content ps-lg-4">
             <h1 id="193-거대한-앵무새-모델-llm의-원리">1.9.3 거대한 앵무새 모델 (LLM의 원리)</h1>
+
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 챗GPT의 두뇌인 <strong>대규모 언어 모델(LLM)</strong>이 수십억 건의 텍스트 빅데이터를 학습하여 ‘다음에 올 가장 자연스러운 단어를 확률적으로 예측’하는 원리를 배웁니다. 아울러 이 최첨단 기법조차 결국 우리가 배운 데이터 분석 6단계(수집-전처리-모델링 등)의 연장선상에 있음을 확고히 인지합니다.</p>
+
 <p>인터넷에 존재하는 전 세계의 수십억 권 분량 위키백과, 뉴스 기사, 카페 글(텍스트 빅데이터)을 통째로 이 AI에게 욱여넣습니다. 그리고 “다음에 올 가장 자연스러운 단어가 무엇일까?”를 확률적으로 계속 찍어 맞히도록 훈련받은 아주 똑똑하고 말문이 트인 ‘슈퍼 초거대 앵무새’가 바로 LLM입니다.</p>
 
 <p><img src="../img/llm_data_ingestion.png" alt="LLM의 등장" /></p>
@@ -836,6 +833,16 @@
 <p>이 화려한 AI와 챗GPT도 결국 1~3교시 과정 내내 우리가 반복했던 <strong>“데이터 수집 -&gt; 전처리(결측치 제거) -&gt; 모델 학습”</strong> 이라는 빅데이터 분석 6단계 사이클을 무식할 정도로 엄청나게 크고 거대하게 돌린 결과물에 불과합니다. 원리는 완벽히 동일합니다.</p>
 
 <p><img src="../img/ai_domain_knowledge.png" alt="AI의 원동력 데이터" /></p>
+
+<h2 id="정리">정리</h2>
+<p>마법처럼 대화를 이어가는 챗GPT와 LLM 기술의 밑바닥에는 대단히 수학적이고 치밀한 ‘확률 게임’과 ‘데이터 전처리’가 숨어 있습니다.</p>
+
+<ul>
+  <li><strong>거대한 앵무새 원리</strong>: LLM은 스스로 ‘판단’하기 보다는, 수십억 개의 텍스트를 통째로 읽어 들여 특정 문맥 뒤에 등장할 ‘가장 높고 자연스러운 확률의 단어’를 쉴 새 없이 생성해 내는 정교한 통계 기계입니다.</li>
+  <li><strong>원리의 동일성</strong>: 챗GPT 역시 아무렇게나 텍스트를 먹인 것이 아닙니다. 엔지니어와 분석가들이 저급한 쓰레기 문장을 걸러내고(전처리), 슈퍼컴퓨터로 학습시키는(데이터 모델링) 수천 시간의 노력이 들어간 ‘지독하게 무식하고 거대한 데이터 분석 결과물’일 뿐입니다.</li>
+</ul>
+
+<p>화려한 AI 기술을 신비화하기보다는, 그것이 방대한 ‘빅데이터’에 규칙과 수학(모델링)을 더한 필연적인 결과물이라는 것을 꿰뚫어 보는 것이 분석가로서 가장 튼튼한 뿌리입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

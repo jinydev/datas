@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.8.3 기존 분석을 가로막던 장벽</title>
   <meta name="title" content="1.8.3 기존 분석을 가로막던 장벽" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.8.3 기존 분석을 가로막던 장벽"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/08_bigdata_and_cloud/03_cloud_computing/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/08_bigdata_and_cloud/03_cloud_computing/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.8.3 기존 분석을 가로막던 장벽"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/08_bigdata_and_cloud/03_cloud_computing/" />
-<meta property="og:url" content="http://localhost:4000/intro/08_bigdata_and_cloud/03_cloud_computing/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/08_bigdata_and_cloud/03_cloud_computing/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/08_bigdata_and_cloud/03_cloud_computing/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.8.3 기존 분석을 가로막던 장벽" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.8.3 기존 분석을 가로막던 장벽","url":"http://localhost:4000/intro/08_bigdata_and_cloud/03_cloud_computing/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.8.3 기존 분석을 가로막던 장벽","url":"https://datas.jiny.dev/intro/08_bigdata_and_cloud/03_cloud_computing/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -818,6 +811,10 @@
 </nav>
         <div class="bd-content ps-lg-4">
             <h1 id="183-기존-분석을-가로막던-장벽">1.8.3 기존 분석을 가로막던 장벽</h1>
+
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 과거 방대한 양의 빅데이터 분석을 주저앉혔던 하드웨어의 한계점(컴퓨팅 파워 부족)을 알아보고, 이를 완벽하게 해결하여 현재의 인공지능(AI) 혁명을 촉발시킨 두 가지 핵심 인프라 기술인 <strong>클라우드 컴퓨팅(Cloud Computing)</strong>과 <strong>GPU 연산</strong>의 역할을 명확히 이해합니다.</p>
+
 <p>불과 10년 전만 해도 이 거대한 빅데이터를 다루는 것은 불가능에 가까웠습니다. 데이터가 너무 많아서 일반 컴퓨터 여러 대를 엮어도 며칠 동안 계산이 끝나지 않고 멈춰버렸기 때문입니다. 방대한 재료는 모였지만 불을 지필 가스레인지(컴퓨팅 파워)가 턱없이 부족했습니다.</p>
 
 <p><img src="../img/old_computer_crashing.png" alt="과거의 컴퓨터 한계" /></p>
@@ -826,6 +823,16 @@
 <p>이 한계를 돌파하게 해 준 일등 공신이 바로 아마존(AWS), 구글(GCP) 같은 <strong>클라우드 서버</strong>와 엔비디아(NVIDIA)의 <strong>GPU 칩셋</strong>입니다. 수천, 수만 대의 컴퓨터 파워를 버튼 하나로 빌려 쓰고, 수만 개의 연산을 동시에 처리하면서 빅데이터 시대의 진정한 봉인이 해제되었습니다.</p>
 
 <p><img src="../img/cloud_computing_server.png" alt="과거의 컴퓨터 한계" /></p>
+
+<h2 id="정리">정리</h2>
+<p>뛰어난 분석 이론과 방대한 데이터가 존재했음에도 불구하고, 과거의 분석가들은 턱없이 부족한 컴퓨터의 연산 속도라는 물리적 장벽에 부딪혀 좌절했습니다.</p>
+
+<ul>
+  <li><strong>컴퓨팅 파워의 한계 돌파</strong>: 이 답답한 병목을 시원하게 뚫어준 구원투수가 바로 거대한 서버를 인터넷으로 빌려 쓰는 ‘클라우드 컴퓨팅(Cloud Computing)’과 수만 개의 단순 계산을 동시에 처리해 내는 엔비디아의 ‘GPU 칩셋’입니다.</li>
+  <li><strong>빅데이터 르네상스</strong>: 누구나 대형 슈퍼컴퓨터를 구매하지 않고도 AWS, GCP 등의 버튼 하나만 클릭하면 클릭 몇 번으로 무한대에 가까운 계산 능력을 대여할 수 있는 시대가 열렸습니다.</li>
+</ul>
+
+<p>하드웨어와 인프라의 극적인 진화 덕분에, 잠들어 있던 머신러닝 알고리즘과 거대한 데이터 광산이 비로소 활화산처럼 폭발할 수 있는 진정한 기술의 대통합 시대가 도래했습니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

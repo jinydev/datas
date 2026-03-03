@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.9.2 AI가 만드는 넷플릭스 유니버스</title>
   <meta name="title" content="1.9.2 AI가 만드는 넷플릭스 유니버스" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.9.2 AI가 만드는 넷플릭스 유니버스"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/09_ai_and_llm/02_ai_history/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/09_ai_and_llm/02_ai_history/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.9.2 AI가 만드는 넷플릭스 유니버스"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/09_ai_and_llm/02_ai_history/" />
-<meta property="og:url" content="http://localhost:4000/intro/09_ai_and_llm/02_ai_history/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/09_ai_and_llm/02_ai_history/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/09_ai_and_llm/02_ai_history/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.9.2 AI가 만드는 넷플릭스 유니버스" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.9.2 AI가 만드는 넷플릭스 유니버스","url":"http://localhost:4000/intro/09_ai_and_llm/02_ai_history/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.9.2 AI가 만드는 넷플릭스 유니버스","url":"https://datas.jiny.dev/intro/09_ai_and_llm/02_ai_history/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -818,26 +811,39 @@
 </nav>
         <div class="bd-content ps-lg-4">
             <h1 id="192-ai가-만드는-넷플릭스-유니버스">1.9.2 AI가 만드는 넷플릭스 유니버스</h1>
+
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 정해진 선택지 중에서 정답만 골라내던 과거의 ‘판별형 AI’에서, 무에서 유를 창조하는 최신 <strong>‘생성형 AI(Generative AI)’</strong>로의 극적인 진화 과정을 파악합니다. 나아가 챗GPT와 같은 대화형 AI의 심장인 <strong>대규모 언어 모델(LLM)</strong>의 기본 개념과 그 파급력을 이해합니다.</p>
+
 <p>여러분이 넷플릭스를 켜면 메인 화면이 사람마다 모두 다릅니다. 이 AI 추천 시스템은 전 세계 2억 명의 유저들이 ‘어떤 장면에서 일시 정지를 눌렀는지’, ‘어느 편 영상에서 하차했는지’를 초 단위 빅데이터로 분석하여 귀신같이 내 취향에 맞는 영화 표지를 합성해 띄워줍니다.</p>
 
 <p><img src="../img/generative_ai_creation.png" alt="넷플릭스 추천 모형" /></p>
 
-<h1 id="192-인공지능의-진화-판별형에서-생성형으로">1.9.2 인공지능의 진화: 판별형에서 생성형으로</h1>
+<h2 id="인공지능의-진화-판별형에서-생성형으로">인공지능의 진화: 판별형에서 생성형으로</h2>
 <p>알파고 시대의 AI는 주어진 사진을 보고 “이건 암세포입니다” 혹은 “이건 강아지입니다”라고 기존의 정답을 가려내는 <strong>판별형 AI</strong>에 가깝습니다. 하지만 최근 2~3년 사이, 인류 역사상 가장 놀라운 진화인 <strong>생성형 AI(Generative AI)</strong>의 빗장이 열리기 시작했습니다.</p>
 
 <p><img src="../img/alphago_ai_go.png" alt="알파고의 승리" /></p>
 
-<h1 id="192-생성형-ai란-무엇인가">1.9.2 생성형 AI란 무엇인가?</h1>
+<h2 id="생성형-ai란-무엇인가">생성형 AI란 무엇인가?</h2>
 <p>만들어져 있는 것 중 정답을 고르는 것이 아니라, 세상에 없던 새로운 그림을 1초 만에 뚝딱 그려내고(미드저니, 달리), 단 한 번도 쓰인 적 없는 새로운 작곡을 하며, 소설을 써 내려가는 ‘창조적인 기계’를 말합니다. 이 생성형 AI 열풍의 중심에 바로 챗GPT가 있습니다.</p>
 
 <p><img src="../img/chatgpt_prompting.png" alt="판별형 vs 생성형" /></p>
 
-<h1 id="192-챗gpt와-llm대규모-언어-모델의-정체">1.9.2 챗GPT와 LLM(대규모 언어 모델)의 정체</h1>
+<h2 id="챗gpt와-llm대규모-언어-모델의-정체">챗GPT와 LLM(대규모 언어 모델)의 정체</h2>
 <p>최근 전 세계의 일자리를 위협할 만큼 똑똑해진 챗GPT는 도대체 정체가 무엇일까요?
 이 기술의 뼈대를 <strong>LLM (Large Language Model, 대규모 언어 모델)</strong>이라고 부릅니다. 말 그대로 엄청나게 거대한 언어 지식을 흡수한 모델입니다.</p>
 
 <p><img src="../img/llm_parrot.png" alt="LLM의 등장" /></p>
 
+<h2 id="정리">정리</h2>
+<p>인공지능의 역사는 치열한 진보의 연속이었습니다.</p>
+
+<ul>
+  <li><strong>패러다임의 진화</strong>: “이것은 암세포인가, 아닌가?”를 가려주던 보조자 역할(판별형 AI)에서 벗어나, 이제 인공지능은 아예 세상에 없던 새로운 그림과 음악, 소설을 창조해 내는 ‘생성형 AI(Generative AI)’ 시대로 접어들었습니다.</li>
+  <li><strong>문명을 뒤흔든 LLM</strong>: 이 생성형 혁명에 정점을 찍은 기술이 바로 챗GPT(ChatGPT)의 핵심인 <strong>대규모 언어 모델(LLM)</strong>입니다.</li>
+</ul>
+
+<p>인간의 가장 고유한 영역이라 믿었던 ‘창의성’마저 모방해 내는 이 놀라운 기술의 실체와 뼈대를 마주하면서, 우리는 데이터 분석과 AI가 뭉쳐서 만들어낸 가장 거대한 마법인 LLM의 세계로 성큼 들어서게 되었습니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)</title>
   <meta name="title" content="1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/08_bigdata_and_cloud/02_data_lake/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/08_bigdata_and_cloud/02_data_lake/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/08_bigdata_and_cloud/02_data_lake/" />
-<meta property="og:url" content="http://localhost:4000/intro/08_bigdata_and_cloud/02_data_lake/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/08_bigdata_and_cloud/02_data_lake/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/08_bigdata_and_cloud/02_data_lake/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)","url":"http://localhost:4000/intro/08_bigdata_and_cloud/02_data_lake/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)","url":"https://datas.jiny.dev/intro/08_bigdata_and_cloud/02_data_lake/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -818,6 +811,10 @@
 </nav>
         <div class="bd-content ps-lg-4">
             <h1 id="182-빅데이터와-데이터-분석의-관계-광산과-광부">1.8.2 빅데이터와 데이터 분석의 관계 (광산과 광부)</h1>
+
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 가공되지 않은 ‘빅데이터’와 이를 다루는 ‘데이터 분석’ 간의 떼어놓을 수 없는 상호 의존적 관계를 파악합니다. 원석(데이터)과 광부(분석가), 또는 식재료(데이터)와 요리사(분석가)의 직관적인 비유를 통해, 방대한 데이터 속에서 실제 비즈니스 가치를 창출해 내는 분석가의 필수적인 역할을 이해합니다.</p>
+
 <p>빅데이터 그 자체는 아직 캐내지 않은 커다란 거친 ‘다이아몬드 광산’과 같습니다. 돌무더기를 그냥 놔두면 아무 쓸모가 없고 하드디스크 용량만 차지합니다.</p>
 
 <p><img src="../img/diamond_data_mine.png" alt="데이터 광산" /></p>
@@ -831,6 +828,15 @@
 
 <p>그리고 데이터 분석은 그 재료들 중 가장 신선한 토마토와 양파를 골라내어 ‘최고급 파스타’라는 결론(지혜)을 만들어내는 <strong>현대판 마법 요리 기술</strong>입니다.</p>
 
+<h2 id="정리">정리</h2>
+<p>데이터와 데이터 분석은 동전의 양면처럼 서로가 없이는 그 가치를 잃어버리는 불변의 짝꿍입니다.</p>
+
+<ul>
+  <li><strong>잠재된 다이아몬드 광산</strong>: 제아무리 페타바이트(PB) 급의 거대한 데이터를 모아 두었더라도, 누군가 파고들어 캐내지 않으면 그것은 그저 서버 비용만 축내는 바위에 불과합니다.</li>
+  <li><strong>분석가라는 광부이자 셰프</strong>: 파이썬, 통계학, 머신러닝이라는 날카로운 곡괭이를 들고 이 거친 돌 더미(빅데이터) 속에 뛰어들어, 반짝이는 인사이트(지혜)와 세상에서 가장 맛있는 결론(비즈니스 가치)을 깎아내는 장인이 바로 데이터 분석가입니다.</li>
+</ul>
+
+<p>결국 다가오는 미래에는 창고에 재료(데이터)를 무작정 쌓아두는 자가 아니라, 그 재료를 가장 맛있고 신속하게 요리하여 식탁에 올릴 줄 아는 능력자가 세상을 지배하게 될 것입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

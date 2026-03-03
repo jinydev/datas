@@ -24,17 +24,18 @@ main:
     url: '/intro/03_insight_and_conclusion/01_overview/'
   - title: '통찰력의 완성'
     url: '/intro/03_insight_and_conclusion/02_insight_completion/'
-  - title: '데이터 세상 정리'
-    url: '/intro/03_insight_and_conclusion/03_summary/'
+
 - title: '데이터의 정의와 DIKW 피라미드'
   url: '/intro/04_understanding_data/'
   subitems:
-  - title: '데이터의 정의와 DIKW 피라미드'
+  - title: '데이터의 정의'
     url: '/intro/04_understanding_data/01_overview/'
   - title: 'DIKW 피라미드란?'
     url: '/intro/04_understanding_data/02_dikw/'
   - title: '데이터종류'
     url: '/intro/04_understanding_data/03_data_types/'
+  - title: '데이터의 중요성과 세분화'
+    url: '/intro/04_understanding_data/04_data_importance/'
 - title: '데이터의 세분화와 구조'
   url: '/intro/05_data_types/'
   subitems:
@@ -42,8 +43,6 @@ main:
     url: '/intro/05_data_types/01_overview/'
   - title: '데이터를 구조화해야 하는 이유 정리'
     url: '/intro/05_data_types/02_data_categories/'
-  - title: '빅데이터의 3V 특성'
-    url: '/intro/05_data_types/03_missing_data/'
 - title: '빅데이터의 3V 특성'
   url: '/intro/06_bigdata_characteristics/'
   subitems:

@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)</title>
   <meta name="title" content="1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/07_process_overview/03_modeling_and_action/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/07_process_overview/03_modeling_and_action/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/07_process_overview/03_modeling_and_action/" />
-<meta property="og:url" content="http://localhost:4000/intro/07_process_overview/03_modeling_and_action/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/07_process_overview/03_modeling_and_action/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/07_process_overview/03_modeling_and_action/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)","url":"http://localhost:4000/intro/07_process_overview/03_modeling_and_action/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)","url":"https://datas.jiny.dev/intro/07_process_overview/03_modeling_and_action/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -818,7 +811,19 @@
 </nav>
         <div class="bd-content ps-lg-4">
             <h1 id="173-5단계-결과-시각화-및-리포팅-delivery">1.7.3 5단계: 결과 시각화 및 리포팅 (Delivery)</h1>
-<p>기계가 복잡한 수학 공식으로 예측을 해냈습니다. 하지만 사장님(비전문가)에게 “회귀분석 R스퀘어 값이 0.9가 나왔습니다”라고 보고하면 아무도 이해하지 못합니다. 이것을 누구나 1초 만에 직관적으로 이해할 수 있는 아름다운 차트와 대시보드로 번역하는 과정이 <strong>‘시각화’</strong>입니다.</p>
+
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 기계가 도출한 복잡한 수학적 결과를 일반인과 의사결정권자가 즉시 직관적으로 이해할 수 있게 번역하는 <strong>도식화(시각화 및 스토리텔링)</strong>의 힘과, 분석의 최종 도착지인 실제적인 <strong>비즈니스 액션(Action)</strong>의 중요성을 배웁니다. 또한 데이터 분석이 일회성이 아닌 무한한 나선형 사이클임을 깨닫습니다.</p>
+
+<h2 id="예측-결과-시각화">예측 결과 시각화</h2>
+<p>기계가 복잡한 수학 공식으로 예측을 해냈습니다.</p>
+
+<p>하지만 사장님(비전문가)에게 “회귀분석 R스퀘어 값이 0.9가 나왔습니다”라고 보고하면 아무도 이해하지 못합니다.</p>
+<blockquote>
+  <p>“회귀분석 R스퀘어 값이 0.9가 나왔습니다” -&gt; “우리가 세운 예측 모델은 90%의 정확도로 미래를 맞출 수 있습니다!”</p>
+</blockquote>
+
+<p>이것을 누구나 1초 만에 직관적으로 이해할 수 있는 아름다운 차트와 대시보드로 번역하는 과정이 <strong>‘시각화’</strong>입니다.</p>
 
 <p><img src="../img/data_storytelling.png" alt="시각화" /></p>
 
@@ -838,6 +843,15 @@
 <p><img src="../img/sharp_question.png" alt="문제 정의" /></p>
 
 <h2 id="정리">정리</h2>
+<p>데이터 분석의 대미를 장식하는 5단계와 6단계는 “그래서 어쩌라고?”라는 질문에 명확한 답을 내리는 과정입니다.</p>
+
+<ul>
+  <li><strong>스토리텔링의 힘</strong>: 0.9라는 R스퀘어 수치는 사장님을 설득할 수 없습니다. 화려한 수학 공식보다, 상대방의 마음을 움직이는 시각적이고 논리적인 <strong>스토리텔링</strong> 역량이 분석가의 진짜 몸값입니다.</li>
+  <li><strong>가치 창출의 본질</strong>: 아무리 위대한 AI 모델을 돌렸어도, 그것이 매장 앞 파전 매대 위치를 바꾸는 식의 실제적인 <strong>행동(Action)</strong>으로 이어지지 않는다면 그 분석은 실패한 것입니다.</li>
+  <li><strong>무한한 사이클</strong>: 6단계 액션이 끝나면 새로운 데이터가 쌓입니다. 우리는 이를 바탕으로 다시 1단계로 돌아가 더 깊은 통찰을 위한 질문을 던지게 됩니다.</li>
+</ul>
+
+<p>데이터 분석은 결여된 무언가를 채우고 비즈니스를 굴러가게 만드는 영원히 멈추지 않는 통찰의 바퀴입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

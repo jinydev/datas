@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>1.7.1 개요 및 도입</title>
   <meta name="title" content="1.7.1 개요 및 도입" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="1.7.1 개요 및 도입"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/intro/07_process_overview/01_overview/">
+  <meta property="og:url" content="https://datas.jiny.dev/intro/07_process_overview/01_overview/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="1.7.1 개요 및 도입"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/intro/07_process_overview/01_overview/" />
-<meta property="og:url" content="http://localhost:4000/intro/07_process_overview/01_overview/" />
+<link rel="canonical" href="https://datas.jiny.dev/intro/07_process_overview/01_overview/" />
+<meta property="og:url" content="https://datas.jiny.dev/intro/07_process_overview/01_overview/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="1.7.1 개요 및 도입" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.7.1 개요 및 도입","url":"http://localhost:4000/intro/07_process_overview/01_overview/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"1.7.1 개요 및 도입","url":"https://datas.jiny.dev/intro/07_process_overview/01_overview/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -452,13 +452,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/03_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    데이터 세상 정리
-                                </a>
-                            </li>
-                            
                         </ul>
                     </div>
                     
@@ -485,7 +478,7 @@
                             <li>
                                 <a href="/intro/04_understanding_data/01_overview/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    데이터의 정의와 DIKW 피라미드
+                                    데이터의 정의
                                 </a>
                             </li>
                             
@@ -500,6 +493,13 @@
                                 <a href="/intro/04_understanding_data/03_data_types/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터종류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/intro/04_understanding_data/04_data_importance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    데이터의 중요성과 세분화
                                 </a>
                             </li>
                             
@@ -537,13 +537,6 @@
                                 <a href="/intro/05_data_types/02_data_categories/"
                                     class="bd-links-link d-inline-block rounded ">
                                     데이터를 구조화해야 하는 이유 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/03_missing_data/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    빅데이터의 3V 특성
                                 </a>
                             </li>
                             
@@ -819,6 +812,8 @@
         <div class="bd-content ps-lg-4">
             <h1 id="171-개요-및-도입">1.7.1 개요 및 도입</h1>
 
+<h2 id="학습목표">학습목표</h2>
+<p>본 장에서는 데이터 분석 과정을 요리 레시피처럼 체계적인 6단계 사이클(문제 정의, 수집 및 정제, EDA, 모델링, 시각화, 액션)로 이해하고, 그중 가장 첫 단추이자 결정적인 단계인 ‘구체적이고 날카로운 문제 정의(Goal Setting)’와 ‘데이터 수집(Data Preparation)’의 중요성을 파악합니다.</p>
 <h2 id="시작하며-분석도-요리-순서와-똑같다">시작하며: 분석도 ‘요리 순서’와 똑같다</h2>
 <p>유명한 셰프가 맛있는 스테이크를 만들기 위해 레시피 순서를 지키듯, 데이터 분석가도 철저한 6단계 순서에 따라 움직입니다. 고기를 사 오기도 전에 불부터 켜면 안 되듯, 데이터를 모으기도 전에 AI 모델부터 돌리려고 하면 완벽하게 실패하게 됩니다.</p>
 
@@ -841,7 +836,15 @@
 <p>문제를 세웠다면 이제 사냥을 나갈 차례입니다. 엑셀 파일, 회사 데이터베이스(SQL), 인터넷 웹사이트 크롤링 등을 통해 흩어진 데이터를 한곳에 쓸어 담는 과정이 <strong>‘수집’</strong>입니다. 하지만 막상 수집한 데이터는 흙 묻은 감자처럼 지저분합니다.</p>
 
 <p><img src="../img/data_cleaning_80.png" alt="데이터 수집" /></p>
+<h2 id="정리">정리</h2>
+<p>데이터 분석은 결코 코딩이나 화려한 AI 기술에서 시작하지 않습니다. 분석의 성패는 컴퓨터 앞에 앉기 전, “우리가 진짜 풀어야 할 문제가 무엇인가?”를 고민하는 <strong>1단계: 문제 정의</strong>에서 90% 이상 결정됩니다.</p>
 
+<ul>
+  <li><strong>날카로운 질문</strong>: 막연한 질문은 쓸모없는 대답을 낳습니다. 뾰족한 질문을 던져야 정확한 통찰을 얻을 수 있습니다.</li>
+  <li><strong>수집의 현실</strong>: 야생에서 사냥해 온 원시 데이터는 결코 깨끗하지 않습니다. 이 흙 묻은 감자들을 어떻게 다뤄야 할지가 바로 다음 단계의 핵심 과제입니다.</li>
+</ul>
+
+<p>정확한 나침반(문제)을 세웠고 흩어진 데이터(재료)를 모았다면, 이제 본격적인 손질을 시작할 차례입니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->
