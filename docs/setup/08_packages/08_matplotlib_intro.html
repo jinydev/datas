@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>2.8 데이터 시각화 맛보기 (Matplotlib Teaser)</title>
   <meta name="title" content="2.8 데이터 시각화 맛보기 (Matplotlib Teaser)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="2.8 데이터 시각화 맛보기 (Matplotlib Teaser)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/setup/08_packages/08_matplotlib_intro.html">
+  <meta property="og:url" content="http://localhost:4000/setup/08_packages/08_matplotlib_intro.html">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="2.8 데이터 시각화 맛보기 (Matplotlib Teaser)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/setup/08_packages/08_matplotlib_intro.html" />
-<meta property="og:url" content="https://datas.jiny.dev/setup/08_packages/08_matplotlib_intro.html" />
+<link rel="canonical" href="http://localhost:4000/setup/08_packages/08_matplotlib_intro.html" />
+<meta property="og:url" content="http://localhost:4000/setup/08_packages/08_matplotlib_intro.html" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="2.8 데이터 시각화 맛보기 (Matplotlib Teaser)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"2.8 데이터 시각화 맛보기 (Matplotlib Teaser)","url":"https://datas.jiny.dev/setup/08_packages/08_matplotlib_intro.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"2.8 데이터 시각화 맛보기 (Matplotlib Teaser)","url":"http://localhost:4000/setup/08_packages/08_matplotlib_intro.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -325,373 +325,130 @@
             <div class="offcanvas-body">
                 <!-- 네비게이션 -->
                 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
-  <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
-    <li class="bd-links-group py-2">
-      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
-        강의 목차
-      </strong>
-      <ul class="list-unstyled fw-normal pb-2 small">
-        
-        <li>
-          
-          <a href="/"
-            class="bd-links-link d-inline-block rounded ">
-            Home
-          </a>
-          
-        </li>
-        
-        <li>
-          
-          
-          
-          <button
-            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-2"
-            aria-expanded="false">
-            1. 데이터 분석의 이해
-            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg>
-          </button>
-          <div class="collapse " id="collapse-2">
-            <ul class="list-unstyled fw-normal pb-1 small ms-3">
-              
-              <li>
-                <a href="/intro/01_why_data_analysis/"
-                  class="bd-links-link d-inline-block rounded ">
-                  1. 데이터 분석 학습 개요 (왜 필요한가?)
-                </a>
-              </li>
-              
-              <li>
-                <a href="/intro/03_insight_and_conclusion/"
-                  class="bd-links-link d-inline-block rounded ">
-                  3. 데이터 분석의 완성과 통찰력
-                </a>
-              </li>
-              
-              <li>
-                <a href="/intro/05_data_types/"
-                  class="bd-links-link d-inline-block rounded ">
-                  5. 데이터의 세분화와 구조
-                </a>
-              </li>
-              
-              <li>
-                <a href="/intro/06_bigdata_characteristics/"
-                  class="bd-links-link d-inline-block rounded ">
-                  6. 빅데이터의 3V 특성
-                </a>
-              </li>
-              
-              <li>
-                <a href="/intro/08_bigdata_and_cloud/"
-                  class="bd-links-link d-inline-block rounded ">
-                  8. 클라우드 컴퓨팅과 빅데이터
-                </a>
-              </li>
-              
-              <li>
-                <a href="/intro/10_ai_era_survival/"
-                  class="bd-links-link d-inline-block rounded ">
-                  10. AI 시대의 생존 무기와 직업 윤리
-                </a>
-              </li>
-              
+    <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+        <li class="bd-links-group py-2">
+            <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                강의 목차
+            </strong>
+            <ul class="list-unstyled fw-normal pb-2 small">
+                
+                <li>
+                    
+                    <a href="/setup/01_windows/"
+                        class="bd-links-link d-inline-block rounded ">
+                        2.1 윈도우(Windows) 파이썬 설치 가이드
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/setup/02_mac/"
+                        class="bd-links-link d-inline-block rounded ">
+                        2.2 맥(macOS) 파이썬 설치 가이드
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/setup/03_linux/"
+                        class="bd-links-link d-inline-block rounded ">
+                        2.3 리눅스(Linux) 및 서버 파이썬 설치 가이드
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4"
+                        aria-expanded="false">
+                        2.4 아나콘다(Anaconda)와 주피터 노트북 환경 설정
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-4">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/setup/04_anaconda/install.html"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    2.4 아나콘다 설치 과정
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/setup/05_venv/"
+                        class="bd-links-link d-inline-block rounded ">
+                        2.5 파이썬 가상환경(Virtual Environment) 완벽 이해
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/setup/06_colab/"
+                        class="bd-links-link d-inline-block rounded ">
+                        2.6 구글 코랩(Google Colab) 환경 설정 및 사용법
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/setup/07_vscode/"
+                        class="bd-links-link d-inline-block rounded ">
+                        2.7 개발 끝판왕 VS Code 코딩 환경 구축
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0  w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8"
+                        aria-expanded="true">
+                        2.8 파이썬 필수 데이터 분석 패키지 설치 (Windows 기준)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse show" id="collapse-8">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/setup/08_packages/08_matplotlib_intro.html"
+                                    class="bd-links-link d-inline-block rounded active">
+                                    2.8 데이터 시각화 맛보기 (Matplotlib Teaser)
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
             </ul>
-          </div>
-          
         </li>
-        
-        <li>
-          
-          
-          
-          <button
-            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
-            aria-expanded="false">
-            2. 데이터 분석 환경 구축
-            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg>
-          </button>
-          <div class="collapse " id="collapse-3">
-            <ul class="list-unstyled fw-normal pb-1 small ms-3">
-              
-              <li>
-                <a href="/setup/01_windows/"
-                  class="bd-links-link d-inline-block rounded ">
-                  1. 윈도우(Windows) 파이썬 설치 가이드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/02_mac/"
-                  class="bd-links-link d-inline-block rounded ">
-                  2. 맥(macOS) 파이썬 설치 가이드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/03_linux/"
-                  class="bd-links-link d-inline-block rounded ">
-                  3. 리눅스(Linux) 및 서버 파이썬 설치 가이드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/04_anaconda/"
-                  class="bd-links-link d-inline-block rounded ">
-                  4. 아나콘다(Anaconda)와 주피터 노트북
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/05_venv/"
-                  class="bd-links-link d-inline-block rounded ">
-                  5. 파이썬 가상환경(Virtual Environment)
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/06_colab/"
-                  class="bd-links-link d-inline-block rounded ">
-                  구글 코랩(Google Colab) 환경 설정 및 사용법
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/07_vscode/"
-                  class="bd-links-link d-inline-block rounded ">
-                  7. VS Code(Visual Studio Code)
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/08_packages/"
-                  class="bd-links-link d-inline-block rounded ">
-                  8. 파이썬 필수 데이터 분석 패키지 설치 (Windows 기준)
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-          
-        </li>
-        
-        <li>
-          
-          
-          
-          <button
-            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
-            aria-expanded="false">
-            3. 파이썬 시작
-            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg>
-          </button>
-          <div class="collapse " id="collapse-4">
-            <ul class="list-unstyled fw-normal pb-1 small ms-3">
-              
-              <li>
-                <a href="/python/01_basic/01_python_intro/"
-                  class="bd-links-link d-inline-block rounded ">
-                  00. 파이썬과 데이터 분석의 미래
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/02_comments_constants/"
-                  class="bd-links-link d-inline-block rounded ">
-                  01. 주석과 상수
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/03_variables_assignment/"
-                  class="bd-links-link d-inline-block rounded ">
-                  02. 변수와 대입
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/04_variable_naming/"
-                  class="bd-links-link d-inline-block rounded ">
-                  03. 변수 이름 조건
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/05_data_types_operators/"
-                  class="bd-links-link d-inline-block rounded ">
-                  04. 자료형과 연산자
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/06_various_operators/"
-                  class="bd-links-link d-inline-block rounded ">
-                  05. 다양한 연산자
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/07_built_in_functions/"
-                  class="bd-links-link d-inline-block rounded ">
-                  06. 내장 함수 활용
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/01_basic/08_math_module/"
-                  class="bd-links-link d-inline-block rounded ">
-                  07. 내장 모듈 math 활용
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/02_control_flow/01_if_statement/"
-                  class="bd-links-link d-inline-block rounded ">
-                  08. 조건문 if
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/02_control_flow/02_match_statement/"
-                  class="bd-links-link d-inline-block rounded ">
-                  09. match 구문
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/02_control_flow/03_for_while_loops/"
-                  class="bd-links-link d-inline-block rounded ">
-                  10. 반복문 for와 while
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/03_functions/01_function_concepts/"
-                  class="bd-links-link d-inline-block rounded ">
-                  11. 함수란 무엇인가?
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/03_functions/02_function_usage/"
-                  class="bd-links-link d-inline-block rounded ">
-                  12. 함수 선언과 사용
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/03_functions/03_lambda_functions/"
-                  class="bd-links-link d-inline-block rounded ">
-                  13. 변수 스코프와 람다 함수
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/04_data_structures/01_list/"
-                  class="bd-links-link d-inline-block rounded ">
-                  14. 리스트
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/04_data_structures/02_dictionary/"
-                  class="bd-links-link d-inline-block rounded ">
-                  15. 사전
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/04_data_structures/03_tuple/"
-                  class="bd-links-link d-inline-block rounded ">
-                  16. 튜플
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/04_data_structures/04_set/"
-                  class="bd-links-link d-inline-block rounded ">
-                  17. 집합
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/04_data_structures/05_immutable_hash_id/"
-                  class="bd-links-link d-inline-block rounded ">
-                  18. 수정 불가능(immutable)과 함수 hash() id()
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/05_oop/01_class_instance/"
-                  class="bd-links-link d-inline-block rounded ">
-                  19. 클래스와 인스턴스
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/05_oop/02_inheritance_polymorphism/"
-                  class="bd-links-link d-inline-block rounded ">
-                  20. 상속과 다형성
-                </a>
-              </li>
-              
-              <li>
-                <a href="/python/05_oop/03_abstraction_interface/"
-                  class="bd-links-link d-inline-block rounded ">
-                  21. 추상화와 인터페이스
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-          
-        </li>
-        
-        <li>
-          
-          <a href="/numpy/"
-            class="bd-links-link d-inline-block rounded ">
-            4. 넘파이(Numpy)
-          </a>
-          
-        </li>
-        
-        <li>
-          
-          <a href="/mathplotlib/"
-            class="bd-links-link d-inline-block rounded ">
-            5. 시각화 (Matplotlib)
-          </a>
-          
-        </li>
-        
-        <li>
-          
-          <a href="/pandas/"
-            class="bd-links-link d-inline-block rounded ">
-            6. 판다스(Pandas)
-          </a>
-          
-        </li>
-        
-      </ul>
-    </li>
-  </ul>
+    </ul>
 </nav>
             </div>
         </div>
@@ -734,412 +491,13 @@
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <div class="container bd-gutter mt-3 my-md-4 bd-layout">
-    <aside class="bd-sidebar scrollBar">
-        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
-            aria-labelledby="bdSidebarOffcanvasLabel">
-            <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">전체 목차</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
-                    data-bs-target="#bdSidebar"></button>
-            </div>
-            <div class="offcanvas-body">
-                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
-    <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
-        <li class="bd-links-group py-2">
-            <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
-                강의 목차
-            </strong>
-            <ul class="list-unstyled fw-normal pb-2 small">
-                
-                <li>
-                    
-                    <a href="/"
-                        class="bd-links-link d-inline-block rounded ">
-                        Home
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    
-                    
-                    
-                    <button
-                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                        data-bs-toggle="collapse" data-bs-target="#collapse-2"
-                        aria-expanded="false">
-                        1. 데이터 분석의 이해
-                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </button>
-                    <div class="collapse " id="collapse-2">
-                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
-                            
-                            <li>
-                                <a href="/intro/01_why_data_analysis/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    1. 데이터 분석 학습 개요 (왜 필요한가?)
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/03_insight_and_conclusion/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3. 데이터 분석의 완성과 통찰력
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/05_data_types/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    5. 데이터의 세분화와 구조
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/06_bigdata_characteristics/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    6. 빅데이터의 3V 특성
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/08_bigdata_and_cloud/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    8. 클라우드 컴퓨팅과 빅데이터
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/intro/10_ai_era_survival/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    10. AI 시대의 생존 무기와 직업 윤리
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    
-                </li>
-                
-                <li>
-                    
-                    
-                    
-                    <button
-                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                        data-bs-toggle="collapse" data-bs-target="#collapse-3"
-                        aria-expanded="false">
-                        2. 데이터 분석 환경 구축
-                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </button>
-                    <div class="collapse " id="collapse-3">
-                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
-                            
-                            <li>
-                                <a href="/setup/01_windows/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    1. 윈도우(Windows) 파이썬 설치 가이드
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/02_mac/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    2. 맥(macOS) 파이썬 설치 가이드
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/03_linux/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3. 리눅스(Linux) 및 서버 파이썬 설치 가이드
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/04_anaconda/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4. 아나콘다(Anaconda)와 주피터 노트북
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/05_venv/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    5. 파이썬 가상환경(Virtual Environment)
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/06_colab/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    구글 코랩(Google Colab) 환경 설정 및 사용법
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/07_vscode/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    7. VS Code(Visual Studio Code)
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/setup/08_packages/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    8. 파이썬 필수 데이터 분석 패키지 설치 (Windows 기준)
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    
-                </li>
-                
-                <li>
-                    
-                    
-                    
-                    <button
-                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                        data-bs-toggle="collapse" data-bs-target="#collapse-4"
-                        aria-expanded="false">
-                        3. 파이썬 시작
-                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </button>
-                    <div class="collapse " id="collapse-4">
-                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
-                            
-                            <li>
-                                <a href="/python/01_basic/01_python_intro/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    00. 파이썬과 데이터 분석의 미래
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/02_comments_constants/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    01. 주석과 상수
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/03_variables_assignment/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    02. 변수와 대입
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/04_variable_naming/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    03. 변수 이름 조건
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/05_data_types_operators/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    04. 자료형과 연산자
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/06_various_operators/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    05. 다양한 연산자
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/07_built_in_functions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    06. 내장 함수 활용
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/01_basic/08_math_module/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    07. 내장 모듈 math 활용
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/01_if_statement/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    08. 조건문 if
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/02_match_statement/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    09. match 구문
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/03_for_while_loops/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    10. 반복문 for와 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/03_functions/01_function_concepts/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    11. 함수란 무엇인가?
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/03_functions/02_function_usage/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    12. 함수 선언과 사용
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/03_functions/03_lambda_functions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    13. 변수 스코프와 람다 함수
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/04_data_structures/01_list/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    14. 리스트
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/04_data_structures/02_dictionary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    15. 사전
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/04_data_structures/03_tuple/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    16. 튜플
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/04_data_structures/04_set/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    17. 집합
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/04_data_structures/05_immutable_hash_id/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    18. 수정 불가능(immutable)과 함수 hash() id()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/05_oop/01_class_instance/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    19. 클래스와 인스턴스
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/05_oop/02_inheritance_polymorphism/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    20. 상속과 다형성
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/05_oop/03_abstraction_interface/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    21. 추상화와 인터페이스
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    
-                </li>
-                
-                <li>
-                    
-                    <a href="/numpy/"
-                        class="bd-links-link d-inline-block rounded ">
-                        4. 넘파이(Numpy)
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    
-                    <a href="/mathplotlib/"
-                        class="bd-links-link d-inline-block rounded ">
-                        5. 시각화 (Matplotlib)
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    
-                    <a href="/pandas/"
-                        class="bd-links-link d-inline-block rounded ">
-                        6. 판다스(Pandas)
-                    </a>
-                    
-                </li>
-                
-            </ul>
-        </li>
-    </ul>
-</nav>
-            </div>
-        </div>
-    </aside>
-
-    <main class="bd-main order-1">
-        <div class="bd-content ps-lg-4">
             <h1 id="28-데이터-시각화-맛보기-matplotlib-teaser">2.8 데이터 시각화 맛보기 (Matplotlib Teaser)</h1>
 
-<table>
-  <tbody>
-    <tr>
-      <td><a href="../../index.html">🏠 전체 강의 목록</a></td>
-      <td><a href="./index.html">🛠️ 패키지 설치 목록</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
+<h2 id="학습목표">학습목표</h2>
+<p>파이썬 시각화 라이브러리인 Matplotlib의 기초를 익히고, <strong>Vibe Coding(AI 협업)</strong>을 통해 다양한 그래프를 손쉽게 그려봅니다.</p>
 
 <blockquote>
   <p><strong>안내</strong>: 본격적인 Matplotlib 학습은 향후 <code class="language-plaintext highlighter-rouge">mathplotlib</code> 과정에서 진행될 예정입니다. 여기서는 설치를 진행하고, 흥미를 유발하기 위해 가볍게 주요 기능들을 맛보는 시간을 가집니다.</p>
-</blockquote>
-
-<hr />
-
-<blockquote>
-  <p><strong>학습목표</strong>: 파이썬 시각화 라이브러리인 Matplotlib의 기초를 익히고, <strong>Vibe Coding(AI 협업)</strong>을 통해 다양한 그래프를 손쉽게 그려봅니다.</p>
 </blockquote>
 
 <h2 id="1-matplotlib-소개-introduction">1. Matplotlib 소개 (Introduction)</h2>
@@ -1220,18 +578,6 @@ X축(시간/순서)과 Y축(값) 데이터만 있으면 됩니다.</p>
   <p><strong>Tip</strong>: Vibe Coding의 핵심은 <strong>“무엇을 그릴지 상상하고, AI에게 명확하게 요청하는 것”</strong>입니다. 코드는 AI가 작성하고, 여러분은 결과를 해석하는 <strong>지휘자</strong>가 되어보세요.</p>
 </blockquote>
 
-
-            <script async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
-                crossorigin="anonymous"></script>
-            <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86"
-                data-ad-client="ca-pub-3321560028329475" data-ad-slot="6043271504"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </main>
-</div>
 
             <!-- 구글 애드센스 출력 -->
             <div class="mt-5">

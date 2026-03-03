@@ -1,19 +1,15 @@
 ---
-layout: home
+layout: setup
 title: "2.8 데이터 시각화 맛보기 (Matplotlib Teaser)"
 ---
 
 # 2.8 데이터 시각화 맛보기 (Matplotlib Teaser)
 
-[🏠 전체 강의 목록](../../index.html) | [🛠️ 패키지 설치 목록](./index.html)
-
----
+## 학습목표
+파이썬 시각화 라이브러리인 Matplotlib의 기초를 익히고, **Vibe Coding(AI 협업)**을 통해 다양한 그래프를 손쉽게 그려봅니다.
 
 > **안내**: 본격적인 Matplotlib 학습은 향후 `mathplotlib` 과정에서 진행될 예정입니다. 여기서는 설치를 진행하고, 흥미를 유발하기 위해 가볍게 주요 기능들을 맛보는 시간을 가집니다.
 
----
-
-> **학습목표**: 파이썬 시각화 라이브러리인 Matplotlib의 기초를 익히고, **Vibe Coding(AI 협업)**을 통해 다양한 그래프를 손쉽게 그려봅니다.
 
 ## 1. Matplotlib 소개 (Introduction)
 
