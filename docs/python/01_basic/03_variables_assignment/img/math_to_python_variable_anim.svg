@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .title { font-family: sans-serif; font-size: 24px; font-weight: bold; fill: #f38ba8; text-anchor: middle; }
+      .subtitle { font-family: sans-serif; font-size: 14px; fill: #bac2de; text-anchor: middle; }
+      
+      .box { fill: #313244; stroke: #45475a; stroke-width: 2; rx: 8; }
+      .var-box { fill: rgba(137, 180, 250, 0.1); stroke: #89b4fa; stroke-width: 3; stroke-dasharray: 5,5; rx: 10; }
+      
+      .math-text { font-family: 'Times New Roman', serif; font-size: 32px; fill: #cdd6f4; font-weight: bold; font-style: italic; }
+      .code-text { font-family: monospace; font-size: 28px; fill: #a6e3a1; font-weight: bold; }
+      .label { font-family: sans-serif; font-size: 16px; fill: #f9e2af; text-anchor: middle; font-weight: bold; }
+      .desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      /* Animation for the substitution drop */
+      @keyframes dropValue {
+        0% { transform: translateY(-30px); opacity: 0; }
+        20% { opacity: 1; }
+        80% { transform: translateY(50px); opacity: 1; }
+        100% { transform: translateY(50px); opacity: 0; }
+      }
+      .anim-drop { animation: dropValue 3s infinite ease-in; }
+      
+      /* Glow for variable assignment */
+      @keyframes pulseBox {
+        0%, 100% { filter: drop-shadow(0 0 2px #89b4fa); }
+        50% { filter: drop-shadow(0 0 15px #89b4fa); }
+      }
+      .anim-box { animation: pulseBox 3s infinite; }
+    </style>
+    
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f38ba8" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="45" class="title">수학의 대입(Substitution)과 파이썬의 대입(=)</text>
+  <text x="400" y="70" class="subtitle">수식의 빈칸 'x'를 숫자로 채우는 행위는, 코딩에서 변수 상자에 데이터를 넣는 것과 완벽히 동일합니다.</text>
+
+  <!-- Left Side: Mathematics (Algebra) -->
+  <g transform="translate(200, 200)">
+    <rect x="-140" y="-80" width="280" height="150" class="box" />
+    <text x="0" y="-100" class="label text-glow">1. 수학 (대수학)</text>
+    
+    <text x="-80" y="-10" class="math-text">2</text>
+    <text x="-40" y="-10" class="math-text">x</text>
+    <text x="10" y="-10" class="math-text">+</text>
+    <text x="60" y="-10" class="math-text">5</text>
+    
+    <!-- Dropping value -->
+    <g class="anim-drop" transform="translate(-40, -40)">
+      <circle cx="0" cy="-10" r="16" fill="#f9e2af" />
+      <text x="0" y="-4" font-family="sans-serif" font-weight="bold" font-size="16px" fill="#1e1e2e" text-anchor="middle">3</text>
+    </g>
+    
+    <!-- Transparent box representing 'x' -->
+    <rect x="-60" y="-45" width="40" height="50" class="var-box anim-box" />
+    
+    <text x="0" y="45" class="desc">"x 자리에 3을 대입한다"</text>
+  </g>
+
+  <!-- Flow Arrow -->
+  <path d="M 370,180 Q 400,150 430,180" fill="none" class="beam" stroke="#f38ba8" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrow)" />
+  <text x="400" y="140" class="label" fill="#f38ba8" style="font-size: 24px;">진화</text>
+
+  <!-- Right Side: Python Code -->
+  <g transform="translate(600, 200)">
+    <rect x="-140" y="-80" width="280" height="150" class="box" />
+    <text x="0" y="-100" class="label text-glow" fill="#a6e3a1">2. 컴퓨터 과학 (파이썬)</text>
+    
+    <text x="-50" y="-10" class="code-text" fill="#89b4fa">x</text>
+    <text x="0" y="-10" class="code-text" fill="#f38ba8">=</text>
+    <text x="50" y="-10" class="code-text" fill="#f9e2af">3</text>
+    
+    <!-- Dropping value -->
+    <g class="anim-drop" transform="translate(50, -40)">
+      <circle cx="0" cy="-10" r="16" fill="#f9e2af" />
+      <text x="0" y="-4" font-family="sans-serif" font-weight="bold" font-size="16px" fill="#1e1e2e" text-anchor="middle">3</text>
+    </g>
+    
+    <!-- Transparent box representing 'x' variable on the left -->
+    <rect x="-70" y="-45" width="40" height="50" class="var-box anim-box" />
+    
+    <path d="M 40,-15 Q 0,-40 -40,-15" fill="none" stroke="#f9e2af" stroke-width="3" marker-end="url(#arrow)" />
+    
+    <text x="0" y="45" class="desc">"변수 x 상자에 3을 저장(=)한다"</text>
+  </g>
+
+</svg>

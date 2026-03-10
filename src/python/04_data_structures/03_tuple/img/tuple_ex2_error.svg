@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box { fill: #b4befe; rx: 10; stroke: #cdd6f4; stroke-width: 4; }
+      .laser { stroke: #f38ba8; stroke-width: 5; opacity: 0; }
+      .attack-text { font-family: monospace; font-size: 24px; font-weight: bold; fill: #f38ba8; text-anchor: middle; opacity: 0; }
+      .shield-flash { fill: transparent; stroke: #a6e3a1; stroke-width: 8; opacity: 0; }
+      
+      @keyframes shootLaser { 0%, 20% { opacity: 0; stroke-dasharray: 0 1000; } 30%, 50% { opacity: 1; stroke-dasharray: 200 0; } 60%, 100% { opacity: 0; } }
+      @keyframes flashWarning { 0%, 20% { opacity: 0; } 30%, 50% { opacity: 1; transform: scale(1.2); } 60%, 100% { opacity: 0; transform: scale(1); } }
+      @keyframes blockImpact { 0%, 25% { opacity: 0; r: 80; } 30% { opacity: 1; r: 120; stroke: #f9e2af; } 50% { opacity: 0.5; r: 140; stroke: #a6e3a1; } 60%, 100% { opacity: 0; } }
+      
+      .anim-laser { animation: shootLaser 4s infinite; }
+      .anim-text { animation: flashWarning 4s infinite; transform-origin: center; }
+      .anim-shield { animation: blockImpact 4s infinite; transform-origin: 400px 150px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 2: 수정 시도와 불변성 방어 (TypeError)</text>
+  <text x="400" y="70" class="text-title" fill="#f38ba8">tp[0] = 99  # 해킹 공격 시도!</text>
+
+  <!-- Tuple Data -->
+  <rect x="350" y="120" width="100" height="60" class="box" />
+  <text x="400" y="155" class="text-code">10</text>
+  
+  <text x="400" y="220" class="text-title" fill="#b4befe">Read-Only Core</text>
+
+  <!-- Hacker Attack -->
+  <text x="150" y="155" class="text-title" fill="#f38ba8">Hacker (99)</text>
+  <line x1="200" y1="150" x2="330" y2="150" class="laser anim-laser" />
+  
+  <!-- Shield Block & Error -->
+  <circle cx="400" cy="150" r="80" class="shield-flash anim-shield" />
+  <text x="400" y="100" class="attack-text anim-text">TypeError: Bounced!</text>
+</svg>

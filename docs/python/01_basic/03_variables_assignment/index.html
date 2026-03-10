@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -682,31 +689,47 @@
 <p>모든 프로그래밍을 학습할때 먼저 배우는 것이 변수입니다.</p>
 
 <h2 id="학습목표">학습목표</h2>
-<p>본 장에서는 데이터를 담아두는 이름표 붙은 상자인 <strong>‘변수(Variable)’</strong>의 개념을 확실히 잡고, 수학과 다른 <strong>‘대입 연산자(=)’</strong>의 진짜 의미를 이해합니다. 또한 데이터 타입을 스스로 알아채는 파이썬의 <strong>동적 타이핑(Dynamic Typing)</strong> 특징과 변수의 값을 손쉽게 바꾸는 <strong>다중 대입(Swap)</strong> 테크닉을 익힙니다.</p>
-
-<h2 id="변수-개념-이해하기">변수 개념 이해하기</h2>
-
-<p>파이썬에서 변수(variable)는 데이터를 저장하는 컨테이너(상자)와 같습니다. 변수를 사용하면 코드 내에서 <code class="language-plaintext highlighter-rouge">데이터</code>를 더 쉽게 <code class="language-plaintext highlighter-rouge">관리</code>하고 참조할 수 있습니다.</p>
+<p>본 장에서는 데이터를 담아두는 이름표 붙은 상자인 <strong>‘변수(Variable)’</strong>의 개념을 확실히 잡고, 수학과 다른 <strong>‘대입 연산자(=)’</strong>의 진짜 의미를 이해합니다. 또한 데이터 타입을 스스로 알아채는 파이썬의 <strong>동적 타입(Dynamic Type)</strong> 특징과 변수의 값을 손쉽게 바꾸는 <strong>다중 대입(Swap)</strong> 테크닉을 익힙니다.</p>
 
 <blockquote>
-  <p>변수와 리터럴의 차이는 무엇일까요?
-리터럴은 값 그 자체를 의미하며, 변수는 값을 저장하는 컨테이너(상자)와 같습니다.</p>
+  <p>📥 <strong>변수와 대입 실습용 노트북 다운로드 및 실행</strong>:</p>
+  <ul>
+    <li><a href="./source/example.ipynb">로컬 환경용 다운로드</a> (VS Code 등에서 실행)</li>
+    <li><a href="https://colab.research.google.com/github/jinydev/datas/blob/master/src/python/01_basic/03_variables_assignment/source/example.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a> (웹 브라우저에서 바로 실습)</li>
+  </ul>
 </blockquote>
 
-<p><img src="./img/variables_concept.png" alt="변수의 개념: 데이터를 담는 이름표 붙은 상자" /></p>
+<h2 id="1-변수의-기원-파이썬-코딩은-결국-수학이다">1. 변수의 기원: 파이썬 코딩은 결국 수학이다!</h2>
 
-<h3 id="변수에-값-할당하기">변수에 값 할당하기</h3>
-<p>다음 코드에서 다양하게 변하는 값을 저장하는 변수 <code class="language-plaintext highlighter-rouge">a</code>에 값 3을 저장해 출력합니다.</p>
+<p>코딩에서 말하는 <strong>‘변수(Variable)’</strong>라는 개념은 갑자기 하늘에서 뚝 떨어진 것이 아닙니다. 
+여러분이 중학교 수학 시간(대수학)에 배우는 <strong>“문자를 사용한 식”</strong>에서 알파벳 $x$나 $y$를 가져와 대입하는 행위와 파이썬 프로그래밍의 변수 선언은 정확히 100% 똑같은 메커니즘을 가집니다.</p>
 
-<p>변수에 값을 저장(할당)하려면 대입 연산자 <code class="language-plaintext highlighter-rouge">=</code>을 사용합니다. 
-수학에서의 ‘같다’는 의미가 아니라, 오른쪽의 값을 왼쪽의 변수에 ‘넣는다’는 의미입니다.</p>
+<p><img src="./img/math_variable_webtoon.png" alt="수학의 영웅 프랑수아 비에트 웹툰" />
+<em>(웹툰 비유: 16세기 프랑스의 수학 영웅 ‘프랑수아 비에트’. 그는 500개가 넘는 적군의 복잡한 스페인 암호를 해독하기 위해 역사상 최초로 계산식에 값이 변할 수 있는 <strong>알파벳 문자($x$, $y$)라는 ‘투명 상자’</strong>를 도입했습니다. 이 위대한 수학적 상상력이 오늘날 컴퓨터 프로그래밍 ‘변수(Variable)’의 기원이 되었습니다.)</em></p>
 
-<div style="text-align: center; margin: 2rem 0;">
-  <img src="img/assign_anim.svg" alt="변수 a에 3이 대입되는 과정" style="width: 300px; height: 120px;" />
-  <p style="text-align: center; font-size: 0.9em; color: #6c757d; margin-top: 10px; margin-bottom:30px;">
-    ▲ 값 <b>3</b>이 변수 <b>a</b>의 공간에 할당(대입)되는 과정
-  </p>
-</div>
+<p>파이썬에서 변수란 데이터를 담아두는 <strong>‘이름표가 붙은 투명 상자’</strong>와 같습니다. 길이를 모르는 값을 수학에서 $x$ 상자로 두듯, 코드 내에서도 아직 정해지지 않거나 계속해서 변할 수 있는 데이터를 손쉽게 관리하기 위해 이 상자(변수)를 사용합니다.</p>
+
+<blockquote>
+  <p>💡 <strong>리터럴(Literal)과 변수(Variable)의 차이는?</strong>
+리터럴은 변하지 않는 값 그 자체(<code class="language-plaintext highlighter-rouge">3</code>, <code class="language-plaintext highlighter-rouge">"Hello"</code>)를 의미하며, 변수는 그 리터럴 값을 안전하게 저장하고 들고 다니는 컨테이너 상자를 뜻합니다.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="2-변수에-값-할당하기-대입substitution의-마법">2. 변수에 값 할당하기: 대입(Substitution)의 마법</h2>
+
+<p>수학에서 기계 식 $2x + 5$ 의 $x$ 자리에 숫자 $3$을 쏙 집어넣는 것을 <strong>대입(Substitution)</strong>이라고 배웠을 것입니다. 파이썬 프로그래밍에서는 이를 <strong>할당(Assignment)</strong>이라고 부르며, 그 위대한 마법의 지팡이 역할을 하는 것이 바로 <strong><code class="language-plaintext highlighter-rouge">=</code> (대입 연산자)</strong> 입니다.</p>
+
+<p><img src="./img/math_to_python_variable_anim.svg" alt="수학 대입과 파이썬 대입 비교 애니메이션" />
+<em>(다이어그램: 수학에서 수식의 $x$ 구멍 안에 숫자 $3$을 떨어뜨리는 행위가, 파이썬 코드 <code class="language-plaintext highlighter-rouge">x = 3</code>에서 오른쪽의 숫자 $3$이 왼쪽의 변수 $x$ 상자 안으로 쏙 들어가는 과정과 완전히 동일함을 보여주는 흐름 비교)</em></p>
+
+<ul>
+  <li><strong>주의할 점:</strong> 파이썬 코드에서 <code class="language-plaintext highlighter-rouge">=</code> 은 수학 시간의 “왼쪽과 오른쪽이 똑같다”라는 뜻표시가 <strong>절대로 아닙니다!</strong></li>
+  <li><strong>오른쪽의 데이터(값)를, 왼쪽의 투명 상자(변수) 안에 쏙 집어넣어라!</strong> 라는 강력한 ‘명령어’입니다.</li>
+</ul>
+
+<h3 id="실습-변수-상자에-데이터-대입하기">실습: 변수 상자에 데이터 대입하기</h3>
+<p>다음 코드를 통해 정수형 숫자를 상자에 넣기도 하고, 문자열 텍스트를 상자에 넣기도 해봅시다.</p>
 
 <h3 id="실습">실습</h3>
 <p>실습을 통하여 변수에 값을 할당해 봅시다.</p>
@@ -735,17 +758,20 @@
 </span></code></pre></div></div>
 <p>쉼표(<code class="language-plaintext highlighter-rouge">,</code>)를 사용하여 여러 개의 변수나 문자열을 나열하면, 파이썬이 알아서 띄어쓰기(공백)를 하나씩 넣어주면서 한 줄로 예쁘게 출력해 줍니다.</p>
 
-<h2 id="파이썬의-동적-타이핑-dynamic-typing-원리">파이썬의 동적 타이핑 (Dynamic Typing) 원리</h2>
+<h2 id="파이썬의-동적-타입-dynamic-type-원리">파이썬의 동적 타입 (Dynamic Type) 원리</h2>
 
-<p>파이썬은 <strong>동적 타입(Dynamic Typing) 언어</strong>입니다. 
+<p><img src="./img/dynamic_type_webtoon.png" alt="동적 타입의 유연성을 보여주는 로봇 웹툰" />
+<em>(파이썬 로봇은 값이 바뀔 때마다 상자를 새로 짜지 않습니다. 그저 이름표 스티커를 무거운 정수 블록에서 가벼운 문자열 풍선으로 휙 옮겨 붙일 뿐이죠!)</em></p>
+
+<p>파이썬은 <strong>동적 타입(Dynamic Type) 언어</strong>입니다. 
 이는 변수를 선언할 때 데이터의 타입(정수, 문자열 등)을 미리 지정할 필요가 없다는 의미입니다. 변수의 타입은 할당되는 값에 따라 <strong>런타임(프로그램 실행 중)</strong>에 자동으로 결정되고 언제든지 바뀔 수 있습니다.</p>
 
 <h3 id="php나-javascript와의-차이점-내부-구현-방식의-차이">PHP나 JavaScript와의 차이점 (내부 구현 방식의 차이)</h3>
 
-<p>웹 개발에 자주 쓰이는 PHP나 JavaScript 역시 동적 타이핑을 지원하지만, 그 내부 동작 원리(엔진 구조)는 파이썬과 다릅니다.</p>
+<p>웹 개발에 자주 쓰이는 PHP나 JavaScript 역시 동적 타입을 지원하지만, 그 내부 동작 원리(엔진 구조)는 파이썬과 다릅니다.</p>
 
 <ul>
-  <li><strong>PHP의 동적 타이핑 (zval 공용체 방식)</strong>: 
+  <li><strong>PHP의 동적 타입 (zval 공용체 방식)</strong>: 
 PHP 엔진(Zend Engine) 내부에서 변수는 <code class="language-plaintext highlighter-rouge">zval</code> (Zend Value)이라는 거대한 C언어 <strong>구조체이자 공용체(Union)</strong>로 관리됩니다. 하나의 <code class="language-plaintext highlighter-rouge">zval</code> 메모리 블록 안에 정수를 저장하는 공간, 문자열 포인터를 저장하는 공간, 실수를 저장하는 공간이 모두 겹쳐서(Union) 선언되어 있습니다. 변수의 타입이 바뀌면 단순히 내부 플래그(Type Flag)만 변경하고, 공용체 안의 다른 메모리 영역을 읽는 방식으로 작동합니다.</li>
   <li><strong>JavaScript (V8 엔진 등)</strong>:
 자바스크립트 엔진 역시 내부적으로 JSValue 형태의 태그된 포인터(Tagged Pointer)나 구조체를 통해 값이 정수인지, 객체인지 등을 메타 정보로 들고 다니며 런타임에 타입을 평가합니다.</li>
@@ -753,7 +779,10 @@ PHP 엔진(Zend Engine) 내부에서 변수는 <code class="language-plaintext h
 
 <h3 id="파이썬은-내부적으로-이를-어떻게-구현하고-있을까-everything-is-an-object">파이썬은 내부적으로 이를 어떻게 구현하고 있을까? (Everything is an Object)</h3>
 
-<p>파이썬(CPython 기준)은 공용체로 변수의 크기를 고정해 두는 방식이 아니라, 철저하게 <strong>“모든 것은 객체(Object)다”</strong>라는 철학으로 동적 타이핑을 구현합니다.</p>
+<p>파이썬(CPython 기준)은 공용체로 변수의 크기를 고정해 두는 방식이 아니라, 철저하게 <strong>“모든 것은 객체(Object)다”</strong>라는 철학으로 동적 타입을 구현합니다.</p>
+
+<p><img src="./img/python_internals_webtoon.png" alt="파이썬의 내부 객체 저장 방식 웹툰" />
+<em>(웹툰 비유: 파이썬 엔진 공장 라인에 떠 있는 에너지 큐브(<code class="language-plaintext highlighter-rouge">PyObject</code>)들은 각자 자기 타입(<code class="language-plaintext highlighter-rouge">ob_type</code>)표를 목에 걸고 있습니다. 그리고 변수 <code class="language-plaintext highlighter-rouge">a</code>는 그저 큐브를 향해 쏘는 레이저 포인터일 뿐입니다!)</em></p>
 
 <p>파이썬 내부(C 코드)에서 모든 데이터는 <code class="language-plaintext highlighter-rouge">PyObject</code>라는 기본 구조체를 상속받아 만들어진 독립적인 메모리 객체입니다.</p>
 
@@ -789,6 +818,9 @@ PHP 엔진(Zend Engine) 내부에서 변수는 <code class="language-plaintext h
 <h2 id="다중-대입과-값-교환-swap">다중 대입과 값 교환 (Swap)</h2>
 
 <p>파이썬은 다른 언어에서는 지원하지 않는 고유하고 편리한 형 대입 방식인 <strong>다중 대입(Multiple Assignment)</strong>을 지원합니다.</p>
+
+<p><img src="./img/python_swap_anim.svg" alt="파이썬의 변수 Swap 애니메이션" />
+<em>(다이어그램: 임시 변수 상자 없이, 두 변수의 값이 X자 형태로 교차하며 한 번에 바뀌는 역동적인 과정을 보여줍니다.)</em></p>
 
 <h3 id="예제-실습-1">예제 실습</h3>
 
@@ -826,7 +858,75 @@ PHP 엔진(Zend Engine) 내부에서 변수는 <code class="language-plaintext h
 </code></pre></div></div>
 
 <h2 id="정리">정리</h2>
-<p>이 장을 통해 우리는 파이썬이 어떻게 데이터를 기억장치에 저장하고, 우리가 붙여준 이름(변수)으로 그 데이터를 다루는지 원리를 완벽히 파악했습니다. 특히 번거롭게 자료형을 미리 지정하지 않아도 되는 파이썬의 똑똑한 ‘동적 타이핑’ 기술과 임시 변수 없이도 두 개의 데이터를 순식간에 맞바꾸는 ‘다중 대입’ 기능은 앞으로 여러분의 파이썬 코딩을 훨씬 우아하고 간결하게 만들어 줄 핵심 무기입니다.</p>
+<p>이 장을 통해 우리는 파이썬이 어떻게 데이터를 기억장치에 저장하고, 우리가 붙여준 이름(변수)으로 그 데이터를 다루는지 원리를 완벽히 파악했습니다. 특히 번거롭게 자료형을 미리 지정하지 않아도 되는 파이썬의 똑똑한 ‘동적 타입’ 기술과 임시 변수 없이도 두 개의 데이터를 순식간에 맞바꾸는 ‘다중 대입’ 기능은 앞으로 여러분의 파이썬 코딩을 훨씬 우아하고 간결하게 만들어 줄 핵심 무기입니다.</p>
+
+<hr />
+
+<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
+
+<p><img src="./img/java_vs_python_variable_anim.svg" alt="자바의 기본 타입 상자와 파이썬의 참조 애니메이션" />
+<em>(자바의 기본 타입은 4byte 짜리 철저한 물리적 상자를 만들어 값을 쑤셔 넣지만, 파이썬은 변수라는 이름표(포인터 화살표)를 허공에 둥둥 떠 있는 객체에 밧줄처럼 연결합니다.)</em></p>
+
+<h3 id="1-변수의-본질-primitive-box-vs-object-reference">1. 변수의 본질 (Primitive Box vs Object Reference)</h3>
+<ul>
+  <li><strong>Java</strong>: 데이터를 다루는 방식이 크게 두 가지로 나뉩니다. 기본 타입(<code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">double</code> 등)은 메모리(Stack)에 정해진 크기의 실제 ‘방(상자)’을 만들고 그 안에 이진수 값을 직접 집어넣습니다. 반면 배열이나 String 같은 참조 타입은 주솟값을 저장합니다. (<code class="language-plaintext highlighter-rouge">int a = 3;</code>)</li>
+  <li><strong>Python</strong>: 파이썬에는 자바와 같은 기본형(Primitive) 물리 상자가 아예 존재하지 않습니다. <strong>“모든 것이 객체(Object)”</strong>입니다. <code class="language-plaintext highlighter-rouge">a = 3</code>을 하면 <code class="language-plaintext highlighter-rouge">3</code>이라는 객체가 메모리(Heap) 어딘가에 생성되고, <code class="language-plaintext highlighter-rouge">a</code>라는 이름은 그저 그 객체를 가리키는 <strong>참조 화살표(포인터, Name Binding)</strong> 역할만 수행합니다. 즉 파이썬의 모든 변수는 자바의 ‘참조 타입(Reference Type)’ 변수와 동작 원리가 똑같습니다!</li>
+</ul>
+
+<h3 id="2-다중-대입과-swap">2. 다중 대입과 Swap</h3>
+<ul>
+  <li><strong>Java</strong>: 두 변수의 값을 바꿀 때 반드시 물을 잠시 담아둘 ‘빈 컵(임시 변수 <code class="language-plaintext highlighter-rouge">temp</code>)’이 필요합니다.</li>
+  <li><strong>Python</strong>: <code class="language-plaintext highlighter-rouge">a, b = b, a</code> 처럼 튜플 언패킹을 이용해 마술처럼 한 줄 기차로 맞바꿀 수 있습니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="-matplotlib-맛보기-동적-타입-검증하기">📊 Matplotlib 맛보기: 동적 타입 검증하기</h2>
+
+<p>파이썬의 변수 타입이 실행 중에 어떻게 유연하게 변하는지(동적 타입) 시각적으로 확인해 봅시다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># 같은 변수(data)에 여러 타입을 번갈아 대입
+</span><span class="n">data_timeline</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nf">type</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="n">__name__</span><span class="p">),</span>         <span class="c1"># 정수
+</span>    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nf">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">).</span><span class="n">__name__</span><span class="p">),</span>        <span class="c1"># 실수
+</span>    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nf">type</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">).</span><span class="n">__name__</span><span class="p">),</span>     <span class="c1"># 문자열
+</span>    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nf">type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]).</span><span class="n">__name__</span><span class="p">)</span>    <span class="c1"># 리스트
+</span><span class="p">]</span>
+
+<span class="n">x_time</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data_timeline</span><span class="p">]</span>
+<span class="n">y_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data_timeline</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x_time</span><span class="p">,</span> <span class="n">y_types</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">-</span><span class="sh">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">purple</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Dynamic Type in Python (Same Variable, Different Types)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Time Step (Assignment)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Data Type (Class)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-vibe-coding">🎧 Vibe Coding</h2>
+
+<p>파이썬의 ‘모든 것이 객체’라는 철학을 AI를 통해 깊게 파고들어 보세요.</p>
+
+<blockquote>
+  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
+“파이썬에서 <code class="language-plaintext highlighter-rouge">a = 257</code>과 <code class="language-plaintext highlighter-rouge">b = 257</code>을 한 뒤에 <code class="language-plaintext highlighter-rouge">print(a is b)</code>를 하면 왜 False가 나올까? 파이썬의 메모리 구조와 ‘정수 캐싱(Integer Caching)’ 원리를 중학교 과학 시간에 빗대어 설명해 줘.”</p>
+</blockquote>
+
+<hr />
+
+<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">Variable</code></strong>: 변하기 쉬운, 변수. (코드 실행 중에 값이 계속 변할 수 있는 데이터 저장 공간입니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Assignment</code></strong>: 할당, 대입. (오른쪽의 계산된 결과나 값을 왼쪽의 변수라는 상각에 쏙 집어넣는 동작입니다. 프로그래밍에서 <code class="language-plaintext highlighter-rouge">=</code> 기호는 ‘같다’가 아니라 바로 이 ‘대입’을 뜻합니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Dynamic Type</code></strong>: 동적 타입. (코드 작성 시점에 데이터의 종류를 고정해버리는 정적 타입(Java의 int, String)과 달리, 파이썬이 실행되는 도중에 알아서 값에 맞춰 변수의 형태를 유연하게 결정하는 방식을 뜻합니다.)</li>
+</ul>
 
 
             <!-- 구글 애드센스 출력 -->

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .box { rx: 5; ry: 5; fill: #282a36; stroke: #bd93f9; stroke-width: 3; }
+      .obj { font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; fill: #50fa7b; }
+      .label { font-family: sans-serif; font-size: 18px; fill: #f8f8f2; font-weight: bold; text-anchor: middle; }
+      .desc { font-family: sans-serif; font-size: 14px; fill: #aaa; text-anchor: middle; }
+      .tag { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #8be9fd; text-anchor: middle; }
+      .java-title { font-family: sans-serif; font-size: 22px; fill: #ffb86c; font-weight: bold; text-anchor: middle; }
+      .python-title { font-family: sans-serif; font-size: 22px; fill: #f1fa8c; font-weight: bold; text-anchor: middle; }
+      
+      @keyframes floatObj {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      @keyframes drawArrow {
+        0%, 20% { stroke-dashoffset: 100; opacity: 0; }
+        30%, 80% { stroke-dashoffset: 0; opacity: 1; }
+        90%, 100% { stroke-dashoffset: 0; opacity: 0; }
+      }
+      
+      @keyframes putInBox {
+        0%, 20% { transform: translate(-30px, -50px); opacity: 0; }
+        30%, 80% { transform: translate(0px, 0px); opacity: 1; }
+        90%, 100% { transform: translate(0px, 0px); opacity: 0; }
+      }
+
+      .float { animation: floatObj 3s ease-in-out infinite; }
+      .arrow { stroke-dasharray: 100; animation: drawArrow 4s infinite; }
+      .in-box { animation: putInBox 4s infinite; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8be9fd" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#1e1e1e" rx="10" />
+
+  <line x1="400" y1="20" x2="400" y2="330" stroke="#444" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Java 부분 (Primitive Type) -->
+  <g transform="translate(200, 50)">
+    <text x="0" y="0" class="java-title">☕ Java (기본 타입)</text>
+    <text x="0" y="25" class="desc">int a = 3;</text>
+    
+    <g transform="translate(0, 100)">
+      <!-- 철저한 상자 -->
+      <rect x="-60" y="-40" width="120" height="80" class="box" stroke="#ffb86c" />
+      <text x="-45" y="-20" font-family="sans-serif" font-size="12" fill="#ffb86c">4 byte 공간</text>
+      <text x="0" y="60" class="tag">변수 'a' (상자)</text>
+      <!-- 안에 들어가는 데이터 -->
+      <text x="0" y="10" class="obj in-box" fill="#ff79c6">3</text>
+    </g>
+    
+    <text x="0" y="240" class="desc">물리적 메모리 공간 안에</text>
+    <text x="0" y="260" class="desc">실제 값을 쑤셔 넣음</text>
+  </g>
+
+  <!-- Python 부분 (Reference / Object) -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" class="python-title">🐍 Python (참조 타입)</text>
+    <text x="0" y="25" class="desc">a = 3</text>
+    
+    <!-- 네임택 (변수) -->
+    <g transform="translate(-100, 100)">
+      <circle cx="0" cy="0" r="25" fill="#44475a" stroke="#8be9fd" stroke-width="2" />
+      <text x="0" y="7" class="obj" fill="#8be9fd">a</text>
+      <text x="0" y="50" class="tag">이름표</text>
+    </g>
+    
+    <!-- 객체 (객체) -->
+    <g transform="translate(80, 100)" class="float">
+      <!-- 허공에 떠있는 객체 -->
+      <rect x="-40" y="-30" width="80" height="60" rx="20" ry="20" fill="rgba(80, 250, 123, 0.2)" stroke="#50fa7b" stroke-width="2" />
+      <text x="0" y="10" class="obj">3</text>
+      <text x="0" y="55" class="tag" fill="#50fa7b">객체</text>
+    </g>
+    
+    <!-- 연결 화살표 -->
+    <path d="M -70 100 L 30 100" fill="none" stroke="#8be9fd" stroke-width="4" marker-end="url(#arrowhead)" class="arrow" />
+    
+    <text x="0" y="240" class="desc">허공에 떠있는 객체(3)를 향해</text>
+    <text x="0" y="260" class="desc">이름표 화살표를 던져 묶음</text>
+  </g>
+
+</svg>

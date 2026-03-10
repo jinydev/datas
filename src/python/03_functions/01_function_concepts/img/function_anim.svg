@@ -1,79 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="100%" height="100%">
-    <defs>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&amp;display=swap');
-            text { font-family: 'Pretendard', sans-serif; font-weight: 600; }
-            
-            #inputGroup { animation: slideIn 4.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
-            #outputGroup { animation: slideOut 4.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
-            #funcBody { animation: pulse 4.5s infinite ease-in-out; }
-            #gear1 { animation: spin 4.5s infinite linear; transform-origin: 300px 92px; }
-            
-            @keyframes slideIn {
-                0% { transform: translateX(-20px); opacity: 0; }
-                10% { transform: translateX(0px); opacity: 1; }
-                35% { transform: translateX(200px); opacity: 1; }
-                36% { transform: translateX(200px); opacity: 0; }
-                100% { transform: translateX(200px); opacity: 0; }
-            }
-            
-            @keyframes pulse {
-                0%, 34% { fill: #F0F8FF; stroke: #0d6efd; stroke-width: 2px; }
-                35%, 65% { fill: #d0e5ff; stroke: #004ecc; stroke-width: 4px; }
-                66%, 100% { fill: #F0F8FF; stroke: #0d6efd; stroke-width: 2px; }
-            }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 20px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .box-func { fill: #313244; stroke: #cba6f7; stroke-width: 4; rx: 20; }
+      .gears { transform-origin: center; transform-box: fill-box; animation: spinGears 4s linear infinite; }
+      .gears-reverse { transform-origin: center; transform-box: fill-box; animation: spinGearsReverse 4s linear infinite; }
+      
+      /* Data Particle Flow */
+      @keyframes dataFlow {
+        0%, 10% { transform: translate(100px, 180px); opacity: 0; fill: #89b4fa; }
+        20% { transform: translate(100px, 180px); opacity: 1; fill: #89b4fa; } /* Input Point */
+        40% { transform: translate(320px, 180px); opacity: 1; fill: #89b4fa; } /* Enter Function */
+        
+        /* Processing inside */
+        50% { transform: translate(400px, 180px) scale(1.5); fill: #f9e2af; opacity: 1;}
+        60% { transform: translate(400px, 180px) scale(1); fill: #a6e3a1; opacity: 1;}
+        
+        /* Output */
+        70% { transform: translate(480px, 180px); opacity: 1; fill: #a6e3a1; } /* Exit Function */
+        90% { transform: translate(700px, 180px); opacity: 1; fill: #a6e3a1; } /* Final Output */
+        95%, 100% { transform: translate(750px, 180px); opacity: 0; fill: #a6e3a1; }
+      }
+      
+      @keyframes spinGears { 100% { transform: rotate(360deg); } }
+      @keyframes spinGearsReverse { 100% { transform: rotate(-360deg); } }
+      
+      .particle { animation: dataFlow 5s ease-in-out infinite; }
+      
+      .arrow { fill: none; stroke: #bac2de; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 8 6; }
+    </style>
+    
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+  </defs>
 
-            @keyframes spin {
-                0%, 34% { transform: rotate(0deg); }
-                35%, 65% { transform: rotate(360deg); }
-                66%, 100% { transform: rotate(360deg); }
-            }
-            
-            @keyframes slideOut {
-                0%, 65% { transform: translateX(0px); opacity: 0; }
-                66% { transform: translateX(0px); opacity: 1; }
-                90% { transform: translateX(210px); opacity: 1; }
-                95% { transform: translateX(230px); opacity: 0; }
-                100% { transform: translateX(230px); opacity: 0; }
-            }
-        </style>
-        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#adb5bd" />
-        </marker>
-    </defs>
-    
-    <!-- Background -->
-    <rect x="0" y="0" width="600" height="200" fill="#f8f9fa" rx="16" stroke="#e9ecef" stroke-width="2"/>
-    
-    <!-- Helper lines -->
-    <path d="M 120 100 L 190 100" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,4"/>
-    <path d="M 410 100 L 480 100" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,4"/>
-    <text x="155" y="90" text-anchor="middle" font-size="12" fill="#adb5bd">전달(인자)</text>
-    <text x="445" y="90" text-anchor="middle" font-size="12" fill="#adb5bd">반환(결과)</text>
-    
-    <!-- Input/Output Boxes -->
-    <g id="inputGroup">
-        <rect x="25" y="70" width="95" height="60" fill="#fff" stroke="#dc3545" stroke-width="2" rx="8"/>
-        <text x="72.5" y="95" text-anchor="middle" font-size="14" fill="#dc3545">입력 (Input)</text>
-        <text x="72.5" y="117" text-anchor="middle" font-size="13" fill="#6c757d" font-weight="normal">밀가루, 설탕</text>
-    </g>
-    
-    <g id="outputGroup">
-        <rect x="230" y="70" width="105" height="60" fill="#fff" stroke="#198754" stroke-width="2" rx="8"/>
-        <text x="282.5" y="95" text-anchor="middle" font-size="14" fill="#198754">출력 (Output)</text>
-        <text x="282.5" y="117" text-anchor="middle" font-size="13" fill="#6c757d" font-weight="normal">맛있는 쿠키</text>
-    </g>
-    
-    <!-- Function Body (overlapping input and output to hide them during processing) -->
-    <rect id="funcBody" x="200" y="40" width="200" height="120" rx="12"/>
-    
-    <text x="300" y="75" text-anchor="middle" font-size="18" fill="#0d6efd">기계 내부 (함수 몸체)</text>
-    <text x="300" y="125" text-anchor="middle" font-size="13" fill="#0d6efd" font-family="'Consolas', monospace" font-weight="normal">def make_cookie():</text>
-    <text x="300" y="145" text-anchor="middle" font-size="13" fill="#0d6efd" font-family="'Consolas', monospace" font-weight="normal">return cookie</text>
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">수학적 관점: 입력(Input) → 가공(Process) → 출력(Output)</text>
 
-    <!-- Gear Icon centered around x=300, y=95 -->
-    <g id="gear1" fill="#004ecc" opacity="0.6">
-        <path d="M309.8 90.9l2.4-1.4c0.4-0.2 0.5-0.7 0.3-1.1l-1.6-2.8c-0.2-0.4-0.7-0.5-1.1-0.3l-2.4 1.4c-0.8-0.5-1.7-0.9-2.7-1.1v-2.8c0-0.4-0.4-0.8-0.8-0.8h-3.2c-0.4 0-0.8 0.4-0.8 0.8v2.8c-1 0.2-1.9 0.6-2.7 1.1l-2.4-1.4c-0.4-0.2-0.9-0.1-1.1 0.3l-1.6 2.8c-0.2 0.4-0.1 0.9 0.3 1.1l2.4 1.4c-0.1 0.9-0.1 1.9 0 2.8l-2.4 1.4c-0.4 0.2-0.5 0.7-0.3 1.1l1.6 2.8c0.2 0.4 0.7 0.5 1.1 0.3l2.4-1.4c0.8 0.5 1.7 0.9 2.7 1.1v2.8c0 0.4 0.4 0.8 0.8 0.8h3.2c0.4 0 0.8-0.4 0.8-0.8v-2.8c1-0.2 1.9-0.6 2.7-1.1l2.4 1.4c0.4 0.2 0.9 0.1 1.1-0.3l1.6-2.8c0.2-0.4 0.1-0.9-0.3-1.1l-2.4-1.4C309.9 92.8 309.9 91.8 309.8 90.9zM300 96c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4S302.2 96 300 96z"/>
-    </g>
+  <!-- Input Side -->
+  <text x="150" y="130" class="text-code" fill="#89b4fa">Input (x = 3)</text>
+  <text x="150" y="155" class="text-desc" fill="#89b4fa">인자 (Argument)</text>
+  <path d="M 120,180 L 280,180" class="arrow" marker-end="url(#arrowhead)" />
+  
+  <!-- The Function Process Box -->
+  <rect x="300" y="100" width="200" height="160" class="box-func" />
+  <text x="400" y="80" class="text-code" fill="#cba6f7">Function f(x)</text>
+  
+  <!-- Gears inside Function -->
+  <g class="gears" fill="#585b70" opacity="0.8">
+    <circle cx="360" cy="180" r="25" />
+    <path d="M360,145 l5,10 h-10 z M360,215 l-5,-10 h10 z M325,180 l10,-5 v10 z M395,180 l-10,5 v-10 z M335,155 l10,5 l-7,7 z M385,205 l-10,-5 l7,-7 z M385,155 l-5,10 l-7,-7 z M335,205 l5,-10 l7,7 z" />
+  </g>
+  <g class="gears-reverse" fill="#585b70" opacity="0.8">
+    <circle cx="440" cy="180" r="30" />
+    <path d="M440,140 l5,10 h-10 z M440,220 l-5,-10 h10 z M400,180 l10,-5 v10 z M480,180 l-10,5 v-10 z M412,152 l10,5 l-7,7 z M468,208 l-10,-5 l7,-7 z M468,152 l-5,10 l-7,-7 z M412,208 l5,-10 l7,7 z" />
+  </g>
+  
+  <text x="400" y="240" class="text-code" fill="#f5e0dc">f(x) = 2x + 1</text>
+  <text x="400" y="280" class="text-desc" fill="#cba6f7">로직 수행 (Process)</text>
 
+  <!-- Output Side -->
+  <path d="M 520,180 L 680,180" class="arrow" marker-end="url(#arrowhead)" />
+  <text x="650" y="130" class="text-code" fill="#a6e3a1">Output (y = 7)</text>
+  <text x="650" y="155" class="text-desc" fill="#a6e3a1">반환값 (Return)</text>
+
+  <!-- Flowing Data Particle -->
+  <circle cx="0" cy="0" r="15" class="particle" />
+
+  <text x="400" y="325" class="text-desc">파이썬의 함수 역시 수학의 함수 원리와 완벽히 동일합니다. 값을 던져주면 내부에서 연산 후 결과를 뱉어냅니다.</text>
 </svg>

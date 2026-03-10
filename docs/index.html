@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -553,7 +567,7 @@
               </li>
               
               <li>
-                <a href="/python/01_basic/08_math_module/"
+                <a href="/python/01_basic/07_math_module/"
                   class="bd-links-link d-inline-block rounded ">
                   07. 내장 모듈 math 활용
                 </a>

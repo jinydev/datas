@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .box { rx: 8; ry: 8; fill: #313244; stroke-width: 2; }
+      
+      .title { font-family: sans-serif; font-size: 24px; font-weight: bold; fill: #f38ba8; text-anchor: middle; }
+      .subtitle { font-family: sans-serif; font-size: 16px; fill: #bac2de; text-anchor: middle; }
+      
+      .bit-box { fill: #45475a; stroke: #9399b2; stroke-width: 1; }
+      .bit-text { font-family: monospace; font-size: 28px; font-weight: bold; text-anchor: middle; }
+      
+      .sign-bit { fill: #f38ba8; stroke: #f38ba8; stroke-width: 3; }
+      .data-bit { fill: #a6e3a1; }
+      
+      .label-title { font-family: sans-serif; font-size: 20px; font-weight: bold; fill: #f8f8f2; text-anchor: middle; }
+      .label-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .arrow { fill: none; stroke: #9399b2; stroke-width: 2; stroke-dasharray: 4,4; }
+      
+      /* Simple pulse for the sign bit to draw attention */
+      @keyframes pulseSign {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      .anim-sign { animation: pulseSign 2s infinite; transform-origin: center; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="40" class="title">음수의 수학적 발명과 컴퓨터의 부호 비트(Sign Bit)</text>
+  <text x="400" y="65" class="subtitle">수학의 '마이너스(-)' 방향성은 컴퓨터 메모리의 첫 번째 방(MSB) 스위치로 번역됩니다.</text>
+
+  <!-- Number Line Visual -->
+  <g transform="translate(100, 130)">
+    <line x1="50" y1="0" x2="550" y2="0" stroke="#a6adc8" stroke-width="4" />
+    <polygon points="550,-10 570,0 550,10" fill="#a6adc8" />
+    <polygon points="50,-10 30,0 50,10" fill="#a6adc8" />
+    
+    <!-- Zero point -->
+    <circle cx="300" cy="0" r="8" fill="#f9e2af" />
+    <text x="300" y="-15" class="label-title" fill="#f9e2af">0 (기준점)</text>
+    
+    <!-- Arrows -->
+    <path d="M 280 -40 Q 150 -70 100 -20" fill="none" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrowhead-red)"/>
+    <text x="180" y="-55" class="label-title" fill="#f38ba8">음수 (-) 방향</text>
+    
+    <path d="M 320 -40 Q 450 -70 500 -20" fill="none" stroke="#a6e3a1" stroke-width="3" marker-end="url(#arrowhead-green)"/>
+    <text x="420" y="-55" class="label-title" fill="#a6e3a1">양수 (+) 방향</text>
+  </g>
+
+  <!-- Marker defs -->
+  <defs>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f38ba8" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a6e3a1" />
+    </marker>
+  </defs>
+
+  <!-- 8-bit Integer representation of +5 -->
+  <g transform="translate(140, 230)">
+    <text x="-40" y="35" class="label-title" fill="#a6e3a1">+5</text>
+    
+    <!-- Sign Bit -->
+    <rect x="0" y="0" width="50" height="50" class="box sign-bit anim-sign" style="stroke: #a6e3a1;"/>
+    <text x="25" y="35" class="bit-text" fill="#1e1e2e">0</text>
+    
+    <!-- Data Bits -->
+    <rect x="60" y="0" width="460" height="50" class="box bit-box" />
+    <text x="290" y="35" class="bit-text" fill="#a6e3a1" letter-spacing="35">0000101</text>
+    
+    <!-- Labels -->
+    <text x="25" y="75" class="label-desc" fill="#a6e3a1">0 = 양의 방향</text>
+    <text x="290" y="75" class="label-desc">크기 데이터 (Data Bits)</text>
+  </g>
+
+  <!-- 8-bit Integer representation of -5 (Conceptually, ignoring 2's complement for MSB focus) -->
+  <g transform="translate(140, 340)">
+    <text x="-40" y="35" class="label-title" fill="#f38ba8">-5</text>
+    
+    <!-- Sign Bit -->
+    <rect x="0" y="0" width="50" height="50" class="box sign-bit anim-sign" />
+    <text x="25" y="35" class="bit-text" fill="#1e1e2e">1</text>
+    
+    <!-- Data Bits -->
+    <rect x="60" y="0" width="460" height="50" class="box bit-box" />
+    <!-- Showing 2's complement for accurate education: -5 is 11111011 -->
+    <text x="290" y="35" class="bit-text" fill="#f38ba8" letter-spacing="35">1111011</text>
+    
+    <!-- Labels -->
+    <text x="25" y="75" class="label-desc" fill="#f38ba8">1 = 음의 방향</text>
+    <text x="290" y="75" class="label-desc">2의 보수 (크기 반전)</text>
+  </g>
+
+  <!-- MSB Arrow -->
+  <path d="M 50 200 L 165 220" class="arrow" />
+  <text x="80" y="190" class="label-desc" fill="#f9e2af" font-weight="bold">최상위 비트 (MSB)</text>
+  <text x="80" y="210" class="label-desc" fill="#f9e2af">수직선의 방향 스위치</text>
+</svg>

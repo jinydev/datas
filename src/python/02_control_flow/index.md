@@ -11,6 +11,5 @@ title: "3.2 제어 흐름 (Control Flow)"
 
 - [3.2.1 조건문 if](./01_if_statement/)
 - [3.2.2 match 구문](./02_match_statement/)
-- [3.2.3 반복문 for](./03_for_loop/)
-- [3.2.4 반복문 while](./04_while_loop/)
-- [3.2.5 예외 처리](./05_exceptions/)
+- [3.2.3 반복문 for와 while](./03_for_while_loops/)
+- [3.2.4 예외 처리](./04_exceptions/)

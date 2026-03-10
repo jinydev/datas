@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 20px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .box-cond { fill: #313244; stroke: #f9e2af; stroke-width: 3; rx: 40; } /* Pill shape */
+      .box-process { fill: #181825; stroke: #a6e3a1; stroke-width: 3; rx: 10; stroke-dasharray: 5 5; }
+      
+      /* Arrows */
+      .arrow { fill: none; stroke: #bac2de; stroke-width: 4; stroke-linecap: round; }
+      .arrow-true { fill: none; stroke: #a6e3a1; stroke-width: 4; stroke-dasharray: 8 4; stroke-linecap: round; }
+      .arrow-false { fill: none; stroke: #f38ba8; stroke-width: 4; stroke-linecap: round; }
+      
+      /* Data Particle flowing through loop */
+      @keyframes loopFlow {
+        0% { transform: translate(100px, 80px); opacity: 1; fill: #cdd6f4; } /* Input */
+        10% { transform: translate(400px, 80px); opacity: 1; fill: #cdd6f4; } /* Condition */
+        
+        /* True branch down to process */
+        15% { transform: translate(400px, 80px); opacity: 1; fill: #a6e3a1; } 
+        25% { transform: translate(400px, 200px); opacity: 1; } /* Process Box */
+        35% { transform: translate(400px, 260px); opacity: 1; } /* Process exit */
+        
+        /* Loop back up */
+        45% { transform: translate(250px, 260px); opacity: 1; }
+        55% { transform: translate(250px, 80px); opacity: 1; }
+        65% { transform: translate(320px, 80px); opacity: 1; }
+        
+        70%, 100% { transform: translate(320px, 80px); opacity: 0; }
+      }
+      
+      /* False Branch Breakout */
+      @keyframes breakoutFlow {
+        0%, 70% { transform: translate(400px, 80px); opacity: 0; fill: #f38ba8; } 
+        75% { transform: translate(400px, 80px); opacity: 1; fill: #f38ba8; }
+        90% { transform: translate(650px, 80px); opacity: 1; fill: #f38ba8; } 
+        95%, 100% { transform: translate(750px, 80px); opacity: 0; }
+      }
+
+      .particle-loop { animation: loopFlow 6s linear infinite; }
+      .particle-break { animation: breakoutFlow 6s linear infinite; }
+      
+      .cond-pulse { animation: pulseCond 6s linear infinite; }
+      @keyframes pulseCond {
+         0%, 65%, 100% { filter: none; }
+         10%, 60% { filter: drop-shadow(0 0 10px #f9e2af); stroke-width: 5; }
+      }
+
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+    <marker id="arrowhead-true" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrowhead-false" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f38ba8" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">while 반복문 무한 쳇바퀴 원리</text>
+
+  <!-- Input Path -->
+  <path d="M 100,80 L 280,80" class="arrow" marker-end="url(#arrowhead)" />
+  <text x="150" y="70" class="text-code" fill="#cba6f7">i = 1 (초기화)</text>
+
+  <!-- Condition Node -->
+  <rect x="300" y="60" width="200" height="40" class="box-cond cond-pulse" />
+  <text x="400" y="87" class="text-code" fill="#f9e2af">while i <= 10 :</text>
+
+  <!-- True Branch (Down) -->
+  <path d="M 400,100 L 400,150" class="arrow-true" marker-end="url(#arrowhead-true)" />
+  <text x="430" y="130" class="text-code" fill="#a6e3a1">True</text>
+
+  <!-- False Branch (Right - Exit) -->
+  <path d="M 500,80 L 650,80" class="arrow-false" marker-end="url(#arrowhead-false)" />
+  <text x="550" y="70" class="text-code" fill="#f38ba8">False</text>
+  <text x="650" y="110" class="text-desc" fill="#f38ba8">루프 종료 (Exit)</text>
+
+  <!-- Process Node -->
+  <rect x="300" y="160" width="200" height="80" class="box-process" />
+  <text x="400" y="195" class="text-desc" fill="#a6e3a1">들여쓰기 블록 실행</text>
+  <text x="400" y="225" class="text-code" fill="#a6e3a1">i += 1 (증감식)</text>
+
+  <!-- Loop back Path (Left and Up) -->
+  <path d="M 400,240 L 400,260 L 250,260 L 250,80 L 290,80" class="arrow" marker-end="url(#arrowhead)" />
+  <text x="235" y="170" class="text-desc" text-anchor="end">블록이 끝나면</text>
+  <text x="235" y="190" class="text-desc" text-anchor="end">조건식으로</text>
+  <text x="235" y="210" class="text-desc" text-anchor="end" fill="#f5e0dc" font-weight="bold">다시 되돌아감!</text>
+
+  <!-- Animated Particles -->
+  <circle cx="0" cy="0" r="8" class="particle-loop" />
+  <circle cx="0" cy="0" r="8" class="particle-break" />
+
+  <text x="400" y="320" class="text-desc">while문은 횟수가 아니라 '조건(배터리)'이 끝날 때까지만 코드를 계속 뺑뺑이 돌립니다.</text>
+
+</svg>

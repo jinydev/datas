@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; }
+      
+      .input-box { fill: #f9e2af; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .set-pool { fill: transparent; stroke: #a6e3a1; stroke-width: 4; stroke-dasharray: 10; rx: 50; }
+      .element { fill: #a6e3a1; rx: 20; }
+      .duplicate { fill: #f38ba8; rx: 20; }
+      
+      @keyframes floatIntoSet { 0%, 20% { transform: translateY(0) scale(1); opacity: 1; } 40% { transform: translateY(80px) scale(0.8); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+      @keyframes rejectDuplicate { 0%, 30% { transform: translateY(0) scale(1); opacity: 1; } 40% { transform: translateY(40px) scale(1.2); stroke: #f38ba8; stroke-width: 4; } 50% { transform: translateY(0) scale(0); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+      @keyframes popInPool { 0%, 40% { transform: scale(0); opacity: 0; } 50%, 90% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
+      
+      .anim-drop-1 { animation: floatIntoSet 5s infinite; }
+      .anim-drop-2 { animation: floatIntoSet 5s infinite; animation-delay: 0.5s; }
+      .anim-drop-3 { animation: floatIntoSet 5s infinite; animation-delay: 1s; }
+      .anim-reject { animation: rejectDuplicate 5s infinite; animation-delay: 1.5s; transform-origin: 550px 100px; }
+      
+      .pool-1 { animation: popInPool 5s infinite; transform-origin: 300px 200px; }
+      .pool-2 { animation: popInPool 5s infinite; animation-delay: 0.5s; transform-origin: 400px 200px; }
+      .pool-3 { animation: popInPool 5s infinite; animation-delay: 1s; transform-origin: 500px 200px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 1: 중복을 파괴하는 집합 생성기</text>
+  <text x="400" y="70" class="text-title" fill="#a6e3a1">my_set = { 1, 2, 3, 3 }</text>
+
+  <!-- Input Data Stream -->
+  <g class="anim-drop-1">
+    <rect x="250" y="90" width="60" height="40" class="input-box" />
+    <text x="280" y="115" class="text-code">1</text>
+  </g>
+  <g class="anim-drop-2">
+    <rect x="350" y="90" width="60" height="40" class="input-box" />
+    <text x="380" y="115" class="text-code">2</text>
+  </g>
+  <g class="anim-drop-3">
+    <rect x="450" y="90" width="60" height="40" class="input-box" />
+    <text x="480" y="115" class="text-code">3</text>
+  </g>
+  <g class="anim-reject">
+    <rect x="550" y="90" width="60" height="40" class="input-box" />
+    <text x="580" y="115" class="text-code">3</text>
+    <text x="640" y="115" class="text-title" fill="#f38ba8" font-size="14px">x Rejcted!</text>
+  </g>
+
+  <!-- Set Pool Area -->
+  <rect x="200" y="170" width="400" height="60" class="set-pool" />
+  
+  <g class="pool-1">
+    <rect x="270" y="180" width="60" height="40" class="element" />
+    <text x="300" y="205" class="text-code">1</text>
+  </g>
+  <g class="pool-2">
+    <rect x="370" y="180" width="60" height="40" class="element" />
+    <text x="400" y="205" class="text-code">2</text>
+  </g>
+  <g class="pool-3">
+    <rect x="470" y="180" width="60" height="40" class="element" />
+    <text x="500" y="205" class="text-code">3</text>
+  </g>
+  
+</svg>

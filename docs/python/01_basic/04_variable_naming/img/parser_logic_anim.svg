@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .title { font-family: sans-serif; font-size: 24px; font-weight: bold; fill: #f38ba8; text-anchor: middle; }
+      .subtitle { font-family: sans-serif; font-size: 14px; fill: #bac2de; text-anchor: middle; }
+      
+      .box { fill: #313244; stroke: #45475a; stroke-width: 2; rx: 8; }
+      .box-error { stroke: #f38ba8; stroke-width: 3; fill: rgba(243, 139, 168, 0.1); }
+      .box-success { stroke: #a6e3a1; stroke-width: 3; fill: rgba(166, 227, 161, 0.1); }
+      
+      .code-text { font-family: monospace; font-size: 26px; font-weight: bold; text-anchor: middle; }
+      .desc { font-family: sans-serif; font-size: 15px; fill: #a6adc8; text-anchor: middle; }
+      .alert { font-family: sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      
+      /* Parser Eye Animation */
+      @keyframes scanCode {
+        0%, 100% { transform: translateX(-40px); }
+        50% { transform: translateX(40px); }
+      }
+      .anim-scanner { animation: scanCode 2s infinite ease-in-out; }
+      
+      /* Laser Beam */
+      .laser { stroke: #f9e2af; stroke-width: 3; fill: none; opacity: 0.8; stroke-dasharray: 4,4; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="45" class="title">변수명이 숫자로 시작하면 안 되는 이유 (컴파일러/인터프리터 파싱)</text>
+  <text x="400" y="70" class="subtitle">코드를 읽어 들이는 파서(Parser) 로봇은 '첫 글자'만 보고 이것이 숫자인지 변수인지 판단합니다.</text>
+
+  <!-- Left Side: Wrong Variable Name (Starting with a number) -->
+  <g transform="translate(200, 220)">
+    <rect x="-140" y="-80" width="280" height="140" class="box box-error" />
+    <text x="0" y="-100" class="alert" fill="#f38ba8">❌ 시스템 마비 (Syntax Error)</text>
+    
+    <!-- Code Snippet -->
+    <text x="-40" y="-20" class="code-text" fill="#f38ba8">1</text>
+    <text x="10" y="-20" class="code-text" fill="#cdd6f4">st_place</text>
+    
+    <text x="0" y="25" class="desc">"앗! 첫 글자가 숫자 '1' 이네?"</text>
+    <text x="0" y="45" class="desc">"이건 분명히 숫자 데이터일 거야!"</text>
+    
+    <!-- Parser Robot Eye (Confused) -->
+    <g transform="translate(0, 80)">
+      <circle cx="0" cy="0" r="15" fill="#f38ba8" />
+      <text x="0" y="5" font-size="20" text-anchor="middle">😵</text>
+      <!-- Confused Laser -->
+      <path d="M 0,-15 L -40,-90" class="laser" stroke="#f38ba8" />
+    </g>
+  </g>
+
+  <!-- Right Side: Correct Variable Name (Starting with a letter) -->
+  <g transform="translate(600, 220)">
+    <rect x="-140" y="-80" width="280" height="140" class="box box-success" />
+    <text x="0" y="-100" class="alert" fill="#a6e3a1">✅ 정상 판독 (Valid Identifier)</text>
+    
+    <!-- Code Snippet -->
+    <text x="-40" y="-20" class="code-text" fill="#a6e3a1">p</text>
+    <text x="10" y="-20" class="code-text" fill="#cdd6f4">lace_1st</text>
+    
+    <text x="0" y="25" class="desc">"첫 글자가 알파벳 'p' 군요!"</text>
+    <text x="0" y="45" class="desc">"이건 변수 이름표입니다. 통과!"</text>
+    
+    <!-- Parser Robot Eye (Happy) -->
+    <g transform="translate(0, 80)">
+      <circle cx="0" cy="0" r="15" fill="#a6e3a1" />
+      <!-- Scanning laser anim -->
+      <circle cx="0" cy="0" r="4" fill="#1e1e2e" class="anim-scanner" />
+      <!-- Happy Laser -->
+      <path d="M 0,-15 L -40,-90" class="laser" stroke="#a6e3a1" />
+    </g>
+  </g>
+
+  <!-- Center Mechanism Text -->
+  <rect x="250" y="340" width="300" height="40" class="box" fill="#181825" />
+  <text x="400" y="365" class="desc" fill="#f9e2af">초고속 코딩 번역기 (Lexical Analyzer) 작동 원리</text>
+
+</svg>

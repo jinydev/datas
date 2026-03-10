@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .box { fill: #313244; stroke: #45475a; stroke-width: 2; rx: 8; }
+      
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 26px; font-weight: bold; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .string-box { fill: none; stroke: #f9e2af; stroke-width: 4; stroke-dasharray: 8 4; rx: 8; }
+      .int-box { fill: #89b4fa; stroke: #313244; stroke-width: 2; rx: 4; }
+      
+      /* Conveyor & Gear animations */
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+      .gear { animation: spin 4s linear infinite; transform-origin: center; }
+      
+      @keyframes floatRight {
+        0%, 10% { transform: translateX(0); opacity: 0; }
+        20%, 40% { opacity: 1; }
+        50% { transform: translateX(350px); opacity: 0; }
+        100% { transform: translateX(350px); opacity: 0; }
+      }
+      @keyframes floatRightOutput {
+        0%, 50% { transform: translateX(0); opacity: 0; }
+        60%, 80% { opacity: 1; }
+        90%, 100% { transform: translateX(250px); opacity: 0; }
+      }
+      @keyframes machinePulse {
+        0%, 45%, 55%, 100% { filter: drop-shadow(0 0 0px #cba6f7); }
+        50% { filter: drop-shadow(0 0 15px #cba6f7); }
+      }
+
+      .move-input { animation: floatRight 6s infinite ease-in-out; }
+      .move-output { animation: floatRightOutput 6s infinite ease-in-out; }
+      .machine-glow { animation: machinePulse 6s infinite ease-in-out; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  
+  <text x="400" y="40" class="text-title" fill="#cba6f7">형 변환 (Type Casting) 원리</text>
+
+  <!-- Conveyor line -->
+  <path d="M 50,180 L 750,180" fill="none" stroke="#45475a" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- The int() Casting Machine in the middle -->
+  <g transform="translate(320, 80)" class="machine-glow">
+    <rect x="0" y="0" width="160" height="120" fill="#313244" stroke="#cba6f7" stroke-width="4" rx="10" />
+    <path d="M -20,60 L 0,60 M 160,60 L 180,60" fill="none" stroke="#bac2de" stroke-width="6" />
+    <text x="80" y="45" font-family="monospace" font-size="28px" font-weight="bold" fill="#f38ba8" text-anchor="middle">int()</text>
+    <text x="80" y="75" font-family="sans-serif" font-size="12px" fill="#bac2de" text-anchor="middle">용광로 기계</text>
+    
+    <!-- Spinning Gear -->
+    <g transform="translate(80, 100)" class="gear">
+      <circle cx="0" cy="0" r="15" fill="#45475a" />
+      <path d="M -20,-5 L 20,5 M -5,-20 L 5,20 M -15,-15 L 15,15 M -15,15 L 15,-15" fill="none" stroke="#45475a" stroke-width="6" />
+      <circle cx="0" cy="0" r="8" fill="#313244" />
+    </g>
+  </g>
+
+  <!-- Input Container: String "2005" moving right -->
+  <g class="move-input" transform="translate(50, 0)">
+    <!-- Box representing string type -->
+    <rect x="0" y="100" width="100" height="60" class="string-box" />
+    <text x="50" y="140" class="text-code" fill="#f9e2af">"2005"</text>
+    <text x="50" y="90" class="text-desc" fill="#f9e2af">수학연산 불가</text>
+  </g>
+
+  <!-- Output Container: Integer 2005 moving right -->
+  <g class="move-output" transform="translate(480, 0)">
+    <!-- Solid block representing integer type -->
+    <rect x="0" y="105" width="100" height="50" class="int-box" />
+    <text x="50" y="140" class="text-code" fill="#1e1e2e">2005</text>
+    <text x="50" y="90" class="text-desc" fill="#89b4fa">수학연산 가능</text>
+  </g>
+
+</svg>

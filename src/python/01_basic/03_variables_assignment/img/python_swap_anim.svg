@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .box { rx: 8; ry: 8; fill: #282a36; stroke: #ff79c6; stroke-width: 3; }
+      .obj { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; fill: #50fa7b; text-anchor: middle; }
+      .label { font-family: sans-serif; font-size: 22px; fill: #f8f8f2; font-weight: bold; text-anchor: middle; }
+      .desc { font-family: sans-serif; font-size: 16px; fill: #aaa; text-anchor: middle; }
+      .tag { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #8be9fd; text-anchor: middle; }
+      
+      @keyframes swapAnim {
+        0%, 15% { transform: translateY(0); }
+        30%, 45% { transform: translateY(150px); }
+        60% { transform: translate(300px, 150px); }
+        75%, 85% { transform: translate(300px, 0); }
+        95%, 100% { transform: translate(300px, 0); }
+      }
+      
+      @keyframes swapAnimRev {
+        0%, 15% { transform: translateY(0); }
+        30%, 45% { transform: translateY(-150px); }
+        60% { transform: translate(-300px, -150px); }
+        75%, 85% { transform: translate(-300px, 0); }
+        95%, 100% { transform: translate(-300px, 0); }
+      }
+      
+      @keyframes fadeText {
+        0%, 20% { opacity: 0; }
+        25%, 80% { opacity: 1; }
+        90%, 100% { opacity: 0; }
+      }
+
+      .move-right { animation: swapAnim 6s ease-in-out infinite; }
+      .move-left { animation: swapAnimRev 6s ease-in-out infinite; }
+      .fade { animation: fadeText 6s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#1e1e1e" rx="10" />
+
+  <text x="400" y="40" class="label" fill="#f1fa8c" font-size="24">파이썬의 마법: 한 줄로 변수 값 바꾸기 (Swap)</text>
+  <text x="400" y="70" class="tag">m, n = n, m</text>
+
+  <!-- 파이썬 방식 -->
+  <!-- 변수 이름표 영역 -->
+  <g transform="translate(0, 150)">
+    <text x="250" y="0" class="label" fill="#ffb86c">변수 m</text>
+    <rect x="200" y="20" width="100" height="80" class="box" stroke="#ffb86c" />
+    
+    <text x="550" y="0" class="label" fill="#8be9fd">변수 n</text>
+    <rect x="500" y="20" width="100" height="80" class="box" stroke="#8be9fd" />
+    
+    <!-- 움직이는 데이터 -->
+    <g transform="translate(250, 65)">
+        <text x="0" y="0" class="obj move-right" fill="#ffb86c">10</text>
+    </g>
+    
+    <g transform="translate(550, 65)">
+        <text x="0" y="0" class="obj move-left" fill="#8be9fd">20</text>
+    </g>
+  </g>
+
+  <!-- 설명 텍스트 -->
+  <text x="400" y="320" class="desc fade">튜플 (n, m)을 임시로 묶어서 한 번에 착! 교차 대입합니다.</text>
+  <text x="400" y="350" class="desc fade">임시 변수(temp 상자)를 만들 필요가 전혀 없습니다.</text>
+
+</svg>

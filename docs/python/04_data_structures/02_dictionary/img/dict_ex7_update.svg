@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-a { fill: #89b4fa; rx: 10; stroke: #11111b; stroke-width: 2; }
+      .box-b { fill: #f9e2af; rx: 10; stroke: #11111b; stroke-width: 2; }
+      .box-conflict { fill: #eba0ac; rx: 10; stroke: #11111b; stroke-width: 3; stroke-dasharray: 5; }
+      
+      @keyframes mergeAction { 0%, 20% { transform: translateY(0); opacity: 1; } 40%, 80% { transform: translateY(-70px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+      @keyframes overrideAction { 0%, 30% { opacity: 0; transform: scale(0.5); } 40%, 80% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0.5); } }
+      
+      .vanish { animation: mergeAction 6s infinite; }
+      .appear { animation: overrideAction 6s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="30" class="text-title">예제 7: 딕셔너리 병합 병합 (update 메서드)</text>
+  <text x="400" y="60" class="text-title" fill="#a6e3a1">a.update(b)</text>
+
+  <!-- Dict A -->
+  <text x="200" y="100" class="text-title" fill="#89b4fa">Dict A</text>
+  <rect x="120" y="120" width="70" height="40" class="box-a" />
+  <text x="155" y="145" class="text-code">"x": 1</text>
+  
+  <g class="vanish">
+    <rect x="210" y="120" width="70" height="40" class="box-a" />
+    <text x="245" y="145" class="text-code">"y": 2</text>
+  </g>
+
+  <!-- Dict B -->
+  <text x="600" y="100" class="text-title" fill="#f9e2af">Dict B (New Data)</text>
+  <rect x="520" y="120" width="70" height="40" class="box-b" />
+  <text x="555" y="145" class="text-code">"y": 3</text>
+  <rect x="610" y="120" width="70" height="40" class="box-b" />
+  <text x="645" y="145" class="text-code">"z": 4</text>
+
+  <!-- Conflict Override -->
+  <g class="appear">
+    <rect x="210" y="120" width="70" height="40" class="box-conflict" />
+    <text x="245" y="145" class="text-code">"y": 3</text>
+    <text x="400" y="145" class="text-title" fill="#eba0ac">"y" Key 충돌! B가 덮어씀!</text>
+    
+    <!-- Arrow -->
+    <path d="M 500 140 L 450 140" stroke="#fba922" stroke-width="4" marker-end="url(#arrow)" />
+  </g>
+  
+  <text x="400" y="220" class="text-title" fill="#a6adc8">결과: { "x": 1, "y": 3, "z": 4 }</text>
+</svg>

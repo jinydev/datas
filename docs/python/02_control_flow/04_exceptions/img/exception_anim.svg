@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 20px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .box-try { fill: #313244; stroke: #89dceb; stroke-width: 3; rx: 10; }
+      .box-except { fill: #181825; stroke: #f38ba8; stroke-width: 3; rx: 10; stroke-dasharray: 5 5; }
+      .box-finally { fill: #313244; stroke: #f9e2af; stroke-width: 3; rx: 10; }
+      
+      .arrow { fill: none; stroke: #bac2de; stroke-width: 4; stroke-linecap: round; }
+      
+      /* Normal Path Animation (Green) */
+      @keyframes normalFlow {
+        0%, 10% { transform: translate(150px, 80px); opacity: 0; fill: #a6e3a1; }
+        20% { transform: translate(150px, 80px); opacity: 1; fill: #a6e3a1; } /* Enter Try */
+        35% { transform: translate(150px, 140px); opacity: 1; } /* Middle of Try */
+        50% { transform: translate(150px, 200px); opacity: 1; } /* Exit Try */
+        65% { transform: translate(150px, 280px); opacity: 1; } /* Move to Finally */
+        80% { transform: translate(400px, 280px); opacity: 1; } /* Enter Finally */
+        95% { transform: translate(650px, 280px); opacity: 1; } /* Exit Finally */
+        100% { transform: translate(750px, 280px); opacity: 0; fill: #a6e3a1; }
+      }
+
+      /* Error Path Animation (Red) */
+      @keyframes errorFlow {
+        0%, 10% { transform: translate(400px, 80px); opacity: 0; fill: #f38ba8; }
+        20% { transform: translate(400px, 80px); opacity: 1; fill: #f38ba8; } /* Enter Try */
+        30% { transform: translate(400px, 110px); opacity: 1; } /* Tripping point */
+        
+        /* Lightning Strike / CRASH! */
+        35% { transform: translate(400px, 120px) scale(2); fill: #fab387; }
+        
+        40% { transform: translate(400px, 180px) scale(1); fill: #f38ba8; } /* Bounced to Except */
+        55% { transform: translate(650px, 180px); opacity: 1; } /* Move through Except */
+        70% { transform: translate(650px, 280px); opacity: 1; } /* Move down to Finally */
+        85% { transform: translate(500px, 280px); opacity: 1; } /* Enter Finally reversed */
+        95% { transform: translate(700px, 280px); opacity: 1; } /* Exit Finally */
+        100% { transform: translate(750px, 280px); opacity: 0; }
+      }
+      
+      .particle-normal { animation: normalFlow 8s ease-in-out infinite; }
+      .particle-error { animation: errorFlow 8s ease-in-out infinite; animation-delay: 4s; }
+
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">try-except-finally 예외 처리 동작 흐름</text>
+
+  <!-- TRY Block -->
+  <rect x="50" y="80" width="400" height="100" class="box-try" />
+  <text x="70" y="110" class="text-code" fill="#89dceb" text-anchor="start">try:</text>
+  <text x="120" y="140" class="text-desc" text-anchor="start">1. 안전하게 코드 실행 시도 (정상 흐름)</text>
+  <text x="120" y="165" class="text-desc" text-anchor="start">2. 에러가 발생할 가능성이 있는 코드 존</text>
+
+  <!-- EXCEPT Block -->
+  <rect x="550" y="130" width="200" height="80" class="box-except" />
+  <text x="570" y="160" class="text-code" fill="#f38ba8" text-anchor="start">except:</text>
+  <text x="650" y="190" class="text-desc" fill="#f38ba8">비상 그물망 (복구)</text>
+
+  <!-- Path from Try to Except (Error!) -->
+  <path d="M 450,130 L 530,170" class="arrow" marker-end="url(#arrowhead)" stroke-dasharray="8 4" stroke="#f38ba8" />
+  <text x="490" y="140" class="text-desc" fill="#fab387" font-weight="bold">💥 Error!</text>
+
+  <!-- FINALLY Block -->
+  <rect x="200" y="240" width="400" height="80" class="box-finally" />
+  <text x="220" y="270" class="text-code" fill="#f9e2af" text-anchor="start">finally:</text>
+  <text x="400" y="300" class="text-desc" fill="#f9e2af">무조건 마지막에 거쳐가는 출구 (자원 해제)</text>
+
+  <!-- Path from Except to Finally -->
+  <path d="M 650,220 L 650,260 L 615,260" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Normal Path to Finally -->
+  <path d="M 150,190 L 150,280 L 185,280" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Particles -->
+  <circle cx="0" cy="0" r="12" class="particle-normal" fill="#a6e3a1" />
+  <circle cx="0" cy="0" r="12" class="particle-error" fill="#f38ba8" />
+
+  <text x="400" y="370" class="text-desc">초록색 공(정상 처리)과 빨간색 공(에러 비상망 추락) 모두 마지막엔 노란색 finally 방을 무조건 통과합니다.</text>
+</svg>

@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -686,9 +693,16 @@
 
 <h2 id="시스템-개발-언어-vs-데이터-분석-언어">시스템 개발 언어 vs 데이터 분석 언어</h2>
 
+<p><img src="./img/python_vs_r_webtoon.png" alt="R언어와 파이썬의 차이를 보여주는 웹툰 이미지" />
+<em>(R은 엄격한 통계학자, 파이썬은 유연한 AI 탐험가에 비유됩니다.)</em></p>
+
 <p>프로그래밍 언어는 목적에 따라 크게 <strong>시스템/애플리케이션 구축용 언어</strong>와 <strong>데이터 분석/통계용 언어</strong>로 나눌 수 있습니다.</p>
 
 <h3 id="-일반-개발-언어-java-c-c-등">① 일반 개발 언어 (Java, C++, C# 등)</h3>
+
+<p><img src="./img/compiler_vs_interpreter_anim.svg" alt="컴파일러와 인터프리터의 차이 구조도" />
+<em>(Java 컴파일러는 파일 전체를 한 번에 검사해서 번역(.class)하지만, Python 인터프리터는 한 줄씩 읽는 즉시 메모리에서 바로바로 실행합니다.)</em></p>
+
 <ul>
   <li><strong>주목적</strong>: “무엇을 <strong>만들</strong> 것인가?” (Build &amp; Engineering)</li>
   <li><strong>특징</strong>:
@@ -810,6 +824,9 @@
 
 <p>요약하자면, <strong>SQL이 거대한 창고에서 원하는 물건 박스를 오차 없이 빨리 찾아오는 ‘지게차’</strong>라면, <strong>파이썬은 창고 밖의 거친 재료들을 직접 캐내고, 다듬고, 조립하여 완전히 새로운 AI 인공지능 예측 모델을 찍어내는 ‘종합 만능 공장’</strong>이라고 할 수 있습니다.</p>
 
+<p><img src="./img/python_vs_sql_webtoon.png" alt="SQL 지게차와 파이썬 만능 공장의 비유 웹툰" />
+<em>(SQL 지게차가 정형화된 상자를 정리하는 동안, 파이썬 공장은 거친 데이터 원석을 받아들여 빛나는 인공지능 두뇌로 변환시키고 있습니다.)</em></p>
+
 <h2 id="우리는-왜-파이썬을-선택했는가-roadmap">우리는 왜 파이썬을 선택했는가? (Roadmap)</h2>
 
 <p>결론적으로 우리가 이번 과정에서 <strong>파이썬에 집중하는 이유</strong>는 매우 명확합니다.<br />
@@ -823,6 +840,9 @@
 
 <p><strong>3. 세 번째 마일스톤: ‘인공지능(AI) 엔지니어의 길’</strong>
 가장 결정적인 지점입니다. 훗날 데이터를 다루는 것에 익숙해져, ChatGPT 브레인이나 알파고의 핵심 동작 원리인 <strong>머신러닝과 딥러닝</strong> 모델링에 호기심이 생겼을 때, 여러분이 파이썬을 이미 쥐고 있다면 어떠한 진입 장벽이나 언어 변환의 스트레스 없이 즉각적으로 세계 최고 수준의 AI 프레임워크를 가져와 활용할 수 있습니다.</p>
+
+<p><img src="./img/python_evolution_webtoon.png" alt="파이썬 학습 3단계 로드맵 진화 과정 웹툰" />
+<em>(1단계: 엑셀 서기 로봇 ➡️ 2단계: 데이터 차트를 든 판다스 분석가 ➡️ 3단계: 빛나는 두뇌를 가진 궁극의 AI 엔지니어 로봇으로 진화!)</em></p>
 
 <p>이번 커리큘럼은 아주 견고한 파이썬이라는 뼈대(Week 1~2)를 세우고, 그 위에 빅 데이터를 담아낼 판다스라는 든든한 근육(Week 3~10)을 붙인 뒤, 스스로 학습하여 미래를 예측하는 머신러닝이라는 뇌(Week 11~14)를 무리 없이 작동시키는 완벽한 테크 트리, 위대한 마스터 플랜의 숭고한 시작점(Basecamp)입니다. 앞으로 우리 여정에 함께 할 파이썬, 지금 바로 시작하겠습니다.</p>
 
@@ -838,6 +858,55 @@
 
 <h2 id="정리">정리</h2>
 <p>데이터 분석용 맞춤 언어의 특성과 함께, 왜 전 세계가 AI와 빅데이터의 표준으로 R 대신 파이썬을 선택했는지 체감했습니다. 무한한 범용성과 압도적인 생태계, 그리고 ‘사람이 읽기 쉬운 코드’를 지향한 귀도 반 로섬의 철학이 담긴 이 언어는 여러분의 데이터 분석 커리어를 여는 완벽한 마스터키가 될 것입니다.</p>
+
+<hr />
+
+<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
+
+<p>자바를 이미 학습한 여러분에게 파이썬은 매우 친숙하면서도 다르게 다가올 것입니다.</p>
+
+<h3 id="1-컴파일러-vs-인터프리터-동작-방식의-차이">1. 컴파일러 vs 인터프리터 (동작 방식의 차이)</h3>
+
+<p><img src="./img/compiler_vs_interpreter_webtoon.png" alt="요리책 번역에 비유한 컴파일러와 인터프리터 웹툰" />
+<em>(컴파일러는 책 한 권을 몽땅 번역한 뒤에 요리를 시작하지만, 인터프리터는 옆에서 한 줄씩 실시간으로 읽어주며 스피디하게 요리를 진행합니다!)</em></p>
+
+<ul>
+  <li><strong>Java (컴파일러 방식)</strong>: 개발자가 소스 코드를 다 짜면, <code class="language-plaintext highlighter-rouge">javac</code>라는 엄격한 번역가가 책(코드) <strong>전체를 한 번에 죽 검사해서</strong> 완벽한 기계어 쪽지(<code class="language-plaintext highlighter-rouge">.class</code> 바이트코드)로 싹 다 번역해 놓습니다. 컴퓨터는 나중에 이미 깔끔하게 번역된 쪽지만 보고 엄청난 속도로 실행하죠. 번역 검사 시간이 오래 걸리지만 매우 꼼꼼하고 안전합니다.</li>
+  <li><strong>Python (인터프리터 방식)</strong>: 친절하고 빠른 통역가가 코드를 <strong>한 줄씩 읽어 들이는 즉시</strong> 통역해서 바로바로 요리사 컴퓨터에게 명령을 내립니다. 번역본을 따로 만들어두지 않고 동시통역을 하기 때문에 코드를 쓰자마자 줄 단위로 결과를 휙휙 빠르게 확인할 수 있는 최상의 편리함을 제공합니다.
+    <blockquote>
+      <p>🚨 <strong>자바 개발자 주의점!</strong>: 컴파일 언어인 자바는 코드 실행 전에 사소한 문법 오타라도 있으면 빨간줄을 긋고 아예 빌드(실행)를 거부합니다. 하지만 파이썬은 일단 무조건 위에서부터 코드를 잘 실행하며 내려오다가, 에러가 난 오타 줄에 직면해서야 비로소 “앗, 여기서 터졌네!” 하고 프로그램이 갑자기 멈추게 됩니다. 이처럼 파이썬은 <strong>실행 중간에 폭발하는 에러(Runtime Error)</strong>가 훨씬 잦으므로 더욱 각별히 코드를 검증하는 습관에 대비해야 합니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="2-정적-타이핑-vs-동적-타이핑">2. 정적 타이핑 vs 동적 타이핑</h3>
+<ul>
+  <li><strong>Java</strong>: 변수를 만들 때 무조건 자료형을 명시해야 합니다. (<code class="language-plaintext highlighter-rouge">int age = 25;</code>)</li>
+  <li><strong>Python</strong>: 자료형을 굳이 적지 않아도 알아서 판단합니다. (<code class="language-plaintext highlighter-rouge">age = 25</code>)</li>
+</ul>
+
+<hr />
+
+<h2 id="-vibe-coding-데이터-분석가처럼-ai와-대화하기">🎧 Vibe Coding (데이터 분석가처럼 AI와 대화하기)</h2>
+
+<p>파이썬의 세계에서는 AI 엔진(ChatGPT 등)을 보조 도구로 적극 활용하는 것이 실력입니다.</p>
+
+<blockquote>
+  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
+“파이썬이 R 언어보다 머신러닝/딥러닝 분야에서 압도적으로 많이 쓰이게 된 결정적인 역사적 계기 3가지를 중학생이 이해하기 쉽게 설명해 줘.”</p>
+</blockquote>
+
+<hr />
+
+<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
+
+<p>코딩에서 영어 단어의 의미만 정확히 이해해도 절반은 성공입니다! 오늘 배운 핵심 영단어들이나 약자들을 다시 한번 짚고 넘어가 볼까요?</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">Interpreter</code></strong>: 통역사. (파이썬처럼 코드를 한 줄씩 바로바로 해석해서 실행해 주는 프로그램 환경을 뜻합니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Literal</code></strong>: 글자 그대로의. (코드에 <code class="language-plaintext highlighter-rouge">25</code> 혹은 <code class="language-plaintext highlighter-rouge">"Hello"</code>라고 ‘직접 적어놓은 고정된 값’ 그 자체를 말합니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Constant</code></strong>: 끊임없는, 불변의. (한 번 값을 담으면 프그램이 끝날 때까지 ‘절대 변하지 않기로 약속한 그릇(변수)’을 말합니다.)</li>
+</ul>
 
 
             <!-- 구글 애드센스 출력 -->

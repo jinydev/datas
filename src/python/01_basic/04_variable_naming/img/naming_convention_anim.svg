@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .box { rx: 5; ry: 5; fill: #282a36; stroke: #bd93f9; stroke-width: 3; }
+      .bg { fill: #1e1e1e; rx: 10; }
+      .title { font-family: sans-serif; font-size: 24px; font-weight: bold; fill: #f1fa8c; text-anchor: middle; }
+      
+      .code { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; }
+      .desc { font-family: sans-serif; font-size: 16px; fill: #aaa; text-anchor: middle; }
+      
+      .python-color { fill: #50fa7b; }
+      .java-color { fill: #ffb86c; }
+      
+      .snake { stroke: #50fa7b; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .camel { stroke: #ffb86c; stroke-width: 4; fill: none; stroke-linecap: round; }
+
+      @keyframes drawLine {
+        0% { stroke-dashoffset: 150; }
+        100% { stroke-dashoffset: 0; }
+      }
+      
+      @keyframes floatText {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+
+      .draw-anim {
+        stroke-dasharray: 150;
+        animation: drawLine 3s ease-in-out infinite alternate;
+      }
+      .float-anim {
+        animation: floatText 3s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="40" class="title">코딩 컨벤션: 이름 짓기 스타일 (Naming Convention)</text>
+
+  <!-- 파이썬 영역 (Snake Case) -->
+  <g transform="translate(200, 120)">
+    <rect x="-150" y="-30" width="300" height="150" class="box" stroke="#50fa7b" />
+    <text x="0" y="0" class="title" fill="#50fa7b" font-size="20">🐍 파이썬 (스네이크 케이스)</text>
+    
+    <g transform="translate(0, 60)" class="float-anim">
+      <text x="0" y="0" class="code python-color" text-anchor="middle">user<tspan fill="#ff79c6">_</tspan>age</text>
+      <!-- 뱀 모양 밑줄 애니메이션 -->
+      <path d="M -50 15 Q -40 25, -20 15 T 10 15 T 40 15 T 60 15" class="snake draw-anim" />
+    </g>
+    
+    <text x="0" y="105" class="desc">모두 소문자, 단어 사이는 언더바(_)</text>
+  </g>
+
+  <!-- 자바 영역 (Camel Case) -->
+  <g transform="translate(600, 120)">
+    <rect x="-150" y="-30" width="300" height="150" class="box" stroke="#ffb86c" />
+    <text x="0" y="0" class="title" fill="#ffb86c" font-size="20">☕ 자바 (카멜 케이스)</text>
+    
+    <g transform="translate(0, 60)" class="float-anim">
+      <text x="0" y="0" class="code java-color" text-anchor="middle">user<tspan fill="#ff79c6" font-size="34">A</tspan>ge</text>
+      <!-- 낙타 쌍봉 애니메이션 (단어 첫 글자 강조) -->
+      <path d="M -30 15 Q -10 -20, 10 15" class="camel draw-anim" />
+    </g>
+    
+    <text x="0" y="105" class="desc">첫 단어 소문자, 다음 단어 첫 글자 대문자</text>
+  </g>
+
+  <line x1="400" y1="80" x2="400" y2="290" stroke="#444" stroke-width="2" stroke-dasharray="5,5" />
+
+  <text x="400" y="320" class="desc" fill="#f8f8f2">로마에 가면 로마법을! 파이썬 개발팀에서는 무조건 스네이크 케이스를 씁니다.</text>
+
+</svg>

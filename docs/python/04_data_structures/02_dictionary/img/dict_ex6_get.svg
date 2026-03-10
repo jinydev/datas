@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-lock { fill: #313244; rx: 10; stroke: #f9e2af; stroke-width: 2; }
+      .box-val { fill: #eba0ac; rx: 10; stroke: #11111b; stroke-width: 2; }
+      
+      @keyframes insertKey { 0%, 100% { transform: translateY(-50px); opacity: 0; } 20%, 80% { transform: translateY(0); opacity: 1; } }
+      @keyframes shakeLocker { 0%, 100% { transform: translateX(0); fill: #313244; } 30%, 50%, 70% { transform: translateX(-5px); fill: #eba0ac; } 40%, 60% { transform: translateX(5px); fill: #eba0ac; } }
+      @keyframes dropShield { 0%, 40% { transform: translateY(-100px); opacity: 0; } 50%, 80% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(100px); opacity: 0; } }
+      
+      .key-anim { animation: insertKey 6s infinite; }
+      .locker-shake { animation: shakeLocker 6s infinite; }
+      .shield-anim { animation: dropShield 6s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 6: 생명 보험 get() 메서드 탐색</text>
+  <text x="400" y="70" class="text-title" fill="#89b4fa">age = profile.get("age", 20)</text>
+
+  <!-- Missing Key trying to insert -->
+  <g class="key-anim">
+    <rect x="350" y="90" width="100" height="30" fill="#fba922" stroke="#f38ba8" stroke-width="2" rx="5" />
+    <text x="400" y="110" class="text-code" fill="#11111b">"age"(없음!)</text>
+    <path d="M 395 120 L 405 120 L 400 140 Z" fill="#fba922" stroke="#f38ba8" />
+  </g>
+
+  <!-- Locker Rejecting -->
+  <rect x="335" y="150" width="130" height="60" class="box-lock locker-shake" />
+  <text x="400" y="185" class="text-title locker-shake" fill="#11111b">KeyError 💥</text>
+  
+  <!-- The Shield of get() that prevents the app from crashing and provides default value -->
+  <g class="shield-anim">
+    <path d="M 330 140 L 470 140 L 470 220 C 400 240 330 220 330 220 Z" fill="#a6e3a1" opacity="0.8" />
+    <text x="400" y="180" class="text-code" fill="#11111b">Safely Return:</text>
+    <text x="400" y="200" class="text-code" fill="#11111b">Default 20</text>
+  </g>
+
+</svg>

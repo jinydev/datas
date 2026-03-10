@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -678,66 +685,129 @@
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h1 id="345-수정-불가능immutable과-함수-hash-id">3.4.5 수정 불가능(immutable)과 함수 hash() id()</h1>
+            <h1 id="345-수정-불가immutable와-메모리의-진실-hash와-id">3.4.5 수정 불가(Immutable)와 메모리의 진실: hash()와 id()</h1>
 
 <h2 id="학습목표">학습목표</h2>
-<p>본 장에서는 파이썬 코어의 깊숙한 내부 메모리 지형에서 값이 절대로 변할 수 없는(Immutable) 객체 무리들이 어떠한 수학적 암표 처리 과정을 거쳐 절대 변조되지 않는 보안 식별자(<strong>Hash</strong>)를 보장받는지 그 심연의 근본 원리를 관찰합니다. 특수 내장 함수 <code class="language-plaintext highlighter-rouge">id()</code>를 직접 호출함으로써, 포장지 껍데기(값 구조)가 아닌 진짜 메모리 속의 유일한 하드웨어적 실체를 눈으로 추적 비교하는 개발자의 아주 깊고 단단한 기본기를 다집니다.</p>
+<p>본 장에서는 “왜 리스트는 딕셔너리의 열쇠(Key)나 세트(Set)의 원소가 될 수 없는가?”라는 파이썬 최대의 미스터리를 해결원격 심층 분석합니다. 데이터가 절대 변하지 않는다는 <strong>불변성(Immutable)</strong>, 그 데이터를 컴퓨터만의 암호로 변환하는 <strong><code class="language-plaintext highlighter-rouge">hash()</code></strong>, 그리고 데이터가 실제로 살고 있는 물리적 집 주소인 <strong><code class="language-plaintext highlighter-rouge">id()</code></strong> 함수를 통해 파이썬 수면 아래 작동하는 거대한 메모리의 진실을 마주하게 됩니다.</p>
 
-<p>파이썬에서 수정 불가능하다는 immutable(불변)은 변경할 수 없는 객체를 가리킨다. immutable 객체는 생성된 후에 그 값을 변경할 수 없다. 예를 들어, 정수(<code class="language-plaintext highlighter-rouge">int</code>), 부동소수점(<code class="language-plaintext highlighter-rouge">float</code>), 문자열(<code class="language-plaintext highlighter-rouge">str</code>), 튜플(<code class="language-plaintext highlighter-rouge">tuple</code>) 등은 immutable 객체이다. 이러한 객체는 생성되면 값을 변경할 수 없으며, 변경하려고 하면 새로운 객체가 생성된다.</p>
+<hr />
 
-<p>수정 불가능한 immutable 속성은 객체의 안전성과 불변성을 보장하여 예상치 못한 변경으로부터 객체를 보호한다. 따라서 파이썬에서는 해시 가능한 객체만 딕셔너리의 키나 집합의 원소로 사용할 수 있는데, 이러한 제한은 immutable한 특성을 가진 객체에 의해 부여된다.</p>
+<h2 id="-tldr-1분-핵심-요약-해시hash가-대체-뭔가요">💡 TL;DR (1분 핵심 요약): 해시(Hash)가 대체 뭔가요?</h2>
+
+<ol>
+  <li><strong>불변성 (Immutable)</strong>: 한 번 태어나면 자기 내용을 죽을 때까지 바꿀 수 없는 고집불통 데이터입니다. (숫자, 글자, 튜플)</li>
+  <li><strong>해시 (Hash)</strong>: 데이터의 “주민등록번호(바코드)”입니다. 오직 내용이 <strong>변하지 않는(Immutable)</strong> 데이터만이 이 바코드를 발급받을 수 있습니다.</li>
+  <li><strong>딕셔너리와 세트의 절대 규칙</strong>: 파이썬의 <code class="language-plaintext highlighter-rouge">Dictionary Key</code>와 <code class="language-plaintext highlighter-rouge">Set</code>는 데이터를 빛의 속도로 찾기 위해 <strong>반드시 이 ‘해시 바코드’가 있는 녀석들만</strong> 입장을 허락합니다. (리스트처럼 내용이 자꾸 변하는 녀석은 바코드를 발급해 줄 수 없으므로 입구 컷 당합니다!)</li>
+</ol>
+
+<hr />
+
+<h2 id="1-해시-출입국의-심사대-왜-리스트는-입구-컷-당할까">1. 해시 출입국의 심사대 (왜 리스트는 입구 컷 당할까?)</h2>
+
+<p>파이썬의 딕셔너리(사전)와 세트(집합)는 수백만 개의 데이터 중에서도 내가 원하는 것을 <strong>단 1초(O(1))</strong> 만에 찾아내는 마법의 속도를 자랑합니다. 그 비결이 바로 <strong>‘해시(Hash)’</strong>라는 고유 바코드 시스템 덕분입니다.</p>
+
+<p><img src="./img/hash_id_passport_webtoon.png" alt="해시 아이디 여권 심사대 웹툰" />
+<em>(웹툰 비유: 심사대(Dictionary) 직원이 출입국 검사를 하고 있습니다. 왼쪽의 ‘튜플’ 기사는 다이아몬드 철갑(Immutable)을 입고 있어 얼굴이 영원히 변하지 않으므로, 직원이 안심하고 영구적인 ‘해시 바코드’ 여권 도장을 찍어 통과시킵니다. 반면 오른쪽의 ‘리스트’ 젤리 소년은 1초 전엔 사과 옷을, 지금은 바나나 옷을 입으며 자꾸 모양을 바꿉니다(Mutable). 직원은 “네 얼굴이 계속 바뀌어 신분증 사진을 찍을 수가 없잖아!”라며 <code class="language-plaintext highlighter-rouge">TypeError(Unhashable)</code> 도장을 찍어 입구에서 쫓아냅니다.)</em></p>
+
+<hr />
+
+<h2 id="2-불변성immutable과-hash-함수의-관계">2. 불변성(Immutable)과 <code class="language-plaintext highlighter-rouge">hash()</code> 함수의 관계</h2>
+
+<p><code class="language-plaintext highlighter-rouge">hash()</code> 내장 함수는 데이터를 통째로 믹서기에 갈아서 컴퓨터만의 <strong>고유한 정수 지문(숫자)</strong>으로 만들어 반환해 줍니다.</p>
+
+<p><strong>오직 수정 불가능한(Immutable) 객체만 <code class="language-plaintext highlighter-rouge">hash()</code> 지문을 찍을 수 있습니다.</strong></p>
+
+<p><img src="./img/hash_id_ex1_hash.svg" width="100%" /></p>
+
+<h3 id="예제-1-튜플-vs-리스트의-운명-해시-스캐너">예제 1: 튜플 vs 리스트의 운명 (해시 스캐너)</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 불변하는 튜플 (통과!)
+</span><span class="n">tp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">hash</span><span class="p">(</span><span class="n">tp</span><span class="p">))</span> <span class="c1"># -3550055125485641917 (컴퓨터마다 숫자는 다르게 나옵니다)
+</span>
+<span class="c1"># 2. 불변하는 문자열 (통과!)
+</span><span class="n">word</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">hash</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="c1"># 8746231012391238
+</span>
+<span class="c1"># 3. 변하는 리스트 (적발 및 입구 컷! 🚨)
+</span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># print(hash(my_list))
+# 🚨 주석 해제 시 TypeError: unhashable type: 'list' 에러 폭발!
+</span></code></pre></div></div>
+
+<p>이것이 바로 <code class="language-plaintext highlighter-rouge">my_list</code>가 딕셔너리의 열쇠(Key)나 세트(Set)의 원소가 될 수 없었던 진짜 이유입니다. 그들은 입장하려면 해시 지문이 필요한데, 리스트는 지문을 찍어줄 수가 없기 때문입니다.</p>
+
+<hr />
+
+<h2 id="3-메모리의-진짜-집-주소-id-함수">3. 메모리의 진짜 집 주소, <code class="language-plaintext highlighter-rouge">id()</code> 함수</h2>
+
+<p><code class="language-plaintext highlighter-rouge">hash()</code>가 데이터를 갈아 만든 ‘바코드 지문’이라면, <strong><code class="language-plaintext highlighter-rouge">id()</code>는 그 데이터가 컴퓨터의 RAM 소자 어딘가에 살고 있는 실제 ‘집 주소(메모리 위치)’</strong>를 정수 값으로 알려줍니다.</p>
+
+<h3 id="예제-2-파이썬의-정수-캐싱-integer-caching-절약술">예제 2: 파이썬의 정수 캐싱 (Integer Caching) 절약술</h3>
+<p>파이썬은 메모리를 아끼기 위해, 사람들이 자주 쓰는 작은 숫자(보통 -5 ~ 256)들은 미리 메모리에 하나만 예쁘게 만들어 놓고, 여러 변수가 <strong>다 같이 그 집을 공유해서 바라보게(레이저 포인터)</strong> 만듭니다.</p>
+
+<p><img src="./img/hash_id_ex2_id.svg" width="100%" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># x와 y는 내용물(10)만 같은 게 아니라, 아예 100% 동일한 집 주소를 공유합니다!
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">x의 주소:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># 예: 140704255284296
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">y의 주소:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># 예: 140704255284296
+</span>
+<span class="c1"># 그래서 집 주소가 같니? 라고 물어보면 True 가 나옵니다.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># True (값(==)만 같은 게 아니라, 아예 동일한 '존재'입니다)
+</span></code></pre></div></div>
+
+<h3 id="예제-3-큰-숫자나-리스트의-집-주소는-다릅니다">예제 3: 큰 숫자나 리스트의 집 주소는 다릅니다</h3>
+<p>자주 안 쓰는 큰 숫자나, 내용이 자꾸 변하는 리스트는 똑같은 모양으로 쌍둥이를 만들어도 파이썬이 아예 <strong>서로 다른 두 채의 집</strong>을 지어버립니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 예: 2530182410240
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="c1"># 예: 2530182390144 (분명 내용은 똑같은데, 집 주소가 다릅니다!)
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># True  (안에 들어있는 내용물 쌍둥이의 얼굴이 똑같니? -&gt; 네!)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># False (둘이 아예 같은 집에 사는 동일 인물이니? -&gt; 아니요!)
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
+
+<h3 id="1--와-is-의-극명한-철학-차이-초당황-주의-">1. <code class="language-plaintext highlighter-rouge">==</code> 와 <code class="language-plaintext highlighter-rouge">is</code> 의 극명한 철학 차이 (초당황 주의 🚨)</h3>
+<p>이 부분에서 자바 개발자들이 파이썬을 배울 때 가장 크게 비명을 지릅니다. 작동 방식이 <strong>정확히 정반대</strong>이기 때문입니다!</p>
 
 <ul>
-  <li><strong>해시 가능한 객체(hashable objects)</strong>: 딕셔너리(dict)의 키가 가능</li>
-  <li><strong>해시 가능한 객체(hashable objects)</strong>: 집합(set)의 원소로 가능</li>
+  <li><strong>Java</strong>: <code class="language-plaintext highlighter-rouge">a == b</code> 연산자가 <strong>‘메모리 주소(id)’</strong>를 비교합니다. <code class="language-plaintext highlighter-rouge">a.equals(b)</code>를 써야 내용물을 비교합니다. 그래서 자바에서는 문자열이 같은지 볼 때 실수로 <code class="language-plaintext highlighter-rouge">==</code>를 썼다가 피를 보는 경우가 허다합니다.</li>
+  <li><strong>Python</strong>: <code class="language-plaintext highlighter-rouge">a == b</code> 연산자가 <strong>‘내용물(값)’</strong>을 친절하게 비교합니다!! 그리고 굳이 메모리 주소가 100% 똑같은지 하드웨어 집 주소를 집요하게 묻고 싶을 때만 <code class="language-plaintext highlighter-rouge">is</code> 연산자(<code class="language-plaintext highlighter-rouge">id(a) == id(b)</code>)를 씁니다. 파이썬이 훨씬 인간 친화적입니다.</li>
 </ul>
 
-<p>파이썬 내장 함수 <code class="language-plaintext highlighter-rouge">hash(object)</code>는 주어진 객체 <code class="language-plaintext highlighter-rouge">object</code>의 해시 값을 반환한다. 해시 값은 객체의 내용에 기반하여 생성된다. 해시 함수는 동일한 입력에 대해서 항상 동일한 해시 값을 반환한다. 따라서, 동일한 값이면 항상 동일한 해시 값을 가지게 된다. 해시 값의 고유성은 데이터 구조에서 빠른 검색 및 비교를 위한 핵심 요소 중 하나이다.</p>
+<h3 id="2-해시-함수의-오버라이딩-overriding">2. 해시 함수의 오버라이딩 (Overriding)</h3>
+<ul>
+  <li><strong>Java</strong>: 커스텀 클래스를 해시맵 테이블(HashMap)에 넣으려면 <code class="language-plaintext highlighter-rouge">hashCode()</code>와 <code class="language-plaintext highlighter-rouge">equals()</code> 메서드를 개발자가 둘 다 강제로 오버라이딩해서 외우듯 구현해야 합니다.</li>
+  <li><strong>Python</strong>: 객체의 고유 정보를 바탕으로 <code class="language-plaintext highlighter-rouge">__hash__()</code> 매직 메서드 하나만 우아하게 정의해 주면 끝납니다.</li>
+</ul>
 
-<p>다음 코드처럼 수정 가능한 객체인 사전이나 리스트, 집합은 <code class="language-plaintext highlighter-rouge">hash()</code> 값을 가질 수 없다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">hash</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
-</code></pre></div></div>
-<p><strong>오류:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TypeError: unhashable type: 'list'
-</code></pre></div></div>
+<h2 id="-vibe-coding">🎧 Vibe Coding</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">hash</span><span class="p">({</span><span class="sh">'</span><span class="s">one</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))</span>
-</code></pre></div></div>
-<p><strong>오류:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TypeError: unhashable type: 'dict'
-</code></pre></div></div>
+<blockquote>
+  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
+“파이썬으로 <code class="language-plaintext highlighter-rouge">student1 = {'name': 'Alice', 'age': 20}</code> 딕셔너리와, <code class="language-plaintext highlighter-rouge">student2 = {'name': 'Alice', 'age': 20}</code> 딕셔너리를 두 개 만들어줘. 내용물은 완전히 똑같아. 그 다음 콘솔 출력으로 1) 두 딕셔너리를 <code class="language-plaintext highlighter-rouge">==</code> 로 비교한 결과, 2) 두 딕셔너리를 <code class="language-plaintext highlighter-rouge">is</code> 로 비교한 결과, 3) 두 변수의 <code class="language-plaintext highlighter-rouge">id()</code> 최종 출력값을 순서대로 띄워주는 코드를 짜줘. 그리고 왜 <code class="language-plaintext highlighter-rouge">==</code> 결과와 <code class="language-plaintext highlighter-rouge">is</code> 결과가 다르게 나오는지 주석으로 아주 쉽게 설명해 줘.”</p>
+</blockquote>
 
-<p>그러나 수정 불가능한 객체인 기본 자료형과 튜플은 고유한 <code class="language-plaintext highlighter-rouge">hash</code> 값이 있다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">hash</span><span class="p">(</span><span class="sh">'</span><span class="s">py</span><span class="sh">'</span><span class="p">),</span> <span class="nf">hash</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-</code></pre></div></div>
-<p><strong>출력 (예시):</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1857589116887210153 -3550055125485641917
-</code></pre></div></div>
+<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
 
-<p>수정 불가능한 immutable 객체와 함수 <code class="language-plaintext highlighter-rouge">id()</code>는 파이썬에서 객체의 고유 식별자(unique identifier)를 이해하는 데 중요한 역할을 한다. 먼저, immutable 객체는 변경할 수 없는 객체를 말한다. 이러한 객체는 생성된 후에 그 값을 변경할 수 없으며, 변경하려고 하면 새로운 객체가 생성된다.</p>
-
-<p>함수 <code class="language-plaintext highlighter-rouge">id()</code>는 파이썬에서 모든 객체의 고유 식별자(unique identifier)를 반환한다. 이 식별자는 객체가 메모리 상에서의 위치를 나타내는 정수 값이다. 따라서, <code class="language-plaintext highlighter-rouge">id()</code> 함수를 사용하면 두 개의 객체가 동일한 메모리 위치를 가리키는지 여부를 확인할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">help</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>수정 불가능한 객체는 한 번 생성되면 그 값을 변경할 수 없으므로, 동일한 값의 immutable 객체는 메모리 상에서 하나의 위치에만 저장될 수 있다. 이는 <code class="language-plaintext highlighter-rouge">id()</code> 함수를 사용하여 두 개의 immutable 객체의 식별자를 비교할 때 유용할 수 있다. 만약 두 객체의 <code class="language-plaintext highlighter-rouge">id()</code>가 동일하다면, 두 객체는 동일한 메모리 위치를 가리키고 있음을 의미한다. 따라서 두 객체는 동일한 것이다.</p>
-
-<p>예를 들어, 다음과 같은 코드를 살펴보자. 변수 <code class="language-plaintext highlighter-rouge">x</code>와 <code class="language-plaintext highlighter-rouge">y</code>는 모두 정수값 10을 가리킨다. 이 경우, <code class="language-plaintext highlighter-rouge">id(x)</code>와 <code class="language-plaintext highlighter-rouge">id(y)</code>는 동일한 값을 반환한다. 이는 파이썬의 메모리 관리 방식으로 인해, 정수값 10은 불변이므로 한 번 생성된 객체는 메모리 상에서 하나의 위치에만 저장되기 때문이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-</code></pre></div></div>
-<p><strong>출력 (예시):</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>140704255284296 140704255284296
-</code></pre></div></div>
-
-<p>따라서, immutable한 객체와 함수 <code class="language-plaintext highlighter-rouge">id()</code>를 함께 사용하면 객체의 메모리 위치를 확인하여 두 객체가 동일한 값을 가리키는지 여부를 쉽게 판단할 수 있다.</p>
-
-<h2 id="정리">정리</h2>
-<p>“왜 편리무쌍한 딕셔너리의 Key 자리 스폿이나 깐깐한 중복 방지망인 Set 괄호 속에는 유연한 수정 리스트를 통째로 절대 밀어 넣고 우겨넣어 등록할 수 없을까?”라는 흔하고 숱한 파이썬 초보 입문자들의 거대한 한계 의문은 여기서 깨달은 해시(Hash)의 변형 불가 룰의 쇠고랑을 직시함으로써 완전히 해갈되었습니다. 변수가 가리키고 매달린 메모리 공간의 실제 위치 주소(<code class="language-plaintext highlighter-rouge">id</code>)를 아는 것은 나중에 머신러닝 데이터 객체 덩어리를 잘라 복사하고 붙이는 정제 과정에서 어처구니 없는 원본 훼손 사고를 막아내는 가장 중대한 기본 소양이 됩니다.</p>
+<ul>
+  <li><strong>Immutable</strong>: 불변의. (Im(아니다) + Mutable(변하다). 한 번 메모리에 집을 짓고 입주하면, 죽을 때까지 성형수술(값 변경)이 불가능한 강철 같은 데이터입니다. 정수, 플로트, 문자열, 튜플이 여기에 속합니다.)</li>
+  <li><strong>Hash</strong>: 잘게 썰어 섞다. (해시 포테이토할 때의 그 해시입니다. 아무리 긴 소설책 데이터라도, 해시 함수 믹서기에 넣고 갈아버리면 항상 똑같은 길이의 고정된 암호 숫자(지문) 덩어리가 튀어나오는 마법의 암호화 기술입니다.)</li>
+  <li><strong>ID (Identifier)</strong>: 식별자. (너와 나를 구별하는 고유한 번호표입니다. 파이썬에서는 <code class="language-plaintext highlighter-rouge">id()</code> 함수를 통해 변수라는 포인터가 가리키고 있는 데이터 덩어리의 <strong>진짜 물리적인 RAM 메모리 주소(번지수)</strong>를 10진수로 꺼내 보여줍니다.)</li>
+</ul>
 
 
             <!-- 구글 애드센스 출력 -->

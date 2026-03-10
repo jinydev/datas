@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .title { font-family: sans-serif; font-size: 24px; font-weight: bold; fill: #f38ba8; text-anchor: middle; }
+      .subtitle { font-family: sans-serif; font-size: 14px; fill: #bac2de; text-anchor: middle; }
+      
+      .box { fill: #313244; stroke: #45475a; stroke-width: 2; rx: 8; }
+      .box-highlight { stroke: #a6e3a1; stroke-width: 3; }
+      
+      .text-glow { filter: drop-shadow(0 0 5px rgba(243, 139, 168, 0.5)); }
+      .label { font-family: monospace; font-size: 16px; fill: #cdd6f4; text-anchor: middle; font-weight: bold; }
+      .desc { font-family: sans-serif; font-size: 13px; fill: #a6adc8; text-anchor: middle; }
+      .math { font-family: monospace; font-size: 20px; fill: #f9e2af; font-weight: bold; }
+      
+      .emoji { font-size: 40px; text-anchor: middle; dominant-baseline: middle; }
+      
+      /* Animation for moving binary data */
+      @keyframes floatData {
+        0% { transform: translateY(0); opacity: 0.5; }
+        50% { transform: translateY(-10px); opacity: 1; }
+        100% { transform: translateY(0); opacity: 0.5; }
+      }
+      .anim-data { animation: floatData 2s infinite ease-in-out; }
+      
+      /* Beam connecting the evolution */
+      .beam { fill: none; stroke: #cba6f7; stroke-width: 4; stroke-dasharray: 10,10; opacity: 0.6; }
+    </style>
+    
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#cba6f7" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="45" class="title">문자 인코딩의 차원 확장 (Memory Dimension Expansion)</text>
+  <text x="400" y="70" class="subtitle">1Byte(ASCII) 우물 안 개구리에서 4Byte(Unicode) 다차원 우주로의 진화</text>
+
+  <!-- Step 1: ASCII Space -->
+  <g transform="translate(150, 200)">
+    <!-- 8 bit layout representation -->
+    <rect x="-60" y="-50" width="120" height="100" class="box" />
+    
+    <text x="0" y="-80" class="label text-glow" fill="#89b4fa">1단계: ASCII (1960s)</text>
+    <text x="0" y="-60" class="desc">1 Byte (8 Bits) 공간</text>
+    
+    <text x="0" y="5" class="emoji">A</text>
+    <text x="0" y="30" class="label" fill="#f9e2af">65</text>
+    
+    <!-- capacity -->
+    <text x="0" y="80" class="math">$2^7 = 128$ 개</text>
+    <text x="0" y="100" class="desc">(영어, 숫자, 기호 한정)</text>
+    
+    <!-- Binary anim -->
+    <text x="0" y="140" class="label anim-data" fill="#a6adc8" style="font-size: 12px; animation-delay: 0s;">0100 0001</text>
+  </g>
+
+  <!-- Connecting Beam -->
+  <path d="M 240,180 Q 400,120 520,180" class="beam" marker-end="url(#arrow)" />
+  <text x="400" y="150" class="label" fill="#cba6f7">차원 확장 (Dimension Expansion)</text>
+  <text x="400" y="170" class="desc">메모리 벽을 허물어 전 세계 글자를 흡수</text>
+
+  <!-- Step 2: Unicode Space -->
+  <g transform="translate(620, 200)">
+    <!-- 32 bit layout representation (4 stacked bytes) -->
+    <rect x="-90" y="-60" width="180" height="140" class="box box-highlight" />
+    
+    <text x="0" y="-90" class="label text-glow" fill="#a6e3a1">2단계: Unicode / UTF-8</text>
+    <text x="0" y="-70" class="desc">가변 ~ 최대 4 Bytes 공간</text>
+    
+    <!-- Multi characters in one huge box -->
+    <text x="-40" y="-10" class="emoji">가</text>
+    <text x="-40" y="20" class="label" fill="#f9e2af" style="font-size: 13px;">44032</text>
+    
+    <text x="40" y="-10" class="emoji">😀</text>
+    <text x="40" y="20" class="label" fill="#f9e2af" style="font-size: 13px;">128512</text>
+    
+    <!-- capacity -->
+    <text x="0" y="110" class="math">약 $111$만 개 +</text>
+    <text x="0" y="130" class="desc">(전 세계 모든 언어 + 이모지)</text>
+    
+    <!-- Binary anim -->
+    <text x="-40" y="160" class="label anim-data" fill="#a6e3a1" style="font-size: 11px; animation-delay: 0.5s;">11101010...</text>
+    <text x="40" y="160" class="label anim-data" fill="#f38ba8" style="font-size: 11px; animation-delay: 1.0s;">11110000...</text>
+  </g>
+
+</svg>

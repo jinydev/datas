@@ -1,130 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
-    <defs>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&amp;display=swap');
-            text { font-family: 'Pretendard', sans-serif; font-weight: 600; }
-            
-            /* The moving dot */
-            #dot {
-                animation: flow 6s infinite ease-in-out;
-            }
-            
-            /* Path glows */
-            #truePath { animation: trueGlow 6s infinite; }
-            #falsePath { animation: falseGlow 6s infinite; }
-            
-            /* Action block glows */
-            #trueBlock { animation: trueBlockGlow 6s infinite; }
-            #falseBlock { animation: falseBlockGlow 6s infinite; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .box { fill: #313244; stroke: #45475a; stroke-width: 3; rx: 10; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 20px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 16px; fill: #a6adc8; text-anchor: middle; }
+      .text-bool { font-family: monospace; font-size: 22px; font-weight: bold; }
+      
+      .line { fill: none; stroke: #45475a; stroke-width: 6; stroke-dasharray: 10 5; }
+      .line-true { fill: none; stroke: #a6e3a1; stroke-width: 6; stroke-dasharray: 10 5; }
+      .line-false { fill: none; stroke: #f38ba8; stroke-width: 6; stroke-dasharray: 10 5; }
+      
+      .ball { fill: #89b4fa; filter: drop-shadow(0 0 10px #89b4fa); }
+      
+      /* Animation */
+      @keyframes moveBall {
+        0% { transform: translate(150px, 80px); opacity: 1; }
+        25% { transform: translate(400px, 80px); opacity: 1; }
+        
+        /* Stop at condition gate */
+        35% { transform: translate(400px, 140px); opacity: 1; }
+        45% { transform: translate(400px, 140px); opacity: 1; }
+        
+        /* Branch True (Score 85 >= 80) */
+        50% { transform: translate(200px, 300px); opacity: 1; }
+        60% { transform: translate(200px, 420px); opacity: 1; }
+        70% { transform: translate(200px, 500px); opacity: 0; }
+        
+        /* Reset and fade out False branch */
+        100% { transform: translate(200px, 500px); opacity: 0; }
+      }
+      
+      @keyframes pulseGate {
+        0%, 100% { stroke: #f9e2af; stroke-width: 4; }
+        50% { stroke: #f9e2af; stroke-width: 8; filter: drop-shadow(0 0 10px #f9e2af); }
+      }
+      
+      @keyframes lightUpTrue {
+        0%, 45%, 100% { fill: #313244; }
+        48%, 65% { fill: rgba(166, 227, 161, 0.3); stroke: #a6e3a1; }
+      }
+      
+      .anim-ball { animation: moveBall 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .anim-gate { animation: pulseGate 4s ease-in-out infinite; }
+      .anim-box-true { animation: lightUpTrue 4s ease-in-out infinite; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#45475a" />
+    </marker>
+    <marker id="arrow-true" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-false" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f38ba8" />
+    </marker>
+  </defs>
 
-            /* Diamond glow */
-            #conditionDiamond { animation: diamondGlow 6s infinite; }
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">조건문 if 의 논리 흐름 (Control Flow)</text>
 
-            /* 
-               Animation timeline (6 seconds total):
-               0-1s: Dot moves from top(300, 20) to diamond (300, 80)
-               1-2s: Diamond evaluates. (True sequence)
-               2-3s: Dot moves to True block (420, 130).
-               3-3.01s: Dot resets to top.
-               3-4s: Dot moves from top(300, 20) to diamond (300, 80)
-               4-5s: Diamond evaluates. (False sequence)
-               5-6s: Dot moves to False block (180, 130).
-               6s: Reset
-            */
+  <!-- Input Data Node -->
+  <rect x="50" y="60" width="200" height="40" class="box" fill="#45475a"/>
+  <text x="150" y="87" class="text-code" fill="#f5e0dc">Data: score = 85</text>
+  <path d="M 250,80 L 400,80 L 400,120" class="line" marker-end="url(#arrow)" />
 
-            @keyframes flow {
-                0% { transform: translate(300px, 10px); opacity: 0; fill: #adb5bd; }
-                5% { transform: translate(300px, 10px); opacity: 1; fill: #adb5bd; }
-                15% { transform: translate(300px, 70px); opacity: 1; fill: #198754; } /* Inside diamond */
-                25% { transform: translate(300px, 70px); opacity: 1; fill: #198754; } /* Waiting */
-                35%, 48% { transform: translate(450px, 160px); opacity: 1; fill: #198754; } /* Move to True */
-                49%, 49.9% { transform: translate(450px, 160px); opacity: 0; fill: #198754; } /* Hide */
-                
-                50% { transform: translate(300px, 10px); opacity: 0; fill: #adb5bd; } /* Reset */
-                55% { transform: translate(300px, 10px); opacity: 1; fill: #adb5bd; }
-                65% { transform: translate(300px, 70px); opacity: 1; fill: #dc3545; } /* Inside diamond */
-                75% { transform: translate(300px, 70px); opacity: 1; fill: #dc3545; } /* Waiting */
-                85%, 98% { transform: translate(150px, 160px); opacity: 1; fill: #dc3545; } /* Move to False */
-                99%, 100% { transform: translate(150px, 160px); opacity: 0; fill: #dc3545; } /* Hide */
-            }
+  <!-- Condition Gate (Diamond shape approximation with polygon) -->
+  <polygon points="400,130 550,180 400,230 250,180" class="box anim-gate" />
+  <text x="400" y="175" class="text-code">if score >= 80 :</text>
+  <text x="400" y="200" class="text-desc">점수가 80 이상인가?</text>
+  
+  <!-- True Path -->
+  <path d="M 250,180 L 200,180 L 200,270" class="line-true" marker-end="url(#arrow-true)" />
+  <text x="240" y="160" class="text-bool" fill="#a6e3a1">True (참)</text>
+  
+  <rect x="80" y="280" width="240" height="120" class="box anim-box-true" />
+  <text x="200" y="320" class="text-code">print("합격")</text>
+  <text x="200" y="350" class="text-desc">(if 블록 내부 실행)</text>
+  
+  <path d="M 200,400 L 200,450 L 400,450" class="line-true" marker-end="url(#arrow)" />
 
-            @keyframes diamondGlow {
-                0%, 15% { stroke: #0d6efd; fill: #F0F8FF; }
-                15.1%, 49.9% { stroke: #198754; fill: #e8f5e9; } /* True evaluation */
-                50%, 65% { stroke: #0d6efd; fill: #F0F8FF; }
-                65.1%, 100% { stroke: #dc3545; fill: #ffebee; } /* False evaluation */
-            }
+  <!-- False Path -->
+  <path d="M 550,180 L 600,180 L 600,270" class="line-false" marker-end="url(#arrow-false)" />
+  <text x="560" y="160" class="text-bool" fill="#f38ba8">False (거짓)</text>
+  
+  <rect x="480" y="280" width="240" height="120" class="box" stroke-dasharray="5 5" />
+  <text x="600" y="320" class="text-code" fill="#7f849c">print("불합격")</text>
+  <text x="600" y="350" class="text-desc" fill="#7f849c">(else 블록 건너뜀)</text>
+  
+  <path d="M 600,400 L 600,450 L 400,450" class="line-false" />
 
-            @keyframes trueGlow {
-                0%, 25% { stroke: #adb5bd; stroke-width: 2px; }
-                25.1%, 49.9% { stroke: #198754; stroke-width: 4px; }
-                50%, 100% { stroke: #adb5bd; stroke-width: 2px; }
-            }
+  <!-- End Node -->
+  <rect x="300" y="450" width="200" height="40" class="box" fill="#181825"/>
+  <text x="400" y="477" class="text-code">다음 코드 라인 실행...</text>
 
-            @keyframes falseGlow {
-                0%, 75% { stroke: #adb5bd; stroke-width: 2px; }
-                75.1%, 100% { stroke: #dc3545; stroke-width: 4px; }
-            }
-
-            @keyframes trueBlockGlow {
-                0%, 30% { stroke: #198754; fill: #fff; transform: scale(1); transform-origin: 450px 160px;}
-                35%, 45% { stroke: #198754; fill: #e8f5e9; transform: scale(1.05); transform-origin: 450px 160px;}
-                50%, 100% { stroke: #198754; fill: #fff; transform: scale(1); transform-origin: 450px 160px;}
-            }
-
-            @keyframes falseBlockGlow {
-                0%, 80% { stroke: #dc3545; fill: #fff; transform: scale(1); transform-origin: 150px 160px;}
-                85%, 95% { stroke: #dc3545; fill: #ffebee; transform: scale(1.05); transform-origin: 150px 160px;}
-                100% { stroke: #dc3545; fill: #fff; transform: scale(1); transform-origin: 150px 160px;}
-            }
-        </style>
-        <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#adb5bd" />
-        </marker>
-        <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#198754" />
-        </marker>
-        <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc3545" />
-        </marker>
-    </defs>
-    
-    <!-- Background -->
-    <rect x="0" y="0" width="600" height="250" fill="#f8f9fa" rx="16" stroke="#e9ecef" stroke-width="2"/>
-    
-    <!-- Initial Line -->
-    <path d="M 300 20 L 300 40" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrowGray)"/>
-
-    <!-- True Path (Right) -->
-    <path id="truePath" d="M 360 80 L 450 80 L 450 120" stroke="#adb5bd" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
-    <text x="405" y="70" text-anchor="middle" font-size="14" fill="#198754">참 (True)</text>
-
-    <!-- False Path (Left) -->
-    <path id="falsePath" d="M 240 80 L 150 80 L 150 120" stroke="#adb5bd" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
-    <text x="195" y="70" text-anchor="middle" font-size="14" fill="#dc3545">거짓 (False)</text>
-    
-    <!-- True Block -->
-    <g id="trueBlock">
-        <rect x="390" y="130" width="120" height="60" rx="8" stroke-width="2"/>
-        <text x="450" y="157" text-anchor="middle" font-size="15" fill="#198754">if 블록 실행</text>
-        <text x="450" y="175" text-anchor="middle" font-size="12" fill="#6c757d" font-weight="normal">(명령 수행)</text>
-    </g>
-
-    <!-- False Block -->
-    <g id="falseBlock">
-        <rect x="90" y="130" width="120" height="60" rx="8" stroke-width="2"/>
-        <text x="150" y="157" text-anchor="middle" font-size="15" fill="#dc3545">else 블록 실행</text>
-        <text x="150" y="175" text-anchor="middle" font-size="12" fill="#6c757d" font-weight="normal">(건너뜀 / 대안)</text>
-    </g>
-
-    <!-- Condition Diamond -->
-    <g>
-        <polygon id="conditionDiamond" points="300,40 370,80 300,120 230,80" stroke-width="2"/>
-        <text x="300" y="77" text-anchor="middle" font-size="15" fill="#0d6efd">조건식 평가</text>
-        <text x="300" y="95" text-anchor="middle" font-size="12" fill="#6c757d" font-family="'Consolas', monospace" font-weight="normal">(n % 2 == 0)</text>
-    </g>
-
-    <!-- The Moving Data Dot -->
-    <circle id="dot" cx="0" cy="0" r="10"/>
-
+  <!-- Animated Data Ball -->
+  <circle cx="0" cy="0" r="12" class="ball anim-ball" />
+  
 </svg>

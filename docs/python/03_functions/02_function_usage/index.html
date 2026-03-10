@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -681,95 +688,150 @@
             <h1 id="332-함수-선언과-사용">3.3.2 함수 선언과 사용</h1>
 
 <h2 id="학습목표">학습목표</h2>
-<p>본 장에서는 파이썬의 <code class="language-plaintext highlighter-rouge">def</code> 키워드를 이용해 직접 나만의 함수를 <strong>선언 및 정의</strong>하고 <strong>호출</strong>하는 실전 문법을 체득합니다. 다중 매개변수, 기본값(Default) 세팅, 그리고 한 번에 여러 값을 튜플로 묶어서 뱉어내는 파이썬만의 독특한 다중 반환(<code class="language-plaintext highlighter-rouge">return</code>) 기법을 능숙하게 다룰 수 있게 됩니다.</p>
+<p>본 장에서는 학생들이 파이썬 프로그래밍을 배울 때 가장 큰 벽으로 느끼는 <strong>‘함수의 흐름(Control Flow)’</strong>을 파헤칩니다. <code class="language-plaintext highlighter-rouge">def</code> 키워드로 함수를 만드는 기법부터, 호출(Call)될 때 프로그램 메모리의 흐름이 어떻게 다른 공간으로 워프(Jump)했다가 되돌아오는지(Return) 그 복잡한 궤적을 완벽히 이해합니다. 더 나아가, 함수가 자기 자신을 끝없이 호출하는 마법 같은 <strong>재귀(Recursion)</strong>의 원리까지 상세히 정복합니다.</p>
 
-<p>특정한 기능을 수행하는 함수를 직접 정의해 봅니다. 파이썬에서 사용자 정의 함수를 선언하려면 <code class="language-plaintext highlighter-rouge">def</code> 키워드 블록을 활용합니다.</p>
+<hr />
 
-<h2 id="기본-선언-구조">기본 선언 구조</h2>
+<h2 id="1-함수-선언하기-why-def">1. 함수 선언하기 (Why <code class="language-plaintext highlighter-rouge">def</code>?)</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">):</span>
-    <span class="sh">"""</span><span class="s">함수에 대한 설명을 적는 독스트링(Docstring) 칸입니다.</span><span class="sh">"""</span>
-    <span class="n">function_body</span>
-    <span class="k">return</span> <span class="n">value</span>
+<p>파이썬에서 함수를 새롭게 창조하는 행위를 가리켜 <strong>‘정의한다(Define)’</strong>고 표현합니다. 다른 많은 언어들이 함수를 만들 때 <code class="language-plaintext highlighter-rouge">function</code>이라는 길고 번거로운 단어를 쓰지만, 파이썬은 왜 단 세 글자인 <code class="language-plaintext highlighter-rouge">def</code>를 사용할까요?</p>
+
+<p><img src="./img/def_vs_function_webtoon.png" alt="def vs function 웹툰" />
+<em>(웹툰 비유: 자바나 C++ 로봇이 땀을 뻘뻘 흘리며 <code class="language-plaintext highlighter-rouge">public static void function...</code> 이라는 수십 자의 계약서를 쓰고 있는 동안, 해변 의자에 누워 선글라스를 낀 파이썬 뱀파이어는 여유롭게 단 세 글자 <code class="language-plaintext highlighter-rouge">def</code>만 틱 치고 미소를 짓고 있습니다. 파이썬의 궁극적인 철학인 “단순함과 우아함”을 보여줍니다.)</em></p>
+
+<p>파이썬의 철학은 <strong>“실용적이고 읽기 쉬워야 하며, 불필요한 타이핑은 지양한다”</strong>입니다. 8글자나 되는 <code class="language-plaintext highlighter-rouge">function</code>을 매번 치는 것은 프로그래머의 손가락을 피곤하게 만듭니다. 그래서 <strong>“새로운 명령어를 정의(Define)한다”</strong>라는 뜻의 앞 세 글자 <strong><code class="language-plaintext highlighter-rouge">def</code></strong>만을 따와서 가장 직관적이고 쿨한 예약어를 탄생시켰습니다.</p>
+
+<h3 id="기본-선언-문법">기본 선언 문법</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 'def' 키워드로 함수명과 입력받을 통로(매개변수)를 정의합니다.
+</span><span class="k">def</span> <span class="nf">make_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">이곳은 함수가 무슨 일을 하는지 적어두는 독스트링(설명서) 공간입니다.</span><span class="sh">"""</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">안녕하세요, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">님! 환영합니다.</span><span class="sh">"</span>
+    
+    <span class="c1"># 작업이 다 끝나면 그 결과를 호출한 쪽으로 탁 던져줍니다.
+</span>    <span class="k">return</span> <span class="n">message</span>
 </code></pre></div></div>
 
+<hr />
+
+<h2 id="2-매개변수parameter-vs-인수argument">2. 매개변수(Parameter) vs 인수(Argument)</h2>
+
+<p>함수에서 가장 헷갈리는 용어가 바로 <strong>파라미터(Parameter)</strong>와 <strong>아규먼트(Argument)</strong>입니다. 둘 다 “함수에 넣어주는 값”이라고 뭉뚱그려 알고 있으면 나중에 객체지향을 배울 때 뼈아픈 타격을 입습니다. 이 둘의 차이는 하늘과 땅 차이입니다!</p>
+
+<p><img src="./img/parameter_vs_argument_webtoon.png" alt="파라미터 vs 아규먼트 구조 웹툰" />
+<em>(웹툰 비유: 왼쪽의 텅 빈 검 푸른 ‘홀로그램 도면(틀)’이 바로 파라미터(Parameter)입니다. “이 틀에는 무언가 들어올 거다~” 하고 선언만 해둔 빈 공간입니다. 반대로 오른쪽의 대장장이 로봇이 펄펄 끓는 진짜 마그마(실제 데이터)를 그 틀 안에 들이붓고 있는데, 이 들이붓는 진짜 알맹이 데이터가 바로 아규먼트(Argument)입니다.)</em></p>
+
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">function_name</code>: 함수의 이름. 이를 직접 호출할 수 있습니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">parameters</code>: 매개변수. 함수에 인가해주는 외부 입력 재료입니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">return value</code>: 함수 명령을 전부 수행한 뒤 본체로 다시 뱉어내는 완제품 결괏값입니다 (없으면 <code class="language-plaintext highlighter-rouge">None</code>을 기본 반환).</li>
+  <li><strong>매개변수(Parameter)</strong>: 함수를 처음 <strong>설계(def)할 때 뚫어놓은 구멍(이름표)</strong>입니다. 아직 값이 없습니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">def make_cookie(flavor):</code> 여기서 <code class="language-plaintext highlighter-rouge">flavor</code>는 파라미터입니다.</li>
+    </ul>
+  </li>
+  <li><strong>인수/인자 (Argument)</strong>: 함수를 실제로 <strong>실행(Call)할 때 그 구멍에 쑤셔 넣는 진짜 데이터 값</strong>입니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">make_cookie("초코")</code> 여기서 <code class="language-plaintext highlighter-rouge">"초코"</code>라는 텍스트 덩어리가 실제 작동하는 아규먼트입니다.</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 매개변수와 반환값이 모두 있는 함수 선언
-</span><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-    <span class="k">return</span> <span class="n">result</span>
+<hr />
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="c1"># 작동 결과: 7
-</span></code></pre></div></div>
+<h2 id="3-함수-호출과-제어-흐름의-도약-control-flow-jump">3. 함수 호출과 제어 흐름의 도약 (Control Flow Jump)</h2>
 
-<h2 id="함수-호출-function-call">함수 호출 (Function Call)</h2>
+<p>학생들이 함수에서 가장 멘붕에 빠지는 지점은 코드가 1줄, 2줄, 3줄 위에서 아래로 정직하게 흐르다가, <strong>함수를 만나는 순간 갑자기 흐름이 사라지고 위아래로 널뛰기를 한다는 점</strong>입니다. 이를 ‘제어 흐름의 도약(Control Jump)’이라고 부릅니다.</p>
 
-<p>앞서 배운 ‘쿠키 공장’ 비유를 실제로 코드로 구현해 보겠습니다.</p>
+<p><img src="./img/flow_portal_anim.svg" alt="함수 제어 흐름 포탈 애니메이션" />
+<em>(다이어그램: 메인 프로그램(Main Program)을 일직선으로 차례차례 읽고 내려오던 초록색 실행 불빛이, 2번 라인에서 <code class="language-plaintext highlighter-rouge">calc_tax(100)</code>이라는 함수 호출 코드를 만납니다. 그러자 불빛이 보라색 포탈 안으로 쑥 빨려 들어가, 전혀 다른 메모리 공간에 있는 <code class="language-plaintext highlighter-rouge">calc_tax()</code> 함수의 방으로 떨어집니다. 거기서 세금 계산 지시사항을 모두 마친 불빛은, 계산 결과(Return)를 보따리에 싸들고 황금색 귀환 포탈을 타서, 아까 본인이 떠났던 바로 그 메인 프로그램의 2번 라인으로 기가 막히게 정확히 되돌아옵니다.)</em></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">make_cookie</span><span class="p">(</span><span class="n">dough</span><span class="p">,</span> <span class="n">sugar</span><span class="p">):</span>  <span class="c1"># 오븐 이름(함수명)과 재료 투입구(매개변수)
-</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">반죽을 섞고 맛있게 굽습니다...</span><span class="sh">"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">dough</span> <span class="o">+</span> <span class="sh">"</span><span class="s">맛 쿠키</span><span class="sh">"</span>      <span class="c1"># 완성품 배출구 (반환값)
+<h3 id="호출call과-복귀return의-마법">호출(Call)과 복귀(Return)의 마법</h3>
+<ol>
+  <li><strong>점프(Jump)</strong>: 메인 프로그램이 실행되다가 함수 이름을 부르는 순간, 하던 일을 모두 일시정지(<code class="language-plaintext highlighter-rouge">Pause</code>)하고 책갈피를 꽂아둡니다. 그리고 실행권(제어권)을 복사하여 함수가 살고 있는 곳으로 순식간에 순간이동합니다.</li>
+  <li><strong>격리된 공간(Scope)</strong>: 함수는 자신만의 닫힌 방에서 들어온 재료(Argument)를 가지고 열심히 지지고 볶습니다. 이 방에서 일어나는 일은 메인 프로그램쪽에서 알지 못합니다.</li>
+  <li><strong>반환(Return)</strong>: 함수 끄트머리에서 <code class="language-plaintext highlighter-rouge">return 결괏값</code> 문장을 만나면, 함수는 방을 폭파해버리고 계산된 엑기스(결과물) 하나만 들고 아까 책갈피를 꽂아두었던 메인 프로그램의 그 자리로 다시 순간이동하여 돌아옵니다.</li>
+</ol>
+
+<p>만약 <code class="language-plaintext highlighter-rouge">return</code>을 돌려주지 않으면 파이썬은 빈털터리라는 의미로 <code class="language-plaintext highlighter-rouge">None</code>이라는 빈 껍데기를 몰래 쥐어주고 돌아옵니다.</p>
+
+<h3 id="다중-반환의-쾌감-tuple-packing">다중 반환의 쾌감 (Tuple Packing)</h3>
+<p>파이썬은 아주 호탕한 언어입니다. 다른 언어에서는 값이 2개면 리스트나 객체로 귀찮게 싸서 줘야 하지만, 파이썬은 <code class="language-plaintext highlighter-rouge">return</code> 뒤에 쉼표(<code class="language-plaintext highlighter-rouge">,</code>)만 찍어주면 다수의 결괏값을 한 큐에 튜플 포장지로 감싸서 쿨하게 던져줍니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">math_master</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">add</span><span class="p">,</span> <span class="n">sub</span>  <span class="c1"># 값 2개를 동시에 배출!
 </span>
-<span class="n">my_snack</span> <span class="o">=</span> <span class="nf">make_cookie</span><span class="p">(</span><span class="sh">"</span><span class="s">초코</span><span class="sh">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> 
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">내가 만든 간식: </span><span class="si">{</span><span class="n">my_snack</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 결과: 초코맛 쿠키
+<span class="c1"># 튜플 언패킹(Unpacking)으로 두 변수에 우겨넣기
+</span><span class="n">result_add</span><span class="p">,</span> <span class="n">result_sub</span> <span class="o">=</span> <span class="nf">math_master</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">더하기: </span><span class="si">{</span><span class="n">result_add</span><span class="si">}</span><span class="s">, 빼기: </span><span class="si">{</span><span class="n">result_sub</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 출력: 더하기 13, 빼기 7
 </span></code></pre></div></div>
 
-<p>함수 안에서 직전에 만든 또 다른 함수를 자유롭게 부를 수도 있습니다. 마치 일관된 작업을 분담해서 수행하는 통일된 공장처럼 여러 함수를 연쇄적으로 호출하여 하나의 큰 시스템을 설계하게 됩니다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">pack_box</span><span class="p">(</span><span class="n">flavor</span><span class="p">):</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">상자를 준비합니다.</span><span class="sh">"</span><span class="p">)</span>
-    <span class="n">cookie</span> <span class="o">=</span> <span class="nf">make_cookie</span><span class="p">(</span><span class="n">flavor</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># 내부에서 쿠키 굽는 함수를 연쇄 호출!
-</span>    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">cookie</span><span class="si">}</span><span class="s">를 상자에 담았습니다!</span><span class="sh">"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="sh">"</span><span class="s">선물 세트 완성</span><span class="sh">"</span>
+<h2 id="4-궁극의-마법-재귀-함수-recursive-functions">4. 궁극의 마법: 재귀 함수 (Recursive Functions)</h2>
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">pack_box</span><span class="p">(</span><span class="sh">"</span><span class="s">딸기</span><span class="sh">"</span><span class="p">))</span>
+<p>함수 챕터의 최종 보스는 단연 <strong>재귀(Recursion)</strong>입니다. 재귀 함수란 <strong>“함수 내부에서 뜬금없이 자기 자신을 또 부르는 함수”</strong>를 뜻합니다. 거울 속에 비친 거울을 쳐다보는 것과 같죠.</p>
+
+<p><img src="./img/recursion_matryoshka_webtoon.png" alt="재귀 함수 마트료시카 웹툰" />
+<em>(웹툰 비유: 거대한 대장 로봇이 배를 열더니 살짝 작은 자신의 클론 형상을 한 로봇을 꺼냅니다. 그 클론이 무언가 일을 하려다 다시 자기 배를 열어 더 작은 클론을 꺼내고… 이 무한 반복의 늪에 빠지다, 구석에 있는 아주 콩알만 한 가장 막내 로봇이 “어? 난 더 이상 꺼낼 클론이 없고 배터리(Base Case)가 있네?” 라며 배터리를 꺼내 바로 윗 형에게 넘겨주면, 형들이 연쇄적으로 값을 넘겨받아 마침내 대장 로봇이 완성된 에너지를 얻게 됩니다.)</em></p>
+
+<h3 id="콜-스택-call-stack과-종료-조건">콜 스택 (Call Stack)과 종료 조건</h3>
+<p>자기 자신을 계속 부르게 되면 컴퓨터의 메모리(콜 스택)에 함수들이 탑처럼 끝없이 쌓이게 됩니다. 그러다 결국 컴퓨터 메모리가 터져버리는 끔찍한 에러(<code class="language-plaintext highlighter-rouge">RecursionError</code>)가 발생합니다.
+따라서 재귀 함수를 만들 때는 <strong>“이 조건이 되면 이제 그만 부르고 돌아가자!”</strong>라는 철저한 제동 장치, 즉 <strong>종료 조건(Base Case)</strong>을 맨 위에 반드시 만들어 두어야 합니다.</p>
+
+<p>수학의 ‘팩토리얼(Factorial, 5! = 5 * 4 * 3 * 2 * 1)’ 연산이 재귀로 표현하기 가장 완벽한 예시입니다.</p>
+
+<p><img src="./img/recursion_stack_anim.svg" alt="재귀 함수 동작 흐름 SVG" />
+<em>(다이어그램: <code class="language-plaintext highlighter-rouge">fact(3)</code>이 완료되려면 <code class="language-plaintext highlighter-rouge">fact(2)</code>의 대답을 기다려야 하고, <code class="language-plaintext highlighter-rouge">fact(2)</code>는 <code class="language-plaintext highlighter-rouge">fact(1)</code>을, <code class="language-plaintext highlighter-rouge">fact(1)</code>은 <code class="language-plaintext highlighter-rouge">fact(0)</code>을 호출하며 콜 스택 깊은 곳으로 점점 들어갑니다(Push). 마침내 <code class="language-plaintext highlighter-rouge">fact(0)</code>이 종료 조건(Base Case)을 만나 숫자 <code class="language-plaintext highlighter-rouge">1</code>을 확정 짓고 위로 돌려주면, 그때부터 멈춰있던 형들이 거꾸로 올라가며 연쇄적으로 곱셈을 팍팍 터뜨리며(Pop) 최종 답을 들고 돌아오는 폭포수 같은 과정입니다.)</em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># 1. 절대 잊어선 안되는 브레이크 (Base Case)
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> 
+    
+    <span class="c1"># 2. 자기가 자기 자신보다 크기(n)를 1칸씩 줄여가며 계속 파고들어 호출합니다.
+</span>    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">3 팩토리얼의 결과:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 
-<h2 id="함수-매개변수-기본값-default-params">함수 매개변수 기본값 (Default Params)</h2>
+<p>처음엔 헷갈리지만, 복잡한 트리 구조를 뒤지거나 데이터 디렉토리를 탐색할 때 이 재귀 함수의 위력은 상상을 초월합니다.</p>
 
-<p>매개변수의 설계상 자주 쓰이는 고정값이 있다면 <code class="language-plaintext highlighter-rouge">=</code> 연산자를 이용해 미리 기본값을 세팅해둘 수 있습니다. 이를 통해 유연한 함수 호출이 가능해집니다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="n">math</span>
-    <span class="k">return</span> <span class="n">math</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
 
-<span class="c1"># 매개변수 값을 안주면 기본값(1)으로 처리
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">기본 면적:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">circle_area</span><span class="p">())</span>      
-
-<span class="c1"># 매개변수를 넘기면 해당 값(4.5)으로 덮어씌움
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">적용 면적:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">circle_area</span><span class="p">(</span><span class="mf">4.5</span><span class="p">))</span>   
-
-<span class="c1"># 키워드 인자로 파라미터 이름을 명시할 수 있음
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">키워드 매칭:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mf">5.6</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h2 id="다중-반환-multiple-returns">다중 반환 (Multiple Returns)</h2>
-
-<p>반환해야 할 값이 여러 개 존재할 때, <code class="language-plaintext highlighter-rouge">return</code>에 콤마 <code class="language-plaintext highlighter-rouge">,</code>로 나열하면 파이썬은 이들을 통째로 하나의 튜플(Tuple) 구조로 묶어서 반환해주는 강력함을 탑재하고 있습니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">plus</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-    <span class="n">minus</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
-    <span class="k">return</span> <span class="n">plus</span><span class="p">,</span> <span class="n">minus</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="nf">sum_sub</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># (13, 7)
-</span></code></pre></div></div>
-
-<h2 id="코딩-스타일-가이드-pep-8">코딩 스타일 가이드 (PEP 8)</h2>
-<p>파이썬 언어 생태계는 PEP8 스타일을 가장 폭넓게 지지합니다.</p>
+<h3 id="1-극단적으로-유연한-파라미터-전달-keyword-arguments">1. 극단적으로 유연한 파라미터 전달 (Keyword Arguments)</h3>
 <ul>
-  <li>함수명과 변수명은 모두 소문자로 하되, 띄어쓰기를 밑줄(<code class="language-plaintext highlighter-rouge">_</code>)로 처리하는 <strong>스네이크 케이스(snake_case)</strong> 규칙을 사용하세요.</li>
-  <li>나쁜 예: <code class="language-plaintext highlighter-rouge">CalculateSum()</code>, 좋은 예: <code class="language-plaintext highlighter-rouge">calculate_sum()</code></li>
+  <li><strong>Java</strong>: 매개변수를 넘길 때 함수가 요구하는 순서(Position)를 무조건 기계처럼 철저하게 지켜야만 합니다.</li>
+  <li><strong>Python</strong>: 파라미터 이름을 직접 지목해서 꽂아버리는 <strong>키워드 가변 인수(Keyword Argument)</strong>가 지원됩니다. <code class="language-plaintext highlighter-rouge">make_cookie(sugar=30, flavor="초코")</code>처럼 순서를 내 마음대로 뒤집어엎어서 던져줘도 파이썬이 알아서 원래 구멍을 찾아 값을 매핑해 줍니다.</li>
 </ul>
 
-<h2 id="정리">정리</h2>
-<p>드디어 남이 깎아 놓은 바퀴를 가져다 쓰는 수준을 넘어, 스네이크 케이스에 맞춰 내 코드베이스를 스스로 모듈화하는 창조자의 영역에 진입했습니다. 특히 <code class="language-plaintext highlighter-rouge">return plus, minus</code>처럼 여러 결과값을 한 번에 튜플 포장지로 깔끔하게 묶어 던지는 문법은 C나 자바 같은 언어 대비 파이썬이 가지는 극강의 표현식임을 꼭 체감하시기 바랍니다.</p>
+<h3 id="2-가변-매개변수-args-kwargs">2. 가변 매개변수 (*args, **kwargs)</h3>
+<ul>
+  <li><strong>Java</strong>: 몇 개의 값이 들어올지 모를 때 오버로딩(Overloading)을 여러 개 수작업으로 지루하게 만들거나 베리애딕(<code class="language-plaintext highlighter-rouge">...</code>) 문법을 써야 합니다.</li>
+  <li><strong>Python</strong>: 별표 하나(<code class="language-plaintext highlighter-rouge">*args</code>)로 무한대의 튜플 꾸러미를, 별표 두 개(<code class="language-plaintext highlighter-rouge">**kwargs</code>)로 무한대의 딕셔너리 꾸러미를 마법의 주머니처럼 통째로 다 빨아들여 처리할 수 있습니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="-vibe-coding">🎧 Vibe Coding</h2>
+
+<blockquote>
+  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
+“재귀 함수(Recursion)의 개념을 이용해서 1부터 내가 입력한 숫자 N까지의 합을 구하는 파이썬 코드를 짜줘. 단, 함수가 자기 자신을 호출하면서 파고들 때마다 <code class="language-plaintext highlighter-rouge">N이 3일 때 진입</code>, <code class="language-plaintext highlighter-rouge">N이 2일 때 진입</code> 같은 상태를 print 문으로 콘솔에 전부 찍어서 출력되게 해줘. 그래야 함수가 콜 스택에 쌓이는 게 눈으로 보이니까.”</p>
+</blockquote>
+
+<hr />
+
+<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
+
+<ul>
+  <li><strong>Parameter</strong>: 매개변수. (도면, 거푸집, 틀. 설계도에 존재하는 공간의 이름입니다.)</li>
+  <li><strong>Argument</strong>: 인수, 인자. (실제 데이터. 설계도의 틀에 들이붓는 현장의 자재입니다. 수학 증명에서의 ‘논거’라는 뜻에서 파생되어 함수에 힘을 싣는 실제 근거 값이라는 뉘앙스를 가집니다.)</li>
+  <li><strong>Return</strong>: 돌려주다, 반환하다. (제어 흐름의 도약 구조에서, 남의 방에서 일을 끝내고 짐을 싸서 ‘원래 호출되었던 내 둥지로 되돌아간다’는 핵심적인 물리적 점프의 뉘앙스를 담고 있습니다.)</li>
+  <li><strong>Recursion</strong>: 재귀, 되풀이. (라틴어 currere(달리다)에 re(다시)가 붙어, 왔던 길을 다시 되짚어 달린다는 뜻입니다. 마트료시카 인형처럼 까도 까도 자기 자신이 나오다 가장 작은 놈을 만나면 역순으로 다시 닫고 올라오는 행위입니다.)</li>
+  <li><strong>Base Case</strong>: 기저 조건, 바닥 조건. (재귀 함수가 무한 루프의 늪에 빠져 메모리가 터지기(Stack Overflow) 직전에, 브레이크를 걸고 바닥을 치고 다시 수면 위로 올라오게 만드는 유일한 탈출 조건문입니다.)</li>
+</ul>
 
 
             <!-- 구글 애드센스 출력 -->

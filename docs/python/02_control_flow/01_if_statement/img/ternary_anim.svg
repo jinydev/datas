@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .box { fill: #313244; stroke: #45475a; stroke-width: 3; rx: 10; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 22px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      /* Block styling for syntax parts */
+      .part-true { fill: #a6e3a1; fill-opacity: 0.15; stroke: #a6e3a1; stroke-width: 2; rx: 5; }
+      .part-cond { fill: #f9e2af; fill-opacity: 0.15; stroke: #f9e2af; stroke-width: 2; rx: 5; }
+      .part-false { fill: #f38ba8; fill-opacity: 0.15; stroke: #f38ba8; stroke-width: 2; rx: 5; }
+      
+      .text-true { fill: #a6e3a1; font-family: monospace; font-size: 20px; font-weight: bold; text-anchor: middle; }
+      .text-cond { fill: #f9e2af; font-family: monospace; font-size: 20px; font-weight: bold; text-anchor: middle; }
+      .text-false { fill: #f38ba8; font-family: monospace; font-size: 20px; font-weight: bold; text-anchor: middle; }
+      
+      /* Output box */
+      .out-box { fill: #181825; stroke: #89b4fa; stroke-width: 3; rx: 10; }
+      
+      /* Arrows */
+      .arrow { fill: none; stroke: #bac2de; stroke-width: 4; stroke-dasharray: 8 4; stroke-linecap: round; }
+      
+      /* Animations */
+      @keyframes popTrue {
+        0%, 40%, 100% { opacity: 0.3; transform: scale(1); filter: none; }
+        15%, 25% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 10px #a6e3a1); }
+      }
+      
+      @keyframes popFalse {
+        0%, 50%, 90%, 100% { opacity: 0.3; transform: scale(1); filter: none; }
+        65%, 75% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 10px #f38ba8); }
+      }
+      
+      @keyframes checkCond {
+        0%, 45%, 100% { stroke-width: 2; filter: none; }
+        10%, 60% { stroke-width: 4; filter: drop-shadow(0 0 10px #f9e2af); }
+      }
+      
+      @keyframes moveArrowTrue {
+        0%, 10%, 100% { opacity: 0; }
+        20%, 30% { opacity: 1; stroke: #a6e3a1; stroke-dashoffset: -20; }
+      }
+      
+      @keyframes moveArrowFalse {
+        0%, 60%, 100% { opacity: 0; }
+        70%, 80% { opacity: 1; stroke: #f38ba8; stroke-dashoffset: -20; }
+      }
+      
+      @keyframes showOutTrue {
+        0%, 15%, 100% { opacity: 0; }
+        25%, 45% { opacity: 1; }
+      }
+      
+      @keyframes showOutFalse {
+        0%, 65%, 100% { opacity: 0; }
+        75%, 95% { opacity: 1; }
+      }
+      
+      .anim-true { animation: popTrue 6s infinite; transform-origin: 200px 150px; }
+      .anim-false { animation: popFalse 6s infinite; transform-origin: 600px 150px; }
+      .anim-cond { animation: checkCond 6s infinite; }
+      .anim-arr-true { animation: moveArrowTrue 6s linear infinite; }
+      .anim-arr-false { animation: moveArrowFalse 6s linear infinite; }
+      .anim-out-true { animation: showOutTrue 6s infinite; }
+      .anim-out-false { animation: showOutFalse 6s infinite; }
+      
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">삼항 연산자 (한 줄 조건문) 해부도</text>
+
+  <!-- Variable Assignment -->
+  <text x="70" y="160" class="text-code" fill="#f5e0dc">status  =</text>
+
+  <!-- True Value Block -->
+  <g class="anim-true">
+    <rect x="130" y="130" width="140" height="40" class="part-true" />
+    <text x="200" y="157" class="text-true">'성인'</text>
+    <text x="200" y="115" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="middle">1. 참일 때의 값</text>
+  </g>
+
+  <!-- Condition Block -->
+  <g class="anim-cond">
+    <rect x="290" y="130" width="220" height="40" class="part-cond" />
+    <text x="400" y="157" class="text-cond">if age >= 20</text>
+    <text x="400" y="115" fill="#f9e2af" font-size="14" font-weight="bold" text-anchor="middle">2. 조건식 판별 (가장 먼저 평가!)</text>
+  </g>
+
+  <!-- False Value Block -->
+  <g class="anim-false">
+    <rect x="530" y="130" width="140" height="40" class="part-false" />
+    <text x="600" y="157" class="text-false">else '미성년자'</text>
+    <text x="600" y="115" fill="#f38ba8" font-size="14" font-weight="bold" text-anchor="middle">3. 거짓일 때의 값</text>
+  </g>
+
+  <!-- Result Box area -->
+  <rect x="300" y="240" width="200" height="60" class="out-box" />
+  <text x="400" y="230" fill="#89b4fa" font-size="16" font-weight="bold" text-anchor="middle">최종 `status` 에 저장되는 값</text>
+  
+  <!-- Dynamic Results -->
+  <text x="400" y="278" font-family="monospace" font-size="24" font-weight="bold" fill="#a6e3a1" text-anchor="middle" class="anim-out-true">"성인"</text>
+  <text x="400" y="278" font-family="monospace" font-size="24" font-weight="bold" fill="#f38ba8" text-anchor="middle" class="anim-out-false">"미성년자"</text>
+
+  <!-- Dynamic Arrows (from condition to result) -->
+  <path d="M 350,180 Q 200,200 350,250" class="arrow anim-arr-true" marker-end="url(#arrowhead)" />
+  <path d="M 450,180 Q 600,200 450,250" class="arrow anim-arr-false" marker-end="url(#arrowhead)" />
+
+  <text x="400" y="330" class="text-desc">Python은 일반적인 타 언어의 '조건 ? 참 : 거짓' 대신 영어 문장처럼 자연스럽게 씁니다.</text>
+
+</svg>

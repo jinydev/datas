@@ -1,82 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="auto">
   <defs>
     <style>
-      .text-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
-      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #666; }
-      .text-code { font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: #d63384; }
+      .box { rx: 10; ry: 10; fill: #282a36; stroke: #ff79c6; stroke-width: 4; }
+      .obj { font-family: 'Courier New', monospace; font-size: 36px; font-weight: bold; fill: #50fa7b; }
+      .label { font-family: sans-serif; font-size: 18px; fill: #f8f8f2; font-weight: bold; }
+      .tag { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #8be9fd; }
       
-      /* Literal Animation */
       @keyframes floatLiteral {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
+        0%, 20% { transform: translate(0px, 0px) scale(1); opacity: 1; }
+        30%, 40% { transform: translate(150px, -50px) scale(1.2); opacity: 1; }
+        50%, 70% { transform: translate(300px, 0px) scale(0.8); opacity: 1; }
+        80%, 100% { transform: translate(300px, 0px) scale(0.8); opacity: 0; }
       }
-      .literal-group { animation: floatLiteral 3s ease-in-out infinite; }
       
-      /* Constant Box Animation */
       @keyframes lockBox {
-        0% { stroke: #3b82f6; stroke-width: 3; }
-        50% { stroke: #10b981; stroke-width: 5; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5)); }
-        100% { stroke: #3b82f6; stroke-width: 3; }
-      }
-      .constant-box {
-        fill: #eff6ff;
-        rx: 15;
-        animation: lockBox 4s ease-in-out infinite;
+        0%, 65% { stroke: #ff79c6; fill: #282a36; }
+        70%, 100% { stroke: #ff5555; fill: #44475a; }
       }
       
-      /* Value Transfer Animation */
-      @keyframes moveValue {
-        0% { opacity: 0; transform: translateX(-50px); }
-        20% { opacity: 1; transform: translateX(0); }
-        80% { opacity: 1; transform: translateX(0); }
-        100% { opacity: 0; transform: translateX(0); }
+      @keyframes showLockText {
+        0%, 65% { opacity: 0; }
+        70%, 100% { opacity: 1; }
       }
-      .moving-value { animation: moveValue 4s ease-in-out infinite; }
+      
+      .literal-anim { animation: floatLiteral 5s infinite; }
+      .constant-box { animation: lockBox 5s infinite; }
+      .lock-text { animation: showLockText 5s infinite; }
     </style>
   </defs>
 
-  <rect width="100%" height="100%" fill="#f8fafc" rx="10" />
+  <rect width="100%" height="100%" fill="#1e1e1e" rx="10" />
 
-  <!-- Left Side: Literal -->
-  <g transform="translate(150, 200)">
-    <circle cx="0" cy="0" r="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="4" stroke-dasharray="8 4" />
-    <text x="0" y="-110" class="text-label" text-anchor="middle">리터럴 (Literal)</text>
-    <text x="0" y="-85" class="text-desc" text-anchor="middle">코드에 직접 적힌 '값' 그 자체</text>
+  <!-- 리터럴 영역 -->
+  <g transform="translate(100, 150)">
+    <!-- 애니메이션 리터럴 -->
+    <g class="literal-anim">
+      <circle cx="0" cy="-10" r="40" fill="rgba(80, 250, 123, 0.2)" stroke="#50fa7b" stroke-width="2" stroke-dasharray="5,5" />
+      <text x="0" y="0" class="obj" text-anchor="middle">100</text>
+    </g>
+    <!-- 제자리에 있는 설명 (원본 복사본 느낌) -->
+    <circle cx="0" cy="-10" r="40" fill="transparent" stroke="#555" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="0" y="0" class="obj" fill="#555" text-anchor="middle">100</text>
+    <text x="0" y="60" class="label" text-anchor="middle">리터럴 (Literal)</text>
+    <text x="0" y="80" font-family="sans-serif" font-size="14" fill="#aaa" text-anchor="middle">고정된 값 자체</text>
+  </g>
+
+  <!-- 바인딩 화살표 가이드 경로 -->
+  <path d="M 170 140 Q 250 80 330 140" fill="transparent" stroke="#444" stroke-width="3" stroke-dasharray="10,5" />
+
+  <!-- 상수 영역 -->
+  <g transform="translate(400, 100)">
+    <rect x="-60" y="-30" width="120" height="100" class="box constant-box" />
+    <text x="0" y="-45" class="tag" text-anchor="middle">MAX_USERS</text>
+    <text x="0" y="100" class="label" text-anchor="middle">상수 (Constant)</text>
+    <text x="0" y="120" font-family="sans-serif" font-size="14" fill="#aaa" text-anchor="middle">변하지 않기로 약속한 그릇</text>
     
-    <g class="literal-group">
-      <text x="0" y="10" class="text-code" text-anchor="middle" font-size="32">3.14159</text>
+    <!-- 자물쇠 아이콘/텍스트 -->
+    <g class="lock-text" transform="translate(0, 20)">
+      <rect x="-40" y="-15" width="80" height="30" rx="5" fill="#ff5555" />
+      <text x="0" y="5" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">LOCKED!</text>
     </g>
   </g>
-
-  <!-- Right Side: Constant -->
-  <g transform="translate(600, 200)">
-    <rect x="-100" y="-70" width="200" height="140" class="constant-box" />
-    <text x="0" y="-110" class="text-label" text-anchor="middle">상수 (Constant)</text>
-    <text x="0" y="-85" class="text-desc" text-anchor="middle">변하지 않기로 약속한 '이름(변수)'</text>
-    
-    <rect x="-80" y="-55" width="160" height="30" rx="5" fill="#1e293b" />
-    <text x="0" y="-33" class="text-code" fill="#f8fafc" text-anchor="middle">PI_VALUE</text>
-    
-    <g class="moving-value">
-      <text x="0" y="40" class="text-code" text-anchor="middle" font-size="28">3.14159</text>
-    </g>
-    
-    <path d="M 60,-40 Q 80,0 60,40" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
-  </g>
-
-  <!-- Arrow connecting them -->
-  <g transform="translate(375, 200)">
-    <path d="M -90,0 L 70,0" stroke="#94a3b8" stroke-width="4" fill="none" marker-end="url(#arrow)" />
-    <text x="-10" y="-20" class="text-desc" text-anchor="middle" font-weight="bold">대입 (Assignment)</text>
-    <text x="-10" y="25" class="text-code" text-anchor="middle" font-size="16">PI_VALUE = 3.14159</text>
-  </g>
-
-  <!-- Arrow Marker Definition -->
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
-    </marker>
-  </defs>
+  
+  <text x="400" y="40" class="label" text-anchor="middle" font-size="20">리터럴(값)이 상수(그릇)에 할당되는 과정</text>
 
 </svg>

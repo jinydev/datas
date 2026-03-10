@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -677,13 +684,20 @@
 
 <h2 id="-세부-학습-목차">📚 세부 학습 목차</h2>
 
-<ul>
-  <li><a href="./01_list/">3.4.1 리스트</a></li>
-  <li><a href="./02_dictionary/">3.4.2 사전</a></li>
-  <li><a href="./03_tuple/">3.4.3 튜플</a></li>
-  <li><a href="./04_set/">3.4.4 집합</a></li>
-  <li><a href="./05_immutable_hash_id/">3.4.5 수정 불가능(immutable)과 함수 hash() id()</a></li>
-</ul>
+<h3 id="341-리스트-list"><a href="./01_list/">3.4.1 리스트 (List)</a></h3>
+<p>데이터를 넣고, 빼고, 자르고, 마음대로 주무를 수 있는 파이썬에서 가장 유연하고 강력한 ‘만능 고무 기차’입니다. 자바의 정적 배열(Array)과 리스트(ArrayList)의 한계를 뛰어넘는 파이썬 리스트만의 막강한 슬라이싱(Slicing) 기능과, 개발자를 울리는 ‘참조형(Reference) 얕은 복사 버그’의 원인을 파헤칩니다.</p>
+
+<h3 id="342-딕셔너리-dictionary"><a href="./02_dictionary/">3.4.2 딕셔너리 (Dictionary)</a></h3>
+<p>‘이름표(Key)’와 ‘알맹이(Value)’를 한 쌍으로 묶어, 수십만 개의 데이터 속에서도 이름표만 부르면 단 1초 만에 알맹이를 꺼내주는 마법의 서랍장입니다. JSON 형식과 100% 호환되며, 데이터 분석 실무에서 가장 압도적으로 많이 쓰이는 특급 컬렉션의 10가지 실전 조작법을 익힙니다.</p>
+
+<h3 id="343-튜플-tuple"><a href="./03_tuple/">3.4.3 튜플 (Tuple)</a></h3>
+<p>한 번 데이터가 들어가면 절대 쪼개거나 훼손할 수 없는 ‘다이아몬드 철갑 금고’입니다. 데이터의 보안과 불변성(Immutable)을 보장하는 튜플의 근본 이유와, 변수 여러 개를 단 한 줄로 마법처럼 교환하고 묶어버리는 패킹(Packing)과 언패킹(Unpacking)의 우아한 예술을 경험합니다.</p>
+
+<h3 id="344-세트-set"><a href="./04_set/">3.4.4 세트 (Set)</a></h3>
+<p>똑같은 데이터를 수만 개 밀어 넣어도 오직 ‘고유한(Unique) 1개’만 남겨두고 중복을 철폐해 버리는 냉혹한 나이트클럽 지도부입니다. 복잡한 for문 없이 단 한 번의 기호(<code class="language-plaintext highlighter-rouge">&amp;</code>, <code class="language-plaintext highlighter-rouge">|</code>, <code class="language-plaintext highlighter-rouge">-</code>)만으로 합집합, 교집합, 차집합을 1초 만에 연산해 내는 수학적 벤 다이어그램의 파괴력을 체감합니다.</p>
+
+<h3 id="345-수정-불가immutable와-메모리의-진실-hash와-id"><a href="./05_immutable_hash_id/">3.4.5 수정 불가(Immutable)와 메모리의 진실: hash()와 id()</a></h3>
+<p>“왜 리스트는 딕셔너리의 Key나 세트(Set) 안에 들어갈 수 없을까?” 파이썬 초보자들의 최대 미스터리를 파헤칩니다. 데이터의 불변성과 해시(Hash) 바코드 스캐너의 관계, 그리고 변수가 실제로 살고 있는 컴퓨터 물리 메모리의 집 주소(<code class="language-plaintext highlighter-rouge">id()</code>)를 눈으로 직접 확인하며 파이썬 코어의 심연을 들여다봅니다.</p>
 
 <h2 id="정리">정리</h2>
 <p>데이터 양이 방대해지는 기계학습이나 분석의 첫 단계는 무조건 ‘데이터를 어떤 그릇(자료 구조)에 어떻게 담아낼 것인가’부터 고민하는 곳에서 시작합니다. 파이썬이 기본 제공하는 이 4대 자료 구조만 깊이 있게 응용할 줄 안다면 향후 마주칠 거대한 <code class="language-plaintext highlighter-rouge">pandas</code> 데이터프레임 구조도 큰 어려움 없이 분해하고 조립할 수 있게 됩니다.</p>

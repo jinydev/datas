@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1E1E2E; rx: 15; }
+      .box { fill: none; stroke-width: 3; rx: 15; stroke-dasharray: 8,8; opacity: 0.8; }
+      
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 26px; font-weight: bold; fill: #CBA6F7; text-anchor: middle; }
+      .subtitle { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #A6ADC8; text-anchor: middle; font-style: italic; }
+      
+      .circle { fill: #313244; stroke-width: 2; }
+      .text-title { font-family: sans-serif; font-size: 18px; font-weight: bold; fill: #F38BA8; text-anchor: middle; }
+      .text-sub { font-family: monospace; font-size: 14px; fill: #A6E3A1; text-anchor: middle; }
+      .text-ex { font-family: sans-serif; font-size: 12px; fill: #BAC2DE; text-anchor: middle; }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.02); opacity: 1; }
+      }
+      .anim-pulse { animation: pulse 3s ease-in-out infinite; transform-origin: center; }
+
+      .natural  { stroke: #89DCEB; }
+      .integer  { stroke: #F38BA8; }
+      .rational { stroke: #F9E2AF; }
+      .real     { stroke: #A6E3A1; }
+      .complex  { stroke: #CBA6F7; fill: rgba(203, 166, 247, 0.05); }
+
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="40" class="title">수의 확장과 파이썬 데이터 타입의 연결</text>
+  <text x="400" y="65" class="subtitle">자연수에서 시작하여 2차원 평면의 복소수까지 이어지는 진화</text>
+
+  <g class="anim-pulse" transform="translate(0, 20)">
+    <!-- 5. Complex Numbers (Outer) -->
+    <rect x="50" y="70" width="700" height="400" class="box complex" />
+    <text x="400" y="100" class="text-title" fill="#CBA6F7">복소수 (Complex Numbers) 평면의 차원 확장</text>
+    <text x="400" y="125" class="text-sub">Python Type: complex (예: 3 + 4j)</text>
+    <text x="400" y="145" class="text-ex">제곱해서 음수가 되는 수 i (파이썬은 j). 양자/전자기 시뮬레이션에 사용.</text>
+
+    <!-- 4. Real Numbers -->
+    <rect x="80" y="160" width="640" height="290" class="box real" />
+    <text x="400" y="190" class="text-title" fill="#A6E3A1">실수 (Real Numbers) 수직선을 빈틈없이 메우다</text>
+    <text x="400" y="215" class="text-sub">Python Type: float (예: 3.1415, -0.001)</text>
+    <text x="400" y="235" class="text-ex">부동 소수점(Floating Point) 기수법으로 한정된 컴퓨터 메모리에 저장. 무리수 포괄.</text>
+
+    <!-- 3. Rational & 2. Integers combined layout -->
+    <g transform="translate(110, 250)">
+      <!-- 2. Integers -->
+      <rect x="0" y="0" width="580" height="180" class="box integer" />
+      <text x="290" y="30" class="text-title" fill="#F38BA8">정수 (Integers) 제로섬과 방향</text>
+      <text x="290" y="55" class="text-sub">Python Type: int (예: -10, 0, 99999)</text>
+      <text x="290" y="75" class="text-ex">0과 음수의 발명. 파이썬은 오버플로우 없이 무한대 크기 지원.</text>
+
+      <!-- 1. Natural Numbers -->
+      <g transform="translate(140, 90)">
+        <rect x="0" y="0" width="300" height="70" class="box natural" />
+        <text x="150" y="25" class="text-title" fill="#89DCEB">자연수 (Natural Numbers)</text>
+        <text x="150" y="50" class="text-sub">1, 2, 3... 인류 기수법의 시작</text>
+      </g>
+    </g>
+  </g>
+</svg>

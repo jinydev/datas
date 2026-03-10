@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box { fill: #f9e2af; rx: 10; stroke: #11111b; stroke-width: 2; }
+      .tuple-bag { fill: transparent; stroke: #cba6f7; stroke-width: 4; stroke-dasharray: 5; rx: 15; }
+      
+      @keyframes pack { 0%, 20% { transform: translateY(0) scale(1); opacity: 1; } 40%, 60% { transform: translateY(50px) scale(0.8); opacity: 0; } 80%, 100% { transform: translateY(0) scale(1); opacity: 1; } }
+      @keyframes unpackLeft { 0%, 20% { transform: translateY(0) scale(0.8); opacity: 0; } 40%, 60% { transform: translateY(-70px) scale(1); opacity: 1; } 80%, 100% { transform: translateY(0) scale(0.8); opacity: 0; } }
+      @keyframes unpackRight { 0%, 20% { transform: translateY(0) scale(0.8); opacity: 0; } 40%, 60% { transform: translateY(-70px) scale(1); opacity: 1; } 80%, 100% { transform: translateY(0) scale(0.8); opacity: 0; } }
+      
+      .pack-anim { animation: pack 6s infinite; }
+      .unpack-L { animation: unpackLeft 6s infinite; }
+      .unpack-R { animation: unpackRight 6s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 5: 마법의 문법 패킹(Packing)과 언패킹(Unpacking)</text>
+  <text x="400" y="70" class="text-title" fill="#cba6f7">x, y = y, x  # (Swap)</text>
+
+  <!-- Packing Phase -->
+  <g class="pack-anim">
+    <rect x="250" y="100" width="80" height="50" class="box" />
+    <text x="290" y="130" class="text-code">y (20)</text>
+    
+    <rect x="470" y="100" width="80" height="50" class="box" />
+    <text x="510" y="130" class="text-code">x (10)</text>
+    <text x="400" y="120" class="text-title" fill="#a6adc8">(Packing)</text>
+  </g>
+
+  <!-- Unpacking Phase -->
+  <rect x="200" y="180" width="400" height="50" class="tuple-bag" />
+  <text x="400" y="210" class="text-title" fill="#cba6f7">Temporary Tuple Bag: (20, 10)</text>
+  
+  <g class="unpack-L">
+    <path d="M 300 180 L 290 150 L 310 150 Z" fill="#a6e3a1" />
+    <rect x="250" y="90" width="80" height="50" class="box" fill="#a6e3a1" />
+    <text x="290" y="120" class="text-code">x = 20</text>
+  </g>
+
+  <g class="unpack-R">
+    <path d="M 500 180 L 490 150 L 510 150 Z" fill="#89b4fa" />
+    <rect x="470" y="90" width="80" height="50" class="box" fill="#89b4fa" />
+    <text x="510" y="120" class="text-code">y = 10</text>
+  </g>
+
+</svg>

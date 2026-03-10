@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -695,7 +702,7 @@
 <h3 id="06-내장-함수-활용"><a href="/python/01_basic/07_built_in_functions/">06. 내장 함수 활용</a></h3>
 <p>파이썬 설치 시 기본으로 제공되는 <code class="language-plaintext highlighter-rouge">print</code>, <code class="language-plaintext highlighter-rouge">input</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">min</code> 등 유용한 내장 함수들의 기능을 파악합니다.</p>
 
-<h3 id="07-내장-모듈-math-활용"><a href="/python/01_basic/08_math_module/">07. 내장 모듈 math 활용</a></h3>
+<h3 id="07-내장-모듈-math-활용"><a href="/python/01_basic/07_math_module/">07. 내장 모듈 math 활용</a></h3>
 <p>수학적인 연산이 필요할 때 기본 탑재된 <code class="language-plaintext highlighter-rouge">math</code> 모듈을 불러들여 사용하는 방법을 배웁니다.</p>
 
 <hr />

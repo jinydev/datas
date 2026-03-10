@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-key { fill: #f9e2af; rx: 10; stroke: #11111b; stroke-width: 2; }
+      .box-val { fill: #89b4fa; rx: 10; stroke: #11111b; stroke-width: 2; }
+      
+      @keyframes popIn { 0%, 100% { transform: scale(0); opacity: 0; } 10%, 90% { transform: scale(1); opacity: 1; } }
+      .pair1 { animation: popIn 5s бесконечный(infinite misspelled, ignoring) infinite; transform-origin: 150px 150px; }
+      .pair2 { animation: popIn 5s infinite; transform-origin: 400px 150px; animation-delay: 1s; }
+      .pair3 { animation: popIn 5s infinite; transform-origin: 650px 150px; animation-delay: 2s; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 1: 딕셔너리 생성 (Key : Value 쌍)</text>
+  <text x="400" y="70" class="text-title" fill="#a6e3a1">profile = { "name": "Antigravity", "level": 10, "hp": 100 }</text>
+
+  <!-- Pair 1 -->
+  <g class="pair1">
+    <rect x="70" y="120" width="70" height="40" class="box-key" />
+    <text x="105" y="145" class="text-code">"name"</text>
+    <text x="160" y="145" class="text-title" fill="#cba6f7">:</text>
+    <rect x="180" y="120" width="130" height="40" class="box-val" />
+    <text x="245" y="145" class="text-code">"Antigravity"</text>
+  </g>
+
+  <!-- Pair 2 -->
+  <g class="pair2">
+    <rect x="340" y="120" width="70" height="40" class="box-key" />
+    <text x="375" y="145" class="text-code">"level"</text>
+    <text x="425" y="145" class="text-title" fill="#cba6f7">:</text>
+    <rect x="440" y="120" width="70" height="40" class="box-val" />
+    <text x="475" y="145" class="text-code">10</text>
+  </g>
+
+  <!-- Pair 3 -->
+  <g class="pair3">
+    <rect x="540" y="120" width="70" height="40" class="box-key" />
+    <text x="575" y="145" class="text-code">"hp"</text>
+    <text x="625" y="145" class="text-title" fill="#cba6f7">:</text>
+    <rect x="640" y="120" width="70" height="40" class="box-val" />
+    <text x="675" y="145" class="text-code">100</text>
+  </g>
+</svg>

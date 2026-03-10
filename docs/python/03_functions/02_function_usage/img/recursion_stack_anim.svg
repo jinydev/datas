@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-box { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .stack-box { stroke: #11111b; stroke-width: 2; rx: 8; }
+      
+      /* Stack Animation - Calling Phase (Push) */
+      @keyframes popIn1 { 0%, 5% { transform: translateY(-50px); opacity: 0; } 10%, 90% { transform: translateY(0); opacity: 1; } 95%, 100% { transform: translateY(-50px); opacity: 0; } }
+      @keyframes popIn2 { 0%, 20% { transform: translateY(-50px); opacity: 0; } 25%, 75% { transform: translateY(0); opacity: 1; } 80%, 100% { transform: translateY(-50px); opacity: 0; } }
+      @keyframes popIn3 { 0%, 35% { transform: translateY(-50px); opacity: 0; } 40%, 60% { transform: translateY(0); opacity: 1; } 65%, 100% { transform: translateY(-50px); opacity: 0; } }
+      @keyframes popIn4 { 0%, 45% { transform: scale(0); opacity: 0; } 50%, 55% { transform: scale(1.2); opacity: 1; } 60%, 100% { transform: scale(0); opacity: 0; } } /* Base Case */
+
+      /* Return Phase - Data Flowing Back (Pop) */
+      @keyframes returnFlow3 { 0%, 55%, 100% { opacity: 0; } 60%, 65% { opacity: 1; stroke: #f9e2af; fill: none;} }
+      @keyframes returnFlow2 { 0%, 70%, 100% { opacity: 0; } 75%, 80% { opacity: 1; stroke: #f9e2af; fill: none;} }
+      @keyframes returnFlow1 { 0%, 85%, 100% { opacity: 0; } 90%, 95% { opacity: 1; stroke: #a6e3a1; fill: none; stroke-width: 6; } }
+
+      .box1 { animation: popIn1 10s ease-in-out infinite; fill: #89b4fa; }
+      .box2 { animation: popIn2 10s ease-in-out infinite; fill: #cba6f7; }
+      .box3 { animation: popIn3 10s ease-in-out infinite; fill: #f38ba8; }
+      .base-case { animation: popIn4 10s ease-in-out infinite; fill: #a6e3a1; }
+
+      .ret-arrow3 { animation: returnFlow3 10s step-end infinite; stroke-width: 4; marker-end: url(#arrowhead); }
+      .ret-arrow2 { animation: returnFlow2 10s step-end infinite; stroke-width: 4; marker-end: url(#arrowhead); }
+      .ret-arrow1 { animation: returnFlow1 10s step-end infinite; stroke-width: 4; marker-end: url(#arrowhead-green); }
+      
+      .arrow { stroke: #bac2de; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f9e2af" />
+    </marker>
+    <marker id="arrowhead-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-down" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">재귀 함수 (Recursion) - Call Stack & Return</text>
+
+  <!-- X axis distribution -->
+  <!-- Level 1 -->
+  <g class="box1" transform="translate(0,0)">
+    <rect x="100" y="100" width="160" height="60" class="stack-box" />
+    <text x="180" y="135" class="text-box">fact(3)</text>
+    <text x="180" y="180" class="text-desc" fill="#89b4fa">3 * fact(2)</text>
+  </g>
+  <path d="M 260,130 L 320,130" class="arrow box1 box2" style="animation-name: popIn2; stroke: #bac2de;" marker-end="url(#arrow-down)"/>
+
+  <!-- Level 2 -->
+  <g class="box2" transform="translate(0,0)">
+    <rect x="320" y="100" width="160" height="60" class="stack-box" />
+    <text x="400" y="135" class="text-box">fact(2)</text>
+    <text x="400" y="180" class="text-desc" fill="#cba6f7">2 * fact(1)</text>
+  </g>
+  <path d="M 480,130 L 540,130" class="arrow box2 box3" style="animation-name: popIn3; stroke: #bac2de;" marker-end="url(#arrow-down)"/>
+
+  <!-- Level 3 -->
+  <g class="box3" transform="translate(0,0)">
+    <rect x="540" y="100" width="160" height="60" class="stack-box" />
+    <text x="620" y="135" class="text-box">fact(1)</text>
+    <text x="620" y="180" class="text-desc" fill="#f38ba8">1 * fact(0)</text>
+  </g>
+  <path d="M 620,200 L 620,240" class="arrow box3 base-case" style="animation-name: popIn4; stroke: #bac2de;" marker-end="url(#arrow-down)"/>
+
+  <!-- Base Case (Stop Condition) -->
+  <g class="base-case" transform-origin="620 270">
+    <rect x="540" y="240" width="160" height="60" class="stack-box" />
+    <text x="620" y="275" class="text-box">fact(0)</text>
+    <text x="620" y="320" class="text-desc" fill="#a6e3a1">BASE CASE! return 1</text>
+  </g>
+
+  <!-- Return Flow Animations -->
+  <!-- Return from fact(0) to fact(1) -->
+  <path d="M 520,270 Q 480,270 520,150 L 535,150" class="ret-arrow3" />
+  <text x="480" y="220" class="text-desc ret-arrow3" fill="#f9e2af">return 1</text>
+
+  <!-- Return from fact(1) to fact(2) -->
+  <path d="M 550,80 Q 510,40 460,80 L 460,95" class="ret-arrow2" />
+  <text x="510" y="60" class="text-desc ret-arrow2" fill="#f9e2af">return 1 * 1 = 1</text>
+
+  <!-- Return from fact(2) to fact(3) -->
+  <path d="M 330,80 Q 290,40 240,80 L 240,95" class="ret-arrow1" />
+  <text x="290" y="60" class="text-desc ret-arrow1" fill="#a6e3a1" font-weight="bold" font-size="18">FINAL: 2 * 1 = 2</text>
+  <!-- Wait context is factorial, I'll fix the math in the final text. 3 * 2 = 6 -->
+
+  <text x="400" y="360" class="text-desc">계속해서 자신을 더 작게 쪼개어 호출(Push)하며 기다리다가, 바닥(Base Case)에 닿으면</text>
+  <text x="400" y="380" class="text-desc">그제야 값들을 들고 역순으로 폭포수처럼 돌아오며(Pop) 최종 계산을 마칩니다.</text>
+</svg>

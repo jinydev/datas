@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 20px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      
+      .box-list { fill: #313244; stroke: #89b4fa; stroke-width: 3; rx: 10; }
+      .box-process { fill: #181825; stroke: #a6e3a1; stroke-width: 3; rx: 10; stroke-dasharray: 5 5; }
+      
+      .item { font-family: monospace; font-size: 24px; font-weight: bold; fill: #89b4fa; text-anchor: middle; }
+      
+      /* Item moving animation */
+      @keyframes popItem {
+        0%, 90%, 100% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+        10% { opacity: 1; transform: translate(0, -40px) scale(1.2); } /* Selected */
+        30% { opacity: 1; transform: translate(0, -40px) scale(1); }
+        50% { opacity: 1; transform: translate(300px, -40px) scale(1); } /* Move to process */
+        70% { opacity: 1; transform: translate(300px, 40px) scale(1); } /* Move down to result */
+        85% { opacity: 0; transform: translate(300px, 40px) scale(1); } /* Dissolve */
+      }
+      
+      /* Highlight Code block */
+      @keyframes blinkCode {
+        0%, 45%, 90%, 100% { fill: #181825; filter: none; }
+        50%, 80% { fill: #313244; filter: drop-shadow(0 0 10px #a6e3a1); }
+      }
+
+      .anim-i1 { animation: popItem 12s infinite; transform-origin: 100px 150px; }
+      .anim-i2 { animation: popItem 12s infinite; animation-delay: 4s; transform-origin: 200px 150px; }
+      .anim-i3 { animation: popItem 12s infinite; animation-delay: 8s; transform-origin: 300px 150px; }
+      
+      .anim-proc { animation: blinkCode 4s infinite; }
+      
+      .arrow { fill: none; stroke: #bac2de; stroke-width: 3; stroke-dasharray: 6 4; stroke-linecap: round; }
+
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">for 반복문 언패킹(Unpacking) 순회 원리</text>
+
+  <!-- Code Description -->
+  <text x="400" y="75" class="text-code" fill="#f5e0dc">for item in [ A, B, C ] :</text>
+
+  <!-- The Iterable Collection -->
+  <rect x="50" y="110" width="300" height="80" class="box-list" />
+  <text x="200" y="220" class="text-desc" fill="#89b4fa">여러 데이터가 모여있는 바구니 (List, Tuple)</text>
+
+  <!-- Items in the list (Static Shadows) -->
+  <text x="100" y="158" class="item" fill-opacity="0.3">"A"</text>
+  <text x="200" y="158" class="item" fill-opacity="0.3">"B"</text>
+  <text x="300" y="158" class="item" fill-opacity="0.3">"C"</text>
+  
+  <!-- Animated Items -->
+  <g class="anim-i1"><text x="100" y="158" class="item">"A"</text></g>
+  <g class="anim-i2"><text x="200" y="158" class="item">"B"</text></g>
+  <g class="anim-i3"><text x="300" y="158" class="item">"C"</text></g>
+
+  <!-- Loop Body -->
+  <rect x="500" y="110" width="200" height="120" class="box-process anim-proc" />
+  <text x="600" y="145" class="text-code" fill="#a6e3a1">print(item)</text>
+  <text x="600" y="180" class="text-desc" fill="#a6e3a1">들여쓰기 블록 실행</text>
+
+  <!-- Static Arrow -->
+  <path d="M 370,140 L 480,140" class="arrow" marker-end="url(#arrowhead)" />
+  <text x="425" y="130" class="text-desc">순서대로</text>
+  <text x="425" y="160" class="text-desc">1개씩 꺼냄</text>
+
+</svg>

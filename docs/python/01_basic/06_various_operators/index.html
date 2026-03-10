@@ -101,7 +101,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -111,6 +110,21 @@
     gtag('config', 'G-R4VBPCT3CR');
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
 </head>
 
@@ -400,7 +414,7 @@
                             </li>
                             
                             <li>
-                                <a href="/python/01_basic/08_math_module/"
+                                <a href="/python/01_basic/07_math_module/"
                                     class="bd-links-link d-inline-block rounded ">
                                     3.1.8 내장 모듈 math 활용
                                 </a>
@@ -444,23 +458,16 @@
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/03_for_loop/"
+                                <a href="/python/02_control_flow/03_for_while_loops/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.3 반복문 for
+                                    3.2.3 반복문 for와 while
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/02_control_flow/04_while_loop/"
+                                <a href="/python/02_control_flow/04_exceptions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.2.4 반복문 while
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/python/02_control_flow/05_exceptions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    3.2.5 예외 처리
+                                    3.2.4 예외 처리
                                 </a>
                             </li>
                             
@@ -686,13 +693,21 @@
 <p>컴퓨터 프로그래밍에서 데이터를 조작하고 계산하기 위해 없어서는 안 될 요소가 바로 연산자(Operators)입니다. 파이썬에서 제공하는 기본적이면서도 강력한 연산자들을 학습합니다.</p>
 
 <h3 id="연산자operator란-무엇인가요">연산자(Operator)란 무엇인가요?</h3>
-<p>연산자란 <strong>‘주어진 데이터(재료)를 가지고 특정한 연산(가공)을 수행하여 새로운 결과물(생산품)을 만들어내는 기계 혹은 지시어’</strong>입니다.</p>
+<p>연산자란 <strong>‘주어진 데이터(재료)를 가지고 특정한 연산(가공)을 수행하여 새로운 결과물(생산품)을 만들어내는 기계 혹은 지시어’</strong>입니다. 이 과정은 여러분이 수학 시간에 배운 <strong>“식의 계산(Evaluation)”</strong> 방식과 그 원리가 완전히 동일합니다.</p>
 
 <p>이때 연산의 재료가 되는 데이터나 변수를 <strong>피연산자(Operand)</strong>라고 부릅니다. 
-예를 들어 <code class="language-plaintext highlighter-rouge">5 + 3</code>이라는 식에서 <code class="language-plaintext highlighter-rouge">+</code>는 덧셈을 지시하는 <strong>연산자</strong>이고, <code class="language-plaintext highlighter-rouge">5</code>와 <code class="language-plaintext highlighter-rouge">3</code>은 덧셈 기계에 들어가는 재료인 <strong>피연산자</strong>입니다.</p>
+예를 들어 <code class="language-plaintext highlighter-rouge">5 + 3</code>이라는 식에서 <code class="language-plaintext highlighter-rouge">+</code>는 덧셈을 지시하는 <strong>연산자</strong>이고, <code class="language-plaintext highlighter-rouge">5</code>와 <code class="language-plaintext highlighter-rouge">3</code>은 덧셈 기계에 들어가는 재료인 <strong>피연산자</strong>입니다. 수학에서 수식 $2x + 5$의 문자에 값을 대입(Substitution)하여 척척 하나로 계산(Evaluation)해 내듯, 파이썬의 연산자 기계들도 여러 개의 피연산자를 집어삼키고 단 하나의 최종 결과를 뱉어냅니다!</p>
 
 <p><img src="./img/operator_anim.svg" alt="연산자와 피연산자의 개념" />
 <em>(다이어그램: 피연산자(재료)가 컨베이어 벨트를 타고 연산자(기계)에 들어가 결과값으로 가공되어 나오는 과정을 묘사한 애니메이션입니다.)</em></p>
+
+<blockquote>
+  <p>📥 <strong>다양한 연산자 실습용 노트북 다운로드 및 실행</strong>:</p>
+  <ul>
+    <li><a href="./source/example.ipynb">로컬 환경용 다운로드</a> (VS Code 등에서 실행)</li>
+    <li><a href="https://colab.research.google.com/github/jinydev/datas/blob/master/src/python/01_basic/06_various_operators/source/example.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a> (웹 브라우저에서 바로 실습)</li>
+  </ul>
+</blockquote>
 
 <h2 id="연산자의-탄생과-진화">연산자의 탄생과 진화</h2>
 
@@ -726,6 +741,9 @@
 </ol>
 
 <h2 id="산술-연산자">산술 연산자</h2>
+
+<p><img src="./img/python_operator_webtoon.png" alt="파이썬의 거듭제곱 연산 기계 웹툰" />
+<em>(파이썬의 마법 연산자 <code class="language-plaintext highlighter-rouge">**</code> 기계에 아주 작은 숫자 <code class="language-plaintext highlighter-rouge">2</code>를 넣었더니 거대한 폭발과 함께 엄청나게 큰 결과값이 쏟아져 나오는 웹툰)</em></p>
 
 <p>가장 기본적인 수학 계산을 수행합니다.</p>
 
@@ -765,7 +783,10 @@ result_1 = 10 , result_2 = 6
 
 <h2 id="비교-연산자">비교 연산자</h2>
 
-<p>비교 연산자는 두 값의 관계를 평가하여 논리형 데이터인 <code class="language-plaintext highlighter-rouge">True</code> 또는 <code class="language-plaintext highlighter-rouge">False</code>를 반환합니다. 이 연산자들은 뒤에서 배울 조건문(if)과 반복문(while)에서 핵심적인 흐름 제어 역할을 수행합니다.</p>
+<p>비교 연산자는 두 값의 관계를 평가하여 논리형 데이터인 <code class="language-plaintext highlighter-rouge">True</code> 또는 <code class="language-plaintext highlighter-rouge">False</code>를 결과로 남깁니다. 마치 두 개의 값을 양팔 저울에 올려두고 한쪽이 무거운지 같은지를 재는 것과 같습니다. 이 연산자들은 뒤에서 배울 조건문(if)과 반복문(while)에서 ‘어느 쪽으로 흐를지 지시하는 핵심 스위치’ 역할을 수행합니다.</p>
+
+<p><img src="./img/comparison_scale_anim.svg" alt="수식 평가용 양팔 저울 애니메이션" />
+<em>(다이어그램: 수학의 부등식 판별 원리를 양팔 저울로 시각화했습니다. <code class="language-plaintext highlighter-rouge">10 &gt; 5</code> 검사 시 왼쪽이 무거우므로 화면에 <code class="language-plaintext highlighter-rouge">True</code> 패널이 팝업됩니다.)</em></p>
 
 <table>
   <thead>
@@ -833,16 +854,24 @@ apple은 banana보다 앞서나요? : True
 
 <h2 id="논리-연산자">논리 연산자</h2>
 
-<h3 id="논리-연산자의-개발">논리 연산자의 개발</h3>
-<p>논리 연산은 1930년대에 수학자 조지 불이 개발한 불대수학에서 시작되었습니다. 불대수학은 논리학과 수학을 결합한 학문으로, 논리적인 명제를 수학적으로 표현하고 계산하는 방법을 다룹니다.</p>
+<h3 id="논리-연산자와-조지-불george-boole">논리 연산자와 조지 불(George Boole)</h3>
 
-<h3 id="논리-연산-처리">논리 연산 처리</h3>
-<p>논리 연산자는 위에서 배운 불리언(Boolean) 값들을 재조합하여 더 복잡한 조건을 설계할 때 사용됩니다. AND, OR, NOT 세 가지의 핵심 연산자가 있습니다.</p>
+<p><img src="./img/george_boole_logic_webtoon.png" alt="불대수학의 아버지 조지 불 웹툰" />
+<em>(웹툰 비유: 영국의 거장 수학자 조지 불은 철학의 ‘참/거짓 구조’를 수학 방정식 기호로 재창조했습니다. 그의 ‘불리언(Boolean)’ 수학 모델은 수십 년 뒤 오늘날 컴퓨터 파이프라인의 핵심인 논리 밸브(<code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code>)의 뿌리가 되었습니다.)</em></p>
+
+<p>논리 연산은 1930년대에 일찍이 천재 수학자 조지 불이 완성한 <strong>불대수학(Boolean Algebra)</strong>에서 시작되었습니다. 불대수학은 철학의 명제가 ‘참(1)’인지 ‘거짓(0)’인지를 더하고(OR) 곱하여(AND) 수학적으로 연산하는 방법을 다루며, 이것이 오늘날 그대로 파이썬의 연산자로 이식되었습니다.</p>
+
+<h3 id="논리-연산-처리-원리-수도관-밸브-모델">논리 연산 처리 원리 (수도관 밸브 모델)</h3>
+
+<p>논리 연산자는 위에서 배운 불리언 값(<code class="language-plaintext highlighter-rouge">True</code>, <code class="language-plaintext highlighter-rouge">False</code>)들을 재조합하여 더 거대한 조건을 설계할 때 사용됩니다. AND, OR, NOT 세 가지의 핵심 연산자가 있으며, 물이 통과하는 수도관의 최첨단 밸브(<code class="language-plaintext highlighter-rouge">True</code>=열림, <code class="language-plaintext highlighter-rouge">False</code>=닫힘)를 상상해 보세요!</p>
+
+<p><img src="./img/logical_valves_anim.svg" alt="파이썬 논리 연산 밸브 배관 애니메이션" />
+<em>(다이어그램: <code class="language-plaintext highlighter-rouge">AND</code>는 논리 파이프라인에 밸브 2개가 직렬로 묶여 있어 무조건 둘 다 열려야(True) 물이 통과하지만, <code class="language-plaintext highlighter-rouge">OR</code> 연산자는 파이프가 2갈래의 병렬 기로로 찢어져 있어 하나라도 열려 있으면 무사히 통과하는 모습을 보여줍니다.)</em></p>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">and</code> 연산자</strong>: 좌/우측의 평가 값이 <strong>모두 참(<code class="language-plaintext highlighter-rouge">True</code>)일 때만</strong> <code class="language-plaintext highlighter-rouge">True</code>를 반환합니다.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">or</code> 연산자</strong>: 좌/우측의 평가 값 중 <strong>하나라도 참(<code class="language-plaintext highlighter-rouge">True</code>)이면</strong> <code class="language-plaintext highlighter-rouge">True</code>를 반환합니다.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">not</code> 연산자</strong>: 원래의 불리언 값을 정반대로 뒤집습니다. (참을 거짓으로, 거짓을 참으로)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">and</code> 연산자 (직렬 연결)</strong>: 좌/우측의 평가 값이 <strong>모두 참(<code class="language-plaintext highlighter-rouge">True</code>)일 때만</strong> 안전문이 열려 <code class="language-plaintext highlighter-rouge">True</code>를 뱉어냅니다 (수학에서의 교집합/곱).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">or</code> 연산자 (병렬 연결)</strong>: 좌/우측의 평가 값 중 <strong>단 하나라도 참(<code class="language-plaintext highlighter-rouge">True</code>)이면</strong> 언제나 쿨하게 <code class="language-plaintext highlighter-rouge">True</code>로 통과시킵니다 (수학에서의 합집합).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">not</code> 연산자 (신호 반전)</strong>: 원래의 진리 값을 거꾸로 뒤집는 인버터 역할을 합니다. (참$\to$거짓, 거짓$\to$참)</li>
 </ul>
 
 <h3 id="논리-연산자-실습">논리 연산자 실습</h3>
@@ -925,6 +954,80 @@ not a   (a 값을 반전)          : False
 
 <h2 id="정리">정리</h2>
 <p>기본 수학의 사칙연산에서 출발한 파이썬의 연산자는 이제 <strong>비교</strong>와 <strong>논리</strong>의 영역으로 확장되어, 컴퓨터가 스스로 복잡한 조건(“만약 A이고 B가 아니라면?”)을 깐깐하게 판단할 수 있게 해주는 핵심 두뇌 스위치 역할을 합니다. 여기서 익힌 <code class="language-plaintext highlighter-rouge">==</code>, <code class="language-plaintext highlighter-rouge">!=</code>, <code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">or</code> 등의 기호들은 곧이어 배울 조건문(if)과 반복문(while)에서 쉼 없이 사용될 가장 중요한 뼈대입니다.</p>
+
+<hr />
+
+<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
+
+<h3 id="1-연산-후-데이터-타입의-탈바꿈-동적-타입-vs-정적-타입">1. 연산 후 데이터 타입의 탈바꿈 (동적 타입 vs 정적 타입)</h3>
+
+<p><img src="./img/python_infinite_int_webtoon.png" alt="파이썬 무한 정수 폭발 없는 웹툰" />
+<em>(웹툰 비유: 자바 로봇은 딱 정해진 ‘int’ 철제 상자에 거대한 숫자를 욱여넣으려다 펑 하고 터져버리지만(오버플로우), 유연한 파이썬 뱀파우치는 숫자가 아무리 커져도 마법처럼 무한히 스르륵 늘어납니다!)</em></p>
+
+<ul>
+  <li><strong>Java (엄격함)</strong>: 처음 변수를 선언할 때 만들어둔 상자(메모리)의 크기와 타입을 절대 바꿀 수 없습니다. 만약 <code class="language-plaintext highlighter-rouge">int</code> 상자 두 개를 나누기 연산(<code class="language-plaintext highlighter-rouge">/</code>)하면 소수점은 무자비하게 버려지고 억지로 정수만 남깁니다. 행여나 곱셈이나 거듭제곱 연산 결과가 너무 거대해져서 상자 허용치를 초과하면 데이터가 엉뚱한 값으로 파괴되는 <strong>‘오버플로우(Overflow)’</strong> 대참사가 발생합니다. 또한, 실수(<code class="language-plaintext highlighter-rouge">double</code>) 연산 결과를 정수(<code class="language-plaintext highlighter-rouge">int</code>) 상자에 넣으려 하면 <strong>컴파일 시스템 에러</strong>가 뿜어져 나옵니다.</li>
+  <li><strong>Python (유연함)</strong>: 연산 결과에 따라 <strong>데이터의 타입이 물 흐르듯 아주 자연스럽게 변신</strong>합니다. 파이썬의 나눗셈 연산자 <code class="language-plaintext highlighter-rouge">/</code>는 정수끼리 나누더라도 소수점 아래를 잃지 않고 <strong>무조건 실수(<code class="language-plaintext highlighter-rouge">float</code>) 타입으로 자동 변환</strong>하여 깔끔하게 내어줍니다. 파이썬의 상자(변수)는 그저 이름표 스티커에 불과하므로, 어제 정수형(int)이던 변수에 오늘 실시한 나눗셈 결과(float)를 담아도 전혀 에러가 나지 않습니다. 숫자가 1만 자리가 넘어가도 파이썬이 알아서 무한대 크기(Arbitrary-precision)로 늘려주므로 <strong>오버플로우 폭발이 아예 존재하지 않습니다.</strong></li>
+</ul>
+
+<h3 id="2-파이썬만의-독특하고-훌륭한-산술-연산자">2. 파이썬만의 독특하고 훌륭한 산술 연산자</h3>
+<ul>
+  <li><strong>Java</strong>: 몫만 정확히 구하거나(정수 나눗셈 외), 거듭제곱을 하려면 <code class="language-plaintext highlighter-rouge">Math.pow()</code> 같은 복잡한 외부 수학 클래스를 불러와야 합니다.</li>
+  <li><strong>Python</strong>: 데이터 분석 최적화 언어답게 몫 연산자 <code class="language-plaintext highlighter-rouge">//</code> (버림 나눗셈)와 거듭제곱 연산자 <code class="language-plaintext highlighter-rouge">**</code>를 기본 문법 자체에 내장하고 있습니다. (<code class="language-plaintext highlighter-rouge">2 ** 3 = 8</code>)</li>
+</ul>
+
+<h3 id="3-논리-연산자-word-vs-symbol">3. 논리 연산자 (Word vs Symbol)</h3>
+<ul>
+  <li><strong>Java</strong>: 기호 기반의 논리 연산자 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> (AND), <code class="language-plaintext highlighter-rouge">||</code> (OR), <code class="language-plaintext highlighter-rouge">!</code> (NOT) 을 사용합니다.</li>
+  <li><strong>Python</strong>: 사람이 읽기 편하도록 영단어 그대로 <strong><code class="language-plaintext highlighter-rouge">and</code></strong>, <strong><code class="language-plaintext highlighter-rouge">or</code></strong>, <strong><code class="language-plaintext highlighter-rouge">not</code></strong>을 사용합니다. 가독성이 압도적으로 높습니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="-matplotlib-맛보기-거듭제곱-연산자의-무서움-시각화">📊 Matplotlib 맛보기: 거듭제곱 연산자(<code class="language-plaintext highlighter-rouge">**</code>)의 무서움 시각화</h2>
+
+<p>지수 성장을 일으키는 파이썬의 <code class="language-plaintext highlighter-rouge">**</code> 연산자가 얼마나 폭발적으로 증가하는지 그래프로 확인해 보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># 시간(x)에 따른 세 종류의 성장 곡선 (y)
+</span><span class="n">x_values</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>   <span class="c1"># 1부터 10까지
+</span><span class="n">y_linear</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">]</span>     <span class="c1"># 2배씩 선형 증가 (x * 2)
+</span><span class="n">y_square</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">]</span>    <span class="c1"># 제곱 증가 (x^2)
+</span><span class="n">y_power</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">]</span>     <span class="c1"># 2의 거듭제곱 (지수 증가, 2^x)
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_linear</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Linear (x * 2)</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_square</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Square (x ** 2)</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">s</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_power</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Power (2 ** x)</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">^</span><span class="sh">'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Explosive Growth of Power Operator (**)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">X values</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Y values</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-vibe-coding">🎧 Vibe Coding</h2>
+
+<p>단락 평가(Short-Circuit Evaluation)라는 고급 프로그래밍 스킬을 AI에게 물어봅시다.</p>
+
+<blockquote>
+  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
+“파이썬의 논리 연산자 <code class="language-plaintext highlighter-rouge">and</code>와 <code class="language-plaintext highlighter-rouge">or</code>를 쓸 때 발생하는 ‘단락 평가(Short-Circuit)’라는 특징이 뭐야? 이게 왜 프로그램의 성능(속도)을 높여주고 에러를 방지해 주는지 쉬운 예제 코드 2개랑 같이 설명해 줘.”</p>
+</blockquote>
+
+<hr />
+
+<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">Operator</code></strong>: 조작자, 연산자. (<code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">and</code> 등에게 “이 데이터를 볶고 지져라!” 라고 지시하는 부호입니다. 기계를 조작하는 사람을 오퍼레이터라고 부르는 것과 같습니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Operand</code></strong>: 피연산자. (수술(<code class="language-plaintext highlighter-rouge">Operation</code>)을 당하는 대상, 즉 연산 기계에 들어가는 재료 값(<code class="language-plaintext highlighter-rouge">3</code>, <code class="language-plaintext highlighter-rouge">5</code>)을 뜻합니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Boolean</code> (bool)</strong>: 불리언. (참/거짓 구조를 창시한 천재 수학자 ‘조지 불(George Boole)’의 이름에서 따온 수학 용어입니다. 파이썬에서는 <code class="language-plaintext highlighter-rouge">bool</code>이라고 줄여 씁니다.)</li>
+</ul>
 
 
             <!-- 구글 애드센스 출력 -->

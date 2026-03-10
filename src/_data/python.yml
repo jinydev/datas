@@ -12,12 +12,25 @@ main:
         url: /python/01_basic/04_variable_naming/
       - title: "3.1.5 자료형(Data Types)의 이해"
         url: /python/01_basic/05_data_types_operators/
+        subitems:
+          - title: "3.1.5.1 수의 체계와 기수법"
+            url: /python/01_basic/05_data_types_operators/01_numbers/
+          - title: "3.1.5.2 정수 (Integers)"
+            url: /python/01_basic/05_data_types_operators/02_integer/
+          - title: "3.1.5.3 실수 (Real Numbers)"
+            url: /python/01_basic/05_data_types_operators/03_real/
+          - title: "3.1.5.4 복소수 (Complex Numbers)"
+            url: /python/01_basic/05_data_types_operators/04_complex/
+          - title: "3.1.5.5 문자형과 인코딩 (Char)"
+            url: /python/01_basic/05_data_types_operators/05_char/
+          - title: "3.1.5.6 논리형 (Boolean)"
+            url: /python/01_basic/05_data_types_operators/06_bool/
       - title: "3.1.6 다양한 연산자"
         url: /python/01_basic/06_various_operators/
       - title: "3.1.7 내장 함수와 메서드 활용"
         url: /python/01_basic/07_built_in_functions/
       - title: "3.1.8 내장 모듈 math 활용"
-        url: /python/01_basic/08_math_module/
+        url: /python/01_basic/07_math_module/
   - title: "3.2 제어 흐름 (Control Flow)"
     url: /python/02_control_flow/
     subitems:
@@ -25,12 +38,10 @@ main:
         url: /python/02_control_flow/01_if_statement/
       - title: "3.2.2 match 구문"
         url: /python/02_control_flow/02_match_statement/
-      - title: "3.2.3 반복문 for"
-        url: /python/02_control_flow/03_for_loop/
-      - title: "3.2.4 반복문 while"
-        url: /python/02_control_flow/04_while_loop/
-      - title: "3.2.5 예외 처리"
-        url: /python/02_control_flow/05_exceptions/
+      - title: "3.2.3 반복문 for와 while"
+        url: /python/02_control_flow/03_for_while_loops/
+      - title: "3.2.4 예외 처리"
+        url: /python/02_control_flow/04_exceptions/
   - title: "3.3 함수 (Functions)"
     url: /python/03_functions/
     subitems:

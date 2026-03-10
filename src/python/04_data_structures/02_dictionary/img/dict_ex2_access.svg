@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-lock { fill: #313244; rx: 10; stroke: #f9e2af; stroke-width: 2; }
+      .box-val { fill: #89b4fa; rx: 10; stroke: #11111b; stroke-width: 2; }
+      
+      @keyframes insertKey { 0%, 100% { transform: translateY(-50px); opacity: 0; } 20%, 80% { transform: translateY(0); opacity: 1; } }
+      @keyframes openLocker { 0%, 25%, 100% { transform: scaleY(1); fill: #313244; } 30%, 80% { transform: scaleY(0); fill: #89b4fa; } }
+      @keyframes revealVal { 0%, 30%, 100% { opacity: 0; } 35%, 80% { opacity: 1; } }
+      
+      .key-anim { animation: insertKey 4s infinite; }
+      .locker-door { animation: openLocker 4s infinite; transform-origin: center bottom; }
+      .val-anim { animation: revealVal 4s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 2: 인덱싱으로 Value 빼오기</text>
+  <text x="400" y="70" class="text-title" fill="#a6e3a1">print( profile["name"] )</text>
+
+  <!-- Key inserting -->
+  <g class="key-anim">
+    <rect x="350" y="90" width="100" height="30" fill="#f9e2af" rx="5" />
+    <text x="400" y="110" class="text-code">"name" 열쇠</text>
+    <path d="M 395 120 L 405 120 L 400 140 Z" fill="#f9e2af" />
+  </g>
+
+  <!-- Locker and Value -->
+  <rect x="335" y="150" width="130" height="60" class="box-val val-anim" />
+  <text x="400" y="185" class="text-code val-anim">"Antigravity"</text>
+  
+  <rect x="335" y="150" width="130" height="60" class="box-lock locker-door" />
+  <text x="400" y="185" class="text-title locker-door" fill="#a6adc8">? Locked ?</text>
+</svg>

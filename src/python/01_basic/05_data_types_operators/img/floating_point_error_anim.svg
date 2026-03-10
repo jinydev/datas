@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 10; }
+      .box { rx: 5; ry: 5; fill: #313244; stroke: #89b4fa; stroke-width: 2; }
+      
+      .title { font-family: sans-serif; font-size: 24px; font-weight: bold; fill: #f38ba8; text-anchor: middle; }
+      .subtitle { font-family: sans-serif; font-size: 16px; fill: #bac2de; text-anchor: middle; }
+      
+      .bit-box { fill: #45475a; stroke: #9399b2; stroke-width: 1; }
+      .bit-text { font-family: monospace; font-size: 14px; fill: #cba6f7; text-anchor: middle; }
+      
+      .sign-bit { fill: #f38ba8; }
+      .exp-bit { fill: #f9e2af; }
+      .frac-bit { fill: #a6e3a1; }
+      
+      .label { font-family: sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      
+      @keyframes floatError {
+        0%, 100% { fill: #a6e3a1; transform: scale(1); }
+        50% { fill: #f38ba8; transform: scale(1.1); }
+      }
+      .anim-error { animation: floatError 2s infinite; transform-origin: center; }
+
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <text x="400" y="40" class="title">부동 소수점(Floating Point)의 원리와 정확성의 한계</text>
+  <text x="400" y="65" class="subtitle">파이썬 float 타입은 IEEE 754 표준 (64비트) 메모리 구조를 따릅니다.</text>
+
+  <!-- 64-bit Memory Representation Concept -->
+  <g transform="translate(100, 150)">
+    <text x="-40" y="15" class="subtitle">64 Bits</text>
+    
+    <!-- Sign Bit (1 bit) -->
+    <rect x="0" y="0" width="30" height="30" class="box sign-bit" />
+    <text x="15" y="20" class="bit-text" fill="#1e1e2e">0</text>
+    <text x="15" y="-10" class="label" fill="#f38ba8">부호 (1)</text>
+
+    <!-- Exponent Bits (11 bits representing) -->
+    <rect x="35" y="0" width="150" height="30" class="box exp-bit" />
+    <text x="110" y="20" class="bit-text" fill="#1e1e2e">01111111101</text>
+    <text x="110" y="-10" class="label" fill="#f9e2af">지수부 (11 bits)</text>
+
+    <!-- Fraction Bits (52 bits representing) -->
+    <rect x="190" y="0" width="400" height="30" class="box frac-bit" />
+    <text x="390" y="20" class="bit-text" fill="#1e1e2e">001100110011001100110011001100110011001100110011...</text>
+    <text x="390" y="-10" class="label" fill="#a6e3a1">가수부 (52 bits)</text>
+    
+    <!-- Cut off warning -->
+    <line x1="595" y1="-20" x2="595" y2="50" stroke="#f38ba8" stroke-width="4" stroke-dasharray="5,5" />
+    <text x="655" y="15" class="label" fill="#f38ba8">메모리 한계로 잘림!</text>
+    <text x="655" y="35" class="label" fill="#f38ba8">(근사치 오차 발생)</text>
+  </g>
+
+  <!-- Example Section -->
+  <g transform="translate(100, 280)">
+    <rect x="0" y="0" width="600" height="90" class="box" />
+    <text x="300" y="30" class="title" fill="#a6adc8" font-size="20">0.1 + 0.2 의 놀라운 결과</text>
+    
+    <!-- Equation -->
+    <text x="200" y="65" class="title" fill="#89dceb">0.1</text>
+    <text x="250" y="65" class="title" fill="#bac2de">+</text>
+    <text x="300" y="65" class="title" fill="#89dceb">0.2</text>
+    <text x="350" y="65" class="title" fill="#bac2de">=</text>
+    
+    <!-- Result with error highlighted -->
+    <text x="400" y="65" class="title" fill="#a6e3a1" text-anchor="start">0.3000000000000000<tspan class="anim-error">4</tspan></text>
+  </g>
+</svg>

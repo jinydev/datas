@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .box { fill: #313244; stroke: #45475a; stroke-width: 3; rx: 10; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 20px; font-weight: bold; fill: #cdd6f4; text-anchor: middle; }
+      .text-desc { font-family: sans-serif; font-size: 16px; fill: #a6adc8; text-anchor: middle; }
+      
+      .track { fill: none; stroke: #45475a; stroke-width: 12; stroke-linecap: round; }
+      .track-true { fill: none; stroke: #a6e3a1; stroke-width: 12; stroke-linecap: round; }
+      .track-false { fill: none; stroke: #f38ba8; stroke-width: 12; stroke-linecap: round; }
+      
+      .cart { fill: #f9e2af; stroke: #fab387; stroke-width: 2; rx: 5; }
+      
+      /* Switch animation */
+      @keyframes switchTrack {
+        0%, 45% { transform: rotate(0deg); fill: #a6e3a1; } /* Pointing True */
+        50%, 95% { transform: rotate(90deg); fill: #f38ba8; } /* Pointing False */
+        100% { transform: rotate(0deg); fill: #a6e3a1; }
+      }
+      
+      /* Cart animation along True path */
+      @keyframes moveCartTrue {
+        0% { transform: translate(100px, 180px); opacity: 1; }
+        15% { transform: translate(350px, 180px); opacity: 1; }
+        25% { transform: translate(450px, 100px); opacity: 1; }
+        40% { transform: translate(650px, 100px); opacity: 1; }
+        45% { transform: translate(750px, 100px); opacity: 0; }
+        100% { transform: translate(750px, 100px); opacity: 0; }
+      }
+
+      /* Cart animation along False path */
+      @keyframes moveCartFalse {
+        0%, 50% { transform: translate(100px, 180px); opacity: 0; }
+        51% { transform: translate(100px, 180px); opacity: 1; }
+        65% { transform: translate(350px, 180px); opacity: 1; }
+        75% { transform: translate(450px, 260px); opacity: 1; }
+        90% { transform: translate(650px, 260px); opacity: 1; }
+        95% { transform: translate(750px, 260px); opacity: 0; }
+        100% { transform: translate(750px, 260px); opacity: 0; }
+      }
+      
+      .anim-switch { animation: switchTrack 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; transform-origin: 350px 180px; }
+      .anim-cart-true { animation: moveCartTrue 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .anim-cart-false { animation: moveCartFalse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">양자택일 조건문 if ... else 애니메이션</text>
+
+  <!-- Base Tracks -->
+  <path d="M 100,180 L 350,180" class="track" />
+  <path d="M 350,180 L 450,100 L 650,100" class="track-true" />
+  <path d="M 350,180 L 450,260 L 650,260" class="track-false" />
+  
+  <!-- Switch mechanism -->
+  <circle cx="350" cy="180" r="15" fill="#313244" stroke="#cba6f7" stroke-width="4" />
+  <rect x="340" y="170" width="60" height="20" rx="10" class="anim-switch" />
+
+  <!-- Condition Node -->
+  <rect x="250" y="200" width="200" height="40" class="box" fill="#45475a"/>
+  <text x="350" y="227" class="text-code">if x > 4 :</text>
+
+  <!-- True Destination -->
+  <rect x="500" y="60" width="200" height="80" class="box" stroke="#a6e3a1" stroke-dasharray="5 5" />
+  <text x="600" y="95" class="text-code" fill="#a6e3a1">y = 1</text>
+  <text x="600" y="125" class="text-desc">(if 블록)</text>
+  <text x="500" y="50" class="text-code" fill="#a6e3a1" font-size="16">True</text>
+
+  <!-- False Destination -->
+  <rect x="500" y="220" width="200" height="80" class="box" stroke="#f38ba8" stroke-dasharray="5 5" />
+  <text x="600" y="255" class="text-code" fill="#f38ba8">y = 2</text>
+  <text x="600" y="285" class="text-desc">(else 블록)</text>
+  <text x="500" y="320" class="text-code" fill="#f38ba8" font-size="16">False (그 외의 모든 경우)</text>
+
+  <!-- Animated Carts -->
+  <g class="anim-cart-true">
+    <rect x="-20" y="-15" width="40" height="30" class="cart" />
+    <text x="0" y="5" font-family="monospace" font-size="16" font-weight="bold" fill="#1e1e2e" text-anchor="middle">x=5</text>
+  </g>
+  
+  <g class="anim-cart-false">
+    <rect x="-20" y="-15" width="40" height="30" class="cart" />
+    <text x="0" y="5" font-family="monospace" font-size="16" font-weight="bold" fill="#1e1e2e" text-anchor="middle">x=3</text>
+  </g>
+
+</svg>

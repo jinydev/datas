@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-immutable { fill: #a6e3a1; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .box-mutable { fill: #f38ba8; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .hash-beam { fill: none; stroke: #89dceb; stroke-width: 4; stroke-dasharray: 10; }
+      
+      @keyframes hashScan { 0%, 20% { stroke-dashoffset: 100; opacity: 0; } 30%, 50% { stroke-dashoffset: 0; opacity: 1; } 80%, 100% { stroke-dashoffset: -100; opacity: 0; } }
+      @keyframes popHashVal { 0%, 40% { transform: scale(0); opacity: 0; } 50%, 90% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
+      @keyframes errorShake { 0%, 40% { transform: translateX(0); opacity: 0; } 45% { transform: translateX(-10px); opacity: 1; } 50% { transform: translateX(10px); opacity: 1; } 55% { transform: translateX(-10px); opacity: 1; } 60%, 90% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(0); opacity: 0; } }
+      
+      .anim-scan { animation: hashScan 4s linear infinite; }
+      .anim-val { animation: popHashVal 4s infinite; transform-origin: 300px 180px; }
+      .anim-err { animation: errorShake 4s infinite; transform-origin: center; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 1: 해시(Hash) 암호화 스캐너 통과 여부</text>
+
+  <!-- Left: Immutable (Success) -->
+  <text x="250" y="80" class="text-title" fill="#a6e3a1">Tuple (Immutable)</text>
+  <rect x="200" y="100" width="100" height="40" class="box-immutable" />
+  <text x="250" y="125" class="text-code">("A", 1)</text>
+  
+  <path d="M 250 140 L 250 170" class="hash-beam anim-scan" />
+  
+  <g class="anim-val">
+    <rect x="180" y="180" width="140" height="30" fill="#89dceb" rx="5" />
+    <text x="250" y="200" class="text-code">Hash: 8746231...</text>
+  </g>
+
+  <!-- Right: Mutable (Error) -->
+  <text x="550" y="80" class="text-title" fill="#f38ba8">List (Mutable)</text>
+  <rect x="500" y="100" width="100" height="40" class="box-mutable" />
+  <text x="550" y="125" class="text-code">["A", 1]</text>
+  
+  <path d="M 550 140 L 550 170" class="hash-beam anim-scan" stroke="#f38ba8" />
+  
+  <g class="anim-err">
+    <rect x="440" y="180" width="220" height="30" fill="#f38ba8" rx="5" />
+    <text x="550" y="200" class="text-code">TypeError: unhashable</text>
+  </g>
+
+</svg>

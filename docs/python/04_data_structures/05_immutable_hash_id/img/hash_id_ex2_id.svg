@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .mem-cell { fill: #f9e2af; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .pointer { fill: none; stroke: #a6e3a1; stroke-width: 4; }
+      
+      @keyframes dashAnim { 0% { stroke-dashoffset: 20; } 100% { stroke-dashoffset: 0; } }
+      .anim-line { stroke-dasharray: 10; animation: dashAnim 1s linear infinite; }
+      
+      @keyframes highlightSync { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.3); transform: scale(1.05); } }
+      .anim-pulse { animation: highlightSync 2s infinite; transform-origin: 400px 180px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 2: 메모리 주소 id() 와 정수 캐싱 (Integer Caching)</text>
+  <text x="400" y="70" class="text-title" fill="#a6e3a1">x = 10, y = 10  -&gt;  id(x) == id(y)</text>
+
+  <!-- Variables -->
+  <rect x="250" y="100" width="60" height="40" fill="#89b4fa" rx="5" />
+  <text x="280" y="125" class="text-code">변수 x</text>
+  
+  <rect x="490" y="100" width="60" height="40" fill="#89b4fa" rx="5" />
+  <text x="520" y="125" class="text-code">변수 y</text>
+
+  <!-- Pointers -->
+  <path d="M 280 140 Q 300 180 340 180" class="pointer anim-line" />
+  <path d="M 520 140 Q 500 180 460 180" class="pointer anim-line" />
+
+  <!-- Memory Location (Shared) -->
+  <g class="anim-pulse">
+    <rect x="350" y="160" width="100" height="50" class="mem-cell" />
+    <text x="400" y="190" class="text-code" font-size="20px">정수: 10</text>
+    <text x="400" y="230" class="text-title" fill="#f9e2af" font-size="14px">id: 140704255284296</text>
+  </g>
+
+</svg>

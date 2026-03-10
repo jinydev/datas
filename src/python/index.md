@@ -39,7 +39,7 @@ title: "파이썬으로 배우는 데이터 분석 입문 - Part 2"
 ### [06. 내장 함수 활용](/python/01_basic/07_built_in_functions/)
 파이썬 설치 시 기본으로 제공되는 `print`, `input`, `max`, `min` 등 유용한 내장 함수들의 기능을 파악합니다. 
 
-### [07. 내장 모듈 math 활용](/python/01_basic/08_math_module/)
+### [07. 내장 모듈 math 활용](/python/01_basic/07_math_module/)
 수학적인 연산이 필요할 때 기본 탑재된 `math` 모듈을 불러들여 사용하는 방법을 배웁니다. 
 
 ---

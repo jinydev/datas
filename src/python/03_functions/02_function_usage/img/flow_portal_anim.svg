@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 24px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 18px; font-weight: bold; fill: #cdd6f4; text-anchor: start; }
+      .text-desc { font-family: sans-serif; font-size: 14px; fill: #a6adc8; text-anchor: middle; }
+      .text-line { font-family: monospace; font-size: 14px; fill: #6c7086; text-anchor: end; }
+      
+      .box-main { fill: #313244; rx: 10; }
+      .box-func { fill: #45475a; rx: 10; stroke: #cba6f7; stroke-width: 2; }
+      
+      /* Execution Pointer (Portal Jumper) Animation */
+      @keyframes jumpFlow {
+        /* Start at main program line 1 */
+        0%, 10% { transform: translate(60px, 95px); opacity: 1; fill: #a6e3a1; }
+        
+        /* Line 2: Call the function! Portal jump! */
+        20% { transform: translate(60px, 145px); opacity: 1; fill: #a6e3a1; }
+        25% { transform: translate(60px, 145px) scale(0); opacity: 0; } /* Disappear into portal */
+        
+        /* Reappear in function room */
+        35% { transform: translate(460px, 95px) scale(0); opacity: 0; fill: #89b4fa; }
+        40% { transform: translate(460px, 95px) scale(1); opacity: 1; fill: #89b4fa; } /* executing line 1 of func */
+        50% { transform: translate(460px, 145px) scale(1); opacity: 1; fill: #89b4fa; } /* executing line 2 of func */
+        60% { transform: translate(460px, 195px) scale(1); opacity: 1; fill: #f9e2af; } /* RETURN! (Color change to show return val) */
+        
+        /* Jump back through portal */
+        65% { transform: translate(460px, 195px) scale(0); opacity: 0; fill: #f9e2af; }
+        70% { transform: translate(60px, 145px) scale(0); opacity: 0; fill: #f9e2af; }
+        
+        /* Arrive back with the gift at original call spot, move to next line */
+        75% { transform: translate(60px, 145px) scale(1); opacity: 1; fill: #f9e2af; } 
+        85% { transform: translate(60px, 195px) scale(1); opacity: 1; fill: #f9e2af; } /* Main string ends */
+        95%, 100% { transform: translate(60px, 195px); opacity: 0; }
+      }
+
+      /* Portal Rings Animation */
+      @keyframes pulsePortal1 {
+        0%, 15%, 35%, 100% { opacity: 0.2; transform: scale(1); stroke-width: 2; }
+        25%, 75% { opacity: 1; transform: scale(1.5); stroke-width: 4; }
+      }
+      @keyframes pulsePortal2 {
+        0%, 30%, 75%, 100% { opacity: 0.2; transform: scale(1); stroke-width: 2; }
+        40%, 65% { opacity: 1; transform: scale(1.5); stroke-width: 4; }
+      }
+
+      .particle { animation: jumpFlow 8s ease-in-out infinite; }
+      .portal-call { transform-origin: 220px 145px; animation: pulsePortal1 8s ease-in-out infinite; fill: none; stroke: #cba6f7; }
+      .portal-dest { transform-origin: 520px 95px; animation: pulsePortal2 8s ease-in-out infinite; fill: none; stroke: #cba6f7; }
+      .portal-ret  { transform-origin: 520px 195px; animation: pulsePortal2 8s ease-in-out infinite; fill: none; stroke: #f9e2af; }
+      
+      .arrow { fill: none; stroke: #bac2de; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 6 6; }
+    </style>
+    
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bac2de" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">함수 호출의 제어 흐름 (Control Flow Jump)</text>
+
+  <!-- Main Program Area -->
+  <rect x="30" y="60" width="340" height="200" class="box-main" />
+  <text x="180" y="80" class="text-title" fill="#a6adc8" font-size="16">Main Program</text>
+  
+  <text x="50" y="100" class="text-line">1 |</text> <text x="80" y="100" class="text-code">print("Start")</text>
+  <text x="50" y="150" class="text-line">2 |</text> <text x="80" y="150" class="text-code">x = <tspan fill="#89b4fa">calc_tax(100)</tspan></text>
+  <text x="50" y="200" class="text-line">3 |</text> <text x="80" y="200" class="text-code">print("End")</text>
+
+  <!-- Portal Jump Arrows -->
+  <path d="M 230,140 Q 350,60 510,90" class="arrow" marker-end="url(#arrowhead)" stroke="#89b4fa" />
+  <circle cx="220" cy="145" r="10" class="portal-call" />
+  <circle cx="520" cy="95" r="10" class="portal-dest" />
+
+  <!-- Return Path Arrow -->
+  <path d="M 500,200 Q 350,230 230,155" class="arrow" marker-end="url(#arrowhead)" stroke="#f9e2af" />
+  <circle cx="520" cy="195" r="10" class="portal-ret" />
+
+  <!-- Target Function Area -->
+  <rect x="430" y="60" width="340" height="200" class="box-func" />
+  <text x="600" y="80" class="text-title" fill="#cba6f7" font-size="16">Memory Space: calc_tax()</text>
+  
+  <text x="450" y="100" class="text-line">5 |</text> <text x="480" y="100" class="text-code">def <tspan fill="#cba6f7">calc_tax(price):</tspan></text>
+  <text x="450" y="150" class="text-line">6 |</text> <text x="480" y="150" class="text-code">    tax = price * 0.1</text>
+  <text x="450" y="200" class="text-line">7 |</text> <text x="480" y="200" class="text-code" fill="#f9e2af">    return tax</text>
+
+  <!-- Flowing Execution Particle -->
+  <circle cx="0" cy="0" r="8" class="particle" />
+  
+  <text x="400" y="290" class="text-desc">초록색 실행 흐름이 메인 프로그램을 차례대로 읽다가, 함수 호출(Call)을 만나면 포탈을 타고 별도의 메모리 방으로 워프합니다.</text>
+  <text x="400" y="315" class="text-desc">함수 내부의 지시를 모두 끝마치고 결과(return)를 얻어내면, 다시 기가 막히게 원래 호출되었던 메인 프로그램의 그 자리로 포탈을 타고 돌아옵니다.</text>
+</svg>
