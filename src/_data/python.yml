@@ -1,7 +1,9 @@
 main:
-  - title: "3.1 파이썬 언어 기초 (Python Basics)"
+  - title: "3.1 파이썬 기초"
     url: /python/01_basic/
     subitems:
+      - title: "학습목표"
+        url: /python/01_basic/
       - title: "3.1.1 데이터 분석 언어와 파이썬의 미래"
         url: /python/01_basic/01_python_intro/
       - title: "3.1.2 주석과 상수"
@@ -31,9 +33,11 @@ main:
         url: /python/01_basic/07_built_in_functions/
       - title: "3.1.8 내장 모듈 math 활용"
         url: /python/01_basic/07_math_module/
-  - title: "3.2 제어 흐름 (Control Flow)"
+  - title: "3.2 제어 흐름"
     url: /python/02_control_flow/
     subitems:
+      - title: "학습목표"
+        url: /python/02_control_flow/
       - title: "3.2.1 조건문 if"
         url: /python/02_control_flow/01_if_statement/
       - title: "3.2.2 match 구문"
@@ -42,18 +46,22 @@ main:
         url: /python/02_control_flow/03_for_while_loops/
       - title: "3.2.4 예외 처리"
         url: /python/02_control_flow/04_exceptions/
-  - title: "3.3 함수 (Functions)"
+  - title: "3.3 함수"
     url: /python/03_functions/
     subitems:
+      - title: "학습목표"
+        url: /python/03_functions/
       - title: "3.3.1 함수란 무엇인가?"
         url: /python/03_functions/01_function_concepts/
       - title: "3.3.2 함수 선언과 사용"
         url: /python/03_functions/02_function_usage/
       - title: "3.3.3 변수 스코프와 람다 함수"
         url: /python/03_functions/03_lambda_functions/
-  - title: "3.4 자료 구조 (Data Structures)"
+  - title: "3.4 자료 구조"
     url: /python/04_data_structures/
     subitems:
+      - title: "학습목표"
+        url: /python/04_data_structures/
       - title: "3.4.1 리스트"
         url: /python/04_data_structures/01_list/
       - title: "3.4.2 사전"
@@ -64,18 +72,49 @@ main:
         url: /python/04_data_structures/04_set/
       - title: "3.4.5 수정 불가능(immutable)과 함수 hash() id()"
         url: /python/04_data_structures/05_immutable_hash_id/
-  - title: "3.5 객체지향 프로그래밍 (OOP)"
+  - title: "3.5 객체지향"
     url: /python/05_oop/
     subitems:
+      - title: "학습목표"
+        url: /python/05_oop/
       - title: "3.5.1 클래스와 인스턴스"
         url: /python/05_oop/01_class_instance/
       - title: "3.5.2 상속과 다형성"
         url: /python/05_oop/02_inheritance_polymorphism/
       - title: "3.5.3 추상화와 인터페이스"
         url: /python/05_oop/03_abstraction_interface/
-  - title: "3.7 파일 입출력 (File I/O)"
-    url: /python/07_file_io/
+  - title: "3.6 데이터 입출력"
+    url: /python/06_data_viz_prep/
     subitems:
-  - title: "3.8 GUI 프로그래밍 (Tkinter)"
-    url: /python/08_gui_programming/
+      - title: "학습목표"
+        url: /python/06_data_viz_prep/
+      - title: "3.6.1 파일 입출력의 개념과 필요성"
+        url: /python/06_data_viz_prep/01_file_io_concept/
+      - title: "3.6.2 파일 열기와 닫기 (open, with)"
+        url: /python/06_data_viz_prep/02_file_open/
+      - title: "3.6.3 데이터 분석 실습 (Matplotlib 맛보기)"
+        url: /python/06_data_viz_prep/03_data_analysis/
+  - title: "3.7 GUI 프로그래밍"
+    url: /python/07_gui_programming/
     subitems:
+      - title: "학습목표"
+        url: /python/07_gui_programming/
+      - title: "3.7.1 GUI 구동 원리와 환경 설정"
+        url: /python/07_gui_programming/01_gui_principles/
+      - title: "3.7.2 첫 GUI: Hello World와 Mainloop"
+        url: /python/07_gui_programming/02_tkinter_hello_world/
+      - title: "3.7.3 위젯 배치와 이벤트 구동"
+        url: /python/07_gui_programming/03_widget_layout/
+      - title: "3.7.4 미니 프로젝트: CSV 데이터를 GUI로 띄우기"
+        url: /python/07_gui_programming/04_data_analysis_gui/
+  - title: "3.8 데이터 전처리와 환경 세팅 심화"
+    url: /python/08_data_preprocessing/
+    subitems:
+      - title: "학습목표"
+        url: /python/08_data_preprocessing/
+      - title: "3.8.1 문자열 정제와 데이터 클렌징"
+        url: /python/08_data_preprocessing/01_string_manipulation/
+      - title: "3.8.2 함수형 처리 도구 (Map, Filter)"
+        url: /python/08_data_preprocessing/02_functional_map_filter/
+      - title: "3.8.3 환경 격리와 커스텀 모듈 (venv & modules)"
+        url: /python/08_data_preprocessing/03_modules_and_venv/

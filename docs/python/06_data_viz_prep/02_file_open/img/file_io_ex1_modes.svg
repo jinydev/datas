@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-mode { rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .box-w { fill: #f38ba8; }
+      .box-a { fill: #a6e3a1; }
+      .box-r { fill: #89b4fa; }
+      
+      @keyframes wipeAnim { 0%, 50% { stroke-dashoffset: 100; } 60%, 100% { stroke-dashoffset: 0; } }
+      .anim-wipe { stroke-dasharray: 100; animation: wipeAnim 3s infinite; }
+      
+      @keyframes appendAnim { 0%, 50% { opacity: 0; transform: translateY(-10px); } 60%, 100% { opacity: 1; transform: translateY(0); } }
+      .anim-append { animation: appendAnim 3s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 1: 3대 파일 모드 (w, a, r)</text>
+
+  <!-- Write 'w' -->
+  <rect x="50" y="80" width="200" height="120" class="box-mode box-w" />
+  <text x="150" y="110" class="text-code" font-size="20px">모드 'w'</text>
+  <text x="150" y="130" class="text-code" fill="#1e1e2e" font-size="12px">(초기화 후 쓰기)</text>
+  <path d="M 80 160 L 220 160" fill="none" stroke="#11111b" stroke-width="20" class="anim-wipe" />
+  <text x="150" y="165" class="text-code" fill="#f38ba8" font-size="14px">원본 삭제 🧨</text>
+
+  <!-- Append 'a' -->
+  <rect x="300" y="80" width="200" height="120" class="box-mode box-a" />
+  <text x="400" y="110" class="text-code" font-size="20px">모드 'a'</text>
+  <text x="400" y="130" class="text-code" fill="#1e1e2e" font-size="12px">(끝에 이어 쓰기)</text>
+  <text x="400" y="160" class="text-code" fill="#11111b" font-size="14px">기존 로그 내역 유지</text>
+  <g class="anim-append">
+    <text x="400" y="180" class="text-code" fill="#181825" font-size="16px">+ 새로운 줄 추가 ✍️</text>
+  </g>
+
+  <!-- Read 'r' -->
+  <rect x="550" y="80" width="200" height="120" class="box-mode box-r" />
+  <text x="650" y="110" class="text-code" font-size="20px">모드 'r'</text>
+  <text x="650" y="130" class="text-code" fill="#1e1e2e" font-size="12px">(안전하게 읽기만)</text>
+  <text x="650" y="170" class="text-code" fill="#11111b" font-size="16px">내용 훼손 불가 🛡️</text>
+
+</svg>

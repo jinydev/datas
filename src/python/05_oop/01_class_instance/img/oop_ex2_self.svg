@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; }
+      
+      .box-instance { fill: #89b4fa; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .box-self { fill: #f38ba8; rx: 5; }
+      .pointer { fill: none; stroke: #f38ba8; stroke-width: 4; stroke-dasharray: 5; }
+      
+      @keyframes pulseAnim { 0%, 100% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.05); filter: brightness(1.2); } }
+      .anim-self1 { animation: pulseAnim 2s infinite; transform-origin: 250px 140px; }
+      .anim-self2 { animation: pulseAnim 2s infinite; animation-delay: 1s; transform-origin: 550px 140px; }
+      
+      @keyframes arrowMove { 0% { stroke-dashoffset: 10; } 100% { stroke-dashoffset: 0; } }
+      .anim-arrow { animation: arrowMove 0.5s linear infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 2: self의 의미 (거울 속의 '나 자신')</text>
+  <text x="400" y="70" class="text-title" fill="#bac2de" font-size="16px">robot1.say_hello() 호출 시, 파이썬은 내부적으로 Robot.say_hello(robot1) 로 변환합니다.</text>
+
+  <!-- Instance 1 -->
+  <g class="anim-self1">
+    <rect x="180" y="120" width="140" height="60" class="box-instance" />
+    <text x="250" y="145" class="text-code">robot1</text>
+    <rect x="210" y="155" width="80" height="20" class="box-self" />
+    <text x="250" y="170" class="text-code" fill="#ffffff" font-size="12px">self = robot1</text>
+  </g>
+
+  <!-- Instance 2 -->
+  <g class="anim-self2">
+    <rect x="480" y="120" width="140" height="60" class="box-instance" />
+    <text x="550" y="145" class="text-code">robot2</text>
+    <rect x="510" y="155" width="80" height="20" class="box-self" />
+    <text x="550" y="170" class="text-code" fill="#ffffff" font-size="12px">self = robot2</text>
+  </g>
+
+  <!-- Self Explanations -->
+  <text x="250" y="210" class="text-title" fill="#f38ba8" font-size="14px">"나의 이름은 R2D2야!"</text>
+  <text x="550" y="210" class="text-title" fill="#f38ba8" font-size="14px">"나의 이름은 C3PO야!"</text>
+
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: left; }
+      
+      .box-func { fill: #f9e2af; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .doc-line { fill: none; stroke: #cdd6f4; stroke-width: 10; stroke-linecap: round; }
+      .doc-line-highlight { fill: none; stroke: #f38ba8; stroke-width: 12; stroke-linecap: round; }
+      
+      @keyframes readAll { 0%, 50% { transform: scaleY(0); } 60%, 100% { transform: scaleY(1); } }
+      .anim-readall { animation: readAll 3s infinite; transform-origin: top; }
+      
+      @keyframes readLine { 0% { transform: translateY(0); } 33% { transform: translateY(20px); } 66% { transform: translateY(40px); } 100% { transform: translateY(0); } }
+      .anim-readline { animation: readLine 3s infinite steps(1); }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 2: 메모리 폭발을 막는 파일 읽기 기술</text>
+
+  <!-- read() : 통째로 -->
+  <rect x="150" y="70" width="200" height="150" class="box-func" />
+  <text x="250" y="100" class="text-code" text-anchor="middle">.read()</text>
+  <text x="250" y="120" class="text-code" fill="#1e1e2e" font-size="12px" text-anchor="middle">10기가 통째로 로딩 (메모리 펑!)</text>
+  <g class="anim-readall">
+    <path d="M 180 140 L 320 140" class="doc-line-highlight" />
+    <path d="M 180 160 L 300 160" class="doc-line-highlight" />
+    <path d="M 180 180 L 320 180" class="doc-line-highlight" />
+  </g>
+
+  <!-- readline() : 한줄씩 -->
+  <rect x="450" y="70" width="200" height="150" class="box-func" />
+  <text x="550" y="100" class="text-code" text-anchor="middle">.readline()</text>
+  <text x="550" y="120" class="text-code" fill="#1e1e2e" font-size="12px" text-anchor="middle">한 줄씩 로딩 (메모리 절약왕)</text>
+  <path d="M 480 140 L 620 140" class="doc-line" />
+  <path d="M 480 160 L 600 160" class="doc-line" />
+  <path d="M 480 180 L 620 180" class="doc-line" />
+  
+  <g class="anim-readline">
+    <path d="M 475 140 L 625 140" class="doc-line-highlight" />
+  </g>
+
+</svg>

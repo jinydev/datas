@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-desc { font-family: monospace; font-size: 14px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-tk { fill: #a6e3a1; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .box-qt { fill: #89b4fa; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      
+      @keyframes jumpTk { 0%, 50% { transform: translateY(0); } 75% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+      .anim-tk { animation: jumpTk 2s infinite; }
+      
+      @keyframes glowQt { 0%, 100% { filter: drop-shadow(0 0 5px #89b4fa); } 50% { filter: drop-shadow(0 0 15px #89b4fa); } }
+      .anim-qt { animation: glowQt 3s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">파이썬 GUI 양대 산맥: Tkinter vs PyQt</text>
+
+  <!-- Tkinter -->
+  <g class="anim-tk">
+    <rect x="150" y="70" width="200" height="130" class="box-tk" />
+    <text x="250" y="100" class="text-title" fill="#11111b" font-size="22px">Tkinter</text>
+    <text x="250" y="130" class="text-desc">파이썬 기본 내장 (무료)</text>
+    <text x="250" y="150" class="text-desc">설치: 불필요 (No pip)</text>
+    <text x="250" y="170" class="text-desc">특징: 가볍고 빠름, 디자인 투박</text>
+  </g>
+
+  <!-- VS Text -->
+  <text x="400" y="140" class="text-title" fill="#f38ba8" font-size="24px">VS</text>
+
+  <!-- PyQt/PySide -->
+  <g class="anim-qt">
+    <rect x="450" y="70" width="200" height="130" class="box-qt" />
+    <text x="550" y="100" class="text-title" fill="#11111b" font-size="22px">PyQt / PySide</text>
+    <text x="550" y="130" class="text-desc">외부 패키지 (상업용 주의)</text>
+    <text x="550" y="150" class="text-desc">설치: pip install</text>
+    <text x="550" y="170" class="text-desc">특징: 화려함, 무거움, 복잡함</text>
+  </g>
+
+</svg>

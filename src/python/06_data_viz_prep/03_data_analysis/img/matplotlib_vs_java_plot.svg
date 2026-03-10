@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-desc { font-family: monospace; font-size: 14px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .box-java { fill: #f38ba8; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .box-py { fill: #f9e2af; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      
+      @keyframes shakeJava { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(2deg); } 75% { transform: rotate(-2deg); } }
+      .anim-java { animation: shakeJava 0.5s infinite; }
+      
+      @keyframes floatPy { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      .anim-py { animation: floatPy 3s infinite ease-in-out; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">차트 그리기 대결: Java vs Python</text>
+
+  <!-- Java -->
+  <g class="anim-java" transform-origin="250 135">
+    <rect x="150" y="70" width="200" height="150" class="box-java" />
+    <text x="250" y="100" class="text-title" fill="#11111b" font-size="22px">Java (JFreeChart)</text>
+    <text x="250" y="130" class="text-desc">객체지향 지옥</text>
+    <text x="250" y="150" class="text-desc">1. DataSet 객체 생성</text>
+    <text x="250" y="170" class="text-desc">2. `.setValue()` 무한 반복</text>
+    <text x="250" y="190" class="text-desc">3. ChartFactory 호출</text>
+    <text x="250" y="210" class="text-desc">(코드 50줄 돌파...)</text>
+  </g>
+
+  <!-- VS Text -->
+  <text x="400" y="150" class="text-title" fill="#bac2de" font-size="24px">VS</text>
+
+  <!-- Python -->
+  <g class="anim-py">
+    <rect x="450" y="70" width="200" height="150" class="box-py" />
+    <text x="550" y="100" class="text-title" fill="#11111b" font-size="22px">Python (Matplotlib)</text>
+    <text x="550" y="130" class="text-desc">우아함 그 자체</text>
+    <text x="550" y="160" class="text-desc">`x = [1,2,3]`</text>
+    <text x="550" y="180" class="text-desc">`y = [4,5,6]`</text>
+    <text x="550" y="210" class="text-desc" fill="#f38ba8">`ax.plot(x, y)` 끝!</text>
+  </g>
+
+</svg>
