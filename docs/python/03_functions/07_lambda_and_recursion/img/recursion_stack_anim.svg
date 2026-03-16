@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350">
+    <rect width="400" height="350" fill="#f8f9fa"/>
+    <text x="200" y="30" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#343a40">Call Stack for fact(3)</text>
+    
+    <!-- Stack Blocks -->
+    <rect x="100" y="250" width="200" height="40" rx="5" fill="#ffc9c9" stroke="#fa5252" stroke-width="2"/>
+    <text x="200" y="275" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#c92a2a">fact(3) : wait</text>
+    
+    <rect x="100" y="200" width="200" height="40" rx="5" fill="#ffec99" stroke="#fcc419" stroke-width="2"/>
+    <text x="200" y="225" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#b1970b">fact(2) : wait</text>
+
+    <rect x="100" y="150" width="200" height="40" rx="5" fill="#b2f2bb" stroke="#51cf66" stroke-width="2"/>
+    <text x="200" y="175" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#2b8a3e">fact(1) : wait</text>
+
+    <rect x="100" y="100" width="200" height="40" rx="5" fill="#a5d8ff" stroke="#339af0" stroke-width="2"/>
+    <text x="200" y="125" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#1864ab">fact(0) -> BASE CASE!</text>
+
+    <!-- Arrow Path Push -->
+    <path d="M 60 270 L 60 120 L 90 120" stroke="#868e96" fill="transparent" stroke-width="4" marker-end="url(#arrow_svg)"/>
+    <text x="40" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#868e96" transform="rotate(-90 40,200)">Push (Call)</text>
+    
+    <!-- Arrow Path Pop -->
+    <path d="M 310 120 L 340 120 L 340 270" stroke="#f06595" fill="transparent" stroke-width="4" marker-end="url(#arrow_svg_p)"/>
+    <text x="360" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f06595" transform="rotate(90 360,200)">Pop (Return)</text>
+
+    <defs>
+        <marker id="arrow_svg_p" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#f06595" />
+        </marker>
+    </defs>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+    <rect width="600" height="200" fill="#212529" rx="10"/>
+    <line x1="50" y1="100" x2="550" y2="100" stroke="#495057" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="50" y1="20" x2="50" y2="180" stroke="#495057" stroke-width="2"/>
+    
+    <!-- sin wave -->
+    <path d="M 50 100 Q 150 -50 250 100 T 450 100 T 650 100" stroke="#339af0" fill="transparent" stroke-width="4"/>
+    <text x="100" y="30" fill="#339af0" font-family="sans-serif" font-weight="bold">y = sin(x)</text>
+    
+    <!-- cos wave (shifted) -->
+    <path d="M 50 10 Q 150 250 250 100 Q 350 -50 450 100 T 650 100" stroke="#ff922b" fill="transparent" stroke-width="3" stroke-dasharray="10,5"/>
+    <text x="250" y="30" fill="#ff922b" font-family="sans-serif" font-weight="bold">y = cos(x)</text>
+</svg>

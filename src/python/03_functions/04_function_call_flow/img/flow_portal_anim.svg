@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+    <rect width="600" height="300" fill="#f8f9fa" rx="10"/>
+    <rect x="50" y="30" width="200" height="240" rx="10" fill="#fff" stroke="#4dabf7" stroke-width="3"/>
+    <text x="150" y="60" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#364fc7">Main Program</text>
+    <line x1="150" y1="80" x2="150" y2="120" stroke="#adb5bd" stroke-width="4"/>
+    <circle cx="150" cy="130" r="15" fill="#74c0fc"/>
+    <text x="150" y="135" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" fill="#000">Call</text>
+    <line x1="150" y1="145" x2="150" y2="240" stroke="#adb5bd" stroke-width="4" stroke-dasharray="5,5"/>
+    
+    <rect x="350" y="70" width="200" height="160" rx="10" fill="#fff" stroke="#ff922b" stroke-width="3"/>
+    <text x="450" y="100" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#d9480f">def calc_tax(x)</text>
+    <rect x="400" y="120" width="100" height="50" rx="8" fill="#ffe8cc"/>
+    <text x="450" y="140" font-family="monospace" font-size="12" text-anchor="middle" fill="#000">tax = x * 0.1</text>
+    <text x="450" y="160" font-family="monospace" font-size="12" text-anchor="middle" fill="#000">return tax</text>
+
+    <!-- Jump Path -->
+    <path d="M 170 130 C 250 130 300 120 340 120" stroke="#9c36b5" fill="transparent" stroke-width="4" stroke-dasharray="8,4" marker-end="url(#jump)"/>
+    <text x="260" y="115" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#9c36b5">1. Jump (Pause)</text>
+    
+    <!-- Return Path -->
+    <path d="M 390 145 C 320 145 280 180 165 180" stroke="#2b8a3e" fill="transparent" stroke-width="4" marker-end="url(#jump)"/>
+    <text x="260" y="195" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2b8a3e">2. Return Value</text>
+
+    <defs>
+        <marker id="jump" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="context-stroke" />
+        </marker>
+    </defs>
+</svg>

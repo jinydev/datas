@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 255 255" width="100%" max-width="400px">
+    <defs>
+        <style>
+            .grid { fill: none; stroke: #e2e8f0; stroke-width: 1; }
+            .star { fill: #fbbf24; stroke: #b45309; stroke-width: 1.5; rx: 4; }
+            .space { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4,4; rx: 4; }
+            .text { font-family: 'Consolas', monospace; font-size: 14px; fill: #64748b; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
+            .axis { font-family: 'Consolas', monospace; font-size: 12px; fill: #94a3b8; font-style: italic; }
+        </style>
+    </defs>
+    <!-- Background Grid -->
+
+    <!-- Content Blocks -->
+<rect x="0" y="0" width="40" height="40" class="star" />
+<text x="20.0" y="20.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="45" y="0" width="40" height="40" class="star" />
+<text x="65.0" y="20.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="90" y="0" width="40" height="40" class="star" />
+<text x="110.0" y="20.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="135" y="0" width="40" height="40" class="star" />
+<text x="155.0" y="20.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="180" y="0" width="40" height="40" class="star" />
+<text x="200.0" y="20.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="0" y="45" width="40" height="40" class="star" />
+<text x="20.0" y="65.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="45" y="45" width="40" height="40" class="star" />
+<text x="65.0" y="65.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="90" y="45" width="40" height="40" class="star" />
+<text x="110.0" y="65.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="135" y="45" width="40" height="40" class="star" />
+<text x="155.0" y="65.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="0" y="90" width="40" height="40" class="star" />
+<text x="20.0" y="110.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="45" y="90" width="40" height="40" class="star" />
+<text x="65.0" y="110.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="90" y="90" width="40" height="40" class="star" />
+<text x="110.0" y="110.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="0" y="135" width="40" height="40" class="star" />
+<text x="20.0" y="155.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="45" y="135" width="40" height="40" class="star" />
+<text x="65.0" y="155.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+<rect x="0" y="180" width="40" height="40" class="star" />
+<text x="20.0" y="200.0" class="text" style="fill:#78350f; font-size:20px;">*</text>
+    <!-- Labels -->
+<text x="-15" y="112.5" class="axis" text-anchor="middle" transform="rotate(-90, -15, 112.5)">Outer Loop (i) $\rightarrow$</text>
+<text x="127.5" y="-15" class="axis" text-anchor="middle">Inner Loop (j) $\rightarrow$</text>
+<text x="-15" y="20.0" class="axis">i=0</text>
+<text x="20.0" y="-15" class="axis">j=0</text>
+<text x="65.0" y="-15" class="axis">j=1</text>
+<text x="110.0" y="-15" class="axis">j=2</text>
+<text x="155.0" y="-15" class="axis">j=3</text>
+<text x="200.0" y="-15" class="axis">j=4</text>
+<text x="-15" y="65.0" class="axis">i=1</text>
+<text x="-15" y="110.0" class="axis">i=2</text>
+<text x="-15" y="155.0" class="axis">i=3</text>
+<text x="-15" y="200.0" class="axis">i=4</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .class-box { fill: #f9e2af; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .instance-box { fill: #a6e3a1; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .factory-line { fill: none; stroke: #89b4fa; stroke-width: 4; stroke-dasharray: 10; }
+      
+      @keyframes conveyer { 0% { stroke-dashoffset: 20; } 100% { stroke-dashoffset: 0; } }
+      .anim-line { animation: conveyer 1s linear infinite; }
+      
+      @keyframes popInstance { 0%, 20% { opacity: 0; transform: scale(0.5) translateY(-20px); } 30%, 80% { opacity: 1; transform: scale(1) translateY(0); } 90%, 100% { opacity: 0; transform: scale(0.5) translateY(20px); } }
+      .anim-pop1 { animation: popInstance 4s infinite; transform-origin: 300px 180px; }
+      .anim-pop2 { animation: popInstance 4s infinite; animation-delay: 1s; transform-origin: 500px 180px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 1: 클래스(설계도)에서 인스턴스(객체) 붕어빵 찍어내기</text>
+
+  <!-- Class (Blueprint) -->
+  <text x="400" y="80" class="text-title" fill="#f9e2af">class Robot:</text>
+  <rect x="350" y="100" width="100" height="40" class="class-box" />
+  <text x="400" y="125" class="text-code">설계도</text>
+
+  <!-- Factory Lines -->
+  <path d="M 400 140 Q 300 160 300 180" class="factory-line anim-line" />
+  <path d="M 400 140 Q 500 160 500 180" class="factory-line anim-line" />
+
+  <!-- Instances -->
+  <g class="anim-pop1">
+    <rect x="230" y="180" width="140" height="40" class="instance-box" />
+    <text x="300" y="205" class="text-code">robot_a = Robot()</text>
+  </g>
+  
+  <g class="anim-pop2">
+    <rect x="430" y="180" width="140" height="40" class="instance-box" />
+    <text x="500" y="205" class="text-code">robot_b = Robot()</text>
+  </g>
+
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    
+    <!-- Power Line Gradient -->
+    <linearGradient id="powerGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="15" fill="url(#bgGradient)"/>
+  <rect x="80" y="60" width="680" height="380" fill="#ffffff" rx="8" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Grid Lines (Y-axis) -->
+  <g stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4">
+    <line x1="80" y1="60" x2="760" y2="60"/>
+    <text x="70" y="65" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="end">1000</text>
+    <line x1="80" y1="136" x2="760" y2="136"/>
+    <text x="70" y="141" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="end">800</text>
+    <line x1="80" y1="212" x2="760" y2="212"/>
+    <text x="70" y="217" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="end">600</text>
+    <line x1="80" y1="288" x2="760" y2="288"/>
+    <text x="70" y="293" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="end">400</text>
+    <line x1="80" y1="364" x2="760" y2="364"/>
+    <text x="70" y="369" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="end">200</text>
+    <line x1="80" y1="440" x2="760" y2="440"/>
+    <text x="70" y="445" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="end">0</text>
+  </g>
+
+  <!-- Title & Axis Labels -->
+  <text x="420" y="40" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">Explosive Growth of Power Operator (**)</text>
+  <text x="420" y="480" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">X values (1 to 10)</text>
+
+  <!-- Grid Lines (X-axis) -->
+  <text x="80" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">1</text>
+  <text x="155.5" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">2</text>
+  <text x="231" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">3</text>
+  <text x="306.5" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">4</text>
+  <text x="382" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">5</text>
+  <text x="457.5" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">6</text>
+  <text x="533" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">7</text>
+  <text x="608.5" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">8</text>
+  <text x="684" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">9</text>
+  <text x="759.5" y="460" font-family="sans-serif" font-size="12" fill="#64748b" text-anchor="middle">10</text>
+
+  <!-- Data Lines -->
+  <!-- 1. Linear (x * 2) -->
+  <polyline points="80,439.24 155.5,438.48 231,437.72 306.5,436.96 382,436.2 457.5,435.44 533,434.68 608.5,433.92 684,433.16 759.5,432.4" fill="none" stroke="#3b82f6" stroke-width="3"/>
+
+  <!-- 2. Square (x ** 2) -->
+  <polyline points="80,439.62 155.5,438.48 231,436.58 306.5,433.92 382,430.5 457.5,426.32 533,421.38 608.5,415.68 684,409.22 759.5,402.0" fill="none" stroke="#10b981" stroke-width="3"/>
+
+  <!-- 3. Power (2 ** x) -->
+  <polyline points="80,439.24 155.5,438.48 231,436.96 306.5,433.92 382,427.84 457.5,415.68 533,391.36 608.5,342.72 684,245.44 759.5,50.88" fill="none" stroke="url(#powerGradient)" stroke-width="4"/>
+
+  <!-- Legend -->
+  <g transform="translate(100, 80)">
+    <rect width="180" height="90" fill="#ffffff" rx="5" stroke="#cbd5e1" stroke-width="1" opacity="0.9"/>
+    
+    <line x1="15" y1="20" x2="35" y2="20" stroke="#3b82f6" stroke-width="3"/>
+    <circle cx="25" cy="20" r="4" fill="#3b82f6"/>
+    <text x="45" y="24" font-family="sans-serif" font-size="13" fill="#334155">Linear (x * 2)</text>
+    
+    <line x1="15" y1="45" x2="35" y2="45" stroke="#10b981" stroke-width="3"/>
+    <rect x="22" y="42" width="6" height="6" fill="#10b981"/>
+    <text x="45" y="49" font-family="sans-serif" font-size="13" fill="#334155">Square (x ** 2)</text>
+    
+    <line x1="15" y1="70" x2="35" y2="70" stroke="#ef4444" stroke-width="4"/>
+    <polygon points="25,65 21,72 29,72" fill="#ef4444"/>
+    <text x="45" y="74" font-family="sans-serif" font-size="13" fill="#334155">Power (2 ** x)</text>
+  </g>
+
+</svg>

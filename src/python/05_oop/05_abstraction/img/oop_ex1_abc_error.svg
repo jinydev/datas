@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .abc-box { fill: #f9e2af; rx: 10; stroke: #f38ba8; stroke-width: 4; stroke-dasharray: 10; }
+      .error-box { fill: #f38ba8; rx: 5; }
+      
+      @keyframes blinkError { 0%, 50%, 100% { opacity: 1; transform: scale(1); } 25%, 75% { opacity: 0; transform: scale(1.1); } }
+      .anim-error { animation: blinkError 1s infinite; transform-origin: 400px 180px; }
+      
+      @keyframes shakeWall { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+      .anim-wall { animation: shakeWall 0.5s infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 1: 추상 클래스(계약서 원본)는 절대 '실체'가 될 수 없다!</text>
+  <text x="400" y="70" class="text-title" fill="#bac2de" font-size="16px">Shape() 를 호출하여 객체를 만드려고 하는 순간...</text>
+
+  <!-- ABC Class -->
+  <g class="anim-wall">
+    <rect x="300" y="100" width="200" height="50" class="abc-box" />
+    <text x="400" y="130" class="text-code">class Shape(ABC)</text>
+  </g>
+
+  <!-- Error Alert -->
+  <g class="anim-error">
+    <rect x="150" y="170" width="500" height="40" class="error-box" />
+    <text x="400" y="195" class="text-code" fill="#1e1e2e" font-size="18px">🚨 TypeError: Can't instantiate abstract class Shape 🚨</text>
+  </g>
+  
+  <path d="M 400 150 L 400 170" fill="none" class="anim-wall" stroke="#f38ba8" stroke-width="4" />
+</svg>

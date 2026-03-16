@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .box-a { fill: rgba(220, 53, 69, 0.4); stroke: #dc3545; stroke-width: 2; rx: 10; ry: 10; }
+      .box-b { fill: rgba(13, 110, 253, 0.4); stroke: #0d6efd; stroke-width: 2; rx: 10; ry: 10; }
+      .box-c { fill: rgba(111, 66, 193, 0.4); stroke: #6f42c1; stroke-width: 3; rx: 10; ry: 10; }
+      .text-a { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: bold; fill: #dc3545; text-anchor: middle; }
+      .text-b { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: bold; fill: #0d6efd; text-anchor: middle; }
+      .text-c { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: bold; fill: #6f42c1; text-anchor: middle; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .arrow { stroke: #343a40; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#343a40" />
+    </marker>
+  </defs>
+
+  <!-- Matrix A (Red Cellophane) -->
+  <text class="text-title" x="150" y="50">Matrix A</text>
+  <rect class="box-a" x="50" y="80" width="200" height="200" />
+  <text class="text-a" x="100" y="140">1</text>
+  <text class="text-a" x="200" y="140">2</text>
+  <text class="text-a" x="100" y="240">3</text>
+  <text class="text-a" x="200" y="240">4</text>
+  
+  <text class="text-title" x="290" y="180" font-size="40">+</text>
+
+  <!-- Matrix B (Blue Cellophane) -->
+  <text class="text-title" x="430" y="50">Matrix B</text>
+  <rect class="box-b" x="330" y="80" width="200" height="200" />
+  <text class="text-b" x="380" y="140">10</text>
+  <text class="text-b" x="480" y="140">20</text>
+  <text class="text-b" x="380" y="240">30</text>
+  <text class="text-b" x="480" y="240">40</text>
+
+  <text class="text-title" x="570" y="180" font-size="40">=</text>
+
+  <!-- Result Matrix C (Purple Cellophane overlay) -->
+  <text class="text-title" x="710" y="50">A + B = C</text>
+  <rect class="box-c" x="610" y="80" width="200" height="200" />
+  <text class="text-c" x="660" y="140">11</text>
+  <text class="text-c" x="760" y="140">22</text>
+  <text class="text-c" x="660" y="240">33</text>
+  <text class="text-c" x="760" y="240">44</text>
+
+  <!-- Highlighting Element-wise addition -->
+  <path d="M 120 130 C 250 80, 480 80, 640 130" stroke="#6f42c1" stroke-width="2" stroke-dasharray="5 5" fill="none" />
+  <text x="380" y="80" font-family="'Inter', sans-serif" font-size="14" fill="#6f42c1" font-weight="bold">1 + 10 = 11</text>
+
+</svg>

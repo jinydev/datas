@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 10; ry: 10; }
+      .class-box { fill: #e3f2fd; stroke: #90caf9; stroke-width: 2; rx: 10; ry: 10; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 16px; fill: #495057; }
+      .text-highlight { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #d63384; }
+      .arrow { stroke: #adb5bd; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .arrow-self { stroke: #d63384; stroke-width: 3; fill: none; marker-end: url(#arrowhead-self); stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+    <marker id="arrowhead-self" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d63384" />
+    </marker>
+  </defs>
+
+  <!-- Class Definition -->
+  <rect class="class-box" x="250" y="20" width="300" height="150" />
+  <text class="text-title" x="400" y="50">class Robot:</text>
+  <text class="text-code" x="270" y="80">def move(<tspan fill="#d63384" font-weight="bold">self</tspan>, dist):</text>
+  <text class="text-code" x="300" y="105"><tspan fill="#d63384" font-weight="bold">self</tspan>.power -= dist</text>
+
+  <!-- Instance A -->
+  <rect class="box" x="50" y="220" width="250" height="140" />
+  <text class="text-title" x="175" y="250">bot1 = Robot()</text>
+  <text class="text-code" x="70" y="280">bot1.power: 100</text>
+  <text class="text-code" x="70" y="320">bot1.move(10)</text>
+
+  <!-- Instance B -->
+  <rect class="box" x="500" y="220" width="250" height="140" />
+  <text class="text-title" x="625" y="250">bot2 = Robot()</text>
+  <text class="text-code" x="520" y="280">bot2.power: 100</text>
+  <text class="text-code" x="520" y="320">bot2.move(20)</text>
+
+  <!-- Connection Arrows -->
+  <path class="arrow" d="M 175 310 L 320 150" />
+  <path class="arrow" d="M 625 310 L 480 150" />
+
+  <!-- Self Resolution Arrows -->
+  <path class="arrow-self" d="M 330 110 Q 200 150 175 220" />
+  <text x="210" y="150" font-family="'Inter', sans-serif" font-size="14" fill="#d63384" font-weight="bold">self = bot1</text>
+
+  <path class="arrow-self" d="M 470 110 Q 600 150 625 220" />
+  <text x="590" y="150" font-family="'Inter', sans-serif" font-size="14" fill="#d63384" font-weight="bold">self = bot2</text>
+
+</svg>

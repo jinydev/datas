@@ -29,34 +29,63 @@ main:
             url: /python/01_basic/05_data_types_operators/06_bool/
       - title: "3.1.6 다양한 연산자"
         url: /python/01_basic/06_various_operators/
-      - title: "3.1.7 내장 함수와 메서드 활용"
-        url: /python/01_basic/07_built_in_functions/
-      - title: "3.1.8 내장 모듈 math 활용"
-        url: /python/01_basic/07_math_module/
+        subitems:
+          - title: "3.1.6.1 연산자의 개념 및 동작 원리"
+            url: /python/01_basic/06_various_operators/01_concept/
+          - title: "3.1.6.2 산술 연산자"
+            url: /python/01_basic/06_various_operators/02_arithmetic/
+          - title: "3.1.6.3 비교 연산자"
+            url: /python/01_basic/06_various_operators/03_comparison/
+          - title: "3.1.6.4 논리 연산자"
+            url: /python/01_basic/06_various_operators/04_logical/
+          - title: "3.1.6.5 연산자 우선순위와 컴퓨터의 수식 표기법"
+            url: /python/01_basic/06_various_operators/05_precedence/
+          - title: "3.1.6.6 Java vs Python 연산자 비교"
+            url: /python/01_basic/06_various_operators/06_java_vs_python/
+          - title: "3.1.6.7 시각화 실습 및 코딩 영단어"
+            url: /python/01_basic/06_various_operators/07_examples_and_vibe/
   - title: "3.2 제어 흐름"
     url: /python/02_control_flow/
     subitems:
       - title: "학습목표"
         url: /python/02_control_flow/
-      - title: "3.2.1 조건문 if"
+      - title: "3.2.1 조건문 기초: 흐름도와 if/else"
         url: /python/02_control_flow/01_if_statement/
-      - title: "3.2.2 match 구문"
-        url: /python/02_control_flow/02_match_statement/
-      - title: "3.2.3 반복문 for와 while"
-        url: /python/02_control_flow/03_for_while_loops/
-      - title: "3.2.4 예외 처리"
-        url: /python/02_control_flow/04_exceptions/
+      - title: "3.2.2 조건문 심화: 다중 조건과 중첩 if"
+        url: /python/02_control_flow/02_advanced_if/
+      - title: "3.2.3 match 구문"
+        url: /python/02_control_flow/03_match_statement/
+      - title: "3.2.4 반복문 for (데이터 순회)"
+        url: /python/02_control_flow/04_for_loop/
+      - title: "3.2.5 반복문 while과 제어문 형태"
+        url: /python/02_control_flow/05_while_loop/
+      - title: "3.2.6 이중 반복문과 별 찍기"
+        url: /python/02_control_flow/06_nested_loops/
+      - title: "3.2.7 예외 처리"
+        url: /python/02_control_flow/07_exceptions/
   - title: "3.3 함수"
     url: /python/03_functions/
     subitems:
       - title: "학습목표"
         url: /python/03_functions/
-      - title: "3.3.1 함수란 무엇인가?"
-        url: /python/03_functions/01_function_concepts/
-      - title: "3.3.2 함수 선언과 사용"
-        url: /python/03_functions/02_function_usage/
-      - title: "3.3.3 변수 스코프와 람다 함수"
-        url: /python/03_functions/03_lambda_functions/
+      - title: "3.3.1 함수의 어원과 기원"
+        url: /python/03_functions/01_function_origin/
+      - title: "3.3.2 함수 블랙박스와 매핑"
+        url: /python/03_functions/02_function_concepts/
+      - title: "3.3.3 선언 문법 (def)과 호출"
+        url: /python/03_functions/03_function_usage/
+      - title: "3.3.4 제어 흐름의 도약"
+        url: /python/03_functions/04_function_call_flow/
+      - title: "3.3.5 가변 매개변수 통로"
+        url: /python/03_functions/05_advanced_parameters/
+      - title: "3.3.6 변수의 유효 범위 (Scope)"
+        url: /python/03_functions/06_variable_scope/
+      - title: "3.3.7 람다(Lambda)와 재귀"
+        url: /python/03_functions/07_lambda_and_recursion/
+      - title: "3.3.8 내장 함수와 메서드"
+        url: /python/03_functions/08_built_in_functions/
+      - title: "3.3.9 Python 수학 모듈(math)"
+        url: /python/03_functions/09_math_module/
   - title: "3.4 자료 구조"
     url: /python/04_data_structures/
     subitems:
@@ -79,10 +108,18 @@ main:
         url: /python/05_oop/
       - title: "3.5.1 클래스와 인스턴스"
         url: /python/05_oop/01_class_instance/
-      - title: "3.5.2 상속과 다형성"
-        url: /python/05_oop/02_inheritance_polymorphism/
-      - title: "3.5.3 추상화와 인터페이스"
-        url: /python/05_oop/03_abstraction_interface/
+      - title: "3.5.2 파이썬의 self"
+        url: /python/05_oop/02_python_self/
+      - title: "3.5.3 상속"
+        url: /python/05_oop/03_inheritance/
+      - title: "3.5.4 다형성"
+        url: /python/05_oop/04_polymorphism/
+      - title: "3.5.5 추상화"
+        url: /python/05_oop/05_abstraction/
+      - title: "3.5.6 인터페이스"
+        url: /python/05_oop/06_interface/
+      - title: "3.5.7 의존성 주입"
+        url: /python/05_oop/07_dependency_injection/
   - title: "3.6 데이터 입출력"
     url: /python/06_data_viz_prep/
     subitems:

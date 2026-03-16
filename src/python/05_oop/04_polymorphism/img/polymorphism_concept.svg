@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 10; ry: 10; }
+      .box-highlight { fill: #fff3cd; stroke: #ffecb5; stroke-width: 2; rx: 10; ry: 10; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 14px; fill: #495057; }
+      .arrow { stroke: #adb5bd; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+  </defs>
+
+  <!-- Loop Block -->
+  <rect class="box-highlight" x="50" y="50" width="700" height="80" />
+  <text class="text-title" x="400" y="80" fill="#856404">Polymorphism (다형성)</text>
+  <text class="text-code" x="250" y="110" font-weight="bold" fill="#d32f2f">for animal in [ Dog(), Cat(), Duck() ]:</text>
+  <text class="text-code" x="290" y="140" font-weight="bold" fill="#d32f2f">animal.eat()</text>
+
+  <!-- Outputs -->
+  <path class="arrow" d="M 150 130 L 150 200" />
+  <rect class="box" x="50" y="200" width="200" height="150" />
+  <text class="text-title" x="150" y="230">Dog.eat()</text>
+  <text x="150" y="280" font-family="'Inter', sans-serif" font-size="40">🐶</text>
+  <text x="150" y="320" font-family="'Inter', sans-serif" font-size="16" fill="#198754" font-weight="bold" text-anchor="middle">"와구와구!"</text>
+
+  <path class="arrow" d="M 400 130 L 400 200" />
+  <rect class="box" x="300" y="200" width="200" height="150" />
+  <text class="text-title" x="400" y="230">Cat.eat()</text>
+  <text x="400" y="280" font-family="'Inter', sans-serif" font-size="40">🐱</text>
+  <text x="400" y="320" font-family="'Inter', sans-serif" font-size="16" fill="#198754" font-weight="bold" text-anchor="middle">"야금야금!"</text>
+
+  <path class="arrow" d="M 650 130 L 650 200" />
+  <rect class="box" x="550" y="200" width="200" height="150" />
+  <text class="text-title" x="650" y="230">Duck.eat()</text>
+  <text x="650" y="280" font-family="'Inter', sans-serif" font-size="40">🦆</text>
+  <text x="650" y="320" font-family="'Inter', sans-serif" font-size="16" fill="#198754" font-weight="bold" text-anchor="middle">"쪼아먹기!"</text>
+
+</svg>

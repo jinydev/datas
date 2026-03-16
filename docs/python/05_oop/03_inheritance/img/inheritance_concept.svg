@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 10; ry: 10; }
+      .box-parent { fill: #e3f2fd; stroke: #90caf9; stroke-width: 2; rx: 10; ry: 10; }
+      .box-child { fill: #e8f5e9; stroke: #a5d6a7; stroke-width: 2; rx: 10; ry: 10; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 14px; fill: #495057; }
+      .arrow { stroke: #adb5bd; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .arrow-inherit { stroke: #4caf50; stroke-width: 4; stroke-dasharray: 6 6; fill: none; marker-end: url(#arrowhead-inherit); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+    <marker id="arrowhead-inherit" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4caf50" />
+    </marker>
+  </defs>
+
+  <!-- Parent Class -->
+  <rect class="box-parent" x="150" y="30" width="200" height="150" />
+  <text class="text-title" x="250" y="60">Animal (부모)</text>
+  <text class="text-code" x="170" y="90">def __init__(self, name):</text>
+  <text class="text-code" x="190" y="110">self.name = name</text>
+  <text class="text-code" x="170" y="140">def eat(self):</text>
+  <text class="text-code" x="190" y="160">print("먹는다")</text>
+
+  <!-- Inheritance Arrow -->
+  <path class="arrow-inherit" d="M 250 180 L 250 250" />
+  <text x="260" y="220" font-family="'Inter', sans-serif" font-size="14" font-weight="bold" fill="#4caf50">상속 (Inherits)</text>
+
+  <!-- Child Class -->
+  <rect class="box-child" x="150" y="250" width="200" height="120" />
+  <text class="text-title" x="250" y="280">Dog (자식)</text>
+  <text class="text-code" x="170" y="310" fill="#adb5bd"># eat() 물려받음</text>
+  <text class="text-code" x="170" y="340" fill="#d32f2f" font-weight="bold">+ def bark(self):</text>
+  <text class="text-code" x="190" y="360">print("멍멍!")</text>
+
+  <!-- Overriding Example -->
+  <path class="arrow-inherit" d="M 350 100 Q 550 100 550 250" />
+  
+  <rect class="box" x="450" y="250" width="200" height="120" />
+  <text class="text-title" x="550" y="280">Duck (자식)</text>
+  <text class="text-code" x="470" y="310" fill="#d32f2f" font-weight="bold">* def eat(self):</text>
+  <text class="text-code" x="490" y="330" fill="#d32f2f" font-weight="bold">print("쪼아먹기!")</text>
+  <text x="550" y="360" font-family="'Inter', sans-serif" font-size="14" fill="#6c757d" font-style="italic" text-anchor="middle">(오버라이딩: 부모 덮어쓰기)</text>
+
+</svg>

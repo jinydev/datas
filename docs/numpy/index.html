@@ -354,7 +354,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-1"
                         aria-expanded="false">
-                        4.1 넘파이 기초와 벡터/행렬의 이해
+                        4.1 방정식 (대수학 기초)
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -365,16 +365,37 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/01_numpy_basics/01_numpy_intro/"
+                                <a href="/numpy/01_math_equations/00_what_is_equation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.1.1 과학용 컴퓨팅 패키지 numpy 개요
+                                    4.1.0 미지의 문자 x
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/01_numpy_basics/02_ndarray/"
+                                <a href="/numpy/01_math_equations/01_linear_equations_balance/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.1.2 다차원 배열 자료형 ndarray
+                                    4.1.1 일차방정식과 양팔 저울
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/01_math_equations/02_system_of_equations/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.1.2 연립방정식과 교차점
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/01_math_equations/03_quadratic_parabola/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.1.3 이차방정식과 포물선
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/01_math_equations/04_equation_to_matrix/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.1.4 방정식에서 행렬로
                                 </a>
                             </li>
                             
@@ -391,7 +412,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-2"
                         aria-expanded="false">
-                        4.2 다차원 배열 생성과 초기화
+                        4.2 행렬 (데이터 블록과 시공간 왜곡)
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -402,79 +423,51 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/02_array_creation/01_array_creation/"
+                                <a href="/numpy/02_math_matrices/00_intro_equations_limit/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.1 내장함수 array()로 ndarray 생성
+                                    4.2.0 행렬의 등장 (방정식의 한계)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/02_array_creation/02_arange/"
+                                <a href="/numpy/02_math_matrices/01_what_is_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.2 numpy의 내장함수 arange() 개요
+                                    4.2.1 행렬의 구조 (행과 열)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/02_array_creation/03_reshape/"
+                                <a href="/numpy/02_math_matrices/02_addition_subtraction/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.3 배열의 모양을 바꾸는 reshape()
+                                    4.2.2 픽셀 병합 (덧셈과 뺄셈)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/02_array_creation/04_linspace/"
+                                <a href="/numpy/02_math_matrices/03_scalar_multiplication/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.4 일정한 간격의 값으로 배열을 만드는 linspace()
+                                    4.2.3 스칼라 곱셈 (스케일 증폭)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/02_array_creation/05_arange_vs_linspace/"
+                                <a href="/numpy/02_math_matrices/04_matrix_multiplication/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.5 내장함수 arange()와 linspace() 비교
+                                    4.2.4 행렬 곱셈 (행과 열의 충돌)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/02_array_creation/06_zeros/"
+                                <a href="/numpy/02_math_matrices/05_linear_transformation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.6 원소가 모두 0인 배열을 생성하는 zeros()
+                                    4.2.5 선형 변환 (시공간 왜곡)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/02_array_creation/07_ones/"
+                                <a href="/numpy/02_math_matrices/06_intro_to_numpy_ai/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.2.7 원소가 모두 1인 배열을 생성하는 ones()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/02_array_creation/08_eye/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.2.8 대각선 원소가 모두 1인 2차원 배열을 만드는 eye()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/02_array_creation/09_full/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.2.9 원소가 모두 특정 값인 배열을 만드는 full()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/02_array_creation/10_empty/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.2.10 초기화되지 않은 배열을 생성하는 empty()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/02_array_creation/11_like_functions/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.2.11 내장함수 zeros_like()와 ones_like(), full_like()
+                                    4.2.6 AI, GPU, 그리고 넘파이
                                 </a>
                             </li>
                             
@@ -491,7 +484,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-3"
                         aria-expanded="false">
-                        4.3 배열 연산과 브로드캐스팅(Broadcasting)
+                        4.3 넘파이 기초 (배열과 차원)
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -502,51 +495,16 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/03_array_operations/01_scalar_operations/"
+                                <a href="/numpy/03_numpy_basics/01_numpy_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.3.1 배열과 스칼라와의 연산
+                                    4.3.1 넘파이 개요
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/03_array_operations/02_array_operations/"
+                                <a href="/numpy/03_numpy_basics/02_ndarray/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.3.2 배열과 배열의 연산
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/03_array_operations/03_ufunc/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.3.3 배열 함수와 범용 함수
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/03_array_operations/04_broadcasting_intro/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.3.4 브로드캐스팅 개요
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/03_array_operations/05_scalar_broadcasting/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.3.5 스칼라 또는 단일 값과 배열의 연산
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/03_array_operations/06_d_broadcasting/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.3.6 2차원 배열의 브로드캐스팅
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/03_array_operations/07_newaxis/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.3.7 상수 np.newaxis 활용해 두 배열의 브로드캐스팅
+                                    4.3.2 다차원 배열 (ndarray)
                                 </a>
                             </li>
                             
@@ -563,7 +521,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-4"
                         aria-expanded="false">
-                        4.4 인덱싱과 슬라이싱 기법
+                        4.4 배열 생성과 초기화
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -574,44 +532,79 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/04_indexing_slicing/01_d_slicing/"
+                                <a href="/numpy/04_array_creation/01_array_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.4.1 1차원 배열의 첨자와 슬라이싱
+                                    4.4.1 내장함수 array()
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/04_indexing_slicing/02_d_slicing/"
+                                <a href="/numpy/04_array_creation/02_arange/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.4.2 2차원 배열의 첨자와 슬라이싱
+                                    4.4.2 연속된 수 배열 arange()
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/04_indexing_slicing/03_d_slicing/"
+                                <a href="/numpy/04_array_creation/03_reshape/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.4.3 3차원 배열의 첨자와 슬라이싱
+                                    4.4.3 형태 변환 reshape()
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/04_indexing_slicing/04_d_indexing/"
+                                <a href="/numpy/04_array_creation/04_linspace/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.4.4 1차원 배열의 색인
+                                    4.4.4 등분 배열 linspace()
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/04_indexing_slicing/05_d_indexing/"
+                                <a href="/numpy/04_array_creation/05_arange_vs_linspace/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.4.5 2차원 배열의 색인
+                                    4.4.5 arange() vs linspace()
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/04_indexing_slicing/06_advanced_indexing/"
+                                <a href="/numpy/04_array_creation/06_zeros/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.4.6 다양한 슬라이싱과 배열 색인
+                                    4.4.6 영행렬 zeros()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/04_array_creation/07_ones/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.4.7 일행렬 ones()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/04_array_creation/08_eye/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.4.8 단위행렬 eye()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/04_array_creation/09_full/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.4.9 특정 값 배열 full()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/04_array_creation/10_empty/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.4.10 초기화 없는 배열 empty()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/04_array_creation/11_like_functions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.4.11 _like 생성 함수군
                                 </a>
                             </li>
                             
@@ -628,7 +621,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-5"
                         aria-expanded="false">
-                        4.5 배열 형태 변환과 메모리 시점
+                        4.5 배열 연산과 브로드캐스팅
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -639,16 +632,51 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/05_shape_memory/01_reshape_advanced/"
+                                <a href="/numpy/05_array_operations/01_scalar_operations/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.5.1 배열 형태 수정
+                                    4.5.1 스칼라 연산
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/05_shape_memory/02_copy_view/"
+                                <a href="/numpy/05_array_operations/02_array_operations/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.5.2 복사(copy)와 보기(뷰, view)
+                                    4.5.2 다차원 배열 연산
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/05_array_operations/03_ufunc/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.5.3 범용 함수 (ufunc)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/05_array_operations/04_broadcasting_intro/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.5.4 브로드캐스팅 원리
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/05_array_operations/05_scalar_broadcasting/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.5.5 스칼라 브로드캐스팅
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/05_array_operations/06_d_broadcasting/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.5.6 다차원 브로드캐스팅
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/05_array_operations/07_newaxis/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.5.7 np.newaxis 축 추가
                                 </a>
                             </li>
                             
@@ -665,7 +693,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-6"
                         aria-expanded="false">
-                        4.6 배열 결합과 분할
+                        4.6 인덱싱과 슬라이싱
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -676,100 +704,44 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/06_concat_split/01_array_concat_intro/"
+                                <a href="/numpy/06_indexing_slicing/01_d_slicing/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.6.1 배열 결합 개요
+                                    4.6.1 1차원 슬라이싱
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/06_concat_split/02_vstack/"
+                                <a href="/numpy/06_indexing_slicing/02_d_slicing/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.6.2 numpy.vstack()
+                                    4.6.2 2차원 슬라이싱
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/06_concat_split/03_hstack/"
+                                <a href="/numpy/06_indexing_slicing/03_d_slicing/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.6.3 numpy.hstack()
+                                    4.6.3 3차원 슬라이싱
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/06_concat_split/04_column_row_stack/"
+                                <a href="/numpy/06_indexing_slicing/04_d_indexing/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.6.4 배열 결합 연산 column_stack()과 row_stack()
+                                    4.6.4 1차원 인덱싱
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/06_concat_split/05_concatenate_stack/"
+                                <a href="/numpy/06_indexing_slicing/05_d_indexing/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.6.5 배열 결합 연산 concatenate()와 stack()
+                                    4.6.5 2차원 인덱싱
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/06_concat_split/06_column_stack_vs_hstack/"
+                                <a href="/numpy/06_indexing_slicing/06_advanced_indexing/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.6.6 column_stack()과 hstack()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/07_row_stack_vs_vstack/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.7 row_stack()과 vstack()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/08_npc_column_stack/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.8 np.c_[]와 np.column_stack()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/09_npr/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.9 np.r_[]
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/10_d_concat_methods/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.10 1차원 배열, 벡터의 다양한 결합 방법
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/11_d_concat_summary/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.11 1차원 배열의 다양한 결합 방법 정리
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/12_split/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.12 유용한 함수 split()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/13_hsplit_vsplit/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.13 분할 함수 hsplit()과 vsplit()
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/numpy/06_concat_split/14_array_split/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    4.6.14 분할 함수 array_split()
+                                    4.6.6 팬시/불리언 인덱싱
                                 </a>
                             </li>
                             
@@ -786,7 +758,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-7"
                         aria-expanded="false">
-                        4.7 난수 생성 및 연습문제
+                        4.7 형태 변환과 메모리 구조
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -797,16 +769,174 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/07_random_exercises/01_random/"
+                                <a href="/numpy/07_shape_memory/01_reshape_advanced/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.7.1 난수 생성
+                                    4.7.1 평탄화 및 전치(T)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/07_random_exercises/02_exercises/"
+                                <a href="/numpy/07_shape_memory/02_copy_view/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.7.2 넘파이 종합 연습문제
+                                    4.7.2 얕은 복사와 뷰(View)
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8"
+                        aria-expanded="false">
+                        4.8 배열 조립과 분할
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-8">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/01_array_concat_intro/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.1 배열 결합 개요
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/02_vstack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.2 수직 결합 vstack()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/03_hstack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.3 수평 결합 hstack()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/04_column_row_stack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.4 column_stack() / row_stack()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/05_concatenate_stack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.5 concatenate() / stack()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/06_column_stack_vs_hstack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.6 column_stack() vs hstack()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/07_row_stack_vs_vstack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.7 row_stack() vs vstack()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/08_npc_column_stack/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.8 np.c_ (행렬 열병합)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/09_npr/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.9 np.r_ (행렬 행병합)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/10_d_concat_methods/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.10 1D 벡터 결합 방법론
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/11_d_concat_summary/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.11 1D 배열 결합 총정리
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/12_split/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.12 분할 함수 split()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/13_hsplit_vsplit/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.13 hsplit() / vsplit()
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/08_concat_split/14_array_split/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.8.14 균등 분할 array_split()
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-9"
+                        aria-expanded="false">
+                        4.9 난수 생성기 및 연습문제
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-9">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/numpy/09_random_exercises/01_random/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.9.1 난수(Random) 생성기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/09_random_exercises/02_exercises/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.9.2 종합 연습문제
                                 </a>
                             </li>
                             
@@ -843,76 +973,84 @@
             <h1 id="넘파이-numpy-핵심-가이드">넘파이 (Numpy) 핵심 가이드</h1>
 
 <p>이 섹션에서는 데이터 과학과 수치 계산의 핵심 패키지인 <strong>Numpy(넘파이)</strong>에 대해 다룹니다.
-행렬의 수학적 원리부터 다차원 배열(ndarray) 객체의 생성, 슬라이싱, 형태 변경, 브로드캐스팅, 그리고 다양한 수학 연산 및 배열 결합/분할 함수까지 깊이 있는 내용을 7개의 논리적 섹션으로 그룹화하여 학습합니다.</p>
+데이터 구조를 극적으로 단순화시키는 ‘방정식과 행렬’의 수학적 원리부터 시작하여, 다차원 배열(ndarray) 객체의 생성, 슬라이싱, 형태 변경, 브로드캐스팅, 그리고 다양한 수학 연산 및 배열 결합/분할 함수까지 깊이 있는 내용을 9개의 논리적 섹션으로 그룹화하여 학습합니다.</p>
 
 <hr />
 
-<h2 id="01-넘파이-기초와-벡터행렬의-이해">01. 넘파이 기초와 벡터/행렬의 이해</h2>
+<h2 id="01-사전학습-1-산술에서-대수학으로-방정식">01. [사전학습 1] 산술에서 대수학으로 (방정식)</h2>
+<p>AI 딥러닝과 코딩을 관통하는 거대한 텐서 연산은 사실 구시대의 낡은 “방정식 $x, y, z$”의 한계에서 비롯되었습니다. 방정식을 통해 변수가 탄생하고, 기하 공간에서 해를 탐색하는 대수학의 본질적 기원을 배웁니다.</p>
 <ul>
-  <li><a href="/numpy/01_numpy_basics/01_numpy_intro/">01. 과학용 컴퓨팅 패키지 numpy 개요</a><br />
-넘파이(numpy)는 파이썬에서 고성능 다차원 배열 및 행렬 연산을 지원하는 핵심 라이브러리입니다. 행렬의 수학적 의미, 점과 방향을 아우르는 벡터의 기하학적 원리, 그리고 실생활에서의 행렬 활용 비유를 통해 선형대수학적 배경지식을 익힙니다.</li>
-  <li><a href="/numpy/01_numpy_basics/02_ndarray/">02. 다차원 배열 자료형 ndarray</a><br />
-numpy의 대표적인 자료형인 ndarray의 구조와 <code class="language-plaintext highlighter-rouge">shape</code>, <code class="language-plaintext highlighter-rouge">ndim</code>, <code class="language-plaintext highlighter-rouge">dtype</code> 등의 주요 속성을 다룹니다. 또한 리스트와의 차이점 및 고차원 텐서(Tensor)의 기초를 학습합니다.</li>
+  <li><a href="/numpy/01_math_equations/00_what_is_equation/">00. 산술에서 대수학으로: 미지의 문자 x</a></li>
+  <li><a href="/numpy/01_math_equations/01_linear_equations_balance/">01. 등식의 성질과 양팔 저울 (일차방정식)</a></li>
+  <li><a href="/numpy/01_math_equations/02_system_of_equations/">02. 교차점 스캐너 (연립방정식)</a></li>
+  <li><a href="/numpy/01_math_equations/03_quadratic_parabola/">03. 거대한 무기, 포물선 곡선 (이차방정식)</a></li>
+  <li><a href="/numpy/01_math_equations/04_equation_to_matrix/">04. 방정식이 폭발할 때, 행렬이 강림하다</a></li>
 </ul>
 
-<h2 id="02-다차원-배열-생성과-초기화">02. 다차원 배열 생성과 초기화</h2>
+<h2 id="02-사전학습-2-데이터-블록과-시공간-왜곡-행렬">02. [사전학습 2] 데이터 블록과 시공간 왜곡 (행렬)</h2>
+<p>수만 개의 방정식 껍데기를 버리고, 오직 엑기스 숫자(계수)만 추출하여 아파트에 늘어놓는 마법의 타일 덩어리, ‘행렬’의 탄생을 리뷰합니다.</p>
 <ul>
-  <li><a href="/numpy/02_array_creation/03_array_creation/">03. 내장함수 array()로 ndarray 생성</a><br />
-기본 파이썬의 리스트나 튜플을 인자로 받아 ndarray 객체로 변환하는 기본적인 배열 생성 방법을 학습합니다.</li>
-  <li><a href="/numpy/02_array_creation/04_arange/">04. numpy의 내장함수 arange() 개요</a><br />
-정수뿐만 아니라 실수 간격의 범위 값 생성도 가능한 빠르고 강력한 <code class="language-plaintext highlighter-rouge">arange()</code> 함수에 대해 알아봅니다.</li>
-  <li><a href="/numpy/02_array_creation/05_reshape/">05. 배열의 모양을 바꾸는 reshape()</a><br />
-배열의 원소 개수는 그대로 둔 채 행과 열 구조를 변경하는 방법 및 <code class="language-plaintext highlighter-rouge">reshape(-1, ..)</code> 등 형태 추론의 원리를 배웁니다.</li>
-  <li><a href="/numpy/02_array_creation/06_linspace/">06. 일정 간격의 값으로 배열 생성 linspace()</a><br />
-구간 양끝을 포함하면서, 지정된 개수(num)만큼 균등하게 분할된 데이터를 얻기 위해 빈번히 쓰이는 <code class="language-plaintext highlighter-rouge">linspace()</code>를 학습합니다.</li>
-  <li><a href="/numpy/02_array_creation/07_arange_vs_linspace/">07. 내장함수 arange()와 linspace() 비교</a><br />
-<code class="language-plaintext highlighter-rouge">stop</code> 조건을 미포함하며 <code class="language-plaintext highlighter-rouge">step</code>을 지정하는 <code class="language-plaintext highlighter-rouge">arange</code>와, <code class="language-plaintext highlighter-rouge">stop</code>을 기본 포함하며 요소의 수(<code class="language-plaintext highlighter-rouge">num</code>)를 지정하는 <code class="language-plaintext highlighter-rouge">linspace</code>를 대조해 봅니다.</li>
-  <li><a href="/numpy/02_array_creation/08_zeros/">08 ~ 13. zeros(), ones(), eye(), full(), empty() 등 특수 배열 생성</a>
-특정 초깃값을 바탕으로 안전하고 신속하게 크기만 지정된 다차원 데이터 포맷을 찍어내는 <code class="language-plaintext highlighter-rouge">zeros</code>, <code class="language-plaintext highlighter-rouge">ones</code>, 대각 단위행렬 <code class="language-plaintext highlighter-rouge">eye</code>, 임의 스칼라 할당 <code class="language-plaintext highlighter-rouge">full</code>, 쓰레기값 생성기 <code class="language-plaintext highlighter-rouge">empty</code>, 기존 형태 모방 <code class="language-plaintext highlighter-rouge">_like</code> 시리즈의 용법을 아우릅니다.<br />
-<em>(자세한 단원 목차는 사이드바의 하위 메뉴를 클릭해 확인하세요)</em></li>
+  <li><a href="/numpy/02_math_matrices/00_intro_equations_limit/">00. 왜 갑자기 행렬인가? (방정식의 한계)</a></li>
+  <li><a href="/numpy/02_math_matrices/01_what_is_matrix/">01. 데이터베이스 격자 타일링: 행렬의 구조</a></li>
+  <li><a href="/numpy/02_math_matrices/04_matrix_multiplication/">02 ~ 04. 행렬의 덧셈, 실수배, 그리고 내적 곱셈의 미스터리</a></li>
+  <li><a href="/numpy/02_math_matrices/05_linear_transformation/">05. 시공간을 비틀어라! 선형 변환 마법진</a></li>
+  <li><a href="/numpy/02_math_matrices/06_intro_to_numpy_ai/">06. 마지막 승부: GPU 텐서 폭격과 파이썬 Numpy 로의 접속</a></li>
 </ul>
 
-<h2 id="03-배열-연산과-브로드캐스팅broadcasting">03. 배열 연산과 브로드캐스팅(Broadcasting)</h2>
+<h2 id="03-넘파이-기초와-벡터행렬의-이해">03. 넘파이 기초와 벡터/행렬의 이해</h2>
+<ul>
+  <li><a href="/numpy/03_numpy_basics/01_numpy_intro/">01. 과학용 컴퓨팅 패키지 numpy 개요</a><br />
+본격적으로 넘파이(numpy) 파이썬 모듈 사용을 시작합니다. 위에서 배운 행렬을 어떻게 파이썬으로 찍어내는지 학습합니다.</li>
+  <li><a href="/numpy/03_numpy_basics/02_ndarray/">02. 다차원 배열 자료형 ndarray</a><br />
+numpy의 대표적인 자료형인 ndarray의 구조와 <code class="language-plaintext highlighter-rouge">shape</code>, <code class="language-plaintext highlighter-rouge">ndim</code>, <code class="language-plaintext highlighter-rouge">dtype</code> 등의 주요 속성을 다룹니다.</li>
+</ul>
+
+<h2 id="04-다차원-배열-생성과-초기화">04. 다차원 배열 생성과 초기화</h2>
+<ul>
+  <li><a href="/numpy/04_array_creation/01_array_creation/">03. 내장함수 array()로 ndarray 생성</a><br />
+기본 파이썬 리스트를 인자로 받아 행렬 객체로 변환합니다.</li>
+  <li><a href="/numpy/04_array_creation/02_arange/">04. numpy의 내장함수 arange() 개요</a></li>
+  <li><a href="/numpy/04_array_creation/03_reshape/">05. 배열의 모양을 바꾸는 reshape()</a></li>
+  <li><a href="/numpy/04_array_creation/04_linspace/">06. 일정 간격 분할 배열 생성 linspace()</a></li>
+  <li><a href="/numpy/04_array_creation/06_zeros/">07 ~ 13. zeros(), ones(), eye(), full(), empty() 등 특수 배열 생성</a>
+특정 초깃값을 바탕으로 안전하고 신속하게 크기만 지정된 다차원 데이터 포맷을 찍어내는 <code class="language-plaintext highlighter-rouge">zeros</code>, <code class="language-plaintext highlighter-rouge">ones</code>, 대각 행렬 <code class="language-plaintext highlighter-rouge">eye</code>, 임의 할당 <code class="language-plaintext highlighter-rouge">full</code> 등의 용법을 아우릅니다.</li>
+</ul>
+
+<h2 id="05-배열-연산과-브로드캐스팅broadcasting">05. 배열 연산과 브로드캐스팅(Broadcasting)</h2>
 <p>Numpy 배열간의 사칙연산과 마법 같은 확대 기능인 브로드캐스팅, 그리고 다양한 통계 요약 정보를 한 방에 처리하는 범용 함수를 배웁니다.</p>
 <ul>
-  <li><a href="/numpy/03_array_operations/14_scalar_operations/">14. 배열과 스칼라와의 연산</a></li>
-  <li><a href="/numpy/03_array_operations/15_array_operations/">15. 배열과 배열의 연산</a></li>
-  <li><a href="/numpy/03_array_operations/16_ufunc/">16. 배열 함수와 범용 함수 (ufunc)</a><br />
-<code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">argmax</code>, <code class="language-plaintext highlighter-rouge">astype</code>, <code class="language-plaintext highlighter-rouge">sort</code>, 논리 필터 함수 등 필수적인 넘파이 내장 메서드 19선의 원리와 결측치(nan, None) 처리 전략을 심도 있게 포괄합니다.</li>
-  <li><a href="/numpy/03_array_operations/22_broadcasting_intro/">22. 브로드캐스팅 개요</a></li>
-  <li><a href="/numpy/03_array_operations/23_scalar_broadcasting/">23. 스칼라 또는 단일 값과 배열의 연산</a></li>
-  <li><a href="/numpy/03_array_operations/24_2d_broadcasting/">24. 2차원 배열의 브로드캐스팅</a></li>
-  <li><a href="/numpy/03_array_operations/25_newaxis/">25. 상수 np.newaxis 활용해 두 배열의 브로드캐스팅</a></li>
+  <li><a href="/numpy/05_array_operations/01_scalar_operations/">14 ~ 15. 배열과 스칼라, 배열과 배열의 연산</a></li>
+  <li><a href="/numpy/05_array_operations/03_ufunc/">16. 배열 함수와 범용 함수 (ufunc)</a><br />
+<code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">argmax</code>, <code class="language-plaintext highlighter-rouge">astype</code>, <code class="language-plaintext highlighter-rouge">sort</code>, 논리 필터 함수 등 필수적인 넘파이 내장 메서드 19선의 원리를 포괄합니다.</li>
+  <li><a href="/numpy/05_array_operations/04_broadcasting_intro/">22 ~ 25. 브로드캐스팅 코어 및 np.newaxis 축 활용</a></li>
 </ul>
 
-<h2 id="04-인덱싱과-슬라이싱-기법">04. 인덱싱과 슬라이싱 기법</h2>
-<p>원하는 데이터만을 가장 빠르고 세련되게 추출하는 다양한 데이터 슬라이싱 방법을 배웁니다. 조건 검색과 고급 색인이 포함됩니다.</p>
+<h2 id="06-인덱싱과-슬라이싱-기법">06. 인덱싱과 슬라이싱 기법</h2>
+<p>원하는 데이터만을 가장 빠르고 세련되게 추출하는 방법입니다. 조건 검색과 고급 색인이 포함됩니다.</p>
 <ul>
-  <li><a href="/numpy/04_indexing_slicing/17_1d_slicing/">17 ~ 19. 다차원 배열의 첨자와 슬라이싱 (<code class="language-plaintext highlighter-rouge">1차원</code> / <code class="language-plaintext highlighter-rouge">2차원</code> / <code class="language-plaintext highlighter-rouge">3차원</code>)</a></li>
-  <li><a href="/numpy/04_indexing_slicing/26_1d_indexing/">26 ~ 27. 배열 고급 색인 기술 (<code class="language-plaintext highlighter-rouge">1차원</code> / <code class="language-plaintext highlighter-rouge">2차원</code>)</a></li>
-  <li><a href="/numpy/04_indexing_slicing/28_advanced_indexing/">28. 다양한 슬라이싱과 배열 색인 (<code class="language-plaintext highlighter-rouge">np.where</code> 등)</a></li>
+  <li><a href="/numpy/06_indexing_slicing/01_d_slicing/">17 ~ 19. 다차원 배열 첨자 및 슬라이싱</a></li>
+  <li><a href="/numpy/06_indexing_slicing/06_advanced_indexing/">26 ~ 28. 배열 고급 색인 기술 및 np.where</a></li>
 </ul>
 
-<h2 id="05-배열-형태-변환과-메모리-시점">05. 배열 형태 변환과 메모리 시점</h2>
+<h2 id="07-배열-형태-변환과-메모리-시점">07. 배열 형태 변환과 메모리 시점</h2>
 <p>배열의 생김새를 뒤집거나, 원본 배치를 전혀 변형하지 않은 채 새로운 <code class="language-plaintext highlighter-rouge">View</code>만을 생성하여 다차원을 훑는 메모리 지식을 배웁니다.</p>
 <ul>
-  <li><a href="/numpy/05_shape_memory/20_reshape_advanced/">20. 배열 형태 수정 (<code class="language-plaintext highlighter-rouge">transpose()</code>와 차원 축소)</a></li>
-  <li><a href="/numpy/05_shape_memory/21_copy_view/">21. 데이터 복사본(copy)과 보기(뷰, view) 참조 구조</a></li>
+  <li><a href="/numpy/07_shape_memory/01_reshape_advanced/">20. 배열 형태 수정 (<code class="language-plaintext highlighter-rouge">transpose()</code>와 차원 축소)</a></li>
+  <li><a href="/numpy/07_shape_memory/02_copy_view/">21. 데이터 복사본(copy)과 보기(뷰, view) 참조 구조</a></li>
 </ul>
 
-<h2 id="06-배열-결합과-분할">06. 배열 결합과 분할</h2>
-<p>작은 모듈 단위의 데이터 군락들을 가로/세로로 덧붙여 강력한 통합 데이터셋을 구축하거나, 특정 축(axis) 단위로 부수는 방법입니다.</p>
+<h2 id="08-배열-결합과-분할">08. 배열 결합과 분할</h2>
+<p>작은 모듈 단위의 데이터 군락들을 가로/세로로 덧붙여 강력한 통합 데이터셋을 구축하거나, 모듈 단위로 부수는 방법입니다.</p>
 <ul>
-  <li><a href="/numpy/06_concat_split/29_array_concat_intro/">29 ~ 37. 배열 결합 개요 및 각종 Stack/Concat 계열 연산</a></li>
-  <li><a href="/numpy/06_concat_split/38_1d_concat_methods/">38 ~ 39. 1차원 배열/벡터의 다양한 결합 방법 종합 리뷰</a></li>
-  <li><a href="/numpy/06_concat_split/40_split/">40 ~ 42. 유용한 분할 계열 함수들 (<code class="language-plaintext highlighter-rouge">split</code>, <code class="language-plaintext highlighter-rouge">vsplit/hsplit</code>, <code class="language-plaintext highlighter-rouge">array_split</code>)</a></li>
+  <li><a href="/numpy/08_concat_split/01_array_concat_intro/">29 ~ 39. 다양한 배열 결합 개요 (Stack, Concat 등)</a></li>
+  <li><a href="/numpy/08_concat_split/12_split/">40 ~ 42. 유용한 분할 계열 함수 (<code class="language-plaintext highlighter-rouge">split</code>, <code class="language-plaintext highlighter-rouge">vsplit</code>, <code class="language-plaintext highlighter-rouge">hsplit</code>)</a></li>
 </ul>
 
-<h2 id="07-난수-생성-및-연습문제">07. 난수 생성 및 연습문제</h2>
-<p>데이터 과학에서 시뮬레이션 및 데이터 테스트용으로 필수로 사용되는 임의 규칙 샘플링 기법입니다.</p>
+<h2 id="09-난수-생성-및-연습문제">09. 난수 생성 및 연습문제</h2>
+<p>데이터 과학에서 확률, 시뮬레이션용 데이터셋 생성을 위한 필살기입니다.</p>
 <ul>
-  <li><a href="/numpy/07_random_exercises/43_random/">43. 난수 생성 모듈 (<code class="language-plaintext highlighter-rouge">np.random</code>)</a></li>
-  <li><a href="/numpy/07_random_exercises/44_exercises/">44. 넘파이 종합 실전 연습문제</a></li>
+  <li><a href="/numpy/09_random_exercises/01_random/">43. 난수 생성 모듈 (<code class="language-plaintext highlighter-rouge">np.random</code>)</a></li>
+  <li><a href="/numpy/09_random_exercises/02_exercises/">44. 넘파이 종합 실전 연습문제</a></li>
 </ul>
 
 

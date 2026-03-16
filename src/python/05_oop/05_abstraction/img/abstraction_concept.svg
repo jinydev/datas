@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 10; ry: 10; }
+      .box-abstract { fill: #fff3cd; stroke: #ffecb5; stroke-width: 4; stroke-dasharray: 8 8; rx: 10; ry: 10; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 14px; fill: #495057; }
+      .arrow { stroke: #adb5bd; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+  </defs>
+
+  <!-- Abstract Class Blueprint -->
+  <rect class="box-abstract" x="250" y="30" width="300" height="150" />
+  <text class="text-title" x="400" y="60" fill="#856404">추상 설계도 (Shape)</text>
+  <text class="text-code" x="320" y="90" font-weight="bold" fill="#d32f2f">@abstractmethod</text>
+  <text class="text-code" x="320" y="110">def get_area(self):</text>
+  <text class="text-code" x="340" y="130" fill="#6c757d">pass <tspan fill="#d32f2f">(몸통 없음!)</tspan></text>
+  <text class="text-code" x="320" y="160" font-weight="bold" fill="#000">"반드시 면적을 구하라!"</text>
+
+  <!-- Implementations -->
+  <path class="arrow" d="M 330 180 L 200 250" />
+  <rect class="box" x="50" y="250" width="250" height="120" />
+  <text class="text-title" x="175" y="280">원형 노동자 (Circle)</text>
+  <text class="text-code" x="70" y="320">def get_area(self):</text>
+  <text class="text-code" x="90" y="340" fill="#198754" font-weight="bold">return π * r * r</text>
+
+  <path class="arrow" d="M 470 180 L 600 250" />
+  <rect class="box" x="500" y="250" width="250" height="120" />
+  <text class="text-title" x="625" y="280">사각형 노동자 (Square)</text>
+  <text class="text-code" x="520" y="320">def get_area(self):</text>
+  <text class="text-code" x="540" y="340" fill="#198754" font-weight="bold">return w * h</text>
+
+</svg>

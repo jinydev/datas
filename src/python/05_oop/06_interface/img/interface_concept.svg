@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .plug { fill: #e9ecef; stroke: #adb5bd; stroke-width: 2; rx: 5; ry: 5; }
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 10; ry: 10; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 14px; fill: #d32f2f; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Contract Context -->
+  <text class="text-title" x="400" y="40" font-size="24" fill="#0d6efd">인터페이스 (Interface) = 220V 표준 플러그</text>
+
+  <!-- The Socket / Interface -->
+  <rect class="box" x="250" y="80" width="300" height="100" />
+  <text class="text-title" x="400" y="110">시스템 소켓 (Wall Outlet)</text>
+  <circle cx="360" cy="140" r="15" fill="#343a40" />
+  <circle cx="440" cy="140" r="15" fill="#343a40" />
+  <text class="text-code" x="270" y="160" text-anchor="start">"220V 플러그만 꽂으세요"</text>
+  
+  <line x1="100" y1="200" x2="700" y2="200" stroke="#dee2e6" stroke-width="4" stroke-dasharray="10 10"/>
+
+  <!-- Device 1 -->
+  <rect class="box" x="100" y="240" width="200" height="120" />
+  <text class="text-title" x="200" y="270">세탁기 인스턴스</text>
+  <rect class="plug" x="180" y="300" width="10" height="30" />
+  <rect class="plug" x="210" y="300" width="10" height="30" />
+  <text class="text-title" x="200" y="340" fill="#198754" font-size="14">220V 장착 완료</text>
+
+  <!-- Device 2 -->
+  <rect class="box" x="500" y="240" width="200" height="120" />
+  <text class="text-title" x="600" y="270">노트북 충전기</text>
+  <rect class="plug" x="580" y="300" width="10" height="30" />
+  <rect class="plug" x="610" y="300" width="10" height="30" />
+  <text class="text-title" x="600" y="340" fill="#198754" font-size="14">220V 장착 완료</text>
+
+  <path d="M 200 240 Q 200 140 330 140" stroke="#0d6efd" stroke-width="3" fill="none" stroke-dasharray="8 8" />
+  <path d="M 600 240 Q 600 140 470 140" stroke="#0d6efd" stroke-width="3" fill="none" stroke-dasharray="8 8" />
+</svg>

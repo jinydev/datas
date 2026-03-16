@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>3.1.5.1 수의 체계와 기수법 (Numbers)</title>
+  <meta name="title" content="3.1.5.1 수의 체계와 기수법 (Numbers)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="3.1.5.1 수의 체계와 기수법 (Numbers)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://datas.jiny.dev/python/01_basic/05_data_types_operators/01_numbers/">
+
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="3.1.5.1 수의 체계와 기수법 (Numbers)"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="3.1.5.1 수의 체계와 기수법 (Numbers)" />
+<meta name="author" content="Hojin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
+<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
+<link rel="canonical" href="https://datas.jiny.dev/python/01_basic/05_data_types_operators/01_numbers/" />
+<meta property="og:url" content="https://datas.jiny.dev/python/01_basic/05_data_types_operators/01_numbers/" />
+<meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="3.1.5.1 수의 체계와 기수법 (Numbers)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"3.1.5.1 수의 체계와 기수법 (Numbers)","url":"https://datas.jiny.dev/python/01_basic/05_data_types_operators/01_numbers/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/intro/">소개하기</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/setup/">학습환경</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 active"
+                href="/python/">파이썬 기초</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/numpy/">넘파이</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/mathplotlib/">시각화</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/pandas/">판다스</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/datas" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+    <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+        <li class="bd-links-group py-2">
+            <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                강의 목차
+            </strong>
+            <ul class="list-unstyled fw-normal pb-2 small">
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1"
+                        aria-expanded="false">
+                        3.1 파이썬 기초
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-1">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/01_basic/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/01_basic/01_python_intro/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.1.1 데이터 분석 언어와 파이썬의 미래
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/01_basic/02_comments_constants/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.1.2 주석과 상수
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/01_basic/03_variables_assignment/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.1.3 변수와 대입
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/01_basic/04_variable_naming/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.1.4 변수 이름 조건
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/01_basic/05_data_types_operators/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.1.5 자료형(Data Types)의 이해
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/01_basic/06_various_operators/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.1.6 다양한 연산자
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-2"
+                        aria-expanded="false">
+                        3.2 제어 흐름
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-2">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/02_control_flow/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/01_if_statement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.1 조건문 기초: 흐름도와 if/else
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/02_advanced_if/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.2 조건문 심화: 다중 조건과 중첩 if
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/03_match_statement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.3 match 구문
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/04_for_loop/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.4 반복문 for (데이터 순회)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/05_while_loop/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.5 반복문 while과 제어문 형태
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/06_nested_loops/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.6 이중 반복문과 별 찍기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/02_control_flow/07_exceptions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.2.7 예외 처리
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-3"
+                        aria-expanded="false">
+                        3.3 함수
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-3">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/03_functions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/01_function_origin/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.1 함수의 어원과 기원
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/02_function_concepts/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.2 함수 블랙박스와 매핑
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/03_function_usage/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.3 선언 문법 (def)과 호출
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/04_function_call_flow/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.4 제어 흐름의 도약
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/05_advanced_parameters/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.5 가변 매개변수 통로
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/06_variable_scope/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.6 변수의 유효 범위 (Scope)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/07_lambda_and_recursion/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.7 람다(Lambda)와 재귀
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/08_built_in_functions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.8 내장 함수와 메서드
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/09_math_module/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.9 Python 수학 모듈(math)
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4"
+                        aria-expanded="false">
+                        3.4 자료 구조
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-4">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/04_data_structures/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/04_data_structures/01_list/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.4.1 리스트
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/04_data_structures/02_dictionary/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.4.2 사전
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/04_data_structures/03_tuple/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.4.3 튜플
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/04_data_structures/04_set/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.4.4 집합
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/04_data_structures/05_immutable_hash_id/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.4.5 수정 불가능(immutable)과 함수 hash() id()
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5"
+                        aria-expanded="false">
+                        3.5 객체지향
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-5">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/05_oop/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/01_class_instance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.1 클래스와 인스턴스
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/02_python_self/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.2 파이썬의 self
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/03_inheritance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.3 상속
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/04_polymorphism/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.4 다형성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/05_abstraction/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.5 추상화
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/06_interface/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.6 인터페이스
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/05_oop/07_dependency_injection/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.5.7 의존성 주입
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6"
+                        aria-expanded="false">
+                        3.6 데이터 입출력
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-6">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/06_data_viz_prep/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/06_data_viz_prep/01_file_io_concept/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.6.1 파일 입출력의 개념과 필요성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/06_data_viz_prep/02_file_open/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.6.2 파일 열기와 닫기 (open, with)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/06_data_viz_prep/03_data_analysis/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.6.3 데이터 분석 실습 (Matplotlib 맛보기)
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-7"
+                        aria-expanded="false">
+                        3.7 GUI 프로그래밍
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-7">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/07_gui_programming/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/07_gui_programming/01_gui_principles/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.7.1 GUI 구동 원리와 환경 설정
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/07_gui_programming/02_tkinter_hello_world/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.7.2 첫 GUI: Hello World와 Mainloop
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/07_gui_programming/03_widget_layout/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.7.3 위젯 배치와 이벤트 구동
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/07_gui_programming/04_data_analysis_gui/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.7.4 미니 프로젝트: CSV 데이터를 GUI로 띄우기
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8"
+                        aria-expanded="false">
+                        3.8 데이터 전처리와 환경 세팅 심화
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-8">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/python/08_data_preprocessing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    학습목표
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/08_data_preprocessing/01_string_manipulation/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.8.1 문자열 정제와 데이터 클렌징
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/08_data_preprocessing/02_functional_map_filter/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.8.2 함수형 처리 도구 (Map, Filter)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/08_data_preprocessing/03_modules_and_venv/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.8.3 환경 격리와 커스텀 모듈 (venv & modules)
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/python/">3. 파이썬 시작</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/python/01_basic/">01 basic</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/python/01_basic/05_data_types_operators/">05 data types operators</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page">3.1.5.1 수의 체계와 기수법 (Numbers)</li>
+        
+        
+        
+    </ol>
+</nav>
+        <div class="bd-content ps-lg-4">
+            <h1 id="3151-수의-체계와-기수법-인간-10진법-vs-컴퓨터-2진법">3.1.5.1 수의 체계와 기수법: 인간 10진법 vs 컴퓨터 2진법</h1>
+
+<h2 id="학습목표">학습목표</h2>
+<p>원시시대 뼛조각부터 시작된 인류의 수 체계를 이해하고, 우리가 사용하는 10진수 자연수가 어떻게 파이썬 내부에서 컴퓨터의 2진수 전기 신호로 번역되는지 파악합니다. 수의 확장 개념을 통해 파이썬이 데이터를 다루는 그릇(Data Types)의 본질을 깨닫습니다.</p>
+
+<blockquote>
+  <p>📥 <strong>수의 체계 실습용 노트북 다운로드 및 실행</strong>:</p>
+  <ul>
+    <li><a href="../source/example.ipynb">로컬 환경용 다운로드</a> (VS Code 등에서 실행)</li>
+    <li><a href="https://colab.research.google.com/github/jinydev/datas/blob/master/src/python/01_basic/05_data_types_operators/source/example.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a> (웹 브라우저에서 바로 실습)</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h2 id="1-수number의-확장과-파이썬의-데이터-타입">1. 수(Number)의 확장과 파이썬의 데이터 타입</h2>
+
+<p>수학에서 수의 체계는 자연수 $\rightarrow$ 정수 $\rightarrow$ 유리수 $\rightarrow$ 실수 $\rightarrow$ 복소수로 확장되어 왔습니다. 인류가 세상을 더 정밀하게 표현하기 위해 새로운 종류의 숫자를 ‘발명’할 때마다, 수직선의 빈틈이 메워지고 나아가 2차원 평면으로 차원이 확장되었습니다.</p>
+
+<p>파이썬 역시 현실의 수학적 모델링을 완벽히 모방하기 위해 이 수의 체계를 각각의 전용 <strong>데이터 타입(Data Type)</strong> 클래스로 구현해 두었습니다.</p>
+
+<p><img src="./img/number_system_expansion_anim.svg" alt="수의 확장 애니메이션" />
+<em>(다이어그램: 자연수에서 출발하여 복소수까지 이어지는 수 체계의 확장 과정과, 이를 파이썬에서 <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">complex</code>라는 그릇에 담아내는 일대일 맵핑 관계를 보여줍니다.)</em></p>
+
+<hr />
+
+<h2 id="2-기수법-numeral-systems-인류의-언어에서-컴퓨터의-언어로">2. 기수법 (Numeral Systems): 인류의 언어에서 컴퓨터의 언어로</h2>
+
+<p><img src="./img/base10_vs_base2_webtoon.png" alt="인간의 10진법과 컴퓨터의 2진법 웹툰" />
+<em>(웹툰 비유: 손가락 10개로 10진법 기수법을 만든 원시 인류와, 스위치의 켜짐(1)/꺼짐(0) 2진법으로 우주를 시뮬레이션하는 현대 컴퓨터 두뇌의 극적인 대비)</em></p>
+
+<p>우리는 어릴 때부터 양손의 손가락 10개를 접어가며 $1, 2, 3…$ 을 세었습니다. 숫자 10개가 꽉 차면 다음 자릿수로 하나 올려주는 이 방식을 <strong>10진법 위치 기수법 (Base 10 Positional Notation)</strong>이라고 합니다. 이것은 인류 역사상 최고의 발명 중 하나입니다.</p>
+
+<p>하지만 스마트폰과 AI 서버를 구성하는 실리콘 반도체 칩은 인간의 수학을 전혀 모릅니다. 컴퓨터의 세상에는 단지 전기가 흐른다(<code class="language-plaintext highlighter-rouge">1</code>, On)와 흐르지 않는다(<code class="language-plaintext highlighter-rouge">0</code>, Off)라는 2개의 기호만이 존재합니다. 이를 <strong>2진법 (Binary System, Base 2)</strong>이라고 합니다.</p>
+
+<p>파이썬은 우리가 입력한 10진수 텍스트를 내부적으로 즉시 컴퓨터가 이해할 수 있는 2진법 메모리 스위치 신호로 치환하여 처리합니다.</p>
+
+<h3 id="-스토리텔링-0과-1은-물리적으로-어떻게-저장될까">💡 스토리텔링: 0과 1은 물리적으로 어떻게 저장될까?</h3>
+
+<p>눈에 보이지 않는 숫자인 0과 1 쪼가리들이 모여 어떻게 우리가 보는 유튜브 영상이나 거대한 파이썬 인공지능 모델이 될 지 상상해 봅시다. 컴퓨터가 사용하는 2진법은 역사적으로 인간의 노동에서 시작하여 다음과 같은 4단계의 눈부신 하드웨어적 진화를 거치며 세상을 지배했습니다.</p>
+
+<h4 id="1단계-최초의-기억-거대한-물리적-스위치-switch">1단계: 최초의 기억, 거대한 물리적 스위치 (Switch)</h4>
+
+<p><img src="./img/hardware_01_switch.png" alt="물리적 스위치 웹툰" />
+<em>(웹툰 비유: 땀을 뻘뻘 흘리며 거대한 기계식 스위치 손잡이를 당겨서 간신히 전구에 불을 켜는 초기 프로그래머의 고된 모습)</em></p>
+
+<p>인류 최초의 컴퓨터라 불리는 에니악(ENIAC) 시절, 프로그래머들은 모니터나 키보드 없이 일했습니다. 그들은 1 더하기 1을 계산하기 위해 벽면 가득 채워진 수만 개의 물리적인 진공 튜브 스위치들을 직접 손으로 끄고(<code class="language-plaintext highlighter-rouge">0</code>) 켜며(<code class="language-plaintext highlighter-rouge">1</code>) 계산을 지시했습니다. 계산이 끝난 후 방에서 나오면 땀범벅이 되었고 불도 자주 났습니다. 인간의 노동으로 컴퓨터의 2진법 스위치가 구동되던 가장 원초적인 시대였습니다.</p>
+
+<h4 id="2단계-전기가-조종하는-스위치-트랜지스터-transistor">2단계: 전기가 조종하는 스위치, 트랜지스터 (Transistor)</h4>
+
+<p><img src="./img/hardware_02_transistor.png" alt="트랜지스터의 등장 웹툰" />
+<em>(웹툰 비유: 사람 손 없이, 번쩍 하는 전기 자극만 주어지면 마법처럼 다리가 스스로 이어지며 전류가 흐르는 차세대 마법 스위치의 등장)</em></p>
+
+<p>손으로 스위치를 누르다 못해 지친 천재들은 획기적인 발명품을 내놓습니다. 물리적인 힘(손) 없이, 그저 한쪽으로 전기가 흐르면(자극) 알아서 다른 쪽 스위치 문을 열어버리는 마법의 부품, <strong>트랜지스터</strong>입니다. 모래(규소)에서 깎아 만든 이 미세한 반도체 조각 하나하나가 사람 손가락을 완벽히 대체하여, 눈에 보이지 않게 스스로 전기를 켜고 끄며 <strong>$1$비트(Bit)</strong>를 물리적으로 표기하는 컴퓨터의 새로운 심장이 되었습니다.</p>
+
+<h4 id="3단계-시간의-모래시계-회로-플립플롭-flip-flop">3단계: 시간의 모래시계 회로, 플립플롭 (Flip-Flop)</h4>
+
+<p><img src="./img/hardware_03_flipflop.png" alt="플립플롭 회로 기억 웹툰" />
+<em>(웹툰 비유: 숫자 ‘1’이 무한히 맴도는 트랙(회로)에 갇혀, 영원히 ‘1’이라는 형태를 유지하며 빛을 내뿜는 기억의 다람쥐 쳇바퀴)</em></p>
+
+<p>스위치를 자동으로 켜고 끄는 기술만으로는 데이터를 ‘저장’할 수 없었습니다. 전원이 꺼지면 모든 게 사라지니까요. 과학자들은 트랜지스터들을 비비 꼬아서 미로(논리 회로 게이트)를 만들었습니다. 전기가 들어와 빙글빙글 무한히 돌면서 나가지 못하는 쳇바퀴 구조를 만들면, 그 전기는 계속 살아있는 채로 그 자리에 머뭅니다.
+이것이 바로 <strong>플립플롭(Flip-Flop)</strong> 회로입니다. 전기가 끊기지 않는 이상 스스로 $0$과 $1$의 상태를 일정 시간 머금고 ‘기억’할 수 있게 된 혁명적인 발명이자, 우리가 컴퓨터를 켤 때 사용하는 <strong>메모리(RAM)</strong> 반도체의 진짜 근간입니다.</p>
+
+<h4 id="4단계-8개의-꼬마전구가-뭉쳤다-바이트-byte의-완성">4단계: 8개의 꼬마전구가 뭉쳤다, 바이트 (Byte)의 완성</h4>
+
+<p><img src="./img/hardware_04_byte.png" alt="바이트 생성 웹툰" />
+<em>(웹툰 비유: 8마리의 1비트 전구 요정들이 한 줄 횡대로 도열하여 어깨동무를 하자, 마침내 $2^8 = 256$가지를 표현할 수 있는 거대한 1바이트 팩토리가 건설되는 장면)</em></p>
+
+<p>하지만 플립플롭 하나(1비트)가 내는 $0$ 아니면 $1$이라는 두 가지 목소리로는 십진수 $3$조차도 표현할 수 없었습니다. 그래서 컴퓨터 과학자들은 마치 보따리 장수처럼 이 <strong>$1$비트(Bit)</strong> 전구 8개를 한 줄로 묶어 포장하기로 약속했습니다. 
+스위치($0$과 $1$)가 8배로 뻥튀기 된 이 거대한 다발이 바로 <strong>$1$바이트(Byte)</strong>입니다.</p>
+
+\[2^8 = 256\]
+
+<p>1바이트는 무려 256가지의 고유한 그림자(상태)를 표현할 수 있게 되었습니다. 비로소 이 바이트 보따리들을 수십, 수천 개씩 위로 착착 쌓아 올리자 영어 알파벳(<a href="./05_char/">아스키코드</a>)을 표현하고 파이썬의 무한대 <strong>정수(Integers)</strong>와 우주 공간을 가로지르는 <strong>실수(Floats)</strong> 같은 모든 복잡한 고차원 데이터 타입 객체들을 화려하게 빚어낼 수 있게 된 것입니다.</p>
+
+<h3 id="파이썬에서의-진법-치환-실습">파이썬에서의 진법 치환 실습</h3>
+
+<p>파이썬은 데이터 과학자와 프로그래머가 진법 시스템을 자유자재로 넘나들 수 있도록 내장형 함수들을 강력하게 지원합니다. 
+가장 대표적으로 사용되는 4가지 진범(10진수, 2진수, 8진수, 16진수)을 완벽하게 변환하고 다시 복원하는 과정을 실습해 봅시다.</p>
+
+<p><img src="./img/number_bases_anim.svg" alt="파이썬 4대 진법 비교 애니메이션" />
+<em>(다이어그램: <code class="language-plaintext highlighter-rouge">255</code>라는 물리적 전구 크기는 동일하지만, 각 진법 그릇(10, 2, 8, 16)에 담을 때마다 <code class="language-plaintext highlighter-rouge">0b</code>, <code class="language-plaintext highlighter-rouge">0o</code>, <code class="language-plaintext highlighter-rouge">0x</code> 등 고유의 파이썬 접두사가 붙으며 모양이 변하는 원리)</em></p>
+
+<h4 id="1-10진수-rightarrow-다른-진수로-변환-문자열-반환">1) 10진수 $\rightarrow$ 다른 진수로 변환 (문자열 반환)</h4>
+<p>컴퓨터가 사용하는 진법의 형태를 시각적으로 확인하기 위해 파이썬은 변환 결과를 문자열(<code class="language-plaintext highlighter-rouge">str</code>)로 돌려줍니다. 이때 어떤 진법인지 구분하기 위해 숫자 앞에 특별한 <strong>접두사(Prefix)</strong>가 붙습니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">bin()</code>: 2진수 (Binary). 접두사 <strong><code class="language-plaintext highlighter-rouge">0b</code></strong></li>
+  <li><code class="language-plaintext highlighter-rouge">oct()</code>: 8진수 (Octal). 접두사 <strong><code class="language-plaintext highlighter-rouge">0o</code></strong></li>
+  <li><code class="language-plaintext highlighter-rouge">hex()</code>: 16진수 (Hexadecimal). 접두사 <strong><code class="language-plaintext highlighter-rouge">0x</code></strong> (16진수는 0~9까지 숫자를 쓰고 10~15는 A~F 알파벳을 씁니다. 메모리 주소나 색상 코드 표기에 가장 널리 쓰입니다.)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 기준이 되는 인간의 숫자(10진법)
+</span><span class="n">human_number</span> <span class="o">=</span> <span class="mi">255</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">--- 10진수 </span><span class="si">{</span><span class="n">human_number</span><span class="si">}</span><span class="s"> 변환 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 컴퓨터 물리적 전기 신호 (2진법)
+</span><span class="n">computer_binary</span> <span class="o">=</span> <span class="nf">bin</span><span class="p">(</span><span class="n">human_number</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">2진수 변환 (bin): </span><span class="si">{</span><span class="n">computer_binary</span><span class="si">}</span><span class="s">    # 11111111</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 유닉스 권한 설정에 많이 쓰이는 8진법
+</span><span class="n">computer_octal</span> <span class="o">=</span> <span class="nf">oct</span><span class="p">(</span><span class="n">human_number</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">8진수 변환 (oct): </span><span class="si">{</span><span class="n">computer_octal</span><span class="si">}</span><span class="s">          # 377</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 컴퓨터 메모리 주소와 웹 색상코드(RGB)에 쓰이는 16진법
+</span><span class="n">computer_hex</span> <span class="o">=</span> <span class="nf">hex</span><span class="p">(</span><span class="n">human_number</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">16진수 변환 (hex): </span><span class="si">{</span><span class="n">computer_hex</span><span class="si">}</span><span class="s">          # ff</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="2-다른-진법의-문자열-rightarrow-10진수로-완벽-복원">2) 다른 진법의 문자열 $\rightarrow$ 10진수로 완벽 복원</h4>
+<p>서버나 외부 장치에서 ‘0b1010’ 같은 텍스트 형태의 진수 데이터를 전달받았을 때, 파이썬의 <code class="language-plaintext highlighter-rouge">int(문자열, 진법종류)</code> 함수를 사용하면 우리가 계산할 수 있는 깔끔한 10진수 고유 모델(정수 객체)로 복원됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 파이썬 객체로 완벽 복원 (int) ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 첫번째 인자는 텍스트, 두번째 인자는 '현재 데이터의 진법'
+</span><span class="n">val_2</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">'</span><span class="s">1010</span><span class="sh">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">val_8</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">'</span><span class="s">12</span><span class="sh">'</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">val_16</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">2진수 </span><span class="sh">'</span><span class="s">1010</span><span class="sh">'</span><span class="s">의 10진수 정체: </span><span class="si">{</span><span class="n">val_2</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">8진수 </span><span class="sh">'</span><span class="s">12</span><span class="sh">'</span><span class="s">의 10진수 정체: </span><span class="si">{</span><span class="n">val_8</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">16진수 </span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="s">의 10진수 정체: </span><span class="si">{</span><span class="n">val_16</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>전체 출력 결과:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 10진수 255 변환 ---
+2진수 변환 (bin): 0b11111111    # 11111111
+8진수 변환 (oct): 0o377          # 377
+16진수 변환 (hex): 0xff          # ff
+
+--- 파이썬 객체로 완벽 복원 (int) ---
+2진수 '1010'의 10진수 정체: 10
+8진수 '12'의 10진수 정체: 10
+16진수 'A'의 10진수 정체: 10
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3-요약-데이터-분석에서의-숫자형-분류">3. 요약: 데이터 분석에서의 숫자형 분류</h2>
+
+<p>파이썬 데이터 분석 생태계(Pandas, Numpy 등)에서는 크게 세 가지의 숫자 파트가 존재함을 명심해야 합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">분류명</th>
+      <th style="text-align: left">파이썬 타입</th>
+      <th style="text-align: left">수학적 의미</th>
+      <th style="text-align: left">프로그래밍 용도</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>정수형</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">$Z$ (자연수, 0, 음수)</td>
+      <td style="text-align: left">개수 세기, 인덱스 추적, 오차가 없어야 하는 금융 원장</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>실수형</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td style="text-align: left">$R$ (유리수, 무리수)</td>
+      <td style="text-align: left">비율, 평균, 기하학적 길이, 머신러닝의 가중치(Weights)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>복소수형</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">complex</code></td>
+      <td style="text-align: left">$C$ (실수부 + 허수부)</td>
+      <td style="text-align: left">푸리에 변환, 양자 시뮬레이션, 전자기파 모델링</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>다음 장에서는 가장 기본이 되며, 오차가 존재하지 않는 무한한 팽창력을 가진 파이썬의 <strong>정수(<code class="language-plaintext highlighter-rouge">int</code>)</strong> 체계에 대해 깊게 들어갑니다.</p>
+
+
+            <!-- 구글 애드센스 출력 -->
+            <div class="mt-5">
+                <!-- 구글 애드센스 (여기에 본인의 코드 입력) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+        </div>
+
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    서브목차
+    <svg class="bi d-md-none ms-2" aria-hidden="true">
+      <use xlink:href="#chevron-expand"></use>
+    </svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">서브목차</strong>
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <nav id="TableOfContents">
+      <!--
+      <ul>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#cdn-links">CDN links</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+        <li><a href="#js-components">JS components</a></li>
+        <li><a href="#important-globals">Important globals</a>
+          <ul>
+            <li><a href="#html5-doctype">HTML5 doctype</a></li>
+            <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+            <li><a href="#box-sizing">Box-sizing</a></li>
+            <li><a href="#reboot">Reboot</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      -->
+    </nav>
+  </div>
+</div>
+    </main>
+</div>
+
+  <footer class="container">
+  <hr class="mt-5 mb-3">
+  <div class="row align-items-center pb-3">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <p class="mb-0 text-secondary">Copyright 2017~2026 JinyDev. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+      <a href="mailto:infohojin@naver.com" class="text-decoration-none text-secondary">Contact</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 10; ry: 10; }
+      .box-di { fill: #e8f5e9; stroke: #a5d6a7; stroke-width: 2; rx: 10; ry: 10; }
+      .text-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: bold; fill: #343a40; text-anchor: middle; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 14px; fill: #495057; font-weight: bold; }
+      .arrow { stroke: #0d6efd; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .arrow-bad { stroke: #dc3545; stroke-width: 3; fill: none; marker-end: url(#arrowhead-bad); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d6efd" />
+    </marker>
+    <marker id="arrowhead-bad" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545" />
+    </marker>
+  </defs>
+
+  <!-- Without DI (Tight Coupling) -->
+  <text class="text-title" x="200" y="40" fill="#dc3545">강한 결합 (DI 미적용)</text>
+  <rect class="box" x="50" y="60" width="300" height="150" />
+  <text class="text-title" x="200" y="90">Knight</text>
+  <text class="text-code" x="70" y="120">def __init__(self):</text>
+  <text class="text-code" x="90" y="140" fill="#dc3545">self.weapon = IronSword()</text>
+  <text class="text-title" x="200" y="180" font-size="14" fill="#6c757d">내부에서 직접 철검을 생성함 (변경불가)</text>
+
+  <rect class="box" x="120" y="250" width="150" height="60" />
+  <text class="text-title" x="195" y="285">IronSword</text>
+  <path class="arrow-bad" d="M 195 150 L 195 250" stroke-dasharray="5 5" />
+
+  <!-- With DI (Loose Coupling) -->
+  <line x1="400" y1="20" x2="400" y2="380" stroke="#dee2e6" stroke-width="2" stroke-dasharray="10 10"/>
+
+  <text class="text-title" x="600" y="40" fill="#198754">느슨한 결합 (DI 적용)</text>
+  <rect class="box-di" x="450" y="60" width="300" height="150" />
+  <text class="text-title" x="600" y="90">Knight 2.0</text>
+  <text class="text-code" x="470" y="120">def __init__(self, <tspan fill="#0d6efd">weapon</tspan>):</text>
+  <text class="text-code" x="490" y="140" fill="#198754">self.weapon = weapon</text>
+  <text class="text-title" x="600" y="180" font-size="14" fill="#6c757d">외부에서 아무 무기나 주입 받음 (교체자유)</text>
+
+  <rect class="box" x="420" y="270" width="120" height="60" />
+  <text class="text-title" x="480" y="305">IronSword</text>
+
+  <rect class="box" x="550" y="270" width="120" height="60" />
+  <text class="text-title" x="610" y="305">FlameSword</text>
+
+  <rect class="box" x="680" y="270" width="120" height="60" />
+  <text class="text-title" x="740" y="305">LaserGun</text>
+
+  <!-- Injection Arrows -->
+  <path class="arrow" d="M 480 270 Q 480 220 540 150" />
+  <path class="arrow" d="M 610 270 Q 610 220 560 150" />
+  <path class="arrow" d="M 740 270 Q 740 220 580 150" />
+  <text x="600" y="230" font-family="'Inter', sans-serif" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">주입 (Injection)</text>
+
+</svg>

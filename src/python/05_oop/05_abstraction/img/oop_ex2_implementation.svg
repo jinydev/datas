@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; rx: 15; }
+      .text-title { font-family: monospace; font-size: 20px; font-weight: bold; fill: #bac2de; text-anchor: middle; }
+      .text-code { font-family: monospace; font-size: 16px; font-weight: bold; fill: #11111b; text-anchor: middle; }
+      
+      .abc-box { fill: #f9e2af; rx: 10; stroke: #cdd6f4; stroke-width: 2; stroke-dasharray: 5; }
+      .impl-box { fill: #a6e3a1; rx: 10; stroke: #cdd6f4; stroke-width: 2; }
+      .arrow { fill: none; stroke: #89b4fa; stroke-width: 4; }
+      
+      @keyframes gearSpin { 100% { transform: rotate(360deg); } }
+      .anim-gear { animation: gearSpin 4s linear infinite; transform-origin: center; }
+      
+      @keyframes resultPop { 0%, 50% { opacity: 0; transform: translateY(10px); } 60%, 100% { opacity: 1; transform: translateY(0); } }
+      .anim-res1 { animation: resultPop 3s infinite; }
+      .anim-res2 { animation: resultPop 3s infinite; animation-delay: 1.5s; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="400" y="40" class="text-title">예제 2: 확고한 계약 이행과 다형성의 승리</text>
+
+  <!-- Contract Base -->
+  <rect x="300" y="60" width="200" height="40" class="abc-box" />
+  <text x="400" y="85" class="text-code">Shape (계약서)</text>
+
+  <!-- Arrows -->
+  <path d="M 400 100 L 250 140" class="arrow" marker-end="url(#arrow)" />
+  <path d="M 400 100 L 550 140" class="arrow" marker-end="url(#arrow)" />
+
+  <!-- Circle Impl -->
+  <rect x="150" y="140" width="200" height="50" class="impl-box" />
+  <text x="250" y="165" class="text-code">Circle.get_area()</text>
+  <text x="250" y="185" class="text-code" fill="#1e1e2e" font-size="12px">return π * r²</text>
+  
+  <g class="anim-res1">
+    <text x="250" y="220" class="text-title" fill="#a6e3a1" font-size="16px">✅ 출력: 78.5</text>
+  </g>
+
+  <!-- Rectangle Impl -->
+  <rect x="450" y="140" width="200" height="50" class="impl-box" />
+  <text x="550" y="165" class="text-code">Rectangle.get_area()</text>
+  <text x="550" y="185" class="text-code" fill="#1e1e2e" font-size="12px">return w * h</text>
+
+  <g class="anim-res2">
+    <text x="550" y="220" class="text-title" fill="#a6e3a1" font-size="16px">✅ 출력: 20</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#89b4fa" />
+    </marker>
+  </defs>
+</svg>
