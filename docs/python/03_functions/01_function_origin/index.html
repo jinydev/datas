@@ -537,51 +537,65 @@
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/03_function_usage/"
+                                <a href="/python/03_functions/03_function_operation_flow/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.3 선언 문법 (def)과 호출
+                                    3.3.3 함수 작동 흐름 다이어그램
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/04_function_call_flow/"
+                                <a href="/python/03_functions/04_function_usage/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.4 제어 흐름의 도약
+                                    3.3.4 선언 문법 (def)과 호출
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/05_advanced_parameters/"
+                                <a href="/python/03_functions/05_function_call_flow/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.5 가변 매개변수 통로
+                                    3.3.5 제어 흐름의 도약
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/06_variable_scope/"
+                                <a href="/python/03_functions/06_advanced_parameters/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.6 변수의 유효 범위 (Scope)
+                                    3.3.6 가변 매개변수 통로
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/07_lambda_and_recursion/"
+                                <a href="/python/03_functions/07_variable_scope/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.7 람다(Lambda)와 재귀
+                                    3.3.7 변수의 유효 범위 (Scope)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/08_built_in_functions/"
+                                <a href="/python/03_functions/08_lambda_function/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.8 내장 함수와 메서드
+                                    3.3.8 람다(Lambda)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/09_math_module/"
+                                <a href="/python/03_functions/09_recursive_function/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.9 Python 수학 모듈(math)
+                                    3.3.9 마법의 거울, 재귀(Recursion)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/10_built_in_functions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.10 내장 함수와 메서드
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/11_math_module/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.11 Python 수학 모듈(math)
                                 </a>
                             </li>
                             
@@ -618,7 +632,7 @@
                             <li>
                                 <a href="/python/04_data_structures/01_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.4.1 리스트
+                                    3.4.1 파이썬 리스트 (List)
                                 </a>
                             </li>
                             
@@ -970,22 +984,51 @@
 
 <p>과거 수학자들은 자연현상을 관찰하다가 한 가지 놀라운 사실을 발견합니다.</p>
 <blockquote>
-  <p>“어? 온도가 올라갈수록 아이스크림 판매량이 늘어나네? <strong>원인(온도)이 변하면 결과(판매량)도 규칙적으로 변하는구나!</strong>”</p>
+  <p>“어? 기온이 올라갈수록 아이스크림 판매량이 늘어나네? <strong>원인(온도)이 변하면 결과(판매량)도 규칙적으로 변하는구나!</strong>”</p>
 </blockquote>
 
-<p>여기서 수학의 위대한 발명품인 <strong>변수(Variable)</strong> 개념이 등장합니다. 수학자들은 원인이 되는 값을 $x$, 결과가 되는 값을 $y$로 두고 그 규칙을 $y = ax + b$ 같은 수식으로 묶어버렸습니다.</p>
+<p><img src="./img/icecream_sales_webtoon.png" alt="아이스크림 판매량 대응 웹툰" />
+<em>(웹툰 비유: 왼쪽은 온도가 낮아 파리 날리는 아이스크림 가게, 오른쪽은 온도가 폭염일 때 로봇 점원이 땀을 뻘뻘 흘리며 아이스크림을 불티나게 파는 모습입니다. 원인이 변함에 따라 결과가 확연히 달라지는 ‘대응 관계’를 유머러스하게 보여줍니다.)</em></p>
 
-<h3 id="대응correspondence의-발생">“대응(Correspondence)”의 발생</h3>
+<p>여기서 수학의 위대한 발명품인 <strong>변수(Variable)</strong> 개념이 등장합니다. 수학자들은 원인이 되는 기온을 $x$(독립변수), 그에 따라 종속되어 결과가 되는 아이스크림 판매량을 $y$(종속변수)로 두고, 이 둘 사이의 규칙적인 변화율(대응 관계)을 $y = ax + b$ 같은 간결한 수식으로 묶어버렸습니다.</p>
+
+<hr />
+
+<h2 id="3-식equation과-함수function의-결정적-차이-미지수의-역동성">3. 식(Equation)과 함수(Function)의 결정적 차이: 미지수의 역동성</h2>
+
+<p>수학에서 <code class="language-plaintext highlighter-rouge">식</code>(예: $2a + 3 = 7$)과 <code class="language-plaintext highlighter-rouge">함수</code>(예: $y = 2x + 3$)는 겉보기엔 비슷하지만 근본적인 철학이 다릅니다.</p>
+
+<p><img src="./img/equation_vs_function_webtoon.png" alt="식 vs 함수 웹툰" />
+<em>(웹툰 비유: 왼쪽 그림의 <code class="language-plaintext highlighter-rouge">식(Equation)</code> 로봇은 책상에 가만히 앉아 직소 퍼즐에서 오직 1개의 정답 피스(<code class="language-plaintext highlighter-rouge">a=2</code>)를 찾으려 골머리를 앓는 정적인 모습입니다. 반면 오른쪽 그림의 <code class="language-plaintext highlighter-rouge">함수(Function)</code> 로봇은 거대한 기계를 조작하며 컨베이어 벨트에 $x$(원인 재료)를 계속 들이붓고 반대편에서 끝없이 전혀 다른 파란색의 $y$(새로운 제품)를 신나게 찍어내는 역동적인 공장장 모습입니다!)</em></p>
+
+<ul>
+  <li><strong>식(Equation)</strong>: 정지되어 있는 퀴즈입니다. 좌변과 우변이 같아지게 만드는 특정한 미지수 <code class="language-plaintext highlighter-rouge">a</code>의 정답(이 경우 <code class="language-plaintext highlighter-rouge">a = 2</code>) 하나만을 찾아내는 것이 목적입니다. 즉, 죽어있는 고정된 숫자들의 수수께끼입니다.</li>
+  <li><strong>함수(Function)</strong>: 살아 움직이는 공장입니다. $x$라는 <strong>변수(Variable)</strong> 공간에 어떤 값을 주입(Input)하든지 간에, 정해진 규칙(대응)에 따라 실시간으로 계산하여 새로운 $y$값(Output)을 뱉어냅니다.</li>
+</ul>
+
+<p>이처럼 정적인 식을 넘어, 미지수를 이용해 끊임없이 동적인 <strong>‘대응(Mapping)’</strong> 변화를 만들어낸다는 점에서 함수는 거대한 생명력을 가지게 되었고, 이 개념이 컴퓨터 프로그래밍 세계로 넘어와 입력 데이터에 대응하는 출력 데이터를 찍어내는 “코드 공장”의 토대가 된 것입니다.</p>
+
+<hr />
+
+<h2 id="대응correspondence과-집합set의-콜라보레이션">“대응(Correspondence)”과 “집합(Set)”의 콜라보레이션</h2>
 <p>수식 구조 안에서 $x$에 숫자 <code class="language-plaintext highlighter-rouge">1</code>을 넣으면 $y$가 <code class="language-plaintext highlighter-rouge">3</code>이 되고, $x$에 <code class="language-plaintext highlighter-rouge">2</code>를 넣으면 $y$가 <code class="language-plaintext highlighter-rouge">5</code>가 됩니다. 이렇게 원인인 $x$ 값 하나에 결과인 $y$ 값이 짝을 지어 결정되는 관계를 수학에서는 <strong>대응(Mapping, Correspondence)</strong>이라고 불렀습니다.</p>
 
+<p>이 대응 관계를 성립시키려면, 먼저 원인이 될 수 있는 숫자들을 모아놓은 그룹(출발지)과 결과가 될 수 있는 숫자들을 모아놓은 그룹(도착지)이 필요합니다. 수학에서는 이처럼 명확한 조건으로 묶인 값들의 모임을 <strong>집합(Set)</strong>이라고 부릅니다.</p>
+<ul>
+  <li>함수의 시작점이 되는 원인 $x$ 값들의 집합을 <strong>정의역(Domain)</strong>이라 부릅니다.</li>
+  <li>함수의 도착점이 되는 결과 $y$ 값들의 집합을 <strong>공역(Codomain)</strong>이라 부릅니다.</li>
+</ul>
+
+<p>결국, 함수란 그저 둥둥 떠다니는 수식이 아니라 <strong>“정의역이라는 집합의 원소(Data) 하나를 공역이라는 다른 집합의 원소(Data)로 정확히 연결해 주는 규칙적인 다리”</strong>인 셈입니다.</p>
+
 <p><img src="./img/math_mapping_anim.svg" alt="수식 변수 대응 애니메이션" />
-<em>(다이어그램: $X$ 그룹(원인)의 데이터들이 $y = 2x + 1$ 이라는 마법의 파이프를 통과하자마자 형형색색의 $Y$ 그룹(결과) 별표로 확정되어 튀어나오는 매핑 과정. “1개의 입력은 정확히 1개의 결과만 보장한다”는 인과율의 화살표가 선명하게 빛납니다.)</em></p>
+<em>(다이어그램: 정의역($X$ 집합, 원인)의 데이터들이 $y = 2x + 1$ 이라는 마법의 파이프를 통과하자마자 공역($Y$ 집합, 결과)으로 확정되어 튀어나오는 매핑 과정. “1개의 입력은 정확히 1개의 결과만 보장한다”는 인과율의 화살표가 선명하게 빛납니다.)</em></p>
 
 <p>수학자들은 이처럼 <strong>“입력이 주어지면 내부의 규칙(수식)을 거쳐 결과를 일관되게 뱉어내는 기계적인 대응 시스템”</strong>의 모습이 마치 사물이 제 기능을 하는 모습과 똑같다고 생각하여 이를 <strong>수학적 ‘함수(Function)’</strong>라고 명명하게 됩니다.</p>
 
 <hr />
 
-<h2 id="3-프로그래밍으로의-진화-일관적인-논리-처리-동작">3. 프로그래밍으로의 진화: 일관적인 ‘논리 처리 동작’</h2>
+<h2 id="4-프로그래밍으로의-진화-일관적인-논리-처리-동작">4. 프로그래밍으로의 진화: 일관적인 ‘논리 처리 동작’</h2>
 
 <p>수학의 함수가 단순히 “숫자를 넣어 숫자를 뽑아내는 식”이었다면, 컴퓨터 프로그래밍 세계로 넘어오면서 이 개념은 무한대로 확장됩니다.</p>
 
@@ -1008,6 +1051,8 @@
 
 <hr />
 
+<hr />
+
 <h2 id="-vibe-coding">🎧 Vibe Coding</h2>
 
 <blockquote>
@@ -1023,15 +1068,17 @@
   <li><strong>Function</strong>: 기능, 동작, 목적, 함수. (어떤 것이 마땅히 수행해야 할 고유의 역할. 이 개념 하나가 수학과 컴퓨터 구조 전체를 관통하는 알파이자 오메가입니다.)</li>
   <li><strong>Variable</strong>: 변수. (변할 수 있는 값. 온도($x$)나 아이스크림 판매량($y$)처럼 세상의 불확실성을 담아두는 빈 상자입니다.)</li>
   <li><strong>Correspondence / Mapping</strong>: 대응, 매핑. (이쪽 집단의 원소 하나가 저쪽 집단의 원소 하나와 확고하고 운명적으로 짝지어지는 논리적 연결선입니다.)</li>
+  <li><strong>Set</strong>: 집합. (명확한 기준을 가지고 모인 객체나 데이터들의 묶음입니다.)</li>
+  <li><strong>Domain / Codomain</strong>: 정의역 / 공역. (함수라는 다리를 건너기 전 출발지 집합(원인)이 정의역, 다리를 건너 도착할 수 있는 잠재적 목적지 집합(결과)이 공역입니다.)</li>
 </ul>
 
 
             <!-- 구글 애드센스 출력 -->
             <div class="mt-5">
-                <!-- 구글 애드센스 (여기에 본인의 코드 입력) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
     crossorigin="anonymous"></script>
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+<!-- jinydev-java -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475" data-ad-slot="9323221865"
     data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});

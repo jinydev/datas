@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 22px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #a6e3a1; text-anchor: middle;}
+      .code-err { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #f38ba8; text-anchor: middle;}
+      .val { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      
+      .box-set { fill: rgba(166, 227, 161, 0.15); stroke: #a6e3a1; stroke-width: 4; stroke-dasharray: 10,5; rx: 40; }
+      .item { fill: #f9e2af; stroke: #1e1e2e; stroke-width: 2; rx: 20; }
+      .item-new { fill: #89b4fa; stroke: #1e1e2e; stroke-width: 2; rx: 20; }
+      .item-err { fill: transparent; stroke: #f38ba8; stroke-width: 3; stroke-dasharray: 4,4; rx: 20; }
+      
+      .anim-add { animation: dropIn 6s infinite ease-in-out; }
+      .anim-remove { animation: explodeOut 6s infinite ease-in-out; animation-delay: 2s; }
+      .anim-discard { animation: fadeOutSafe 6s infinite ease-in-out; animation-delay: 4s; }
+
+      @keyframes dropIn {
+        0%, 10% { transform: translateY(-80px); opacity: 0; }
+        20%, 80% { transform: translateY(0); opacity: 1; }
+        90%, 100% { opacity: 0; }
+      }
+      
+      @keyframes explodeOut {
+        0%, 30% { transform: scale(1); opacity: 1; }
+        40% { transform: scale(1.5); fill: #f38ba8; filter: drop-shadow(0 0 10px #f38ba8); opacity: 1;}
+        50%, 100% { transform: scale(2); opacity: 0; }
+      }
+      
+      @keyframes fadeOutSafe {
+        0%, 60% { opacity: 0; transform: translateY(0); }
+        70%, 80% { opacity: 0.5; transform: translateY(0); }
+        90%, 100% { opacity: 0; transform: translateY(20px); }
+      }
+
+    </style>
+  </defs>
+
+  <rect width="800" height="400" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">마법 주머니(Set) 안의 구슬 넣고 빼기 (CRUD)</text>
+
+  <g transform="translate(400, 220)">
+    
+    <!-- The Set Bag -->
+    <rect x="-180" y="-100" width="360" height="200" class="box-set" />
+    <text x="0" y="80" class="code" font-size="24px" fill="#a6adc8" opacity="0.5">myset = set()</text>
+
+    <!-- 1. add() Operation -->
+    <g transform="translate(-100, -50)">
+      <text x="0" y="-40" class="code" fill="#89b4fa">.add(99)</text>
+      <g class="anim-add">
+        <rect x="-25" y="-20" width="50" height="40" class="item-new" />
+        <text x="0" y="2" class="val">99</text>
+      </g>
+    </g>
+
+    <!-- 2. remove() Operation (Explosive if not found, but here we show it found) -->
+    <g transform="translate(0, -10)">
+      <text x="0" y="-40" class="code" fill="#f38ba8">.remove(10)</text>
+      <g class="anim-remove">
+        <rect x="-25" y="-20" width="50" height="40" class="item" />
+        <text x="0" y="2" class="val">10</text>
+      </g>
+      <text x="0" y="45" class="code-err" opacity="0.8">없으면 KeyError 💣</text>
+    </g>
+
+    <!-- 3. discard() Operation (Safe, ignores if not found) -->
+    <g transform="translate(100, -50)">
+      <text x="0" y="-40" class="code" fill="#a6e3a1">.discard(50)</text>
+      
+      <!-- Ghost target item -->
+      <rect x="-25" y="-20" width="50" height="40" class="item-err" />
+      <text x="0" y="2" class="code-err" fill="#f38ba8">50?</text>
+      
+      <g class="anim-discard">
+        <text x="0" y="40" class="code" fill="#a6e3a1" font-size="14px">없어도 무시 🛡️</text>
+      </g>
+    </g>
+
+  </g>
+
+</svg>

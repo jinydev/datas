@@ -1,0 +1,108 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #f38ba8; }
+      .num { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      .col-header { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #a6e3a1; text-anchor: middle;}
+      .row-header { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #89b4fa; text-anchor: middle;}
+      
+      .box { fill: #cdd6f4; stroke: #45475a; stroke-width: 2; rx: 8; }
+      
+      .st-target { fill: #f9e2af; stroke: #f38ba8; stroke-width: 3; rx: 8; }
+      
+      .beam-row { animation: scanRow 3s infinite ease-in-out; fill: rgba(137, 180, 250, 0.3); rx: 10; }
+      .beam-col { animation: scanCol 3s infinite ease-in-out; fill: rgba(166, 227, 161, 0.3); rx: 10; }
+      .pulse-target { animation: pulseTarget 3s infinite ease-in-out; opacity: 0; }
+
+      @keyframes scanRow {
+        0%, 15% { transform: translateY(-10px); opacity: 0; }
+        20% { transform: translateY(-10px); opacity: 1; }
+        40%, 100% { transform: translateY(140px); opacity: 1; }
+      }
+      
+      @keyframes scanCol {
+        0%, 35% { transform: translateX(-10px); opacity: 0; }
+        40% { transform: translateX(-10px); opacity: 1; }
+        60%, 100% { transform: translateX(290px); opacity: 1; }
+      }
+      
+      @keyframes pulseTarget {
+        0%, 55% { opacity: 0; transform: scale(1); filter: drop-shadow(0 0 0px transparent); }
+        60% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 10px #f9e2af); }
+        90% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 5px #f9e2af); }
+        100% { opacity: 0; transform: scale(1); filter: drop-shadow(0 0 0px transparent); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="350" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">matrix = [ [1,2,3], [4,5,6], [7,8,9] ]</text>
+  <text x="30" y="80" class="code">target = matrix[2][1]</text>
+  <text x="320" y="80" class="title" fill="#a6adc8">(2번 행(Row)의 1번 열(Col)을 타겟팅)</text>
+
+  <g transform="translate(250, 110)">
+    
+    <!-- Matrix Grid 3x3 -->
+    
+    <!-- Column Headers -->
+    <text x="50" y="-10" class="col-header">Col 0</text>
+    <text x="150" y="-10" class="col-header">Col 1</text>
+    <text x="250" y="-10" class="col-header">Col 2</text>
+    
+    <!-- Row Headers -->
+    <text x="-40" y="40" class="row-header">Row 0</text>
+    <text x="-40" y="115" class="row-header">Row 1</text>
+    <text x="-40" y="190" class="row-header">Row 2</text>
+
+    <!-- Scanning Beams -->
+    <rect x="-10" y="10" width="320" height="70" class="beam-row" />
+    <rect x="10" y="-10" width="80" height="240" class="beam-col" />
+
+    <!-- Row 0 -->
+    <g transform="translate(10, 10)">
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="35" class="num">1</text>
+      <rect x="100" y="0" width="80" height="60" class="box" />
+      <text x="140" y="35" class="num">2</text>
+      <rect x="200" y="0" width="80" height="60" class="box" />
+      <text x="240" y="35" class="num">3</text>
+    </g>
+
+    <!-- Row 1 -->
+    <g transform="translate(10, 85)">
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="35" class="num">4</text>
+      <rect x="100" y="0" width="80" height="60" class="box" />
+      <text x="140" y="35" class="num">5</text>
+      <rect x="200" y="0" width="80" height="60" class="box" />
+      <text x="240" y="35" class="num">6</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(10, 160)">
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="35" class="num">7</text>
+      
+      <!-- Target matrix[2][1] -> 8 -->
+      <g transform="translate(100, 0)">
+        <rect x="0" y="0" width="80" height="60" class="box" />
+        <rect x="0" y="0" width="80" height="60" class="st-target pulse-target" />
+        <text x="40" y="35" class="num">8</text>
+      </g>
+      
+      <rect x="200" y="0" width="80" height="60" class="box" />
+      <text x="240" y="35" class="num">9</text>
+    </g>
+
+    <!-- Laser intersection crosshair -->
+    <circle cx="150" cy="190" r="15" fill="none" class="pulse-target" stroke="#f38ba8" stroke-width="4" />
+
+  </g>
+
+</svg>

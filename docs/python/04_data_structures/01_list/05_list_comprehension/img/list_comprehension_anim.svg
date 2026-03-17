@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #bac2de; }
+      .code-old { font-family: 'Consolas', monospace; font-size: 16px; fill: #a6adc8; }
+      .code-new { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #f9e2af; text-anchor: middle;}
+      
+      .box-raw { fill: #45475a; stroke: #cdd6f4; stroke-width: 2; rx: 8; }
+      .box-power { fill: #f38ba8; stroke: #1e1e2e; stroke-width: 2; rx: 8; }
+      .text-num { font-family: 'Consolas', monospace; font-size: 30px; font-weight: bold; fill: #cdd6f4; text-anchor: middle;}
+      .text-res { font-family: 'Consolas', monospace; font-size: 30px; font-weight: bold; fill: #1e1e2e; text-anchor: middle;}
+      
+      .st-0 { animation: filterDrop 2s 0s infinite linear; opacity: 0; }
+      .st-1 { animation: filterDrop 2s 0.6s infinite linear; opacity: 0; }
+      .st-2 { animation: filterDrop 2s 1.2s infinite linear; opacity: 0; }
+      .st-3 { animation: filterDrop 2s 1.8s infinite linear; opacity: 0; }
+
+      .crush-anim { animation: crushPress 2s infinite ease-in-out alternate; }
+      
+      @keyframes filterDrop {
+        0% { transform: translate(100px, -50px) scale(0.5); opacity: 0; }
+        20% { transform: translate(100px, 10px) scale(1); opacity: 1; }
+        40% { transform: translate(100px, 60px) scale(1); opacity: 1; }
+        60% { transform: translate(300px, 60px) scale(1); opacity: 1; filter: sepia(100%) hue-rotate(-50deg) saturate(300%); }
+        80% { transform: translate(500px, 60px) scale(1); opacity: 1; }
+        100% { transform: translate(600px, 60px) scale(0.5); opacity: 0; }
+      }
+      
+      @keyframes crushPress {
+        0% { transform: scaleY(1); }
+        100% { transform: scaleY(0.7) translateY(20px); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="300" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">압축 마법: List Comprehension</text>
+
+  <!-- Old 4 lines representation (Faded) -->
+  <g transform="translate(30, 80)">
+    <text x="0" y="0" class="code-old">result = []</text>
+    <text x="0" y="25" class="code-old">for x in range(4):</text>
+    <text x="20" y="50" class="code-old">if x % 2 == 0:</text>
+    <text x="40" y="75" class="code-old">result.append(x**2)</text>
+  </g>
+
+  <!-- The Machine Pressing down -->
+  <g transform="translate(150, 60)" class="crush-anim" opacity="0.3">
+    <rect x="-10" y="-10" width="180" height="120" fill="#f38ba8" rx="10" />
+    <path d="M 80,-50 L 80,-10" stroke="#f38ba8" stroke-width="8" />
+  </g>
+
+  <text x="400" y="260" class="code-new">[ x**2 for x in range(4) if x % 2 == 0 ]</text>
+
+  <!-- Animated Conversion Process -->
+  <g transform="translate(0, 100)">
+    
+    <!-- Factory labels -->
+    <text x="140" y="40" font-family="'Consolas', monospace" fill="# bac2de" font-size="14px">x in range(4)</text>
+    <text x="340" y="40" font-family="'Consolas', monospace" fill="# bac2de" font-size="14px">if x % 2 == 0</text>
+    <text x="540" y="40" font-family="'Consolas', monospace" fill="# bac2de" font-size="14px">x**2 (제곱)</text>
+    
+    <path d="M 160, 90 L 560, 90" stroke="#45475a" stroke-width="4" stroke-dasharray="10,5" />
+    
+    <!-- Moving Element 0 -> 0 -->
+    <g class="st-0">
+      <rect x="0" y="0" width="60" height="60" class="box-raw" />
+      <text x="30" y="40" class="text-num">0</text>
+    </g>
+
+    <!-- Moving Element 1 (Filtered out, but we just show all processing for simplicity) -->
+    <!-- Let's show element 2 -> 4 -->
+    <g class="st-1">
+      <rect x="0" y="0" width="60" height="60" class="box-raw" />
+      <text x="30" y="40" class="text-num">2</text>
+    </g>
+
+    <!-- Element 4 -> 16 -->
+    <g class="st-2">
+      <rect x="0" y="0" width="60" height="60" class="box-raw" />
+      <text x="30" y="40" class="text-num">4</text>
+    </g>
+    
+    <!-- Element 6 -> 36 -->
+    <g class="st-3">
+      <rect x="0" y="0" width="60" height="60" class="box-raw" />
+      <text x="30" y="40" class="text-num">6</text>
+    </g>
+
+  </g>
+
+</svg>

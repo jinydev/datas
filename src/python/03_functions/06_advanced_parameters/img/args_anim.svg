@@ -1,0 +1,91 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 그라데이션 및 필터 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#2a2a3c" />
+    </linearGradient>
+    <linearGradient id="tupleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f9a8d4" />
+      <stop offset="100%" stop-color="#be185d" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="800" height="300" rx="15" fill="url(#bgGrad)" stroke="#4c4c6d" stroke-width="2"/>
+
+  <!-- 타이틀 -->
+  <text x="400" y="40" font-family="'Courier New', monospace" font-size="24" font-weight="bold" fill="#f8f8f2" text-anchor="middle" filter="url(#glow)">*args : Tuple Packing Animation</text>
+
+  <!-- 메인 함수 박스 -->
+  <path d="M 600,60 L 760,60 L 760,240 L 600,240 Q 560,150 600,60 Z" fill="#282a36" stroke="#bd93f9" stroke-width="3" filter="url(#shadow)"/>
+  <text x="680" y="90" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#bd93f9" text-anchor="middle">def func(*args):</text>
+  
+  <!-- Tuple 가방 (args) -->
+  <rect x="630" y="110" width="100" height="110" rx="20" fill="url(#tupleGrad)" opacity="0.8" filter="url(#glow)"/>
+  <text x="680" y="135" font-family="'Courier New', monospace" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">args = ( )</text>
+
+  <!-- 날아오는 인자들 그룹 -->
+  <g font-family="'Courier New', monospace" font-size="16" font-weight="bold" fill="#282a36" filter="url(#shadow)">
+    <!-- 파라미터 1 -->
+    <g transform="translate(100, 100)">
+      <rect x="-30" y="-20" width="60" height="40" rx="8" fill="#50fa7b"/>
+      <text x="0" y="5" text-anchor="middle">10</text>
+      <animateTransform attributeName="transform" type="translate" values="100,100; 660,160" begin="0.5s" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="opacity" values="1; 1; 0" begin="0.5s" dur="1.5s" fill="freeze" keyTimes="0; 0.9; 1"/>
+    </g>
+    <!-- 파라미터 2 -->
+    <g transform="translate(100, 150)">
+      <rect x="-40" y="-20" width="80" height="40" rx="8" fill="#8be9fd"/>
+      <text x="0" y="5" text-anchor="middle">"Hello"</text>
+      <animateTransform attributeName="transform" type="translate" values="100,150; 660,180" begin="1.2s" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="opacity" values="1; 1; 0" begin="1.2s" dur="1.5s" fill="freeze" keyTimes="0; 0.9; 1"/>
+    </g>
+    <!-- 파라미터 3 -->
+    <g transform="translate(100, 200)">
+      <rect x="-30" y="-20" width="60" height="40" rx="8" fill="#ffb86c"/>
+      <text x="0" y="5" text-anchor="middle">True</text>
+      <animateTransform attributeName="transform" type="translate" values="100,200; 660,200" begin="1.9s" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="opacity" values="1; 1; 0" begin="1.9s" dur="1.5s" fill="freeze" keyTimes="0; 0.9; 1"/>
+    </g>
+  </g>
+
+  <!-- 가방 안에서 채워지는 결과 텍스트 -->
+  <text x="680" y="165" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle" opacity="0">
+    <tspan x="680" dy="0">10,</tspan>
+    <animate attributeName="opacity" values="0; 1; 1" begin="1.8s" dur="5s" fill="freeze"/>
+  </text>
+  <text x="680" y="185" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle" opacity="0">
+    <tspan x="680" dy="0">"Hello",</tspan>
+    <animate attributeName="opacity" values="0; 1; 1" begin="2.5s" dur="5s" fill="freeze"/>
+  </text>
+  <text x="680" y="205" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle" opacity="0">
+    <tspan x="680" dy="0">True</tspan>
+    <animate attributeName="opacity" values="0; 1; 1" begin="3.2s" dur="5s" fill="freeze"/>
+  </text>
+
+  <!-- 가방 꿀렁거림 이펙트 -->
+  <animateTransform href="#tupleGrad" attributeName="gradientTransform" type="scale" values="1; 1.05; 1" dur="1s" repeatCount="indefinite" />
+
+  <!-- 코드 호출 예시 (좌측 고정 텍스트) -->
+  <text x="50" y="80" font-family="'Courier New', monospace" font-size="18" fill="#f8f8f2">
+    <tspan x="50" dy="0"># 함수 호출 시 무한한 인자 난사!</tspan>
+    <tspan x="50" dy="30" fill="#50fa7b">func(10, "Hello", True)</tspan>
+  </text>
+  
+  <path d="M 300,150 L 550,150" stroke="#f8f8f2" stroke-width="2" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <polygon points="550,145 565,150 550,155" fill="#f8f8f2"/>
+
+</svg>

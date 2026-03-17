@@ -72,33 +72,86 @@ main:
         url: /python/03_functions/01_function_origin/
       - title: "3.3.2 함수 블랙박스와 매핑"
         url: /python/03_functions/02_function_concepts/
-      - title: "3.3.3 선언 문법 (def)과 호출"
-        url: /python/03_functions/03_function_usage/
-      - title: "3.3.4 제어 흐름의 도약"
-        url: /python/03_functions/04_function_call_flow/
-      - title: "3.3.5 가변 매개변수 통로"
-        url: /python/03_functions/05_advanced_parameters/
-      - title: "3.3.6 변수의 유효 범위 (Scope)"
-        url: /python/03_functions/06_variable_scope/
-      - title: "3.3.7 람다(Lambda)와 재귀"
-        url: /python/03_functions/07_lambda_and_recursion/
-      - title: "3.3.8 내장 함수와 메서드"
-        url: /python/03_functions/08_built_in_functions/
-      - title: "3.3.9 Python 수학 모듈(math)"
-        url: /python/03_functions/09_math_module/
+      - title: "3.3.3 함수 작동 흐름 다이어그램"
+        url: /python/03_functions/03_function_operation_flow/
+      - title: "3.3.4 선언 문법 (def)과 호출"
+        url: /python/03_functions/04_function_usage/
+      - title: "3.3.5 제어 흐름의 도약"
+        url: /python/03_functions/05_function_call_flow/
+      - title: "3.3.6 가변 매개변수 통로"
+        url: /python/03_functions/06_advanced_parameters/
+      - title: "3.3.7 변수의 유효 범위 (Scope)"
+        url: /python/03_functions/07_variable_scope/
+      - title: "3.3.8 람다(Lambda)"
+        url: /python/03_functions/08_lambda_function/
+      - title: "3.3.9 마법의 거울, 재귀(Recursion)"
+        url: /python/03_functions/09_recursive_function/
+      - title: "3.3.10 내장 함수와 메서드"
+        url: /python/03_functions/10_built_in_functions/
+      - title: "3.3.11 Python 수학 모듈(math)"
+        url: /python/03_functions/11_math_module/
+        subitems:
+          - title: "3.3.11.1 기본 산술과 통계"
+            url: /python/03_functions/11_math_module/01_arithmetic_stats/
+          - title: "3.3.11.2 거듭제곱과 로그"
+            url: /python/03_functions/11_math_module/02_power_log/
+          - title: "3.3.11.3 기하학과 삼각함수"
+            url: /python/03_functions/11_math_module/03_geometry_trig/
   - title: "3.4 자료 구조"
     url: /python/04_data_structures/
     subitems:
       - title: "학습목표"
         url: /python/04_data_structures/
-      - title: "3.4.1 리스트"
+      - title: "3.4.1 파이썬 리스트 (List)"
         url: /python/04_data_structures/01_list/
+        subitems:
+          - title: "3.4.1.1 리스트 개념과 생성"
+            url: /python/04_data_structures/01_list/01_concept_and_creation/
+          - title: "3.4.1.2 인덱싱과 슬라이싱"
+            url: /python/04_data_structures/01_list/02_indexing_and_slicing/
+          - title: "3.4.1.3 리스트 조작 메서드"
+            url: /python/04_data_structures/01_list/03_methods_and_operations/
+          - title: "3.4.1.4 메모리와 얕은 복사"
+            url: /python/04_data_structures/01_list/04_memory_reference/
+          - title: "3.4.1.5 리스트 컴프리헨션"
+            url: /python/04_data_structures/01_list/05_list_comprehension/
+          - title: "3.4.1.6 1차원 리스트와 벡터(1D)"
+            url: /python/04_data_structures/01_list/06_1d_list_and_vector/
+          - title: "3.4.1.7 2차원 리스트와 행렬(2D)"
+            url: /python/04_data_structures/01_list/07_2d_list_and_matrix/
+          - title: "3.4.1.8 3차원 리스트와 텐서(3D)"
+            url: /python/04_data_structures/01_list/08_3d_list_and_tensor/
       - title: "3.4.2 사전"
         url: /python/04_data_structures/02_dictionary/
+        subitems:
+          - title: "3.4.2.1 해시 매핑의 이해"
+            url: /python/04_data_structures/02_dictionary/01_hash_and_mapping/
+          - title: "3.4.2.2 생성과 접근법 (CRUD)"
+            url: /python/04_data_structures/02_dictionary/02_creation_and_access/
+          - title: "3.4.2.3 방어선 구축 (.get)"
+            url: /python/04_data_structures/02_dictionary/03_methods_and_defense/
+          - title: "3.4.2.4 초고속 압축 (Comprehension)"
+            url: /python/04_data_structures/02_dictionary/04_dict_comprehension/
       - title: "3.4.3 튜플"
         url: /python/04_data_structures/03_tuple/
+        subitems:
+          - title: "3.4.3.1 튜플의 불변성 (Immutability)"
+            url: /python/04_data_structures/03_tuple/01_concept_and_immutability/
+          - title: "3.4.3.2 튜플 패킹과 언패킹"
+            url: /python/04_data_structures/03_tuple/02_packing_and_unpacking/
+          - title: "3.4.3.3 가변성 함정과 형 변환"
+            url: /python/04_data_structures/03_tuple/03_tuple_methods_and_conversion/
+          - title: "3.4.3.4 복합 열쇠 (Hashable)"
+            url: /python/04_data_structures/03_tuple/04_tuple_as_dictionary_key/
       - title: "3.4.4 집합"
         url: /python/04_data_structures/04_set/
+        subitems:
+          - title: "3.4.4.1 집합 고유성 (Uniqueness)"
+            url: /python/04_data_structures/04_set/01_concept_and_uniqueness/
+          - title: "3.4.4.2 생성과 삭제 (CRUD)"
+            url: /python/04_data_structures/04_set/02_creation_and_modification/
+          - title: "3.4.4.3 벤 다이어그램 연산"
+            url: /python/04_data_structures/04_set/03_set_operations/
       - title: "3.4.5 수정 불가능(immutable)과 함수 hash() id()"
         url: /python/04_data_structures/05_immutable_hash_id/
   - title: "3.5 객체지향"

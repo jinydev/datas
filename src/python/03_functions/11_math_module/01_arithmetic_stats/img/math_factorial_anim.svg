@@ -1,0 +1,102 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282a36" />
+      <stop offset="100%" stop-color="#44475a" />
+    </linearGradient>
+    <style>
+      .text-title { font-family: 'Consolas', monospace; fill: #f8f8f2; font-size: 24px; font-weight: bold; }
+      .text-math { font-family: 'Consolas', monospace; fill: #ff79c6; font-size: 32px; font-weight: bold; text-anchor: middle; }
+      .text-num { font-family: 'Consolas', monospace; fill: #8be9fd; font-size: 40px; font-weight: bold; text-anchor: middle; alignment-baseline: middle; }
+      .text-result { font-family: 'Consolas', monospace; fill: #50fa7b; font-size: 60px; font-weight: bold; }
+      
+      .box { fill: #6272a4; stroke: #f8f8f2; stroke-width: 2; rx: 8; ry: 8; }
+      
+      .st1 { animation: popIn 1s forwards ease-out; opacity: 0; transform-origin: center; }
+      .st2 { animation: popIn 1s 1s forwards ease-out; opacity: 0; transform-origin: center; }
+      .st3 { animation: popIn 1s 2s forwards ease-out; opacity: 0; transform-origin: center; }
+      .st4 { animation: popIn 1s 3s forwards ease-out; opacity: 0; transform-origin: center; }
+      .st5 { animation: popIn 1s 4s forwards ease-out; opacity: 0; transform-origin: center; }
+      
+      .st-res { animation: glowUp 1s 5s forwards; opacity: 0; transform-origin: center; }
+      
+      @keyframes popIn {
+        0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+        50% { opacity: 1; transform: scale(1.1) translateY(-5px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      @keyframes glowUp {
+        0% { opacity: 0; transform: scale(0.8); }
+        100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 10px #50fa7b); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="300" rx="15" fill="url(#bgGrad)" />
+  <text x="30" y="40" class="text-title">math.factorial(5)</text>
+
+  <!-- Number 5 -->
+  <g transform="translate(60, 120)">
+    <g class="st1">
+      <rect x="0" y="0" width="80" height="80" class="box" fill="#ff5555"/>
+      <text x="40" y="45" class="text-num" fill="#ffffff">5</text>
+    </g>
+  </g>
+  
+  <g transform="translate(170, 170)">
+    <text class="text-math st2">×</text>
+  </g>
+
+  <!-- Number 4 -->
+  <g transform="translate(200, 120)">
+    <g class="st2">
+      <rect x="0" y="0" width="80" height="80" class="box" fill="#ffb86c"/>
+      <text x="40" y="45" class="text-num" fill="#282a36">4</text>
+    </g>
+  </g>
+  
+  <g transform="translate(310, 170)">
+    <text class="text-math st3">×</text>
+  </g>
+
+  <!-- Number 3 -->
+  <g transform="translate(340, 120)">
+    <g class="st3">
+      <rect x="0" y="0" width="80" height="80" class="box" fill="#f1fa8c"/>
+      <text x="40" y="45" class="text-num" fill="#282a36">3</text>
+    </g>
+  </g>
+  
+  <g transform="translate(450, 170)">
+    <text class="text-math st4">×</text>
+  </g>
+
+  <!-- Number 2 -->
+  <g transform="translate(480, 120)">
+    <g class="st4">
+      <rect x="0" y="0" width="80" height="80" class="box" fill="#8be9fd"/>
+      <text x="40" y="45" class="text-num" fill="#282a36">2</text>
+    </g>
+  </g>
+  
+  <g transform="translate(590, 170)">
+    <text class="text-math st5">×</text>
+  </g>
+
+  <!-- Number 1 -->
+  <g transform="translate(620, 120)">
+    <g class="st5">
+      <rect x="0" y="0" width="80" height="80" class="box" fill="#bd93f9"/>
+      <text x="40" y="45" class="text-num" fill="#ffffff">1</text>
+    </g>
+  </g>
+
+  <!-- Final Result -->
+  <g transform="translate(60, 220)">
+    <g class="st-res">
+      <rect x="0" y="0" width="640" height="60" rx="10" fill="#44475a" stroke="#50fa7b" stroke-width="2" />
+      <text x="270" y="45" class="text-result">= 120</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,96 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 22px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #cba6f7; }
+      .val { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      .bouncer-text { font-family: 'Consolas', monospace; font-size: 14px; font-weight: bold; fill: #f38ba8; text-anchor: middle;}
+      
+      .box-list { fill: rgba(137, 180, 250, 0.2); stroke: #89b4fa; stroke-width: 2; stroke-dasharray: 6,4; rx: 8; }
+      .box-set { fill: rgba(166, 227, 161, 0.2); stroke: #a6e3a1; stroke-width: 4; rx: 25; }
+      .item { fill: #f9e2af; stroke: #1e1e2e; stroke-width: 2; rx: 10; }
+      .item-clone { fill: #f38ba8; stroke: #1e1e2e; stroke-width: 2; rx: 10; }
+      
+      .bouncer { fill: #cba6f7; rx: 5; }
+      
+      .anim-move1 { animation: walkIn 4s infinite ease-in-out; }
+      .anim-move2 { animation: walkIn 4s infinite ease-in-out; animation-delay: 0.5s; }
+      .anim-move3 { animation: walkIn 4s infinite ease-in-out; animation-delay: 1.0s; }
+      .anim-move4 { animation: walkReject 4s infinite ease-in-out; animation-delay: 1.5s; }
+      .anim-move5 { animation: walkReject 4s infinite ease-in-out; animation-delay: 2.0s; }
+      
+      .anim-kick { animation: bouncerKick 4s infinite linear; }
+
+      @keyframes walkIn {
+        0% { transform: translate(0, 0); opacity: 1; }
+        30%, 80% { transform: translate(350px, 0); opacity: 1; }
+        81%, 100% { opacity: 0; }
+      }
+      
+      @keyframes walkReject {
+        0% { transform: translate(0, 0); opacity: 1; }
+        30% { transform: translate(250px, 0); opacity: 1; }
+        40% { transform: translate(220px, 50px) rotate(-45deg); opacity: 0.5; }
+        50%, 100% { transform: translate(150px, 150px) rotate(-90deg); opacity: 0; }
+      }
+      
+      @keyframes bouncerKick {
+        0%, 35% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
+        36%, 42% { transform: scale(1.1); filter: drop-shadow(0 0 10px #f38ba8); fill: #f38ba8;}
+        43%, 48% { transform: scale(1.1); filter: drop-shadow(0 0 10px #f38ba8); fill: #f38ba8;}
+        49%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
+      }
+
+    </style>
+  </defs>
+
+  <rect width="800" height="350" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">나이트클럽 바운서(Bouncer): 세트(Set)의 중복 제거 원리</text>
+  <text x="30" y="70" class="code">set([1, 2, 3, 3, 3]) -> {1, 2, 3}</text>
+
+  <!-- Left: Source List -->
+  <g transform="translate(50, 150)">
+    <rect x="-20" y="-40" width="100" height="200" class="box-list" />
+    <text x="30" y="-15" class="code" fill="#89b4fa" text-anchor="middle">대기열(List)</text>
+    
+    <!-- Items in Queue -->
+    <g class="anim-move1" transform="translate(0, 0)"><rect x="0" y="0" width="60" height="30" class="item" /><text x="30" y="17" class="val">1</text></g>
+    <g class="anim-move2" transform="translate(0, 40)"><rect x="0" y="0" width="60" height="30" class="item" /><text x="30" y="17" class="val">2</text></g>
+    <g class="anim-move3" transform="translate(0, 80)"><rect x="0" y="0" width="60" height="30" class="item" /><text x="30" y="17" class="val">3</text></g>
+    
+    <g class="anim-move4" transform="translate(0, 120)"><rect x="0" y="0" width="60" height="30" class="item-clone" /><text x="30" y="17" class="val">3</text></g>
+    <g class="anim-move5" transform="translate(0, 160)"><rect x="0" y="0" width="60" height="30" class="item-clone" /><text x="30" y="17" class="val">3</text></g>
+  </g>
+
+  <!-- Middle: Bouncer (Set Guard) -->
+  <g transform="translate(280, 150)">
+    <g class="anim-kick">
+      <rect x="0" y="-10" width="40" height="150" class="bouncer" />
+      <text x="20" y="-20" class="code" text-anchor="middle">Set문지기</text>
+      <text x="20" y="170" class="bouncer-text">"입장 컷!"</text>
+    </g>
+  </g>
+
+  <!-- Right: Unique Set Container -->
+  <g transform="translate(420, 120)">
+    <rect x="-20" y="-10" width="250" height="180" class="box-set" />
+    <text x="105" y="25" class="code" fill="#a6e3a1" text-anchor="middle">클럽 내부 (오직 Unique)</text>
+    <text x="105" y="55" class="title" fill="#a6adc8" font-size="14px" text-anchor="middle">순서(인덱스) 없음</text>
+    
+    <!-- Static Landing Spots -->
+    <rect x="20" y="80" width="60" height="30" class="item" stroke-dasharray="2,2" fill="transparent" />
+    <text x="50" y="97" class="val" fill="#a6adc8">1</text>
+    
+    <rect x="100" y="120" width="60" height="30" class="item" stroke-dasharray="2,2" fill="transparent" />
+    <text x="130" y="137" class="val" fill="#a6adc8">2</text>
+    
+    <rect x="150" y="70" width="60" height="30" class="item" stroke-dasharray="2,2" fill="transparent" />
+    <text x="180" y="87" class="val" fill="#a6adc8">3</text>
+  </g>
+
+</svg>

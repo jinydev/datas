@@ -1,0 +1,122 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #f38ba8; text-anchor: middle;}
+      
+      .circle-a { stroke: #89b4fa; stroke-width: 4; fill: rgba(137, 180, 250, 0.2); }
+      .circle-b { stroke: #f9e2af; stroke-width: 4; fill: rgba(249, 226, 175, 0.2); }
+      
+      .text-set { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #a6adc8; }
+      .text-num { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #1e1e2e; }
+
+      /* Base Path styles for the intersections */
+      .intersect { fill: transparent; transition: all 1s; }
+      .only-a { fill: transparent; transition: all 1s; }
+      .only-b { fill: transparent; transition: all 1s; }
+      
+      .anim-venn { animation: vennCycle 16s infinite; }
+
+      @keyframes vennCycle {
+        /* 0-25%: Union - All highlighted */
+        0%, 20% { fill: rgba(166, 227, 161, 0.7); }
+        
+        /* 25-50%: Intersection - Only center highlighted */
+        25%, 45% { fill: transparent; }
+        
+        /* 50-75%: Difference - Only left highlighted */
+        50%, 70% { fill: transparent; }
+        
+        /* 75-100%: Symmetric Diff - Outer edges highlighted */
+        75%, 95% { fill: transparent; }
+        
+        100% { fill: rgba(166, 227, 161, 0.7); }
+      }
+
+      .anim-intersect { animation: highlightIntersect 16s infinite; }
+      @keyframes highlightIntersect {
+        0%, 20% { fill: rgba(166, 227, 161, 0.7); } /* Union */
+        25%, 45% { fill: rgba(166, 227, 161, 0.9); } /* Intersection */
+        50%, 70% { fill: transparent; }             /* Difference A-B */
+        75%, 95% { fill: transparent; }             /* Sym Diff */
+        100% { fill: rgba(166, 227, 161, 0.7); }
+      }
+
+      .anim-only-a { animation: highlightA 16s infinite; }
+      @keyframes highlightA {
+        0%, 20% { fill: rgba(166, 227, 161, 0.7); } /* Union */
+        25%, 45% { fill: transparent; }             /* Intersection */
+        50%, 70% { fill: rgba(166, 227, 161, 0.9); } /* Difference A-B */
+        75%, 95% { fill: rgba(166, 227, 161, 0.7); } /* Sym Diff */
+        100% { fill: rgba(166, 227, 161, 0.7); }
+      }
+
+      .anim-only-b { animation: highlightB 16s infinite; }
+      @keyframes highlightB {
+        0%, 20% { fill: rgba(166, 227, 161, 0.7); } /* Union */
+        25%, 45% { fill: transparent; }             /* Intersection */
+        50%, 70% { fill: transparent; }             /* Difference A-B */
+        75%, 95% { fill: rgba(166, 227, 161, 0.7); } /* Sym Diff */
+        100% { fill: rgba(166, 227, 161, 0.7); }
+      }
+
+
+      .text-1 { animation: showText1 16s infinite; }
+      .text-2 { animation: showText2 16s infinite; }
+      .text-3 { animation: showText3 16s infinite; }
+      .text-4 { animation: showText4 16s infinite; }
+      
+      @keyframes showText1 { 0%, 20% { opacity: 1; } 21%, 100% { opacity: 0; } }
+      @keyframes showText2 { 0%, 24% { opacity: 0; } 25%, 45% { opacity: 1; } 46%, 100% { opacity: 0; } }
+      @keyframes showText3 { 0%, 49% { opacity: 0; } 50%, 70% { opacity: 1; } 71%, 100% { opacity: 0; } }
+      @keyframes showText4 { 0%, 74% { opacity: 0; } 75%, 95% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+    </style>
+  </defs>
+
+  <rect width="800" height="400" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">데이터 과학의 심장: 집합 연산자 (Venn Diagram)</text>
+
+  <!-- Venn Diagram Group -->
+  <g transform="translate(400, 200)">
+    
+    <!-- Base Rings purely for outlines -->
+    <circle cx="-60" cy="0" r="100" class="circle-a" />
+    <circle cx="60" cy="0" r="100" class="circle-b" />
+
+    <!-- A only Path -->
+    <path d="M 0 -80 A 100 100 0 1 0 0 80 A 100 100 0 0 1 0 -80 Z" class="anim-only-a" />
+    <!-- B only Path -->
+    <path d="M 0 -80 A 100 100 0 1 1 0 80 A 100 100 0 0 0 0 -80 Z" class="anim-only-b" />
+    <!-- Intersection Paths -->
+    <path d="M 0 -80 A 100 100 0 0 1 0 80 A 100 100 0 0 1 0 -80 Z" class="anim-intersect" />
+
+    <!-- Text Labels for Sets -->
+    <text x="-130" y="-120" class="text-set" fill="#89b4fa">Set A</text>
+    <text x="70" y="-120" class="text-set" fill="#f9e2af">Set B</text>
+    
+    <!-- Elements inside sets -->
+    <text x="-90" y="-10" class="text-num">1</text>
+    <text x="-70" y="30" class="text-num">2</text>
+    
+    <text x="0" y="10" class="text-num">3</text>
+    
+    <text x="70" y="-20" class="text-num">4</text>
+    <text x="90" y="40" class="text-num">5</text>
+
+  </g>
+
+  <!-- Dynamic Equation Text -->
+  <g transform="translate(400, 360)">
+    <text x="0" y="0" class="code text-1" fill="#a6e3a1">A | B (합집합) : {1, 2, 3, 4, 5}</text>
+    <text x="0" y="0" class="code text-2" fill="#a6e3a1">A &amp; B (교집합) : {3}</text>
+    <text x="0" y="0" class="code text-3" fill="#a6e3a1">A - B (차집합) : {1, 2}</text>
+    <text x="0" y="0" class="code text-4" fill="#a6e3a1">A ^ B (대칭 차집합) : {1, 2, 4, 5}</text>
+  </g>
+
+</svg>

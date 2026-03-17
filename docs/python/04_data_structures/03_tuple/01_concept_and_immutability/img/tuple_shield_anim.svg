@@ -1,0 +1,107 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 22px; font-weight: bold; fill: #bac2de; }
+      .code-err { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #f38ba8; }
+      .code-safe { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #a6e3a1; }
+      .label { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      .val { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      
+      .box-list { fill: #89b4fa; stroke: #cdd6f4; stroke-width: 2; rx: 4; }
+      .box-tuple { fill: rgba(166, 227, 161, 0.5); stroke: #a6e3a1; stroke-width: 5; rx: 15; }
+      .diamond { fill: none; stroke: #f9e2af; stroke-width: 3; stroke-dasharray: 5,5; }
+      
+      .bomb { animation: flyBomb 2s infinite ease-in; fill: #f38ba8; }
+      .explosion { animation: boom 2s infinite ease-out; fill: #f38ba8; opacity: 0; }
+      .bounce { animation: flySafe 2s infinite ease-in-out; fill: #f38ba8; }
+      .shield-glow { animation: pulseShield 2s infinite ease-in-out; }
+
+      @keyframes flyBomb {
+        0% { transform: translate(-100px, -50px); opacity: 1; }
+        50% { transform: translate(50px, 0); opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+      
+      @keyframes boom {
+        0%, 50% { transform: scale(0.5); opacity: 0; }
+        60% { transform: scale(1.5); opacity: 1; filter: drop-shadow(0 0 10px #f38ba8); }
+        100% { transform: scale(3); opacity: 0; }
+      }
+      
+      @keyframes flySafe {
+        0% { transform: translate(-100px, -50px); opacity: 1; }
+        50% { transform: translate(40px, -10px); opacity: 1; }
+        60% { transform: translate(20px, -60px) rotate(45deg); opacity: 0.5; }
+        100% { transform: translate(-20px, -110px) rotate(90deg); opacity: 0; }
+      }
+      
+      @keyframes pulseShield {
+        0%, 45% { stroke-width: 4; filter: drop-shadow(0 0 0 transparent); }
+        50% { stroke-width: 8; fill: rgba(166, 227, 161, 0.8); filter: drop-shadow(0 0 20px #a6e3a1); }
+        100% { stroke-width: 4; fill: rgba(166, 227, 161, 0.5); filter: drop-shadow(0 0 0 transparent); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="350" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">다이아몬드 금고: 리스트 vs 튜플의 불변성(Immutability)</text>
+
+  <!-- Left: List Mutation (Bomb) -->
+  <g transform="translate(100, 100)">
+    <text x="0" y="0" class="code-err">1. List: 변경 가능 (위험)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">ls = [10, 20] -> ls[0] = 99</text>
+    
+    <g transform="translate(50, 80)">
+      
+      <!-- List Container -->
+      <rect x="0" y="0" width="140" height="60" class="box-list" stroke-dasharray="8,4" />
+      <text x="35" y="30" class="val">10</text>
+      <text x="105" y="30" class="val">20</text>
+      
+      <!-- The mutation attack -->
+      <g class="bomb">
+        <circle cx="0" cy="0" r="15" />
+        <text x="0" y="-20" fill="#f38ba8" font-size="14px" text-anchor="middle" font-weight="bold">99 삽입!</text>
+      </g>
+      
+      <!-- Explosion Mutation -->
+      <g class="explosion" transform="translate(35, 30)">
+        <polygon points="0,-20 10,-8 25,-10 15,2 25,15 10,10 0,25 -10,10 -25,15 -15,2 -25,-10 -10,-8" />
+        <text x="0" y="5" class="label" fill="#1e1e2e" font-size="12px">파괴!</text>
+      </g>
+      
+      <text x="70" y="90" class="code-err" font-size="16px" text-anchor="middle">데이터 변질 💥</text>
+    </g>
+  </g>
+
+  <!-- Right: Tuple Defense (Shield) -->
+  <g transform="translate(480, 100)">
+    <text x="0" y="0" class="code-safe">2. Tuple: 불변 금고 (안전)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">tp = (10, 20) -> tp[0] = 99 (튕겨냄)</text>
+    
+    <g transform="translate(50, 80)">
+      
+      <!-- Tuple Container with Diamond Shield -->
+      <g class="shield-glow">
+        <rect x="-10" y="-10" width="160" height="80" class="box-tuple" />
+        <polygon points="70,-25 165,30 70,85 -25,30" class="diamond" />
+      </g>
+      <text x="35" y="30" class="val">10</text>
+      <text x="105" y="30" class="val">20</text>
+      
+      <!-- The mutation attack -->
+      <g class="bounce">
+        <circle cx="0" cy="0" r="15" />
+        <text x="0" y="-20" fill="#f38ba8" font-size="14px" text-anchor="middle" font-weight="bold">99 삽입!</text>
+      </g>
+      
+      <text x="70" y="105" class="code-safe" font-size="16px" text-anchor="middle">TypeError 방어! 🛡️</text>
+    </g>
+  </g>
+
+</svg>

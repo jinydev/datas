@@ -1,0 +1,83 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #bac2de; }
+      .label { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      .code { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #cba6f7; }
+      .desc { font-family: 'Consolas', monospace; font-size: 14px; fill: #a6adc8; }
+      
+      .box-1d { fill: #89b4fa; stroke: #cdd6f4; stroke-width: 2; rx: 6; }
+      .box-2d { fill: #a6e3a1; stroke: #cdd6f4; stroke-width: 2; rx: 6; }
+      .box-3d { fill: #f9e2af; stroke: #f38ba8; stroke-width: 2; rx: 6; }
+
+      .anim-appear-1 { animation: fadeIn 0.5s 0.5s forwards; opacity: 0; }
+      .anim-appear-2 { animation: fadeIn 0.5s 1.5s forwards; opacity: 0; }
+      .anim-appear-3 { animation: fadeIn 0.5s 2.5s forwards; opacity: 0; }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="400" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">차원(Dimension)과 리스트 계층 구조</text>
+
+  <!-- 1D Vector -->
+  <g transform="translate(30, 80)">
+    <g class="anim-appear-1">
+      <text x="0" y="0" class="code">1D Vector: [ ] (선)</text>
+      <text x="250" y="0" class="desc">좌표 1개 (x) | 단일 리스트 | 기찻길 위의 개미</text>
+      <g transform="translate(0, 15)">
+        <rect x="0" y="0" width="50" height="40" class="box-1d" /> <text x="25" y="20" class="label">1</text>
+        <rect x="60" y="0" width="50" height="40" class="box-1d" /> <text x="85" y="20" class="label">2</text>
+        <rect x="120" y="0" width="50" height="40" class="box-1d" /> <text x="145" y="20" class="label">3</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 2D Matrix -->
+  <g transform="translate(30, 170)">
+    <g class="anim-appear-2">
+      <text x="0" y="0" class="code">2D Matrix: [ [ ] ] (면)</text>
+      <text x="250" y="0" class="desc">좌표 2개 (x, y) | 중첩 리스트 | 엑셀 시트</text>
+      <g transform="translate(0, 15)">
+        <rect x="0" y="0" width="50" height="30" class="box-2d" /> <text x="25" y="15" class="label">1</text>
+        <rect x="60" y="0" width="50" height="30" class="box-2d" /> <text x="85" y="15" class="label">2</text>
+        <rect x="0" y="35" width="50" height="30" class="box-2d" /> <text x="25" y="50" class="label">4</text>
+        <rect x="60" y="35" width="50" height="30" class="box-2d" /> <text x="85" y="50" class="label">5</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 3D Tensor -->
+  <g transform="translate(30, 280)">
+    <g class="anim-appear-3">
+      <text x="0" y="0" class="code">3D Tensor: [ [ [ ] ] ] (공간)</text>
+      <text x="250" y="0" class="desc">좌표 3개 (x, y, z) | 3중 리스트 | 큐브 블록</text>
+      <g transform="translate(0, 15)">
+        <!-- Back Layer -->
+        <g transform="translate(15, -15)" opacity="0.6">
+          <rect x="0" y="0" width="40" height="30" class="box-3d" />
+          <rect x="45" y="0" width="40" height="30" class="box-3d" />
+          <rect x="0" y="35" width="40" height="30" class="box-3d" />
+          <rect x="45" y="35" width="40" height="30" class="box-3d" />
+        </g>
+        <!-- Front Layer -->
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="40" height="30" class="box-3d" /> <text x="20" y="15" class="label">1</text>
+          <rect x="45" y="0" width="40" height="30" class="box-3d" /> <text x="65" y="15" class="label">2</text>
+          <rect x="0" y="35" width="40" height="30" class="box-3d" /> <text x="20" y="50" class="label">3</text>
+          <rect x="45" y="35" width="40" height="30" class="box-3d" /> <text x="65" y="50" class="label">4</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+</svg>

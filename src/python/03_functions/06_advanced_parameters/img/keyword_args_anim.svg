@@ -1,0 +1,90 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 그라데이션 및 필터 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282a36" />
+      <stop offset="100%" stop-color="#44475a" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="800" height="400" rx="15" fill="url(#bgGrad)" stroke="#6272a4" stroke-width="2"/>
+
+  <!-- 타이틀 -->
+  <text x="400" y="40" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#f8f8f2" text-anchor="middle">Positional vs Keyword Arguments</text>
+
+  <!-- SECTION 1: 위치 인자 (Positional) -->
+  <text x="50" y="90" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#50fa7b">1. 위치 인자 (Positional)</text>
+  <text x="50" y="115" font-family="'Courier New', monospace" font-size="16" fill="#f1fa8c">make_profile("앨리스", 25)</text>
+  
+  <!-- 함수 구멍 (Parameter Slots) 1 -->
+  <rect x="500" y="70" width="100" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="550" y="60" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">name</text>
+  
+  <rect x="630" y="70" width="100" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="680" y="60" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">age</text>
+
+  <!-- 날아가는 데이터 1 -->
+  <g font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#282a36">
+    <g transform="translate(300, 75)">
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#8be9fd"/>
+      <text x="40" y="20" text-anchor="middle">"앨리스"</text>
+      <!-- 첫 번째 구멍으로 쏙 -->
+      <animateTransform attributeName="transform" type="translate" values="300,75; 510,75" begin="0.5s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+    <g transform="translate(400, 75)">
+      <rect x="0" y="0" width="50" height="30" rx="5" fill="#ffb86c"/>
+      <text x="25" y="20" text-anchor="middle">25</text>
+      <!-- 두 번째 구멍으로 쏙 -->
+      <animateTransform attributeName="transform" type="translate" values="400,75; 655,75" begin="0.8s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+  </g>
+
+  <!-- 선 (구분선) -->
+  <line x1="50" y1="180" x2="750" y2="180" stroke="#6272a4" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- SECTION 2: 키워드 인자 (Keyword) -->
+  <text x="50" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ff79c6">2. 키워드 인자 (Keyword)</text>
+  <text x="50" y="255" font-family="'Courier New', monospace" font-size="16" fill="#f1fa8c">make_profile(age=25, name="앨리스")</text>
+
+  <!-- 함수 구멍 (Parameter Slots) 2 -->
+  <rect x="500" y="210" width="100" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="550" y="200" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">name</text>
+  
+  <rect x="630" y="210" width="100" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="680" y="200" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">age</text>
+
+  <!-- 날아가는 데이터 2 -->
+  <g font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#282a36">
+    <!-- 연산 순서가 뒤바뀌었지만 이름표 따라 쏙 -->
+    <g transform="translate(400, 215)">
+      <!-- Name Tag -->
+      <rect x="0" y="-15" width="40" height="15" rx="2" fill="#ff79c6"/>
+      <text x="20" y="-4" text-anchor="middle" font-size="10" fill="#fff">name=</text>
+      <!-- Value -->
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#8be9fd"/>
+      <text x="40" y="20" text-anchor="middle">"앨리스"</text>
+      <!-- 첫 번째 구멍으로 역주행 쏙 -->
+      <animateTransform attributeName="transform" type="translate" values="400,215; 510,215" begin="3.2s" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+    <g transform="translate(300, 215)">
+      <!-- Name Tag -->
+      <rect x="0" y="-15" width="40" height="15" rx="2" fill="#ff79c6"/>
+      <text x="20" y="-4" text-anchor="middle" font-size="10" fill="#fff">age=</text>
+      <!-- Value -->
+      <rect x="0" y="0" width="50" height="30" rx="5" fill="#ffb86c"/>
+      <text x="25" y="20" text-anchor="middle">25</text>
+      <!-- 두 번째 구멍으로 쏙 -->
+      <animateTransform attributeName="transform" type="translate" values="300,215; 655,215" begin="2.5s" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+  </g>
+
+  <!-- 애니메이션 반복 트리거용 텍스트 (옵션) -->
+  <text x="400" y="360" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">
+    순서를 무시해도 파이썬이 이름표를 찾아 정확히 꽂아줍니다!
+  </text>
+  
+</svg>

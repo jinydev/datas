@@ -1,0 +1,82 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #cba6f7; }
+      .num { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      .desc { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #a6adc8; text-anchor: middle;}
+      
+      .box { stroke-width: 2; rx: 8; }
+      .base-box { fill: #89b4fa; stroke: #cdd6f4; }
+      .append-box { fill: #a6e3a1; stroke: #cdd6f4; }
+      .insert-box { fill: #f9e2af; stroke: #cdd6f4; }
+      
+      /* Base items push animation */
+      .push-right { animation: pRight 1s 2s forwards ease-in-out; }
+      
+      /* Append Anim */
+      .anim-append { animation: dropAppend 1s 0s forwards ease-out; opacity: 0; }
+      /* Insert Anim */
+      .anim-insert { animation: dropInsert 1s 2s forwards ease-out; opacity: 0; }
+
+      @keyframes dropAppend {
+        0% { opacity: 0; transform: translateY(-30px) scale(0.5); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes pRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(90px); }
+      }
+      @keyframes dropInsert {
+        0% { opacity: 0; transform: translateY(-50px) scale(0.5); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="300" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">pack = ["지도"]</text>
+
+  <!-- Append Section -->
+  <text x="30" y="80" class="code">pack.append("물병")</text>
+  <text x="280" y="80" class="desc" fill="#a6e3a1" text-anchor="start">← 꼬리에 얌전히 추가</text>
+  
+  <g transform="translate(60, 110)">
+    <!-- Original Box -->
+    <g class="push-right">
+      <rect x="0" y="0" width="80" height="50" class="box base-box" />
+      <text x="40" y="25" class="num">"지도"</text>
+      <text x="40" y="70" class="desc" fill="#f38ba8">idx 0 → 1</text>
+    </g>
+    
+    <!-- Appended Box -->
+    <g transform="translate(90, 0)">
+      <g class="push-right">
+        <g class="anim-append">
+          <rect x="0" y="0" width="80" height="50" class="box append-box" />
+          <text x="40" y="25" class="num">"물병"</text>
+          <text x="40" y="70" class="desc" fill="#f38ba8">idx 1 → 2</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Insert Section -->
+  <text x="30" y="220" class="code">pack.insert(0, "횃불")</text>
+  <text x="320" y="220" class="desc" fill="#f9e2af" text-anchor="start">← 0번 자리를 비집고 새치기, 나머지는 밀려남</text>
+  
+  <g transform="translate(60, 110)">
+    <!-- Inserted Box -->
+    <g class="anim-insert">
+      <rect x="0" y="0" width="80" height="50" class="box insert-box" />
+      <text x="40" y="25" class="num">"횃불"</text>
+      <text x="40" y="70" class="desc" fill="#a6e3a1">idx 0 자리 차지!</text>
+    </g>
+  </g>
+
+</svg>

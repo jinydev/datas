@@ -1,0 +1,103 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 22px; font-weight: bold; fill: #bac2de; }
+      .code-err { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #f38ba8; }
+      .code-safe { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #a6e3a1; }
+      .label { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      
+      .box { fill: #45475a; stroke: #cdd6f4; stroke-width: 2; rx: 8; }
+      .shield { fill: rgba(166, 227, 161, 0.2); stroke: #a6e3a1; stroke-width: 4; stroke-dasharray: 8,4; rx: 15; }
+      
+      .bomb { animation: flyBomb 2s infinite ease-in; fill: #f38ba8; }
+      .explosion { animation: boom 2s infinite ease-out; fill: #f38ba8; opacity: 0; }
+      .bounce { animation: flySafe 2s infinite ease-in-out; fill: #f38ba8; }
+      .shield-glow { animation: pulseShield 2s infinite ease-in-out; }
+
+      @keyframes flyBomb {
+        0% { transform: translate(-100px, 0); opacity: 1; }
+        50% { transform: translate(120px, 0); opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+      
+      @keyframes boom {
+        0%, 50% { transform: scale(0.5); opacity: 0; }
+        60% { transform: scale(1.5); opacity: 1; filter: drop-shadow(0 0 10px #f38ba8); }
+        100% { transform: scale(2); opacity: 0; }
+      }
+      
+      @keyframes flySafe {
+        0% { transform: translate(-100px, 0); opacity: 1; }
+        50% { transform: translate(100px, 0); opacity: 1; }
+        60% { transform: translate(80px, -50px) rotate(45deg); opacity: 0.5; }
+        100% { transform: translate(50px, -100px) rotate(90deg); opacity: 0; }
+      }
+      
+      @keyframes pulseShield {
+        0%, 45% { stroke-width: 4; filter: drop-shadow(0 0 0 transparent); }
+        50% { stroke-width: 8; filter: drop-shadow(0 0 15px #a6e3a1); }
+        100% { stroke-width: 4; filter: drop-shadow(0 0 0 transparent); }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="350" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">서버 다운 방어막: .get() 탐색 메서드</text>
+
+  <!-- Left: Direct Access (Bomb) -->
+  <g transform="translate(50, 100)">
+    <text x="0" y="0" class="code-err">1. 일반 인덱싱 (위험)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">value = dict["없는키"]</text>
+    
+    <g transform="translate(50, 70)">
+      <!-- The missing key search -->
+      <g class="bomb">
+        <circle cx="0" cy="30" r="15" />
+        <text x="0" y="-5" fill="#f38ba8" font-size="14px" text-anchor="middle" font-weight="bold">"없는키"</text>
+      </g>
+      
+      <!-- Target Dictionary Box -->
+      <rect x="150" y="0" width="80" height="60" class="box" />
+      <text x="190" y="30" class="label" fill="#cdd6f4">Dict</text>
+      
+      <!-- Explosion KeyError -->
+      <g class="explosion" transform="translate(190, 30)">
+        <polygon points="0,-40 20,-15 50,-20 30,5 50,30 20,20 0,50 -20,20 -50,30 -30,5 -50,-20 -20,-15" />
+        <text x="0" y="5" class="label" fill="#1e1e2e" font-size="12px">KeyError!</text>
+      </g>
+      <text x="190" y="85" class="code-err" font-size="16px" text-anchor="middle">서버 다운 💥</text>
+    </g>
+  </g>
+
+  <!-- Right: .get() Access (Shield) -->
+  <g transform="translate(450, 100)">
+    <text x="0" y="0" class="code-safe">2. .get() 메서드 (무적 방패)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">value = dict.get("없는키", "기본값")</text>
+    
+    <g transform="translate(50, 70)">
+      <!-- The missing key search -->
+      <g class="bounce">
+        <circle cx="0" cy="30" r="15" />
+        <text x="0" y="-5" fill="#f38ba8" font-size="14px" text-anchor="middle" font-weight="bold">"없는키"</text>
+      </g>
+      
+      <!-- Target Dictionary Box behind a Shield -->
+      <rect x="150" y="0" width="80" height="60" class="box" />
+      <text x="190" y="30" class="label" fill="#cdd6f4">Dict</text>
+      
+      <!-- Shield -->
+      <g class="shield-glow">
+        <path d="M 130,-10 Q 150,-20 190,-30 Q 230,-20 250,-10 L 250,50 Q 190,90 130,50 Z" class="shield" />
+        <text x="190" y="-35" class="code-safe" font-size="16px" text-anchor="middle">.get() 방어막</text>
+      </g>
+      
+      <text x="190" y="105" class="code-safe" font-size="16px" text-anchor="middle">"기본값" 안전 반환 🛡️</text>
+    </g>
+  </g>
+
+</svg>

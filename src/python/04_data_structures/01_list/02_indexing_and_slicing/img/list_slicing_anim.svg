@@ -1,0 +1,131 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 26px; font-weight: bold; fill: #f38ba8; }
+      .num { font-family: 'Consolas', monospace; font-size: 32px; font-weight: bold; fill: #1e1e2e; text-anchor: middle;}
+      .idx-pos { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #a6e3a1; text-anchor: middle;}
+      .idx-neg { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #f38ba8; text-anchor: middle;}
+      
+      .box { fill: #89b4fa; stroke: #cdd6f4; stroke-width: 2; rx: 8; }
+      .box-target { fill: #f9e2af; stroke: #f38ba8; stroke-width: 3; rx: 8; }
+      
+      .blade { fill: none; stroke: #f38ba8; stroke-width: 4; stroke-dasharray: 8,4; opacity: 0; }
+      
+      .slice-anim { animation: sliceOut 2s 1.5s forwards ease-in-out; }
+      .blade-left { animation: dropBlade 0.5s 0.5s forwards; }
+      .blade-right { animation: dropBlade 0.5s 1s forwards; }
+      .fade-overlay { animation: fadeIn 0.5s 1.5s forwards; opacity: 0; fill: #1e1e2e; }
+
+      @keyframes dropBlade {
+        0% { opacity: 0; transform: translateY(-50px); stroke: transparent; }
+        100% { opacity: 1; transform: translateY(0); stroke: #f38ba8; }
+      }
+      
+      @keyframes slideDownGroup {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(120px) scale(1.1); }
+      }
+
+      @keyframes sliceOut {
+        0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
+        50% { transform: translateY(100px) scale(1); filter: drop-shadow(0 10px 10px rgba(243, 139, 168, 0.5)); }
+        100% { transform: translateY(100px) scale(1.1); filter: drop-shadow(0 15px 15px rgba(243, 139, 168, 0.8)); }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 0.6; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="350" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">numbers = [10, 20, 30, 40, 50, 60]</text>
+  <text x="30" y="80" class="code">result = numbers[1:4]</text>
+
+  <!-- Base List -->
+  <g transform="translate(60, 130)">
+    
+    <!-- Original Box 0 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="40" class="num">10</text>
+      <text x="40" y="-10" class="idx-pos">0</text>
+      <text x="40" y="85" class="idx-neg">-6</text>
+      <!-- Fade Mask -->
+      <rect x="0" y="0" width="80" height="60" class="fade-overlay" rx="8" />
+    </g>
+
+    <!-- Original Box 1 (Targeted) -->
+    <g transform="translate(100, 0)">
+      <!-- This group will visually duplicate and pop out -->
+      <g class="slice-anim">
+        <rect x="0" y="0" width="80" height="60" class="box-target" />
+        <text x="40" y="40" class="num">20</text>
+      </g>
+      <!-- Base layer stays behind with original box -->
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="40" class="num">20</text>
+      <text x="40" y="-10" class="idx-pos">1 (Start)</text>
+      <text x="40" y="85" class="idx-neg">-5</text>
+      <rect x="0" y="0" width="80" height="60" class="fade-overlay" rx="8" />
+    </g>
+
+    <!-- Original Box 2 (Targeted) -->
+    <g transform="translate(200, 0)">
+      <g class="slice-anim">
+        <rect x="0" y="0" width="80" height="60" class="box-target" />
+        <text x="40" y="40" class="num">30</text>
+      </g>
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="40" class="num">30</text>
+      <text x="40" y="-10" class="idx-pos">2</text>
+      <text x="40" y="85" class="idx-neg">-4</text>
+      <rect x="0" y="0" width="80" height="60" class="fade-overlay" rx="8" />
+    </g>
+
+    <!-- Original Box 3 (Targeted) -->
+    <g transform="translate(300, 0)">
+      <g class="slice-anim">
+        <rect x="0" y="0" width="80" height="60" class="box-target" />
+        <text x="40" y="40" class="num">40</text>
+      </g>
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="40" class="num">40</text>
+      <text x="40" y="-10" class="idx-pos">3</text>
+      <text x="40" y="85" class="idx-neg">-3</text>
+      <rect x="0" y="0" width="80" height="60" class="fade-overlay" rx="8" />
+    </g>
+
+    <!-- Original Box 4 -->
+    <g transform="translate(400, 0)">
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="40" class="num">50</text>
+      <text x="40" y="-10" class="idx-pos">4 (End)</text>
+      <text x="40" y="85" class="idx-neg">-2</text>
+      <rect x="0" y="0" width="80" height="60" class="fade-overlay" rx="8" />
+    </g>
+
+    <!-- Original Box 5 -->
+    <g transform="translate(500, 0)">
+      <rect x="0" y="0" width="80" height="60" class="box" />
+      <text x="40" y="40" class="num">60</text>
+      <text x="40" y="-10" class="idx-pos">5</text>
+      <text x="40" y="85" class="idx-neg">-1</text>
+      <rect x="0" y="0" width="80" height="60" class="fade-overlay" rx="8" />
+    </g>
+
+    <!-- Blade Cut 1 (Before Start 1) -->
+    <path d="M 90, -40 L 90, 70" class="blade blade-left" />
+    <!-- Blade Cut 2 (Before End 4) -->
+    <path d="M 390, -40 L 390, 70" class="blade blade-right" />
+
+  </g>
+
+</svg>

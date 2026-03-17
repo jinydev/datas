@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 그라데이션 및 필터 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282a36" />
+      <stop offset="100%" stop-color="#44475a" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="800" height="400" rx="15" fill="url(#bgGrad)" stroke="#6272a4" stroke-width="2"/>
+
+  <!-- 타이틀 -->
+  <text x="400" y="40" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#f8f8f2" text-anchor="middle">Default Parameter Mechanics</text>
+
+  <!-- SECTION 1: 기본값 사용 (태만) -->
+  <text x="50" y="90" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffb86c">1. 인수 생략 시 (기본값 작동)</text>
+  <text x="50" y="115" font-family="'Courier New', monospace" font-size="16" fill="#f1fa8c">make_passport("김철수")</text>
+  
+  <!-- 함수 구멍 (Parameter Slots) 1 -->
+  <rect x="500" y="70" width="100" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="550" y="60" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">name</text>
+  
+  <rect x="630" y="70" width="110" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="685" y="60" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">country="한국"</text>
+  
+  <!-- "한국" 디폴트 값 블록 (항상 자리잡고 있음) -->
+  <g transform="translate(640, 75)">
+    <rect x="0" y="0" width="90" height="30" rx="5" fill="#6272a4" opacity="0.8"/>
+    <text x="45" y="20" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#f8f8f2" text-anchor="middle">"한국"</text>
+  </g>
+
+  <!-- 날아가는 데이터 1 -->
+  <g font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#282a36">
+    <g transform="translate(300, 75)">
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#8be9fd"/>
+      <text x="40" y="20" text-anchor="middle">"김철수"</text>
+      <!-- 첫 번째 구멍으로 쏙 -->
+      <animateTransform attributeName="transform" type="translate" values="300,75; 510,75" begin="0.5s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+  </g>
+
+  <!-- 선 (구분선) -->
+  <line x1="50" y1="180" x2="750" y2="180" stroke="#6272a4" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- SECTION 2: 덮어쓰기 (Overriding) -->
+  <text x="50" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ff79c6">2. 강제 지정 시 (기본값 밀어내기)</text>
+  <text x="50" y="255" font-family="'Courier New', monospace" font-size="16" fill="#f1fa8c">make_passport("James", "미국")</text>
+
+  <!-- 함수 구멍 (Parameter Slots) 2 -->
+  <rect x="500" y="210" width="100" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="550" y="200" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">name</text>
+  
+  <rect x="630" y="210" width="110" height="40" rx="5" fill="#44475a" stroke="#f8f8f2" stroke-width="1" filter="url(#shadow)"/>
+  <text x="685" y="200" font-family="'Courier New', monospace" font-size="14" fill="#6272a4" text-anchor="middle">country="한국"</text>
+
+  <!-- 원래 있던 "한국" 디폴트 값 블록 (밀려남) -->
+  <g transform="translate(640, 215)">
+    <rect x="0" y="0" width="90" height="30" rx="5" fill="#6272a4"/>
+    <text x="45" y="20" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#f8f8f2" text-anchor="middle">"한국"</text>
+    <animateTransform attributeName="transform" type="translate" values="640,215; 640,280" begin="3.1s" dur="0.8s" fill="freeze"/>
+    <animate attributeName="opacity" values="1; 1; 0" begin="3.1s" dur="0.8s" fill="freeze"/>
+  </g>
+
+  <!-- 날아가는 데이터 2 -->
+  <g font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#282a36">
+    <g transform="translate(300, 215)">
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#8be9fd"/>
+      <text x="40" y="20" text-anchor="middle">"James"</text>
+      <!-- 첫 번째 구멍으로 쏙 -->
+      <animateTransform attributeName="transform" type="translate" values="300,215; 510,215" begin="2.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+    <g transform="translate(400, 215)">
+      <rect x="0" y="0" width="90" height="30" rx="5" fill="#ff5555"/>
+      <text x="45" y="20" text-anchor="middle" fill="#fff">"미국"</text>
+      <!-- 두 번째 구멍으로 날라가서 꽂힘 -->
+      <animateTransform attributeName="transform" type="translate" values="400,215; 640,215" begin="2.5s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </g>
+  </g>
+
+  <!-- 애니메이션 메세지 -->
+  <text x="400" y="360" font-family="'Courier New', monospace" font-size="14" fill="#ffb86c" text-anchor="middle">
+    값을 주지 않으면 '한국'이 대신 들어가고, '미국'을 던지면 '한국' 블록을 튕겨내고 차지합니다!
+  </text>
+  
+</svg>

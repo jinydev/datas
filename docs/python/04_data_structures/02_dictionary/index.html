@@ -537,51 +537,65 @@
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/03_function_usage/"
+                                <a href="/python/03_functions/03_function_operation_flow/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.3 선언 문법 (def)과 호출
+                                    3.3.3 함수 작동 흐름 다이어그램
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/04_function_call_flow/"
+                                <a href="/python/03_functions/04_function_usage/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.4 제어 흐름의 도약
+                                    3.3.4 선언 문법 (def)과 호출
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/05_advanced_parameters/"
+                                <a href="/python/03_functions/05_function_call_flow/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.5 가변 매개변수 통로
+                                    3.3.5 제어 흐름의 도약
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/06_variable_scope/"
+                                <a href="/python/03_functions/06_advanced_parameters/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.6 변수의 유효 범위 (Scope)
+                                    3.3.6 가변 매개변수 통로
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/07_lambda_and_recursion/"
+                                <a href="/python/03_functions/07_variable_scope/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.7 람다(Lambda)와 재귀
+                                    3.3.7 변수의 유효 범위 (Scope)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/08_built_in_functions/"
+                                <a href="/python/03_functions/08_lambda_function/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.8 내장 함수와 메서드
+                                    3.3.8 람다(Lambda)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/09_math_module/"
+                                <a href="/python/03_functions/09_recursive_function/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.9 Python 수학 모듈(math)
+                                    3.3.9 마법의 거울, 재귀(Recursion)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/10_built_in_functions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.10 내장 함수와 메서드
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/11_math_module/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.11 Python 수학 모듈(math)
                                 </a>
                             </li>
                             
@@ -618,7 +632,7 @@
                             <li>
                                 <a href="/python/04_data_structures/01_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.4.1 리스트
+                                    3.4.1 파이썬 리스트 (List)
                                 </a>
                             </li>
                             
@@ -941,226 +955,27 @@
         <div class="bd-content ps-lg-4">
             <h1 id="342-파이썬-딕셔너리-dictionary-완벽-가이드">3.4.2 파이썬 딕셔너리 (Dictionary) 완벽 가이드</h1>
 
-<h2 id="학습목표">학습목표</h2>
-<p>본 장에서는 맹목적인 기차 칸 순서표(인덱스) 대신, 고유한 이름표(Key)를 달아 데이터를 쌍으로 보관하는 <strong>‘딕셔너리(Dictionary)’</strong>의 내부 작동 원리와 극대화된 검색 속도를 배웁니다. 10개 이상의 실전 예제를 통해 데이터를 조작하는 기본기부터 시작해, 죽지 않는 단단하고 방어적인 코드를 작성하게 해주는 <code class="language-plaintext highlighter-rouge">get()</code> 탐색 메서드, 배열을 합병하는 <code class="language-plaintext highlighter-rouge">update()</code> 스킬과 마법의 딕셔너리 컴프리헨션(Comprehension)까지 체득합니다.</p>
+<h2 id="-학습-목차">📌 학습 목차</h2>
 
-<hr />
+<h3 id="1-딕셔너리의-본질-해시-매핑과-수학적-함수-fx--y"><a href="./01_hash_and_mapping/">1. 딕셔너리의 본질: 해시 매핑과 수학적 함수 f(x) = y</a></h3>
+<p>파이썬 딕셔너리가 다른 언어의 딱딱한 규칙인 ‘연관 배열(HashMap)’을 벗어던지고 어떻게 수학적 1:1 대응 원리(사상)를 이루는지 학습합니다. 입력한 암호인 방 번호로 변환시키는 경이로운 <code class="language-plaintext highlighter-rouge">해시(Hash) 알고리즘</code>의 속도를 시각적으로 배웁니다.</p>
 
-<h2 id="1-다른-언어는-연관-배열associative-array인데-왜-파이썬은-딕셔너리사전인가요">1. 다른 언어는 ‘연관 배열(Associative Array)’인데 왜 파이썬은 ‘딕셔너리(사전)’인가요?</h2>
+<h3 id="2-딕셔너리-사물함-사용법-생성-규칙과-조작-수술-crud"><a href="./02_creation_and_access/">2. 딕셔너리 사물함 사용법: 생성 규칙과 조작 수술 (C.R.U.D)</a></h3>
+<p>딕셔너리 금고를 만들고 데이터를 관리하는 4대 절대 원칙(생성, 읽기, 수정, 삭제)을 마스터합니다. 변하는 것은 통과시켜주지 않는 ‘단단한 키(Key) 불변성 원칙’의 진정한 의미를 파헤칩니다.</p>
 
-<p>자바(Java)나 PHP 등 다른 언어를 배우다 오신 분들은 파이썬에 ‘연관 배열(Associative Array)’이나 ‘해시맵(HashMap)’이라는 이름 대신 <strong>‘딕셔너리(Dictionary)’</strong>라는 용어가 표준이라는 점에 의문을 품습니다.</p>
+<h3 id="3-딕셔너리-방어선-구축-생명-연장을-위한-핵심-메서드"><a href="./03_methods_and_defense/">3. 딕셔너리 방어선 구축: 생명 연장을 위한 핵심 메서드</a></h3>
+<p>한 줄의 에러가 전 세계 유저들을 마비시키는 서버 스톱을 막기 위해 프로그래머가 쳐두는 방어막 <code class="language-plaintext highlighter-rouge">get()</code> 메서드의 위력을 학습합니다. 데이터 융합을 위한 <code class="language-plaintext highlighter-rouge">update()</code>와 리스트 분해를 위한 <code class="language-plaintext highlighter-rouge">items()</code> 메서드를 체득합니다.</p>
 
-<p><img src="./img/associative_array_vs_dictionary_webtoon.png" alt="연관 배열 vs 사전 웹툰" />
-<em>(웹툰 비유: 왼쪽은 딱딱하고 지루해 보이는 철제 회색 사물함입니다. ‘Associative Array’라는 어려운 학술적 이름표가 붙어있어 학생들이 거리감을 느낍니다. 오른쪽은 빛이 나는 마법의 국어사전(Dictionary) 책입니다. 꼬마 마법사가 사전을 펼쳐 ‘Apple(열쇠)’이라는 단어를 찾자마자 홀로그램으로 빨갛고 먹음직스러운 진짜 ‘사과(값)’ 데이터가 튀어나옵니다. 직관적이고 친숙한 비유입니다.)</em></p>
-
-<ul>
-  <li><strong>학술적 용어 (연관 배열)</strong>: 기존 언어들은 ‘열쇠(Key)와 데이터(Value)가 서로 연관(Associate)되어 묶여있는 배열 공간’이라는 컴퓨터 공학의 딱딱한 작동 원리를 그대로 이름에 붙였습니다.</li>
-  <li><strong>파이썬의 철학 (딕셔너리)</strong>: 파이썬은 <strong>“사람이 이해하기 쉬운 코드가 최고다”</strong>라는 철학을 가집니다. 우리가 모르는 영단어(Key)를 국어사전에서 찾으면 그 뜻과 예문(Value)이 바로 튀어나오듯이, 코드의 동작 자체가 현실의 <strong>‘사전(Dictionary) 찾기’</strong>와 완전히 똑같기 때문에 가장 직관적이고 친숙한 단어인 ‘딕셔너리’를 정식 명칭으로 채택한 것입니다.</li>
-</ul>
-
-<hr />
-
-<h2 id="2-딕셔너리의-기본-형태와-매핑-규칙">2. 딕셔너리의 기본 형태와 매핑 규칙</h2>
-
-<p>파이썬 딕셔너리는 항목을 쉼표로 구분하되, 반드시 <strong>열쇠(Key)와 값(Value)이 콜론(<code class="language-plaintext highlighter-rouge">:</code>)으로 짝지어진 쌍</strong> 구조로 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code> 안에 들어가야 합니다.</p>
-
-<ul>
-  <li><strong>기본 형태</strong>: <code class="language-plaintext highlighter-rouge">{key1: value1, key2: value2, ...}</code></li>
-  <li>빈 딕셔너리를 만들 때는 비어있는 중괄호 <code class="language-plaintext highlighter-rouge">{}</code>를 쓰거나 <code class="language-plaintext highlighter-rouge">dict()</code> 내장 함수를 씁니다. (주의: <code class="language-plaintext highlighter-rouge">[]</code>는 빈 리스트입니다.)</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>                             <span class="c1"># 아무것도 든 게 없는 빈 금고
-</span><span class="n">user_info</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">jiny</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span>       <span class="c1"># id, age 라는 이름표(Key)가 달린 금고
-</span><span class="n">mixed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="sh">"</span><span class="s">일</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">two</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>   <span class="c1"># 숫자, 글자 마음대로 Key와 Value를 섞을 수 있습니다.
-</span></code></pre></div></div>
-
-<p><strong>파이썬 딕셔너리의 3대 절대 규칙:</strong></p>
-<ol>
-  <li><strong>열쇠(Key)는 절대 중복될 수 없다</strong>: 사물함 이름표가 똑같으면 컴퓨터가 헷갈립니다. 똑같은 열쇠를 또 넣으면, 기존 값을 무자비하게 덮어써 버립니다.</li>
-  <li><strong>열쇠(Key)는 변하지 않는 단단한 자료형만 가능</strong>: 수정이 가능한 <code class="language-plaintext highlighter-rouge">리스트([])</code>나 또 다른 <code class="language-plaintext highlighter-rouge">딕셔너리({})</code>는 열쇠 모양이 수시로 변할 수 있으므로 자물쇠의 Key 자리에 억지로 꽂으려 하면 에러(<code class="language-plaintext highlighter-rouge">TypeError</code>)가 나면서 터집니다. (단, 변하지 않는 <code class="language-plaintext highlighter-rouge">문자열("")</code>, <code class="language-plaintext highlighter-rouge">숫자</code>, <code class="language-plaintext highlighter-rouge">튜플(())</code>은 가능합니다.)</li>
-  <li><strong>값(Value)은 무엇이든 다 들어간다</strong>: 자물쇠 안의 보관함 내용물은 사과든, 코끼리든, 다른 딕셔너리 객체든 일절 따지지 않고 전부 보관해 줍니다. 중복된 값이 들어가도 아무 상관 없습니다.</li>
-</ol>
-
-<hr />
-
-<h2 id="3-딕셔너리-기초-문법과-활용-10선-실전-훈련">3. 딕셔너리 기초 문법과 활용 10선 (실전 훈련)</h2>
-
-<h3 id="예제-1-딕셔너리-생성하기-key-value">예제 1: 딕셔너리 생성하기 (<code class="language-plaintext highlighter-rouge">{Key: Value}</code>)</h3>
-<p>리스트가 대괄호 <code class="language-plaintext highlighter-rouge">[]</code>를 쓴다면, 딕셔너리는 중괄호 <code class="language-plaintext highlighter-rouge">{}</code>를 사용하며 반드시 <code class="language-plaintext highlighter-rouge">키: 값</code> 쌍으로 존재해야 합니다.</p>
-
-<p><img src="./img/dict_ex1_creation.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 캐릭터 정보 금고(Dictionary) 생성
-</span><span class="n">profile</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Antigravity</span><span class="sh">"</span><span class="p">,</span>
-    <span class="sh">"</span><span class="s">level</span><span class="sh">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="sh">"</span><span class="s">hp</span><span class="sh">"</span><span class="p">:</span> <span class="mi">100</span>
-<span class="p">}</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span> <span class="c1"># {'name': 'Antigravity', 'level': 10, 'hp': 100}
-</span></code></pre></div></div>
-
-<h3 id="예제-2-인덱싱으로-방-안의-데이터-꺼내기">예제 2: 인덱싱으로 방 안의 데이터 꺼내기</h3>
-<p>리스트처럼 <code class="language-plaintext highlighter-rouge">profile[0]</code> 이라고 쓰면 에러가 납니다. 딕셔너리에는 0번, 1번 방이라는 순서 개념이 없습니다. 무조건 <strong>열쇠(Key)의 이름</strong>으로 문을 열어야 합니다.</p>
-
-<p><img src="./img/dict_ex2_access.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># "name" 이라는 열쇠명으로 사물함을 열고 내용물을 꺼냅니다.
-</span><span class="n">hero_name</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">용사의 이름:</span><span class="sh">"</span><span class="p">,</span> <span class="n">hero_name</span><span class="p">)</span>  <span class="c1"># 출력: Antigravity
-</span>
-<span class="c1"># print(profile[0]) # 🚨 KeyError 폭발! 딕셔너리에는 순번표가 없습니다!
-</span></code></pre></div></div>
-
-<h3 id="예제-3-새로운-데이터-추가하기-새-사물함-뚝딱-생성">예제 3: 새로운 데이터 추가하기 (새 사물함 뚝딱 생성)</h3>
-<p>원래 없던 열쇠(Key) 이름을 지정해서 데이터를 집어넣으면, 금고 옆에 새로운 공간이 마법처럼 즉시 생성됩니다.</p>
-
-<p><img src="./img/dict_ex3_addition.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 프로필에 이전에 없던 "job" (직업) 칸을 새로 만들고 "Wizard" 값을 넣기
-</span><span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">job</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Wizard</span><span class="sh">"</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span> <span class="c1"># {'name': 'Antigravity', 'level': 10, 'hp': 100, 'job': 'Wizard'}
-</span></code></pre></div></div>
-
-<h3 id="예제-4-무자비한-철거-del-키워드">예제 4: 무자비한 철거 (<code class="language-plaintext highlighter-rouge">del</code> 키워드)</h3>
-<p>특정 데이터를 완전히 삭제하고 싶다면 <code class="language-plaintext highlighter-rouge">del</code> 키워드를 사용해 열쇠와 사물함을 통째로 폭파해 버립니다.</p>
-
-<p><img src="./img/dict_ex4_deletion.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 치명적 부상을 입어 "level" 정보를 삭제
-</span><span class="k">del</span> <span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">level</span><span class="sh">"</span><span class="p">]</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span> <span class="c1"># {'name': 'Antigravity', 'hp': 100, 'job': 'Wizard'} (level 삭제됨)
-</span></code></pre></div></div>
-
-<h3 id="예제-5-기존-데이터-수정-수리하기">예제 5: 기존 데이터 수정 (수리하기)</h3>
-<p>위 예제 3번과 문법이 완전히 똑같습니다. <strong>이미 존재하는 열쇠(Key)라면 새 값을 덮어쓰고, 없는 열쇠라면 새로 만듭니다.</strong></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 체력이 100 -&gt; 50 으로 감소
-</span><span class="n">profile</span><span class="p">[</span><span class="sh">"</span><span class="s">hp</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span> <span class="c1"># {'name': 'Antigravity', 'hp': 50, 'job': 'Wizard'}
-</span></code></pre></div></div>
-
-<hr />
-
-<h2 id="4-현업에서-쓰이는-핵심-방어-메서드-method">4. 현업에서 쓰이는 핵심 방어 메서드 (Method)</h2>
-
-<p>초보자와 프로를 가르는 딕셔너리 고급 기술들입니다.</p>
-
-<h3 id="예제-6-생명-보험-get-탐색-메서드-">예제 6: 생명 보험 <code class="language-plaintext highlighter-rouge">.get()</code> 탐색 메서드 🌟🌟🌟</h3>
-<p>실무에서 가장 많이 쓰이는 방어 기술입니다. 없는 열쇠를 그냥 열어버리면 <code class="language-plaintext highlighter-rouge">KeyError</code>가 뜨며 서버가 다운됩니다. 하지만 <code class="language-plaintext highlighter-rouge">.get()</code>을 쓰면 에러 대신 <code class="language-plaintext highlighter-rouge">None</code>이나 지정한 기본값을 반환하여 안전합니다.</p>
-
-<p><img src="./img/dict_ex6_get.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user_info</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">jiny</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">email</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">jiny@test.com</span><span class="sh">"</span><span class="p">}</span>
-
-<span class="c1"># print(user_info["age"]) # 🚨 프로그램 즉시 중단! (KeyError: 'age')
-</span>
-<span class="c1"># 🛡️ 방어막 전개: "age" 키를 찾되, 없으면 에러 내지 말고 숫자 20을 줘라!
-</span><span class="n">safe_age</span> <span class="o">=</span> <span class="n">user_info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">safe_age</span><span class="p">)</span> <span class="c1"># 출력: 20 (서버가 살았습니다)
-</span>
-<span class="c1"># 만약 기본값을 안 정해주면 에러 대신 None을 줍니다.
-</span><span class="n">safe_phone</span> <span class="o">=</span> <span class="n">user_info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">phone</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">safe_phone</span><span class="p">)</span> <span class="c1"># 출력: None
-</span></code></pre></div></div>
-
-<h3 id="예제-7-딕셔너리-합치기-update-병합">예제 7: 딕셔너리 합치기 <code class="language-plaintext highlighter-rouge">.update()</code> 병합</h3>
-<p>서로 다른 두 개의 딕셔너리를 하나로 뭉쳐버립니다. 만약 두 곳에 똑같은 이름의 열쇠(Key)가 있다면 <strong>나중에 들어온 녀석이 기준 값을 덮어씁니다.</strong></p>
-
-<p><img src="./img/dict_ex7_update.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="sh">'</span><span class="s">z</span><span class="sh">'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>  <span class="c1"># y 키가 중복됨!
-</span>
-<span class="n">a</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># a 금고에 b 금고를 쏟아 붓기
-</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># {'x': 1, 'y': 3, 'z': 4} (y값이 b의 3으로 덮어씌워짐!)
-</span></code></pre></div></div>
-
-<h3 id="예제-8-열쇠-뭉치-값-뭉치만-따로-빼기-keys-values-items">예제 8: 열쇠 뭉치, 값 뭉치만 따로 빼기 (<code class="language-plaintext highlighter-rouge">keys()</code>, <code class="language-plaintext highlighter-rouge">values()</code>, <code class="language-plaintext highlighter-rouge">items()</code>)</h3>
-<p>딕셔너리의 데이터를 덩어리로 분석할 때 쓰는 기술입니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mart</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">라면</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span> <span class="sh">'</span><span class="s">과자</span><span class="sh">'</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span> <span class="sh">'</span><span class="s">물</span><span class="sh">'</span><span class="p">:</span> <span class="mi">500</span><span class="p">}</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">mart</span><span class="p">.</span><span class="nf">keys</span><span class="p">())</span>    <span class="c1"># dict_keys(['라면', '과자', '물']) -&gt; 품목(열쇠)만!
-</span><span class="nf">print</span><span class="p">(</span><span class="n">mart</span><span class="p">.</span><span class="nf">values</span><span class="p">())</span>  <span class="c1"># dict_values([1200, 800, 500]) -&gt; 가격(값)만!
-</span>
-<span class="c1"># 튜플(Tuple) 쌍으로 전부 꺼내오기 (가장 흔함)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">mart</span><span class="p">.</span><span class="nf">items</span><span class="p">())</span>   <span class="c1"># dict_items([('라면', 1200), ('과자', 800), ('물', 500)])
-</span></code></pre></div></div>
-
-<h3 id="예제-9-for-반복문과의-환상적인-조합">예제 9: for 반복문과의 환상적인 조합</h3>
-<p>예제 8번의 <code class="language-plaintext highlighter-rouge">.items()</code>를 이용하면 리스트처럼 멋드러지게 빙글빙글 반복시킬 수 있습니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mart</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">라면</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span> <span class="sh">'</span><span class="s">과자</span><span class="sh">'</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span> <span class="sh">'</span><span class="s">물</span><span class="sh">'</span><span class="p">:</span> <span class="mi">500</span><span class="p">}</span>
-
-<span class="c1"># 마치 zip() 함수를 쓴 것처럼 key와 value를 편안하게 분리해서 꺼냅니다.
-</span><span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">mart</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">상품명: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s"> / 가격: </span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s">원</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="예제-10-딕셔너리-컴프리헨션-dict-comprehension-단축-마법">예제 10: 딕셔너리 컴프리헨션 (Dict Comprehension) 단축 마법</h3>
-<p>리스트 컴프리헨션처럼 딕셔너리도 1줄 만에 폭풍 생성할 수 있습니다. 예를 들어, 리스트 이름들과 번호표를 묶어서 딕셔너리로 만드는 예술적인 방법입니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">Alice</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Bob</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Charlie</span><span class="sh">'</span><span class="p">]</span>
-<span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">]</span>
-
-<span class="c1"># 두 리스트를 zip으로 합친 다음, "name : id_num" 구조의 딕셔너리로 1줄 만에 변환!
-</span><span class="n">student_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">id_num</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_num</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ids</span><span class="p">)}</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">student_dict</span><span class="p">)</span>
-<span class="c1"># {'Alice': 101, 'Bob': 102, 'Charlie': 103}
-</span></code></pre></div></div>
-
-<hr />
-
-<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
-
-<h3 id="1-해시맵hashmap의-지루한-선언식">1. 해시맵(HashMap)의 지루한 선언식</h3>
-<ul>
-  <li><strong>Java</strong>: 딕셔너리 하나 쓰려면 무시무시한 장문 타이핑이 필요합니다. 
-<code class="language-plaintext highlighter-rouge">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;(); map.put("라면", 1200);</code> 
-키와 값이 무슨 타입인지(<code class="language-plaintext highlighter-rouge">String, Integer</code>)까지 구구절절 제네릭으로 감싸서 설명해야 합니다.</li>
-  <li><strong>Python</strong>: <code class="language-plaintext highlighter-rouge">mart = {'라면': 1200}</code> 단 하나로 끝. 키는 문자열, 값은 숫자 등 내 마음대로 짬뽕 제네릭(?)이 가능합니다.</li>
-</ul>
-
-<h3 id="2-값-꺼내기와-수정의-우아함">2. 값 꺼내기와 수정의 우아함</h3>
-<ul>
-  <li><strong>Java</strong>: 꺼낼 때는 무조건 <code class="language-plaintext highlighter-rouge">map.get("라면")</code>, 넣을 때는 무조건 <code class="language-plaintext highlighter-rouge">map.put("과자", 800)</code> 이라는 메서드 함수를 써야만 합니다.</li>
-  <li><strong>Python</strong>: 마치 배열 인덱스처럼 <code class="language-plaintext highlighter-rouge">mart["라면"]</code> 으로 우아하게 꺼내고, <code class="language-plaintext highlighter-rouge">mart["과자"] = 800</code> 으로 직관적으로 수정합니다. 눈으로 볼 땐 리스트 배열 코딩과 차이가 없지만 내부적으로는 초고속 해시(Hash) 연산을 수행하는 천재적인 구조입니다.</li>
-</ul>
-
-<hr />
-
-<h2 id="-vibe-coding">🎧 Vibe Coding</h2>
-
-<blockquote>
-  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
-“파이썬 딕셔너리를 활용해서 카페 메뉴판 예약 시스템을 만들어줘. <code class="language-plaintext highlighter-rouge">menus = {'아메리카노': 3000, '라떼': 4000}</code> 사전을 만들고, 새로운 메뉴 ‘딸기스무디’를 5000원에 추가해 줘. 
-그 다음에 사용자가 콘솔 <code class="language-plaintext highlighter-rouge">input()</code> 에 메뉴 이름을 입력했을 때 그 메뉴가 딕셔너리에 있으면 가격을 출력해 주고, 만약 없는 메뉴를 쳤다면 프로그램이 에러(<code class="language-plaintext highlighter-rouge">KeyError</code>)로 뻗지 않도록 <code class="language-plaintext highlighter-rouge">.get()</code> 메서드를 써서 ‘그런 메뉴는 없어요’ 라는 친절한 안내 문구를 반환하도록 방어 코드를 짜줘.”</p>
-</blockquote>
-
-<hr />
-
-<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
-
-<ul>
-  <li><strong>Dictionary</strong>: 사전. (원래 뜻은 A~Z까지 정렬된 단어장입니다. 프로그래밍에선 우리가 어떤 영문의 ‘뜻’을 찾기 위해 알파벳 색인을 찾아 헤매지 않고 알파벳 첫 단어만 알면 해당 페이지를 한방에 펼쳐서(Hash) 답(Value)을 얻는 행위와 동일하여 붙은 이름입니다.)</li>
-  <li><strong>Key / Value</strong>: 열쇠 / 값. (사물함의 열쇠 자물쇠와 그 안의 귀중품을 뜻합니다. 열쇠(Key)는 세상에 단 하나만 존재해야 하며(중복 금지), 내용물(Value)은 똑같은 돈 1만 원을 여러 사물함에 넣어도(중복 허용) 상관없는 것과 이치가 같습니다.)</li>
-  <li><strong>Hash (Hashing)</strong>: 다지다, 잘게 썰다. (해시브라운 포테이토할 때의 그 해시입니다. 파이썬이 딕셔너리의 열쇠(Key)를 찾을 때 데이터를 컴퓨터만의 숫자로 잘게 다져 비밀 암호로 변환한 뒤, 1초 만에 메모리 위치를 역추적하는 마법의 탐색 알고리즘 이름입니다.)</li>
-  <li><strong>Update</strong>: 갱신하다, 최신화하다. (이미 가진 노트에 새로운 패치 노트(새로운 딕셔너리 데이터)를 덧씌워 최신 버전을 유지하는 병합 작업입니다.)</li>
-</ul>
+<h3 id="4-단-한-줄의-미학-딕셔너리-컴프리헨션comprehension"><a href="./04_dict_comprehension/">4. 단 한 줄의 미학: 딕셔너리 컴프리헨션(Comprehension)</a></h3>
+<p>수학식처럼 단 한 줄의 코드로 무수한 데이터를 필터링하고 걸러내는 파이썬 특유의 압축 병합 기술 <code class="language-plaintext highlighter-rouge">컴프리헨션</code>과 의류 지퍼처럼 리스트 모양을 한데 엮는 <code class="language-plaintext highlighter-rouge">zip()</code> 테크닉의 콜라보레이션을 완성합니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->
             <div class="mt-5">
-                <!-- 구글 애드센스 (여기에 본인의 코드 입력) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
     crossorigin="anonymous"></script>
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+<!-- jinydev-java -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475" data-ad-slot="9323221865"
     data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});

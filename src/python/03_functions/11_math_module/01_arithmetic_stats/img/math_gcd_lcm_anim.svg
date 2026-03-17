@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; fill: #cdd6f4; font-size: 20px; font-weight: bold; }
+      .num { font-family: 'Consolas', monospace; fill: #89b4fa; font-size: 36px; font-weight: bold; }
+      .desc { font-family: 'Consolas', monospace; fill: #a6adc8; font-size: 16px; }
+      .res-gcd { font-family: 'Consolas', monospace; fill: #f38ba8; font-size: 40px; font-weight: bold; }
+      .res-lcm { font-family: 'Consolas', monospace; fill: #a6e3a1; font-size: 40px; font-weight: bold; }
+      
+      .circle { fill: #45475a; stroke: #cdd6f4; stroke-width: 3; }
+      .line { stroke: #cdd6f4; stroke-width: 3; stroke-dasharray: 5,5; animation: dashMove 2s linear infinite; }
+      
+      .fade-in-1 { animation: fadeIn 1s 1s forwards; opacity: 0; transform-origin: center; }
+      .fade-in-2 { animation: fadeIn 1s 2s forwards; opacity: 0; transform-origin: center; }
+      .fade-in-3 { animation: fadeIn 1s 3s forwards; opacity: 0; transform-origin: center; }
+      
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: scale(0.8); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      @keyframes dashMove {
+        from { stroke-dashoffset: 20; }
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="300" rx="15" fill="url(#bgGrad)" />
+
+  <text x="30" y="40" class="title">math.gcd(12, 16) &amp; math.lcm(12, 16)</text>
+
+  <!-- Number 12 -->
+  <g transform="translate(150, 150)">
+    <circle cx="0" cy="0" r="50" class="circle" />
+    <text x="-20" y="12" class="num">12</text>
+    <text x="-40" y="80" class="desc">약수: 1, 2, 3, 4, 6, 12</text>
+  </g>
+
+  <!-- Number 16 -->
+  <g transform="translate(650, 150)">
+    <circle cx="0" cy="0" r="50" class="circle" />
+    <text x="-20" y="12" class="num">16</text>
+    <text x="-40" y="80" class="desc">약수: 1, 2, 4, 8, 16</text>
+  </g>
+
+  <!-- GCD Path -->
+  <path d="M 190,120 Q 400,20 610,120" fill="none" class="line fade-in-1" />
+  
+  <g transform="translate(400, 60)">
+    <g class="fade-in-2">
+      <rect x="-80" y="-30" width="160" height="60" rx="10" fill="#313244" stroke="#f38ba8" stroke-width="2" />
+      <text x="-65" y="10" class="title" fill="#f38ba8">GCD: </text>
+      <text x="-15" y="10" class="res-gcd">4</text>
+      <text x="-70" y="-40" class="desc" fill="#f38ba8">최대공약수 (가장 큰 공통 약수)</text>
+    </g>
+  </g>
+
+  <!-- LCM Path -->
+  <path d="M 190,180 Q 400,280 610,180" fill="none" class="line fade-in-1" />
+  
+  <g transform="translate(400, 240)">
+    <g class="fade-in-3">
+      <rect x="-80" y="-30" width="160" height="60" rx="10" fill="#313244" stroke="#a6e3a1" stroke-width="2" />
+      <text x="-65" y="10" class="title" fill="#a6e3a1">LCM: </text>
+      <text x="-15" y="10" class="res-lcm">48</text>
+      <text x="-70" y="50" class="desc" fill="#a6e3a1">최소공배수 (가장 작은 공통 배수)</text>
+    </g>
+  </g>
+
+</svg>

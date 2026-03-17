@@ -537,51 +537,65 @@
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/03_function_usage/"
+                                <a href="/python/03_functions/03_function_operation_flow/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.3 선언 문법 (def)과 호출
+                                    3.3.3 함수 작동 흐름 다이어그램
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/04_function_call_flow/"
+                                <a href="/python/03_functions/04_function_usage/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.4 제어 흐름의 도약
+                                    3.3.4 선언 문법 (def)과 호출
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/05_advanced_parameters/"
+                                <a href="/python/03_functions/05_function_call_flow/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.5 가변 매개변수 통로
+                                    3.3.5 제어 흐름의 도약
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/06_variable_scope/"
+                                <a href="/python/03_functions/06_advanced_parameters/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.6 변수의 유효 범위 (Scope)
+                                    3.3.6 가변 매개변수 통로
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/07_lambda_and_recursion/"
+                                <a href="/python/03_functions/07_variable_scope/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.7 람다(Lambda)와 재귀
+                                    3.3.7 변수의 유효 범위 (Scope)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/08_built_in_functions/"
+                                <a href="/python/03_functions/08_lambda_function/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.8 내장 함수와 메서드
+                                    3.3.8 람다(Lambda)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/python/03_functions/09_math_module/"
+                                <a href="/python/03_functions/09_recursive_function/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.3.9 Python 수학 모듈(math)
+                                    3.3.9 마법의 거울, 재귀(Recursion)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/10_built_in_functions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.10 내장 함수와 메서드
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/python/03_functions/11_math_module/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    3.3.11 Python 수학 모듈(math)
                                 </a>
                             </li>
                             
@@ -618,7 +632,7 @@
                             <li>
                                 <a href="/python/04_data_structures/01_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    3.4.1 리스트
+                                    3.4.1 파이썬 리스트 (List)
                                 </a>
                             </li>
                             
@@ -941,206 +955,24 @@
         <div class="bd-content ps-lg-4">
             <h1 id="344-파이썬-세트-set-완벽-가이드">3.4.4 파이썬 세트 (Set) 완벽 가이드</h1>
 
-<h2 id="학습목표">학습목표</h2>
-<p>본 장에서는 투입된 순서와는 아무런 상관 없이 오로지 고유한 본질 데이터만 담아두어 100% 중복 유입을 철폐해 버리는 <strong>‘집합(Set)’</strong>의 아주 독특한 물리 구조를 학습합니다. 무수한 두 데이터 집단 간에 공통점(교집합)이나 차이점(차집합)을 도출하는 벤 다이어그램 수준의 수학적 연산을 파이썬 코드로 어떻게 짧고 간결하게 부르는지 익힙니다.</p>
+<h2 id="-학습-목차">📌 학습 목차</h2>
 
-<hr />
+<h3 id="1-나이트클럽-문지기-집합set과-고유성uniqueness"><a href="./01_concept_and_uniqueness/">1. 나이트클럽 문지기: 집합(Set)과 고유성(Uniqueness)</a></h3>
+<p>수만 건이 밀려들어와도 중복된 클론(Clone) 방문객을 가차 없이 쫓아내는 ‘나이트클럽 문지기’ 비유를 통해 세트가 지닌 ‘고유한 불변의 가치(Unique)’를 학습합니다. 빈 세트를 만들 때 터지는 딕셔너리와의 기호(<code class="language-plaintext highlighter-rouge">{}</code>) 충돌 함정도 피해 가세요.</p>
 
-<h2 id="-tldr-1분-핵심-요약-세트set가-대체-뭔가요">💡 TL;DR (1분 핵심 요약): 세트(Set)가 대체 뭔가요?</h2>
+<h3 id="2-마법-주머니-다루기-생성과-조작crud"><a href="./02_creation_and_modification/">2. 마법 주머니 다루기: 생성과 조작(CRUD)</a></h3>
+<p>리스트처럼 순서대로 줄을 세우지 않고, 그냥 빈 허공에 구슬을 휙 던져 넣는 세트 주머니의 <code class="language-plaintext highlighter-rouge">add()</code> 동작을 다룹니다. 특히 실무 서버 방식을 결정짓는 자비로운 무시 삭제 <code class="language-plaintext highlighter-rouge">discard()</code>와 단두대 에러 삭제 <code class="language-plaintext highlighter-rouge">remove()</code>의 치명적 차이점을 완벽 숙달합니다.</p>
 
-<p>복잡한 설명에 앞서, <strong>“세트 = 중복을 허락하지 않는 주머니”</strong> 라고 딱 하나만 기억하시면 됩니다!</p>
-
-<ol>
-  <li><strong>생김새</strong>: 딕셔너리와 똑같이 중괄호 <code class="language-plaintext highlighter-rouge">{}</code>를 쓰지만, <code class="language-plaintext highlighter-rouge">키: 값</code> 쌍이 아니라 그냥 <strong>값들만 쉼표로 나열</strong>합니다. 예: <code class="language-plaintext highlighter-rouge">{1, 2, 3}</code></li>
-  <li><strong>차이점</strong>: 같은 숫자를 100번 밀어 넣어도, 세트 안에는 오직 <strong>1개</strong>만 남습니다. (자동 중복 제거기)</li>
-  <li><strong>사용 이유</strong>: 수만 개의 데이터 중에서 “종류가 몇 개야?”, “겹치는 게 뭐야?”를 1초 만에 찾아내는 강력한 수학적 <strong>벤 다이어그램 연산</strong>(교집합, 합집합)이 필요할 때 씁니다. 순서(인덱스)가 없기 때문에 속도가 미친 듯이 빠릅니다.</li>
-</ol>
-
-<hr />
-
-<h2 id="1-세트set의-정체와-클럽-기도bouncer-비유">1. 세트(Set)의 정체와 클럽 기도(Bouncer) 비유</h2>
-
-<p>수만 건의 난잡한 고객 ID 데이터나 중구난방 로그 기록을 엑셀로 마주했을 때, 그 방대함 속에서 오직 “딱 한 번이라도 방문한 적이 있는 유니크(Unique)한 유저 리스트”를 뽑아내려 할 때 이 Set이 단연코 가장 위력적인 원픽 무기가 됩니다.</p>
-
-<p><img src="./img/set_venn_diagram_webtoon.png" alt="세트 벤다이어그램 웹툰" />
-<em>(웹툰 비유: 왼쪽 그림의 신비한 나이트클럽 기도(Python Set)는 문 앞에서 중복된 클론(Clone) 손님들을 철저하게 거부하며 “No Duplicates Allowed!”를 외칩니다. 오직 세상에서 유일한 유니크(Unique)한 사람만 입장할 수 있습니다. 오른쪽 그림은 그들이 모여서 어떻게 합쳐지고(합집합, Union) 겹치는지(교집합, Intersection)를 나타내는 빛나는 벤 다이어그램입니다.)</em></p>
-
-<hr />
-
-<h2 id="2-세트의-기본-형태와-생성-규칙">2. 세트의 기본 형태와 생성 규칙</h2>
-
-<ul>
-  <li><strong>기본 형태</strong>: <code class="language-plaintext highlighter-rouge">{item1, item2, item3}</code></li>
-  <li>🚨 <strong>[주의!] 빈 세트 만들기</strong>: <code class="language-plaintext highlighter-rouge">empty_set = {}</code> 라고 쓰면 파이썬은 무조건 <strong>빈 딕셔너리</strong>로 착각합니다! 빈 세트를 만들 때는 반드시 <code class="language-plaintext highlighter-rouge">set()</code> 이라는 내장 함수를 써야 합니다.</li>
-  <li><strong>순서 파괴</strong>: 세트는 인덱스 번호(<code class="language-plaintext highlighter-rouge">[0]</code>)라는 개념이 아예 존재하지 않습니다. 주머니 속에 구슬을 마구잡이로 집어넣는 것과 같아서, 넣은 순서대로 꺼낼 수 있다는 보장이 1%도 없습니다.</li>
-</ul>
-
-<hr />
-
-<h2 id="3-세트-실전-조작법-10선-예제">3. 세트 실전 조작법 (10선 예제)</h2>
-
-<h3 id="예제-1-중복을-파괴하는-세트-소환-자동-필터링">예제 1: 중복을 파괴하는 세트 소환 (자동 필터링)</h3>
-<p>리스트에 똑같은 숫자를 잔뜩 넣고 이를 세트로 묶어버리면 놀라운 일이 벌어집니다.</p>
-
-<p><img src="./img/set_ex1_creation.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1, 2는 한 번씩, 3은 무려 세 번이나 넣었습니다!
-</span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-
-<span class="c1"># 기적의 중복 제거: 리스트를 세트(Set) 용광로에 던져 넣습니다.
-</span><span class="n">my_set</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
-
-<span class="c1"># 중복된 3은 모두 소멸하고 유일한 객체들만 남았습니다.
-</span><span class="nf">print</span><span class="p">(</span><span class="n">my_set</span><span class="p">)</span> <span class="c1"># {1, 2, 3}
-</span></code></pre></div></div>
-
-<h3 id="예제-2-원소의-빠른-추가add와-삭제remove">예제 2: 원소의 빠른 추가(<code class="language-plaintext highlighter-rouge">add</code>)와 삭제(<code class="language-plaintext highlighter-rouge">remove</code>)</h3>
-<p>세트 자체는 딕셔너리처럼 마음껏 주머니에 데이터를 추가하거나 뺄 수 있습니다.</p>
-
-<p><img src="./img/set_ex2_add_remove.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">basket</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">apple</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">orange</span><span class="sh">'</span><span class="p">}</span>
-
-<span class="c1"># 1. 새 과일 추가하기
-</span><span class="n">basket</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="sh">'</span><span class="s">banana</span><span class="sh">'</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span> <span class="c1"># {'apple', 'banana', 'orange'} (순서는 지멋대로 나옵니다)
-</span>
-<span class="c1"># 2. 과일 꺼내서 버리기
-</span><span class="n">basket</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="sh">'</span><span class="s">apple</span><span class="sh">'</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span> <span class="c1"># {'banana', 'orange'}
-</span></code></pre></div></div>
-
-<h3 id="예제-3-세트에-리스트를-넣을-수-있을까-typeerror">예제 3: 세트에 리스트를 넣을 수 있을까? (TypeError)</h3>
-<p>세트는 열쇠(Key)처럼 동작하므로, 내용물이 변할 위험이 있는 리스트(<code class="language-plaintext highlighter-rouge">[]</code>)는 세트 주머니 안에 절대로 담을 수 없습니다. (에러 발생)</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">}</span>
-
-<span class="c1"># myset.add([1, 2]) # 🚨 주석 해제 시 TypeError 폭발! (리스트는 넣을 수 없음)
-</span>
-<span class="c1"># 하지만 영원히 변하지 않는 '튜플'은 세트 안에 잘 들어갑니다!
-</span><span class="n">myset</span><span class="p">.</span><span class="nf">add</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">myset</span><span class="p">)</span> <span class="c1"># {0, (1, 2)}
-</span></code></pre></div></div>
-
-<h3 id="예제-4-벤-다이어그램-연산-1-수학-기호의-향연">예제 4: 벤 다이어그램 연산 1 (수학 기호의 향연)</h3>
-<p>세트를 쓰는 가장 큰 이유입니다. 복잡하고 구질구질하게 중계를 짜넣는 이중 <code class="language-plaintext highlighter-rouge">for</code> 루프문 작성은 깔끔하게 포기하고, 단 한 글자의 기호로 수학 연산을 뚝딱 해냅니다.</p>
-
-<p><img src="./img/set_ex4_venn.svg" width="100%" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
-<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
-
-<span class="c1"># 1. 합집합 (Union) | 기호 (A와 B를 모두 합치되 중복은 제거)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">A</span> <span class="o">|</span> <span class="n">B</span><span class="p">)</span> <span class="c1"># {1, 2, 3, 4, 5, 6, 7}
-</span>
-<span class="c1"># 2. 교집합 (Intersection) &amp; 기호 (A와 B에 모두 있는 공통점만)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span><span class="p">)</span> <span class="c1"># {3, 4}
-</span>
-<span class="c1"># 3. 차집합 (Difference) - 기호 (A에서 B와 겹치는 걸 뺀 순수 A)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="c1"># {1, 2}
-</span></code></pre></div></div>
-
-<h3 id="예제-5-벤-다이어그램-연산-2-메서드-방식">예제 5: 벤 다이어그램 연산 2 (메서드 방식)</h3>
-<p>기호 대신 영어 단어 메서드를 써서 똑같이 동작하게 만들 수도 있습니다. 코드가 길어지지만 다른 사람이 읽기에는 훨씬 직관적입니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
-<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>            <span class="c1"># 합집합 -&gt; {1, 2, 3, 4, 5, 6, 7}
-</span><span class="nf">print</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="nf">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>     <span class="c1"># 교집합 -&gt; {3, 4}
-</span><span class="nf">print</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="nf">difference</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>       <span class="c1"># 차집합 -&gt; {1, 2}
-</span>
-<span class="c1"># 대칭 차집합 (교집합의 반대! A와 B 중 겹치지 않는 것들만 모음)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="nf">symmetric_difference</span><span class="p">(</span><span class="n">B</span><span class="p">))</span> <span class="c1"># {1, 2, 5, 6, 7}
-</span></code></pre></div></div>
-
-<h3 id="예제-6-빛보다-빠른-포함-여부-검사-in-연산자">예제 6: 빛보다 빠른 포함 여부 검사 (<code class="language-plaintext highlighter-rouge">in</code> 연산자)</h3>
-<p>만약 리스트에 데이터가 100만 개 있다면, <code class="language-plaintext highlighter-rouge">1000</code>이 있는지 검사할 때 1번부터 끝까지 빙글빙글 찾아봐야 합니다. 하지만 세트는 해시(Hash) 알고리즘을 써서 100만 개든 1억 개든 <strong>단 1초(O(1))</strong> 만에 찾아냅니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">basket</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">apple</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">orange</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">pear</span><span class="sh">'</span><span class="p">}</span>
-
-<span class="c1"># 마법의 in 연산자: 바구니 안에 'apple'이 있니?
-</span><span class="k">if</span> <span class="sh">'</span><span class="s">apple</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">basket</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">사과가 있습니다!</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 이 탐색 속도가 리스트보다 압도적으로 빠릅니다.
-</span></code></pre></div></div>
-
-<h3 id="예제-7-통째로-삼켜-병합하기-update">예제 7: 통째로 삼켜 병합하기 (<code class="language-plaintext highlighter-rouge">update</code>)</h3>
-<p>여러 개의 데이터를 한 번에 세트 안에 들이부을 때 씁니다. 중복된 건 알아서 타서 사라집니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="c1"># 여러 개의 데이터를 리스트로 묶어서 와르르 쏟아 붓습니다.
-</span><span class="n">s</span><span class="p">.</span><span class="nf">update</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> 
-
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># {1, 2, 3, 4, 5} (3은 중복이라 1개만 남음)
-</span></code></pre></div></div>
-
-<h3 id="예제-8-안전하게-삭제하기-discard-vs-remove">예제 8: 안전하게 삭제하기 (<code class="language-plaintext highlighter-rouge">discard</code> vs <code class="language-plaintext highlighter-rouge">remove</code>)</h3>
-<p><code class="language-plaintext highlighter-rouge">remove</code>는 없는 데이터를 지우라고 하면 에러(<code class="language-plaintext highlighter-rouge">KeyError</code>)를 뿜으며 뻗어버립니다. 이때 <code class="language-plaintext highlighter-rouge">discard</code>를 쓰면 “없으면 말고~” 넘어가 주는 부드러운 삭제가 가능합니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-
-<span class="n">s</span><span class="p">.</span><span class="nf">discard</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 2 번을 삭제합니다 -&gt; {1, 3}
-</span><span class="n">s</span><span class="p">.</span><span class="nf">discard</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span> <span class="c1"># 99 번은 원래 없습니다. 에러 없이 평온하게 넘어갑니다!
-</span>
-<span class="c1"># s.remove(99) # 🚨 주석 해제 시 KeyError: 99 에러 폭발!
-</span><span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="예제-9-무작위-뽑기와-제물-바치기-pop">예제 9: 무작위 뽑기와 제물 바치기 (<code class="language-plaintext highlighter-rouge">pop</code>)</h3>
-<p>리스트의 <code class="language-plaintext highlighter-rouge">pop()</code>은 맨 뒤의 녀석을 끄집어 내지만, 세트는 <strong>순서가 아예 없기 때문에 누가 뽑혀 나올지 아무도 모릅니다.</strong> 로또 스피너처럼 랜덤으로 하나가 사라집니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">사과</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">바나나</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">포도</span><span class="sh">'</span><span class="p">}</span>
-
-<span class="n">sacrificed</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span> <span class="c1"># 누군가 하나 랜덤으로 추출되어 사라집니다!
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">희생양:</span><span class="sh">"</span><span class="p">,</span> <span class="n">sacrificed</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">남은 세트:</span><span class="sh">"</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="예제-10-흔적도-없이-초기화하기-clear">예제 10: 흔적도 없이 초기화하기 (<code class="language-plaintext highlighter-rouge">clear</code>)</h3>
-<p>세트 안의 내용물을 핵폭탄으로 날려 빈 깡통으로 만듭니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">s</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># set() 이라는 출력 문구가 뜨며 완전히 깨끗해집니다.
-</span></code></pre></div></div>
-
-<hr />
-
-<h2 id="-java-vs--python-스나이퍼-비교">☕ Java vs 🐍 Python 스나이퍼 비교</h2>
-
-<h3 id="1-세트-생성의-간결함">1. 세트 생성의 간결함</h3>
-<ul>
-  <li><strong>Java</strong>: 중복 없는 집합을 쓰려면 끔찍하게 긴 코드가 필요합니다. <code class="language-plaintext highlighter-rouge">Set&lt;Integer&gt; set = new HashSet&lt;&gt;(); set.add(1); set.add(2);</code></li>
-  <li><strong>Python</strong>: 단 1줄이면 끝납니다. <code class="language-plaintext highlighter-rouge">s = {1, 2}</code></li>
-</ul>
-
-<h3 id="2-무적의-집합-연산자-기호----">2. 무적의 집합 연산자 기호 (<code class="language-plaintext highlighter-rouge">&amp;</code>, <code class="language-plaintext highlighter-rouge">|</code>, <code class="language-plaintext highlighter-rouge">-</code>)</h3>
-<ul>
-  <li><strong>Java</strong>: 교집합을 구하려면 <code class="language-plaintext highlighter-rouge">set1.retainAll(set2)</code> 같은 무거운 내장 함수를 호출해서 원본을 훼손하며 힘들게 계산해야 합니다.</li>
-  <li><strong>Python</strong>: 중학교 수학 시간에 배운 직관적인 기호 그대로 <code class="language-plaintext highlighter-rouge">A &amp; B</code>, <code class="language-plaintext highlighter-rouge">A | B</code> 를 치면, 원본은 그대로 보존되면서 빛의 속도로 새로운 교집합 덩어리 결과를 내뱉습니다. 이 우아함 때문에 파이썬이 데이터 과학(Data Science)의 제왕이 되었습니다.</li>
-</ul>
-
-<hr />
-
-<h2 id="-vibe-coding">🎧 Vibe Coding</h2>
-
-<blockquote>
-  <p><strong>🗣️ 학생 프롬프트 (AI에게 이렇게 명령해 보세요):</strong>
-“파이썬 <code class="language-plaintext highlighter-rouge">set</code>을 이용해서 아주 흔한 코딩 테스트 문제를 하나 풀어줘. 카카오톡 유저 명단 <code class="language-plaintext highlighter-rouge">users = ['민수', '영희', '철수', '민수', '지수', '영희']</code> 리스트가 있어. 이 리스트에서 파이썬의 <code class="language-plaintext highlighter-rouge">set()</code>을 써서 중복된 이름을 0.1초 만에 날려버린 새로운 세트를 만들고, 다시 이 세트를 리스트로 바꾼 다음에 <code class="language-plaintext highlighter-rouge">len()</code> 함수를 써서 ‘순수하게 접속한 고유 유저의 명 수’가 총 몇 명인지 콘솔창에 출력하는 짧은 코드를 짜줘.”</p>
-</blockquote>
-
-<hr />
-
-<h2 id="코딩-영단어-학습-">코딩 영단어 학습 📝</h2>
-
-<ul>
-  <li><strong>Set</strong>: 집합, 세트. (수학시간에 배우는 그 집합과 정확히 일치합니다. 햄버거 세트 메뉴처럼 무언가를 한데 모아둔 주머니를 뜻하지만, 똑같은 감자튀김 코인을 100개 넣어도 주머니 안에는 1개만 남는 신비한 특성이 있습니다.)</li>
-  <li><strong>Unique</strong>: 유일무이한, 독특한. (세트의 최강점이 바로 모든 데이터를 Unique하게 강제 제련해 줍니다. 아이디, 사번, 주민번호 등 데이터베이스에서 절대 겹치면 안 되는 성질을 뜻합니다.)</li>
-  <li><strong>Intersection / Union</strong>: 교차로, 교집합 / 결합, 합집합. (도로 2개가 만나는 교차로를 Intersection이라고 부르듯, A집합과 B집합이 만나는 지점이 교집합입니다.)</li>
-  <li><strong>Discard</strong>: (불필요한 것을) 버리다, 폐기하다. (카드를 하다가 맘에 안 드는 패를 버릴 때 쓰는 단어입니다. <code class="language-plaintext highlighter-rouge">remove</code>가 강압적이고 거친 삭제라면, <code class="language-plaintext highlighter-rouge">discard</code>는 없으면 그만이라는 식으로 부드럽게 쓰레기통에 놓는 느낌의 삭제 메서드입니다.)</li>
-</ul>
+<h3 id="3-단-한-줄의-수학적-마법-벤-다이어그램-연산"><a href="./03_set_operations/">3. 단 한 줄의 수학적 마법: 벤 다이어그램 연산</a></h3>
+<p>이중 <code class="language-plaintext highlighter-rouge">for</code> 루프 지옥을 뚫고 지나가던 옛날 언어의 방식을 폐기하고, 오직 파이썬만 허락한 우아한 단 한 글자의 교집합(<code class="language-plaintext highlighter-rouge">&amp;</code>), 합집합(<code class="language-plaintext highlighter-rouge">|</code>) 기호들의 미학을 맛봅니다. 해시 테이블을 써서 100만 명 중에 내 이름을 0.001초 만에 찾는 <code class="language-plaintext highlighter-rouge">in</code> 연산자의 존재 이유를 체득할 수 있습니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->
             <div class="mt-5">
-                <!-- 구글 애드센스 (여기에 본인의 코드 입력) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
     crossorigin="anonymous"></script>
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+<!-- jinydev-java -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475" data-ad-slot="9323221865"
     data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});

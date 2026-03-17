@@ -1,0 +1,114 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; fill: #bac2de; }
+      .code { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #cba6f7; }
+      .val { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #1e1e2e; text-anchor: middle; alignment-baseline: middle;}
+      .key { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle;}
+      
+      .locker { fill: #45475a; stroke: #cdd6f4; stroke-width: 2; rx: 8; }
+      .tag { fill: #f38ba8; stroke: #1e1e2e; stroke-width: 2; rx: 4; }
+      .item { fill: #a6e3a1; stroke: #1e1e2e; stroke-width: 2; rx: 4; }
+      .item-new { fill: #f9e2af; stroke: #1e1e2e; stroke-width: 2; rx: 4; }
+      
+      .anim-create { animation: popIn 1s 0.5s forwards; opacity: 0; }
+      .anim-read { animation: popOut 1s 2s forwards; }
+      .anim-update { animation: swapItem 1s 4s forwards; }
+      .anim-delete { animation: explode 1s 6s forwards; }
+
+      @keyframes popIn {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      
+      @keyframes popOut {
+        0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 0 transparent); }
+        50% { transform: translateY(-20px); filter: drop-shadow(0 10px 10px #a6e3a1); }
+      }
+      
+      @keyframes swapItem {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1) rotate(5deg); fill: #f9e2af; }
+      }
+      
+      @keyframes explode {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.5; filter: blur(5px); }
+        100% { transform: scale(0); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="400" rx="15" fill="url(#bgGrad)" />
+
+  <!-- TITLE -->
+  <text x="30" y="40" class="title">딕셔너리 C.R.U.D 생존 법칙</text>
+
+  <!-- 1. CREATE -->
+  <g transform="translate(30, 80)">
+    <text x="0" y="0" class="code">1. 생 성 (Create)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">profile["level"] = 10</text>
+    <g transform="translate(20, 45)" class="anim-create">
+      <!-- Locker -->
+      <rect x="0" y="0" width="100" height="120" class="locker" />
+      <!-- Lock Tag (Key) -->
+      <rect x="15" y="10" width="70" height="25" class="tag" />
+      <text x="50" y="28" class="key">"level"</text>
+      <!-- Item inside (Value) -->
+      <rect x="20" y="55" width="60" height="50" class="item" />
+      <text x="50" y="85" class="val">10</text>
+    </g>
+  </g>
+
+  <!-- 2. READ -->
+  <g transform="translate(260, 80)">
+    <text x="0" y="0" class="code">2. 탐 색 (Read)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">print(profile["level"])</text>
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="100" height="120" class="locker" />
+      <rect x="15" y="10" width="70" height="25" class="tag" />
+      <text x="50" y="28" class="key">"level"</text>
+      <!-- Item animates pop out -->
+      <g class="anim-read">
+        <rect x="20" y="55" width="60" height="50" class="item" />
+        <text x="50" y="85" class="val">10</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 3. UPDATE -->
+  <g transform="translate(500, 80)">
+    <text x="0" y="0" class="code">3. 수 정 (Update)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">profile["level"] = 99</text>
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="100" height="120" class="locker" />
+      <rect x="15" y="10" width="70" height="25" class="tag" />
+      <text x="50" y="28" class="key">"level"</text>
+      <!-- Item animates swap -->
+      <g class="anim-update">
+        <rect x="20" y="55" width="60" height="50" class="item" />
+        <text x="50" y="85" class="val">99</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 4. DELETE -->
+  <g transform="translate(260, 260)">
+    <text x="0" y="0" class="code">4. 삭 제 (Delete)</text>
+    <text x="0" y="25" class="title" fill="#a6adc8" font-size="14px">del profile["level"]</text>
+    <g transform="translate(20, 45)" class="anim-delete">
+      <rect x="0" y="0" width="100" height="120" class="locker" stroke="#f38ba8" />
+      <rect x="15" y="10" width="70" height="25" class="tag" />
+      <text x="50" y="28" class="key">"level"</text>
+      <rect x="20" y="55" width="60" height="50" class="item-new" />
+      <text x="50" y="85" class="val">99</text>
+      <!-- Explosion lines -->
+      <path d="M-10,-10 L-30,-30 M 110,-10 L 130,-30 M-10,130 L-30,150 M 110,130 L 130,150" stroke="#f38ba8" stroke-width="4" />
+    </g>
+  </g>
+
+</svg>

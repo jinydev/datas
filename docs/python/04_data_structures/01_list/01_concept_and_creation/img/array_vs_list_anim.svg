@@ -1,0 +1,123 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" />
+      <stop offset="100%" stop-color="#313244" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Consolas', monospace; font-size: 20px; font-weight: bold; }
+      .desc { font-family: 'Consolas', monospace; fill: #a6adc8; font-size: 14px; }
+      .label { font-family: 'Consolas', monospace; font-size: 16px; font-weight: bold; fill: #1e1e2e; text-anchor: middle;}
+      
+      .array-box { fill: #585b70; stroke: #bac2de; stroke-width: 2; rx: 4; }
+      .list-box-num { fill: #f38ba8; stroke: #1e1e2e; stroke-width: 2; rx: 8; }
+      .list-box-str { fill: #a6e3a1; stroke: #1e1e2e; stroke-width: 2; rx: 8; }
+      .list-box-bool { fill: #f9e2af; stroke: #1e1e2e; stroke-width: 2; rx: 8; }
+      
+      .grow-1 { animation: scaleIn 0.5s 1s forwards; opacity: 0; transform-origin: center; }
+      .grow-2 { animation: scaleIn 0.5s 2s forwards; opacity: 0; transform-origin: center; }
+      .grow-3 { animation: scaleIn 0.5s 3s forwards; opacity: 0; transform-origin: center; }
+      .grow-4 { animation: popOut 0.5s 4.5s forwards; opacity: 0; transform-origin: center; }
+
+      .wall { stroke: #f38ba8; stroke-width: 4; stroke-dasharray: 8,8; opacity: 0.8; }
+      .arrow { fill: none; stroke: #cdd6f4; stroke-width: 3; marker-end: url(#arrowhead); }
+      
+      @keyframes scaleIn {
+        0% { opacity: 0; transform: scale(0.5); }
+        80% { opacity: 1; transform: scale(1.1); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      
+      @keyframes popOut {
+        0% { opacity: 0; transform: scale(0) translateX(-50px); }
+        50% { opacity: 1; transform: scale(1.2) translateX(10px); }
+        100% { opacity: 1; transform: scale(1) translateX(0); }
+      }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#cdd6f4" />
+    </marker>
+  </defs>
+
+  <rect width="800" height="350" rx="15" fill="url(#bgGrad)" />
+
+  <!-- LEFT: C/Java Array -->
+  <g transform="translate(30, 30)">
+    <text x="0" y="20" class="title" fill="#bac2de">C/Java Array (배열)</text>
+    <text x="0" y="45" class="desc">• 크기 고정 (불변)</text>
+    <text x="0" y="65" class="desc">• 단일 자료형만 허용</text>
+    
+    <g transform="translate(0, 100)">
+      <!-- Fixed Size 3 Wall -->
+      <path d="M 260,-20 L 260,80" class="wall" />
+      <text x="260" y="-30" class="desc" fill="#f38ba8" text-anchor="middle">Max Size: 3</text>
+      
+      <rect x="0" y="0" width="80" height="60" class="array-box" />
+      <text x="40" y="35" class="label" fill="#cdd6f4">int 10</text>
+      
+      <rect x="90" y="0" width="80" height="60" class="array-box" />
+      <text x="130" y="35" class="label" fill="#cdd6f4">int 20</text>
+      
+      <rect x="180" y="0" width="80" height="60" class="array-box" />
+      <text x="220" y="35" class="label" fill="#cdd6f4">int 30</text>
+
+      <!-- Trying to add 4th causing error -->
+      <text x="310" y="35" class="title" fill="#f38ba8">ERROR!</text>
+    </g>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="400" y1="20" x2="400" y2="330" stroke="#45475a" stroke-width="4" stroke-dasharray="5,5" />
+
+  <!-- RIGHT: Python List -->
+  <g transform="translate(430, 30)">
+    <text x="0" y="20" class="title" fill="#a6e3a1">Python List (단방향 기차)</text>
+    <text x="0" y="45" class="desc">• 무한한 신축성 (크기 자동 증가)</text>
+    <text x="0" y="65" class="desc">• 다양한 자료형 마구 섞기 허용!</text>
+    
+    <g transform="translate(0, 100)">
+      <!-- Element 1 -->
+      <g transform="translate(0, 0)">
+        <g class="grow-1">
+          <rect x="0" y="0" width="70" height="60" class="list-box-num" />
+          <text x="35" y="35" class="label">10</text>
+          <text x="35" y="75" class="desc" text-anchor="middle">int</text>
+        </g>
+      </g>
+      
+      <path d="M 75,30 L 95,30" class="arrow grow-1" />
+
+      <!-- Element 2 -->
+      <g transform="translate(100, 0)">
+        <g class="grow-2">
+          <rect x="0" y="0" width="80" height="60" class="list-box-str" />
+          <text x="40" y="35" class="label">"Hi"</text>
+          <text x="40" y="75" class="desc" text-anchor="middle">str</text>
+        </g>
+      </g>
+      
+      <path d="M 185,30 L 205,30" class="arrow grow-2" />
+
+      <!-- Element 3 -->
+      <g transform="translate(210, 0)">
+        <g class="grow-3">
+          <rect x="0" y="0" width="60" height="60" class="list-box-bool" />
+          <text x="30" y="35" class="label">True</text>
+          <text x="30" y="75" class="desc" text-anchor="middle">bool</text>
+        </g>
+      </g>
+      
+      <!-- List Expanding Magic -->
+      <g transform="translate(275, 30)">
+        <g class="grow-4">
+          <path d="M 0,0 L 20,0" class="arrow" stroke="#89b4fa" />
+          <rect x="25" y="-30" width="40" height="60" class="array-box" fill="#89b4fa" stroke-dasharray="4,4" />
+          <text x="45" y="5" class="label" fill="#1e1e2e">+</text>
+          <text x="45" y="45" class="desc" fill="#89b4fa" text-anchor="middle">Auto</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+</svg>
