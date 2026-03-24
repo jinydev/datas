@@ -1006,7 +1006,7 @@
 </ol>
 
 <blockquote>
-  <p><strong>[돌아보기]</strong> 화살표(벡터)의 꼬리 물기 덧셈이나 물리적인 힘에 대해 더 파보고 싶다면 언제든 <a href="/math_story/53_vectors/">수학이야기: 벡터 (Arrows in Space)</a> 파트를 되새겨 보세요.</p>
+  <p><strong>[돌아보기]</strong> 화살표(벡터)의 꼬리 물기 덧셈이나 물리적인 힘에 대해 더 파보고 싶다면 언제든 <a href="/math_story/53_vectors/">벡터 (Arrows in Space)</a> 파트를 되새겨 보세요.</p>
 </blockquote>
 
 <hr />
@@ -1017,8 +1017,10 @@
 
 <p>방정식에서는 그저 과일장수의 사과 개수에 불과했지만, 2차원(x, y) 기하학 평면에 이 숫자를 떨어뜨리는 순간 <code class="language-plaintext highlighter-rouge">[2, 3]</code>이라는 데이터는 “(0, 0) 중심에서 시작해 (2, 3)을 향해 창 끝을 날카롭게 뽑으며 날아가는 힘의 화살표”로 부활합니다.</p>
 
-<p><img src="./img/ch05_sec1_vector.png" alt="숫자에서 파워 벡터로 진화" />
-<em>(웹툰 비유: 바닥에 무기력하게 적혀 있던 지루하고 딱딱한 텍스트 배열 <code class="language-plaintext highlighter-rouge">[2, 3]</code>이 갑자기 각성하더니, (0,0) 원점을 박차고 화려한 네온 에너지를 뿜어내는 날카롭고 강력한 화살표(벡터)로 변신하여 허공을 뚫고 날아오르는 멋진 컷)</em></p>
+<p><img src="./img/ch05_sec1_vector.png" alt="숫자에서 파워 벡터로 진화" /></p>
+<blockquote>
+  <p>바닥에 무기력하게 적혀 있던 지루하고 딱딱한 텍스트 배열 <code class="language-plaintext highlighter-rouge">[2, 3]</code>이 갑자기 각성하더니, (0,0) 원점을 박차고 화려한 네온 에너지를 뿜어내는 날카롭고 강력한 화살표(벡터)로 변신하여 허공을 뚫고 날아오르는 멋진 컷</p>
+</blockquote>
 
 <p>게임 화면에 존재하는 무수히 많은 지점(캐릭터 중심점 등)은 모두 이 화살표 좌표 하나하나에 묶여 있습니다.</p>
 
@@ -1026,8 +1028,9 @@
 
 <h2 id="2-행렬-matrix--파괴적인-물리-변환-기계">2. 행렬 (Matrix) = 파괴적인 물리 변환 기계</h2>
 
-<p>그렇다면, 이 우직한 벡터(화살표) <code class="language-plaintext highlighter-rouge">[1, 1]</code> 옆에 음침한 <strong>행렬 <code class="language-plaintext highlighter-rouge">[2x2]</code></strong> 를 살며시 곱해주면 어떤 짓이 벌어질까요?
-앞 단원에서 배운 ‘기괴한 십자수 내적 충돌’이 여지없이 발동합니다.</p>
+<p>그렇다면, 이 우직한 벡터(화살표) <code class="language-plaintext highlighter-rouge">[1, 1]</code> 옆에 음침한 <strong>행렬 <code class="language-plaintext highlighter-rouge">[2x2]</code></strong> 를 살며시 곱해주면 어떤 짓이 벌어질까요?</p>
+
+<p>앞 단원에서 배운 ‘기괴한 십자수 내적 충돌’이 여지없이 발동합니다.</p>
 
 \[\text{행렬} \begin{bmatrix}
 2 &amp; 0 \\
@@ -1047,8 +1050,10 @@
 
 <p>원래 $x$축 우상단(1, 1)으로 조신하게 날아가던 화살표가 행렬의 충돌 공격을 받고 나자, $y$축 방향 위쪽으로 훌쩍 키가 커버린 (2, 3) 향의 <strong>돌연변이 화살표로 강제 변환</strong> 되어버렸습니다!</p>
 
-<p><img src="./img/ch05_sec2_transform.png" alt="행렬 기계의 벡터 왜곡" />
-<em>(웹툰 비유: 평범한 일직선 에너지 화살표가 ‘Matrix’라는 간판이 붙은 어둡고 무서운 괴물 기계 통과구 안으로 쏘옥 들어가더니, 기계가 우적우적 씹는 소리를 낸 뒤 전혀 다른 각도로 심하게 꺾이고 기괴하게 길쭉해진 돌연변이 화살표를 퉤! 하고 뱉어내는 코믹 씬)</em></p>
+<p><img src="./img/ch05_sec2_transform.png" alt="행렬 기계의 벡터 왜곡" /></p>
+<blockquote>
+  <p>평범한 일직선 에너지 화살표가 ‘Matrix’라는 간판이 붙은 어둡고 무서운 괴물 기계 통과구 안으로 쏘옥 들어가더니, 기계가 우적우적 씹는 소리를 낸 뒤 전혀 다른 각도로 심하게 꺾이고 기괴하게 길쭉해진 돌연변이 화살표를 퉤! 하고 뱉어내는 코믹 씬</p>
+</blockquote>
 
 <p>이처럼 행렬을 무작정 곱해준다는 것은, 평온하던 좌표 평면 격자의 살들을 쥐어짜서 <strong>‘위아래로 확 잡아 늘리는 짓(크기 변환)’</strong> 이었음을 증명한 것입니다.</p>
 
@@ -1058,8 +1063,10 @@
 
 <p>늘리는 것뿐일까요? 마법진 역할을 하는 행렬의 숫자(계수)들을 음수나 코사인(Cosine/Sine) 각도로 교묘하게 비틀어 주면, 컴퓨터 화면(공간) 전체가 거대한 구심점을 향해 <strong>빙글빙글 회전(Rotation)하거나, 대각선으로 찌그러지며 쓰러지는(Shear)</strong> 환각 효과를 만들어낼 수 있습니다.</p>
 
-<p><img src="./img/ch05_sec3_rotate.png" alt="마법진 시공간 비틀기" />
-<em>(웹툰 비유: 평온한 바둑판 격자 타일 위에 멋진 사이보그 마법사가 강림해 <code class="language-plaintext highlighter-rouge">2x2 행렬 마법진</code>을 바닥에 쾅! 내리찍습니다. 타격 순간, 모범적이던 격자 전체가 마치 말랑한 고무처럼 대각선으로 심하게 찌그러지고 소용돌이치듯 빙글 돌며 시공간이 처참하게 왜곡되는 압도적 스펠 시전 장면)</em></p>
+<p><img src="./img/ch05_sec3_rotate.png" alt="마법진 시공간 비틀기" /></p>
+<blockquote>
+  <p>평온한 바둑판 격자 타일 위에 멋진 사이보그 마법사가 강림해 <code class="language-plaintext highlighter-rouge">2x2 행렬 마법진</code>을 바닥에 쾅! 내리찍습니다. 타격 순간, 모범적이던 격자 전체가 마치 말랑한 고무처럼 대각선으로 심하게 찌그러지고 소용돌이치듯 빙글 돌며 시공간이 처참하게 왜곡되는 압도적 스펠 시전 장면</p>
+</blockquote>
 
 <p>3D 게임 엔진 최적화 전문가라면, 매 프레임마다 캐릭터가 뛰고 회전하고 팔을 흔들 때 그 관절 폴리곤들의 수십만 개 벡터 좌표에 이런 특수 행렬 스펠 마법진 쪼가리를 미친 듯이 연발 융단 폭격(곱셈)하여 실시간 화면을 렌더링하고 있는 것입니다.</p>
 
