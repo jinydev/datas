@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -993,7 +1014,9 @@
             <h1 id="12-같은-픽셀끼리의-병합-행렬의-덧셈과-뺄셈">1.2 같은 픽셀끼리의 병합: 행렬의 덧셈과 뺄셈</h1>
 
 <h2 id="학습목표">학습목표</h2>
-<p>본 장에서는 형태가 똑같은 두 개의 행렬이 서로 만났을 때, 어떻게 융합하고 파괴되는지 알아봅니다. 파이썬 넘파이 연산의 가장 직관적인 기초 모델을 투명도 셀로판지의 비유를 통해 쉽게 이해합니다.</p>
+<p>본 장에서는 형태가 똑같은 두 개의 행렬이 서로 만났을 때, 어떻게 융합하고 파괴되는지 알아봅니다.</p>
+
+<p>파이썬 넘파이 연산의 가장 직관적인 기초 모델을 투명도 셀로판지의 비유를 통해 쉽게 이해합니다.</p>
 
 <hr />
 
@@ -1024,7 +1047,11 @@ B = \begin{bmatrix}
 30 &amp; 40
 \end{bmatrix}\]
 
-<p>이 두 행렬을 더하면 어떻게 될까요? 위 식에서 1(1행 1열)은 같은 자리의 10과 부딪힙니다.</p>
+<h3 id="덧셈">덧셈</h3>
+
+<p>이 두 행렬을 더하면 어떻게 될까요?</p>
+
+<p>위 식에서 1(1행 1열)은 같은 자리의 10과 부딪힙니다.</p>
 
 \[A + B = \begin{bmatrix}
 1 + 10 &amp; 2 + 20 \\
@@ -1034,7 +1061,9 @@ B = \begin{bmatrix}
 33 &amp; 44
 \end{bmatrix}\]
 
-<p>정말 쉽고 직관적이죠? 뺄셈도 완전히 동일하게 같은 자리끼리 빼면 그만입니다.</p>
+<p>정말 쉽고 직관적이죠?</p>
+
+<p>뺄셈도 완전히 동일하게 같은 자리끼리 빼면 그만입니다.</p>
 
 <p><img src="./img/ch02_sec1_add.png" alt="셀로판지 겹치기 덧셈" /></p>
 <blockquote>
@@ -1056,6 +1085,8 @@ B = \begin{bmatrix}
 \end{bmatrix} = ?\]
 
 <p>오른쪽 행렬에는 2열 자리에 더해줄 숫자가 붕 떠버려서 없습니다.</p>
+
+<h3 id="뺄셈">뺄셈</h3>
 
 <p><img src="./img/ch02_sec2_error.png" alt="규격 불일치 밸류에러 충돌" /></p>
 <blockquote>

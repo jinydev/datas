@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -990,29 +1011,68 @@
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h2 id="427-원소가-모두-1인-배열을-생성하는-ones">4.2.7 원소가 모두 1인 배열을 생성하는 ones()</h2>
+            <h1 id="427-원소가-모두-1인-배열을-생성하는-ones">4.2.7 원소가 모두 1인 배열을 생성하는 ones()</h1>
 
-<p><strong>[수학적 의미: 일행렬(All-ones Matrix)의 등장]</strong>
-영행렬이 백지상태라면, 모든 칸이 1로 채워진 행렬은 데이터를 균일하게 증폭시키거나 마스킹(Masking) 연산을 할 때 유용하게 쓰이는 <strong>일행렬(All-ones Matrix)</strong>이라고 부릅니다.</p>
+<h2 id="일행렬all-ones-matrix의-수학적-의미와-활용">일행렬(All-ones Matrix)의 수학적 의미와 활용</h2>
+<blockquote>
+  <p>원소가 모두 1인 배열</p>
+</blockquote>
 
-<p><strong>[Numpy 강림: ones() 팩토리]</strong>
-내장함수 <code class="language-plaintext highlighter-rouge">np.ones()</code>는 <code class="language-plaintext highlighter-rouge">zeros()</code>와 완전히 똑같은 문법 구조를 가지며 반환하는 배열의 모든 칸을 순수한 <code class="language-plaintext highlighter-rouge">1.0</code> 실수(또는 정수)로 꽉 채워냅니다.</p>
+<p><img src="./img/ones_concept_webtoon.png" alt="일행렬 개념도 웹툰" /></p>
+
+<h3 id="수학에서의-일행렬-사용-용도">수학에서의 일행렬 사용 용도</h3>
+
+<p>영행렬이 아무것도 없는 무(無)의 상태라면, 모든 칸이 <code class="language-plaintext highlighter-rouge">1</code>로 채워진 행렬은 <strong>어떤 데이터를 균일하게 처리하거나 기본 가중치(Base Weight)를 부여할 때</strong> 주로 사용되는 <strong>일행렬(All-ones Matrix, 보통 $J$로 표기)</strong>입니다.</p>
+
+<p>일반적인 선형대수학에서는 ‘단위행렬(Identity Matrix, 대각선만 1인 행렬)’이 곱셈의 항등원 기능을 하지만, <strong>Numpy의 기본 연산인 ‘요소별 원소 곱(Element-wise Multiplication, Hadamard Product)’</strong> 세계에서는 이 <strong>일행렬($J$)</strong>이 바로 완벽한 곱셈의 항등원 역할을 수행합니다.</p>
+
+<ol>
+  <li><strong>원소별 곱셈의 기반점 (Hadamard 항등원)</strong>: $A \circ J = A$. 기존 행렬의 데이터를 전혀 변질시키지 않고 기본 배수(x1)로 유지하는 든든한 방패막이 역할을 합니다.</li>
+  <li><strong>합계(Sum) 계산의 마법 지팡이</strong>: 일벡터를 기존 행렬과 내적(Dot Product)하면, 루프(for문)를 돌지 않고도 행렬 안의 수많은 원소들을 순식간에 다 더해버리는 통계 연산이 가능합니다.</li>
+</ol>
+
+<p><img src="./img/one_matrix_math_animation.svg" alt="수학적 일행렬 동작 애니메이션" /></p>
+
+<h2 id="넘파이에서-일행렬-생성하기-및-프로그램-활용">넘파이에서 일행렬 생성하기 및 프로그램 활용</h2>
+
+<p>넘파이 파이썬 코드로 이 일행렬을 만드는 방법이 바로 <code class="language-plaintext highlighter-rouge">np.ones()</code> 함수입니다. <code class="language-plaintext highlighter-rouge">zeros()</code> 함수와 내부 문법 구조가 100% 동일하며, 모양(<code class="language-plaintext highlighter-rouge">shape</code>)만 입력하면 순식간에 내부에 <code class="language-plaintext highlighter-rouge">1</code>을 꽉꽉 채워 넣은 <code class="language-plaintext highlighter-rouge">ndarray</code> 아파트를 지어줍니다.</p>
+
+<p><img src="./img/ones_animation.svg" alt="ones() 애니메이션 동작 설명" /></p>
+
+<h3 id="프로그램에서-일행렬의-의미-언제-어떤-용도로-사용할까">프로그램에서 일행렬의 의미 (언제, 어떤 용도로 사용할까?)</h3>
+
+<p>프로그래밍 관점에서 <code class="language-plaintext highlighter-rouge">np.ones()</code>는 미래에 수많은 데이터를 <strong>‘곱해서’ 증폭시킬 때</strong>, 그 곱셈의 초기 기준값을 안정적으로 잡아주는 <strong>“기본 배수판(Multiplier Base)”</strong> 역할을 수행합니다.</p>
+
+<ul>
+  <li><strong>딥러닝 가중치(Weight) 초기화 주의사항</strong>: 인공지능이 어떤 값을 필터링할 때, 일단 처음에는 입력값을 건드리지 않고 1배수 그대로 살려서 내보내기 위해 <code class="language-plaintext highlighter-rouge">1.0</code>으로 가중치 배열을 초기화하곤 합니다. (만약 곱셈이 될 자리에 <code class="language-plaintext highlighter-rouge">zeros</code>로 0을 초기화해버리면, 이후의 모든 신호가 <code class="language-plaintext highlighter-rouge">* 0</code>이 되어 싹 다 죽어버리는 대참사가 일어납니다!)</li>
+  <li><strong>마스킹(Masking) 기본 캔버스</strong>: 전체 데이터를 기본적으로 모두 켜짐(True/On, 1) 상태인 캔버스로 만들어 두고, 필요 없는 부분만 0으로 꺼나갈(자르기) 때 훌륭하게 쓰입니다.</li>
+</ul>
+
+<h2 id="내장함수-ones-활용-예제">내장함수 ones() 활용 예제</h2>
+
+<h3 id="예제-1-2차원-일행렬all-ones-matrix-생성-기본값-float">예제 1: 2차원 일행렬(All-ones Matrix) 생성 (기본값 float)</h3>
+<p>괄호 안에 <code class="language-plaintext highlighter-rouge">(행, 열)</code> 크기를 튜플로 넘겨주면, 그 크기만큼 1로 채워줍니다. <code class="language-plaintext highlighter-rouge">zeros</code>와 마찬가지로 <code class="language-plaintext highlighter-rouge">dtype</code>을 지정하지 않으면 기본적으로 소수점이 있는 실수형(<code class="language-plaintext highlighter-rouge">float64</code>, 즉 <code class="language-plaintext highlighter-rouge">1.</code>)으로 만들어집니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># [1단계] 세로 2줄(행), 가로 4칸(열)의 빈 부지를 확보
+# [2단계] 모든 칸에 1.0 (float)을 꽉 채워 넣어 2D 일행렬 생성 완료!
+</span><span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1., 1., 1., 1.],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1., 1., 1., 1.],
        [1., 1., 1., 1.]])
 </code></pre></div></div>
 
-<p>인자 <code class="language-plaintext highlighter-rouge">dtype=int</code>로 정수 1로 원소가 채워지는 배열이 생성된다.</p>
+<h3 id="예제-2-자료형dtype을-정수int로-강제-지정하기">예제 2: 자료형(dtype)을 정수(int)로 강제 지정하기</h3>
+<p>소수점이 불필요하고 정수(Integer) <code class="language-plaintext highlighter-rouge">1</code>이 딱 떨어지게 필요하다면, <code class="language-plaintext highlighter-rouge">dtype=int</code> 옵션을 제일 뒤에 추가해 줍니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [1단계] 세로 2줄, 가로 4칸의 빈 부지 확보
+# [2단계] 이번엔 소수점이 없는 완벽한 정수 1로 모든 칸을 채움!
+</span><span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 1, 1, 1],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 1, 1, 1],
        [1, 1, 1, 1]])
 </code></pre></div></div>
 

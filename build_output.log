@@ -1,0 +1,1009 @@
+C:/Ruby34-x64/lib/ruby/3.4.0/win32/registry.rb:2: warning: fiddle/import is found in fiddle, which will no longer be part of the default gems starting from Ruby 4.0.0.
+You can add fiddle to your Gemfile or gemspec to silence this warning.
+To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+  Logging at level: debug
+    Jekyll Version: 4.4.1
+Configuration file: D:/site/jinydev/datas/_config.yml
+         Requiring: jekyll-feed
+         Requiring: jekyll-seo-tag
+         Requiring: jekyll-sitemap
+         Requiring: jekyll-gist
+            Source: D:/site/jinydev/datas/src
+       Destination: D:/site/jinydev/datas/docs
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+           Reading: /_layouts/bootstrap.html
+           Reading: /_layouts/default.html
+           Reading: /_layouts/docs.html
+           Reading: /_layouts/home.html
+           Reading: /_layouts/intro.html
+           Reading: /_layouts/mathplotlib.html
+           Reading: /_layouts/numpy.html
+           Reading: /_layouts/pandas.html
+           Reading: /_layouts/python.html
+           Reading: /_layouts/setup.html
+       EntryFilter: excluded /.jekyll-cache
+           Reading: intro/01_why_data_analysis/01_overview/index.md
+           Reading: intro/01_why_data_analysis/02_existence_of_data/index.md
+           Reading: intro/01_why_data_analysis/03_data_learning/index.md
+           Reading: intro/01_why_data_analysis/index.md
+           Reading: intro/02_industry_applications/01_overview/index.md
+           Reading: intro/02_industry_applications/02_ai_in_finance/index.md
+           Reading: intro/02_industry_applications/03_ecommerce_and_smart_factory/index.md
+           Reading: intro/02_industry_applications/index.md
+           Reading: intro/03_insight_and_conclusion/01_overview/index.md
+           Reading: intro/03_insight_and_conclusion/02_insight_completion/index.md
+           Reading: intro/03_insight_and_conclusion/index.md
+           Reading: intro/04_understanding_data/01_overview/index.md
+           Reading: intro/04_understanding_data/02_dikw/index.md
+           Reading: intro/04_understanding_data/03_data_types/index.md
+           Reading: intro/04_understanding_data/04_data_importance/index.md
+           Reading: intro/04_understanding_data/index.md
+           Reading: intro/05_data_types/01_overview/index.md
+           Reading: intro/05_data_types/02_data_categories/index.md
+           Reading: intro/05_data_types/index.md
+           Reading: intro/06_bigdata_characteristics/01_bigdata_3v/index.md
+           Reading: intro/06_bigdata_characteristics/02_data_visualization/index.md
+           Reading: intro/06_bigdata_characteristics/03_interpretation_and_insight/index.md
+           Reading: intro/06_bigdata_characteristics/index.md
+           Reading: intro/07_process_overview/01_overview/index.md
+           Reading: intro/07_process_overview/02_data_cleaning_and_eda/index.md
+           Reading: intro/07_process_overview/03_modeling_and_action/index.md
+           Reading: intro/07_process_overview/index.md
+           Reading: intro/08_bigdata_and_cloud/01_overview/index.md
+           Reading: intro/08_bigdata_and_cloud/02_data_lake/index.md
+           Reading: intro/08_bigdata_and_cloud/03_cloud_computing/index.md
+           Reading: intro/08_bigdata_and_cloud/index.md
+           Reading: intro/09_ai_and_llm/01_overview/index.md
+           Reading: intro/09_ai_and_llm/02_ai_history/index.md
+           Reading: intro/09_ai_and_llm/03_generative_ai_llm/index.md
+           Reading: intro/09_ai_and_llm/index.md
+           Reading: intro/10_ai_era_survival/01_overview/index.md
+           Reading: intro/10_ai_era_survival/02_ethics_and_bias/index.md
+           Reading: intro/10_ai_era_survival/03_survival_skills/index.md
+           Reading: intro/10_ai_era_survival/index.md
+           Reading: intro/index.md
+           Reading: mathplotlib/00_data_analysis_packages/01_pandas_visualization/index.md
+           Reading: mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/index.md
+           Reading: mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/index.md
+           Reading: mathplotlib/01_matplotlib_basics/01_visualization_intro/index.md
+           Reading: mathplotlib/01_matplotlib_basics/02_simple_line_plot/index.md
+           Reading: mathplotlib/01_matplotlib_basics/03_figure_subplot/index.md
+           Reading: mathplotlib/01_matplotlib_basics/04_gridspec_layout/index.md
+           Reading: mathplotlib/01_matplotlib_basics/05_styling/index.md
+           Reading: mathplotlib/02_seaborn_dataset/01_pydataset_intro/index.md
+           Reading: mathplotlib/02_seaborn_dataset/02_pydataset_install/index.md
+           Reading: mathplotlib/02_seaborn_dataset/03_pydataset_import/index.md
+           Reading: mathplotlib/02_seaborn_dataset/04_seaborn_graph/index.md
+           Reading: mathplotlib/03_basic_charts/01_scatter_plot/index.md
+           Reading: mathplotlib/03_basic_charts/02_line_plot/index.md
+           Reading: mathplotlib/03_basic_charts/03_bar_plot/index.md
+           Reading: mathplotlib/04_distribution_charts/01_box_plot/index.md
+           Reading: mathplotlib/04_distribution_charts/02_histogram/index.md
+           Reading: mathplotlib/04_distribution_charts/03_pie_chart/index.md
+           Reading: mathplotlib/05_advanced_charts/01_violin_plot/index.md
+           Reading: mathplotlib/05_advanced_charts/02_correlation_viz/index.md
+           Reading: mathplotlib/index.md
+           Reading: numpy/01_math_equations/00_what_is_equation/index.md
+           Reading: numpy/01_math_equations/01_linear_equations_balance/index.md
+           Reading: numpy/01_math_equations/02_system_of_equations/index.md
+           Reading: numpy/01_math_equations/03_quadratic_parabola/index.md
+           Reading: numpy/01_math_equations/04_equation_to_matrix/index.md
+           Reading: numpy/02_math_matrices/00_intro_equations_limit/index.md
+           Reading: numpy/02_math_matrices/01_what_is_matrix/index.md
+           Reading: numpy/02_math_matrices/02_addition_subtraction/index.md
+           Reading: numpy/02_math_matrices/03_scalar_multiplication/index.md
+           Reading: numpy/02_math_matrices/04_matrix_multiplication/index.md
+           Reading: numpy/02_math_matrices/05_linear_transformation/index.md
+           Reading: numpy/02_math_matrices/06_intro_to_numpy_ai/index.md
+           Reading: numpy/02_math_matrices/index.md
+           Reading: numpy/03_numpy_basics/01_numpy_intro/index.md
+           Reading: numpy/03_numpy_basics/02_ndarray/index.md
+           Reading: numpy/03_numpy_basics/03_dtype/index.md
+           Reading: numpy/03_numpy_basics/04_ndim/index.md
+           Reading: numpy/03_numpy_basics/05_size_nbytes/index.md
+           Reading: numpy/04_array_creation/01_array_creation/index.md
+           Reading: numpy/04_array_creation/02_arange/index.md
+           Reading: numpy/04_array_creation/03_reshape/index.md
+           Reading: numpy/04_array_creation/04_linspace/index.md
+           Reading: numpy/04_array_creation/05_arange_vs_linspace/index.md
+           Reading: numpy/04_array_creation/06_zeros/index.md
+           Reading: numpy/04_array_creation/07_ones/index.md
+           Reading: numpy/04_array_creation/08_eye/index.md
+           Reading: numpy/04_array_creation/09_full/index.md
+           Reading: numpy/04_array_creation/10_empty/index.md
+           Reading: numpy/04_array_creation/11_like_functions/index.md
+           Reading: numpy/05_array_operations/01_scalar_operations/index.md
+           Reading: numpy/05_array_operations/02_array_operations/index.md
+           Reading: numpy/05_array_operations/03_ufunc/index.md
+           Reading: numpy/05_array_operations/04_broadcasting_intro/index.md
+           Reading: numpy/05_array_operations/05_scalar_broadcasting/index.md
+           Reading: numpy/05_array_operations/06_d_broadcasting/index.md
+           Reading: numpy/05_array_operations/07_newaxis/index.md
+           Reading: numpy/06_indexing_slicing/01_d_slicing/index.md
+           Reading: numpy/06_indexing_slicing/02_d_slicing/index.md
+           Reading: numpy/06_indexing_slicing/03_d_slicing/index.md
+           Reading: numpy/06_indexing_slicing/04_d_indexing/index.md
+           Reading: numpy/06_indexing_slicing/05_d_indexing/index.md
+           Reading: numpy/06_indexing_slicing/06_advanced_indexing/index.md
+           Reading: numpy/07_shape_memory/01_reshape_advanced/index.md
+           Reading: numpy/07_shape_memory/02_copy_view/index.md
+           Reading: numpy/08_concat_split/01_array_concat_intro/index.md
+           Reading: numpy/08_concat_split/02_vstack/index.md
+           Reading: numpy/08_concat_split/03_hstack/index.md
+           Reading: numpy/08_concat_split/04_column_row_stack/index.md
+           Reading: numpy/08_concat_split/05_concatenate_stack/index.md
+           Reading: numpy/08_concat_split/06_column_stack_vs_hstack/index.md
+           Reading: numpy/08_concat_split/07_row_stack_vs_vstack/index.md
+           Reading: numpy/08_concat_split/08_npc_column_stack/index.md
+           Reading: numpy/08_concat_split/09_npr/index.md
+           Reading: numpy/08_concat_split/10_d_concat_methods/index.md
+           Reading: numpy/08_concat_split/11_d_concat_summary/index.md
+           Reading: numpy/08_concat_split/12_split/index.md
+           Reading: numpy/08_concat_split/13_hsplit_vsplit/index.md
+           Reading: numpy/08_concat_split/14_array_split/index.md
+           Reading: numpy/09_random_exercises/01_random/index.md
+           Reading: numpy/09_random_exercises/02_exercises/index.md
+           Reading: numpy/index.md
+[33mError reading file D:/site/jinydev/datas/src/numpy/index.md: invalid byte sequence in UTF-8 [0m
+           Reading: pandas/01_pandas_basics/01_pandas_intro/index.md
+           Reading: pandas/01_pandas_basics/02_series_intro/index.md
+           Reading: pandas/01_pandas_basics/03_dataframe_intro/index.md
+           Reading: pandas/02_series_dataframe_creation/01_series_creation/index.md
+           Reading: pandas/02_series_dataframe_creation/02_series_functions/index.md
+           Reading: pandas/02_series_dataframe_creation/03_dataframe_constructor/index.md
+           Reading: pandas/02_series_dataframe_creation/04_df_from_matrix/index.md
+           Reading: pandas/02_series_dataframe_creation/05_df_from_dict/index.md
+           Reading: pandas/02_series_dataframe_creation/06_df_from_series/index.md
+           Reading: pandas/02_series_dataframe_creation/07_df_from_dict_list/index.md
+           Reading: pandas/02_series_dataframe_creation/08_df_from_series_dict/index.md
+           Reading: pandas/02_series_dataframe_creation/09_df_dtypes/index.md
+           Reading: pandas/02_series_dataframe_creation/10_date_range/index.md
+           Reading: pandas/02_series_dataframe_creation/11_df_with_dates/index.md
+           Reading: pandas/03_data_selection/01_column_selection/index.md
+           Reading: pandas/03_data_selection/02_conditional_selection/index.md
+           Reading: pandas/03_data_selection/03_row_selection_loc/index.md
+           Reading: pandas/03_data_selection/04_row_selection_loc_i/index.md
+           Reading: pandas/03_data_selection/05_col_selection_loc/index.md
+           Reading: pandas/03_data_selection/06_col_selection_loc_i/index.md
+           Reading: pandas/03_data_selection/07_row_col_selection/index.md
+           Reading: pandas/03_data_selection/08_iloc_selection/index.md
+           Reading: pandas/04_data_modification/01_df_info_modify/index.md
+           Reading: pandas/04_data_modification/02_df_extract_assign/index.md
+           Reading: pandas/04_data_modification/03_df_modify_assign/index.md
+           Reading: pandas/04_data_modification/04_df_conditional_search/index.md
+           Reading: pandas/04_data_modification/05_df_sorting/index.md
+           Reading: pandas/04_data_modification/06_df_various_modifications/index.md
+           Reading: pandas/05_file_io/01_csv_excel_io/index.md
+           Reading: pandas/05_file_io/02_internet_data/index.md
+           Reading: pandas/index.md
+           Reading: python/01_basic/01_python_intro/index.md
+           Reading: python/01_basic/02_comments_constants/index.md
+           Reading: python/01_basic/03_variables_assignment/index.md
+           Reading: python/01_basic/04_variable_naming/index.md
+           Reading: python/01_basic/05_data_types_operators/01_numbers/index.md
+           Reading: python/01_basic/05_data_types_operators/02_integer/index.md
+           Reading: python/01_basic/05_data_types_operators/03_real/index.md
+           Reading: python/01_basic/05_data_types_operators/04_complex/index.md
+           Reading: python/01_basic/05_data_types_operators/05_char/index.md
+           Reading: python/01_basic/05_data_types_operators/06_bool/index.md
+           Reading: python/01_basic/05_data_types_operators/index.md
+           Reading: python/01_basic/06_various_operators/01_concept/index.md
+           Reading: python/01_basic/06_various_operators/02_arithmetic/index.md
+           Reading: python/01_basic/06_various_operators/03_comparison/index.md
+           Reading: python/01_basic/06_various_operators/04_logical/index.md
+           Reading: python/01_basic/06_various_operators/05_precedence/index.md
+           Reading: python/01_basic/06_various_operators/06_java_vs_python/index.md
+           Reading: python/01_basic/06_various_operators/07_examples_and_vibe/index.md
+           Reading: python/01_basic/06_various_operators/index.md
+           Reading: python/01_basic/index.md
+           Reading: python/02_control_flow/01_if_statement/index.md
+           Reading: python/02_control_flow/02_advanced_if/index.md
+           Reading: python/02_control_flow/03_match_statement/index.md
+           Reading: python/02_control_flow/04_for_loop/index.md
+           Reading: python/02_control_flow/05_while_loop/index.md
+           Reading: python/02_control_flow/06_nested_loops/index.md
+           Reading: python/02_control_flow/07_exceptions/01_error_types/index.md
+           Reading: python/02_control_flow/07_exceptions/02_try_except/index.md
+           Reading: python/02_control_flow/07_exceptions/03_multiple_exceptions/index.md
+           Reading: python/02_control_flow/07_exceptions/04_advanced_exceptions/index.md
+           Reading: python/02_control_flow/07_exceptions/05_raise_exception/index.md
+           Reading: python/02_control_flow/07_exceptions/06_java_vs_python/index.md
+           Reading: python/02_control_flow/07_exceptions/index.md
+           Reading: python/02_control_flow/index.md
+           Reading: python/03_functions/01_function_origin/index.md
+           Reading: python/03_functions/02_function_concepts/index.md
+           Reading: python/03_functions/03_function_operation_flow/index.md
+           Reading: python/03_functions/04_function_usage/index.md
+           Reading: python/03_functions/05_function_call_flow/index.md
+           Reading: python/03_functions/06_advanced_parameters/index.md
+           Reading: python/03_functions/07_variable_scope/index.md
+           Reading: python/03_functions/08_lambda_function/index.md
+           Reading: python/03_functions/09_recursive_function/index.md
+           Reading: python/03_functions/10_built_in_functions/index.md
+           Reading: python/03_functions/11_math_module/01_arithmetic_stats/index.md
+           Reading: python/03_functions/11_math_module/02_power_log/index.md
+           Reading: python/03_functions/11_math_module/03_geometry_trig/index.md
+           Reading: python/03_functions/11_math_module/index.md
+           Reading: python/03_functions/index.md
+           Reading: python/04_data_structures/01_list/01_concept_and_creation/index.md
+           Reading: python/04_data_structures/01_list/02_indexing_and_slicing/index.md
+           Reading: python/04_data_structures/01_list/03_methods_and_operations/index.md
+           Reading: python/04_data_structures/01_list/04_memory_reference/index.md
+           Reading: python/04_data_structures/01_list/05_list_comprehension/index.md
+           Reading: python/04_data_structures/01_list/06_1d_list_and_vector/index.md
+           Reading: python/04_data_structures/01_list/07_2d_list_and_matrix/index.md
+           Reading: python/04_data_structures/01_list/08_3d_list_and_tensor/index.md
+           Reading: python/04_data_structures/01_list/index.md
+           Reading: python/04_data_structures/02_dictionary/01_hash_and_mapping/index.md
+           Reading: python/04_data_structures/02_dictionary/02_creation_and_access/index.md
+           Reading: python/04_data_structures/02_dictionary/03_methods_and_defense/index.md
+           Reading: python/04_data_structures/02_dictionary/04_dict_comprehension/index.md
+           Reading: python/04_data_structures/02_dictionary/index.md
+           Reading: python/04_data_structures/03_tuple/01_concept_and_immutability/index.md
+           Reading: python/04_data_structures/03_tuple/02_packing_and_unpacking/index.md
+           Reading: python/04_data_structures/03_tuple/03_tuple_methods_and_conversion/index.md
+           Reading: python/04_data_structures/03_tuple/04_tuple_as_dictionary_key/index.md
+           Reading: python/04_data_structures/03_tuple/index.md
+           Reading: python/04_data_structures/04_set/01_concept_and_uniqueness/index.md
+           Reading: python/04_data_structures/04_set/02_creation_and_modification/index.md
+           Reading: python/04_data_structures/04_set/03_set_operations/index.md
+           Reading: python/04_data_structures/04_set/index.md
+           Reading: python/04_data_structures/05_immutable_hash_id/index.md
+           Reading: python/04_data_structures/index.md
+           Reading: python/05_oop/01_class_instance/index.md
+           Reading: python/05_oop/02_python_self/index.md
+           Reading: python/05_oop/03_inheritance/index.md
+           Reading: python/05_oop/04_polymorphism/index.md
+           Reading: python/05_oop/05_abstraction/index.md
+           Reading: python/05_oop/06_interface/index.md
+           Reading: python/05_oop/07_dependency_injection/index.md
+           Reading: python/05_oop/index.md
+           Reading: python/06_data_viz_prep/01_file_io_concept/index.md
+           Reading: python/06_data_viz_prep/02_file_open/index.md
+           Reading: python/06_data_viz_prep/03_data_analysis/index.md
+           Reading: python/06_data_viz_prep/index.md
+           Reading: python/07_gui_programming/01_gui_principles/index.md
+           Reading: python/07_gui_programming/02_tkinter_hello_world/index.md
+           Reading: python/07_gui_programming/03_widget_layout/index.md
+           Reading: python/07_gui_programming/04_data_analysis_gui/index.md
+           Reading: python/07_gui_programming/index.md
+           Reading: python/08_data_preprocessing/01_string_manipulation/index.md
+           Reading: python/08_data_preprocessing/02_functional_map_filter/index.md
+           Reading: python/08_data_preprocessing/03_modules_and_venv/index.md
+           Reading: python/08_data_preprocessing/index.md
+           Reading: python/index.md
+           Reading: setup/01_windows/index.md
+           Reading: setup/02_mac/index.md
+           Reading: setup/03_linux/index.md
+           Reading: setup/04_anaconda/index.md
+           Reading: setup/05_venv/index.md
+           Reading: setup/06_colab/index.md
+           Reading: setup/07_vscode/index.md
+           Reading: setup/08_packages/08_matplotlib_intro.md
+           Reading: setup/08_packages/index.md
+           Reading: setup/index.md
+           Reading: index.md
+           Reading: site.xml
+           Reading: _data/header_nav.yml
+           Reading: _data/intro.yml
+           Reading: _data/mathplotlib.yml
+           Reading: _data/navigation.yml
+           Reading: _data/numpy.yml
+           Reading: _data/pandas.yml
+           Reading: _data/python.yml
+           Reading: _data/setup.yml
+        Generating: Jekyll::JekyllSitemap finished in 0.0243628 seconds.
+       Jekyll Feed: Generating feed for posts
+        Generating: JekyllFeed::Generator finished in 0.0009974 seconds.
+         Rendering: setup/08_packages/08_matplotlib_intro.md
+  Pre-Render Hooks: setup/08_packages/08_matplotlib_intro.md
+  Rendering Markup: setup/08_packages/08_matplotlib_intro.md
+Post-Convert Hooks: setup/08_packages/08_matplotlib_intro.md
+  Rendering Layout: setup/08_packages/08_matplotlib_intro.md
+         Rendering: intro/01_why_data_analysis/02_existence_of_data/index.md
+  Pre-Render Hooks: intro/01_why_data_analysis/02_existence_of_data/index.md
+  Rendering Markup: intro/01_why_data_analysis/02_existence_of_data/index.md
+Post-Convert Hooks: intro/01_why_data_analysis/02_existence_of_data/index.md
+  Rendering Layout: intro/01_why_data_analysis/02_existence_of_data/index.md
+         Rendering: intro/01_why_data_analysis/03_data_learning/index.md
+  Pre-Render Hooks: intro/01_why_data_analysis/03_data_learning/index.md
+  Rendering Markup: intro/01_why_data_analysis/03_data_learning/index.md
+Post-Convert Hooks: intro/01_why_data_analysis/03_data_learning/index.md
+  Rendering Layout: intro/01_why_data_analysis/03_data_learning/index.md
+         Rendering: intro/01_why_data_analysis/index.md
+  Pre-Render Hooks: intro/01_why_data_analysis/index.md
+  Rendering Markup: intro/01_why_data_analysis/index.md
+Post-Convert Hooks: intro/01_why_data_analysis/index.md
+  Rendering Layout: intro/01_why_data_analysis/index.md
+         Rendering: intro/02_industry_applications/01_overview/index.md
+  Pre-Render Hooks: intro/02_industry_applications/01_overview/index.md
+  Rendering Markup: intro/02_industry_applications/01_overview/index.md
+Post-Convert Hooks: intro/02_industry_applications/01_overview/index.md
+  Rendering Layout: intro/02_industry_applications/01_overview/index.md
+         Rendering: intro/02_industry_applications/02_ai_in_finance/index.md
+  Pre-Render Hooks: intro/02_industry_applications/02_ai_in_finance/index.md
+  Rendering Markup: intro/02_industry_applications/02_ai_in_finance/index.md
+Post-Convert Hooks: intro/02_industry_applications/02_ai_in_finance/index.md
+  Rendering Layout: intro/02_industry_applications/02_ai_in_finance/index.md
+         Rendering: intro/02_industry_applications/03_ecommerce_and_smart_factory/index.md
+  Pre-Render Hooks: intro/02_industry_applications/03_ecommerce_and_smart_factory/index.md
+  Rendering Markup: intro/02_industry_applications/03_ecommerce_and_smart_factory/index.md
+Post-Convert Hooks: intro/02_industry_applications/03_ecommerce_and_smart_factory/index.md
+  Rendering Layout: intro/02_industry_applications/03_ecommerce_and_smart_factory/index.md
+         Rendering: intro/02_industry_applications/index.md
+  Pre-Render Hooks: intro/02_industry_applications/index.md
+  Rendering Markup: intro/02_industry_applications/index.md
+Post-Convert Hooks: intro/02_industry_applications/index.md
+  Rendering Layout: intro/02_industry_applications/index.md
+         Rendering: intro/03_insight_and_conclusion/01_overview/index.md
+  Pre-Render Hooks: intro/03_insight_and_conclusion/01_overview/index.md
+  Rendering Markup: intro/03_insight_and_conclusion/01_overview/index.md
+Post-Convert Hooks: intro/03_insight_and_conclusion/01_overview/index.md
+  Rendering Layout: intro/03_insight_and_conclusion/01_overview/index.md
+         Rendering: intro/03_insight_and_conclusion/02_insight_completion/index.md
+  Pre-Render Hooks: intro/03_insight_and_conclusion/02_insight_completion/index.md
+  Rendering Markup: intro/03_insight_and_conclusion/02_insight_completion/index.md
+Post-Convert Hooks: intro/03_insight_and_conclusion/02_insight_completion/index.md
+  Rendering Layout: intro/03_insight_and_conclusion/02_insight_completion/index.md
+         Rendering: intro/03_insight_and_conclusion/index.md
+  Pre-Render Hooks: intro/03_insight_and_conclusion/index.md
+  Rendering Markup: intro/03_insight_and_conclusion/index.md
+Post-Convert Hooks: intro/03_insight_and_conclusion/index.md
+  Rendering Layout: intro/03_insight_and_conclusion/index.md
+         Rendering: intro/04_understanding_data/01_overview/index.md
+  Pre-Render Hooks: intro/04_understanding_data/01_overview/index.md
+  Rendering Markup: intro/04_understanding_data/01_overview/index.md
+Post-Convert Hooks: intro/04_understanding_data/01_overview/index.md
+  Rendering Layout: intro/04_understanding_data/01_overview/index.md
+         Rendering: intro/04_understanding_data/02_dikw/index.md
+  Pre-Render Hooks: intro/04_understanding_data/02_dikw/index.md
+  Rendering Markup: intro/04_understanding_data/02_dikw/index.md
+Post-Convert Hooks: intro/04_understanding_data/02_dikw/index.md
+  Rendering Layout: intro/04_understanding_data/02_dikw/index.md
+         Rendering: intro/04_understanding_data/03_data_types/index.md
+  Pre-Render Hooks: intro/04_understanding_data/03_data_types/index.md
+  Rendering Markup: intro/04_understanding_data/03_data_types/index.md
+Post-Convert Hooks: intro/04_understanding_data/03_data_types/index.md
+  Rendering Layout: intro/04_understanding_data/03_data_types/index.md
+         Rendering: intro/04_understanding_data/04_data_importance/index.md
+  Pre-Render Hooks: intro/04_understanding_data/04_data_importance/index.md
+  Rendering Markup: intro/04_understanding_data/04_data_importance/index.md
+Post-Convert Hooks: intro/04_understanding_data/04_data_importance/index.md
+  Rendering Layout: intro/04_understanding_data/04_data_importance/index.md
+         Rendering: intro/04_understanding_data/index.md
+  Pre-Render Hooks: intro/04_understanding_data/index.md
+  Rendering Markup: intro/04_understanding_data/index.md
+Post-Convert Hooks: intro/04_understanding_data/index.md
+  Rendering Layout: intro/04_understanding_data/index.md
+         Rendering: intro/05_data_types/01_overview/index.md
+  Pre-Render Hooks: intro/05_data_types/01_overview/index.md
+  Rendering Markup: intro/05_data_types/01_overview/index.md
+Post-Convert Hooks: intro/05_data_types/01_overview/index.md
+  Rendering Layout: intro/05_data_types/01_overview/index.md
+         Rendering: intro/05_data_types/02_data_categories/index.md
+  Pre-Render Hooks: intro/05_data_types/02_data_categories/index.md
+  Rendering Markup: intro/05_data_types/02_data_categories/index.md
+Post-Convert Hooks: intro/05_data_types/02_data_categories/index.md
+  Rendering Layout: intro/05_data_types/02_data_categories/index.md
+         Rendering: intro/05_data_types/index.md
+  Pre-Render Hooks: intro/05_data_types/index.md
+  Rendering Markup: intro/05_data_types/index.md
+Post-Convert Hooks: intro/05_data_types/index.md
+  Rendering Layout: intro/05_data_types/index.md
+         Rendering: intro/06_bigdata_characteristics/01_bigdata_3v/index.md
+  Pre-Render Hooks: intro/06_bigdata_characteristics/01_bigdata_3v/index.md
+  Rendering Markup: intro/06_bigdata_characteristics/01_bigdata_3v/index.md
+Post-Convert Hooks: intro/06_bigdata_characteristics/01_bigdata_3v/index.md
+  Rendering Layout: intro/06_bigdata_characteristics/01_bigdata_3v/index.md
+         Rendering: intro/06_bigdata_characteristics/02_data_visualization/index.md
+  Pre-Render Hooks: intro/06_bigdata_characteristics/02_data_visualization/index.md
+  Rendering Markup: intro/06_bigdata_characteristics/02_data_visualization/index.md
+Post-Convert Hooks: intro/06_bigdata_characteristics/02_data_visualization/index.md
+  Rendering Layout: intro/06_bigdata_characteristics/02_data_visualization/index.md
+         Rendering: intro/06_bigdata_characteristics/03_interpretation_and_insight/index.md
+  Pre-Render Hooks: intro/06_bigdata_characteristics/03_interpretation_and_insight/index.md
+  Rendering Markup: intro/06_bigdata_characteristics/03_interpretation_and_insight/index.md
+Post-Convert Hooks: intro/06_bigdata_characteristics/03_interpretation_and_insight/index.md
+  Rendering Layout: intro/06_bigdata_characteristics/03_interpretation_and_insight/index.md
+         Rendering: intro/06_bigdata_characteristics/index.md
+  Pre-Render Hooks: intro/06_bigdata_characteristics/index.md
+  Rendering Markup: intro/06_bigdata_characteristics/index.md
+Post-Convert Hooks: intro/06_bigdata_characteristics/index.md
+  Rendering Layout: intro/06_bigdata_characteristics/index.md
+         Rendering: intro/07_process_overview/01_overview/index.md
+  Pre-Render Hooks: intro/07_process_overview/01_overview/index.md
+  Rendering Markup: intro/07_process_overview/01_overview/index.md
+Post-Convert Hooks: intro/07_process_overview/01_overview/index.md
+  Rendering Layout: intro/07_process_overview/01_overview/index.md
+         Rendering: intro/07_process_overview/02_data_cleaning_and_eda/index.md
+  Pre-Render Hooks: intro/07_process_overview/02_data_cleaning_and_eda/index.md
+  Rendering Markup: intro/07_process_overview/02_data_cleaning_and_eda/index.md
+Post-Convert Hooks: intro/07_process_overview/02_data_cleaning_and_eda/index.md
+  Rendering Layout: intro/07_process_overview/02_data_cleaning_and_eda/index.md
+         Rendering: intro/07_process_overview/03_modeling_and_action/index.md
+  Pre-Render Hooks: intro/07_process_overview/03_modeling_and_action/index.md
+  Rendering Markup: intro/07_process_overview/03_modeling_and_action/index.md
+Post-Convert Hooks: intro/07_process_overview/03_modeling_and_action/index.md
+  Rendering Layout: intro/07_process_overview/03_modeling_and_action/index.md
+         Rendering: intro/07_process_overview/index.md
+  Pre-Render Hooks: intro/07_process_overview/index.md
+  Rendering Markup: intro/07_process_overview/index.md
+Post-Convert Hooks: intro/07_process_overview/index.md
+  Rendering Layout: intro/07_process_overview/index.md
+         Rendering: intro/08_bigdata_and_cloud/01_overview/index.md
+  Pre-Render Hooks: intro/08_bigdata_and_cloud/01_overview/index.md
+  Rendering Markup: intro/08_bigdata_and_cloud/01_overview/index.md
+Post-Convert Hooks: intro/08_bigdata_and_cloud/01_overview/index.md
+  Rendering Layout: intro/08_bigdata_and_cloud/01_overview/index.md
+         Rendering: intro/08_bigdata_and_cloud/02_data_lake/index.md
+  Pre-Render Hooks: intro/08_bigdata_and_cloud/02_data_lake/index.md
+  Rendering Markup: intro/08_bigdata_and_cloud/02_data_lake/index.md
+Post-Convert Hooks: intro/08_bigdata_and_cloud/02_data_lake/index.md
+  Rendering Layout: intro/08_bigdata_and_cloud/02_data_lake/index.md
+         Rendering: intro/08_bigdata_and_cloud/03_cloud_computing/index.md
+  Pre-Render Hooks: intro/08_bigdata_and_cloud/03_cloud_computing/index.md
+  Rendering Markup: intro/08_bigdata_and_cloud/03_cloud_computing/index.md
+Post-Convert Hooks: intro/08_bigdata_and_cloud/03_cloud_computing/index.md
+  Rendering Layout: intro/08_bigdata_and_cloud/03_cloud_computing/index.md
+         Rendering: intro/08_bigdata_and_cloud/index.md
+  Pre-Render Hooks: intro/08_bigdata_and_cloud/index.md
+  Rendering Markup: intro/08_bigdata_and_cloud/index.md
+Post-Convert Hooks: intro/08_bigdata_and_cloud/index.md
+  Rendering Layout: intro/08_bigdata_and_cloud/index.md
+         Rendering: intro/09_ai_and_llm/01_overview/index.md
+  Pre-Render Hooks: intro/09_ai_and_llm/01_overview/index.md
+  Rendering Markup: intro/09_ai_and_llm/01_overview/index.md
+Post-Convert Hooks: intro/09_ai_and_llm/01_overview/index.md
+  Rendering Layout: intro/09_ai_and_llm/01_overview/index.md
+         Rendering: intro/09_ai_and_llm/02_ai_history/index.md
+  Pre-Render Hooks: intro/09_ai_and_llm/02_ai_history/index.md
+  Rendering Markup: intro/09_ai_and_llm/02_ai_history/index.md
+Post-Convert Hooks: intro/09_ai_and_llm/02_ai_history/index.md
+  Rendering Layout: intro/09_ai_and_llm/02_ai_history/index.md
+         Rendering: intro/09_ai_and_llm/03_generative_ai_llm/index.md
+  Pre-Render Hooks: intro/09_ai_and_llm/03_generative_ai_llm/index.md
+  Rendering Markup: intro/09_ai_and_llm/03_generative_ai_llm/index.md
+Post-Convert Hooks: intro/09_ai_and_llm/03_generative_ai_llm/index.md
+  Rendering Layout: intro/09_ai_and_llm/03_generative_ai_llm/index.md
+         Rendering: intro/09_ai_and_llm/index.md
+  Pre-Render Hooks: intro/09_ai_and_llm/index.md
+  Rendering Markup: intro/09_ai_and_llm/index.md
+Post-Convert Hooks: intro/09_ai_and_llm/index.md
+  Rendering Layout: intro/09_ai_and_llm/index.md
+         Rendering: intro/10_ai_era_survival/01_overview/index.md
+  Pre-Render Hooks: intro/10_ai_era_survival/01_overview/index.md
+  Rendering Markup: intro/10_ai_era_survival/01_overview/index.md
+Post-Convert Hooks: intro/10_ai_era_survival/01_overview/index.md
+  Rendering Layout: intro/10_ai_era_survival/01_overview/index.md
+         Rendering: intro/10_ai_era_survival/02_ethics_and_bias/index.md
+  Pre-Render Hooks: intro/10_ai_era_survival/02_ethics_and_bias/index.md
+  Rendering Markup: intro/10_ai_era_survival/02_ethics_and_bias/index.md
+Post-Convert Hooks: intro/10_ai_era_survival/02_ethics_and_bias/index.md
+  Rendering Layout: intro/10_ai_era_survival/02_ethics_and_bias/index.md
+         Rendering: intro/10_ai_era_survival/03_survival_skills/index.md
+  Pre-Render Hooks: intro/10_ai_era_survival/03_survival_skills/index.md
+  Rendering Markup: intro/10_ai_era_survival/03_survival_skills/index.md
+Post-Convert Hooks: intro/10_ai_era_survival/03_survival_skills/index.md
+  Rendering Layout: intro/10_ai_era_survival/03_survival_skills/index.md
+         Rendering: intro/10_ai_era_survival/index.md
+  Pre-Render Hooks: intro/10_ai_era_survival/index.md
+  Rendering Markup: intro/10_ai_era_survival/index.md
+Post-Convert Hooks: intro/10_ai_era_survival/index.md
+  Rendering Layout: intro/10_ai_era_survival/index.md
+         Rendering: intro/index.md
+  Pre-Render Hooks: intro/index.md
+  Rendering Markup: intro/index.md
+Post-Convert Hooks: intro/index.md
+  Rendering Layout: intro/index.md
+         Rendering: mathplotlib/00_data_analysis_packages/01_pandas_visualization/index.md
+  Pre-Render Hooks: mathplotlib/00_data_analysis_packages/01_pandas_visualization/index.md
+  Rendering Markup: mathplotlib/00_data_analysis_packages/01_pandas_visualization/index.md
+Post-Convert Hooks: mathplotlib/00_data_analysis_packages/01_pandas_visualization/index.md
+  Rendering Layout: mathplotlib/00_data_analysis_packages/01_pandas_visualization/index.md
+         Rendering: mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/index.md
+  Pre-Render Hooks: mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/index.md
+  Rendering Markup: mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/index.md
+Post-Convert Hooks: mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/index.md
+  Rendering Layout: mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/index.md
+         Rendering: mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/index.md
+  Pre-Render Hooks: mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/index.md
+  Rendering Markup: mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/index.md
+Post-Convert Hooks: mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/index.md
+  Rendering Layout: mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/index.md
+         Rendering: mathplotlib/01_matplotlib_basics/01_visualization_intro/index.md
+  Pre-Render Hooks: mathplotlib/01_matplotlib_basics/01_visualization_intro/index.md
+  Rendering Markup: mathplotlib/01_matplotlib_basics/01_visualization_intro/index.md
+Post-Convert Hooks: mathplotlib/01_matplotlib_basics/01_visualization_intro/index.md
+  Rendering Layout: mathplotlib/01_matplotlib_basics/01_visualization_intro/index.md
+         Rendering: mathplotlib/01_matplotlib_basics/02_simple_line_plot/index.md
+  Pre-Render Hooks: mathplotlib/01_matplotlib_basics/02_simple_line_plot/index.md
+  Rendering Markup: mathplotlib/01_matplotlib_basics/02_simple_line_plot/index.md
+Post-Convert Hooks: mathplotlib/01_matplotlib_basics/02_simple_line_plot/index.md
+  Rendering Layout: mathplotlib/01_matplotlib_basics/02_simple_line_plot/index.md
+         Rendering: mathplotlib/01_matplotlib_basics/03_figure_subplot/index.md
+  Pre-Render Hooks: mathplotlib/01_matplotlib_basics/03_figure_subplot/index.md
+  Rendering Markup: mathplotlib/01_matplotlib_basics/03_figure_subplot/index.md
+Post-Convert Hooks: mathplotlib/01_matplotlib_basics/03_figure_subplot/index.md
+  Rendering Layout: mathplotlib/01_matplotlib_basics/03_figure_subplot/index.md
+         Rendering: mathplotlib/01_matplotlib_basics/04_gridspec_layout/index.md
+  Pre-Render Hooks: mathplotlib/01_matplotlib_basics/04_gridspec_layout/index.md
+  Rendering Markup: mathplotlib/01_matplotlib_basics/04_gridspec_layout/index.md
+Post-Convert Hooks: mathplotlib/01_matplotlib_basics/04_gridspec_layout/index.md
+  Rendering Layout: mathplotlib/01_matplotlib_basics/04_gridspec_layout/index.md
+         Rendering: mathplotlib/01_matplotlib_basics/05_styling/index.md
+  Pre-Render Hooks: mathplotlib/01_matplotlib_basics/05_styling/index.md
+  Rendering Markup: mathplotlib/01_matplotlib_basics/05_styling/index.md
+Post-Convert Hooks: mathplotlib/01_matplotlib_basics/05_styling/index.md
+  Rendering Layout: mathplotlib/01_matplotlib_basics/05_styling/index.md
+         Rendering: mathplotlib/02_seaborn_dataset/01_pydataset_intro/index.md
+  Pre-Render Hooks: mathplotlib/02_seaborn_dataset/01_pydataset_intro/index.md
+  Rendering Markup: mathplotlib/02_seaborn_dataset/01_pydataset_intro/index.md
+Post-Convert Hooks: mathplotlib/02_seaborn_dataset/01_pydataset_intro/index.md
+  Rendering Layout: mathplotlib/02_seaborn_dataset/01_pydataset_intro/index.md
+         Rendering: mathplotlib/02_seaborn_dataset/02_pydataset_install/index.md
+  Pre-Render Hooks: mathplotlib/02_seaborn_dataset/02_pydataset_install/index.md
+  Rendering Markup: mathplotlib/02_seaborn_dataset/02_pydataset_install/index.md
+Post-Convert Hooks: mathplotlib/02_seaborn_dataset/02_pydataset_install/index.md
+  Rendering Layout: mathplotlib/02_seaborn_dataset/02_pydataset_install/index.md
+         Rendering: mathplotlib/02_seaborn_dataset/03_pydataset_import/index.md
+  Pre-Render Hooks: mathplotlib/02_seaborn_dataset/03_pydataset_import/index.md
+  Rendering Markup: mathplotlib/02_seaborn_dataset/03_pydataset_import/index.md
+Post-Convert Hooks: mathplotlib/02_seaborn_dataset/03_pydataset_import/index.md
+  Rendering Layout: mathplotlib/02_seaborn_dataset/03_pydataset_import/index.md
+         Rendering: mathplotlib/02_seaborn_dataset/04_seaborn_graph/index.md
+  Pre-Render Hooks: mathplotlib/02_seaborn_dataset/04_seaborn_graph/index.md
+  Rendering Markup: mathplotlib/02_seaborn_dataset/04_seaborn_graph/index.md
+Post-Convert Hooks: mathplotlib/02_seaborn_dataset/04_seaborn_graph/index.md
+  Rendering Layout: mathplotlib/02_seaborn_dataset/04_seaborn_graph/index.md
+         Rendering: mathplotlib/03_basic_charts/01_scatter_plot/index.md
+  Pre-Render Hooks: mathplotlib/03_basic_charts/01_scatter_plot/index.md
+  Rendering Markup: mathplotlib/03_basic_charts/01_scatter_plot/index.md
+Post-Convert Hooks: mathplotlib/03_basic_charts/01_scatter_plot/index.md
+  Rendering Layout: mathplotlib/03_basic_charts/01_scatter_plot/index.md
+         Rendering: mathplotlib/03_basic_charts/02_line_plot/index.md
+  Pre-Render Hooks: mathplotlib/03_basic_charts/02_line_plot/index.md
+  Rendering Markup: mathplotlib/03_basic_charts/02_line_plot/index.md
+Post-Convert Hooks: mathplotlib/03_basic_charts/02_line_plot/index.md
+  Rendering Layout: mathplotlib/03_basic_charts/02_line_plot/index.md
+         Rendering: mathplotlib/03_basic_charts/03_bar_plot/index.md
+  Pre-Render Hooks: mathplotlib/03_basic_charts/03_bar_plot/index.md
+  Rendering Markup: mathplotlib/03_basic_charts/03_bar_plot/index.md
+Post-Convert Hooks: mathplotlib/03_basic_charts/03_bar_plot/index.md
+  Rendering Layout: mathplotlib/03_basic_charts/03_bar_plot/index.md
+         Rendering: mathplotlib/04_distribution_charts/01_box_plot/index.md
+  Pre-Render Hooks: mathplotlib/04_distribution_charts/01_box_plot/index.md
+  Rendering Markup: mathplotlib/04_distribution_charts/01_box_plot/index.md
+Post-Convert Hooks: mathplotlib/04_distribution_charts/01_box_plot/index.md
+  Rendering Layout: mathplotlib/04_distribution_charts/01_box_plot/index.md
+         Rendering: mathplotlib/04_distribution_charts/02_histogram/index.md
+  Pre-Render Hooks: mathplotlib/04_distribution_charts/02_histogram/index.md
+  Rendering Markup: mathplotlib/04_distribution_charts/02_histogram/index.md
+Post-Convert Hooks: mathplotlib/04_distribution_charts/02_histogram/index.md
+  Rendering Layout: mathplotlib/04_distribution_charts/02_histogram/index.md
+         Rendering: mathplotlib/04_distribution_charts/03_pie_chart/index.md
+  Pre-Render Hooks: mathplotlib/04_distribution_charts/03_pie_chart/index.md
+  Rendering Markup: mathplotlib/04_distribution_charts/03_pie_chart/index.md
+Post-Convert Hooks: mathplotlib/04_distribution_charts/03_pie_chart/index.md
+  Rendering Layout: mathplotlib/04_distribution_charts/03_pie_chart/index.md
+         Rendering: mathplotlib/05_advanced_charts/01_violin_plot/index.md
+  Pre-Render Hooks: mathplotlib/05_advanced_charts/01_violin_plot/index.md
+  Rendering Markup: mathplotlib/05_advanced_charts/01_violin_plot/index.md
+Post-Convert Hooks: mathplotlib/05_advanced_charts/01_violin_plot/index.md
+  Rendering Layout: mathplotlib/05_advanced_charts/01_violin_plot/index.md
+         Rendering: mathplotlib/05_advanced_charts/02_correlation_viz/index.md
+  Pre-Render Hooks: mathplotlib/05_advanced_charts/02_correlation_viz/index.md
+  Rendering Markup: mathplotlib/05_advanced_charts/02_correlation_viz/index.md
+Post-Convert Hooks: mathplotlib/05_advanced_charts/02_correlation_viz/index.md
+  Rendering Layout: mathplotlib/05_advanced_charts/02_correlation_viz/index.md
+         Rendering: mathplotlib/index.md
+  Pre-Render Hooks: mathplotlib/index.md
+  Rendering Markup: mathplotlib/index.md
+Post-Convert Hooks: mathplotlib/index.md
+  Rendering Layout: mathplotlib/index.md
+         Rendering: numpy/01_math_equations/00_what_is_equation/index.md
+  Pre-Render Hooks: numpy/01_math_equations/00_what_is_equation/index.md
+  Rendering Markup: numpy/01_math_equations/00_what_is_equation/index.md
+Post-Convert Hooks: numpy/01_math_equations/00_what_is_equation/index.md
+  Rendering Layout: numpy/01_math_equations/00_what_is_equation/index.md
+         Rendering: numpy/01_math_equations/01_linear_equations_balance/index.md
+  Pre-Render Hooks: numpy/01_math_equations/01_linear_equations_balance/index.md
+  Rendering Markup: numpy/01_math_equations/01_linear_equations_balance/index.md
+Post-Convert Hooks: numpy/01_math_equations/01_linear_equations_balance/index.md
+  Rendering Layout: numpy/01_math_equations/01_linear_equations_balance/index.md
+         Rendering: numpy/01_math_equations/02_system_of_equations/index.md
+  Pre-Render Hooks: numpy/01_math_equations/02_system_of_equations/index.md
+  Rendering Markup: numpy/01_math_equations/02_system_of_equations/index.md
+Post-Convert Hooks: numpy/01_math_equations/02_system_of_equations/index.md
+  Rendering Layout: numpy/01_math_equations/02_system_of_equations/index.md
+         Rendering: numpy/01_math_equations/03_quadratic_parabola/index.md
+  Pre-Render Hooks: numpy/01_math_equations/03_quadratic_parabola/index.md
+  Rendering Markup: numpy/01_math_equations/03_quadratic_parabola/index.md
+Post-Convert Hooks: numpy/01_math_equations/03_quadratic_parabola/index.md
+  Rendering Layout: numpy/01_math_equations/03_quadratic_parabola/index.md
+         Rendering: numpy/01_math_equations/04_equation_to_matrix/index.md
+  Pre-Render Hooks: numpy/01_math_equations/04_equation_to_matrix/index.md
+  Rendering Markup: numpy/01_math_equations/04_equation_to_matrix/index.md
+Post-Convert Hooks: numpy/01_math_equations/04_equation_to_matrix/index.md
+  Rendering Layout: numpy/01_math_equations/04_equation_to_matrix/index.md
+         Rendering: numpy/02_math_matrices/00_intro_equations_limit/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/00_intro_equations_limit/index.md
+  Rendering Markup: numpy/02_math_matrices/00_intro_equations_limit/index.md
+Post-Convert Hooks: numpy/02_math_matrices/00_intro_equations_limit/index.md
+  Rendering Layout: numpy/02_math_matrices/00_intro_equations_limit/index.md
+         Rendering: numpy/02_math_matrices/01_what_is_matrix/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/01_what_is_matrix/index.md
+  Rendering Markup: numpy/02_math_matrices/01_what_is_matrix/index.md
+Post-Convert Hooks: numpy/02_math_matrices/01_what_is_matrix/index.md
+  Rendering Layout: numpy/02_math_matrices/01_what_is_matrix/index.md
+         Rendering: numpy/02_math_matrices/02_addition_subtraction/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/02_addition_subtraction/index.md
+  Rendering Markup: numpy/02_math_matrices/02_addition_subtraction/index.md
+Post-Convert Hooks: numpy/02_math_matrices/02_addition_subtraction/index.md
+  Rendering Layout: numpy/02_math_matrices/02_addition_subtraction/index.md
+         Rendering: numpy/02_math_matrices/03_scalar_multiplication/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/03_scalar_multiplication/index.md
+  Rendering Markup: numpy/02_math_matrices/03_scalar_multiplication/index.md
+Post-Convert Hooks: numpy/02_math_matrices/03_scalar_multiplication/index.md
+  Rendering Layout: numpy/02_math_matrices/03_scalar_multiplication/index.md
+         Rendering: numpy/02_math_matrices/04_matrix_multiplication/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/04_matrix_multiplication/index.md
+  Rendering Markup: numpy/02_math_matrices/04_matrix_multiplication/index.md
+Post-Convert Hooks: numpy/02_math_matrices/04_matrix_multiplication/index.md
+  Rendering Layout: numpy/02_math_matrices/04_matrix_multiplication/index.md
+         Rendering: numpy/02_math_matrices/05_linear_transformation/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/05_linear_transformation/index.md
+  Rendering Markup: numpy/02_math_matrices/05_linear_transformation/index.md
+Post-Convert Hooks: numpy/02_math_matrices/05_linear_transformation/index.md
+  Rendering Layout: numpy/02_math_matrices/05_linear_transformation/index.md
+         Rendering: numpy/02_math_matrices/06_intro_to_numpy_ai/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/06_intro_to_numpy_ai/index.md
+  Rendering Markup: numpy/02_math_matrices/06_intro_to_numpy_ai/index.md
+Post-Convert Hooks: numpy/02_math_matrices/06_intro_to_numpy_ai/index.md
+  Rendering Layout: numpy/02_math_matrices/06_intro_to_numpy_ai/index.md
+         Rendering: numpy/02_math_matrices/index.md
+  Pre-Render Hooks: numpy/02_math_matrices/index.md
+  Rendering Markup: numpy/02_math_matrices/index.md
+Post-Convert Hooks: numpy/02_math_matrices/index.md
+  Rendering Layout: numpy/02_math_matrices/index.md
+         Rendering: numpy/03_numpy_basics/01_numpy_intro/index.md
+  Pre-Render Hooks: numpy/03_numpy_basics/01_numpy_intro/index.md
+  Rendering Markup: numpy/03_numpy_basics/01_numpy_intro/index.md
+Post-Convert Hooks: numpy/03_numpy_basics/01_numpy_intro/index.md
+  Rendering Layout: numpy/03_numpy_basics/01_numpy_intro/index.md
+         Rendering: numpy/03_numpy_basics/02_ndarray/index.md
+  Pre-Render Hooks: numpy/03_numpy_basics/02_ndarray/index.md
+  Rendering Markup: numpy/03_numpy_basics/02_ndarray/index.md
+Post-Convert Hooks: numpy/03_numpy_basics/02_ndarray/index.md
+  Rendering Layout: numpy/03_numpy_basics/02_ndarray/index.md
+         Rendering: numpy/03_numpy_basics/03_dtype/index.md
+  Pre-Render Hooks: numpy/03_numpy_basics/03_dtype/index.md
+  Rendering Markup: numpy/03_numpy_basics/03_dtype/index.md
+Post-Convert Hooks: numpy/03_numpy_basics/03_dtype/index.md
+  Rendering Layout: numpy/03_numpy_basics/03_dtype/index.md
+         Rendering: numpy/03_numpy_basics/04_ndim/index.md
+  Pre-Render Hooks: numpy/03_numpy_basics/04_ndim/index.md
+  Rendering Markup: numpy/03_numpy_basics/04_ndim/index.md
+Post-Convert Hooks: numpy/03_numpy_basics/04_ndim/index.md
+  Rendering Layout: numpy/03_numpy_basics/04_ndim/index.md
+         Rendering: numpy/03_numpy_basics/05_size_nbytes/index.md
+  Pre-Render Hooks: numpy/03_numpy_basics/05_size_nbytes/index.md
+  Rendering Markup: numpy/03_numpy_basics/05_size_nbytes/index.md
+Post-Convert Hooks: numpy/03_numpy_basics/05_size_nbytes/index.md
+  Rendering Layout: numpy/03_numpy_basics/05_size_nbytes/index.md
+         Rendering: numpy/04_array_creation/01_array_creation/index.md
+  Pre-Render Hooks: numpy/04_array_creation/01_array_creation/index.md
+  Rendering Markup: numpy/04_array_creation/01_array_creation/index.md
+Post-Convert Hooks: numpy/04_array_creation/01_array_creation/index.md
+  Rendering Layout: numpy/04_array_creation/01_array_creation/index.md
+         Rendering: numpy/04_array_creation/02_arange/index.md
+  Pre-Render Hooks: numpy/04_array_creation/02_arange/index.md
+  Rendering Markup: numpy/04_array_creation/02_arange/index.md
+Post-Convert Hooks: numpy/04_array_creation/02_arange/index.md
+  Rendering Layout: numpy/04_array_creation/02_arange/index.md
+         Rendering: numpy/04_array_creation/03_reshape/index.md
+  Pre-Render Hooks: numpy/04_array_creation/03_reshape/index.md
+  Rendering Markup: numpy/04_array_creation/03_reshape/index.md
+Post-Convert Hooks: numpy/04_array_creation/03_reshape/index.md
+  Rendering Layout: numpy/04_array_creation/03_reshape/index.md
+         Rendering: numpy/04_array_creation/04_linspace/index.md
+  Pre-Render Hooks: numpy/04_array_creation/04_linspace/index.md
+  Rendering Markup: numpy/04_array_creation/04_linspace/index.md
+Post-Convert Hooks: numpy/04_array_creation/04_linspace/index.md
+  Rendering Layout: numpy/04_array_creation/04_linspace/index.md
+         Rendering: numpy/04_array_creation/05_arange_vs_linspace/index.md
+  Pre-Render Hooks: numpy/04_array_creation/05_arange_vs_linspace/index.md
+  Rendering Markup: numpy/04_array_creation/05_arange_vs_linspace/index.md
+Post-Convert Hooks: numpy/04_array_creation/05_arange_vs_linspace/index.md
+  Rendering Layout: numpy/04_array_creation/05_arange_vs_linspace/index.md
+         Rendering: numpy/04_array_creation/06_zeros/index.md
+  Pre-Render Hooks: numpy/04_array_creation/06_zeros/index.md
+  Rendering Markup: numpy/04_array_creation/06_zeros/index.md
+Post-Convert Hooks: numpy/04_array_creation/06_zeros/index.md
+  Rendering Layout: numpy/04_array_creation/06_zeros/index.md
+         Rendering: numpy/04_array_creation/07_ones/index.md
+  Pre-Render Hooks: numpy/04_array_creation/07_ones/index.md
+  Rendering Markup: numpy/04_array_creation/07_ones/index.md
+Post-Convert Hooks: numpy/04_array_creation/07_ones/index.md
+  Rendering Layout: numpy/04_array_creation/07_ones/index.md
+         Rendering: numpy/04_array_creation/08_eye/index.md
+  Pre-Render Hooks: numpy/04_array_creation/08_eye/index.md
+  Rendering Markup: numpy/04_array_creation/08_eye/index.md
+Post-Convert Hooks: numpy/04_array_creation/08_eye/index.md
+  Rendering Layout: numpy/04_array_creation/08_eye/index.md
+         Rendering: numpy/04_array_creation/09_full/index.md
+  Pre-Render Hooks: numpy/04_array_creation/09_full/index.md
+  Rendering Markup: numpy/04_array_creation/09_full/index.md
+Post-Convert Hooks: numpy/04_array_creation/09_full/index.md
+  Rendering Layout: numpy/04_array_creation/09_full/index.md
+         Rendering: numpy/04_array_creation/10_empty/index.md
+  Pre-Render Hooks: numpy/04_array_creation/10_empty/index.md
+  Rendering Markup: numpy/04_array_creation/10_empty/index.md
+Post-Convert Hooks: numpy/04_array_creation/10_empty/index.md
+  Rendering Layout: numpy/04_array_creation/10_empty/index.md
+         Rendering: numpy/04_array_creation/11_like_functions/index.md
+  Pre-Render Hooks: numpy/04_array_creation/11_like_functions/index.md
+  Rendering Markup: numpy/04_array_creation/11_like_functions/index.md
+Post-Convert Hooks: numpy/04_array_creation/11_like_functions/index.md
+  Rendering Layout: numpy/04_array_creation/11_like_functions/index.md
+         Rendering: numpy/05_array_operations/01_scalar_operations/index.md
+  Pre-Render Hooks: numpy/05_array_operations/01_scalar_operations/index.md
+  Rendering Markup: numpy/05_array_operations/01_scalar_operations/index.md
+Post-Convert Hooks: numpy/05_array_operations/01_scalar_operations/index.md
+  Rendering Layout: numpy/05_array_operations/01_scalar_operations/index.md
+         Rendering: numpy/05_array_operations/02_array_operations/index.md
+  Pre-Render Hooks: numpy/05_array_operations/02_array_operations/index.md
+  Rendering Markup: numpy/05_array_operations/02_array_operations/index.md
+Post-Convert Hooks: numpy/05_array_operations/02_array_operations/index.md
+  Rendering Layout: numpy/05_array_operations/02_array_operations/index.md
+         Rendering: numpy/05_array_operations/03_ufunc/index.md
+  Pre-Render Hooks: numpy/05_array_operations/03_ufunc/index.md
+  Rendering Markup: numpy/05_array_operations/03_ufunc/index.md
+Post-Convert Hooks: numpy/05_array_operations/03_ufunc/index.md
+  Rendering Layout: numpy/05_array_operations/03_ufunc/index.md
+         Rendering: numpy/05_array_operations/04_broadcasting_intro/index.md
+  Pre-Render Hooks: numpy/05_array_operations/04_broadcasting_intro/index.md
+  Rendering Markup: numpy/05_array_operations/04_broadcasting_intro/index.md
+Post-Convert Hooks: numpy/05_array_operations/04_broadcasting_intro/index.md
+  Rendering Layout: numpy/05_array_operations/04_broadcasting_intro/index.md
+         Rendering: numpy/05_array_operations/05_scalar_broadcasting/index.md
+  Pre-Render Hooks: numpy/05_array_operations/05_scalar_broadcasting/index.md
+  Rendering Markup: numpy/05_array_operations/05_scalar_broadcasting/index.md
+Post-Convert Hooks: numpy/05_array_operations/05_scalar_broadcasting/index.md
+  Rendering Layout: numpy/05_array_operations/05_scalar_broadcasting/index.md
+         Rendering: numpy/05_array_operations/06_d_broadcasting/index.md
+  Pre-Render Hooks: numpy/05_array_operations/06_d_broadcasting/index.md
+  Rendering Markup: numpy/05_array_operations/06_d_broadcasting/index.md
+Post-Convert Hooks: numpy/05_array_operations/06_d_broadcasting/index.md
+  Rendering Layout: numpy/05_array_operations/06_d_broadcasting/index.md
+         Rendering: numpy/05_array_operations/07_newaxis/index.md
+  Pre-Render Hooks: numpy/05_array_operations/07_newaxis/index.md
+  Rendering Markup: numpy/05_array_operations/07_newaxis/index.md
+Post-Convert Hooks: numpy/05_array_operations/07_newaxis/index.md
+  Rendering Layout: numpy/05_array_operations/07_newaxis/index.md
+         Rendering: numpy/06_indexing_slicing/01_d_slicing/index.md
+  Pre-Render Hooks: numpy/06_indexing_slicing/01_d_slicing/index.md
+  Rendering Markup: numpy/06_indexing_slicing/01_d_slicing/index.md
+Post-Convert Hooks: numpy/06_indexing_slicing/01_d_slicing/index.md
+  Rendering Layout: numpy/06_indexing_slicing/01_d_slicing/index.md
+         Rendering: numpy/06_indexing_slicing/02_d_slicing/index.md
+  Pre-Render Hooks: numpy/06_indexing_slicing/02_d_slicing/index.md
+  Rendering Markup: numpy/06_indexing_slicing/02_d_slicing/index.md
+Post-Convert Hooks: numpy/06_indexing_slicing/02_d_slicing/index.md
+  Rendering Layout: numpy/06_indexing_slicing/02_d_slicing/index.md
+         Rendering: numpy/06_indexing_slicing/03_d_slicing/index.md
+  Pre-Render Hooks: numpy/06_indexing_slicing/03_d_slicing/index.md
+  Rendering Markup: numpy/06_indexing_slicing/03_d_slicing/index.md
+Post-Convert Hooks: numpy/06_indexing_slicing/03_d_slicing/index.md
+  Rendering Layout: numpy/06_indexing_slicing/03_d_slicing/index.md
+         Rendering: numpy/06_indexing_slicing/04_d_indexing/index.md
+  Pre-Render Hooks: numpy/06_indexing_slicing/04_d_indexing/index.md
+  Rendering Markup: numpy/06_indexing_slicing/04_d_indexing/index.md
+Post-Convert Hooks: numpy/06_indexing_slicing/04_d_indexing/index.md
+  Rendering Layout: numpy/06_indexing_slicing/04_d_indexing/index.md
+         Rendering: numpy/06_indexing_slicing/05_d_indexing/index.md
+  Pre-Render Hooks: numpy/06_indexing_slicing/05_d_indexing/index.md
+  Rendering Markup: numpy/06_indexing_slicing/05_d_indexing/index.md
+Post-Convert Hooks: numpy/06_indexing_slicing/05_d_indexing/index.md
+  Rendering Layout: numpy/06_indexing_slicing/05_d_indexing/index.md
+         Rendering: numpy/06_indexing_slicing/06_advanced_indexing/index.md
+  Pre-Render Hooks: numpy/06_indexing_slicing/06_advanced_indexing/index.md
+  Rendering Markup: numpy/06_indexing_slicing/06_advanced_indexing/index.md
+Post-Convert Hooks: numpy/06_indexing_slicing/06_advanced_indexing/index.md
+  Rendering Layout: numpy/06_indexing_slicing/06_advanced_indexing/index.md
+         Rendering: numpy/07_shape_memory/01_reshape_advanced/index.md
+  Pre-Render Hooks: numpy/07_shape_memory/01_reshape_advanced/index.md
+  Rendering Markup: numpy/07_shape_memory/01_reshape_advanced/index.md
+Post-Convert Hooks: numpy/07_shape_memory/01_reshape_advanced/index.md
+  Rendering Layout: numpy/07_shape_memory/01_reshape_advanced/index.md
+         Rendering: numpy/07_shape_memory/02_copy_view/index.md
+  Pre-Render Hooks: numpy/07_shape_memory/02_copy_view/index.md
+  Rendering Markup: numpy/07_shape_memory/02_copy_view/index.md
+Post-Convert Hooks: numpy/07_shape_memory/02_copy_view/index.md
+  Rendering Layout: numpy/07_shape_memory/02_copy_view/index.md
+         Rendering: numpy/08_concat_split/01_array_concat_intro/index.md
+  Pre-Render Hooks: numpy/08_concat_split/01_array_concat_intro/index.md
+  Rendering Markup: numpy/08_concat_split/01_array_concat_intro/index.md
+Post-Convert Hooks: numpy/08_concat_split/01_array_concat_intro/index.md
+  Rendering Layout: numpy/08_concat_split/01_array_concat_intro/index.md
+         Rendering: numpy/08_concat_split/02_vstack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/02_vstack/index.md
+  Rendering Markup: numpy/08_concat_split/02_vstack/index.md
+Post-Convert Hooks: numpy/08_concat_split/02_vstack/index.md
+  Rendering Layout: numpy/08_concat_split/02_vstack/index.md
+         Rendering: numpy/08_concat_split/03_hstack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/03_hstack/index.md
+  Rendering Markup: numpy/08_concat_split/03_hstack/index.md
+Post-Convert Hooks: numpy/08_concat_split/03_hstack/index.md
+  Rendering Layout: numpy/08_concat_split/03_hstack/index.md
+         Rendering: numpy/08_concat_split/04_column_row_stack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/04_column_row_stack/index.md
+  Rendering Markup: numpy/08_concat_split/04_column_row_stack/index.md
+Post-Convert Hooks: numpy/08_concat_split/04_column_row_stack/index.md
+  Rendering Layout: numpy/08_concat_split/04_column_row_stack/index.md
+         Rendering: numpy/08_concat_split/05_concatenate_stack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/05_concatenate_stack/index.md
+  Rendering Markup: numpy/08_concat_split/05_concatenate_stack/index.md
+Post-Convert Hooks: numpy/08_concat_split/05_concatenate_stack/index.md
+  Rendering Layout: numpy/08_concat_split/05_concatenate_stack/index.md
+         Rendering: numpy/08_concat_split/06_column_stack_vs_hstack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/06_column_stack_vs_hstack/index.md
+  Rendering Markup: numpy/08_concat_split/06_column_stack_vs_hstack/index.md
+Post-Convert Hooks: numpy/08_concat_split/06_column_stack_vs_hstack/index.md
+  Rendering Layout: numpy/08_concat_split/06_column_stack_vs_hstack/index.md
+         Rendering: numpy/08_concat_split/07_row_stack_vs_vstack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/07_row_stack_vs_vstack/index.md
+  Rendering Markup: numpy/08_concat_split/07_row_stack_vs_vstack/index.md
+Post-Convert Hooks: numpy/08_concat_split/07_row_stack_vs_vstack/index.md
+  Rendering Layout: numpy/08_concat_split/07_row_stack_vs_vstack/index.md
+         Rendering: numpy/08_concat_split/08_npc_column_stack/index.md
+  Pre-Render Hooks: numpy/08_concat_split/08_npc_column_stack/index.md
+  Rendering Markup: numpy/08_concat_split/08_npc_column_stack/index.md
+Post-Convert Hooks: numpy/08_concat_split/08_npc_column_stack/index.md
+  Rendering Layout: numpy/08_concat_split/08_npc_column_stack/index.md
+         Rendering: numpy/08_concat_split/09_npr/index.md
+  Pre-Render Hooks: numpy/08_concat_split/09_npr/index.md
+  Rendering Markup: numpy/08_concat_split/09_npr/index.md
+Post-Convert Hooks: numpy/08_concat_split/09_npr/index.md
+  Rendering Layout: numpy/08_concat_split/09_npr/index.md
+         Rendering: numpy/08_concat_split/10_d_concat_methods/index.md
+  Pre-Render Hooks: numpy/08_concat_split/10_d_concat_methods/index.md
+  Rendering Markup: numpy/08_concat_split/10_d_concat_methods/index.md
+Post-Convert Hooks: numpy/08_concat_split/10_d_concat_methods/index.md
+  Rendering Layout: numpy/08_concat_split/10_d_concat_methods/index.md
+         Rendering: numpy/08_concat_split/11_d_concat_summary/index.md
+  Pre-Render Hooks: numpy/08_concat_split/11_d_concat_summary/index.md
+  Rendering Markup: numpy/08_concat_split/11_d_concat_summary/index.md
+Post-Convert Hooks: numpy/08_concat_split/11_d_concat_summary/index.md
+  Rendering Layout: numpy/08_concat_split/11_d_concat_summary/index.md
+         Rendering: numpy/08_concat_split/12_split/index.md
+  Pre-Render Hooks: numpy/08_concat_split/12_split/index.md
+  Rendering Markup: numpy/08_concat_split/12_split/index.md
+Post-Convert Hooks: numpy/08_concat_split/12_split/index.md
+  Rendering Layout: numpy/08_concat_split/12_split/index.md
+         Rendering: numpy/08_concat_split/13_hsplit_vsplit/index.md
+  Pre-Render Hooks: numpy/08_concat_split/13_hsplit_vsplit/index.md
+  Rendering Markup: numpy/08_concat_split/13_hsplit_vsplit/index.md
+Post-Convert Hooks: numpy/08_concat_split/13_hsplit_vsplit/index.md
+  Rendering Layout: numpy/08_concat_split/13_hsplit_vsplit/index.md
+         Rendering: numpy/08_concat_split/14_array_split/index.md
+  Pre-Render Hooks: numpy/08_concat_split/14_array_split/index.md
+  Rendering Markup: numpy/08_concat_split/14_array_split/index.md
+Post-Convert Hooks: numpy/08_concat_split/14_array_split/index.md
+  Rendering Layout: numpy/08_concat_split/14_array_split/index.md
+         Rendering: numpy/09_random_exercises/01_random/index.md
+  Pre-Render Hooks: numpy/09_random_exercises/01_random/index.md
+  Rendering Markup: numpy/09_random_exercises/01_random/index.md
+Post-Convert Hooks: numpy/09_random_exercises/01_random/index.md
+  Rendering Layout: numpy/09_random_exercises/01_random/index.md
+         Rendering: numpy/09_random_exercises/02_exercises/index.md
+  Pre-Render Hooks: numpy/09_random_exercises/02_exercises/index.md
+  Rendering Markup: numpy/09_random_exercises/02_exercises/index.md
+Post-Convert Hooks: numpy/09_random_exercises/02_exercises/index.md
+  Rendering Layout: numpy/09_random_exercises/02_exercises/index.md
+         Rendering: numpy/index.md
+  Pre-Render Hooks: numpy/index.md
+  Rendering Markup: numpy/index.md
+[31m  Conversion error: Jekyll::Converters::Markdown encountered an error while converting 'numpy/index.md':[0m
+[31m                    The source text contains invalid characters for the used encoding UTF-8[0m
+[31m                    ------------------------------------------------[0m
+[31m      Jekyll 4.4.1   Please append `--trace` to the `build` command [0m
+[31m                     for any additional information or backtrace. [0m
+[31m                    ------------------------------------------------[0m
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/kramdown-2.5.2/lib/kramdown/parser/base.rb:99:in 'Kramdown::Parser::Base#adapt_source': The source text contains invalid characters for the used encoding UTF-8 (RuntimeError)
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/kramdown-2.5.2/lib/kramdown/parser/kramdown.rb:90:in 'Kramdown::Parser::Kramdown#parse'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/kramdown-parser-gfm-1.1.0/lib/kramdown/parser/gfm.rb:56:in 'Kramdown::Parser::GFM#parse'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/kramdown-2.5.2/lib/kramdown/parser/base.rb:75:in 'Kramdown::Parser::Base.parse'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/converters/markdown/kramdown_parser.rb:54:in 'Kramdown::JekyllDocument#initialize'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/converters/markdown/kramdown_parser.rb:109:in 'Class#new'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/converters/markdown/kramdown_parser.rb:109:in 'Jekyll::Converters::Markdown::KramdownParser#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/converters/markdown.rb:86:in 'block in Jekyll::Converters::Markdown#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/cache.rb:107:in 'Jekyll::Cache#getset'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/converters/markdown.rb:85:in 'Jekyll::Converters::Markdown#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:105:in 'block in Jekyll::Renderer#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:104:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:104:in 'Enumerable#reduce'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:104:in 'Jekyll::Renderer#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:84:in 'Jekyll::Renderer#render_document'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:63:in 'Jekyll::Renderer#run'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:572:in 'Jekyll::Site#render_regenerated'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:564:in 'block in Jekyll::Site#render_pages'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:563:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:563:in 'Jekyll::Site#render_pages'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:211:in 'Jekyll::Site#render'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:80:in 'Jekyll::Site#process'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:28:in 'Jekyll::Command.process_site'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/build.rb:65:in 'Jekyll::Commands::Build.build'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/build.rb:36:in 'Jekyll::Commands::Build.process'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'block in Jekyll::Command.process_with_graceful_fail'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'Jekyll::Command.process_with_graceful_fail'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/build.rb:18:in 'block (2 levels) in Jekyll::Commands::Build.init_with_program'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'block in Mercenary::Command#execute'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'Mercenary::Command#execute'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/program.rb:44:in 'Mercenary::Program#go'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary.rb:21:in 'Mercenary.program'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/exe/jekyll:15:in '<top (required)>'
+	from C:/Ruby34-x64/bin/jekyll:36:in 'Kernel#load'
+	from C:/Ruby34-x64/bin/jekyll:36:in '<top (required)>'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:61:in 'Kernel.load'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:61:in 'Bundler::CLI::Exec#kernel_load'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:24:in 'Bundler::CLI::Exec#run'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli.rb:504:in 'Bundler::CLI#exec'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/command.rb:28:in 'Bundler::Thor::Command#run'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in 'Bundler::Thor::Invocation#invoke_command'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor.rb:538:in 'Bundler::Thor.dispatch'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli.rb:35:in 'Bundler::CLI.dispatch'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/base.rb:584:in 'Bundler::Thor::Base::ClassMethods#start'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli.rb:29:in 'Bundler::CLI.start'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/exe/bundle:28:in 'block in <top (required)>'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/friendly_errors.rb:118:in 'Bundler.with_friendly_errors'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/exe/bundle:20:in '<top (required)>'
+	from C:/Ruby34-x64/bin/bundle:36:in 'Kernel#load'
+	from C:/Ruby34-x64/bin/bundle:36:in '<main>'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/cache.rb:84:in 'Jekyll::Cache#[]': unhandled exception
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/cache.rb:105:in 'Jekyll::Cache#getset'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/converters/markdown.rb:85:in 'Jekyll::Converters::Markdown#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:105:in 'block in Jekyll::Renderer#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:104:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:104:in 'Enumerable#reduce'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:104:in 'Jekyll::Renderer#convert'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:84:in 'Jekyll::Renderer#render_document'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/renderer.rb:63:in 'Jekyll::Renderer#run'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:572:in 'Jekyll::Site#render_regenerated'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:564:in 'block in Jekyll::Site#render_pages'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:563:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:563:in 'Jekyll::Site#render_pages'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:211:in 'Jekyll::Site#render'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/site.rb:80:in 'Jekyll::Site#process'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:28:in 'Jekyll::Command.process_site'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/build.rb:65:in 'Jekyll::Commands::Build.build'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/build.rb:36:in 'Jekyll::Commands::Build.process'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'block in Jekyll::Command.process_with_graceful_fail'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'Jekyll::Command.process_with_graceful_fail'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/build.rb:18:in 'block (2 levels) in Jekyll::Commands::Build.init_with_program'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'block in Mercenary::Command#execute'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'Array#each'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'Mercenary::Command#execute'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary/program.rb:44:in 'Mercenary::Program#go'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/mercenary-0.4.0/lib/mercenary.rb:21:in 'Mercenary.program'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/jekyll-4.4.1/exe/jekyll:15:in '<top (required)>'
+	from C:/Ruby34-x64/bin/jekyll:36:in 'Kernel#load'
+	from C:/Ruby34-x64/bin/jekyll:36:in '<top (required)>'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:61:in 'Kernel.load'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:61:in 'Bundler::CLI::Exec#kernel_load'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:24:in 'Bundler::CLI::Exec#run'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli.rb:504:in 'Bundler::CLI#exec'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/command.rb:28:in 'Bundler::Thor::Command#run'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in 'Bundler::Thor::Invocation#invoke_command'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor.rb:538:in 'Bundler::Thor.dispatch'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli.rb:35:in 'Bundler::CLI.dispatch'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/base.rb:584:in 'Bundler::Thor::Base::ClassMethods#start'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/cli.rb:29:in 'Bundler::CLI.start'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/exe/bundle:28:in 'block in <top (required)>'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/lib/bundler/friendly_errors.rb:118:in 'Bundler.with_friendly_errors'
+	from C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/bundler-4.0.7/exe/bundle:20:in '<top (required)>'
+	from C:/Ruby34-x64/bin/bundle:36:in 'Kernel#load'
+	from C:/Ruby34-x64/bin/bundle:36:in '<main>'

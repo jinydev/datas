@@ -1,0 +1,74 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #34495e; }
+    .code { font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    .axis { stroke: #95a5a6; stroke-width: 2; }
+    .grid { stroke: #ecf0f1; stroke-width: 1; }
+    
+    .rough-path { stroke: #e74c3c; stroke-width: 3; fill: none; stroke-dasharray: 1000; stroke-dashoffset: 1000; opacity: 0; }
+    .smooth-path { stroke: #2ecc71; stroke-width: 4; fill: none; stroke-dasharray: 1000; stroke-dashoffset: 1000; opacity: 0; stroke-linecap: round; }
+    
+    .rough-label { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 14px; font-weight: bold; fill: #e74c3c; opacity: 0; }
+    .smooth-label { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 14px; font-weight: bold; fill: #27ae60; opacity: 0; }
+    
+    /* Animations */
+    @keyframes draw-rough {
+      0%, 10% { stroke-dashoffset: 1000; opacity: 1; }
+      20%, 40% { stroke-dashoffset: 0; opacity: 1; }
+      45%, 100% { stroke-dashoffset: 0; opacity: 0.2; }
+    }
+    
+    @keyframes draw-smooth {
+      0%, 45% { stroke-dashoffset: 1000; opacity: 0; }
+      50%, 55% { stroke-dashoffset: 1000; opacity: 1; }
+      65%, 90% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    
+    @keyframes fade-rough {
+      0%, 10% { opacity: 0; }
+      20%, 40% { opacity: 1; }
+      45%, 100% { opacity: 0.3; }
+    }
+    
+    @keyframes fade-smooth {
+      0%, 50% { opacity: 0; }
+      60%, 100% { opacity: 1; }
+    }
+
+    .anim-rough { animation: draw-rough 8s infinite; }
+    .anim-smooth { animation: draw-smooth 8s infinite; }
+    
+    .txt-rough { animation: fade-rough 8s infinite; }
+    .txt-smooth { animation: fade-smooth 8s infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="400" y="40" class="title" text-anchor="middle">linspace()로 그리는 매끄러운 차트 꿀팁!</text>
+
+  <!-- Axes & Grid -->
+  <g transform="translate(100, 200)">
+    <!-- Grid -->
+    <line x1="0" y1="-80" x2="600" y2="-80" class="grid" />
+    <line x1="0" y1="80" x2="600" y2="80" class="grid" />
+    <line x1="0" y1="0" x2="600" y2="0" class="axis" />
+    <line x1="0" y1="-100" x2="0" y2="100" class="axis" />
+    
+    <!-- Y axis labels -->
+    <text x="-10" y="-75" class="subtitle" text-anchor="end">1</text>
+    <text x="-10" y="5" class="subtitle" text-anchor="end">0</text>
+    <text x="-10" y="85" class="subtitle" text-anchor="end">-1</text>
+    
+    <!-- Rough Path (arange size 10) -->
+    <path d="M 0 0 L 60 -76 L 120 -76 L 180 0 L 240 76 L 300 76 L 360 0 L 420 -76 L 480 -76 L 540 0 L 600 76" class="rough-path anim-rough" />
+    <text x="180" y="-40" class="rough-label txt-rough">np.arange(0, 10, 1) -> 각진 그래프 (점 10개)</text>
+    
+    <!-- Smooth Path (linspace size 100) -->
+    <!-- Approximated sin wave matching the domain -->
+    <path d="M 0 0 Q 30 -80 60 -76 T 120 -76 T 180 0 T 240 76 T 300 76 T 360 0 T 420 -76 T 480 -76 T 540 0 T 600 76" class="smooth-path anim-smooth" />
+    <text x="180" y="50" class="smooth-label txt-smooth">np.linspace(0, 10, 100) -> 촘촘하고 매끄러운 곡선 (점 100개)</text>
+  </g>
+</svg>

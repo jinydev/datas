@@ -1,0 +1,83 @@
+<svg width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #7f8c8d; }
+    .code { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    
+    .grid-cell-a { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; }
+    .grid-text-a { font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; fill: #e67e22; text-anchor: middle; alignment-baseline: central; }
+    
+    .grid-cell-b { fill: #f9fcfb; stroke: #3498db; stroke-width: 2; rx: 5; stroke-dasharray: 4; }
+    .grid-text-b { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; fill: #2980b9; text-anchor: middle; alignment-baseline: central; opacity: 0; }
+    
+    /* Animations */
+    @keyframes scan-line {
+      0% { transform: translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { transform: translateX(200px); opacity: 1; }
+      100% { transform: translateX(200px); opacity: 0; }
+    }
+    
+    @keyframes drop-zero {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .scanner { stroke: #2ecc71; stroke-width: 4; animation: scan-line 4s infinite; }
+    
+    .z0 { animation: drop-zero 4s infinite; animation-delay: 2.5s; }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="400" y="40" class="title" text-anchor="middle">모양(Shape)만 3D 스캐너로 쓱- 복제해 빈 껍데기 굽기!</text>
+  <text x="400" y="70" class="code" text-anchor="middle">np.zeros_like( A )</text>
+
+  <!-- Matrix A (Original) -->
+  <g transform="translate(80, 130)">
+    <text x="100" y="-30" class="subtitle" text-anchor="middle" fill="#e67e22">원본 데이터 A (모양 모름)</text>
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="60" height="60" class="grid-cell-a" />
+    <text x="30" y="30" class="grid-text-a">7</text>
+    <rect x="70" y="0" width="60" height="60" class="grid-cell-a" />
+    <text x="100" y="30" class="grid-text-a">4</text>
+    <rect x="140" y="0" width="60" height="60" class="grid-cell-a" />
+    <text x="170" y="30" class="grid-text-a">9</text>
+    <!-- Row 2 -->
+    <rect x="0" y="70" width="60" height="60" class="grid-cell-a" />
+    <text x="30" y="100" class="grid-text-a">1</text>
+    <rect x="70" y="70" width="60" height="60" class="grid-cell-a" />
+    <text x="100" y="100" class="grid-text-a">8</text>
+    <rect x="140" y="70" width="60" height="60" class="grid-cell-a" />
+    <text x="170" y="100" class="grid-text-a">2</text>
+    
+    <!-- Scanner line -->
+    <line x1="-10" y1="-10" x2="-10" y2="140" class="scanner" />
+  </g>
+
+  <!-- Arrow -->
+  <g transform="translate(360, 195)">
+    <path d="M0,0 L50,0 M40,-10 L50,0 L40,10" fill="none" stroke="#7f8c8d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="25" y="-15" class="subtitle" text-anchor="middle">복제</text>
+  </g>
+
+  <!-- Matrix B (Zeros Like) -->
+  <g transform="translate(490, 130)">
+    <text x="100" y="-30" class="subtitle" text-anchor="middle" fill="#2980b9">새로운 복제본 배열 (0으로 채움)</text>
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="60" height="60" class="grid-cell-b" />
+    <text x="30" y="30" class="grid-text-b z0">0</text>
+    <rect x="70" y="0" width="60" height="60" class="grid-cell-b" />
+    <text x="100" y="30" class="grid-text-b z0">0</text>
+    <rect x="140" y="0" width="60" height="60" class="grid-cell-b" />
+    <text x="170" y="30" class="grid-text-b z0">0</text>
+    <!-- Row 2 -->
+    <rect x="0" y="70" width="60" height="60" class="grid-cell-b" />
+    <text x="30" y="100" class="grid-text-b z0">0</text>
+    <rect x="70" y="70" width="60" height="60" class="grid-cell-b" />
+    <text x="100" y="100" class="grid-text-b z0">0</text>
+    <rect x="140" y="70" width="60" height="60" class="grid-cell-b" />
+    <text x="170" y="100" class="grid-text-b z0">0</text>
+  </g>
+
+</svg>

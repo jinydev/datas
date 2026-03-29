@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -990,26 +1011,45 @@
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h1 id="424-일정한-간격의-값으로-배열을-만드는-linspace">4.2.4 일정한 간격의 값으로 배열을 만드는 linspace()</h1>
+            <h1 id="424--일정한-간격의-값">4.2.4  일정한 간격의 값</h1>
 
-<h2 id="424-일정한-간격의-값으로-배열을-만드는-linspace-1">4.2.4 일정한 간격의 값으로 배열을 만드는 linspace()</h2>
+<h2 id="수학적-의미-무한의-선분-쪼개기와-등차수열-arithmetic-sequence">수학적 의미: 무한의 선분 쪼개기와 등차수열 (Arithmetic Sequence)</h2>
+<p>미술 시간에 10cm짜리 선분을 정확히 5칸으로 똑같이 나누어 점을 찍는다고 상상해보세요.</p>
 
-<p><strong>[수학적 의미: 선분의 N등분 (Interpolation)]</strong>
-미술 시간에 10cm짜리 선분을 정확히 5칸으로 똑같이 나누어 점을 찍는다고 상상해보세요. 시작점과 끝점을 고정해 두고, 그 사이의 공간을 정확한 비율로 쪼개어 채워 넣는 이 과정을 수학적 용어로 <strong>선형 보간(Linear Interpolation)</strong>이라고 합니다.</p>
+<p><img src="./img/linspace_concept_webtoon.png" alt="linspace() 개념도 웹툰" /></p>
 
-<p><strong>[Numpy 강림: linspace() 등분기]</strong>
-<code class="language-plaintext highlighter-rouge">np.linspace(start, stop, num)</code> 함수는 이 선분 등분 작업을 자동화해 줍니다. 
-앞서 배운 <code class="language-plaintext highlighter-rouge">arange</code>가 <strong>“보폭(Step)”</strong> 중심이라면, <code class="language-plaintext highlighter-rouge">linspace</code>는 <strong>“정해진 조각 개수(Count)”</strong> 중심입니다. 내가 보폭을 직접 일일이 계산할 필요 없이 “0부터 10까지 50개 점 찍어줘”라고 명령하면 Numpy가 내부적으로 알아서 간격을 계산하여 점을 뿌려줍니다. 차트나 그래프의 부드러운 곡선(X축 데이터)을 그릴 때 거의 무조건 사용하게 되는 강력한 함수입니다.</p>
+<p>시작점과 끝점을 고정해 두고, 그 사이의 공간을 정확한 비율로 쪼개어 채워 넣는 이 과정을 수학적 용어로 <strong>선형 보간(Linear Interpolation)</strong>이라고 합니다.</p>
 
-<p>내장함수 <code class="language-plaintext highlighter-rouge">numpy.linspace()</code>는 하나의 전체 구간(Interval)을 지정된 개수(num)의 하위 간격으로 동일하게 분할하여 1차원 <code class="language-plaintext highlighter-rouge">ndarray</code> 배열을 반환합니다. 기본적으로 시작점과 끝점을 모두 결과에 <strong>포함</strong>시킨다는 점이 <code class="language-plaintext highlighter-rouge">arange</code>와의 가장 큰 차이점입니다.</p>
-
+<h2 id="등차수열">등차수열</h2>
+<p>더 나아가, 이는 중고등학교 수학에서 배우는 <strong>등차수열(Arithmetic Sequence)</strong>과 완벽하게 동일한 개념입니다.</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</code>
-    <ul>
-      <li>지정된 간격에 걸쳐 균등한 간격의 숫자를 반환하며, 간격의 끝점은 <code class="language-plaintext highlighter-rouge">endpoint</code>로 선택적으로 제외될 수 있음</li>
-    </ul>
-  </li>
+  <li><strong>첫째항($a$)</strong>: 시작점 (<code class="language-plaintext highlighter-rouge">start</code>)</li>
+  <li><strong>마지막항($l$)</strong>: 도착점 (<code class="language-plaintext highlighter-rouge">stop</code>)</li>
+  <li><strong>항의 총 개수($n$)</strong>: 내가 원하는 점의 개수 (<code class="language-plaintext highlighter-rouge">num</code>)</li>
+  <li><strong>공차($d$)</strong>: 일정하게 벌어진 각 점 사이의 보폭 (<code class="language-plaintext highlighter-rouge">step</code>)</li>
 </ul>
+
+<p>우리가 수학 시간에 $\frac{l - a}{n - 1}$ 공식을 써서 공차를 직접 구했던 수고로움을, <code class="language-plaintext highlighter-rouge">linspace</code> 함수는 내부적으로 완벽하게 대신 계산하여 긴 등차수열 배열을 뽑아내 줍니다.</p>
+
+<h2 id="numpy-강림-linspace-등분기">Numpy 강림: linspace() 등분기</h2>
+<p><code class="language-plaintext highlighter-rouge">np.linspace(start, stop, num)</code> 함수는 이 선분 등분 작업을 자동화해 줍니다.</p>
+
+<p>앞서 배운 <code class="language-plaintext highlighter-rouge">arange</code>가 <strong>“보폭(Step)”</strong> 중심이라면, <code class="language-plaintext highlighter-rouge">linspace</code>는 <strong>“정해진 조각 개수(Count)”</strong> 중심입니다.</p>
+
+<p>내가 중간 간격을 일일이 계산할 필요 없이 “0부터 10까지 정확히 50개의 점을 고르게 찍어줘”라고 명령하면 Numpy가 내부적으로 알아서 소수점 간격을 계산하여 점을 뿌려줍니다.</p>
+
+<p><img src="./img/linspace_animation.svg" alt="linspace() 애니메이션 동작 설명" /></p>
+
+<p>차트나 그래프의 부드러운 곡선(X축 데이터)을 그릴 때 거의 무조건 사용하게 되는 강력하고 유용한 함수입니다.</p>
+
+<h2 id="내장함수-linspace">내장함수 linspace()</h2>
+<p>내장함수 <code class="language-plaintext highlighter-rouge">numpy.linspace()</code>는 하나의 전체 구간(Interval)을 지정된 개수(num)의 하위 간격으로 동일하게 분할하여 1차원 <code class="language-plaintext highlighter-rouge">ndarray</code> 배열을 반환합니다.</p>
+
+<p>기본적으로 시작점과 끝점을 모두 결과에 <strong>포함</strong>시킨다는 점이 <code class="language-plaintext highlighter-rouge">arange</code>와의 가장 큰 차이점입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+</code></pre></div></div>
+<p>지정된 간격에 걸쳐 균등한 간격의 숫자를 반환하며, 간격의 끝점은 <code class="language-plaintext highlighter-rouge">endpoint</code>로 선택적으로 제외될 수 있음</p>
 
 <p>주요 매개변수:</p>
 <ul>
@@ -1020,71 +1060,103 @@
   <li><code class="language-plaintext highlighter-rouge">retstep</code>: <code class="language-plaintext highlighter-rouge">True</code>이면 <code class="language-plaintext highlighter-rouge">(samples, step)</code>이 반환되며 아니면 <code class="language-plaintext highlighter-rouge">samples</code>만 반환되고 <code class="language-plaintext highlighter-rouge">step</code>은 샘플 수 사이의 간격을 말함</li>
 </ul>
 
+<h2 id="내장함수-linspace-예제">내장함수 linspace() 예제</h2>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># 2.0부터 3.0까지(끝점 포함) 정확히 5개의 숫자로 고르게 등분하여 배열 반환
+</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([2.  , 2.25, 2.5 , 2.75, 3.  ])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([2.  , 2.25, 2.5 , 2.75, 3.  ])
 </code></pre></div></div>
 
-<h2 id="내장함수-linspace-활용">내장함수 linspace() 활용</h2>
+<blockquote>
+  <p><strong>코드 설명</strong></p>
+  <ul>
+    <li><strong>시작(<code class="language-plaintext highlighter-rouge">start</code>)과 끝(<code class="language-plaintext highlighter-rouge">stop</code>)</strong>: <code class="language-plaintext highlighter-rouge">2.0</code>에서 시작하여 <code class="language-plaintext highlighter-rouge">3.0</code>으로 정확히 끝납니다. <code class="language-plaintext highlighter-rouge">arange</code>와 달리 끝점(<code class="language-plaintext highlighter-rouge">3.0</code>)이 무조건 배열에 포함된다는 것이 핵심입니다.</li>
+    <li><strong>조각과 간격 원리</strong>: 총 들어가야 할 점의 개수가 <code class="language-plaintext highlighter-rouge">num=5</code>개이므로, 5개의 점을 찍기 위한 칸(간격)의 개수는 <code class="language-plaintext highlighter-rouge">5 - 1 = 4</code>칸이 됩니다.</li>
+    <li>따라서 각 점 사이의 보폭(공차)은 <code class="language-plaintext highlighter-rouge">(3.0 - 2.0) / 4 = 0.25</code>로 자동으로 내부 계산되어, <code class="language-plaintext highlighter-rouge">2.0</code>, <code class="language-plaintext highlighter-rouge">2.25</code>, <code class="language-plaintext highlighter-rouge">2.5</code>, <code class="language-plaintext highlighter-rouge">2.75</code>, <code class="language-plaintext highlighter-rouge">3.0</code>이 만들어집니다.</li>
+  </ul>
+</blockquote>
 
-<p>다음 코드는 <code class="language-plaintext highlighter-rouge">[2, 3]</code> 구간에서 3을 포함해 인자 <code class="language-plaintext highlighter-rouge">num</code>의 기본값인 50개의 수로 등분하는 수의 배열을 생성한다.</p>
+<h2 id="내장함수-linspace-각종-파라미터-활용-예제">내장함수 linspace() 각종 파라미터 활용 예제</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<h3 id="예제-1-num-기본값-50개-생성">예제 1: <code class="language-plaintext highlighter-rouge">num</code> (기본값 50개 생성)</h3>
+<p>파라미터 <code class="language-plaintext highlighter-rouge">num</code>을 별도로 지정하지 않으면, 기본값인 50개의 점으로 등분된 배열을 생성합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 2.0부터 3.0까지 50조각으로 나누어 배열 생성 (기본값)
+</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력 (일부):</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([2.        , 2.02040816, 2.04081633, ... , 2.97959184, 3.        ])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([2.        , 2.02040816, 2.04081633, ... , 2.97959184, 3.        ])
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">retstep=True</code>로 반환받을 수 있다.</p>
+<h3 id="예제-2-retsteptrue-계산된-보폭-확인하기">예제 2: <code class="language-plaintext highlighter-rouge">retstep=True</code> (계산된 보폭 확인하기)</h3>
+<p><code class="language-plaintext highlighter-rouge">retstep=True</code>를 추가하면, 점이 찍힌 “배열”뿐만 아니라 내부적으로 자동 계산된 “점 사이의 간격(보폭)”까지 튜플 형태로 함께 묶어서 반환해 줍니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 배열과 함께 생성된 점 사이의 간격을 반환받음
+</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력 (일부):</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2.        , ... , 3.        ]), 0.02040816326530612)
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2.        , ... , 3.        ]), 0.02040816326530612)
 </code></pre></div></div>
 
-<p>위 결과인 반환 튜플에서 두 번째 값인 0.020408이 등분하는 간격으로 다음으로 직접 계산해 볼 수 있다.</p>
+<p>위 결과에서 두 번째 값인 <code class="language-plaintext highlighter-rouge">0.020408...</code>이 등분 간격입니다. 실제로 50개의 점을 찍으려면 간격(칸)은 49개가 필요하므로 계산 결과는 다음과 똑같습니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">50</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 수동으로 공차(보폭)를 계산해본 결과
+</span><span class="nf">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">50</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.02040816326530612
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.02040816326530612
 </code></pre></div></div>
 
-<p>다음 코드로 끝점 3을 제외하면 <code class="language-plaintext highlighter-rouge">[2, 3)</code> 구간에서 3을 제외하고 50개의 수로 등분한다. 결국, 등분의 간격도 0.02로 위처럼 3을 포함하는 경우와 다르다.</p>
+<h3 id="예제-3-endpointfalse-끝점을-버리고-등분하기">예제 3: <code class="language-plaintext highlighter-rouge">endpoint=False</code> (끝점을 버리고 등분하기)</h3>
+<p>그래프의 주기성을 다룰 때 마지막 도착점을 제외하고 싶다면 <code class="language-plaintext highlighter-rouge">endpoint=False</code>를 켭니다. 
+이렇게 되면 마지막 점을 찍기 직전에서 끊기게 되어, “칸의 개수”를 계산하는 방식이 완전히 달라집니다. (간격 조각 개수가 <code class="language-plaintext highlighter-rouge">num - 1</code>이 아니라 바로 <code class="language-plaintext highlighter-rouge">num</code>으로 동일해짐)</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<p><img src="./img/linspace_params_animation.svg" alt="endpoint 파라미터 시각화 원리" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 3.0 도착점을 빼고 5개의 숫자로 등분 -&gt; 간격은 (3.0-2.0)/5 개로 계산됨
+</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>출력:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2. , 2.2, 2.4, 2.6, 2.8]), 0.2)
+</code></pre></div></div>
+
+<p>위에서 보듯, 끝점이 제외되면 <code class="language-plaintext highlighter-rouge">(stop - start) / num</code>이 바로 등분 간격(0.2)이 됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 50개로 나눴을 때 끝점이 빠지면 간격은 0.02가 됨
+</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력 (일부):</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2.  , 2.02, ... , 2.98]), 0.02)
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2.  , 2.02, ... , 2.98]), 0.02)
 </code></pre></div></div>
 
-<p>끝점을 제외한다면 <code class="language-plaintext highlighter-rouge">(stop - start) / num</code> 이 등분하는 간격 값이 된다.</p>
+<h3 id="-실무-활용-예제-부드러운-차트그래프-그리기">💡 실무 활용 예제: 부드러운 차트(그래프) 그리기</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">50</span> <span class="p">)</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.02
+<p><code class="language-plaintext highlighter-rouge">linspace()</code>가 가장 많이 활약하는 곳은 바로 <strong>데이터 시각화(Data Visualization)</strong> 분야입니다. 인공지능이나 수학 함수(예: 사인 곡선 $y = \sin(x)$)의 그래프를 곡선으로 매끄럽게 그리려면, X축의 좌표가 촘촘하고 일정한 간격으로 아주 많이 필요합니다.</p>
+
+<p><img src="./img/linspace_graph_animation.svg" alt="linspace()를 이용한 부드러운 그래프 그리기" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># 0부터 10까지의 구간을 100개의 점으로 매우 촘촘하게 쪼갭니다. (X축)
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># 100개의 x 좌표 각각에 대해 사인(Sine) 값을 계산합니다. (Y축)
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 계산된 100개의 (x, y) 좌표들을 선으로 연결하여 부드러운 곡선을 그립니다.
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">np.linspace()를 활용한 부드러운 사인 곡선</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>다음 코드로 <code class="language-plaintext highlighter-rouge">[2, 3]</code>을 5개의 수로 4 등분하여 간격이 0.25임을 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2.  , 2.25, 2.5 , 2.75, 3.  ]), 0.25)
-</code></pre></div></div>
-
-<p>다음 코드는 <code class="language-plaintext highlighter-rouge">[2, 3]</code>에서 3을 제외하고 5개의 수로 5 등분하여 간격이 0.2임을 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([2. , 2.2, 2.4, 2.6, 2.8]), 0.2)
-</code></pre></div></div>
+<p>만약 <code class="language-plaintext highlighter-rouge">np.arange(0, 10, 1)</code> 처럼 1칸씩 듬성듬성 점을 10개만 찍어 연결했다면, 곡선이 아니라 각진 꺾은선 그래프가 삐뚤빼뚤하게 그려졌을 것입니다. <code class="language-plaintext highlighter-rouge">linspace</code> 덕분에 우리는 아주 손쉽게 컴퓨팅 자원을 이용해 고해상도의 매끄러운 무한의 그래프 데이터를 뽑아낼 수 있습니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -1022,7 +1043,7 @@
 
 <p><img src="./img/diophantus_tombstone_webtoon.png" alt="난해한 디오판토스의 묘비" /></p>
 <blockquote>
-  <p>고리타분한 고대 수학자가 거대한 돌덩이 묘비에 빽빽한 문자 퍼즐을 보여주자, 멘붕에 빠져 머리를 쥐어뜯는 현대 중학생의 모습</p>
+  <p>고리타분한 고대 수학자가 거대한 돌덩이 묘비에 빽빽한 문자 퍼즐을 보여주자, 멘붕에 빠져 머리를 쥐어뜯는 모습</p>
 </blockquote>
 
 <p>이 복잡한 문장을 산술 로직으로 풀려면 머리에 쥐가 납니다.</p>
@@ -1054,18 +1075,40 @@
 
 <p>이 식 하나가 뜻하는 바는 큽니다.</p>
 
+<h2 id="3-조작의-시대">3. 조작의 시대</h2>
+
 <p>모르는 값을 추적하기 위해 구불구불한 언어의 동굴을 걷는 대신, $x$라는 아바타(인형)를 세워놓고 그 아바타 주변의 안개를 하나씩 걷어내는 <strong>‘조작의 시대’</strong>가 열린 것입니다.</p>
+
+<p><img src="./img/era_of_manipulation_webtoon.png" alt="조작의 시대 웹툰" /></p>
+<blockquote>
+  <p>2D 웹툰 비유: 어두운 고대 텍스트의 동굴 속에서, 가슴에 ‘X’ 문자가 빛나는 귀여운 아바타 인형이 서 있습니다. 한 학생이 아바타 주변의 짙은 안개를 마법처럼 걷어내어 밝고 명확한 길을 여는 연출 장면</p>
+</blockquote>
 
 <hr />
 
-<h2 id="3-변수variable의-탄생">3. 변수(Variable)의 탄생</h2>
+<h2 id="4-변수variable의-탄생-파이썬과-수학의-기초적-사고">4. 변수(Variable)의 탄생: 파이썬과 수학의 기초적 사고</h2>
+
+<p>파이썬을 비롯한 모든 프로그래밍 언어의 심장인 <strong>변수(Variable)</strong>는 수학적 사고에서 유래했습니다.</p>
 
 <p><img src="./img/python_variable_webtoon.png" alt="마법 기호 x에서 코딩 변수로" /></p>
 <blockquote>
   <p>고대 석판에서 뿜어져 나온 마법의 문자 ‘X’가 디지털 공간을 가르며 파이썬 네온 코드 블록 <code class="language-plaintext highlighter-rouge">variable = x</code> 로 화려하게 트랜스포메이션하는 홀로그램 연출 장면</p>
 </blockquote>
 
-<p>이것이 파이썬을 비롯한 모든 프로그래밍 언어의 심장인 <strong>변수(Variable)</strong>의 수학적 조상입니다.</p>
+<h3 id="수학의-상상력-코딩의-현실이-되다">수학의 상상력, 코딩의 현실이 되다</h3>
+<p>수학에서 기호 $x$를 사용하는 핵심 이유는 <strong>“아직 값이 무엇인지 모르더라도 논리의 뼈대를 미리 세울 수 있다”</strong>는 데에 있습니다.</p>
+
+<p>파이썬의 변수 선언 역시 본질적으로 똑같은 철학을 따릅니다.
+코딩을 할 때 당장 사용자 입력이나 외부 데이터가 무엇인지 몰라도, <code class="language-plaintext highlighter-rouge">user_age</code>, <code class="language-plaintext highlighter-rouge">total_price</code> 같은 변수(이름)들을 활용해 거대한 프로그램의 조작 제어 흐름을 미리 구축할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이썬에서 변수는 알 수 없는 데이터를 미리 담아 조작하기 위한 '마법의 상자'입니다.
+</span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">50</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">결과:</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>“미지의 값에 이름(변수)을 부여하면 조작할 수 있다.”</strong> 
+이 단순하고도 강력한 대수학의 사상이 없었다면 파이썬의 변수 개념도, 수억 개의 데이터를 통째로 텐서 변수 하나에 담아 한 번에 연산하는 넘파이(Numpy)의 다차원 배열 구조도 결코 세상에 나올 수 없었을 것입니다.</p>
 
 <p>이제 다음 장에서는 이 $x$를 가운데 두고 어떻게 양쪽 팔 저울을 맞춰나가는지 직관적인 등식의 세계로 진입해 보겠습니다.</p>
 

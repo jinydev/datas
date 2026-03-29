@@ -1,0 +1,64 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+    .code { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    .line { stroke: #bdc3c7; stroke-width: 6; stroke-linecap: round; }
+    .segment1 { stroke: #3498db; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; fill: none; }
+    .segment2 { stroke: #e67e22; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; fill: none; }
+    .dot1 { fill: #2980b9; }
+    .dot2 { fill: #d35400; }
+    .text-label { font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; fill: #555; text-anchor: middle; opacity: 0; }
+    .end-marker { stroke: #e74c3c; stroke-width: 3; stroke-dasharray: 5,5; }
+    
+    /* Animations */
+    @keyframes draw-seg { 0%, 10% { stroke-dashoffset: 100; } 15%, 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
+    @keyframes show-text { 0%, 20% { opacity: 0; transform: translateY(-5px); } 25%, 80% { opacity: 1; transform: translateY(0); } 100% { opacity: 1; transform: translateY(0); } }
+
+    .seg-anim { animation: draw-seg 5s infinite; }
+    .txt-anim { animation: show-text 5s infinite; }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="400" y="30" class="title" text-anchor="middle">🔎 endpoint 파라미터의 비밀 (끝점 포함 vs 제외)</text>
+
+  <!-- CASE 1: endpoint=True -->
+  <g transform="translate(0, 70)">
+    <text x="50" y="0" class="code">endpoint=True (기본값)</text>
+    <text x="50" y="20" font-family="sans-serif" font-size="12" fill="#7f8c8d">간격 = (3.0 - 2.0) / 4 = 0.25</text>
+    <line x1="100" y1="50" x2="700" y2="50" class="line" />
+    
+    <line x1="100" y1="50" x2="250" y2="50" class="segment1 seg-anim" />
+    <line x1="250" y1="50" x2="400" y2="50" class="segment1 seg-anim" style="animation-delay: 0.2s" />
+    <line x1="400" y1="50" x2="550" y2="50" class="segment1 seg-anim" style="animation-delay: 0.4s" />
+    <line x1="550" y1="50" x2="700" y2="50" class="segment1 seg-anim" style="animation-delay: 0.6s" />
+    
+    <circle cx="100" cy="50" r="6" class="dot1 txt-anim" /><text x="100" y="75" class="text-label txt-anim">2.0</text>
+    <circle cx="250" cy="50" r="6" class="dot1 txt-anim" /><text x="250" y="75" class="text-label txt-anim">2.25</text>
+    <circle cx="400" cy="50" r="6" class="dot1 txt-anim" /><text x="400" y="75" class="text-label txt-anim">2.5</text>
+    <circle cx="550" cy="50" r="6" class="dot1 txt-anim" /><text x="550" y="75" class="text-label txt-anim">2.75</text>
+    <circle cx="700" cy="50" r="6" class="dot1 txt-anim" /><text x="700" y="75" class="text-label txt-anim">3.0 (끝점 포함!)</text>
+  </g>
+
+  <!-- CASE 2: endpoint=False -->
+  <g transform="translate(0, 190)">
+    <text x="50" y="0" class="code">endpoint=False</text>
+    <text x="50" y="20" font-family="sans-serif" font-size="12" fill="#7f8c8d">간격 = (3.0 - 2.0) / 5 = 0.2</text>
+    <line x1="100" y1="50" x2="700" y2="50" class="line" />
+    <line x1="700" y1="30" x2="700" y2="70" class="end-marker" />
+    <text x="700" y="85" font-family="sans-serif" font-size="12" fill="#e74c3c" text-anchor="middle">3.0 도착 직전에서 끊기!</text>
+    
+    <line x1="100" y1="50" x2="220" y2="50" class="segment2 seg-anim" />
+    <line x1="220" y1="50" x2="340" y2="50" class="segment2 seg-anim" style="animation-delay: 0.2s" />
+    <line x1="340" y1="50" x2="460" y2="50" class="segment2 seg-anim" style="animation-delay: 0.4s" />
+    <line x1="460" y1="50" x2="580" y2="50" class="segment2 seg-anim" style="animation-delay: 0.6s" />
+    <line x1="580" y1="50" x2="700" y2="50" class="segment2 seg-anim" style="animation-delay: 0.8s; opacity: 0.2" /> <!-- The last gap to 3.0 -->
+    
+    <circle cx="100" cy="50" r="6" class="dot2 txt-anim" /><text x="100" y="75" class="text-label txt-anim">2.0</text>
+    <circle cx="220" cy="50" r="6" class="dot2 txt-anim" /><text x="220" y="75" class="text-label txt-anim">2.2</text>
+    <circle cx="340" cy="50" r="6" class="dot2 txt-anim" /><text x="340" y="75" class="text-label txt-anim">2.4</text>
+    <circle cx="460" cy="50" r="6" class="dot2 txt-anim" /><text x="460" y="75" class="text-label txt-anim">2.6</text>
+    <circle cx="580" cy="50" r="6" class="dot2 txt-anim" /><text x="580" y="75" class="text-label txt-anim">2.8</text>
+  </g>
+
+</svg>

@@ -1,0 +1,71 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 22px; font-weight: bold; fill: #2c3e50; }
+    .code { font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    
+    .grid-cell { fill: #ecf0f1; stroke: #95a5a6; stroke-width: 2; rx: 5; }
+    .grid-text { font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; fill: #7f8c8d; text-anchor: middle; alignment-baseline: central; opacity: 0; }
+    
+    .speed-lines { stroke: #3498db; stroke-width: 2; stroke-dasharray: 10, 5; animation: dash 0.5s linear infinite; }
+    
+    /* Animations */
+    @keyframes lightning-appear {
+      0% { opacity: 0; transform: translateY(-100px) skewX(20deg); }
+      10% { opacity: 1; transform: translateY(0) skewX(0); }
+      100% { opacity: 1; transform: translateY(0) skewX(0); }
+    }
+    
+    @keyframes dash {
+      to { stroke-dashoffset: -30; }
+    }
+    
+    /* Rapid drop of grid */
+    .grid-group { animation: lightning-appear 3s infinite; }
+    .grid-text { animation: lightning-appear 3s infinite; }
+
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="300" y="40" class="title" text-anchor="middle">초스피드 공간 확보! (내용물은 정리 안 된 쓰레기값)</text>
+  <text x="300" y="70" class="code" text-anchor="middle">np.empty( (3, 3) )</text>
+
+  <!-- Speed lines effect -->
+  <line x1="200" y1="90" x2="200" y2="120" class="speed-lines" />
+  <line x1="300" y1="80" x2="300" y2="110" class="speed-lines" />
+  <line x1="400" y1="90" x2="400" y2="120" class="speed-lines" />
+
+  <!-- 3x3 Grid -->
+  <g transform="translate(165, 120)" class="grid-group">
+    <!-- Row 0 -->
+    <rect x="0" y="0" width="90" height="50" class="grid-cell" />
+    <text x="45" y="25" class="grid-text" fill="#e74c3c">6.2e-307</text>
+    
+    <rect x="90" y="0" width="90" height="50" class="grid-cell" />
+    <text x="135" y="25" class="grid-text" fill="#9b59b6">1.4e-311</text>
+
+    <rect x="180" y="0" width="90" height="50" class="grid-cell" />
+    <text x="225" y="25" class="grid-text" fill="#2ecc71">0.0</text>
+
+    <!-- Row 1 -->
+    <rect x="0" y="50" width="90" height="50" class="grid-cell" />
+    <text x="45" y="75" class="grid-text" fill="#34495e">-4193.12</text>
+    
+    <rect x="90" y="50" width="90" height="50" class="grid-cell" />
+    <text x="135" y="75" class="grid-text" fill="#e67e22">4.9e-324</text>
+
+    <rect x="180" y="50" width="90" height="50" class="grid-cell" />
+    <text x="225" y="75" class="grid-text" fill="#1abc9c">10726932</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="100" width="90" height="50" class="grid-cell" />
+    <text x="45" y="125" class="grid-text">-0.00018</text>
+    
+    <rect x="90" y="100" width="90" height="50" class="grid-cell" />
+    <text x="135" y="125" class="grid-text" fill="#e74c3c">1.6e-306</text>
+
+    <rect x="180" y="100" width="90" height="50" class="grid-cell" />
+    <text x="225" y="125" class="grid-text">0.0</text>
+  </g>
+
+</svg>

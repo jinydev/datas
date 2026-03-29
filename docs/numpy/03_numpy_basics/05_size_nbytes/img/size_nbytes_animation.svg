@@ -1,0 +1,169 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 18px; fill: #7f8c8d; }
+    .box { fill: #ecf0f1; stroke: #bdc3c7; stroke-width: 3; rx: 8; }
+    .num { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; fill: #2980b9; text-anchor: middle; alignment-baseline: central; }
+    .byte-text { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #e74c3c; text-anchor: middle; alignment-baseline: central; opacity: 0; }
+    
+    .counter-bg { fill: #fdf2e9; stroke: #e67e22; stroke-width: 3; rx: 15; }
+    .counter-text { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 22px; font-weight: bold; fill: #d35400; text-anchor: middle; alignment-baseline: central; }
+    
+    /* Animations */
+    /* Size counting */
+    @keyframes highlight-box {
+      0%, 10% { fill: #ecf0f1; transform: scale(1); }
+      15%, 40% { fill: #a2ded0; transform: scale(1.05); }
+      45%, 100% { fill: #ecf0f1; transform: scale(1); }
+    }
+    
+    .box-1 { animation: highlight-box 8s infinite 0.5s; transform-origin: 200px 140px; }
+    .box-2 { animation: highlight-box 8s infinite 1.0s; transform-origin: 290px 140px; }
+    .box-3 { animation: highlight-box 8s infinite 1.5s; transform-origin: 380px 140px; }
+    .box-4 { animation: highlight-box 8s infinite 2.0s; transform-origin: 200px 230px; }
+    .box-5 { animation: highlight-box 8s infinite 2.5s; transform-origin: 290px 230px; }
+    .box-6 { animation: highlight-box 8s infinite 3.0s; transform-origin: 380px 230px; }
+    
+    @keyframes count-size {
+      0%, 4% { content: "size: 0"; }
+      5%, 9% { content: "size: 1"; }
+      10%, 14% { content: "size: 2"; }
+      15%, 19% { content: "size: 3"; }
+      20%, 24% { content: "size: 4"; }
+      25%, 29% { content: "size: 5"; }
+      30%, 100% { content: "size: 6"; }
+    }
+    
+    .size-counter::after {
+      content: "size: 0";
+      animation: count-size 8s infinite;
+    }
+    
+    /* nbytes revealing */
+    @keyframes show-bytes {
+      0%, 45% { opacity: 0; }
+      50%, 90% { opacity: 1; }
+      95%, 100% { opacity: 0; }
+    }
+    
+    @keyframes hide-nums {
+      0%, 45% { opacity: 1; }
+      50%, 90% { opacity: 0; }
+      95%, 100% { opacity: 1; }
+    }
+    
+    .byte-display { animation: show-bytes 8s infinite; }
+    .num-display { animation: hide-nums 8s infinite; }
+    
+    @keyframes pulse-bytes {
+      0%, 45% { opacity: 0; transform: scale(0.9); }
+      50%, 90% { opacity: 1; transform: scale(1); }
+      95%, 100% { opacity: 0; transform: scale(0.9); }
+    }
+    .nbytes-badge { animation: pulse-bytes 8s infinite; transform-origin: 600px 225px; }
+    
+    @keyframes show-multiply {
+      0%, 45% { opacity: 0; }
+      50%, 90% { opacity: 1; }
+      95%, 100% { opacity: 0; }
+    }
+    .multiply-math { animation: show-multiply 8s infinite; }
+    
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <!-- Titles -->
+  <text x="400" y="40" class="title" text-anchor="middle">.size 와 .nbytes 의 차이점</text>
+  <text x="400" y="70" class="subtitle" text-anchor="middle">np.array([[1, 2, 3], [4, 5, 6]], dtype=np.int64)</text>
+
+  <!-- Array visual: 2 rows, 3 cols -->
+  <g transform="translate(160, 100)">
+    <!-- Row 1 -->
+    <g class="box-1">
+      <rect x="0" y="0" width="80" height="80" class="box" />
+      <text x="40" y="40" class="num num-display">1</text>
+      <text x="40" y="40" class="byte-text byte-display">8 bytes</text>
+    </g>
+    <g class="box-2">
+      <rect x="90" y="0" width="80" height="80" class="box" />
+      <text x="130" y="40" class="num num-display">2</text>
+      <text x="130" y="40" class="byte-text byte-display">8 bytes</text>
+    </g>
+    <g class="box-3">
+      <rect x="180" y="0" width="80" height="80" class="box" />
+      <text x="220" y="40" class="num num-display">3</text>
+      <text x="220" y="40" class="byte-text byte-display">8 bytes</text>
+    </g>
+    
+    <!-- Row 2 -->
+    <g class="box-4">
+      <rect x="0" y="90" width="80" height="80" class="box" />
+      <text x="40" y="130" class="num num-display">4</text>
+      <text x="40" y="130" class="byte-text byte-display">8 bytes</text>
+    </g>
+    <g class="box-5">
+      <rect x="90" y="90" width="80" height="80" class="box" />
+      <text x="130" y="130" class="num num-display">5</text>
+      <text x="130" y="130" class="byte-text byte-display">8 bytes</text>
+    </g>
+    <g class="box-6">
+      <rect x="180" y="90" width="80" height="80" class="box" />
+      <text x="220" y="130" class="num num-display">6</text>
+      <text x="220" y="130" class="byte-text byte-display">8 bytes</text>
+    </g>
+  </g>
+
+  <!-- Counter Section -->
+  <!-- CSS animations cannot directly change text content dynamically without complex setups in some viewers, but SVG supports <set> or SMIL for robust text changes -->
+  <rect x="500" y="100" width="180" height="60" class="counter-bg" />
+  
+  <text x="590" y="130" class="counter-text">size:</text>
+  <text x="640" y="130" class="counter-text">
+    <tspan>0</tspan>
+    <set attributeName="opacity" to="0" begin="0.8s" dur="7.2s" />
+  </text>
+  <text x="640" y="130" class="counter-text" opacity="0">
+    <tspan>1</tspan>
+    <set attributeName="opacity" to="1" begin="0.8s" dur="0.5s" />
+  </text>
+  <text x="640" y="130" class="counter-text" opacity="0">
+    <tspan>2</tspan>
+    <set attributeName="opacity" to="1" begin="1.3s" dur="0.5s" />
+  </text>
+  <text x="640" y="130" class="counter-text" opacity="0">
+    <tspan>3</tspan>
+    <set attributeName="opacity" to="1" begin="1.8s" dur="0.5s" />
+  </text>
+  <text x="640" y="130" class="counter-text" opacity="0">
+    <tspan>4</tspan>
+    <set attributeName="opacity" to="1" begin="2.3s" dur="0.5s" />
+  </text>
+  <text x="640" y="130" class="counter-text" opacity="0">
+    <tspan>5</tspan>
+    <set attributeName="opacity" to="1" begin="2.8s" dur="0.5s" />
+  </text>
+  <text x="640" y="130" class="counter-text" opacity="0">
+    <tspan>6</tspan>
+    <set attributeName="opacity" to="1" begin="3.3s" dur="4.7s" />
+  </text>
+  
+  <text x="590" y="170" class="subtitle" text-anchor="middle" fill="#e67e22">총 원소의 개수</text>
+
+  <!-- nbytes Section -->
+  <g class="nbytes-badge">
+    <rect x="500" y="190" width="220" height="100" fill="#fadbd8" stroke="#c0392b" stroke-width="4" rx="15" />
+    <text x="610" y="235" class="title" fill="#c0392b" font-size="28">nbytes: 48</text>
+    <text x="610" y="265" class="subtitle" text-anchor="middle" fill="#c0392b">메모리 비용 (Bytes)</text>
+  </g>
+  
+  <g class="multiply-math">
+    <text x="290" y="330" class="title" fill="#e74c3c" text-anchor="middle">6 원소</text>
+    <text x="360" y="330" class="title" fill="#2c3e50" text-anchor="middle">×</text>
+    <text x="430" y="330" class="title" fill="#e74c3c" text-anchor="middle">8 Bytes (int64)</text>
+    <text x="520" y="330" class="title" fill="#2c3e50" text-anchor="middle">=</text>
+    <text x="590" y="330" class="title" fill="#c0392b" text-anchor="middle">48 Bytes</text>
+  </g>
+
+</svg>

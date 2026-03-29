@@ -1,0 +1,97 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .number-line { stroke: #333; stroke-width: 4; }
+    .tick { stroke: #333; stroke-width: 2; }
+    .tick-label { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 16px; font-weight: bold; fill: #555; text-anchor: middle; }
+    .title { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+    .code { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    
+    .frog { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
+    .eye { fill: white; }
+    .pupil { fill: black; }
+    
+    .jump-path { stroke: #3498db; stroke-width: 3; stroke-dasharray: 5,5; fill: none; }
+    
+    /* Animation definition */
+    @keyframes jump-1 {
+      0%, 15% { transform: translate(250px, 150px); }
+      20% { transform: translate(300px, 90px); }
+      25%, 45% { transform: translate(350px, 150px); }
+      50% { transform: translate(400px, 90px); }
+      55%, 75% { transform: translate(450px, 150px); }
+      80% { transform: translate(500px, 90px) rotate(15deg); fill: #e74c3c; } /* Bump head! */
+      85%, 100% { transform: translate(450px, 150px); }
+    }
+    
+    .animated-frog {
+      animation: jump-1 4s infinite;
+    }
+    
+    @keyframes show-path-1 { 0%, 25% { opacity: 0; } 30%, 100% { opacity: 1; } }
+    @keyframes show-path-2 { 0%, 55% { opacity: 0; } 60%, 100% { opacity: 1; } }
+    
+    .path-1 { opacity: 0; animation: show-path-1 4s infinite; }
+    .path-2 { opacity: 0; animation: show-path-2 4s infinite; }
+    
+    .wall { stroke: #e74c3c; stroke-width: 8; stroke-linecap: round; }
+    .wall-text { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 14px; font-weight: bold; fill: #e74c3c; text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <!-- Title & Code -->
+  <text x="400" y="40" class="title" text-anchor="middle">arange() 함수의 개구리 점프!</text>
+  <text x="400" y="70" class="code" text-anchor="middle">np.arange(start=3, stop=7, step=2)</text>
+  
+  <!-- Number Line -->
+  <line x1="50" y1="200" x2="750" y2="200" class="number-line" />
+  
+  <!-- Ticks and Labels -->
+  <g id="ticks">
+    <line x1="100" y1="190" x2="100" y2="210" class="tick" /><text x="100" y="235" class="tick-label">0</text>
+    <line x1="150" y1="190" x2="150" y2="210" class="tick" /><text x="150" y="235" class="tick-label">1</text>
+    <line x1="200" y1="190" x2="200" y2="210" class="tick" /><text x="200" y="235" class="tick-label">2</text>
+    
+    <!-- Start -->
+    <line x1="250" y1="185" x2="250" y2="215" class="tick" style="stroke:#3498db;stroke-width:4;" />
+    <text x="250" y="240" class="tick-label" style="fill:#3498db;font-size:20px;">3 (Start)</text>
+    
+    <line x1="300" y1="190" x2="300" y2="210" class="tick" /><text x="300" y="235" class="tick-label">4</text>
+    
+    <line x1="350" y1="190" x2="350" y2="210" class="tick" /><text x="350" y="235" class="tick-label" style="fill:#2ecc71;font-size:18px;">5</text>
+    
+    <line x1="400" y1="190" x2="400" y2="210" class="tick" /><text x="400" y="235" class="tick-label">6</text>
+    
+    <!-- Stop Wall -->
+    <line x1="450" y1="150" x2="450" y2="220" class="wall" />
+    <text x="450" y="140" class="wall-text">Stop (7)</text>
+    
+    <line x1="500" y1="190" x2="500" y2="210" class="tick" /><text x="500" y="235" class="tick-label">8</text>
+    <line x1="550" y1="190" x2="550" y2="210" class="tick" /><text x="550" y="235" class="tick-label">9</text>
+    <line x1="600" y1="190" x2="600" y2="210" class="tick" /><text x="600" y="235" class="tick-label">10</text>
+  </g>
+
+  <!-- Jump Paths -->
+  <!-- 3 to 5 -->
+  <g class="path-1">
+    <path d="M 250 180 Q 300 130 350 180" class="jump-path" />
+    <text x="300" y="145" class="tick-label" style="fill:#3498db;font-size:14px;">+2 (Step)</text>
+  </g>
+  <!-- 5 to 7 (attempt) -->
+  <g class="path-2">
+    <path d="M 350 180 Q 400 130 450 180" class="jump-path" />
+    <text x="400" y="145" class="tick-label" style="fill:#e74c3c;font-size:14px;">Blocked!</text>
+  </g>
+  
+  <!-- Animated Frog/Circle -->
+  <g class="animated-frog">
+    <circle cx="0" cy="-25" r="20" class="frog" />
+    <circle cx="-7" cy="-33" r="5" class="eye" />
+    <circle cx="7" cy="-33" r="5" class="eye" />
+    <circle cx="-7" cy="-33" r="2" class="pupil" />
+    <circle cx="7" cy="-33" r="2" class="pupil" />
+    <path d="M -8 -15 Q 0 -5 8 -15" stroke="#27ae60" stroke-width="2" fill="none" stroke-linecap="round" />
+  </g>
+  
+</svg>

@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -994,15 +1015,17 @@
 
 <p><img src="./img/array_creation.png" alt="다차원 배열 생성 공장" /></p>
 
+<h2 id="411-내장함수-array로-ndarray-생성">4.1.1 내장함수 array()로 ndarray 생성</h2>
+
+<p><strong>[수학적 의미: 무에서 유를 창조하는 공간 선언]</strong>
+선형대수학에서는 어떤 연산을 시작하기 전, 스케치북에 “나는 가로 3칸, 세로 3칸짜리 2차원 공간을 쓰겠다”고 차원(Dimension)을 선언합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">numpy</code>에서도 마찬가지로 가장 뼈대가 되는 배열 생성자 팩토리(Factory)를 가동해야 합니다.</p>
+
 <p><img src="./img/array_factory.svg" alt="ndarray 팩토리 애니메이션" /></p>
 <blockquote>
   <p><strong>[애니메이션] 느슨한 리스트 원자재를 압축하여 ndarray 장갑차로 생산해 내는 array() 엔진</strong></p>
 </blockquote>
-
-<h2 id="411-내장함수-array로-ndarray-생성">4.1.1 내장함수 array()로 ndarray 생성</h2>
-
-<p><strong>[수학적 의미: 무에서 유를 창조하는 공간 선언]</strong>
-선형대수학에서는 어떤 연산을 시작하기 전, 스케치북에 “나는 가로 3칸, 세로 3칸짜리 2차원 공간을 쓰겠다”고 차원(Dimension)을 선언합니다. <code class="language-plaintext highlighter-rouge">numpy</code>에서도 마찬가지로 가장 뼈대가 되는 배열 생성자 팩토리(Factory)를 가동해야 합니다.</p>
 
 <p><strong>[Numpy 강림: array() 엔진]</strong>
 파이썬의 가장 원시적인 자료구조인 리스트(List) 재료를 <code class="language-plaintext highlighter-rouge">array()</code> 공장의 파이프에 밀어 넣으면, 내부적으로 메모리를 압축하여 막강한 <code class="language-plaintext highlighter-rouge">ndarray</code> 장갑차로 변환되어 나옵니다.</p>
@@ -1039,6 +1062,9 @@ int32
 4
 12
 </code></pre></div></div>
+
+<h2 id="속성">속성</h2>
+<p>넘파이는 객체를 생성하고, 속성을 참조할 수 있다.</p>
 
 <p>다음은 <code class="language-plaintext highlighter-rouge">numpy</code>의 <code class="language-plaintext highlighter-rouge">ndarray</code>(다차원 배열)의 주요 속성을 설명한 표이다.</p>
 
@@ -1086,7 +1112,11 @@ int32
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TypeError: array() takes from 1 to 2 positional arguments but 3 were given
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">ndarray</code>는 모든 원소(elements)가 단일한 자료형으로 구성된다. 그러므로 다음 코드처럼 하나라도 항목이 문자열이면 모든 항목이 동일하게 문자열 자료형인 <code class="language-plaintext highlighter-rouge">&lt;U32</code>으로 지정된다.</p>
+<h2 id="자료형">자료형</h2>
+
+<p><code class="language-plaintext highlighter-rouge">ndarray</code>는 모든 원소(elements)가 <code class="language-plaintext highlighter-rouge">단일한 자료형</code>으로 구성된다.</p>
+
+<p>그러므로 다음 코드처럼 하나라도 항목이 문자열이면 모든 항목이 동일하게 문자열 자료형인 <code class="language-plaintext highlighter-rouge">&lt;U32</code>으로 지정된다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">py</span><span class="sh">'</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">])</span>
 </code></pre></div></div>
@@ -1128,6 +1158,8 @@ int32
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['파이썬', '자바', '씨'], dtype='&lt;U3')
 </code></pre></div></div>
 
+<h2 id="float">float</h2>
+
 <p>다음처럼 <code class="language-plaintext highlighter-rouge">dtype=float</code>로 명시하면 모든 항목 자료형이 <code class="language-plaintext highlighter-rouge">float</code>가 된다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -1148,12 +1180,12 @@ int32
 
 <hr />
 
-<h3 id="412-내장함수-repeat과-tile을-활용한-배열-생성">4.1.2 내장함수 repeat()과 tile()을 활용한 배열 생성</h3>
+<h2 id="내장함수-repeat과-tile을-활용한-배열-생성">내장함수 repeat()과 tile()을 활용한 배열 생성</h2>
 
 <p>동일한 숫자를 여러 번 반복해서 배열을 만들고 싶을 때는 수작업으로 입력하는 대신 <code class="language-plaintext highlighter-rouge">np.repeat()</code>과 <code class="language-plaintext highlighter-rouge">np.tile()</code> 함수를 사용하면 매우 편리합니다.</p>
 
-<p><strong>① np.repeat() 함수</strong>
-<code class="language-plaintext highlighter-rouge">np.repeat()</code> 함수는 배열의 각 개별 요소를 지정한 횟수만큼 반복하여 늘려줍니다.</p>
+<h3 id="nprepeat-함수">np.repeat() 함수</h3>
+<p><code class="language-plaintext highlighter-rouge">np.repeat()</code> 함수는 배열의 각 개별 요소를 지정한 횟수만큼 반복하여 늘려줍니다.</p>
 
 <blockquote>
   <p><strong>np.repeat(a, repeats)</strong></p>
@@ -1178,8 +1210,8 @@ int32
 <span class="c1"># 4.2.1 출력: [1 2 2 4 4 4]
 </span></code></pre></div></div>
 
-<p><strong>② np.tile() 함수</strong>
-<code class="language-plaintext highlighter-rouge">np.tile()</code> 함수는 <code class="language-plaintext highlighter-rouge">repeat()</code>과 달리 패턴 단위로 묶어서(블록 전체를) 통째로 복사해서 이어 붙입니다. 타일(Tile)을 바닥에 깔아 나가는 방식을 생각하면 이해하기 쉽습니다.</p>
+<h3 id="nptile-함수">np.tile() 함수</h3>
+<p><code class="language-plaintext highlighter-rouge">np.tile()</code> 함수는 <code class="language-plaintext highlighter-rouge">repeat()</code>과 달리 패턴 단위로 묶어서(블록 전체를) 통째로 복사해서 이어 붙입니다. 타일(Tile)을 바닥에 깔아 나가는 방식을 생각하면 이해하기 쉽습니다.</p>
 
 <blockquote>
   <p><strong>np.tile(a, reps)</strong></p>

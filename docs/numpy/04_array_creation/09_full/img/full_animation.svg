@@ -1,0 +1,62 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 22px; font-weight: bold; fill: #2c3e50; }
+    .code { font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    
+    .grid-cell { fill: #fcf3cf; stroke: #f1c40f; stroke-width: 2; rx: 5; }
+    .grid-text { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; fill: #d35400; text-anchor: middle; alignment-baseline: central; opacity: 0; }
+    
+    /* Animations */
+    @keyframes pound-stamp {
+      0% { opacity: 0; transform: translateY(-40px) scale(2); }
+      30% { opacity: 1; transform: translateY(0) scale(1); fill: #e74c3c; } /* Highlight red on impact */
+      50%, 100% { opacity: 1; transform: translateY(0) scale(1); fill: #d35400; }
+    }
+    
+    /* Random cascade effect */
+    .f0 { animation: pound-stamp 3s infinite; animation-delay: 0.1s; }
+    .f1 { animation: pound-stamp 3s infinite; animation-delay: 0.3s; }
+    .f2 { animation: pound-stamp 3s infinite; animation-delay: 0.5s; }
+    .f3 { animation: pound-stamp 3s infinite; animation-delay: 0.2s; }
+    .f4 { animation: pound-stamp 3s infinite; animation-delay: 0.6s; }
+    .f5 { animation: pound-stamp 3s infinite; animation-delay: 0.4s; }
+    .f6 { animation: pound-stamp 3s infinite; animation-delay: 0.7s; }
+    .f7 { animation: pound-stamp 3s infinite; animation-delay: 0.8s; }
+
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="300" y="40" class="title" text-anchor="middle">원하는 값(숫자 7)으로 전체 칸에 도장 쾅쾅!</text>
+  <text x="300" y="70" class="code" text-anchor="middle">np.full( (2, 4), 7 )</text>
+
+  <!-- 2x4 Grid -->
+  <g transform="translate(140, 110)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="70" height="70" class="grid-cell" />
+    <text x="35" y="38" class="grid-text f0">7</text>
+    
+    <rect x="80" y="0" width="70" height="70" class="grid-cell" />
+    <text x="115" y="38" class="grid-text f1">7</text>
+
+    <rect x="160" y="0" width="70" height="70" class="grid-cell" />
+    <text x="195" y="38" class="grid-text f2">7</text>
+
+    <rect x="240" y="0" width="70" height="70" class="grid-cell" />
+    <text x="275" y="38" class="grid-text f3">7</text>
+    
+    <!-- Row 2 -->
+    <rect x="0" y="80" width="70" height="70" class="grid-cell" />
+    <text x="35" y="118" class="grid-text f4">7</text>
+    
+    <rect x="80" y="80" width="70" height="70" class="grid-cell" />
+    <text x="115" y="118" class="grid-text f5">7</text>
+
+    <rect x="160" y="80" width="70" height="70" class="grid-cell" />
+    <text x="195" y="118" class="grid-text f6">7</text>
+
+    <rect x="240" y="80" width="70" height="70" class="grid-cell" />
+    <text x="275" y="118" class="grid-text f7">7</text>
+  </g>
+
+</svg>

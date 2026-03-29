@@ -1,0 +1,151 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    .box { fill: #3498db; stroke: #2980b9; stroke-width: 2; rx: 4; }
+    .num { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: white; text-anchor: middle; alignment-baseline: central; }
+    
+    /* Animation definition */
+    /* Blocks start in a single line (1x12), then move to a grid (3x4) */
+    
+    /* Block 0: stays */
+    @keyframes move-0 {
+      0%, 20% { transform: translate(40px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(160px, 100px); fill: #e67e22; }
+      100% { transform: translate(40px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 1 */
+    @keyframes move-1 {
+      0%, 20% { transform: translate(100px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(220px, 100px); fill: #e67e22; }
+      100% { transform: translate(100px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 2 */
+    @keyframes move-2 {
+      0%, 20% { transform: translate(160px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(280px, 100px); fill: #e67e22; }
+      100% { transform: translate(160px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 3 */
+    @keyframes move-3 {
+      0%, 20% { transform: translate(220px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(340px, 100px); fill: #e67e22; }
+      100% { transform: translate(220px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 4 (starts row 2) */
+    @keyframes move-4 {
+      0%, 20% { transform: translate(280px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(160px, 160px); fill: #e67e22; }
+      100% { transform: translate(280px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 5 */
+    @keyframes move-5 {
+      0%, 20% { transform: translate(340px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(220px, 160px); fill: #e67e22; }
+      100% { transform: translate(340px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 6 */
+    @keyframes move-6 {
+      0%, 20% { transform: translate(400px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(280px, 160px); fill: #e67e22; }
+      100% { transform: translate(400px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 7 */
+    @keyframes move-7 {
+      0%, 20% { transform: translate(460px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(340px, 160px); fill: #e67e22; }
+      100% { transform: translate(460px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 8 (starts row 3) */
+    @keyframes move-8 {
+      0%, 20% { transform: translate(520px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(160px, 220px); fill: #e67e22; }
+      100% { transform: translate(520px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 9 */
+    @keyframes move-9 {
+      0%, 20% { transform: translate(580px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(220px, 220px); fill: #e67e22; }
+      100% { transform: translate(580px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 10 */
+    @keyframes move-10 {
+      0%, 20% { transform: translate(640px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(280px, 220px); fill: #e67e22; }
+      100% { transform: translate(640px, 120px); fill: #3498db; }
+    }
+    
+    /* Block 11 */
+    @keyframes move-11 {
+      0%, 20% { transform: translate(700px, 120px); fill: #3498db; }
+      40%, 80% { transform: translate(340px, 220px); fill: #e67e22; }
+      100% { transform: translate(700px, 120px); fill: #3498db; }
+    }
+    
+    .b0 { animation: move-0 6s infinite ease-in-out; }
+    .b1 { animation: move-1 6s infinite ease-in-out; }
+    .b2 { animation: move-2 6s infinite ease-in-out; }
+    .b3 { animation: move-3 6s infinite ease-in-out; }
+    .b4 { animation: move-4 6s infinite ease-in-out; }
+    .b5 { animation: move-5 6s infinite ease-in-out; }
+    .b6 { animation: move-6 6s infinite ease-in-out; }
+    .b7 { animation: move-7 6s infinite ease-in-out; }
+    .b8 { animation: move-8 6s infinite ease-in-out; }
+    .b9 { animation: move-9 6s infinite ease-in-out; }
+    .b10 { animation: move-10 6s infinite ease-in-out; }
+    .b11 { animation: move-11 6s infinite ease-in-out; }
+
+    @keyframes text-swap {
+      0%, 20% { content: "shape: (12,)"; opacity: 1; }
+      25%, 35% { opacity: 0; }
+      40%, 80% { content: "shape: (3, 4)"; opacity: 1; fill: #d35400; }
+      85%, 95% { opacity: 0; }
+      100% { content: "shape: (12,)"; opacity: 1; }
+    }
+    .status-text::after {
+      content: "shape: (12,)";
+      animation: text-swap 6s infinite ease-in-out;
+    }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="400" y="40" class="title" text-anchor="middle">배열 변신 마법! reshape() 연산</text>
+  <text x="400" y="70" class="subtitle" text-anchor="middle">.reshape(3, 4)</text>
+
+  <!-- Using SVG text animations via SMIL to swap text reliably -->
+  <text x="550" y="160" class="title" fill="#2980b9" opacity="1">
+    shape: (12,)
+    <set attributeName="opacity" to="0" begin="1.5s" dur="3s" />
+    <set attributeName="opacity" to="1" begin="4.5s" dur="1.5s" />
+  </text>
+  <text x="550" y="160" class="title" fill="#d35400" opacity="0">
+    shape: (3, 4)
+    <set attributeName="opacity" to="1" begin="1.5s" dur="3s" />
+  </text>
+
+  <!-- Array blocks -->
+  <g class="b0"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">0</text></g>
+  <g class="b1"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">1</text></g>
+  <g class="b2"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">2</text></g>
+  <g class="b3"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">3</text></g>
+  <g class="b4"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">4</text></g>
+  <g class="b5"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">5</text></g>
+  <g class="b6"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">6</text></g>
+  <g class="b7"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">7</text></g>
+  <g class="b8"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">8</text></g>
+  <g class="b9"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">9</text></g>
+  <g class="b10"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">10</text></g>
+  <g class="b11"><rect width="50" height="50" class="box" /><text x="25" y="27" class="num">11</text></g>
+
+</svg>

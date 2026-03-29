@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -1026,8 +1047,12 @@
 <p><img src="./img/ch03_sec2_shape_math.png" alt="수학적 차원과 행렬의 모양(Shape)" />
 <em>(웹툰 비유: 칠판 앞에 선 열혈 수학 선생님이 빛나는 지시봉으로 공중에 떠 있는 빛의 홀로그램 행렬(2행 3열)을 가리킵니다. 가로축과 세로축이 빛나면서 “이것이 우주의 데이터를 담는 기본 뼈대, Shape (2, 3)이다!”라고 열변을 토하는 멋진 수학적 시각화 장면)</em></p>
 
-<p><strong>수학적 의미의 행렬 모양(Shape):</strong>
-수학에서 $m \times n$ 행렬은 $m$개의 행(가로줄)과 $n$개의 열(세로줄)을 가지는 직사각형 배열을 의미합니다. 넘파이의 <code class="language-plaintext highlighter-rouge">.shape</code>는 이 수학적 직사각형 크기 정보를 정확히 <code class="language-plaintext highlighter-rouge">(m, n)</code> 형태의 튜플로 반환하여, 선형 대수학 모델(예: 딥러닝 가중치 행렬 곱셈)에서 행렬의 차원 크기가 수학적으로 맞아떨어지는지 검증하는 핵심 메타데이터 역할을 수행합니다.</p>
+<h2 id="수학적-의미의-행렬-모양shape">수학적 의미의 행렬 모양(Shape):</h2>
+<p>수학에서 $m \times n$ 행렬은 $m$개의 행(가로줄)과 $n$개의 열(세로줄)을 가지는 직사각형 배열을 의미합니다.</p>
+
+<p>넘파이의 <code class="language-plaintext highlighter-rouge">.shape</code>는 이 수학적 직사각형 크기 정보를 정확히 <code class="language-plaintext highlighter-rouge">(m, n)</code> 형태의 튜플로 반환하여, 선형 대수학 모델(예: 딥러닝 가중치 행렬 곱셈)에서 행렬의 차원 크기가 수학적으로 맞아떨어지는지 검증하는 핵심 메타데이터 역할을 수행합니다.</p>
+
+<h2 id="예제">예제</h2>
 
 <p>앞서 배운 4가지 차원 등급(0D ~ 3D)을 파이썬 속성인 <code class="language-plaintext highlighter-rouge">.shape</code>가 어떻게 출력하는지 유심히 관찰해 보세요.</p>
 
@@ -1054,115 +1079,10 @@
   <p>1D 벡터 기차와 2D 행렬 타일이 메모리에 배열되며 형태(shape)와 통계(size)를 도출하는 과정</p>
 </blockquote>
 
+<h2 id="다양한-속성">다양한 속성</h2>
+
 <p>이처럼 <code class="language-plaintext highlighter-rouge">ndarray</code>는 괄호가 없는 내장 속성값인 <code class="language-plaintext highlighter-rouge">.shape</code>, <code class="language-plaintext highlighter-rouge">.size</code>, <code class="language-plaintext highlighter-rouge">.ndim</code> 등을 이용해 현재 내가 다루고 있는 데이터가 점인지, 기차인지, 타일인지, 큐브인지 그 규모를 구조적으로 파악할 수 있도록 설계되어 있습니다.</p>
 
-<h2 id="3-넘파이의-다양한-기본-자료형-dtype">3. 넘파이의 다양한 기본 자료형 (dtype)</h2>
-
-<p>어떤 데이터 타입으로 배열을 강제로 통일시키는지 실험해 봅시다.</p>
-
-<p>다음과 같이 숫자와 문자열을 억지로 표 배열 안에 욱여넣으면, <code class="language-plaintext highlighter-rouge">numpy</code>는 내부 오류를 면하기 위해 가장 스펙트럼이 넓은 자료형인 문자열(String) 형태로 모든 숫자를 일괄 <strong>캐스팅(형 변환)</strong>해 버립니다.</p>
-
-<blockquote>
-  <p>캐스팅이란?</p>
-</blockquote>
-
-<p><img src="./img/ch03_sec2_dtype.png" alt="데이터 타입 통일 세관원" /></p>
-<blockquote>
-  <p>‘Numpy 공항’의 엄격한 마법사 세관원 로봇이 화를 내며 “오직 단 하나의 데이터 타입만 허용한다!”라고 소리칩니다. 사과, 숫자, 글자들이 섞인 무리들이 억지로 똑같은 유니폼(문자열 String복장)으로 강제 변신당한 채 울면서 메모리 기차에 탑승하려는 코믹한 묘사</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 문자와 숫자가 섞인 배열 선언
-</span><span class="n">mix_vec</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="sh">"</span><span class="s">사과</span><span class="sh">"</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="sh">"</span><span class="s">수박</span><span class="sh">"</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">결과:</span><span class="sh">"</span><span class="p">,</span> <span class="n">mix_vec</span><span class="p">)</span> 
-<span class="c1"># ['사과' '12' '수박' '8'] -&gt; 12와 8이 계산 불가능한 따옴표 문자로 강제 변환됨
-</span></code></pre></div></div>
-
-<p>따라서 배열 안에 정확히 어떤 타입의 데이터가 계산될 것인지 지정해주는 것이 매우 중요합니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">numpy</code>는 표준 파이썬보다 훨씬 세분화된 메모리 최적화용 <code class="language-plaintext highlighter-rouge">기본 수치형 자료형</code>을 제공합니다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">자료형</th>
-      <th style="text-align: left">설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">bool</code></td>
-      <td style="text-align: left">부울 (참(<code class="language-plaintext highlighter-rouge">True</code>) 또는 거짓(<code class="language-plaintext highlighter-rouge">False</code>))</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int8</code>, <code class="language-plaintext highlighter-rouge">int16</code>, <code class="language-plaintext highlighter-rouge">int32</code>, <code class="language-plaintext highlighter-rouge">int64</code></td>
-      <td style="text-align: left">8비트, 16비트, 32비트, 64비트 정수형 데이터</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">uint8</code>, <code class="language-plaintext highlighter-rouge">uint16</code>, <code class="language-plaintext highlighter-rouge">uint32</code>, <code class="language-plaintext highlighter-rouge">uint64</code></td>
-      <td style="text-align: left">음수가 배제된 <strong>부호 없는(Unsigned)</strong> 양의 정수 전용</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">float16</code>, <code class="language-plaintext highlighter-rouge">float32</code>, <code class="language-plaintext highlighter-rouge">float64</code></td>
-      <td style="text-align: left">16비트, 32비트, 64비트 부동 소수점(실수) 척도 데이터</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">complex64</code>, <code class="language-plaintext highlighter-rouge">complex128</code></td>
-      <td style="text-align: left">주로 공학 분야에서 허수부를 표현하는 데 쓰이는 복소수</td>
-    </tr>
-  </tbody>
-</table>
-
-<blockquote>
-  <p>팁: 자료형 뒤에 붙은 숫자 16, 32, 64 등은 데이터를 운영체제 메모리에 저장할 때 사용하는 비트(Bit) 용의 크기를 의미합니다. 숫자가 클수록 소수점 아래 무한에 가까운 방대하고 정밀한 숫자를 표현할 수 있으나, 그만큼 램(RAM) 용량을 많이 소비하게 됩니다.</p>
-</blockquote>
-
-<h2 id="4-배열의-차원수-감지기-ndim">4. 배열의 차원수 감지기: .ndim</h2>
-
-<p>공간이 몇 차원으로 구성되어 있는지(점, 선, 면, 입체)를 파악할 때는 <code class="language-plaintext highlighter-rouge">.ndim</code> 속성을 사용합니다.</p>
-
-<p>데이터 전처리 과정에서 이 데이터가 단순히 1차원 리스트인지 2차원 표 구조인지 헷갈릴 때, 코드로 직관적인 스캐너를 들이대는 것과 같습니다.</p>
-
-<p><img src="./img/ch03_sec3_ndim.png" alt="AR 안경 차원 분석기" /></p>
-<blockquote>
-  <p>똑똑한 모범생 로봇이 렌즈에 초록색 광선이 나오는 첨단 AR 스캐너 안경을 쓰고 있습니다. 로봇이 평범한 실(1D), 평평한 도화지(2D), 빛나는 루빅스 큐브(3D)를 바라보자마자, 허공에 띠링~ 소리와 함께 <code class="language-plaintext highlighter-rouge">ndim=1</code>, <code class="language-plaintext highlighter-rouge">ndim=2</code>, <code class="language-plaintext highlighter-rouge">ndim=3</code> 이라는 초록색 홀로그램 판정표가 즉석에서 홀로그램으로 떠오르는 씬</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-
-<span class="c1"># 1차원 선분 (ndim = 1)
-</span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">a의 차원수:</span><span class="sh">"</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span> <span class="c1"># 결과: 1
-</span>
-<span class="c1"># 3차원 큐브 (ndim = 3)
-</span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]])</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">c의 차원수:</span><span class="sh">"</span><span class="p">,</span> <span class="n">c</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span> <span class="c1"># 결과: 3
-</span></code></pre></div></div>
-
-<h2 id="5-이미지-배열의-육중한-크기-확인-size-와-nbytes">5. 이미지 배열의 육중한 크기 확인: .size 와 .nbytes</h2>
-
-<p>데이터가 몇 개의 원소(Element)로 이루어져 있는지, 그리고 컴퓨터 RAM 메모리를 실질적으로 얼마나 무겁게 차지하고 있는지를 알기 위해 <code class="language-plaintext highlighter-rouge">.size</code> 와 <code class="language-plaintext highlighter-rouge">.nbytes</code> 속성을 사용합니다.</p>
-
-<p><img src="./img/ch03_sec4_size.png" alt="크기와 용량 체중계" /></p>
-<blockquote>
-  <p>동글동글하고 귀여운 행렬(Matrix) 캐릭터가 최첨단 오락실 체중계 위에 올라갔습니다. 체중계 전광판에는 ‘원소 개수: 6 (size)’ 라고 적혀 있고, 캐릭터가 끙끙대며 짊어지고 있는 거대한 초고중량 디지털 배낭에는 ‘전체 용량(램 무게): 48 bytes (nbytes)’ 라는 무서운 딱지가 붙어 있어 땀을 삐질 흘리는 코믹한 모습</p>
-</blockquote>
-
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">.size</code></strong>: 배열 안에 있는 값들의 물리적인 ‘총 개수’를 의미합니다. (예: 2행 3열짜리 배열이면 총 6개의 숫자가 있으므로 <code class="language-plaintext highlighter-rouge">size=6</code>이 됩니다.)</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">.nbytes</code></strong>: 그 숫자들이 실제로 컴퓨터의 램(RAM) 메모리를 몇 바이트(Bytes)나 잡아먹고 있는지를 알려주는 현실적인 척도입니다. 빅데이터 처리 시 서버가 터지지 않게끔 미리 무게를 재보는 용도입니다.</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">int64</span><span class="p">)</span>
-
-<span class="c1"># 총 요소(알맹이)의 개수
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">데이터 총 개수(size):</span><span class="sh">"</span><span class="p">,</span> <span class="n">mat</span><span class="p">.</span><span class="n">size</span><span class="p">)</span> 
-<span class="c1"># 결과: 6 (2 x 3)
-</span>
-<span class="c1"># 메모리 차지 용량 (Bytes)
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">메모리 총 차지량(nbytes):</span><span class="sh">"</span><span class="p">,</span> <span class="n">mat</span><span class="p">.</span><span class="n">nbytes</span><span class="p">)</span>
-<span class="c1"># 결과: 48 (6개의 원소 x 각 8 bytes(int64) = 48 bytes)
-</span></code></pre></div></div>
 
 
             <!-- 구글 애드센스 출력 -->

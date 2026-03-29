@@ -36,6 +36,12 @@ main:
     url: '/numpy/03_numpy_basics/01_numpy_intro/'
   - title: '4.3.2 다차원 배열 (ndarray)'
     url: '/numpy/03_numpy_basics/02_ndarray/'
+  - title: '4.3.3 다차원 배열의 자료형 (dtype)'
+    url: '/numpy/03_numpy_basics/03_dtype/'
+  - title: '4.3.4 배열의 차원수 감지기 (.ndim)'
+    url: '/numpy/03_numpy_basics/04_ndim/'
+  - title: '4.3.5 배열의 크기와 용량 (.size, .nbytes)'
+    url: '/numpy/03_numpy_basics/05_size_nbytes/'
 - title: '4.4 배열 생성과 초기화'
   url: '/numpy/04_array_creation/'
   subitems:

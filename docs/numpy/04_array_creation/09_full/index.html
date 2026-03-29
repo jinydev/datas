@@ -508,6 +508,27 @@
                                 </a>
                             </li>
                             
+                            <li>
+                                <a href="/numpy/03_numpy_basics/03_dtype/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.3 다차원 배열의 자료형 (dtype)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/04_ndim/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.4 배열의 차원수 감지기 (.ndim)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/03_numpy_basics/05_size_nbytes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.3.5 배열의 크기와 용량 (.size, .nbytes)
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     
@@ -992,55 +1013,87 @@
         <div class="bd-content ps-lg-4">
             <h1 id="429-원소가-모두-특정-값인-배열을-만드는-full">4.2.9 원소가 모두 특정 값인 배열을 만드는 full()</h1>
 
-<p><code class="language-plaintext highlighter-rouge">numpy.full(shape, fill_value)</code>는 <code class="language-plaintext highlighter-rouge">shape</code> 모양의 배열을 반환하는 함수이다.</p>
+<p><img src="./img/full_concept_webtoon.png" alt="full 개념도 웹툰" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">numpy.full(shape, fill_value, dtype=None, order='C', *, like=None)</code></p>
+<h2 id="npfull의-프로그래밍적-의미와-활용">np.full()의 프로그래밍적 의미와 활용</h2>
+<blockquote>
+  <p>지정한 모든 칸을 ‘원하는 단일 값(fill_value)’으로 꽉 채운 배열</p>
+</blockquote>
+
+<p>앞서 배운 <code class="language-plaintext highlighter-rouge">zeros</code>는 <code class="language-plaintext highlighter-rouge">0</code>으로 칠하고, <code class="language-plaintext highlighter-rouge">ones</code>는 <code class="language-plaintext highlighter-rouge">1</code>로 칠하는 전용 도구였습니다.
+하지만 항상 0이나 1만 필요한 것은 아닙니다. <strong>“이 표를 전부 행운의 숫자 7로 채워줘!”</strong>, <strong>“모든 칸을 ‘비어있음(-1)’ 상태로 한 번에 세팅해 줘!”</strong>와 같이, 내가 원하는 특정한 값 하나로 거대한 메모리 공간을 단숨에 도배하고 싶을 때 사용하는 ‘강력한 만능 도장기’가 바로 <code class="language-plaintext highlighter-rouge">np.full()</code>입니다.</p>
+
+<p><img src="./img/full_animation.svg" alt="full() 애니메이션 동작 설명" /></p>
+
+<h3 id="언제-어떤-용도로-사용할까-실무-활용-사례">언제 어떤 용도로 사용할까? (실무 활용 사례)</h3>
+
 <ul>
-  <li>
-    <p>지정된 <code class="language-plaintext highlighter-rouge">fill_value</code>로 채워진 주어진 모양과 유형의 새 배열을 반환</p>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">shape</code>: <code class="language-plaintext highlighter-rouge">int</code> 또는 정수 시퀀스, 새 배열의 모양으로 <code class="language-plaintext highlighter-rouge">(2, 3)</code> 또는 <code class="language-plaintext highlighter-rouge">2</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fill_value</code>: 스칼라 또는 배열 유사 객체, 배열을 채울 원소 값</li>
-  <li><code class="language-plaintext highlighter-rouge">dtype</code>: 데이터 유형, 선택 사항, 배열에 대해 원하는 데이터 유형</li>
-  <li><code class="language-plaintext highlighter-rouge">order</code>: 순서 <code class="language-plaintext highlighter-rouge">{'C', 'F'}</code>, 선택 사항, 기본값: <code class="language-plaintext highlighter-rouge">'C'</code>. 다차원 데이터를 행 중심(C 스타일) 또는 열 중심(포트란 스타일) 순서로 메모리에 저장할지 여부</li>
+  <li><strong>초기 상태(Default State) 세팅</strong>: 게임에서 체스판의 타일을 모두 같은 지형 번호로 세팅하거나, 데이터 분석에서 통계 설문조사 응답이 없는 빈칸을 일괄적으로 <code class="language-plaintext highlighter-rouge">-1</code>이나 <code class="language-plaintext highlighter-rouge">999</code> 같은 특수 값(결측치 식별자)으로 채워둘 때 사용합니다.</li>
+  <li><strong>이미지 단색 배경 초기화</strong>: 그림판의 캔버스를 새하얀색 픽셀(<code class="language-plaintext highlighter-rouge">255</code>) 혹은 특정 단색 값으로 꽉 채워서 초기화할 때 씁니다.</li>
+  <li><strong>패턴 강제 복사 (Broadcasting)</strong>: 단순한 스칼라(단일 숫자) 뿐만 아니라, <code class="language-plaintext highlighter-rouge">[1, 2, 3]</code> 같은 리스트(벡터) 패턴 배열 자체를 인자로 주면, 캔버스 크기에 맞춰 강제로 여러 줄 똑같이 복사해서 채워 넣는 놀라운 기능도 수행합니다.</li>
 </ul>
 
-<p>다음 코드는 모든 원소가 10인 2행 3열 2차원 배열을 생성한다.</p>
+<h3 id="numpyfull-함수">numpy.full() 함수</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>numpy.full(shape, fill_value, dtype=None, order='C', *, like=None)
+</code></pre></div></div>
+<ul>
+  <li>지정된 <code class="language-plaintext highlighter-rouge">fill_value</code>로 채워진 주어진 모양과 유형의 새 배열을 반환</li>
+  <li><code class="language-plaintext highlighter-rouge">shape</code>: <code class="language-plaintext highlighter-rouge">int</code> 또는 정수 시퀀스 튜플. 짓고 싶은 배열 아파트의 층과 호수. 예: <code class="language-plaintext highlighter-rouge">(2, 3)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fill_value</code>: 찍어 누를 도장의 내용 값. 단일 숫자(스칼라) 또는 짧은 배열 형태의 객체도 모두 가능</li>
+  <li><code class="language-plaintext highlighter-rouge">dtype</code>: 원소의 데이터 유형. 딱히 지정하지 않으면 우리가 건네준 <code class="language-plaintext highlighter-rouge">fill_value</code>의 자료형 분위기를 자동으로 눈치채고 따라감</li>
+</ul>
+
+<h2 id="내장함수-full-활용-예제">내장함수 full() 활용 예제</h2>
+
+<h3 id="예제-1-단일-숫자스칼라로-공간-가득-채우기">예제 1: 단일 숫자(스칼라)로 공간 가득 채우기</h3>
+<p>다음 코드는 가로세로 <code class="language-plaintext highlighter-rouge">(2, 3)</code> 모양의 2차원 공간을 확보한 뒤, 모든 칸을 하나의 단일 숫자 <code class="language-plaintext highlighter-rouge">10</code>으로 모조리 도장 찍어 채웁니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1"># [1단계] 2행 3열의 빈칸을 만든다.
+# [2단계] 모든 칸에 한 치의 오차 없이 '10'을 채워 넣는다.
+</span><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[10, 10, 10],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[10, 10, 10],
        [10, 10, 10]])
 </code></pre></div></div>
 
-<p>다음 코드는 행이 모두 <code class="language-plaintext highlighter-rouge">(1, 2, 3)</code>인 2행 3열 2차원 배열을 생성한다.</p>
+<h3 id="예제-2-1차원-리스트배열-패턴을-통째로-복사해서-도장-찍기">예제 2: 1차원 리스트(배열) 패턴을 통째로 복사해서 도장 찍기</h3>
+<p>숫자 하나만 되는 것이 아닙니다. 도장의 면을 <code class="language-plaintext highlighter-rouge">(1, 2, 3)</code>이라는 긴 1차원 리스트 패턴으로 깎은 뒤 쿵 찍을 수도 있습니다! Numpy는 가로 길이가 3칸이라는 것을 확인하고, 각 행(Row)마다 똑같은 튜플 리스트를 한 줄 통째로 찍어줍니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 가로가 3칸인 2x3 빈 캔버스에,
+# 가로 길이가 딱 맞는 (1, 2, 3) 도장 패턴을 한 줄씩 쾅, 쾅! 두 번 찍어냄
+</span><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
        [1, 2, 3]])
 </code></pre></div></div>
 
-<p>다음 코드는 행이 모두 <code class="language-plaintext highlighter-rouge">(0, 1, 2, 3)</code>인 3행 4열 2차원 배열을 생성한다.</p>
+<h3 id="예제-3-파이썬-range-객체-넘겨주기">예제 3: 파이썬 range() 객체 넘겨주기</h3>
+<p>리스트나 튜플 대신 배열을 생성해 내는 파이썬 내장함수 <code class="language-plaintext highlighter-rouge">range(4)</code>를 건네주어도, 자동으로 <code class="language-plaintext highlighter-rouge">[0, 1, 2, 3]</code>이라는 리스트 패턴으로 풀어서 해석한 뒤 각 행마다 똑같이 복사해 줍니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 가로 길이 4칸에 딱 떨어맞게 range(4) = [0, 1, 2, 3] 도장을 3줄로 찍음!
+</span><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0, 1, 2, 3],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0, 1, 2, 3],
        [0, 1, 2, 3],
        [0, 1, 2, 3]])
 </code></pre></div></div>
 
-<p>다음 코드는 모든 열이 <code class="language-plaintext highlighter-rouge">[0, 1, 2, 3]</code>인 4행 3열 2차원 배열을 생성한다.</p>
+<h3 id="예제-4-2차원-열column-방향-패턴을-통째로-복사해서-찍기">예제 4: 2차원 열(Column) 방향 패턴을 통째로 복사해서 찍기</h3>
+<p>이번에는 세로(열)를 기준으로 도장을 찍어볼 차례입니다.
+<code class="language-plaintext highlighter-rouge">np.arange(4)</code>를 만들어 <code class="language-plaintext highlighter-rouge">[0, 1, 2, 3]</code>을 준비한 뒤, <code class="language-plaintext highlighter-rouge">.reshape(4, 1)</code>을 써서 <strong>모양이 세로로 기다란 <code class="language-plaintext highlighter-rouge">4x1</code> 모양 블록 세트</strong>로 다듬어버립니다. 
+이를 4x3 캔버스에 주면, 이번엔 행이 아니라 열(가로 방향)로 옆으로 여러 번 찍어버립니다!</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [1단계] 세로 4칸짜리 수직 블록 도장 [[0], [1], [2], [3]] 준비
+# [2단계] 세로 4줄 가로 3칸 캔버스에 쾅! 찍으면 옆으로 3번 복제됨! (Broadcasting 마법)
+</span><span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0, 0, 0],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0, 0, 0],
        [1, 1, 1],
        [2, 2, 2],
        [3, 3, 3]])
