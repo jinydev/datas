@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.3.2 배열과 배열의 연산"
+title: "4.5.2 배열과 배열의 연산"
 ---
 
-# 4.3.2 배열과 배열의 1:1 거울 연산 (Element-wise)
+# 4.5.2 배열과 배열의 1:1 거울 연산 (Element-wise)
 
 
 

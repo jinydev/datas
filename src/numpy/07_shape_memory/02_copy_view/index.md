@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.5.2 복사(copy)와 보기(뷰, view)"
+title: "4.7.2 복사(copy)와 보기(뷰, view)"
 ---
 
-# 4.5.2 복사(copy)와 보기(뷰, view)
+# 4.7.2 복사(copy)와 보기(뷰, view)
 
 ## ① ndarray의 데이터와 메타데이터
 

@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.7 row_stack()과 vstack()"
+title: "4.8.7 row_stack()과 vstack()"
 ---
 
-# 4.6.7 row_stack()과 vstack()
+# 4.8.7 row_stack()과 vstack()
 
 `row_stack()`과 `vstack()`은 완전히 같은 함수이다. 이를 다음 그림과 함께 알아보자.
 

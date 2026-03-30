@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "3.1 과학용 컴퓨팅 패키지 numpy 개요"
+title: "4.3.1 과학용 컴퓨팅 패키지 numpy 개요"
 ---
 
-# 3.1 넘파이 기초와 벡터/행렬의 이해
+# 4.3.1 넘파이 기초와 벡터/행렬의 이해
 
 ![파이썬 넘파이 연금술사](../img/numpy_basics.png)
 
@@ -50,7 +50,7 @@ print(new_prices)
 
 
 
-## 4. Numpy 강림: 다차원 배열(ndarray) 컨테이너 트럭 
+## 4. Numpy 강림: 다차원 배열(ndarray) 컨테이너 트럭
 바로 이때 데이터 과학의 핵심 엔진인 **Numpy(Numerical Python)**가 강림합니다. 
 
 ![넘파이 컨테이너 일괄 도장](./img/ch03_sec1_numpy.png)

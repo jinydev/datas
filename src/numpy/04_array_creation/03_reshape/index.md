@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.2.3 배열의 모양을 바꾸는 reshape()"
+title: "4.4.3 배열의 모양을 바꾸는 reshape()"
 ---
 
-# 4.2.3 배열의 모양을 바꾸는 reshape()
+# 4.4.3 배열의 모양을 바꾸는 reshape()
 
 ## 배열에서 매트릭스로
 ![배열 변신 마법 웹툰](./img/reshape_concept_webtoon.png)

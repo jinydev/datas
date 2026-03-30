@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.2.5 내장함수 arange()와 linspace() 비교"
+title: "4.4.5 내장함수 arange()와 linspace() 비교"
 ---
 
-# 4.2.5 내장함수 arange()와 linspace() 비교
+# 4.4.5 내장함수 arange()와 linspace() 비교
 
 
 내장함수 `numpy.arange()`와 `numpy.linspace()`는 특정 구간 내에서 일정한 간격으로 나열된 숫자의 배열을 만든다는 공통적인 목적을 가지고 있습니다. 

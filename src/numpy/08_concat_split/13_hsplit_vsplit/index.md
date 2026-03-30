@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.13 분할 함수 hsplit()과 vsplit()"
+title: "4.8.13 분할 함수 hsplit()과 vsplit()"
 ---
 
-# 4.6.13 분할 함수 hsplit()과 vsplit()
+# 4.8.13 분할 함수 hsplit()과 vsplit()
 
 ## ① np.hsplit(ary)
 

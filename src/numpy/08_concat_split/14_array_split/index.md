@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.14 분할 함수 array_split()"
+title: "4.8.14 분할 함수 array_split()"
 ---
 
-# 4.6.14 분할 함수 array_split()
+# 4.8.14 분할 함수 array_split()
 
 ## ① np.array_split() 개요
 

@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.3.3 배열 함수와 범용 함수"
+title: "4.5.3 배열 함수와 범용 함수"
 ---
 
-# 4.3.3 다차원 배열을 주무르는 마법: 통계 압축(Aggregation)과 범용 함수(Ufunc)
+# 4.5.3 다차원 배열을 주무르는 마법: 통계 압축(Aggregation)과 범용 함수(Ufunc)
 
 ![범용 함수 수학 공장 웹툰 일러스트](./img/ufunc_concept_webtoon.png)
 

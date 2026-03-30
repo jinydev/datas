@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.2 numpy.vstack()"
+title: "4.8.2 numpy.vstack()"
 ---
 
-# 4.6.2 numpy.vstack()
+# 4.8.2 numpy.vstack()
 
 ## 4.6.2 numpy.vstack()
 

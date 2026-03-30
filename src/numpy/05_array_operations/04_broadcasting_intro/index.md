@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.3.4 브로드캐스팅 개요"
+title: "4.5.4 브로드캐스팅 개요"
 ---
 
-# 4.3.4 브로드캐스팅(Broadcasting) 개요
+# 4.5.4 브로드캐스팅(Broadcasting) 개요
 
 ![브로드캐스팅 개념도 웹툰](./img/broadcast_intro_webtoon.png)
 

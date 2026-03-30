@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.3 numpy.hstack()"
+title: "4.8.3 numpy.hstack()"
 ---
 
-# 4.6.3 numpy.hstack()
+# 4.8.3 numpy.hstack()
 
 ## 4.6.3 numpy.hstack()
 

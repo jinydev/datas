@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.2.6 원소가 모두 0인 배열을 생성하는 zeros()"
+title: "4.4.6 원소가 모두 0인 배열을 생성하는 zeros()"
 ---
 
-# 4.2.6 내장함수 zeros()와 ones(), empty() 
+# 4.4.6 내장함수 zeros()와 ones(), empty()
 
 
 ## 영행렬(Zero Matrix)의 수학적 의미와 활용

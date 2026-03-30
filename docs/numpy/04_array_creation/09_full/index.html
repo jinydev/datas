@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>4.2.9 원소가 모두 특정 값인 배열을 만드는 full()</title>
-  <meta name="title" content="4.2.9 원소가 모두 특정 값인 배열을 만드는 full()" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="4.2.9 원소가 모두 특정 값인 배열을 만드는 full()"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>4.4.9 원소가 모두 특정 값인 배열을 만드는 full()</title>
+  <meta name="title" content="4.4.9 원소가 모두 특정 값인 배열을 만드는 full()" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="4.4.9 원소가 모두 특정 값인 배열을 만드는 full()"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/numpy/04_array_creation/09_full/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="4.2.9 원소가 모두 특정 값인 배열을 만드는 full()"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="4.4.9 원소가 모두 특정 값인 배열을 만드는 full()"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="4.2.9 원소가 모두 특정 값인 배열을 만드는 full()" />
+<meta property="og:title" content="4.4.9 원소가 모두 특정 값인 배열을 만드는 full()" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="4.2.9 원소가 모두 특정 값인 배열을 만드는 full()" />
+<meta property="twitter:title" content="4.4.9 원소가 모두 특정 값인 배열을 만드는 full()" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"4.2.9 원소가 모두 특정 값인 배열을 만드는 full()","url":"https://datas.jiny.dev/numpy/04_array_creation/09_full/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"4.4.9 원소가 모두 특정 값인 배열을 만드는 full()","url":"https://datas.jiny.dev/numpy/04_array_creation/09_full/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1004,14 +1004,14 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">4.2.9 원소가 모두 특정 값인 배열을 만드는 full()</li>
+        <li class="breadcrumb-item active" aria-current="page">4.4.9 원소가 모두 특정 값인 배열을 만드는 full()</li>
         
         
         
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h1 id="429-원소가-모두-특정-값인-배열을-만드는-full">4.2.9 원소가 모두 특정 값인 배열을 만드는 full()</h1>
+            <h1 id="449-원소가-모두-특정-값인-배열을-만드는-full">4.4.9 원소가 모두 특정 값인 배열을 만드는 full()</h1>
 
 <p><img src="./img/full_concept_webtoon.png" alt="full 개념도 웹툰" /></p>
 
@@ -1021,7 +1021,9 @@
 </blockquote>
 
 <p>앞서 배운 <code class="language-plaintext highlighter-rouge">zeros</code>는 <code class="language-plaintext highlighter-rouge">0</code>으로 칠하고, <code class="language-plaintext highlighter-rouge">ones</code>는 <code class="language-plaintext highlighter-rouge">1</code>로 칠하는 전용 도구였습니다.
-하지만 항상 0이나 1만 필요한 것은 아닙니다. <strong>“이 표를 전부 행운의 숫자 7로 채워줘!”</strong>, <strong>“모든 칸을 ‘비어있음(-1)’ 상태로 한 번에 세팅해 줘!”</strong>와 같이, 내가 원하는 특정한 값 하나로 거대한 메모리 공간을 단숨에 도배하고 싶을 때 사용하는 ‘강력한 만능 도장기’가 바로 <code class="language-plaintext highlighter-rouge">np.full()</code>입니다.</p>
+하지만 항상 0이나 1만 필요한 것은 아닙니다.</p>
+
+<p><strong>“이 표를 전부 행운의 숫자 7로 채워줘!”</strong>, <strong>“모든 칸을 ‘비어있음(-1)’ 상태로 한 번에 세팅해 줘!”</strong>와 같이, 내가 원하는 특정한 값 하나로 거대한 메모리 공간을 단숨에 도배하고 싶을 때 사용하는 ‘강력한 만능 도장기’가 바로 <code class="language-plaintext highlighter-rouge">np.full()</code>입니다.</p>
 
 <p><img src="./img/full_animation.svg" alt="full() 애니메이션 동작 설명" /></p>
 

@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.2.2 numpy의 내장함수 arange() 개요"
+title: "4.4.2 numpy의 내장함수 arange() 개요"
 ---
 
-# 4.2.2 내장함수 arange()와 linspace()
+# 4.4.2 내장함수 arange()와 linspace()
 
 ## 4.2.2 numpy의 내장함수 arange() 개요
 

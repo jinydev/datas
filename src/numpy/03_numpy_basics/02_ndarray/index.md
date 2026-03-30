@@ -1,6 +1,6 @@
 ---
 layout: numpy
-title: "3.2 다차원 배열 자료형 ndarray"
+title: "4.3.2 다차원 배열 자료형 ndarray"
 ---
 
 # 4.3.2 다차원 배열 자료형 ndarray

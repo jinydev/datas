@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.2.11 내장함수 zeros_like()와 ones_like(), full_like()"
+title: "4.4.11 내장함수 zeros_like()와 ones_like(), full_like()"
 ---
 
-# 4.2.11 형태를 훔치는 복제 마법 _like() 형제들
+# 4.4.11 형태를 훔치는 복제 마법 _like() 형제들
 
 
 ## `_like()` 함수의 프로그래밍적 의미와 활용

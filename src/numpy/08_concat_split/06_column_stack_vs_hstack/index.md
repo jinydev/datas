@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.6 column_stack()과 hstack()"
+title: "4.8.6 column_stack()과 hstack()"
 ---
 
-# 4.6.6 column_stack()과 hstack()
+# 4.8.6 column_stack()과 hstack()
 
 **[비유로 이해하기: 데이터 기둥 세워 표(Table) 완성하기]**
 1차원 리스트 데이터들(예: 학생들의 아이디 목록, 수학 점수 목록 등)을 바닥에 눕혀두지 않고, 마치 꼿꼿한 **기둥(Column)**처럼 세운 다음 서로 옆으로 나란히 본드 붙이듯 합치는 기능입니다. 실무에서 여러 스칼라 값들을 하나의 2차원 표(DataFrame 꼴)로 만들 때 가장 요긴하게 쓰입니다.

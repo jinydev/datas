@@ -1,6 +1,6 @@
 ---
 layout: numpy
-title: "4.5.1 배열 형태 수정"
+title: "4.7.1 배열 형태 수정"
 ---
 
 # 4.7.1 배열 형태 변환과 전치(Transpose)

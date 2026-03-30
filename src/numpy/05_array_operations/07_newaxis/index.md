@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.3.7 상수 np.newaxis 활용해 두 배열의 브로드캐스팅"
+title: "4.5.7 상수 np.newaxis 활용해 두 배열의 브로드캐스팅"
 ---
 
-# 4.3.7 np.newaxis: 강제로 새로운 차원(축) 찔러넣기
+# 4.5.7 np.newaxis: 강제로 새로운 차원(축) 찔러넣기
 
 ![np.newaxis 마법의 챔버 웹툰](./img/newaxis_concept_webtoon.png)
 

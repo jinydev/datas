@@ -1,6 +1,6 @@
 ---
 layout: numpy
-title: "3.3 넘파이의 다양한 기본 자료형 (dtype)"
+title: "4.3.3 넘파이의 다양한 기본 자료형 (dtype)"
 ---
 
 # 4.3.3 다차원 배열의 자료형 (dtype)

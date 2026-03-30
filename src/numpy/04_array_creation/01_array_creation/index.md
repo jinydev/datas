@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.2.1 내장함수 array()로 ndarray 생성"
+title: "4.4.1 내장함수 array()로 ndarray 생성"
 ---
 
-# 4.1 내장함수 array()로 ndarray 생성
+# 4.4.1 내장함수 array()로 ndarray 생성
 
 ![다차원 배열 생성 공장](./img/array_creation.png)
 

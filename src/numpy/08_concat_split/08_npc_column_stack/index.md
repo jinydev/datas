@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.8 np.c_[]와 np.column_stack()"
+title: "4.8.8 np.c_[]와 np.column_stack()"
 ---
 
-# 4.6.8 np.c_[]와 np.column_stack()
+# 4.8.8 np.c_[]와 np.column_stack()
 
 **[실전 꿀팁]: 마법의 단축키 `np.c_` (Column-wise 기둥 세우기)**
 `np.column_stack`과 완전히 같은 기능을 하지만, 이름이 너무 길어 쓰기 귀찮을 때 사용하는 초고수용 단축 문법입니다. 괄호 `()` 대신 대괄호 `[]`를 쓴다는 점이 특이하며, **C**는 Column(기둥)을 뜻합니다.

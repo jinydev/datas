@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.5 배열 결합 연산 concatenate()와 stack()"
+title: "4.8.5 배열 결합 연산 concatenate()와 stack()"
 ---
 
-# 4.6.5 배열 결합 연산 concatenate()와 stack()
+# 4.8.5 배열 결합 연산 concatenate()와 stack()
 
 ## ① numpy.concatenate()
 

@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.4 배열 결합 연산 column_stack()과 row_stack()"
+title: "4.8.4 배열 결합 연산 column_stack()과 row_stack()"
 ---
 
-# 4.6.4 배열 결합 연산 column_stack()과 row_stack()
+# 4.8.4 배열 결합 연산 column_stack()과 row_stack()
 
 ## ① numpy.column_stack()
 

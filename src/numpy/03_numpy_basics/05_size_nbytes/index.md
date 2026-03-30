@@ -1,6 +1,6 @@
 ---
 layout: numpy
-title: "3.5 이미지 배열의 크기 확인 (.size, .nbytes)"
+title: "4.3.5 이미지 배열의 크기 확인 (.size, .nbytes)"
 ---
 
 # 4.3.5 배열의 물리적 크기와 메모리 용량 확인

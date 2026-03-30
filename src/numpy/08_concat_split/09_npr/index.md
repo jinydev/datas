@@ -1,9 +1,9 @@
 ---
 layout: numpy
-title: "4.6.9 np.r_[]"
+title: "4.8.9 np.r_[]"
 ---
 
-# 4.6.9 np.r_[]
+# 4.8.9 np.r_[]
 
 ## ① np.r_[] 개요
 
