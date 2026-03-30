@@ -1013,17 +1013,20 @@
         <div class="bd-content ps-lg-4">
             <h1 id="4210-초기화되지-않은-쓰레기값-배열을-생성하는-empty">4.2.10 초기화되지 않은 쓰레기값 배열을 생성하는 empty()</h1>
 
-<p><img src="./img/empty_concept_webtoon.png" alt="empty 개념도 웹툰" /></p>
-
 <h2 id="npempty의-프로그래밍적-의미와-활용">np.empty()의 프로그래밍적 의미와 활용</h2>
 <blockquote>
   <p>값을 지우는 작업은 패스! 메모리 껍데기 상자만 빛의 속도로 확보하는 함수</p>
 </blockquote>
 
-<p>지금까지 배운 <code class="language-plaintext highlighter-rouge">zeros()</code>, <code class="language-plaintext highlighter-rouge">ones()</code>, <code class="language-plaintext highlighter-rouge">full()</code>은 배열을 만들고 나서, 그 칸마다 <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">7</code> 같은 숫자를 예쁘게 새로 칠해 넣는 <strong>‘초기화(Initialization)’</strong> 작업을 거칩니다. 
-하지만 데이터가 수억 개에 달할 정도로 거대하고 1분 1초가 급한 상황에서, 어차피 우리가 1초 뒤에 새로운 이미지 픽셀 데이터나 센서 데이터로 배열 <strong>전체를 완전히 덮어씌울(Overwrite) 거라면</strong>, 굳이 처음부터 <code class="language-plaintext highlighter-rouge">0</code>이나 <code class="language-plaintext highlighter-rouge">1</code>로 예쁘게 지우는 시간조차 아깝지 않을까요?</p>
+<p>지금까지 배운 <code class="language-plaintext highlighter-rouge">zeros()</code>, <code class="language-plaintext highlighter-rouge">ones()</code>, <code class="language-plaintext highlighter-rouge">full()</code>은 배열을 만들고 나서, 그 칸마다 <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">7</code> 같은 숫자를 예쁘게 새로 칠해 넣는 <strong>‘초기화(Initialization)’</strong> 작업을 거칩니다.</p>
 
-<p>이럴 때 쓰는 극강의 속도 최적화 도구가 바로 <strong><code class="language-plaintext highlighter-rouge">np.empty()</code></strong>입니다. 이 함수는 내용을 무언가로 지우거나 채우는 시간을 전부 건너뛰고, 컴퓨터 메모리 어딘가에 남아있던 <strong>‘과거 삭제된 데이터의 파편(쓰레기값, Garbage Value)’</strong>을 그대로 둔 채 빈 껍데기 상자판만 번개처럼 빠르게 던져줍니다.</p>
+<p><img src="./img/empty_concept_webtoon.png" alt="empty 개념도 웹툰" /></p>
+
+<p>하지만 데이터가 수억 개에 달할 정도로 거대하고 1분 1초가 급한 상황에서, 어차피 우리가 1초 뒤에 새로운 이미지 픽셀 데이터나 센서 데이터로 배열 <strong>전체를 완전히 덮어씌울(Overwrite) 거라면</strong>, 굳이 처음부터 <code class="language-plaintext highlighter-rouge">0</code>이나 <code class="language-plaintext highlighter-rouge">1</code>로 예쁘게 지우는 시간조차 아깝지 않을까요?</p>
+
+<p>이럴 때 쓰는 극강의 속도 최적화 도구가 바로 <strong><code class="language-plaintext highlighter-rouge">np.empty()</code></strong>입니다.</p>
+
+<p>이 함수는 내용을 무언가로 지우거나 채우는 시간을 전부 건너뛰고, 컴퓨터 메모리 어딘가에 남아있던 <strong>‘과거 삭제된 데이터의 파편(쓰레기값, Garbage Value)’</strong>을 그대로 둔 채 빈 껍데기 상자판만 번개처럼 빠르게 던져줍니다.</p>
 
 <p><img src="./img/empty_animation.svg" alt="empty() 애니메이션 동작 설명" /></p>
 

@@ -1011,184 +1011,117 @@
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h1 id="436-2차원-배열의-브로드캐스팅">4.3.6 2차원 배열의 브로드캐스팅</h1>
+            <h1 id="436-다차원-배열의-쌍방향-차원-확장-브로드캐스팅">4.3.6 다차원 배열의 쌍방향 차원 확장 브로드캐스팅</h1>
 
-<h2 id="-하나의-배열이-1차원으로-다른-배열-열수와-같은-구조의-브로드캐스팅">① 하나의 배열이 1차원으로 다른 배열 열수와 같은 구조의 브로드캐스팅</h2>
+<p><img src="./img/d_broadcast_webtoon.png" alt="다차원 브로드캐스팅 작동 웹툰 일러스트" /></p>
 
-<p>다음 모양 (3, 3)의 배열 <code class="language-plaintext highlighter-rouge">x</code>가 있다.</p>
+<h2 id="부족한-모양과-차원을-스스로-복제하는-마법-시스템">부족한 모양과 차원을 스스로 복제하는 마법 시스템</h2>
+<p>앞서 본 스칼라 점(1차원) 뿐만 아니라 선 모형을 가진 1D 다차원 배열이나 열 벡터조차도 서로 모양이 다르다면 Numpy는 에러를 뿜는 게 아니라 스스로 모양을 맞추기 위해 <strong>동시에 부족한 축 방향으로 자기 자신을 복제 확장(Broadcasting)</strong> 하는 마법을 보여줍니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
+<p>이것만 알면 어떤 복잡한 행렬끼리의 연산일지라도 아주 편하게 코딩할 수 있습니다. 어떻게 늘어나는지 3가지 케이스를 살펴봅시다!</p>
 
-<span class="n">x</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<h2 id="-가로선-배열1d이-거대한-사분면2d-면적-깊숙이-하강침투-복제">① 가로선 배열(1D)이 거대한 사분면(2D) 면적 깊숙이 하강침투 복제</h2>
+<p>먼저 아주 큰 3행 3열짜리 배열이 있고, 그 배열의 너비(칸 수 <code class="language-plaintext highlighter-rouge">3</code>)에 정확히 딱 맞는 가로줄 1차원 배열이 있다고 가정해 봅니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 거대한 3x3 2차원 공간 배열 x
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">x</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
        [4, 5, 6],
        [7, 8, 9]])
 </code></pre></div></div>
 
-<p>다음 배열 <code class="language-plaintext highlighter-rouge">y</code>는 1차원 배열로 모양 (3, )이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 옆으로 세 칸 누워있는 1차원 배열 y
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-1,  0,  1])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-1,  0,  1])
 </code></pre></div></div>
 
-<p>차원이 다른 위 두 배열 <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">y</code>를 사용해 산술 곱하기 연산 <code class="language-plaintext highlighter-rouge">x * y</code>를 수행해 보자. 배열 <code class="language-plaintext highlighter-rouge">y</code>는 원소가 3개로 열이 배열 <code class="language-plaintext highlighter-rouge">x</code>와 같다. 배열 <code class="language-plaintext highlighter-rouge">y</code>를 2차원으로 그대로 아래쪽으로 브로드캐스트(전파)해 늘리면 배열 <code class="language-plaintext highlighter-rouge">x</code>와 <code class="language-plaintext highlighter-rouge">y</code>는 모양이 (3, 3)으로 같아 산술 연산이 가능해진다.</p>
+<p>두 배열 <code class="language-plaintext highlighter-rouge">x</code> (3x3) 와 <code class="language-plaintext highlighter-rouge">y</code> (3칸) 곱셈을 수행하면 어떻게 될까요? Numpy는 가로 길이가 서로 <code class="language-plaintext highlighter-rouge">3</code>으로 일치함을 인지하고 1차원 <code class="language-plaintext highlighter-rouge">y</code>를 위에서 아랫방향으로 복제합니다.
+<code class="language-plaintext highlighter-rouge">[-1, 0, 1]</code> 선분 하나가 마치 도장 찍듯이 아래로 <code class="language-plaintext highlighter-rouge">쿵, 쿵, 쿵</code> 세 번 찍혀서 <code class="language-plaintext highlighter-rouge">x</code>와 동일한 <code class="language-plaintext highlighter-rouge">3x3</code> 모습으로 스스로를 위조한 뒤 계산에 임합니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y가 3줄로 아래로 복제된 뒤 1:1 아다마르 곱 수행 
+</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[-1,  0,  3],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[-1,  0,  3],
        [-4,  0,  6],
        [-7,  0,  9]])
 </code></pre></div></div>
 
-<p>물론 더하기도 잘 수행된다.</p>
+<h2 id="-세로-기둥-배열열-벡터이-우측으로-옆구리-확장-펀치-복제">② 세로 기둥 배열(열 벡터)이 우측으로 옆구리 확장 펀치 복제</h2>
+<p>이번에는 3층 탑처럼 세로축으로 쌓여있는 좁은 2차원 열 벡터의 경우입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 0,  2,  4],
-       [ 3,  5,  7],
-       [ 6,  8, 10]])
-</code></pre></div></div>
-
-<h2 id="-하나의-배열이-1차원으로-다른-배열-행수와-같은-구조의-브로드캐스팅">② 하나의 배열이 1차원으로 다른 배열 행수와 같은 구조의 브로드캐스팅</h2>
-
-<p>다음 모양 (3, 3)의 배열 <code class="language-plaintext highlighter-rouge">x</code>가 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">x</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-</code></pre></div></div>
-
-<p>다음 배열 <code class="language-plaintext highlighter-rouge">y</code>는 2차원 배열로 모양 (3, 1)이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 세로로 3층이 쌓인 (3, 1) 모양의 배열 y
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[3],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[3],
        [6],
        [9]])
 </code></pre></div></div>
 
-<p>이제, 산술 나누기 연산 <code class="language-plaintext highlighter-rouge">x / y</code>를 수행해 보자. 배열 <code class="language-plaintext highlighter-rouge">y</code>는 원소가 3개로 열이 하나며 배열 <code class="language-plaintext highlighter-rouge">x</code>와 행 수가 같다. 2차원인 배열 <code class="language-plaintext highlighter-rouge">y</code>를 그대로 오른쪽으로 브로드캐스트(전파)해 늘리면 배열 <code class="language-plaintext highlighter-rouge">x</code>와 <code class="language-plaintext highlighter-rouge">y</code>는 모양이 (3, 3)으로 같아 산술 연산이 가능해진다.</p>
+<p>거대한 3x3 <code class="language-plaintext highlighter-rouge">x</code>에 <code class="language-plaintext highlighter-rouge">x / y</code> 나누기 연산을 요구하면 세로 기둥 탑 <code class="language-plaintext highlighter-rouge">y</code>는 자신의 우측 옆구리에 빈 공간을 메우기 위해 오른쪽 방향을 향해 <code class="language-plaintext highlighter-rouge">탁, 탁, 탁</code> 자신의 복제본을 기둥째로 박아 넣으며 넓어집니다. <code class="language-plaintext highlighter-rouge">(3, 1)</code> 배열 안의 한계점 <code class="language-plaintext highlighter-rouge">1</code>은 늘리기가 아주 쉬운 고무줄 포인트이기 때문입니다!</p>
 
-<p>다음 코드는 <code class="language-plaintext highlighter-rouge">x / y</code>의 결과로 나누기 연산이 잘 수행된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y가 우측으로 복제되어 3x3 모양을 만든 뒤 1:1 나눗셈
+</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.33333333, 0.66666667, 1.        ],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.33333333, 0.66666667, 1.        ],
        [0.66666667, 0.83333333, 1.        ],
        [0.77777778, 0.88888889, 1.        ]])
 </code></pre></div></div>
 
-<p>물론 빼기도 잘 수행된다.</p>
+<h2 id="-쌍방향-진격-가로-배열과-세로-기둥-배열의-전면-교전">③ 쌍방향 진격! 가로 배열과 세로 기둥 배열의 전면 교전</h2>
+<p>가장 멋진 마법이 구현되는 백미입니다. 만약 <strong>넓은 빈 공간을 두고 가로줄 1차원 배열과 세로줄 1차원 배열끼리</strong> 격돌하면 무슨 일이 벌어질까요?</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[-2, -1,  0],
-       [-2, -1,  0],
-       [-2, -1,  0]])
-</code></pre></div></div>
+<p><img src="./img/d_broadcasting_animation.svg" alt="다방면 배열 브로드캐스팅 애니메이션" /></p>
 
-<h2 id="-행-또는-열이-1인-두-배열의-브로드캐스팅">③ 행 또는 열이 1인 두 배열의 브로드캐스팅</h2>
-
-<p>다음 모양 (3, )의 1차원 배열 <code class="language-plaintext highlighter-rouge">x</code>가 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 옆으로 세 칸 누워있는 (3,) 배열 x
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">x</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1, 2, 3])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1, 2, 3])
 </code></pre></div></div>
 
-<p>다음 배열 <code class="language-plaintext highlighter-rouge">y</code>는 2차원 배열로 모양 (3, 1)이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 위아래 세 칸 쌓여있는 (3, 1) 배열 y
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1],
        [2],
        [3]])
 </code></pre></div></div>
 
-<p>이제, 산술 곱하기 연산 <code class="language-plaintext highlighter-rouge">x * y</code>를 수행해 보자. 배열 <code class="language-plaintext highlighter-rouge">x</code>는 행이 1이며 배열 <code class="language-plaintext highlighter-rouge">y</code>는 열이 1이다. 또한, 배열 <code class="language-plaintext highlighter-rouge">x</code>의 열 수와 배열 <code class="language-plaintext highlighter-rouge">y</code>의 행 수는 모두 3으로 같다. 배열 <code class="language-plaintext highlighter-rouge">x</code>를 2차원으로 그대로 아래쪽으로 브로드캐스트(전파)해 늘리고, 배열 <code class="language-plaintext highlighter-rouge">y</code>를 2차원으로 그대로 오른쪽으로 브로드캐스트(전파)해 늘리면 배열 <code class="language-plaintext highlighter-rouge">x</code>와 <code class="language-plaintext highlighter-rouge">y</code>는 모양이 (3, 3)으로 같아 산술 연산이 가능해진다.</p>
+<p>곱셈 구구식을 돌리듯 <code class="language-plaintext highlighter-rouge">x * y</code>를 입력하면, <code class="language-plaintext highlighter-rouge">x</code>는 텅 빈 위아래를 채우기 위해 <strong>수직 하강 복제</strong>를 하고, <code class="language-plaintext highlighter-rouge">y</code>는 텅 빈 양옆을 채우기 위해 <strong>측면 분신술</strong>을 사용합니다! 결국 둘 다 거대한 (3, 3)으로 변신하여 완벽한 계산 테이블을 장악하게 됩니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># x는 아래로 세 번 늘어나고, y는 우측으로 세 번 늘어납니다! -&gt; 그 결과 3x3 곱셈 테이블!
+</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
        [2, 4, 6],
        [3, 6, 9]])
 </code></pre></div></div>
 
-<p>물론, 빼기도 잘 수행된다.</p>
+<p>모양이 극단적으로 다를 경우에도 이 마법은 통합니다! 세로 4층 탑 (4, 1) 배열과 가로 2칸짜리 (2,) 배열이 만나면? <strong>둘은 합심해서 거대한 (4, 2) 2차원 사분면을 만들어냅니다.</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 4층 탑 형태 -&gt; 2열짜리 우측 확장을 준비
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                    <span class="c1"># 2칸 가로선 형태 -&gt; 4층짜리 하강 확장을 준비
+</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 0,  1,  2],
-       [-1,  0,  1],
-       [-2, -1,  0]])
-</code></pre></div></div>
-
-<p>다음 모양 (4, 1)의 2차원 배열 <code class="language-plaintext highlighter-rouge">x</code>가 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">x</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0],
-       [3],
-       [6],
-       [9]])
-</code></pre></div></div>
-
-<p>다음 배열 <code class="language-plaintext highlighter-rouge">y</code>는 1차원 배열로 모양 (2, )이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1, 2])
-</code></pre></div></div>
-
-<p>산술 곱하기 연산 <code class="language-plaintext highlighter-rouge">x * y</code>를 수행해 보자. 배열 <code class="language-plaintext highlighter-rouge">x</code>는 열이 1이며 배열 <code class="language-plaintext highlighter-rouge">y</code>는 행이 1이다. 배열 <code class="language-plaintext highlighter-rouge">x</code>를 2차원으로 그대로 오른쪽으로 브로드캐스트(전파)해 늘리고 배열 <code class="language-plaintext highlighter-rouge">y</code>를 2차원으로 그대로 아래쪽으로 브로드캐스트(전파)해 늘리면 배열 <code class="language-plaintext highlighter-rouge">x</code>와 <code class="language-plaintext highlighter-rouge">y</code>는 모양이 (4, 2)으로 같아 산술 연산이 가능해진다.</p>
-
-<p>다음 코드는 연산 <code class="language-plaintext highlighter-rouge">x * y</code>의 결과로 곱하기 연산이 잘 수행된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 0,  0],
-       [ 3,  6],
-       [ 6, 12],
-       [ 9, 18]])
-</code></pre></div></div>
-
-<p>물론 더하기도 잘 수행된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 1,  2],
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 1,  2],
        [ 4,  5],
        [ 7,  8],
        [10, 11]])

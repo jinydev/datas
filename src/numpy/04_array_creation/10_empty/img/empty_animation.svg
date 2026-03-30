@@ -36,36 +36,38 @@
   <line x1="400" y1="90" x2="400" y2="120" class="speed-lines" />
 
   <!-- 3x3 Grid -->
-  <g transform="translate(165, 120)" class="grid-group">
-    <!-- Row 0 -->
-    <rect x="0" y="0" width="90" height="50" class="grid-cell" />
-    <text x="45" y="25" class="grid-text" fill="#e74c3c">6.2e-307</text>
-    
-    <rect x="90" y="0" width="90" height="50" class="grid-cell" />
-    <text x="135" y="25" class="grid-text" fill="#9b59b6">1.4e-311</text>
+  <g transform="translate(165, 120)">
+    <g class="grid-group">
+      <!-- Row 0 -->
+      <rect x="0" y="0" width="90" height="50" class="grid-cell" />
+      <text x="45" y="25" class="grid-text" fill="#e74c3c">6.2e-307</text>
+      
+      <rect x="90" y="0" width="90" height="50" class="grid-cell" />
+      <text x="135" y="25" class="grid-text" fill="#9b59b6">1.4e-311</text>
 
-    <rect x="180" y="0" width="90" height="50" class="grid-cell" />
-    <text x="225" y="25" class="grid-text" fill="#2ecc71">0.0</text>
+      <rect x="180" y="0" width="90" height="50" class="grid-cell" />
+      <text x="225" y="25" class="grid-text" fill="#2ecc71">0.0</text>
 
-    <!-- Row 1 -->
-    <rect x="0" y="50" width="90" height="50" class="grid-cell" />
-    <text x="45" y="75" class="grid-text" fill="#34495e">-4193.12</text>
-    
-    <rect x="90" y="50" width="90" height="50" class="grid-cell" />
-    <text x="135" y="75" class="grid-text" fill="#e67e22">4.9e-324</text>
+      <!-- Row 1 -->
+      <rect x="0" y="50" width="90" height="50" class="grid-cell" />
+      <text x="45" y="75" class="grid-text" fill="#34495e">-4193.12</text>
+      
+      <rect x="90" y="50" width="90" height="50" class="grid-cell" />
+      <text x="135" y="75" class="grid-text" fill="#e67e22">4.9e-324</text>
 
-    <rect x="180" y="50" width="90" height="50" class="grid-cell" />
-    <text x="225" y="75" class="grid-text" fill="#1abc9c">10726932</text>
+      <rect x="180" y="50" width="90" height="50" class="grid-cell" />
+      <text x="225" y="75" class="grid-text" fill="#1abc9c">10726932</text>
 
-    <!-- Row 2 -->
-    <rect x="0" y="100" width="90" height="50" class="grid-cell" />
-    <text x="45" y="125" class="grid-text">-0.00018</text>
-    
-    <rect x="90" y="100" width="90" height="50" class="grid-cell" />
-    <text x="135" y="125" class="grid-text" fill="#e74c3c">1.6e-306</text>
+      <!-- Row 2 -->
+      <rect x="0" y="100" width="90" height="50" class="grid-cell" />
+      <text x="45" y="125" class="grid-text">-0.00018</text>
+      
+      <rect x="90" y="100" width="90" height="50" class="grid-cell" />
+      <text x="135" y="125" class="grid-text" fill="#e74c3c">1.6e-306</text>
 
-    <rect x="180" y="100" width="90" height="50" class="grid-cell" />
-    <text x="225" y="125" class="grid-text">0.0</text>
+      <rect x="180" y="100" width="90" height="50" class="grid-cell" />
+      <text x="225" y="125" class="grid-text">0.0</text>
+    </g>
   </g>
 
 </svg>

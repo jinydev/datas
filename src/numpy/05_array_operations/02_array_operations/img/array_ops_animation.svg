@@ -1,0 +1,78 @@
+<svg width="600" height="350" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #7f8c8d; }
+    .code { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #e74c3c; background: #fdf2e9; }
+    
+    .grid-cell-a { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; }
+    .grid-text-a { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #e67e22; text-anchor: middle; alignment-baseline: central; }
+    
+    .grid-cell-b { fill: #e8f8f5; stroke: #1abc9c; stroke-width: 2; rx: 5; }
+    .grid-text-b { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #1abc9c; text-anchor: middle; alignment-baseline: central; }
+    
+    .grid-cell-r { fill: #ebf5fb; stroke: #2980b9; stroke-width: 3; rx: 5; }
+    .grid-text-r { font-family: 'Courier New', monospace; font-size: 26px; font-weight: bold; fill: #2980b9; text-anchor: middle; alignment-baseline: central; opacity: 0; }
+    
+    .operator { font-family: 'Courier New', monospace; font-size: 30px; font-weight: bold; fill: #95a5a6; }
+
+    @keyframes drop-result {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .res { animation: drop-result 3s infinite; }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="300" y="40" class="title" text-anchor="middle">같은 모양(Shape)의 두 배열 간의 1:1 하이파이브 연산!</text>
+  <text x="300" y="70" class="code" text-anchor="middle">A * B (아다마르 요소별 곱셈)</text>
+
+  <!-- Array A -->
+  <g transform="translate(100, 110)">
+    <text x="80" y="-15" class="subtitle" text-anchor="middle" fill="#e67e22">Array A</text>
+    <rect x="0" y="0" width="50" height="50" class="grid-cell-a" />
+    <text x="25" y="25" class="grid-text-a">1</text>
+    <rect x="55" y="0" width="50" height="50" class="grid-cell-a" />
+    <text x="80" y="25" class="grid-text-a">2</text>
+    <rect x="110" y="0" width="50" height="50" class="grid-cell-a" />
+    <text x="135" y="25" class="grid-text-a">3</text>
+  </g>
+
+  <!-- Multiply Sign -->
+  <text x="300" y="145" class="operator" text-anchor="middle">*</text>
+
+  <!-- Array B -->
+  <g transform="translate(340, 110)">
+    <text x="80" y="-15" class="subtitle" text-anchor="middle" fill="#1abc9c">Array B</text>
+    <rect x="0" y="0" width="50" height="50" class="grid-cell-b" />
+    <text x="25" y="25" class="grid-text-b">10</text>
+    <rect x="55" y="0" width="50" height="50" class="grid-cell-b" />
+    <text x="80" y="25" class="grid-text-b">20</text>
+    <rect x="110" y="0" width="50" height="50" class="grid-cell-b" />
+    <text x="135" y="25" class="grid-text-b">30</text>
+  </g>
+
+  <!-- Equals and Arrows -->
+  <g transform="translate(260, 180)">
+    <path d="M-135,0 L-135,20 L30,40" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="4" />
+    <path d="M105,0 L105,20 L50,40" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="4" />
+    
+    <path d="M-80,0 L-80,20 L40,40" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="4" />
+    <path d="M160,0 L160,20 L60,40" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="4" />
+
+    <text x="40" y="10" class="operator" text-anchor="middle">||</text>
+    <text x="40" y="25" class="operator" text-anchor="middle">V</text>
+  </g>
+
+  <!-- Result Array -->
+  <g transform="translate(220, 240)">
+    <text x="80" y="-15" class="subtitle" text-anchor="middle" fill="#2980b9">Result Array</text>
+    <rect x="0" y="0" width="50" height="50" class="grid-cell-r" />
+    <text x="25" y="25" class="grid-text-r res">10</text>
+    <rect x="55" y="0" width="50" height="50" class="grid-cell-r" />
+    <text x="80" y="25" class="grid-text-r res">40</text>
+    <rect x="110" y="0" width="50" height="50" class="grid-cell-r" />
+    <text x="135" y="25" class="grid-text-r res">90</text>
+  </g>
+
+</svg>

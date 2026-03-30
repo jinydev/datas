@@ -1,0 +1,82 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 22px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #7f8c8d; }
+    
+    .grid-cell-a { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; }
+    .grid-text-a { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #e67e22; text-anchor: middle; alignment-baseline: central; }
+    
+    .grid-cell-s { fill: #e8f8f5; stroke: #1abc9c; stroke-width: 2; rx: 5; }
+    .grid-text-s { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #1abc9c; text-anchor: middle; alignment-baseline: central; }
+    
+    .grid-cell-ghost { fill: #f9fcfb; stroke: #1abc9c; stroke-width: 2; rx: 5; stroke-dasharray: 4; opacity: 0; }
+    
+    .operator { font-family: 'Courier New', monospace; font-size: 26px; font-weight: bold; fill: #95a5a6; }
+
+    @keyframes pop-down {
+      0% { opacity: 0; transform: translateY(-20px); }
+      15% { opacity: 1; transform: translateY(0); }
+      85% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(0); }
+    }
+    
+    @keyframes stretch-bar {
+      0% { width: 50px; }
+      15% { width: 50px; }
+      30% { width: 190px; }
+      85% { width: 190px; }
+      100% { width: 50px; }
+    }
+
+    .ghost1 { animation: pop-down 4s infinite; animation-delay: 1.5s; }
+    .ghost2 { animation: pop-down 4s infinite; animation-delay: 1.8s; }
+    .stretch { animation: stretch-bar 4s infinite; }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="300" y="40" class="title" text-anchor="middle">스칼라(1개)가 배열 길이에 맞춰 스스로 쫙쫙 복제됨!</text>
+
+  <!-- Array A -->
+  <g transform="translate(180, 80)">
+    <text x="-50" y="25" class="subtitle" text-anchor="end" fill="#e67e22">배열 A</text>
+    <rect x="0" y="0" width="50" height="50" class="grid-cell-a" />
+    <text x="25" y="25" class="grid-text-a">3</text>
+    <rect x="70" y="0" width="50" height="50" class="grid-cell-a" />
+    <text x="95" y="25" class="grid-text-a">4</text>
+    <rect x="140" y="0" width="50" height="50" class="grid-cell-a" />
+    <text x="165" y="25" class="grid-text-a">5</text>
+  </g>
+
+  <!-- Operator -->
+  <g transform="translate(180, 140)">
+    <text x="25" y="10" class="operator" text-anchor="middle">+</text>
+    <text x="95" y="10" class="operator" text-anchor="middle">+</text>
+    <text x="165" y="10" class="operator" text-anchor="middle">+</text>
+  </g>
+
+  <!-- Scalar B -->
+  <g transform="translate(180, 170)">
+    <text x="-50" y="25" class="subtitle" text-anchor="end" fill="#1abc9c">스칼라 B</text>
+    
+    <!-- Background stretch box -->
+    <rect x="0" y="0" height="50" fill="#e8f8f5" stroke="#1abc9c" stroke-width="2" rx="5" class="stretch" stroke-dasharray="4" opacity="0.5" />
+    
+    <rect x="0" y="0" width="50" height="50" class="grid-cell-s" />
+    <text x="25" y="25" class="grid-text-s">2</text>
+    
+    <g class="ghost1" transform="translate(70, 0)">
+      <rect x="0" y="0" width="50" height="50" class="grid-cell-ghost" />
+      <text x="25" y="25" class="grid-text-s" fill="#16a085">2</text>
+    </g>
+    
+    <g class="ghost2" transform="translate(140, 0)">
+      <rect x="0" y="0" width="50" height="50" class="grid-cell-ghost" />
+      <text x="25" y="25" class="grid-text-s" fill="#16a085">2</text>
+    </g>
+  </g>
+
+  <g transform="translate(300, 260)">
+    <text x="0" y="0" class="subtitle" fill="#7f8c8d" text-anchor="middle">스칼라 '2'가 [2, 2, 2]로 변신하여 1:1 위치를 맞춤!</text>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 22px; font-weight: bold; fill: #2c3e50; }
+    
+    .grid-cell { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; }
+    .grid-text { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #e67e22; text-anchor: middle; alignment-baseline: central; }
+    
+    .grid-cell-new { fill: #e8f8f5; stroke: #1abc9c; stroke-width: 2; rx: 5; }
+    .grid-text-new { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #1abc9c; text-anchor: middle; alignment-baseline: central; }
+    
+    .machine { fill: #34495e; stroke: #2c3e50; stroke-width: 3; rx: 10; }
+    .machine-text { font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; fill: #fff; text-anchor: middle; alignment-baseline: central; }
+    
+    .bracket { font-family: 'Courier New', monospace; font-size: 40px; font-weight: bold; fill: #95a5a6; }
+
+    @keyframes rotate-stand {
+      0% { transform: translateY(0) rotate(0); opacity: 0; }
+      10% { opacity: 1; transform: translateY(0) rotate(0); }
+      30% { transform: translateY(0) rotate(0); }
+      70% { transform: translateY(-40px) rotate(90deg); }
+      90% { transform: translateY(-40px) rotate(90deg); opacity: 1; }
+      100% { transform: translateY(-40px) rotate(90deg); opacity: 0; }
+    }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="300" y="40" class="title" text-anchor="middle">np.newaxis : 차원의 벽을 뚫고 새로운 축을 주입하라!</text>
+
+  <!-- Input Array (1D) -->
+  <g transform="translate(50, 130)">
+    <text x="75" y="-20" style="font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #e67e22; text-anchor: middle;">1차원 (4, )</text>
+    
+    <text x="-15" y="20" class="bracket">[</text>
+    
+    <rect x="0" y="0" width="35" height="35" class="grid-cell" />
+    <text x="17.5" y="17.5" class="grid-text">0</text>
+    
+    <rect x="40" y="0" width="35" height="35" class="grid-cell" />
+    <text x="57.5" y="17.5" class="grid-text">10</text>
+    
+    <rect x="80" y="0" width="35" height="35" class="grid-cell" />
+    <text x="97.5" y="17.5" class="grid-text">20</text>
+    
+    <rect x="120" y="0" width="35" height="35" class="grid-cell" />
+    <text x="137.5" y="17.5" class="grid-text">30</text>
+
+    <text x="165" y="20" class="bracket">]</text>
+  </g>
+
+  <!-- Machine -->
+  <g transform="translate(250, 110)">
+    <rect x="0" y="0" width="160" height="70" class="machine" />
+    <text x="80" y="35" class="machine-text">[:, newaxis]</text>
+  </g>
+
+  <!-- Output Array (2D Vertical) -->
+  <g transform="translate(450, 60)">
+    <text x="70" y="-20" style="font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #1abc9c; text-anchor: middle;">2차원 (4, 1)</text>
+
+    <text x="-15" y="80" class="bracket">[</text>
+    <text x="10" y="20" class="bracket" style="font-size:25px">[</text>
+    <text x="10" y="60" class="bracket" style="font-size:25px">[</text>
+    <text x="10" y="100" class="bracket" style="font-size:25px">[</text>
+    <text x="10" y="140" class="bracket" style="font-size:25px">[</text>
+    
+    <rect x="25" y="0" width="45" height="35" class="grid-cell-new" />
+    <text x="47.5" y="17.5" class="grid-text-new">0</text>
+    
+    <rect x="25" y="40" width="45" height="35" class="grid-cell-new" />
+    <text x="47.5" y="57.5" class="grid-text-new">10</text>
+    
+    <rect x="25" y="80" width="45" height="35" class="grid-cell-new" />
+    <text x="47.5" y="97.5" class="grid-text-new">20</text>
+    
+    <rect x="25" y="120" width="45" height="35" class="grid-cell-new" />
+    <text x="47.5" y="137.5" class="grid-text-new">30</text>
+
+    <text x="85" y="20" class="bracket" style="font-size:25px">]</text>
+    <text x="85" y="60" class="bracket" style="font-size:25px">]</text>
+    <text x="85" y="100" class="bracket" style="font-size:25px">]</text>
+    <text x="85" y="140" class="bracket" style="font-size:25px">]</text>
+    <text x="105" y="80" class="bracket">]</text>
+  </g>
+
+  <!-- Moving Arrow -->
+  <g>
+    <path d="M220,145 L245,145 M415,145 L440,145" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="6" />
+  </g>
+
+  <g transform="translate(300, 260)">
+    <text x="0" y="0" style="font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #7f8c8d; text-anchor: middle;">
+      바닥에 누워있던 배열이 강제로 차원(대괄호 []) 하나를 추가받아 기둥으로 우뚝 솟음!
+    </text>
+  </g>
+</svg>

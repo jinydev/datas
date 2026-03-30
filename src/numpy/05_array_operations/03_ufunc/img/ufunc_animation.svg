@@ -1,0 +1,111 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 22px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #7f8c8d; }
+    
+    .belt { fill: #34495e; rx: 10; }
+    .gear { fill: #bdc3c7; transform-origin: center; animation: spin 4s linear infinite; }
+    
+    .box-in { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; }
+    .text-in { font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; fill: #e67e22; text-anchor: middle; alignment-baseline: central; }
+    
+    .box-out { fill: #e8f8f5; stroke: #1abc9c; stroke-width: 2; rx: 5; }
+    .text-out { font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; fill: #1abc9c; text-anchor: middle; alignment-baseline: central; }
+    
+    .machine { fill: #e74c3c; rx: 15; stroke: #c0392b; stroke-width: 4; }
+    .machine-text { font-family: 'Courier New', monospace; font-size: 30px; font-weight: bold; fill: #fff; text-anchor: middle; alignment-baseline: central; }
+    .machine-glow { fill: #f1c40f; opacity: 0; animation: flash 2s infinite; rx: 15; }
+
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes move-in {
+      0% { transform: translateX(-150px); opacity: 0; }
+      20% { opacity: 1; }
+      50% { transform: translateX(110px); opacity: 1; }
+      50.1% { opacity: 0; }
+      100% { transform: translateX(110px); opacity: 0; }
+    }
+    @keyframes move-out {
+      0% { transform: translateX(110px); opacity: 0; }
+      50% { transform: translateX(110px); opacity: 0; }
+      50.1% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateX(380px); opacity: 0; }
+    }
+    @keyframes flash {
+      45% { opacity: 0; } 50% { opacity: 0.8; } 55% { opacity: 0; }
+    }
+  </style>
+
+  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
+  
+  <text x="350" y="40" class="title" text-anchor="middle">초고속 수학 연산 컨베이어 벨트: 범용 함수(Ufunc)</text>
+  <text x="350" y="70" class="subtitle" text-anchor="middle" fill="#e74c3c">"for문 없이 알아서 배열의 모든 원소를 꺼내 순식간에 계산합니다!"</text>
+
+  <!-- Conveyor Belt -->
+  <rect x="50" y="180" width="600" height="20" class="belt" />
+  <circle cx="70" cy="190" r="15" class="gear" style="transform-origin: 70px 190px;" />
+  <circle cx="200" cy="190" r="15" class="gear" style="transform-origin: 200px 190px;" />
+  <circle cx="350" cy="190" r="15" class="gear" style="transform-origin: 350px 190px;" />
+  <circle cx="500" cy="190" r="15" class="gear" style="transform-origin: 500px 190px;" />
+  <circle cx="630" cy="190" r="15" class="gear" style="transform-origin: 630px 190px;" />
+
+  <!-- The Machine -->
+  <g transform="translate(260, 100)">
+    <rect x="0" y="0" width="180" height="100" class="machine" />
+    <rect x="0" y="0" width="180" height="100" class="machine-glow" />
+    <text x="90" y="50" class="machine-text">np.sqrt()</text>
+  </g>
+
+  <!-- Items In -->
+  <g>
+    <!-- Item 1 (9) -> (3) -->
+    <g style="animation: move-in 4s linear infinite;">
+      <g transform="translate(100, 110)">
+        <rect x="0" y="0" width="60" height="60" class="box-in" />
+        <text x="30" y="30" class="text-in">9</text>
+      </g>
+    </g>
+    <g style="animation: move-out 4s linear infinite;">
+      <g transform="translate(100, 110)">
+        <rect x="0" y="0" width="60" height="60" class="box-out" />
+        <text x="30" y="30" class="text-out">3.0</text>
+      </g>
+    </g>
+
+    <!-- Item 2 (4) -> (2) -->
+    <g style="animation: move-in 4s linear infinite; animation-delay: -1.3s;">
+      <g transform="translate(100, 110)">
+        <rect x="0" y="0" width="60" height="60" class="box-in" />
+        <text x="30" y="30" class="text-in">4</text>
+      </g>
+    </g>
+    <g style="animation: move-out 4s linear infinite; animation-delay: -1.3s;">
+      <g transform="translate(100, 110)">
+        <rect x="0" y="0" width="60" height="60" class="box-out" />
+        <text x="30" y="30" class="text-out">2.0</text>
+      </g>
+    </g>
+
+    <!-- Item 3 (1) -> (1) -->
+    <g style="animation: move-in 4s linear infinite; animation-delay: -2.6s;">
+      <g transform="translate(100, 110)">
+        <rect x="0" y="0" width="60" height="60" class="box-in" />
+        <text x="30" y="30" class="text-in">1</text>
+      </g>
+    </g>
+    <g style="animation: move-out 4s linear infinite; animation-delay: -2.6s;">
+      <g transform="translate(100, 110)">
+        <rect x="0" y="0" width="60" height="60" class="box-out" />
+        <text x="30" y="30" class="text-out">1.0</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(100, 260)">
+    <text x="0" y="0" class="subtitle" fill="#e67e22">입력 배열 (Input Array)</text>
+  </g>
+  <g transform="translate(480, 260)">
+    <text x="0" y="0" class="subtitle" fill="#1abc9c">결과 배열 (Output Array)</text>
+  </g>
+
+</svg>
