@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250">
+  <defs>
+    <style>
+      .bg { fill: #f8f9fa; }
+      .header { font-family: 'Courier New', Courier, monospace; font-size: 14px; font-weight: bold; fill: #333; }
+      .text { font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #111; font-weight: bold; }
+      .col1 { fill: #cce5ff; stroke: #b8daff; }
+      .col2 { fill: #e2e3e5; stroke: #d6d8db; }
+      .col3 { fill: #d4edda; stroke: #c3e6cb; }
+      .highlight { 
+        fill: #ffeeba; 
+        stroke: #ffdf7e;
+        animation: pulse 2s infinite alternate;
+      }
+      .arrow { fill: #007bff; animation: floatArrow 2s infinite ease-in-out; }
+      @keyframes pulse {
+        0% { opacity: 0.7; }
+        100% { opacity: 1; fill: #ffdf7e; }
+      }
+      @keyframes floatArrow {
+        0% { transform: translateX(0px); }
+        50% { transform: translateX(10px); }
+        100% { transform: translateX(0px); }
+      }
+      @keyframes slideIn {
+        0% { transform: translateX(0px); opacity: 0; }
+        100% { transform: translateX(30px); opacity: 1; }
+      }
+      .result {
+        animation: slideIn 2s ease-out forwards;
+      }
+      .code-bg { fill: #ffffff; stroke: #007bff; stroke-width: 2; rx: 5; }
+    </style>
+  </defs>
+  
+  <rect width="650" height="250" class="bg" rx="10"/>
+  
+  <text x="30" y="30" class="header" font-size="16">1. Original DataFrame (df)</text>
+  
+  <!-- Original Table -->
+  <g transform="translate(30, 50)">
+    <!-- Headers -->
+    <rect x="0" y="0" width="100" height="35" fill="#343a40"/>
+    <text x="30" y="22" fill="white" font-family="monospace">Name</text>
+    <rect x="100" y="0" width="80" height="35" fill="#343a40"/>
+    <text x="125" y="22" fill="white" font-family="monospace">Age</text>
+    <rect x="180" y="0" width="90" height="35" fill="#343a40"/>
+    <text x="200" y="22" fill="white" font-family="monospace">Score</text>
+    
+    <!-- Row 1 -->
+    <rect x="0" y="35" width="100" height="35" class="col1"/>
+    <text x="25" y="58" class="text">Alice</text>
+    <rect x="100" y="35" width="80" height="35" class="col2"/>
+    <text x="130" y="58" class="text">25</text>
+    <rect x="180" y="35" width="90" height="35" class="col3"/>
+    <text x="210" y="58" class="text">85</text>
+    
+    <!-- Row 2 -->
+    <rect x="0" y="70" width="100" height="35" class="col1"/>
+    <text x="35" y="93" class="text">Bob</text>
+    <rect x="100" y="70" width="80" height="35" class="col2"/>
+    <text x="130" y="93" class="text">30</text>
+    <rect x="180" y="70" width="90" height="35" class="highlight"/>
+    <text x="210" y="93" class="text">92</text>
+    
+    <!-- Row 3 -->
+    <rect x="0" y="105" width="100" height="35" class="col1"/>
+    <text x="20" y="128" class="text">Charlie</text>
+    <rect x="100" y="105" width="80" height="35" class="col2"/>
+    <text x="130" y="128" class="text">35</text>
+    <rect x="180" y="105" width="90" height="35" class="col3"/>
+    <text x="210" y="128" class="text">78</text>
+
+    <!-- Row 4 -->
+    <rect x="0" y="140" width="100" height="35" class="col1"/>
+    <text x="30" y="163" class="text">Diana</text>
+    <rect x="100" y="140" width="80" height="35" class="col2"/>
+    <text x="130" y="163" class="text">28</text>
+    <rect x="180" y="140" width="90" height="35" class="highlight"/>
+    <text x="210" y="163" class="text">95</text>
+  </g>
+  
+  <!-- Arrow and Code -->
+  <g transform="translate(320, 115)">
+    <rect x="-10" y="-35" width="200" height="30" class="code-bg"/>
+    <text x="0" y="-15" fill="#007bff" font-family="monospace" font-weight="bold">df[df['Score'] > 90]</text>
+    <path d="M 50 10 L 110 10 L 110 0 L 140 20 L 110 40 L 110 30 L 50 30 Z" class="arrow"/>
+  </g>
+  
+  <!-- Filtered Table -->
+  <text x="490" y="30" class="header" font-size="16">2. Filtered (df)</text>
+  <g transform="translate(460, 50)" class="result">
+    <!-- Headers -->
+    <rect x="0" y="0" width="60" height="35" fill="#343a40"/>
+    <text x="15" y="22" fill="white" font-family="monospace">Name</text>
+    <rect x="60" y="0" width="40" height="35" fill="#343a40"/>
+    <text x="70" y="22" fill="white" font-family="monospace">Age</text>
+    <rect x="100" y="0" width="60" height="35" fill="#343a40"/>
+    <text x="110" y="22" fill="white" font-family="monospace">Score</text>
+    
+    <!-- Row 2 (Bob) -->
+    <rect x="0" y="35" width="60" height="35" class="col1"/>
+    <text x="18" y="58" class="text">Bob</text>
+    <rect x="60" y="35" width="40" height="35" class="col2"/>
+    <text x="70" y="58" class="text">30</text>
+    <rect x="100" y="35" width="60" height="35" class="highlight"/>
+    <text x="115" y="58" class="text">92</text>
+
+    <!-- Row 4 (Diana) -->
+    <rect x="0" y="70" width="60" height="35" class="col1"/>
+    <text x="10" y="93" class="text">Diana</text>
+    <rect x="60" y="70" width="40" height="35" class="col2"/>
+    <text x="70" y="93" class="text">28</text>
+    <rect x="100" y="70" width="60" height="35" class="highlight"/>
+    <text x="115" y="93" class="text">95</text>
+  </g>
+</svg>

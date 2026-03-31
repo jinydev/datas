@@ -5,6 +5,8 @@ title: "6.1.1 판다스 소개"
 
 # 6.1.1 pandas 개요
 
+![판다스 소개](img/pandas_intro_webtoon.png)
+
 ## 6.1.1 판다스 소개
 
 ### ① 판다스 개요
