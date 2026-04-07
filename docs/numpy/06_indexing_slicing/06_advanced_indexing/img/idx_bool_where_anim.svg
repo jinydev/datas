@@ -1,0 +1,52 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">위치 탐지 트래커: np.where(조건)</text>
+    
+    <g transform="translate(180, 50)">
+        <g stroke="#cbd5e1" stroke-width="1">
+            <rect x="0" y="0" width="40" height="30" fill="#f1f5f9"/> <rect x="40" y="0" width="40" height="30" fill="#f1f5f9"/> <rect x="80" y="0" width="40" height="30" fill="#f1f5f9"/> <rect x="120" y="0" width="40" height="30" fill="#f1f5f9"/> <rect x="160" y="0" width="40" height="30" fill="#f1f5f9"/>
+        </g>
+        <g font-family="monospace" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" y="20">
+             <text x="20">1</text> <text x="60">5</text> <text x="100">7</text> <text x="140">8</text> <text x="180">10</text>
+        </g>
+        <g font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle" y="-5">
+             <text x="20">idx0</text> <text x="60">idx1</text> <text x="100">idx2</text> <text x="140">idx3</text> <text x="180">idx4</text>
+        </g>
+
+        <g font-family="monospace" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">
+             <text x="100" y="60">x &lt; 7</text>
+        </g>
+
+        <g>
+             <circle cx="20" cy="15" r="15" fill="none" stroke="#2563eb" stroke-width="2" opacity="0">
+                 <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+             </circle>
+             <circle cx="60" cy="15" r="15" fill="none" stroke="#2563eb" stroke-width="2" opacity="0">
+                 <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+             </circle>
+             
+             <g transform="translate(0, 90)">
+                 <rect x="0" y="0" width="40" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0">
+                     <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.4;0.5;0.8;1"/>
+                 </rect>
+                 <rect x="40" y="0" width="40" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0">
+                     <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.4;0.5;0.8;1"/>
+                 </rect>
+                 <g font-family="monospace" font-size="14" font-weight="bold" fill="#1e3a8a" text-anchor="middle" opacity="0">
+                     <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.4;0.5;0.8;1"/>
+                     <text x="20" y="20">0</text> <text x="60" y="20">1</text>
+                 </g>
+                 <text x="-10" y="20" font-family="monospace" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="end" opacity="0">
+                     <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.4;0.5;0.8;1"/>
+                     반환 array
+                 </text>
+             </g>
+
+             <path d="M 20 30 L 20 90 M 60 30 L 60 90" stroke="#2563eb" stroke-width="2" stroke-dasharray="2" opacity="0">
+                 <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.5;0.8;1"/>
+             </path>
+        </g>
+    </g>
+    
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">데이터(값)를 뽑아오지 않고, 조건에 맞는 데이터가 "몇 번 인덱스"에 있는지 좌표(위치)만 찾아줍니다.</text>
+</svg>

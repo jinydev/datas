@@ -1,0 +1,53 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="200" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">행렬 내적(Dot Product)을 위한 배열 구조(Shape) 맞물림 규칙 (도미노)</text>
+
+    <!-- Matrix A Dimensions -->
+    <g transform="translate(95, 80)">
+        <rect x="0" y="0" width="110" height="50" rx="8" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="30" y="32" font-family="sans-serif" font-size="24" font-weight="bold" fill="#0369a1" text-anchor="middle">2</text>
+        <text x="55" y="30" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0284c7" text-anchor="middle">X</text>
+        <!-- Inner dimension -->
+        <rect x="70" y="5" width="35" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3"/>
+        <text x="87.5" y="32" font-family="sans-serif" font-size="24" font-weight="bold" fill="#b91c1c" text-anchor="middle">3</text>
+        <text x="55" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">앞 배열 크기</text>
+    </g>
+
+    <text x="250" y="115" font-family="sans-serif" font-size="30" font-weight="bold" fill="#64748b" text-anchor="middle">@</text>
+
+    <!-- Matrix B Dimensions -->
+    <g transform="translate(295, 80)">
+        <rect x="0" y="0" width="110" height="50" rx="8" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <!-- Inner dimension -->
+        <rect x="5" y="5" width="35" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3"/>
+        <text x="22.5" y="32" font-family="sans-serif" font-size="24" font-weight="bold" fill="#b91c1c" text-anchor="middle">3</text>
+        <text x="55" y="30" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ca8a04" text-anchor="middle">X</text>
+        <text x="80" y="32" font-family="sans-serif" font-size="24" font-weight="bold" fill="#a16207" text-anchor="middle">2</text>
+        <text x="55" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">뒤 배열 크기</text>
+    </g>
+
+    <!-- Equals/Result -->
+    <text x="440" y="115" font-family="sans-serif" font-size="30" font-weight="bold" fill="#64748b" text-anchor="middle">=</text>
+
+    <!-- Result Dimensions -->
+    <g transform="translate(480, 80)">
+        <rect x="0" y="0" width="90" height="50" rx="8" fill="#bbf7d0" stroke="#16a34a" stroke-width="2" stroke-dasharray="4"/>
+        <text x="25" y="32" font-family="sans-serif" font-size="24" font-weight="bold" fill="#15803d" text-anchor="middle">2</text>
+        <text x="45" y="30" font-family="sans-serif" font-size="18" font-weight="bold" fill="#16a34a" text-anchor="middle">X</text>
+        <text x="65" y="32" font-family="sans-serif" font-size="24" font-weight="bold" fill="#15803d" text-anchor="middle">2</text>
+    </g>
+    <text x="525" y="150" font-family="sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">자투리 조립 생성</text>
+
+    <!-- Connect inner dimensions (red) -->
+    <path d="M 182 85 Q 250 40 318 85" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+    <text x="250" y="65" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">정확히 숫자 일치! 곱셈 통과</text>
+
+    <!-- Connect outer dimensions (blue) to Result -->
+    <path d="M 125 130 Q 250 180 375 130 Q 430 115 480 115" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow_green_dot)"/>
+
+    <defs>
+        <marker id="arrow_green_dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/>
+        </marker>
+    </defs>
+</svg>

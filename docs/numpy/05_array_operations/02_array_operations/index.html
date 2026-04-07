@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>4.5.2 배열과 배열의 연산</title>
   <meta name="title" content="4.5.2 배열과 배열의 연산" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="4.5.2 배열과 배열의 연산"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/numpy/05_array_operations/02_array_operations/">
+  <meta property="og:url" content="https://datas.jiny.dev/numpy/05_array_operations/02_array_operations/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="4.5.2 배열과 배열의 연산"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/numpy/05_array_operations/02_array_operations/" />
-<meta property="og:url" content="http://localhost:4000/numpy/05_array_operations/02_array_operations/" />
+<link rel="canonical" href="https://datas.jiny.dev/numpy/05_array_operations/02_array_operations/" />
+<meta property="og:url" content="https://datas.jiny.dev/numpy/05_array_operations/02_array_operations/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="4.5.2 배열과 배열의 연산" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"4.5.2 배열과 배열의 연산","url":"http://localhost:4000/numpy/05_array_operations/02_array_operations/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"4.5.2 배열과 배열의 연산","url":"https://datas.jiny.dev/numpy/05_array_operations/02_array_operations/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -790,16 +790,30 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/07_shape_memory/01_reshape_advanced/"
+                                <a href="/numpy/07_shape_memory/01_reshape_ravel/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.7.1 평탄화 및 전치(T)
+                                    4.7.1 배열 평탄화 (ravel)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/07_shape_memory/02_copy_view/"
+                                <a href="/numpy/07_shape_memory/02_transpose_swapaxes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.7.2 얕은 복사와 뷰(View)
+                                    4.7.2 전치와 축 교환 (T, swapaxes)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/07_shape_memory/03_view/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.7.3 메모리 뷰 (View)와 얕은 복사
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/07_shape_memory/04_copy/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.7.4 독립적 복사본 (Copy)과 base
                                 </a>
                             </li>
                             
@@ -1011,46 +1025,66 @@
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h1 id="452-배열과-배열의-11-거울-연산-element-wise">4.5.2 배열과 배열의 1:1 거울 연산 (Element-wise)</h1>
+            <h1 id="452-배열과-배열의-요소별-연산-element-wise-operations">4.5.2 배열과 배열의 요소별 연산 (Element-wise Operations)</h1>
 
-<h2 id="배열-대-배열-연산의-프로그래밍적-의미와-활용">배열 대 배열 연산의 프로그래밍적 의미와 활용</h2>
+<h2 id="아다마르-곱-hadamard-product과-요소별-연산의-의미">아다마르 곱 (Hadamard Product)과 요소별 연산의 의미</h2>
 <blockquote>
-  <p>모양(Shape)이 완전히 똑같은 두 그룹(배열)이 1:1로 짝을 지어 하이파이브 연산을 수행!</p>
+  <p>크기(Shape)가 동일한 두 배열에서 같은 위치(인덱스)에 있는 원소들끼리 1:1로 수행하는 연산 방식</p>
 </blockquote>
 
 <p><img src="./img/array_ops_webtoon.png" alt="배열 간의 연산 웹툰 일러스트" /></p>
 
-<p>앞서 단일 숫자(스칼라)가 거대한 배열 전체에 똑같은 마법을 거는 브로드캐스팅을 배웠습니다.</p>
+<p>앞서 단일 실수값이 배열 안의 전체 요소에 적용되는 브로드캐스팅(Broadcasting)을 배웠습니다.</p>
 
-<p>이번에는 반대로 <strong>쌍둥이처럼 크기(Shape)가 정확히 같은 두 배열</strong>끼리 만났을 때 벌어지는 일입니다.</p>
+<p>이번에는 <strong>크기(Shape)가 정확히 동일한 두 배열</strong> 간의 사칙연산을 다룹니다. 배열 간의 기본 사칙연산은 모두 <strong>요소별 연산(Element-wise operation)</strong>으로 처리됩니다.</p>
 
-<h3 id="수학적-의미-두-가지-곱셈의-충돌">수학적 의미: 두 가지 곱셈의 충돌</h3>
-<p>우리가 수학 시간에 종종 헷갈려 하는 부분이 배열(행렬)의 곱셈입니다.</p>
+<h3 id="두-가지-종류의-행렬-곱셈">두 가지 종류의 행렬 곱셈</h3>
+<p>Numpy에서 다차원 배열(행렬) 간의 연산, 특히 곱셈 방식은 수학적으로 크게 두 가지로 나뉘어 처리됩니다. 이 두 가지를 혼동하지 않는 것이 매우 중요합니다.</p>
 
-<p>Numpy 행렬의 세계에는 완전히 성격이 다른 두 가지 방식이 존재합니다.</p>
+<h4 id="1-요소별-연산과-아다마르-곱-hadamard-product">1. 요소별 연산과 아다마르 곱 (Hadamard Product)</h4>
+<p>두 행렬의 동일한 인덱스 위치에 있는 원소끼리 1:1로 대응하여 사칙 연산을 수행하는 방식입니다. 이 중에서도 두 행렬의 요소별 곱셈 연산을 지칭하여 수학에서는 <strong>아다마르 곱(Hadamard Product)</strong>이라고 부릅니다.</p>
 
-<h4 id="1-아다마르-곱-hadamard-product-요소별-연산">1. 아다마르 곱 (Hadamard Product, 요소별 연산)</h4>
-<p>학생 그룹 A와 B가 마주 보고 서서, 자기 바로 맞은편에 있는 짝꿍하고만 정직하게 1:1로 곱하고 더하는 시각적 픽셀 연산입니다.</p>
+<p>Numpy 프로그래밍에서 기본 사칙연산 기호인 <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code>를 사용하면 모두 이 요소별 연산(Element-wise) 방식으로 동작합니다.</p>
 
-<p>프로그래밍에서 <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code> 기호를 쓰면 무조건 이 방식이 작동합니다.</p>
+<p><img src="./img/hadamard_product.svg" alt="아다마르 곱 설명" /></p>
+<blockquote>
+  <p>붉은색 테두리로 강조된 원소처럼 서로 동일한 행렬 위치를 가진 숫자끼리만 배타적으로 대응되어 곱해지는 모습입니다.</p>
+</blockquote>
 
-<h4 id="2-내적-dot-product-행렬-곱">2. 내적 (Dot Product, 행렬 곱)</h4>
-<p>앞 배열의 ‘가로줄(행)’ 전체 팀과 뒤 배열의 ‘세로줄(열)’ 전체 팀이 십자가 모양으로 무식하게 직진 충돌하여 하나의 숫자로 뭉쳐지는 찐 수학적 행렬 연산입니다.</p>
+<h4 id="2-행렬의-내적-계산-dot-product">2. 행렬의 내적 계산 (Dot Product)</h4>
+<p>선형대수학에서 정의하는 정통적인 행렬 곱셈 방식(내적 연산)입니다. 앞 행렬의 ‘행(Row)’ 벡터 요소들과 뒤 행렬의 ‘열(Column)’ 벡터 요소들을 순차적으로 곱하고 합산하여 값을 구성합니다.</p>
 
-<p>이 연산을 쓰려면 별도의 기호 <code class="language-plaintext highlighter-rouge">@</code>를 써야 합니다. (뒤에서 다시 자세히 배웁니다!)</p>
+<p>이 내적 연산을 수행하기 위해서는 별도의 기호 <code class="language-plaintext highlighter-rouge">@</code> 또는 <code class="language-plaintext highlighter-rouge">.dot()</code> 함수를 명시적으로 사용해야 합니다.</p>
 
-<p><img src="./img/array_ops_animation.svg" alt="배열 하이파이브 애니메이션 설명" /></p>
+<p><img src="./img/dot_product.svg" alt="행렬 내적 설명" /></p>
+<blockquote>
+  <p>앞 행렬의 가로줄(행) 전체 집합과 뒤 행렬의 세로줄(열) 전체 집합이 십자가 형태로 교차하며 요소별로 곱해진 뒤 하나의 값 집합으로 합산하는(Dot Product) 과정입니다.</p>
+</blockquote>
 
 <h3 id="언제-어떤-용도로-사용할까-실무-활용-사례">언제 어떤 용도로 사용할까? (실무 활용 사례)</h3>
 
-<h4 id="두-데이터-세트-병합-연산">두 데이터 세트 병합 연산</h4>
-<p>예를 들어 올해와 작년의 ‘월별 매출액 배열’ 두 개가 있을 때, 두 배열을 그냥 <code class="language-plaintext highlighter-rouge">올해매출 - 작년매출</code>로 빼주면 단숨에 1월부터 12월까지의 ‘전년대비 매출 증감액 배열’이 새롭게 탄생합니다.</p>
+<p>실제 데이터 과학이나 프로그래밍 실무에서 배열 간의 ‘요소별 연산’은 매우 강력한 도구이며 광범위하게 쓰입니다.</p>
 
-<h4 id="이미지-합성blendingmasking">이미지 합성(Blending/Masking)</h4>
-<p>두 장의 사진(픽셀 배열)을 투명도를 조절해 겹쳐 보이게 하거나(<code class="language-plaintext highlighter-rouge">A * 0.5 + B * 0.5</code>), 흑백 마스크 배열 장막(<code class="language-plaintext highlighter-rouge">0</code>과 <code class="language-plaintext highlighter-rouge">1</code>로 구성)을 곱해(<code class="language-plaintext highlighter-rouge">A * Mask</code>) 원하는 부위만 도려낼 때 자주 씁니다.</p>
+<h4 id="1-대규모-데이터-세트-비교-및-병합-연산">1. 대규모 데이터 세트 비교 및 병합 연산</h4>
+<p>예를 들어, ‘올해의 월별 매출액’ 데이터 배열과 ‘작년의 월별 매출액’ 데이터 배열이 있다고 가정해 봅시다. 파이썬 반복문을 돌리지 않고 단순히 <code class="language-plaintext highlighter-rouge">올해매출 - 작년매출</code> 단 한 줄의 뺄셈 기호만으로 모든 월의 ‘전년 대비 매출 증감액 배열’을 즉시 산출해 낼 수 있습니다.</p>
 
-<h2 id="같은-모양shape-두-원소끼리의-사칙연산-아다마르-연산">같은 모양(Shape) 두 원소끼리의 사칙연산 (아다마르 연산)</h2>
+<p><img src="./img/usecase_sales_diff.svg" alt="전년대비 매출 증감액 계산" /></p>
+<blockquote>
+  <p>1월부터 12월까지 각각 동일한 위치(같은 월)에 해당하는 값끼리만 정확히 연산되어 증감 데이터가 추출됩니다.</p>
+</blockquote>
 
+<h4 id="2-이미지-처리에서의-마스킹masking-및-합성">2. 이미지 처리에서의 마스킹(Masking) 및 합성</h4>
+<p>컴퓨터의 이미지는 결국 숫자들로 가득 찬 2차원(또는 3차원) 배열입니다. 특정 부위만 잘라내기 위해 0과 1로 이루어진 마스크(Mask) 배열을 겹쳐서 곱셈(<code class="language-plaintext highlighter-rouge">*</code>) 처리를 하면, 0인 부분(검은색)의 픽셀은 통째로 삭제되고 1인 부분의 원본 픽셀 정보만 고스란히 남아 깔끔한 영역 처리(크롭)가 완성됩니다. 이 외에도 투명도를 주어 두 사진을 겹치는 알파 블렌딩(<code class="language-plaintext highlighter-rouge">A * 0.5 + B * 0.5</code>) 작업 등에도 요소별 사칙연산이 필수적입니다.</p>
+
+<p><img src="./img/usecase_image_masking.svg" alt="이미지 마스킹 처리 예시" /></p>
+<blockquote>
+  <p>원본 이미지 배열에 0과 1로 구성된 마스크 필터 배열을 요소별로 아다마르 곱하게 되면, 1을 곱한 영역의 데이터만 보존되고 0을 곱한 나머지 데이터는 완전히 제거(0, 검정색)됩니다.</p>
+</blockquote>
+
+<h2 id="아다마르-연산">아다마르 연산</h2>
+<p>같은 모양(Shape) 두 원소끼리의 사칙연산</p>
+
+<h3 id="기본-배열-생성">기본 배열 생성</h3>
 <p>다음 코드로 똑같은 2행 3열짜리 2차원 배열 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>를 준비합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
@@ -1075,134 +1109,195 @@
 
 <p>모양이 정확히 2x3으로 동일한 두 배열은 파서는 기본 사칙 연산 연산자(<code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code>)를 만나면, 무조건 <strong>같은 인덱스 위치의 맞은편 짝꿍 파트너와 1:1로 요소별 연산(Element-wise)</strong>을 냅다 수행합니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 1:1 덧셈 ---</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<h3 id="덧셈-addition">덧셈 (Addition)</h3>
 
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 1:1 뺄셈 ---</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<p>크기가 같은 두 배열끼리 덧셈(<code class="language-plaintext highlighter-rouge">+</code>)을 수행하면, 서로 같은 위치(인덱스)에 있는 원소들끼리만 1:1로 더해진 결과 배열이 생성됩니다.</p>
 
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 1:1 곱셈 (아다마르 곱) ---</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<p><img src="./img/elementwise_addition.svg" alt="배열의 요소별 덧셈 연산" /></p>
+<blockquote>
+  <p>배열 <code class="language-plaintext highlighter-rouge">a</code>와 배열 <code class="language-plaintext highlighter-rouge">b</code>의 각 요소가 정확하게 같은 위치의 요소와 매칭되어 더해지는 모습입니다.</p>
+</blockquote>
 
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 1:1 나눗셈 ---</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 배열 a와 b가 1:1로 대응하여 덧셈을 수행합니다.
+</span><span class="n">result_add</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1:1 덧셈 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_add</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 1:1 덧셈 ---
-[[2 4 6]
- [5 7 9]]
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1:1 덧셈 결과:
+ [[2 4 6]
+  [5 7 9]]
+</code></pre></div></div>
 
---- 1:1 뺄셈 ---
-[[0 0 0]
- [3 3 3]]
+<h3 id="뺄셈-subtraction">뺄셈 (Subtraction)</h3>
 
---- 1:1 곱셈 (아다마르 곱) ---
-[[ 1  4  9]
- [ 4 10 18]]
+<p>뺄셈(<code class="language-plaintext highlighter-rouge">-</code>) 역시 동일하게 맞은편 짝꿍 파트너를 찾아 1:1로 빼앗는 연산을 진행합니다. 한 배열과 다른 배열의 데이터 간 차이를 비교 계산할 때 많이 쓰입니다.</p>
 
---- 1:1 나눗셈 ---
-[[1.  1.  1. ]
- [4.  2.5 2. ]]
+<p><img src="./img/elementwise_subtraction.svg" alt="배열의 요소별 뺄셈 연산" /></p>
+<blockquote>
+  <p>동일한 위치의 배열 <code class="language-plaintext highlighter-rouge">b</code> 값을 배열 <code class="language-plaintext highlighter-rouge">a</code>의 값에서 빼는 계산을 수행합니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 첫 번째 배열 a에서 두 번째 배열 b의 짝꿍을 1:1로 뺍니다.
+</span><span class="n">result_sub</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1:1 뺄셈 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_sub</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>출력:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1:1 뺄셈 결과:
+ [[0 0 0]
+  [3 3 3]]
+</code></pre></div></div>
+
+<h3 id="곱셈-multiplication">곱셈 (Multiplication)</h3>
+
+<p>배열과 배열 사이의 기본 곱셈(<code class="language-plaintext highlighter-rouge">*</code>)은 내적(Dot Product) 행렬 곱이 아닙니다! <strong>아다마르 곱(Hadamard Product)</strong>이라 불리며 오직 자기와 똑같은 위치에 있는 맞은편 원소하고만 곱셈을 수행합니다.</p>
+
+<p><img src="./img/elementwise_multiplication.svg" alt="배열의 요소별 곱셈 연산" /></p>
+<blockquote>
+  <p>행렬의 일반적인 곱셈과 다르게 완전히 1:1 픽셀 단위로 마주보고 곱하게 됩니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 배열 a와 b의 같은 위치의 원소끼리만 곱합니다(아다마르 곱).
+</span><span class="n">result_mul</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1:1 곱셈 (아다마르 곱) 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_mul</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>출력:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1:1 곱셈 (아다마르 곱) 결과:
+ [[ 1  4  9]
+  [ 4 10 18]]
+</code></pre></div></div>
+
+<h3 id="나눗셈-division">나눗셈 (Division)</h3>
+
+<p>나눗셈(<code class="language-plaintext highlighter-rouge">/</code>)도 맞은편에 대응되는 친구끼리만 나누어 결과를 반환합니다. 파이썬의 나눗셈 연산은 결과를 실수형(<code class="language-plaintext highlighter-rouge">float64</code>)으로 바꿔버리기 때문에 결과 배열 안에 소수점이 보이게 됩니다.</p>
+
+<p><img src="./img/elementwise_division.svg" alt="배열의 요소별 나눗셈 연산" /></p>
+<blockquote>
+  <p>위치가 일치하는 짝꿍을 찾아 나눗셈 연산을 각각 배분하여 수행합니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 배열 a의 각 원소를 동일한 위치의 배열 b 원소로 1:1로 나누게 됩니다.
+</span><span class="n">result_div</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1:1 나눗셈 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_div</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>출력:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1:1 나눗셈 결과:
+ [[1.  1.  1. ]
+  [4.  2.5 2. ]]
 </code></pre></div></div>
 
 <h2 id="in-place-복합-대입-연산자와-파멸의-함정type-error">In-place 복합 대입 연산자와 파멸의 함정(Type Error)</h2>
 
-<p>Numpy 배열 연산에서도 <code class="language-plaintext highlighter-rouge">+=</code>, <code class="language-plaintext highlighter-rouge">-=</code>, <code class="language-plaintext highlighter-rouge">*=</code>, <code class="language-plaintext highlighter-rouge">/=</code> 등의 복합 대입 연산자를 지원하여 메모리를 절약하며 변수 본연의 내용을 덮어버릴 수 있습니다.</p>
+<p>Numpy 배열 연산에서도 파이썬처럼 <code class="language-plaintext highlighter-rouge">+=</code>, <code class="language-plaintext highlighter-rouge">-=</code>, <code class="language-plaintext highlighter-rouge">*=</code>, <code class="language-plaintext highlighter-rouge">/=</code> 등의 복합 대입 연산자를 지원합니다. 이를 사용하면 변수에 새로운 배열을 할당하지 않고 기존 메모리 공간을 덮어쓰기 때문에 속도와 메모리를 절약할 수 있습니다.</p>
 
-<p>하지만, 배열 각각의 <strong>자료형 허용치(dtype)</strong> 가 다르면 끔찍한 함정에 빠질 수 있습니다.</p>
+<p>하지만 서로 다른 <strong>자료형(dtype)</strong> 을 가진 배열끼리 복합 대입 연산을 시도하면 끔찍한 함정에 빠질 수 있습니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 'a'는 정수(int32)들만 출입 가능한 아파트 
+<h3 id="기본-배열-생성-1">기본 배열 생성</h3>
+
+<p>정수형 배열 <code class="language-plaintext highlighter-rouge">a</code>와 실수형 배열 <code class="language-plaintext highlighter-rouge">b</code>를 예로 들어보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 정수형(int32) 공간 'a'
 </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0, 1, 2, 3])
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">배열 a:</span><span class="sh">"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 'b'는 소수점 실수형(float64) 아파트
+<span class="c1"># 실수형(float64) 공간 'b'
 </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">b</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.5, 1.5, 2.5, 3.5])
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">배열 b:</span><span class="sh">"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>다음 코드는 정수 전용인 <code class="language-plaintext highlighter-rouge">a</code> 방에 거대한 소수점 데이터인 <code class="language-plaintext highlighter-rouge">b</code>를 욱여넣으려(Cast) 시도하다가 방이 좁아 터지는 에러를 발생시킵니다.</p>
+<h3 id="1-좁은-공간에-큰-데이터-밀어넣기-에러-발생">1. 좁은 공간에 큰 데이터 밀어넣기 (에러 발생)</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># a(정수) 방에 a + b(결과는 실수) 데이터를 밀어넣으려고 시도! -&gt; 실패!
+<p>정수 전용인 <code class="language-plaintext highlighter-rouge">a</code> 방에 거대한 소수점 데이터인 <code class="language-plaintext highlighter-rouge">b</code>를 욱여넣으려(Cast) 시도하다가 좁아서 터지는(에러) 것을 볼 수 있습니다. 자료의 손실이 일어나는 경우에는 강제 저장이 안 됩니다.</p>
+
+<p><img src="./img/inplace_type_error.svg" alt="타입 오류 발생 원리" /></p>
+<blockquote>
+  <p>정수(int32) 전용 공간에 소수점이 있는 실수(float64) 데이터를 강제로 밀어 넣으려다 실패하는 상황입니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># a (정수 공간) += b (실수 데이터) -&gt; 크기가 작아서 실패!
 </span><span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>
 </code></pre></div></div>
 <p><strong>오류:</strong></p>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UFuncTypeError: Cannot cast ufunc 'add' output from dtype('float64') to dtype('int32') with casting rule 'same_kind'
 </code></pre></div></div>
 
-<p>반대로 넓고 여유로운 실수형 아파트 <code class="language-plaintext highlighter-rouge">b</code>에 좁은 정수형 <code class="language-plaintext highlighter-rouge">a</code> 데이터를 들여오는 <code class="language-plaintext highlighter-rouge">b += a</code>는 문제없이 부드럽게 흡수됩니다.</p>
+<h3 id="2-여유로운-공간에-안전하게-담기-성공">2. 여유로운 공간에 안전하게 담기 (성공)</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># b(실수) 방에 실수 결과를 안전하게 밀어넣어 보관!
+<p>반대로 넓고 여유로운 실수형 보관 공간 <code class="language-plaintext highlighter-rouge">b</code>에 좁은 정수형 <code class="language-plaintext highlighter-rouge">a</code> 데이터를 들여오는 <code class="language-plaintext highlighter-rouge">b += a</code> 형태는 소수점 공간이라는 넓은 집이 이미 마련되어 있으므로 문제없이 부드럽게 흡수 보관됩니다.</p>
+
+<p><img src="./img/inplace_type_success.svg" alt="안전한 타입 대입 원리" /></p>
+<blockquote>
+  <p>정수 데이터를 훨씬 더 넓은 실수형 보관 공간에 담는 것은 데이터 손실이 없으므로 안전하게 덧셈 연산 보관이 완료됩니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># b (실수 공간) += a (정수 데이터) -&gt; 넉넉하므로 성공!
 </span><span class="n">b</span> <span class="o">+=</span> <span class="n">a</span>
-<span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">안전하게 더해진 결과 b:</span><span class="sh">"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.5, 2.5, 4.5, 6.5])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안전하게 더해진 결과 b: [0.5 2.5 4.5 6.5]
 </code></pre></div></div>
 
-<h2 id="행렬의-곱셈-dot-product">행렬의 곱셈 (Dot Product)</h2>
-<p>수학에서 말하는 ‘진짜 행렬 단위의 내적(Dot Product) 연산’은 앞 배열의 행(Row)과 뒤 배열의 열(Column) 갯수가 서로 정확히 맞물려 떨어져야 수행할 수 있습니다.</p>
+<h2 id="행렬의-내적-연산-dot-product">행렬의 내적 연산 (Dot Product)</h2>
 
-<p><code class="language-plaintext highlighter-rouge">*</code> 기호 대신 앳(<code class="language-plaintext highlighter-rouge">@</code>) 연산자나 <code class="language-plaintext highlighter-rouge">a.dot(b)</code> 함수 호출을 사용하여 파괴력 있는 십자가 충돌 곱 연산을 수행합니다.</p>
+<p>수학에서 말하는 ‘전통적인 행렬 곱셈’인 내적(Dot Product) 연산은 아다마르 곱과 완전히 다릅니다. 앞 배열의 행(Row)과 뒤 배열의 열(Column) 개수가 서로 정확히 맞물려 떨어져야 수행할 수 있습니다.</p>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">(2, 3)</code> 모양의 배열과 <code class="language-plaintext highlighter-rouge">(3, 2)</code> 모양의 배열은 안쪽 고리인 <code class="language-plaintext highlighter-rouge">3</code>이 서로 맞물려 통과되므로 곱할 수 있으며, 바깥 고리인 <code class="language-plaintext highlighter-rouge">(2, 2)</code> 모양의 새 배열이 탄생합니다.</li>
-</ul>
+<p>내적 연산을 사용하려면 <code class="language-plaintext highlighter-rouge">*</code> 기호 대신 <strong>앳(<code class="language-plaintext highlighter-rouge">@</code>) 기호</strong>나 파이썬 객체 내장 <strong><code class="language-plaintext highlighter-rouge">.dot()</code> 함수</strong>를 명시적으로 호출해야 합니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># (2행 3열) 앞 행렬
+<h3 id="1-내적-연산의-형태-맞물림-조건-shape">1. 내적 연산의 형태 맞물림 조건 (Shape)</h3>
+
+<p>두 행렬이 내적 연산을 수행할 때 반드시 지켜야 하는 크기(Shape) 맞물림 규칙이 존재합니다. 행렬을 곱할 때, 앞 배열의 안쪽 열 개수와 뒤 배열의 안쪽 행 개수가 같아야만 맞물려 통과됩니다. 연산 후 새롭게 생성되는 배열의 크기는 양 끝 바깥쪽의 형태를 따르게 됩니다.</p>
+
+<p><img src="./img/dot_product_calculation.svg" alt="행렬 내적 조건 및 결과" /></p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(2, 3)</code> 크기와 <code class="language-plaintext highlighter-rouge">(3, 2)</code> 크기는 행렬의 안쪽 기준 숫자인 <code class="language-plaintext highlighter-rouge">3</code>이 서로 일치하여 맞물리게 되므로 곱셈이 가능하며, 계산이 완료된 후에는 바깥쪽 숫자를 이어붙인 <code class="language-plaintext highlighter-rouge">(2, 2)</code> 모양의 데이터 배열이 생성됩니다.</p>
+</blockquote>
+
+<h3 id="기본-배열-생성-2">기본 배열 생성</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># (2행 3열) 앞 행렬 데이터 준비
 </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">a</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
-       [1, 2, 3]])
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">행렬 a:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># (3행 2열) 뒤 행렬
+<span class="c1"># (3행 2열) 뒤 행렬 데이터 준비
 </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">b</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[2, 1],
-       [2, 1],
-       [2, 1]])
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">행렬 b:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>두 배열 <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">b</code>의 곱 연산은 <code class="language-plaintext highlighter-rouge">@</code> 연산자, 또는 <code class="language-plaintext highlighter-rouge">ndarray</code>의 객체 내장 함수 <code class="language-plaintext highlighter-rouge">.dot()</code>으로 깔끔하게 수행됩니다.</p>
+<h3 id="2-행렬-내적-연산-수행-교환-법칙-불가능-주의">2. 행렬 내적 연산 수행 (교환 법칙 불가능 주의!)</h3>
+
+<p>최신 파이썬의 표준 연산자인 골뱅이(<code class="language-plaintext highlighter-rouge">@</code>) 연산자나 Numpy 객체 전용 <code class="language-plaintext highlighter-rouge">.dot()</code> 함수를 호출하여 앞서 배운 행렬의 십자가 형태 합산 곱을 수행합니다.</p>
+
+<p>일반적인 사칙연산의 단일 숫자 곱셈은 <code class="language-plaintext highlighter-rouge">3x2</code>나 <code class="language-plaintext highlighter-rouge">2x3</code>이나 순서를 바꾸어도 결과가 같은 교환법칙이 성립합니다. 하지만, <strong>행렬의 내적 연산은 곱하는 순서를 뒤집으면 전혀 다른 크기와 구조의 결과가 나오게 됩니다.</strong> 상황에 따라서는 내적 맞물림 조건 자체가 깨져 치명적인 연산 에러가 발생할 수도 있습니다.</p>
+
+<p><img src="./img/dot_product_non_commutative.svg" alt="행렬 내적의 교환 법칙 불가능 원리" /></p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">a @ b</code> 와 <code class="language-plaintext highlighter-rouge">b @ a</code> 는 완전히 다른 연산 흐름을 가지며, 결과물의 형태(Shape)와 내부 데이터 구조도 전혀 다르므로 절대 혼동하면 안 됩니다.</p>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 직관적인 골뱅이 연산자 (파이썬 3.5 이후 지원)
-</span><span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
+</span><span class="n">result_ab</span> <span class="o">=</span> <span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">행렬 a @ b 연산 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_ab</span><span class="p">)</span>
 </code></pre></div></div>
+
 <p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[12,  6],
-       [12,  6]])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>행렬 a @ b 연산 결과:
+ [[12  6]
+  [12  6]]
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 고전적인 함수 호출 방식
-</span><span class="n">a</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<p>위 구조에서 곱셈의 순서를 바꿔 이번에는 <code class="language-plaintext highlighter-rouge">b @ a</code> 를 시도해 보겠습니다.
+앞 자리에 배치된 <code class="language-plaintext highlighter-rouge">b(3x2)</code> 배열과 뒷자리에 배치된 <code class="language-plaintext highlighter-rouge">a(2x3)</code> 배열이 새롭게 만나면서 통과 조건 기준 숫자가 <code class="language-plaintext highlighter-rouge">2</code>가 되고, 연산 완료 후 양 끝의 테두리에 있던 <code class="language-plaintext highlighter-rouge">(3, 3)</code> 짜리 거대한 행렬 구조가 결과로 튀어나옵니다!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 순서를 바꿔 b를 앞으로, a를 뒤로 넘길 경우 완전 다른 세상이 열립니다!
+</span><span class="n">result_ba</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">행렬 b @ a 연산 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_ba</span><span class="p">)</span>
 </code></pre></div></div>
+
 <p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[12,  6],
-       [12,  6]])
-</code></pre></div></div>
-
-<p>일반적으로 행렬의 곱셈은 순서를 바꾸면 전혀 다른 결과가 나오거나 아예 에러가 납니다(교환법칙 성립 안됨!).</p>
-
-<p>이번엔 반대로 <code class="language-plaintext highlighter-rouge">b(3x2)</code> @ <code class="language-plaintext highlighter-rouge">a(2x3)</code> 연산을 뒤집어 실행해 보면, 맞물리는 <code class="language-plaintext highlighter-rouge">2</code>를 제외하고 <code class="language-plaintext highlighter-rouge">(3, 3)</code> 덩어리 모양의 결과가 튀어나오게 됩니다!</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># b가 앞으로, a가 뒤로 가면 (3x3)이라는 완전히 새로운 세상이 열립니다
-</span><span class="n">b</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[3, 6, 9],
-       [3, 6, 9],
-       [3, 6, 9]])
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>행렬 b @ a 연산 결과:
+ [[3 6 9]
+  [3 6 9]
+  [3 6 9]]
 </code></pre></div></div>
 
 

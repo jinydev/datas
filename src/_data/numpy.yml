@@ -102,10 +102,14 @@ main:
 - title: '4.7 형태 변환과 메모리 구조'
   url: '/numpy/07_shape_memory/'
   subitems:
-  - title: '4.7.1 평탄화 및 전치(T)'
-    url: '/numpy/07_shape_memory/01_reshape_advanced/'
-  - title: '4.7.2 얕은 복사와 뷰(View)'
-    url: '/numpy/07_shape_memory/02_copy_view/'
+  - title: '4.7.1 배열 평탄화 (ravel)'
+    url: '/numpy/07_shape_memory/01_reshape_ravel/'
+  - title: '4.7.2 전치와 축 교환 (T, swapaxes)'
+    url: '/numpy/07_shape_memory/02_transpose_swapaxes/'
+  - title: '4.7.3 메모리 뷰 (View)와 얕은 복사'
+    url: '/numpy/07_shape_memory/03_view/'
+  - title: '4.7.4 독립적 복사본 (Copy)과 base'
+    url: '/numpy/07_shape_memory/04_copy/'
 - title: '4.8 배열 조립과 분할'
   url: '/numpy/08_concat_split/'
   subitems:

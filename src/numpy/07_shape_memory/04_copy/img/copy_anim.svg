@@ -1,0 +1,58 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">복사(Copy)의 원리: 완전히 독립적인 클론</text>
+    
+    <g transform="translate(150, 60)">
+        <text x="-30" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="end">메모리 본체</text>
+        <g stroke="#cbd5e1" stroke-width="2" fill="#e2e8f0">
+             <rect x="0" y="0" width="50" height="40" rx="4"/>
+             <rect x="50" y="0" width="50" height="40" rx="4"/>
+             <rect x="100" y="0" width="50" height="40" rx="4"/>
+             <rect x="150" y="0" width="50" height="40" rx="4"/>
+             <rect x="200" y="0" width="50" height="40" rx="4"/>
+        </g>
+        <g font-family="monospace" font-size="16" font-weight="bold" fill="#334155" text-anchor="middle">
+             <text x="25" y="26">0</text> <text x="75" y="26">1</text> 
+             <text x="125" y="26">2</text>
+             <text x="175" y="26">3</text> <text x="225" y="26">4</text>
+        </g>
+
+        <line x1="-30" y1="70" x2="280" y2="70" stroke="#94a3b8" stroke-dasharray="8"/>
+        
+        <path d="M 280 40 Q 330 70 280 100" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow_blue)"/>
+        <text x="335" y="75" font-family="monospace" font-size="14" font-weight="bold" fill="#2563eb">.copy()</text>
+
+        <g transform="translate(0, 100)">
+             <text x="-30" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#047857" text-anchor="end">독립된 복사본</text>
+             <g stroke="#34d399" stroke-width="2" fill="#a7f3d0">
+                 <rect x="0" y="0" width="50" height="40" rx="4"/>
+                 <rect x="50" y="0" width="50" height="40" rx="4"/>
+                 <rect x="100" y="0" width="50" height="40" rx="4" fill="#fca5a5">
+                     <animate attributeName="fill" values="#a7f3d0; #fca5a5; #fca5a5; #a7f3d0" dur="4s" repeatCount="indefinite" keyTimes="0;0.5;0.9;1"/>
+                 </rect>
+                 <rect x="150" y="0" width="50" height="40" rx="4"/>
+                 <rect x="200" y="0" width="50" height="40" rx="4"/>
+             </g>
+
+             <g font-family="monospace" font-size="16" font-weight="bold" fill="#064e3b" text-anchor="middle">
+                 <text x="25" y="26">0</text> <text x="75" y="26">1</text> 
+                 <text x="125" y="26">
+                     <tspan>2</tspan>
+                     <tspan x="125" dy="0" fill="#dc2626" opacity="0">
+                         <animate attributeName="opacity" values="0; 1; 1; 0" dur="4s" repeatCount="indefinite" keyTimes="0;0.4;0.9;1"/>200
+                     </tspan>
+                     <animate attributeName="opacity" values="1; 0; 0; 1" dur="4s" repeatCount="indefinite" keyTimes="0;0.39;0.91;1"/>
+                 </text>
+                 <text x="175" y="26">3</text> <text x="225" y="26">4</text>
+             </g>
+        </g>
+    </g>
+
+    <defs>
+      <marker id="arrow_blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb" />
+      </marker>
+    </defs>
+    
+    <text x="300" y="230" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">새로운 메모리 영역을 개척했기 때문에, 아무리 복사본을 조작해도 원본은 안전합니다.</text>
+</svg>

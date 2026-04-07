@@ -1,0 +1,90 @@
+<svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="260" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#334155" text-anchor="middle">3차원 고급 전치: np.transpose(b, (0, 2, 1))</text>
+    
+    <!-- (0, 2, 1): 깊이(0)는 가만 놔두고, 행(1)과 열(2)만 서로 바꾼다 -->
+    <text x="300" y="45" font-family="sans-serif" font-size="13" fill="#64748b" text-anchor="middle">0축(깊이)은 그대로 유지하고(고정), 1축(행)과 2축(열)만 데칼코마니 반전시킵니다.</text>
+
+    <!-- Source blocks -->
+    <g transform="translate(60, 100)">
+       <text x="50" y="-10" font-family="sans-serif" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">원본 (3, 2, 2)</text>
+       
+       <!-- Block 3 -->
+       <g transform="translate(40, -40)" stroke="#94a3b8" stroke-width="1" fill="#e2e8f0">
+           <rect x="0" y="0" width="40" height="25" /> <rect x="40" y="0" width="40" height="25" />
+           <rect x="0" y="25" width="40" height="25" /> <rect x="40" y="25" width="40" height="25" />
+           <g font-family="monospace" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" stroke="none">
+               <text x="20" y="17">9</text> <text x="60" y="17">10</text>
+               <text x="20" y="42">11</text> <text x="60" y="42">12</text>
+           </g>
+       </g>
+       <!-- Block 2 -->
+       <g transform="translate(20, -20)" stroke="#64748b" stroke-width="1" fill="#cbd5e1">
+           <rect x="0" y="0" width="40" height="25" /> <rect x="40" y="0" width="40" height="25" />
+           <rect x="0" y="25" width="40" height="25" /> <rect x="40" y="25" width="40" height="25" />
+           <g font-family="monospace" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" stroke="none">
+               <text x="20" y="17">5</text> <text x="60" y="17">6</text>
+               <text x="20" y="42">7</text> <text x="60" y="42">8</text>
+           </g>
+       </g>
+       <!-- Block 1 -->
+       <g stroke="#334155" stroke-width="1.5" fill="#f1f5f9">
+           <rect x="0" y="0" width="40" height="25" /> <rect x="40" y="0" width="40" height="25" />
+           <rect x="0" y="25" width="40" height="25" /> <rect x="40" y="25" width="40" height="25" />
+           <g font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle" stroke="none">
+               <text x="20" y="17">1</text> <text x="60" y="17">2</text>
+               <text x="20" y="42">3</text> <text x="60" y="42">4</text>
+           </g>
+       </g>
+    </g>
+
+    <!-- Arrow -->
+    <g transform="translate(260, 100)">
+        <path d="M0,8 L40,8 L40,0 L50,15 L40,30 L40,22 L0,22 Z" fill="#94a3b8"/>
+        <text x="25" y="-5" font-family="monospace" font-size="12" font-weight="bold" fill="#2563eb" text-anchor="middle">(0, 2, 1)</text>
+    </g>
+
+    <!-- Target blocks -->
+    <g transform="translate(380, 100)">
+       <text x="50" y="-10" font-family="sans-serif" font-size="12" font-weight="bold" fill="#2563eb" text-anchor="middle">결과 (3, 2, 2)</text>
+       
+       <!-- Block 3 -->
+       <g transform="translate(40, -40)" stroke="#93c5fd" stroke-width="1" fill="#dbeafe">
+           <rect x="0" y="0" width="40" height="25" /> <rect x="40" y="0" width="40" height="25" />
+           <rect x="0" y="25" width="40" height="25" /> <rect x="40" y="25" width="40" height="25" />
+           <g font-family="monospace" font-size="12" font-weight="bold" fill="#1e3a8a" text-anchor="middle" stroke="none">
+               <text x="20" y="17">9</text> <text x="60" y="17">11</text>
+               <text x="20" y="42">10</text> <text x="60" y="42">12</text>
+           </g>
+       </g>
+       <!-- Block 2 -->
+       <g transform="translate(20, -20)" stroke="#60a5fa" stroke-width="1" fill="#bfdbfe">
+           <rect x="0" y="0" width="40" height="25" /> <rect x="40" y="0" width="40" height="25" />
+           <rect x="0" y="25" width="40" height="25" /> <rect x="40" y="25" width="40" height="25" />
+           <g font-family="monospace" font-size="12" font-weight="bold" fill="#1e3a8a" text-anchor="middle" stroke="none">
+               <text x="20" y="17">5</text> <text x="60" y="17">7</text>
+               <text x="20" y="42">6</text> <text x="60" y="42">8</text>
+           </g>
+       </g>
+       <!-- Block 1 -->
+       <g stroke="#3b82f6" stroke-width="1.5" fill="#eff6ff">
+           <rect x="0" y="0" width="40" height="25" /> <rect x="40" y="0" width="40" height="25" />
+           <rect x="0" y="25" width="40" height="25" /> <rect x="40" y="25" width="40" height="25" />
+           <g font-family="monospace" font-size="12" font-weight="bold" fill="#1e3a8a" text-anchor="middle" stroke="none">
+               <text x="20" y="17">1</text> <text x="60" y="17" fill="#dc2626">3</text>
+               <text x="20" y="42" fill="#dc2626">2</text> <text x="60" y="42">4</text>
+           </g>
+       </g>
+
+       <path d="M60,17 Q80,30 60,42" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="3"/>
+       <path d="M20,42 Q0,30 20,17" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="3"/>
+    </g>
+
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+      </marker>
+    </defs>
+    
+    <text x="300" y="230" font-family="sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">겹(Layer)의 순서는 그대로 유지된 채, 개별 평면인 2x2 행렬 내부만 서로 데칼코마니 전치되었습니다.</text>
+</svg>

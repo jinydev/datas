@@ -1,0 +1,28 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">단지를 관통하는 행(Row) 추출 레이저: a[:, 1]</text>
+    <g transform="translate(100, 70)">
+        <g stroke="#cbd5e1" stroke-width="1" opacity="0.3">
+            <rect x="0" y="0" width="160" height="30" fill="#f1f5f9"/>
+            <rect x="0" y="60" width="160" height="30" fill="#f1f5f9"/>
+            <rect x="240" y="0" width="160" height="30" fill="#f1f5f9"/>
+            <rect x="240" y="60" width="160" height="30" fill="#f1f5f9"/>
+        </g>
+        
+        <rect x="-10" y="25" width="420" height="40" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+        <text x="-30" y="50" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="end">Row 1</text>
+        
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,-15; 0,0" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+            <g stroke="#ef4444" stroke-width="2">
+                <rect x="0" y="30" width="40" height="30" fill="#fecaca"/> <rect x="40" y="30" width="40" height="30" fill="#fecaca"/> <rect x="80" y="30" width="40" height="30" fill="#fecaca"/> <rect x="120" y="30" width="40" height="30" fill="#fecaca"/>
+                <rect x="240" y="30" width="40" height="30" fill="#fecaca"/> <rect x="280" y="30" width="40" height="30" fill="#fecaca"/> <rect x="320" y="30" width="40" height="30" fill="#fecaca"/> <rect x="360" y="30" width="40" height="30" fill="#fecaca"/>
+            </g>
+            <g font-family="monospace" font-size="14" font-weight="bold" fill="#7f1d1d" text-anchor="middle">
+                <text x="20" y="50">4</text><text x="60" y="50">5</text><text x="100" y="50">6</text><text x="140" y="50">7</text>
+                <text x="260" y="50">16</text><text x="300" y="50">17</text><text x="340" y="50">18</text><text x="380" y="50">19</text>
+            </g>
+        </g>
+    </g>
+    <text x="300" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">모든 동(:)에서, 특정 층수인 중간 축(Row 1) 가로줄만 관통하여 2차원으로 뽑아냅니다.</text>
+</svg>

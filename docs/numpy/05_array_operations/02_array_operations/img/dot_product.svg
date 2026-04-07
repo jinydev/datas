@@ -1,0 +1,49 @@
+<svg width="700" height="220" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+    <rect width="700" height="220" fill="#f8fafc" rx="10"/>
+    <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">행렬 내적 (Dot Product, 행과 열의 십자 충돌)</text>
+    
+    <text x="140" y="70" font-family="sans-serif" font-size="16" font-weight="bold" fill="#475569" text-anchor="middle">배열 A</text>
+    <g transform="translate(90, 85)">
+        <rect x="-3" y="-3" width="106" height="51" fill="#fef2f2" stroke="#ef4444" stroke-width="3" stroke-dasharray="4" rx="6"/>
+        <rect x="0" y="0" width="45" height="45" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="22.5" y="29" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">1</text>
+        <rect x="55" y="0" width="45" height="45" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="77.5" y="29" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">2</text>
+        <rect x="0" y="55" width="45" height="45" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="22.5" y="84" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">3</text>
+        <rect x="55" y="55" width="45" height="45" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="77.5" y="84" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">4</text>
+    </g>
+
+    <text x="240" y="140" font-family="sans-serif" font-size="36" font-weight="bold" fill="#64748b" text-anchor="middle">@</text>
+
+    <text x="340" y="70" font-family="sans-serif" font-size="16" font-weight="bold" fill="#475569" text-anchor="middle">배열 B</text>
+    <g transform="translate(290, 85)">
+        <rect x="-3" y="-3" width="51" height="106" fill="#fef2f2" stroke="#ef4444" stroke-width="3" stroke-dasharray="4" rx="6"/>
+        <rect x="0" y="0" width="45" height="45" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="22.5" y="29" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">5</text>
+        <rect x="55" y="0" width="45" height="45" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="77.5" y="29" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">6</text>
+        <rect x="0" y="55" width="45" height="45" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="22.5" y="84" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">7</text>
+        <rect x="55" y="55" width="45" height="45" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="77.5" y="84" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">8</text>
+    </g>
+
+    <text x="440" y="140" font-family="sans-serif" font-size="36" font-weight="bold" fill="#64748b" text-anchor="middle">=</text>
+
+    <text x="540" y="70" font-family="sans-serif" font-size="16" font-weight="bold" fill="#475569" text-anchor="middle">결과 배열</text>
+    <g transform="translate(490, 85)">
+        <rect x="-3" y="-3" width="51" height="51" fill="#fecaca" stroke="#ef4444" stroke-width="3" rx="6"/>
+        <rect x="0" y="0" width="45" height="45" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="2"/>
+        <text x="22.5" y="29" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">19</text>
+        <rect x="55" y="0" width="45" height="45" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+        <text x="77.5" y="29" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">22</text>
+        <rect x="0" y="55" width="45" height="45" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+        <text x="22.5" y="84" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">43</text>
+        <rect x="55" y="55" width="45" height="45" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+        <text x="77.5" y="84" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">50</text>
+    </g>
+    
+    <text x="350" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">A의 1행(1, 2) 원소들과 B의 1열(5, 7) 원소들을 각각 순서대로 곱해 모두 더함: (1 × 5) + (2 × 7) = 19</text>
+</svg>

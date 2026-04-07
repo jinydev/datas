@@ -5,26 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>4.5.6 2차원 배열의 브로드캐스팅</title>
-  <meta name="title" content="4.5.6 2차원 배열의 브로드캐스팅" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="4.5.6 2차원 배열의 브로드캐스팅"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>4.5.6 차원 간의 쌍방향 브로드캐스팅</title>
+  <meta name="title" content="4.5.6 차원 간의 쌍방향 브로드캐스팅" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="4.5.6 차원 간의 쌍방향 브로드캐스팅"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4000/numpy/05_array_operations/06_d_broadcasting/">
+  <meta property="og:url" content="https://datas.jiny.dev/numpy/05_array_operations/06_d_broadcasting/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="4.5.6 2차원 배열의 브로드캐스팅"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="4.5.6 차원 간의 쌍방향 브로드캐스팅"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="4.5.6 2차원 배열의 브로드캐스팅" />
+<meta property="og:title" content="4.5.6 차원 간의 쌍방향 브로드캐스팅" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4000/numpy/05_array_operations/06_d_broadcasting/" />
-<meta property="og:url" content="http://localhost:4000/numpy/05_array_operations/06_d_broadcasting/" />
+<link rel="canonical" href="https://datas.jiny.dev/numpy/05_array_operations/06_d_broadcasting/" />
+<meta property="og:url" content="https://datas.jiny.dev/numpy/05_array_operations/06_d_broadcasting/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="4.5.6 2차원 배열의 브로드캐스팅" />
+<meta property="twitter:title" content="4.5.6 차원 간의 쌍방향 브로드캐스팅" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"4.5.6 2차원 배열의 브로드캐스팅","url":"http://localhost:4000/numpy/05_array_operations/06_d_broadcasting/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"4.5.6 차원 간의 쌍방향 브로드캐스팅","url":"https://datas.jiny.dev/numpy/05_array_operations/06_d_broadcasting/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -790,16 +790,30 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/numpy/07_shape_memory/01_reshape_advanced/"
+                                <a href="/numpy/07_shape_memory/01_reshape_ravel/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.7.1 평탄화 및 전치(T)
+                                    4.7.1 배열 평탄화 (ravel)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/numpy/07_shape_memory/02_copy_view/"
+                                <a href="/numpy/07_shape_memory/02_transpose_swapaxes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    4.7.2 얕은 복사와 뷰(View)
+                                    4.7.2 전치와 축 교환 (T, swapaxes)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/07_shape_memory/03_view/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.7.3 메모리 뷰 (View)와 얕은 복사
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/numpy/07_shape_memory/04_copy/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    4.7.4 독립적 복사본 (Copy)과 base
                                 </a>
                             </li>
                             
@@ -1004,128 +1018,189 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">4.5.6 2차원 배열의 브로드캐스팅</li>
+        <li class="breadcrumb-item active" aria-current="page">4.5.6 차원 간의 쌍방향 브로드캐스팅</li>
         
         
         
     </ol>
 </nav>
         <div class="bd-content ps-lg-4">
-            <h1 id="456-다차원-배열의-쌍방향-차원-확장-브로드캐스팅">4.5.6 다차원 배열의 쌍방향 차원 확장 브로드캐스팅</h1>
+            <h1 id="456-다차원-배열의-브로드캐스팅">4.5.6 다차원 배열의 브로드캐스팅</h1>
+<blockquote>
+  <p>쌍방향 차원 확장</p>
+</blockquote>
+
+<h2 id="빈-공간을-스캔하여-스스로를-복제clone하는-홀로그램-시스템">빈 공간을 스캔하여 스스로를 복제(Clone)하는 홀로그램 시스템</h2>
+
+<p>스칼라가 보여주었던 <code class="language-plaintext highlighter-rouge">점(Dot)</code>의 분신술에 이어, 이번에는 거대한 <code class="language-plaintext highlighter-rouge">블록(Block)</code> 단위의 복제 마법을 알아볼 차례입니다.</p>
 
 <p><img src="./img/d_broadcast_webtoon.png" alt="다차원 브로드캐스팅 작동 웹툰 일러스트" /></p>
 
-<h2 id="부족한-모양과-차원을-스스로-복제하는-마법-시스템">부족한 모양과 차원을 스스로 복제하는 마법 시스템</h2>
-<p>앞서 본 스칼라 점(1차원) 뿐만 아니라 선 모형을 가진 1D 다차원 배열이나 열 벡터조차도 서로 모양이 다르다면 Numpy는 에러를 뿜는 게 아니라 스스로 모양을 맞추기 위해 <strong>동시에 부족한 축 방향으로 자기 자신을 복제 확장(Broadcasting)</strong> 하는 마법을 보여줍니다.</p>
+<p>선 모양을 가진 1차원 배열(List)이나 기둥 모양의 열 벡터조차도 상대방과 크기가 맞지 않다면, 엔진은 에러를 뿜는 게 아니라 마치 <strong>홀로그램 프로젝터처럼 텅 빈 허공(부족한 축 방향)을 향해 거대한 도장 찍듯 자기 자신을 통째로 복제 증식(Broadcasting)</strong> 하는 마법을 뽐냅니다.</p>
 
-<p>이것만 알면 어떤 복잡한 행렬끼리의 연산일지라도 아주 편하게 코딩할 수 있습니다. 어떻게 늘어나는지 3가지 케이스를 살펴봅시다!</p>
+<p>복제 확장의 성공 조건은 단 하나입니다.</p>
 
-<h2 id="-가로선-배열1d이-거대한-사분면2d-면적-깊숙이-하강침투-복제">① 가로선 배열(1D)이 거대한 사분면(2D) 면적 깊숙이 하강침투 복제</h2>
-<p>먼저 아주 큰 3행 3열짜리 배열이 있고, 그 배열의 너비(칸 수 <code class="language-plaintext highlighter-rouge">3</code>)에 정확히 딱 맞는 가로줄 1차원 배열이 있다고 가정해 봅니다.</p>
+<p><strong>“늘려야 하는 방향의 공간 길이가 <code class="language-plaintext highlighter-rouge">1</code>로 유연하거나, 아예 없어야 한다”</strong>는 것입니다.</p>
+
+<p>구체적으로 어떻게 홀로그램 스캔이 일어나는지 3가지 진격 방향 패턴을 살펴봅시다!</p>
+
+<hr />
+
+<h2 id="1-아래로-하강-진격-가로선-배열의-수직-복제">1. 아래로 하강 진격! (가로선 배열의 수직 복제)</h2>
+
+<p>가장 흔한 케이스를 3단계로 차근차근 분해해 봅시다!</p>
+
+<p>이미 거대한 3x3 아파트(2차원 배열)가 있고, 그 지붕 위에 가로 폭(너비 3)이 똑같은 1차원 가로선 배열이 있다고 시뮬레이션 해보는 과정입니다.</p>
+
+<h3 id="1단계-베이스캠프-넓은-2차원-공간-준비">[1단계] 베이스캠프: 넓은 2차원 공간 준비</h3>
+
+<p>먼저 타깃이 될 널찍한 구조물을 선언합니다.</p>
+
+<p><img src="./img/code_broadcast_row_step1_anim.svg" alt="1단계 애니메이션" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<span class="c1"># 거대한 3x3 2차원 공간 배열 x
+<span class="c1"># 거대한 3x3 (2차원 공간) 배열 x
 </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">x</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">거대한 2차원 공간 x:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 옆으로 세 칸 누워있는 1차원 배열 y
-</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-1,  0,  1])
+<p><strong>1단계 결과:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>거대한 2차원 공간 x:
+ [[1 2 3]
+  [4 5 6]
+  [7 8 9]]
 </code></pre></div></div>
 
-<p>두 배열 <code class="language-plaintext highlighter-rouge">x</code> (3x3) 와 <code class="language-plaintext highlighter-rouge">y</code> (3칸) 곱셈을 수행하면 어떻게 될까요? Numpy는 가로 길이가 서로 <code class="language-plaintext highlighter-rouge">3</code>으로 일치함을 인지하고 1차원 <code class="language-plaintext highlighter-rouge">y</code>를 위에서 아랫방향으로 복제합니다.
-<code class="language-plaintext highlighter-rouge">[-1, 0, 1]</code> 선분 하나가 마치 도장 찍듯이 아래로 <code class="language-plaintext highlighter-rouge">쿵, 쿵, 쿵</code> 세 번 찍혀서 <code class="language-plaintext highlighter-rouge">x</code>와 동일한 <code class="language-plaintext highlighter-rouge">3x3</code> 모습으로 스스로를 위조한 뒤 계산에 임합니다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y가 3줄로 아래로 복제된 뒤 1:1 아다마르 곱 수행 
-</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[-1,  0,  3],
-       [-4,  0,  6],
-       [-7,  0,  9]])
-</code></pre></div></div>
+<h3 id="2단계-무기-장전-작은-1차원-가로-배열-준비">[2단계] 무기 장전: 작은 1차원 가로 배열 준비</h3>
 
-<h2 id="-세로-기둥-배열열-벡터이-우측으로-옆구리-확장-펀치-복제">② 세로 기둥 배열(열 벡터)이 우측으로 옆구리 확장 펀치 복제</h2>
-<p>이번에는 3층 탑처럼 세로축으로 쌓여있는 좁은 2차원 열 벡터의 경우입니다.</p>
+<p>이제 방금 만든 3x3 배열과 맞붙을 작은 선 하나를 준비합니다. 이때 가로 폭이 <code class="language-plaintext highlighter-rouge">3</code>으로 똑같아야 에러 없이 마법이 시작됩니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 세로로 3층이 쌓인 (3, 1) 모양의 배열 y
-</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span>
+<p><img src="./img/code_broadcast_row_step2_anim.svg" alt="2단계 애니메이션" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 옆으로 세 칸 누워있는 1차원 가로선 홀로그램 도장 배열 y
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1차원 가로선 배열 y:</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[3],
-       [6],
-       [9]])
+<p><strong>2단계 결과:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1차원 가로선 배열 y: [-1  0  1]
 </code></pre></div></div>
 
-<p>거대한 3x3 <code class="language-plaintext highlighter-rouge">x</code>에 <code class="language-plaintext highlighter-rouge">x / y</code> 나누기 연산을 요구하면 세로 기둥 탑 <code class="language-plaintext highlighter-rouge">y</code>는 자신의 우측 옆구리에 빈 공간을 메우기 위해 오른쪽 방향을 향해 <code class="language-plaintext highlighter-rouge">탁, 탁, 탁</code> 자신의 복제본을 기둥째로 박아 넣으며 넓어집니다. <code class="language-plaintext highlighter-rouge">(3, 1)</code> 배열 안의 한계점 <code class="language-plaintext highlighter-rouge">1</code>은 늘리기가 아주 쉬운 고무줄 포인트이기 때문입니다!</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y가 우측으로 복제되어 3x3 모양을 만든 뒤 1:1 나눗셈
-</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<h3 id="3단계-수직-하강-브로드캐스팅-복제-충돌">[3단계] 수직 하강! 브로드캐스팅 복제 충돌</h3>
+
+<p>자, 이제 서로 층수가 다른 두 배열을 곱해봅니다!</p>
+
+<p><img src="./img/code_broadcast_row_step3_anim.svg" alt="3단계 애니메이션" /></p>
+<blockquote>
+  <p>1차원 가로선 <code class="language-plaintext highlighter-rouge">[-1, 0, 1]</code> 블록 하나가 텅 빈 아래 공간을 스캔하며 <code class="language-plaintext highlighter-rouge">3x3</code> 바닥에 닿을 때까지 3연속으로 도장을 쿵, 쿵, 쿵 찍어 내려가며 위조 배열을 만듭니다!</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y가 수직(아래쪽)으로 3층만큼 복제증식 된 후 1:1 곱셈 교전!
+</span><span class="n">result_row</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">✅ 가로선 수직 하강 브로드캐스팅 연산 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_row</span><span class="p">)</span>
 </code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.33333333, 0.66666667, 1.        ],
-       [0.66666667, 0.83333333, 1.        ],
-       [0.77777778, 0.88888889, 1.        ]])
-</code></pre></div></div>
-
-<h2 id="-쌍방향-진격-가로-배열과-세로-기둥-배열의-전면-교전">③ 쌍방향 진격! 가로 배열과 세로 기둥 배열의 전면 교전</h2>
-<p>가장 멋진 마법이 구현되는 백미입니다. 만약 <strong>넓은 빈 공간을 두고 가로줄 1차원 배열과 세로줄 1차원 배열끼리</strong> 격돌하면 무슨 일이 벌어질까요?</p>
-
-<p><img src="./img/d_broadcasting_animation.svg" alt="다방면 배열 브로드캐스팅 애니메이션" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 옆으로 세 칸 누워있는 (3,) 배열 x
-</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">x</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1, 2, 3])
+<p><strong>3단계 결과:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>✅ 가로선 수직 하강 브로드캐스팅 연산 결과:
+ [[-1  0  3]
+  [-4  0  6]
+  [-7  0  9]]
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 위아래 세 칸 쌓여있는 (3, 1) 배열 y
-</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span>
+<p>엔진이 가로선 <code class="language-plaintext highlighter-rouge">y</code>의 길이가 <code class="language-plaintext highlighter-rouge">x</code>의 가로 길이와 <code class="language-plaintext highlighter-rouge">3</code>으로 똑같다는 것을 확인하자마자 수직 빈 조각을 탐지하고, 일시적으로 <code class="language-plaintext highlighter-rouge">[[-1,0,1], [-1,0,1], [-1,0,1]]</code> 형태의 가상 2D 블록 복제본을 만들어 <code class="language-plaintext highlighter-rouge">x</code>와 1:1로 아다마르 곱(원소별 곱셈)을 때린 것입니다.</p>
+
+<hr />
+
+<h2 id="2-수평확장">2. 수평확장</h2>
+<blockquote>
+  <p>우측 옆구리로 찔러넣기! (세로 기둥 배열의 측면 복제)</p>
+</blockquote>
+
+<p>이번에는 3층 탑처럼 세로축 하나로만 우뚝 서 있는 <code class="language-plaintext highlighter-rouge">(3, 1)</code> 형태의 좁은 2차원 기둥 벡터를 거대한 3x3 공간에 던져 넣었을 때의 반응입니다.</p>
+
+<p><img src="./img/code_broadcast_col_anim.svg" alt="세로 기둥 배열 측면 복제 시스템 동작" /></p>
+<blockquote>
+  <p>세로 기둥 탑이 자신의 우측에 텅 빈 공간(가로 폭 길이 1)을 감지하고, 오른쪽 옆구리를 향해 똑같은 기둥 복제본을 탁, 탁, 탁 꽂아 넣으며 자신을 넓힙니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 거대한 3x3 배열 x는 기존과 동일하게 존재
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># [1단계] 세로로 3층이 쌓인 (3, 1) 모양의 좁은 세로 기둥 배열 y (가로가 1칸으로 유연함)
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">6</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">9</span><span class="p">]])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">좁은 세로 기둥 y:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># [2단계] 나누기 충돌! y가 구축해둔 허공(우측)으로 자신을 밀어내며 3x3을 위조!
+</span><span class="n">result_col</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">✅ 세로 기둥 측면 브로드캐스팅 결과:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_col</span><span class="p">)</span>
 </code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1],
-       [2],
-       [3]])
+<p><strong>실행 결과:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>좁은 세로 기둥 y:
+ [[3]
+  [6]
+  [9]]
+
+✅ 세로 기둥 측면 브로드캐스팅 결과:
+ [[0.33333333 0.66666667 1.        ]
+  [0.66666667 0.83333333 1.        ]
+  [0.77777778 0.88888889 1.        ]]
 </code></pre></div></div>
 
-<p>곱셈 구구식을 돌리듯 <code class="language-plaintext highlighter-rouge">x * y</code>를 입력하면, <code class="language-plaintext highlighter-rouge">x</code>는 텅 빈 위아래를 채우기 위해 <strong>수직 하강 복제</strong>를 하고, <code class="language-plaintext highlighter-rouge">y</code>는 텅 빈 양옆을 채우기 위해 <strong>측면 분신술</strong>을 사용합니다! 결국 둘 다 거대한 (3, 3)으로 변신하여 완벽한 계산 테이블을 장악하게 됩니다.</p>
+<p>모양(Shape)의 끝 단면이 <code class="language-plaintext highlighter-rouge">1</code>인 경우에는 고무줄처럼 우측으로 아주 유연하게 복제 확장이 가능하다는 브로드캐스팅의 대전제를 제대로 증명한 셈입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># x는 아래로 세 번 늘어나고, y는 우측으로 세 번 늘어납니다! -&gt; 그 결과 3x3 곱셈 테이블!
-</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<hr />
+
+<h2 id="3-수직-수평-확장">3. 수직, 수평 확장</h2>
+<blockquote>
+  <p>가로선 배열과 세로선 배열의 전면 교전</p>
+</blockquote>
+
+<p>가장 압도적이고 마법 같은 스킬이 구현되는 백미입니다. 만약 <strong>넓은 빈 공간(사분면)을 사이에 두고 1차원 가로선 배열과 세로줄 기둥 배열끼리</strong> 격돌하게 놔두면 엔진은 어떻게 반응할까요?</p>
+
+<p><img src="./img/code_broadcast_both_anim.svg" alt="쌍방향 차원 확장 브로드캐스팅 애니메이션" /></p>
+<blockquote>
+  <p>가로선은 텅 빈 아래 수직 축으로 하강 복제하고, 세로선은 텅 빈 우측 축으로 수평 복제하여 기어이 거대한 공용 데스크(3x3 행렬) 테이블을 무에서 유로 창조해 냅니다!</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># [1단계] 옆으로만 세 칸 누워있는 (3,) 가로선 배열 x
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">가로선 배열 x:</span><span class="sh">"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># [2단계] 위아래로 세 칸 서 있는 (3, 1) 세로선 탑 배열 y
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">세로선 배열 y:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># [3단계] 십자포화 충돌! 곱셈을 지시하면 위아래, 좌우 쌍방향으로 알아서 공간을 복제!
+</span><span class="n">result_both</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">🔥 쌍방향 차원 팽창 연산(구구단 테이블) 완료!:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">result_both</span><span class="p">)</span>
 </code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1, 2, 3],
-       [2, 4, 6],
-       [3, 6, 9]])
+<p><strong>실행 결과:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>가로선 배열 x: [1 2 3]
+
+세로선 배열 y:
+ [[1]
+  [2]
+  [3]]
+
+🔥 쌍방향 차원 팽창 연산(구구단 테이블) 완료!:
+ [[1 2 3]
+  [2 4 6]
+  [3 6 9]]
 </code></pre></div></div>
 
-<p>모양이 극단적으로 다를 경우에도 이 마법은 통합니다! 세로 4층 탑 (4, 1) 배열과 가로 2칸짜리 (2,) 배열이 만나면? <strong>둘은 합심해서 거대한 (4, 2) 2차원 사분면을 만들어냅니다.</strong></p>
+<p>마치 1단, 2단, 3단 구구단 테이블 테이블을 그리듯, <code class="language-plaintext highlighter-rouge">x</code>는 텅 빈 아랫 공간을 향해 자신을 복제하고 <code class="language-plaintext highlighter-rouge">y</code>는 텅 빈 옆 공간을 향해 분신술을 사용해 기어이 쌍방향 교차(Intersection) 곱셈을 완성시켰습니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 4층 탑 형태 -&gt; 2열짜리 우측 확장을 준비
-</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                    <span class="c1"># 2칸 가로선 형태 -&gt; 4층짜리 하강 확장을 준비
-</span>
-<span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 1,  2],
-       [ 4,  5],
-       [ 7,  8],
-       [10, 11]])
-</code></pre></div></div>
+<p><strong>아무리 모양이 다르더라도, 복제해 나갈 빈 축(크기가 1이거나 없는 곳)만 존재한다면 Numpy의 브로드캐스팅은 절망하지 않고 공간을 채워 정답을 이끌어 냅니다!</strong></p>
 
 
             <!-- 구글 애드센스 출력 -->

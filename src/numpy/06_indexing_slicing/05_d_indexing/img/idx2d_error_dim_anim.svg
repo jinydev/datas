@@ -1,0 +1,32 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">주의: 차원 한계 돌파 (Too many indices)</text>
+    
+    <g transform="translate(100, 70)">
+        <text x="0" y="0" font-family="monospace" font-size="20" font-weight="bold" fill="#334155">
+            <tspan fill="#10b981">2차원 배열 x</tspan>
+            <tspan fill="#64748b">[ </tspan>
+            <tspan fill="#ef4444">1</tspan>
+            <tspan fill="#64748b"> , </tspan>
+            <tspan fill="#3b82f6">2</tspan>
+            <tspan fill="#64748b"> , </tspan>
+            <tspan fill="#eab308">3</tspan>
+            <tspan fill="#64748b"> ]</tspan>
+        </text>
+        
+        <text x="180" y="50" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b91c1c">
+            "2차원 건물이므로 인덱스(축)는 2개까지만 가능합니다."
+        </text>
+        <text x="180" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b91c1c">
+            하지만 3번째 차원 좌표값(3)을 무리하게 요구했습니다!
+        </text>
+        
+        <g transform="translate(100, 50)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.4;0.5;0.8;1"/>
+            <path d="M 0 -15 L 5 -5 L 15 -5 L 10 5 L 15 15 L 5 10 L 0 20 L -5 10 L -15 15 L -10 5 L -15 -5 L -5 -5 Z" fill="#f87171"/>
+            <text x="0" y="35" font-family="sans-serif" font-size="12" font-weight="bold" fill="#b91c1c" text-anchor="middle">Index Error!</text>
+        </g>
+    </g>
+    
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">2차원 배열에 3번째 축 정보를 넘기면 IndexError가 터집니다.</text>
+</svg>

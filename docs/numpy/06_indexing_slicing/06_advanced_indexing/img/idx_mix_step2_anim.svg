@@ -1,0 +1,41 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">혼합 전술: a[2:4][:, [1, 0]]</text>
+    
+    <g transform="translate(150, 50)">
+        <g stroke="#cbd5e1" stroke-width="1">
+            <rect x="0" y="0" width="240" height="20" fill="#f1f5f9" opacity="0.4"/>
+            <rect x="0" y="20" width="240" height="20" fill="#f1f5f9" opacity="0.4"/>
+            <rect x="0" y="40" width="240" height="20" fill="#f8fafc" />
+            <rect x="0" y="60" width="240" height="20" fill="#f8fafc" />
+            <rect x="0" y="80" width="240" height="20" fill="#f1f5f9" opacity="0.4"/>
+            <line x1="30" y1="0" x2="30" y2="100"/> <line x1="60" y1="0" x2="60" y2="100"/> <line x1="90" y1="0" x2="90" y2="100"/> <line x1="120" y1="0" x2="120" y2="100"/> <line x1="150" y1="0" x2="150" y2="100"/> <line x1="180" y1="0" x2="180" y2="100"/> <line x1="210" y1="0" x2="210" y2="100"/>
+        </g>
+        <g font-family="monospace" font-size="10" font-weight="bold" fill="#64748b" text-anchor="middle">
+             <text x="15" y="54">16</text> <text x="45" y="54" fill="#1e40af">17</text> <text x="75" y="54">18</text> <text x="105" y="54">19</text> <text x="135" y="54">20</text> <text x="165" y="54">21</text> <text x="195" y="54">22</text> <text x="225" y="54">23</text>
+             <text x="15" y="74">24</text> <text x="45" y="74" fill="#1e40af">25</text> <text x="75" y="74">26</text> <text x="105" y="74">27</text> <text x="135" y="74">28</text> <text x="165" y="74">29</text> <text x="195" y="74">30</text> <text x="225" y="74">31</text>
+        </g>
+        
+        <rect x="-5" y="40" width="250" height="40" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4"/>
+        <text x="-10" y="65" font-family="sans-serif" font-size="12" fill="#22c55e" text-anchor="end">1. a[2:4]</text>
+
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; -60,-15; -60,-15; 0,0" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+            <g transform="translate(-10, 0)">
+                <rect x="30" y="40" width="30" height="40" fill="#bfdbfe" fill-opacity="0.8" stroke="#3b82f6" stroke-width="2" />
+                <g font-family="monospace" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">
+                     <text x="45" y="54">17</text><text x="45" y="74">25</text>
+                </g>
+                <text x="45" y="35" font-family="sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">[1]</text>
+            </g>
+            <g transform="translate(20, 0)">
+                <rect x="0" y="40" width="30" height="40" fill="#dbeafe" fill-opacity="0.8" stroke="#3b82f6" stroke-width="2" />
+                <g font-family="monospace" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">
+                     <text x="15" y="54">16</text><text x="15" y="74">24</text>
+                </g>
+                <text x="15" y="35" font-family="sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">[0]</text>
+            </g>
+        </g>
+    </g>
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">슬라이싱으로 2~3행 구간을 썰어낸 후, 연속해서 특정 열([1, 0])의 순서를 섞어 뽑아냅니다.</text>
+</svg>

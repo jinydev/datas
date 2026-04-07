@@ -1,0 +1,37 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">모든 동, 모든 층을 관통하는 열(Col) 레이저: a[:, :, 1]</text>
+    <g transform="translate(100, 70)">
+        <g stroke="#cbd5e1" stroke-width="1" opacity="0.3">
+            <rect x="0" y="0" width="40" height="90" fill="#f1f5f9"/>
+            <rect x="80" y="0" width="80" height="90" fill="#f1f5f9"/>
+            
+            <rect x="240" y="0" width="40" height="90" fill="#f1f5f9"/>
+            <rect x="320" y="0" width="80" height="90" fill="#f1f5f9"/>
+        </g>
+        
+        <rect x="35" y="-10" width="50" height="110" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="4"/>
+        <rect x="275" y="-10" width="50" height="110" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="4"/>
+        <text x="60" y="-15" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">Col 1</text>
+        <text x="300" y="-15" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">Col 1</text>
+        
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,20; 0,0" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+            <g stroke="#2563eb" stroke-width="2">
+                <rect x="40" y="0" width="40" height="30" fill="#dbeafe"/>
+                <rect x="40" y="30" width="40" height="30" fill="#bfdbfe"/>
+                <rect x="40" y="60" width="40" height="30" fill="#dbeafe"/>
+                
+                <rect x="280" y="0" width="40" height="30" fill="#dbeafe"/>
+                <rect x="280" y="30" width="40" height="30" fill="#bfdbfe"/>
+                <rect x="280" y="60" width="40" height="30" fill="#dbeafe"/>
+            </g>
+            <g font-family="monospace" font-size="14" font-weight="bold" fill="#1e3a8a" text-anchor="middle">
+                <!-- Data -->
+                <text x="60" y="20">1</text><text x="60" y="50">5</text><text x="60" y="80">9</text>
+                <text x="300" y="20">13</text><text x="300" y="50">17</text><text x="300" y="80">21</text>
+            </g>
+        </g>
+    </g>
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">전체 동(:), 전체 층(:)에 대해 1호 라인(Col)만 위에서 아래로 수직 관통하여 2차원으로 추출합니다.</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="260" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">수학적 의미: 1D 선분이 2D 면적으로 확장(Sweeping)되는 원리</text>
+    
+    <!-- 1D Vector (Origin) -->
+    <text x="150" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">1차원 벡터 (선형)</text>
+    
+    <!-- Resulting 2D Matrix Grid (Faint Background) -->
+    <g transform="translate(60, 85)">
+        <!-- Projection paths -->
+        <path d="M 0 0 L 0 100 M 60 0 L 60 100 M 120 0 L 120 100 M 180 0 L 180 100" stroke="#bae6fd" stroke-width="2" stroke-dasharray="4"/>
+        
+        <!-- Row 2 (Ghost) -->
+        <rect x="0" y="50" width="60" height="40" rx="4" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4"/>
+        <rect x="60" y="50" width="60" height="40" rx="4" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4"/>
+        <rect x="120" y="50" width="60" height="40" rx="4" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4"/>
+        
+        <!-- Row 3 (Ghost) -->
+        <rect x="0" y="100" width="60" height="40" rx="4" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4"/>
+        <rect x="60" y="100" width="60" height="40" rx="4" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4"/>
+        <rect x="120" y="100" width="60" height="40" rx="4" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4"/>
+        
+        <!-- The Original 1D Line -->
+        <g>
+            <rect x="0" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+            <rect x="60" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+            <rect x="120" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        </g>
+        
+        <!-- Sweeping Clone 1 -->
+        <g opacity="0">
+            <rect x="0" y="50" width="60" height="40" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+            <rect x="60" y="50" width="60" height="40" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+            <rect x="120" y="50" width="60" height="40" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+            <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.3;0.8;1" dur="2.5s" repeatCount="indefinite" />
+        </g>
+        
+        <!-- Sweeping Clone 2 -->
+        <g opacity="0">
+            <rect x="0" y="100" width="60" height="40" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+            <rect x="60" y="100" width="60" height="40" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+            <rect x="120" y="100" width="60" height="40" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+            <animate attributeName="opacity" values="0;0;0.7;0" keyTimes="0;0.3;0.6;1" dur="2.5s" repeatCount="indefinite" />
+        </g>
+        
+        <!-- Sweeping Head Indicator -->
+        <path d="M -10 10 L 190 10" stroke="#0ea5e9" stroke-width="4" stroke-dasharray="6">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,50; 0,100; 0,0" keyTimes="0; 0.3; 0.6; 1" dur="2.5s" repeatCount="indefinite" />
+        </path>
+    </g>
+
+    <!-- Sweeping Arrow Indicator (Center) -->
+    <path d="M 280 140 L 340 140" stroke="#0ea5e9" stroke-width="6" stroke-dasharray="6" marker-end="url(#arrow_blue)">
+        <animateTransform attributeName="transform" type="translate" values="0,0;10,0;0,0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <text x="310" y="130" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0ea5e9" text-anchor="middle">Sweeping 복제</text>
+
+    <!-- 2D Matrix Result -->
+    <text x="450" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">2차원 행렬 (면적)</text>
+    <g transform="translate(360, 85)">
+        <rect x="0" y="0" width="180" height="140" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <!-- Matrix inner grid lines -->
+        <path d="M 60 0 L 60 140 M 120 0 L 120 140" stroke="#16a34a" stroke-width="2" opacity="0.5"/>
+        <path d="M 0 46 L 180 46 M 0 93 L 180 93" stroke="#16a34a" stroke-width="2" opacity="0.5"/>
+        
+        <!-- Flashing effect to show matrix birth -->
+        <rect x="0" y="0" width="180" height="140" rx="4" fill="#f0fdf4" opacity="0">
+            <animate attributeName="opacity" values="0;0;0.8;0" keyTimes="0;0.5;0.6;1" dur="2.5s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+
+    <defs>
+        <marker id="arrow_blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"/>
+        </marker>
+    </defs>
+    
+    <text x="300" y="240" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">1차원 선(Vector)을 세로 방향으로 밀어내어 2차원 면적(Matrix)으로 공간 확장!</text>
+
+</svg>

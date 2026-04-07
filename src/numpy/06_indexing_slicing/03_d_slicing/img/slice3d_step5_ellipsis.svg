@@ -1,0 +1,22 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">스마트 생략 기호: Ellipsis (...) 활용</text>
+    
+    <g transform="translate(300, 100)">
+        <rect x="-250" y="-30" width="500" height="60" fill="#e2e8f0" rx="10"/>
+        
+        <text x="0" y="5" font-family="monospace" font-size="28" font-weight="bold" fill="#334155" text-anchor="middle">
+            <tspan fill="#ea580c">a[1, ...]</tspan> 
+            <tspan fill="#64748b"> == </tspan> 
+            <tspan fill="#0ea5e9">a[1, :, :]</tspan>
+            <tspan fill="#64748b"> == </tspan> 
+            <tspan fill="#22c55e">a[1]</tspan>
+        </text>
+        
+        <text x="0" y="70" font-family="sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">
+            `...` 은 "나머지 하위 모든 축(Axis)들을 싹 다 `:` 처리해라" 라는 자동완성 치트키입니다.
+        </text>
+    </g>
+    
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">차원이 4차원, 5차원으로 깊어져도 `...` 하나면 코드가 파격적으로 짧아집니다.</text>
+</svg>

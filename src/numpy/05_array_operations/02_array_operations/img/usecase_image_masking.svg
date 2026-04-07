@@ -1,0 +1,86 @@
+<svg width="700" height="230" viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg">
+    <rect width="700" height="230" fill="#f8fafc" rx="10"/>
+    <text x="350" y="30" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">이미지 처리: 마스킹을 통한 특정 영역 추출 (1:1 아다마르 곱)</text>
+
+    <!-- Source -->
+    <text x="125" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">원본 이미지 행렬 (픽셀)</text>
+    <g transform="translate(65, 75)">
+        <rect x="0" y="0" width="38" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+        <text x="19" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">150</text>
+        <rect x="42" y="0" width="38" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+        <text x="61" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">120</text>
+        <rect x="84" y="0" width="38" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+        <text x="103" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">80</text>
+        
+        <rect x="0" y="42" width="38" height="38" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+        <text x="19" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">200</text>
+        <rect x="42" y="42" width="38" height="38" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+        <text x="61" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">255</text>
+        <rect x="84" y="42" width="38" height="38" rx="4" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+        <text x="103" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">180</text>
+        
+        <rect x="0" y="84" width="38" height="38" rx="4" fill="#94a3b8" stroke="#64748b" stroke-width="2"/>
+        <text x="19" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">110</text>
+        <rect x="42" y="84" width="38" height="38" rx="4" fill="#64748b" stroke="#475569" stroke-width="2"/>
+        <text x="61" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f8fafc" text-anchor="middle">90</text>
+        <rect x="84" y="84" width="38" height="38" rx="4" fill="#334155" stroke="#1e293b" stroke-width="2"/>
+        <text x="103" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f8fafc" text-anchor="middle">40</text>
+    </g>
+
+    <!-- Multiply -->
+    <text x="215" y="140" font-family="sans-serif" font-size="30" font-weight="bold" fill="#64748b" text-anchor="middle">*</text>
+
+    <!-- Mask -->
+    <text x="315" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">마스크 필터 배열 (0, 1)</text>
+    <g transform="translate(255, 75)">
+        <rect x="0" y="0" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="19" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+        <rect x="42" y="0" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="61" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+        <rect x="84" y="0" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="103" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+        
+        <rect x="0" y="42" width="38" height="38" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="3" stroke-dasharray="2"/>
+        <text x="19" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">1</text>
+        <rect x="42" y="42" width="38" height="38" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="3" stroke-dasharray="2"/>
+        <text x="61" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">1</text>
+        <rect x="84" y="42" width="38" height="38" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="3" stroke-dasharray="2"/>
+        <text x="103" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">1</text>
+        
+        <rect x="0" y="84" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="19" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+        <rect x="42" y="84" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="61" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+        <rect x="84" y="84" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="103" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+    </g>
+
+    <!-- Equals -->
+    <text x="415" y="140" font-family="sans-serif" font-size="30" font-weight="bold" fill="#64748b" text-anchor="middle">=</text>
+
+    <!-- Result -->
+    <text x="515" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">크롭된 결과 이미지</text>
+    <g transform="translate(455, 75)">
+        <rect x="0" y="0" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="19" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">0</text>
+        <rect x="42" y="0" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="61" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">0</text>
+        <rect x="84" y="0" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="103" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">0</text>
+        
+        <rect x="0" y="42" width="38" height="38" rx="4" fill="#f8fafc" stroke="#2563eb" stroke-width="3"/>
+        <text x="19" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">200</text>
+        <rect x="42" y="42" width="38" height="38" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+        <text x="61" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">255</text>
+        <rect x="84" y="42" width="38" height="38" rx="4" fill="#cbd5e1" stroke="#2563eb" stroke-width="3"/>
+        <text x="103" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">180</text>
+        
+        <rect x="0" y="84" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="19" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">0</text>
+        <rect x="42" y="84" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="61" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">0</text>
+        <rect x="84" y="84" width="38" height="38" rx="4" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+        <text x="103" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">0</text>
+    </g>
+    <text x="350" y="215" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">1이 있는 행렬 영역만 원본 값이 유지되고 나머지는 검은색(0) 처리됨</text>
+</svg>

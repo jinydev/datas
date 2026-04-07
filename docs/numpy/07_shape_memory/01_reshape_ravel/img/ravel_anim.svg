@@ -1,0 +1,51 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle">건물 허물기 (공구리 평탄화): ravel()</text>
+    
+    <g transform="translate(100, 60)">
+        <text x="50" y="-10" font-family="sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">2차원 배열 (2x3)</text>
+        <g stroke="#cbd5e1" stroke-width="2" fill="#e2e8f0">
+             <rect x="0" y="0" width="30" height="30" rx="4"/>
+             <rect x="35" y="0" width="30" height="30" rx="4"/>
+             <rect x="70" y="0" width="30" height="30" rx="4"/>
+             
+             <rect x="0" y="35" width="30" height="30" rx="4"/>
+             <rect x="35" y="35" width="30" height="30" rx="4"/>
+             <rect x="70" y="35" width="30" height="30" rx="4"/>
+        </g>
+        <g font-family="monospace" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">
+             <text x="15" y="20">1</text> <text x="50" y="20">2</text> <text x="85" y="20">3</text>
+             <text x="15" y="55">4</text> <text x="50" y="55">5</text> <text x="85" y="55">6</text>
+        </g>
+
+        <g transform="translate(120, 25)">
+            <path d="M0,8 L40,8 L40,0 L50,15 L40,30 L40,22 L0,22 Z" fill="#94a3b8"/>
+            <text x="25" y="-5" font-family="monospace" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">.ravel()</text>
+        </g>
+
+        <g transform="translate(200, 20)">
+             <text x="100" y="-30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">1차원 평탄화 배열 (1x6)</text>
+             <g stroke="#3b82f6" stroke-width="2" fill="#dbeafe">
+                 <rect x="0" y="0" width="30" height="30" rx="4"/>
+                 <rect x="35" y="0" width="30" height="30" rx="4"/>
+                 <rect x="70" y="0" width="30" height="30" rx="4"/>
+             </g>
+             <g stroke="#3b82f6" stroke-width="2" fill="#dbeafe">
+                 <animateTransform attributeName="transform" type="translate" values="-70,35; 105,0; 105,0; -70,35" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+                 <rect x="0" y="0" width="30" height="30" rx="4"/>
+                 <rect x="35" y="0" width="30" height="30" rx="4"/>
+                 <rect x="70" y="0" width="30" height="30" rx="4"/>
+             </g>
+
+             <g font-family="monospace" font-size="14" font-weight="bold" fill="#1d4ed8" text-anchor="middle">
+                 <text x="15" y="20">1</text> <text x="50" y="20">2</text> <text x="85" y="20">3</text>
+             </g>
+             <g font-family="monospace" font-size="14" font-weight="bold" fill="#1d4ed8" text-anchor="middle">
+                 <animateTransform attributeName="transform" type="translate" values="-70,35; 105,0; 105,0; -70,35" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+                 <text x="15" y="20">4</text> <text x="50" y="20">5</text> <text x="85" y="20">6</text>
+             </g>
+        </g>
+    </g>
+    
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">다차원 건물의 층을 모두 허물고 일렬로 쭉 펼친 1차원 "시멘트 바닥"을 반환합니다.</text>
+</svg>

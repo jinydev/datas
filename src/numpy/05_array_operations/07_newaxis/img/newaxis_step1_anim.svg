@@ -1,0 +1,27 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="200" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">1단계: 베이스 1차원 선분 배열 생성</text>
+    
+    <text x="140" y="100" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">배열 x (1차원, 4칸)</text>
+    
+    <g transform="translate(220, 80)">
+        <!-- The 1D flat array with brackets emphasizing 1D -->
+        <text x="-25" y="26" font-family="sans-serif" font-size="30" font-weight="bold" fill="#94a3b8" text-anchor="middle">[</text>
+        
+        <rect x="0" y="0" width="50" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="25" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">0</text>
+        
+        <rect x="55" y="0" width="50" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="80" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">10</text>
+        
+        <rect x="110" y="0" width="50" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="135" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">20</text>
+        
+        <rect x="165" y="0" width="50" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="190" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">30</text>
+        
+        <text x="240" y="26" font-family="sans-serif" font-size="30" font-weight="bold" fill="#94a3b8" text-anchor="middle">]</text>
+    </g>
+    
+    <text x="300" y="160" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">겉에 대괄호가 단 1개뿐인 길이 4짜리 평범한 1차원 데이터입니다. (Shape: 4,)</text>
+</svg>

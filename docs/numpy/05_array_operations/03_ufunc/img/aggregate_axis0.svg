@@ -1,0 +1,57 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="300" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">애니메이션: 세로 방향 자바라 통계 압축 (a.sum(axis=0))</text>
+    
+    <!-- Result Row -->
+    <rect x="200" y="225" width="70" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+    <text x="235" y="251" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">16</text>
+    <rect x="330" y="225" width="70" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+    <text x="365" y="251" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">30</text>
+    <text x="300" y="285" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">세로(행) 압축 완료!</text>
+
+    <!-- 3x2 Matrix with drop animation -->
+    <!-- Column 1 -->
+    <g>
+        <rect x="200" y="70" width="70" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="235" y="96" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">10</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,150;0,150;0,0" keyTimes="0;0.4;0.8;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.35;0.8;1" dur="3s" repeatCount="indefinite" />
+    </g>
+    <g>
+        <rect x="200" y="120" width="70" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="235" y="146" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">5</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,105;0,105;0,0" keyTimes="0;0.4;0.8;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.35;0.8;1" dur="3s" repeatCount="indefinite" />
+    </g>
+    <g>
+        <rect x="200" y="170" width="70" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="235" y="196" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">1</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,55;0,55;0,0" keyTimes="0;0.4;0.8;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.35;0.8;1" dur="3s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Column 2 -->
+    <g>
+        <rect x="330" y="70" width="70" height="40" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="365" y="96" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">20</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,150;0,150;0,0" keyTimes="0;0.4;0.8;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.35;0.8;1" dur="3s" repeatCount="indefinite" />
+    </g>
+    <g>
+        <rect x="330" y="120" width="70" height="40" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="365" y="146" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">8</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,105;0,105;0,0" keyTimes="0;0.4;0.8;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.35;0.8;1" dur="3s" repeatCount="indefinite" />
+    </g>
+    <g>
+        <rect x="330" y="170" width="70" height="40" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="365" y="196" font-family="sans-serif" font-size="18" font-weight="bold" fill="#a16207" text-anchor="middle">2</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,55;0,55;0,0" keyTimes="0;0.4;0.8;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.35;0.8;1" dur="3s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Axis text -->
+    <text x="120" y="140" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">위에서</text>
+    <text x="120" y="165" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">아래로 (축 이동)</text>
+
+</svg>

@@ -1,0 +1,50 @@
+<svg width="700" height="280" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+    <rect width="700" height="280" fill="#f8fafc" rx="10"/>
+    <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">행렬 내적의 비가환성: 순서를 바꾸면 전혀 다른 결과(모양)가 나옴!</text>
+
+    <!-- Case 1: a @ b -->
+    <text x="110" y="85" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">1. a @ b 연산</text>
+    <g transform="translate(190, 60)">
+        <rect x="0" y="0" width="85" height="40" rx="6" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="42.5" y="26" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">2 x 3</text>
+        <text x="42.5" y="-10" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">배열 a</text>
+        
+        <text x="105" y="28" font-family="sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">@</text>
+        
+        <rect x="125" y="0" width="85" height="40" rx="6" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="167.5" y="26" font-family="sans-serif" font-size="16" font-weight="bold" fill="#a16207" text-anchor="middle">3 x 2</text>
+        <text x="167.5" y="-10" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">배열 b</text>
+
+        <text x="235" y="28" font-family="sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">=</text>
+
+        <rect x="270" y="-5" width="90" height="50" rx="6" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+        <text x="315" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">2 x 2</text>
+        <text x="315" y="-15" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a" text-anchor="middle">결과물</text>
+    </g>
+
+    <!-- Divider Line -->
+    <line x1="50" y1="135" x2="650" y2="135" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="10"/>
+    <rect x="250" y="120" width="200" height="30" rx="5" fill="#fef2f2"/>
+    <text x="350" y="141" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle">틀림 ( 교환법칙 성립 안됨 ≠ )</text>
+
+    <!-- Case 2: b @ a -->
+    <text x="110" y="215" font-family="sans-serif" font-size="16" font-weight="bold" fill="#a16207" text-anchor="middle">2. b @ a 연산</text>
+    <g transform="translate(190, 190)">
+        <rect x="0" y="0" width="85" height="40" rx="6" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+        <text x="42.5" y="26" font-family="sans-serif" font-size="16" font-weight="bold" fill="#a16207" text-anchor="middle">3 x 2</text>
+        <text x="42.5" y="-10" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">배열 b</text>
+        
+        <text x="105" y="28" font-family="sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">@</text>
+        
+        <rect x="125" y="0" width="85" height="40" rx="6" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="167.5" y="26" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">2 x 3</text>
+        <text x="167.5" y="-10" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">배열 a</text>
+
+        <text x="235" y="28" font-family="sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">=</text>
+
+        <rect x="270" y="-10" width="115" height="60" rx="6" fill="#fecaca" stroke="#ef4444" stroke-width="3"/>
+        <text x="327.5" y="28" font-family="sans-serif" font-size="20" font-weight="bold" fill="#b91c1c" text-anchor="middle">3 x 3 !!</text>
+        <text x="327.5" y="-20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">다르고 거대한 결과물</text>
+    </g>
+
+</svg>

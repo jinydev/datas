@@ -1,0 +1,48 @@
+<svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="260" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">애니메이션: 단일 스칼라(점)의 2단계 공간 팽창</text>
+    
+    <!-- Step 1: Scalar dot -->
+    <text x="120" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9333ea" text-anchor="middle">스칼라 (0차원 점)</text>
+    <circle cx="120" cy="110" r="15" fill="#d8b4fe" stroke="#9333ea" stroke-width="3"/>
+    
+    <!-- Arrow 1-->
+    <path d="M 180 110 L 220 110" stroke="#cbd5e1" stroke-width="4" marker-end="url(#arrow_gray)"/>
+
+    <!-- Step 2: 1D Stretch -->
+    <text x="300" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="middle">1차원 공간 (선) 복제</text>
+    <g transform="translate(260, 95)">
+        <circle cx="15" cy="15" r="15" fill="#d8b4fe" stroke="#9333ea" stroke-width="3"/>
+        <g opacity="0">
+            <circle cx="55" cy="15" r="15" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="4"/>
+            <circle cx="95" cy="15" r="15" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="4"/>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.3;0.8;1" dur="2.5s" repeatCount="indefinite" />
+        </g>
+    </g>
+
+    <!-- Arrow 2-->
+    <path d="M 390 110 L 430 110" stroke="#cbd5e1" stroke-width="4" marker-end="url(#arrow_gray)"/>
+
+    <!-- Step 3: 2D Stretch -->
+    <text x="500" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a" text-anchor="middle">2차원 공간 (면) 복제</text>
+    <g transform="translate(460, 95)">
+        <circle cx="15" cy="15" r="15" fill="#d8b4fe" stroke="#9333ea" stroke-width="3"/>
+        <circle cx="55" cy="15" r="15" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="3"/>
+        <circle cx="95" cy="15" r="15" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="3"/>
+        <!-- Second row stretching down -->
+        <g opacity="0">
+            <circle cx="15" cy="55" r="15" fill="#f0fdf4" stroke="#16a34a" stroke-width="3" stroke-dasharray="4"/>
+            <circle cx="55" cy="55" r="15" fill="#f0fdf4" stroke="#16a34a" stroke-width="3" stroke-dasharray="4"/>
+            <circle cx="95" cy="55" r="15" fill="#f0fdf4" stroke="#16a34a" stroke-width="3" stroke-dasharray="4"/>
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.7;0.9;1" dur="2.5s" repeatCount="indefinite" />
+        </g>
+    </g>
+
+    <defs>
+        <marker id="arrow_gray" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+        </marker>
+    </defs>
+
+    <text x="300" y="240" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">빈 공간이 나타날 때마다 상대방의 규격(아파트 크기)이 꽉 찰 때까지 분신술로 증식합니다.</text>
+</svg>

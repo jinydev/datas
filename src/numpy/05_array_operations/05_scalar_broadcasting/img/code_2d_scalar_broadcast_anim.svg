@@ -1,0 +1,82 @@
+<svg width="600" height="320" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="320" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">애니메이션: 2차원 평면(면적) 방면으로 단일 숫자 무한 폭발 증식</text>
+    
+    <!-- Top 2D Array A -->
+    <text x="120" y="80" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">배열 A (2행 3열)</text>
+    <g transform="translate(190, 50)">
+        <rect x="0" y="0" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="20" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">1</text>
+        <rect x="45" y="0" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="65" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">2</text>
+        <rect x="90" y="0" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="110" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">3</text>
+
+        <rect x="0" y="35" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="20" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">1</text>
+        <rect x="45" y="35" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="65" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">2</text>
+        <rect x="90" y="35" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="110" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">3</text>
+    </g>
+
+    <text x="255" y="145" font-family="sans-serif" font-size="24" font-weight="bold" fill="#475569" text-anchor="middle">+</text>
+
+    <!-- Bottom Scalar 2 with expanding ghost clones in 2D -->
+    <text x="120" y="180" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">단일 점 (숫자 2)</text>
+    <g transform="translate(190, 160)">
+        <rect x="0" y="0" width="40" height="30" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3"/>
+        <text x="20" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+        
+        <g opacity="0">
+            <!-- Row 1 stretch -->
+            <rect x="45" y="0" width="40" height="30" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+            <text x="65" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+            <rect x="90" y="0" width="40" height="30" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+            <text x="110" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+
+            <!-- Row 2 stretch -->
+            <rect x="0" y="35" width="40" height="30" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+            <text x="20" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+            <rect x="45" y="35" width="40" height="30" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+            <text x="65" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+            <rect x="90" y="35" width="40" height="30" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+            <text x="110" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.3;0.8;1" dur="3s" repeatCount="indefinite"/>
+        </g>
+    </g>
+
+    <!-- Right Result -->
+    <path d="M 370 145 L 430 145" stroke="#16a34a" stroke-width="4" stroke-dasharray="6" marker-end="url(#arrow_green)">
+        <animateTransform attributeName="transform" type="translate" values="0,0;10,0;0,0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <text x="400" y="130" font-family="sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">모든 칸 광역 덧셈!</text>
+
+    <!-- Result Array -->
+    <g transform="translate(460, 110)" opacity="0">
+        <rect x="0" y="0" width="40" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="20" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">3</text>
+        <rect x="45" y="0" width="40" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="65" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">4</text>
+        <rect x="90" y="0" width="40" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="110" y="20" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">5</text>
+
+        <rect x="0" y="35" width="40" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="20" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">3</text>
+        <rect x="45" y="35" width="40" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="65" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">4</text>
+        <rect x="90" y="35" width="40" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="110" y="55" font-family="sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">5</text>
+        
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.7;0.9;1" dur="3s" repeatCount="indefinite"/>
+    </g>
+
+    <defs>
+        <marker id="arrow_green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/>
+        </marker>
+    </defs>
+
+    <text x="300" y="270" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">숫자 2가 상대방의 가로(3칸), 세로(2칸) 비어있는 공간 전체를 탐색하며 무한 복제되어 일괄 덧셈됩니다.</text>
+</svg>

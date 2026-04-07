@@ -1,0 +1,45 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">4단계: 슬라이스로 잘라낸 구역 덮어쓰기 (a[2:5] = -100)</text>
+    
+    <g transform="translate(150, 120)">
+        <g stroke="#cbd5e1" stroke-width="1">
+            <rect x="-100" y="0" width="50" height="40" fill="#f1f5f9"/>
+            <text x="-75" y="26" font-family="monospace" font-size="16" fill="#94a3b8" text-anchor="middle">0</text>
+            <rect x="-50" y="0" width="50" height="40" fill="#f1f5f9"/>
+            <text x="-25" y="26" font-family="monospace" font-size="16" fill="#94a3b8" text-anchor="middle">1</text>
+            
+            <rect x="0" y="0" width="50" height="40" fill="#f1f5f9"/>
+            <rect x="50" y="0" width="50" height="40" fill="#f1f5f9"/>
+            <rect x="100" y="0" width="50" height="40" fill="#f1f5f9"/>
+            
+            <rect x="150" y="0" width="50" height="40" fill="#f1f5f9"/>
+            <text x="175" y="26" font-family="monospace" font-size="16" fill="#94a3b8" text-anchor="middle">25</text>
+        </g>
+
+        <text x="25" y="26" font-family="monospace" font-size="16" fill="#94a3b8" text-anchor="middle">
+            4
+            <animate attributeName="opacity" values="1;0;0;1" dur="4s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+        </text>
+        <text x="75" y="26" font-family="monospace" font-size="16" fill="#94a3b8" text-anchor="middle">
+            9
+            <animate attributeName="opacity" values="1;0;0;1" dur="4s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+        </text>
+        <text x="125" y="26" font-family="monospace" font-size="16" fill="#94a3b8" text-anchor="middle">
+            16
+            <animate attributeName="opacity" values="1;0;0;1" dur="4s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+        </text>
+
+        <g>
+            <rect x="0" y="0" width="150" height="40" fill="#fee2e2" stroke="#ef4444" stroke-width="3" rx="2"/>
+            <text x="25" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">-100</text>
+            <text x="75" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">-100</text>
+            <text x="125" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">-100</text>
+            
+            <animateTransform attributeName="transform" type="translate" values="0,-80;0,0;0,0;0,-80" dur="4s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1"/>
+            <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+        </g>
+    </g>
+
+    <text x="300" y="220" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">도려낸 3칸의 구역에, 단일 숫자 '-100'이 브로드캐스팅 확장되어 세 칸 모두를 덮어씌웁니다!</text>
+</svg>

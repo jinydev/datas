@@ -1,0 +1,56 @@
+<svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="260" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">애니메이션: 코드 동작 매핑 (1차원 스칼라 브로드캐스팅)</text>
+    
+    <!-- Top Array 'a' -->
+    <text x="120" y="75" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">배열 a (길이 3칸)</text>
+    <g transform="translate(190, 50)">
+        <rect x="0" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="30" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">3</text>
+        <rect x="70" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="100" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">4</text>
+        <rect x="140" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="170" y="25" font-family="sans-serif" font-size="18" font-weight="bold" fill="#0369a1" text-anchor="middle">5</text>
+    </g>
+
+    <text x="290" y="125" font-family="sans-serif" font-size="24" font-weight="bold" fill="#475569" text-anchor="middle">+</text>
+
+    <!-- Bottom Scalar 'b' with expanding ghost clones -->
+    <text x="120" y="155" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">숫자 2 (길이 1칸)</text>
+    <g transform="translate(190, 130)">
+        <rect x="0" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3"/>
+        <text x="30" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+        
+        <g opacity="0">
+            <rect x="70" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+            <text x="100" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+            <rect x="140" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+            <text x="170" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">2</text>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.8;1" dur="2.5s" repeatCount="indefinite"/>
+        </g>
+    </g>
+
+    <!-- Arrow down to result -->
+    <path d="M 450 110 Q 510 110 510 160" fill="none" stroke="#64748b" stroke-width="3" stroke-dasharray="6" marker-end="url(#arrow_gray)"/>
+    <text x="510" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">가상 복제 변신 완료!</text>
+
+    <!-- Result Array -->
+    <g transform="translate(410, 175)" opacity="0">
+        <rect x="0" y="0" width="60" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="30" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">5</text>
+        <rect x="70" y="0" width="60" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="100" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">6</text>
+        <rect x="140" y="0" width="60" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/>
+        <text x="170" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">7</text>
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.8;0.9;1" dur="2.5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="410,165;410,175;410,175" dur="2.5s" repeatCount="indefinite"/>
+    </g>
+
+    <defs>
+        <marker id="arrow_gray" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+        </marker>
+    </defs>
+
+    <text x="290" y="245" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">숫자 2가 상대방 길이(3칸)에 비례해서 스스로 [2, 2, 2]로 공간을 늘려(Broadcast) 연산됩니다.</text>
+</svg>

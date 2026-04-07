@@ -1,78 +1,55 @@
-<svg width="600" height="350" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .title { font-family: 'Comic Sans MS', sans-serif; font-size: 22px; font-weight: bold; fill: #2c3e50; }
-    .subtitle { font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; fill: #7f8c8d; }
+<svg width="600" height="260" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="260" fill="#f8fafc" rx="10"/>
+    <text x="300" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle">애니메이션: 스칼라 파티 버프 브로드캐스팅(확장)</text>
     
-    .grid-cell-small { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; }
-    .grid-text-small { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #e67e22; text-anchor: middle; alignment-baseline: central; }
-    
-    .grid-cell-ghost { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; rx: 5; stroke-dasharray: 4; opacity: 0; }
-    .grid-text-ghost { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; fill: #f39c12; text-anchor: middle; alignment-baseline: central; opacity: 0; }
-    
-    .grid-cell-target { fill: #ebf5fb; stroke: #2980b9; stroke-width: 2; rx: 5; opacity: 0.8; }
-    
-    .arrow { fill: none; stroke: #bdc3c7; stroke-width: 3; stroke-dasharray: 5; }
-
-    @keyframes expand-down {
-      0% { opacity: 0; transform: translateY(-30px); }
-      20% { opacity: 0.6; transform: translateY(0); }
-      80% { opacity: 0.6; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(0); }
-    }
-    
-    .g1 { animation: expand-down 4s infinite; animation-delay: 1s; }
-    .g2 { animation: expand-down 4s infinite; animation-delay: 1.5s; }
-  </style>
-
-  <rect width="100%" height="100%" fill="#f9fcfb" rx="20" />
-  
-  <text x="300" y="40" class="title" text-anchor="middle">크기가 안 맞다고? 알아서 쫙쫙 늘려준다! (Broadcasting)</text>
-
-  <!-- Smaller Array -->
-  <g transform="translate(150, 100)">
-    <text x="60" y="-15" class="subtitle" text-anchor="middle" fill="#e67e22">1D 배열 [1, 2]</text>
-    <rect x="0" y="0" width="50" height="50" class="grid-cell-small" />
-    <text x="25" y="25" class="grid-text-small">1</text>
-    <rect x="70" y="0" width="50" height="50" class="grid-cell-small" />
-    <text x="95" y="25" class="grid-text-small">2</text>
-    
-    <!-- Ghost Copies (Broadcasting) -->
-    <g class="g1" transform="translate(0, 70)">
-      <rect x="0" y="0" width="50" height="50" class="grid-cell-ghost" />
-      <text x="25" y="25" class="grid-text-ghost">1</text>
-      <rect x="70" y="0" width="50" height="50" class="grid-cell-ghost" />
-      <text x="95" y="25" class="grid-text-ghost">2</text>
+    <!-- Party Array (Target) -->
+    <text x="300" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">파티원 5명 (크기 5 배열)</text>
+    <g transform="translate(100, 85)">
+        <rect x="0" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="30" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">전사</text>
+        <rect x="80" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="110" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">궁수</text>
+        <rect x="160" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="190" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">마법사</text>
+        <rect x="240" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="270" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">도적</text>
+        <rect x="320" y="0" width="60" height="40" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <text x="350" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1" text-anchor="middle">힐러</text>
     </g>
-    <g class="g2" transform="translate(0, 140)">
-      <rect x="0" y="0" width="50" height="50" class="grid-cell-ghost" />
-      <text x="25" y="25" class="grid-text-ghost">1</text>
-      <rect x="70" y="0" width="50" height="50" class="grid-cell-ghost" />
-      <text x="95" y="25" class="grid-text-ghost">2</text>
+
+    <!-- Buff Value (Scalar 10) -->
+    <text x="130" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">단일 +10 버프</text>
+    
+    <g transform="translate(100, 185)">
+        <rect x="0" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3"/>
+        <text x="30" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">+10</text>
+        
+        <!-- Stretching ghost clones -->
+        <g opacity="0">
+            <rect x="80" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+            <text x="110" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">+10</text>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.8;1" dur="2s" repeatCount="indefinite"/>
+        </g>
+        <g opacity="0">
+            <rect x="160" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+            <text x="190" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">+10</text>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.4;0.8;1" dur="2s" repeatCount="indefinite"/>
+        </g>
+        <g opacity="0">
+            <rect x="240" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+            <text x="270" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">+10</text>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.6;0.8;1" dur="2s" repeatCount="indefinite"/>
+        </g>
+        <g opacity="0">
+            <rect x="320" y="0" width="60" height="40" rx="4" fill="#fecaca" stroke="#ef4444" stroke-width="3" stroke-dasharray="4"/>
+            <text x="350" y="26" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b91c1c" text-anchor="middle">+10</text>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.8;0.9;1" dur="2s" repeatCount="indefinite"/>
+        </g>
     </g>
-    
-    <!-- Stretch Arrows -->
-    <path d="M25,55 L25,65 M95,55 L95,65" class="arrow g1" />
-    <path d="M25,125 L25,135 M95,125 L95,135" class="arrow g2" />
-  </g>
 
-  <!-- Big Target Matrix -->
-  <g transform="translate(350, 100)">
-    <text x="60" y="-15" class="subtitle" text-anchor="middle" fill="#2980b9">3x2 타겟 배열</text>
-    
-    <!-- Row 1 -->
-    <rect x="0" y="0" width="50" height="50" class="grid-cell-target" />
-    <rect x="70" y="0" width="50" height="50" class="grid-cell-target" />
-    <!-- Row 2 -->
-    <rect x="0" y="70" width="50" height="50" class="grid-cell-target" />
-    <rect x="70" y="70" width="50" height="50" class="grid-cell-target" />
-    <!-- Row 3 -->
-    <rect x="0" y="140" width="50" height="50" class="grid-cell-target" />
-    <rect x="70" y="140" width="50" height="50" class="grid-cell-target" />
-  </g>
-
-  <text x="290" y="180" class="subtitle" fill="#95a5a6" style="font-size:30px;">+</text>
-
-  <g transform="translate(150, 310)">
-    <text x="150" y="0" class="subtitle" fill="#7f8c8d" text-anchor="middle">작은 배열이 거대한 배열 크기(3x2)에 맞춰 아래로 고무줄처럼 스스로 복제 확장됨!</text>
-  </g>
+    <!-- Upward animation -->
+    <path d="M 130 175 L 130 140 M 210 175 L 210 140 M 290 175 L 290 140 M 370 175 L 370 140 M 450 175 L 450 140" stroke="#ef4444" stroke-width="4" stroke-dasharray="5" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.8;0.9;1" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.5s" repeatCount="indefinite"/>
+    </path>
 </svg>

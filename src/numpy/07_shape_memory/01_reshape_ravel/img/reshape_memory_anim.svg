@@ -1,0 +1,119 @@
+<svg width="450" height="280" viewBox="0 0 450 280" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#4fd1c5" />
+        <stop offset="100%" stop-color="#319795" />
+      </linearGradient>
+      
+      <filter id="reshapeGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+
+      <!-- 화살표 선형 그라데이션 -->
+      <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#cbd5e0"/>
+        <stop offset="50%" stop-color="#a0aec0"/>
+        <stop offset="100%" stop-color="#cbd5e0"/>
+      </linearGradient>
+    </defs>
+
+    <!-- 배경 그리드 장식 -->
+    <rect x="0" y="0" width="450" height="280" fill="#f7fafc" rx="8"/>
+    <text x="225" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">
+      Numpy Reshape: 데이터 메모리 블록 재배치
+    </text>
+
+    <!-- 원본 배열 (1D Vector: 1x6) -->
+    <g transform="translate(75, 70)">
+      <text x="150" y="-15" font-family="monospace" font-size="14" font-weight="bold" fill="#718096" text-anchor="middle">Original 1D Data (size: 6)</text>
+      <g stroke="#285e61" stroke-width="2">
+        <rect x="0" y="0" width="50" height="40" fill="url(#gridGrad)" rx="3"/>
+        <text x="25" y="25" font-family="monospace" font-size="16" fill="white" stroke="none" text-anchor="middle">1</text>
+        
+        <rect x="50" y="0" width="50" height="40" fill="url(#gridGrad)" rx="3"/>
+        <text x="75" y="25" font-family="monospace" font-size="16" fill="white" stroke="none" text-anchor="middle">2</text>
+        
+        <rect x="100" y="0" width="50" height="40" fill="url(#gridGrad)" rx="3"/>
+        <text x="125" y="25" font-family="monospace" font-size="16" fill="white" stroke="none" text-anchor="middle">3</text>
+        
+        <rect x="150" y="0" width="50" height="40" fill="url(#gridGrad)" rx="3"/>
+        <text x="175" y="25" font-family="monospace" font-size="16" fill="white" stroke="none" text-anchor="middle">4</text>
+        
+        <rect x="200" y="0" width="50" height="40" fill="url(#gridGrad)" rx="3"/>
+        <text x="225" y="25" font-family="monospace" font-size="16" fill="white" stroke="none" text-anchor="middle">5</text>
+        
+        <rect x="250" y="0" width="50" height="40" fill="url(#gridGrad)" rx="3"/>
+        <text x="275" y="25" font-family="monospace" font-size="16" fill="white" stroke="none" text-anchor="middle">6</text>
+      </g>
+    </g>
+
+    <!-- 중앙 변환 애니메이션 파트 -->
+    <g transform="translate(195, 120)">
+       <path d="M30,0 L30,30 L20,30 L30,45 L40,30 L30,30" fill="url(#arrowGrad)" stroke="#718096"/>
+       <!-- 애니메이션 텍스트 교체 -->
+       <text x="60" y="25" font-family="monospace" font-size="14" font-weight="bold" fill="#dd6b20" font-style="italic">
+         <tspan x="60" dy="0">
+           <animate attributeName="opacity" values="1; 1; 0; 0; 1" dur="4s" repeatCount="indefinite" />
+           .reshape(2, 3)
+         </tspan>
+         <tspan x="60" dy="0" opacity="0">
+           <animate attributeName="opacity" values="0; 0; 1; 1; 0" dur="4s" repeatCount="indefinite" />
+           .reshape(3, 2)
+         </tspan>
+       </text>
+    </g>
+
+    <!-- 결과 배열 뷰 (2x3) -->
+    <g transform="translate(40, 180)" filter="url(#reshapeGlow)">
+      <!-- 깜빡이는 효과 (Reshape(2,3) 일 때 표시됨) -->
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" dur="4s" repeatCount="indefinite" />
+      <text x="75" y="-10" font-family="monospace" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Shape (2, 3)</text>
+      
+      <g stroke="#2b6cb0" stroke-width="2">
+        <rect x="0" y="0" width="50" height="30" fill="#4299e1" rx="2"/>
+        <text x="25" y="20" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">1</text>
+        <rect x="50" y="0" width="50" height="30" fill="#4299e1" rx="2"/>
+        <text x="75" y="20" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">2</text>
+        <rect x="100" y="0" width="50" height="30" fill="#4299e1" rx="2"/>
+        <text x="125" y="20" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">3</text>
+        
+        <rect x="0" y="30" width="50" height="30" fill="#4299e1" rx="2"/>
+        <text x="25" y="50" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">4</text>
+        <rect x="50" y="30" width="50" height="30" fill="#4299e1" rx="2"/>
+        <text x="75" y="50" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">5</text>
+        <rect x="100" y="30" width="50" height="30" fill="#4299e1" rx="2"/>
+        <text x="125" y="50" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">6</text>
+      </g>
+    </g>
+
+    <!-- 결과 배열 뷰 (3x2) -->
+    <g transform="translate(280, 180)" opacity="0" filter="url(#reshapeGlow)">
+      <!-- 깜빡이는 효과 (Reshape(3,2) 일 때 표시됨) -->
+      <animate attributeName="opacity" values="0; 0; 1; 1; 0" dur="4s" repeatCount="indefinite" />
+      <text x="50" y="-10" font-family="monospace" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Shape (3, 2)</text>
+      
+      <g stroke="#2b6cb0" stroke-width="2">
+        <rect x="0" y="0" width="50" height="25" fill="#4299e1" rx="2"/>
+        <text x="25" y="18" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">1</text>
+        <rect x="50" y="0" width="50" height="25" fill="#4299e1" rx="2"/>
+        <text x="75" y="18" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">2</text>
+        
+        <rect x="0" y="25" width="50" height="25" fill="#4299e1" rx="2"/>
+        <text x="25" y="43" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">3</text>
+        <rect x="50" y="25" width="50" height="25" fill="#4299e1" rx="2"/>
+        <text x="75" y="43" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">4</text>
+
+        <rect x="0" y="50" width="50" height="25" fill="#4299e1" rx="2"/>
+        <text x="25" y="68" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">5</text>
+        <rect x="50" y="50" width="50" height="25" fill="#4299e1" rx="2"/>
+        <text x="75" y="68" font-family="monospace" font-size="14" fill="white" stroke="none" text-anchor="middle">6</text>
+      </g>
+    </g>
+    
+    <!-- 하단 설명 텍스트 -->
+    <text x="225" y="270" font-family="Arial" font-size="12" fill="#718096" text-anchor="middle">
+      메모리상의 데이터는 그대로 둔 채, 읽는 방식(View)만 바꿔 배열의 형태(Shape)를 레고 블록처럼 자유자재로 변경합니다.
+    </text>
+
+  </svg>

@@ -1,0 +1,23 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="240" fill="#f8fafc" rx="10"/>
+    <text x="300" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#334155" text-anchor="middle">얕은 복사 (b = a): 단지 이름표 붙이기일 뿐</text>
+    
+    <g transform="translate(150, 70)">
+        <rect x="30" y="30" width="240" height="80" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+        <text x="150" y="75" font-family="monospace" font-size="16" font-weight="bold" fill="#334155" text-anchor="middle">데이터 메모리 (id: 140417...)</text>
+
+        <g transform="translate(-20, -10)">
+            <rect x="0" y="0" width="80" height="30" fill="#fde047" stroke="#ca8a04" stroke-width="2"/>
+            <text x="40" y="20" font-family="monospace" font-size="16" font-weight="bold" fill="#854d0e" text-anchor="middle">변수 a</text>
+            <line x1="80" y1="30" x2="100" y2="50" stroke="#ca8a04" stroke-width="2"/>
+        </g>
+        
+        <g transform="translate(240, -10)">
+            <rect x="0" y="0" width="80" height="30" fill="#fde047" stroke="#ca8a04" stroke-width="2"/>
+            <text x="40" y="20" font-family="monospace" font-size="16" font-weight="bold" fill="#854d0e" text-anchor="middle">변수 b</text>
+            <line x1="0" y1="30" x2="-20" y2="50" stroke="#ca8a04" stroke-width="2"/>
+        </g>
+    </g>
+
+    <text x="300" y="210" font-family="sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">새로운 객체나 뷰(View) 렌즈가 만들어지는 것이 아니라, 동일한 메모리에 'b'라는 포스트잇만 추가로 붙은 것입니다.</text>
+</svg>
