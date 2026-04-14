@@ -1,191 +1,178 @@
 ---
 layout: pandas
-title: "6.4.6 데이터프레임의 다양한 수정"
+title: "6.4.6 데이터프레임 전처리 공방"
 ---
 
-## 6.4.6 데이터프레임의 다양한 수정
+## 6.4.6 데이터 전처리 공방: 결측치, 수정, 제거, 변경
 
-#### ① 열 삽입
-다음 df를 정의하자.
+**[전산학적/수학적 의미: 메타데이터 변이(Metamorphic Operations) 및 결측치 대치(Imputation)]**
+현실 세계의 데이터는 깨끗하지 않습니다. 이 장에서는 1) 특정 메모리 오프셋의 값을 외부 데이터로 강제 덮어쓰기(Overwriting)하고, 2) 서로 차원이 맞지 않는 데이터를 결합할 때 발생하는 `NaN` (Not a Number, 결측치)을 감지하고, 3) 텐서의 특정 축 성분을 잘라내고(`drop`), 4) 차원의 라벨을 변경(`rename`)하는 데이터 정제(Data Cleansing) 기법들을 배웁니다.
+
+**[비유로 이해하기: 스프레드시트 청소 공방]**
+- 엑셀 파일을 열어서 잘못 입력된 오타 셀을 찾아 하나씩 지우개로 지우고 새 값을 쓰거나(`.loc`, `.iloc` 대입),
+- 군데군데 이빨이 빠진 데이터(빈칸, `NaN`)가 어디 있는지 스캐너로 찾고(`.isna()`),
+- 쓸데없는 열은 구역 지정해서 삭제하고(`.drop()`),
+- 열 이름이 마음에 안 들면 이름표를 새로 교체(`.rename()`)하는 청소부(Janitor)의 역할을 합니다!
+
+![데이터프레임 전처리 다이어그램](img/df_various.svg)
+
+---
+
+### [1단계] 한땀 한땀 핀셋 수정하기 (단일 셀 덮어쓰기)
+
+`6.3`장에서 배웠던 참조(조회) 방식을 그대로 쓴 채, 오른쪽 화살표(`=`)로 값을 찔러 넣기만 하면 기존 데이터가 지워지고 새로운 데이터가 대입됩니다.
 
 ```python
-import numpy as np
 import pandas as pd
-
-dates = pd.date_range("20240102", periods=6)
-df = pd.DataFrame(np.arange(24).reshape(6, 4), index=dates)
-df.columns = list('ABCD')
-print(df)
-```
-
-새로운 열에 삽입할 시리즈를 하나 생성한다.
-
-```python
-s1 = pd.Series([1, 2, 3, 4, 5], index=pd.date_range("20240102", periods=5))
-print(s1)
-```
-
-다음으로 열 'E'를 새로 만들어 값을 대입한다. 위 `s1`은 `2024-01-07`이 없으므로 결측값에는 `NaN` 값이 삽입된다.
-
-```python
-df["E"] = s1
-print(df)
-```
-
-#### ② 레이블로 값 대입
-다음 `df.loc['2024-01-02', 'A']`로 행과 열의 레이블로 지정한 요소의 값을 대입할 수 있다.
-
-```python
-df.loc['2024-01-02', 'A'] = 10
-print(df)
-```
-
-위에서 이미 정의한 `dates`를 행의 인자로 사용할 수 있다.
-
-```python
-df.loc[dates[1], 'B'] = 50
-print(df)
-```
-
-다음 `df.at[dates[2], 'C']`으로 행과 열의 레이블로 지정한 요소의 값을 대입한다.
-
-```python
-df.at[dates[2], 'C'] = 100
-print(df)
-```
-
-행과 열의 레이블은 각각 `df.index[i]`, `df.columns[j]`로도 참조 가능하다.
-
-```python
-df.at[df.index[-1], df.columns[-1]] = 230
-print(df)
-```
-
-#### ③ 위치로 값 대입
-다음처럼 `df.iloc[1, 2]`로 첨자 1, 2의 값을 수정할 수 있다.
-
-```python
-df.iloc[1, 2] = 60
-print(df)
-```
-
-또한 `df.iat[i, j]`로 첨자 i, j의 값을 수정할 수 있다.
-
-```python
-df.iat[3, 3] = 150
-print(df)
-```
-
-다음은 `df.iloc[:, 4]`의 4 첨자(E열)의 모든 값을 500으로 수정한다.
-
-```python
-df.iloc[:, 4] = [500] * len(df)
-print(df)
-```
-
-#### ④ 데이터프레임의 NaN으로 표시되는 결측값
-다음 7행 5열의 데이터프레임을 생성하자.
-
-```python
 import numpy as np
-import pandas as pd
 
-dates = pd.date_range("20250302", periods=7, freq='W-MON')
-df = pd.DataFrame(np.arange(35).reshape(7, 5), index=dates, columns=list('ABCDE'))
+# 임의의 성적표 생성
+df = pd.DataFrame(
+    data=[[80, 90], [70, 85]],
+    index=['홍길동', '이순신'],
+    columns=['수학', '영어']
+)
+print("--- [수정 전 원본] ---")
+print(df)
+
+# 1. 이름 기반 수정 (.loc / .at)
+df.loc['홍길동', '수학'] = 100
+
+# 2. 좌표 번호 기반 수정 (.iloc / .iat)
+df.iloc[1, 1] = 95 
+
+print("\n--- [수정 후] ---")
 print(df)
 ```
+**[출력 결과]**
+```text
+--- [수정 전 원본] ---
+      수학  영어
+홍길동  80  90
+이순신  70  85
 
-다음으로 2025년 3월 7일 이후, 월요일로 시작되는 주 5회의 날짜 시퀀스를 생성한다.
-
-```python
-subdates = pd.date_range("20250307", periods=5, freq='W-MON')
-print(subdates)
+--- [수정 후] ---
+      수학  영어
+홍길동 100  90   <- 변경 완료!
+이순신  70  95   <- 변경 완료!
 ```
 
-위 날짜를 index 요소로 하는 5개의 시리즈를 생성한다.
+![loc/iloc을 이용한 단일 셀 값 강제 덮어쓰기](./img/df_overwrite.svg)
+
+---
+
+### [2단계] 블랙홀 `NaN`의 탄생과 감지 (`.isna()`)
+
+현업에서 두 데이터를 합치거나 줄(행)을 억지로 끼워 넣을 때, 짝이 맞지 않으면 판다스는 빈 공간을 **`NaN` (Not a Number)** 이라는 결측값으로 채워버립니다. 
 
 ```python
-s = pd.Series(np.linspace(10, 17, 5), index=subdates)
-print(s)
-```
+# '과학' 이라는 새로운 열을 만들면서 이순신 점수만 넣어줍시다.
+# 홍길동 점수는 안 줬으니 빈칸이 생기겠죠?
+df['과학'] = pd.Series([88], index=['이순신'])
 
-시리즈 `s`를 `df`의 새로운 열 "F"에 저장하면 첫 행과 마지막 행이 없어 결측값(missing value)인 `NaN`으로 표시된다.
-
-```python
-df['F'] = s
+print("--- [NaN 결측치 발생] ---")
 print(df)
+
+# 누락된 데이터가 어디 있는지 스캐너 가동!
+print("\n--- [결측치 스캔 결과: df.isna()] ---")
+print(df.isna())
+```
+**[출력 결과]**
+```text
+--- [NaN 결측치 발생] ---
+      수학  영어    과학
+홍길동 100  90   NaN     <- 판다스가 빈칸을 NaN으로 채움!
+이순신  70  95  88.0
+
+--- [결측치 스캔 결과: df.isna()] ---
+        수학     영어     과학
+홍길동  False  False   True   <- True 램프에 불이 들어온 곳이 구멍난 곳입니다!
+이순신  False  False  False
 ```
 
-#### ⑤ np.nan으로 결측값 대입
-다음 코드로 첨자 위치 3, 4와 두 번째 행 모두를 결측값인 `np.nan`으로 대입한다.
+![.isna() 결측치 스캐닝 메커니즘](./img/df_isna.svg)
+
+> *(참고)* 나중에 머신러닝 모델에 이 데이터를 넣으려면 `NaN` 자리 (True 불이 켜진 곳)를 반드시 `0`으로 메꾸거나 제외해야 합니다. `pd.isna(df)` 나 `df.isnull()` 함수를 모두 동일하게 스캐너로 쓸 수 있습니다.
+
+---
+
+### [3단계] 메스! 불필요한 행/열 잘라내기 (`.drop()`)
+
+데이터 분석에 전혀 필요 없는 열(Column)이나 행(Row)은 자원을 낭비하므로 `drop()`으로 잘라냅니다. 여기서도 `axis`(축) 방향 설정이 생명입니다.
 
 ```python
-df2 = df.copy()
-df2.iloc[3, 4] = np.nan
-df2.iloc[1, :] = np.nan
-print(df2)
+# 1. 싹둑! '영어' 열(수직선)을 잘라버려라! -> 축을 가로(axis=1)로 지정!
+df_dropped_col = df.drop('영어', axis=1)
+
+# 2. 싹둑! '초기 데이터'인 홍길동 행(가로줄)을 자르자! -> 축을 세로(axis=0)로 지정!
+df_dropped_row = df.drop('홍길동', axis=0)
+
+print("--- [1] 영어 열 절단 수술 완료 ---")
+print(df_dropped_col)
+
+print("\n--- [2] 홍길동 행 절단 수술 완료 ---")
+print(df_dropped_row)
+```
+**[출력 결과]**
+```text
+--- [1] 영어 열 절단 수술 완료 ---
+      수학    과학
+홍길동 100   NaN
+이순신  70  88.0
+
+--- [2] 홍길동 행 절단 수술 완료 ---
+     수학  영어    과학
+이순신  70  95  88.0
 ```
 
-#### ⑥ isna()와 count()
-다음 데이터프레임 원소가 결측값인지의 여부를 `pd.isna(df)` 또는 `df.isna()`로 알 수 있다.
+![.drop()을 활용한 불필요한 행/열 데이터 절단](./img/df_drop.svg)
+
+---
+
+### [4단계] 촌스러운 이름표 떼어내기 (`.rename()`)
+
+`A`, `B` 처럼 의미 없는 컬럼명이나 보기 안 좋은 이름들을 다른 이름으로 바꿀 수 있습니다. 파이썬의 **사전(Dictionary)** 구조 `{'옛날이름': '새이름'}`을 씁니다.
 
 ```python
-pd.isna(df2)
+# 수학을 'Math', 과학을 'Science'로 이름 교체!
+df_renamed = df.rename(columns={'수학': 'Math', '과학': 'Science'})
+
+print("--- [이름표 교체 완료] ---")
+print(df_renamed)
+```
+**[출력 결과]**
+```text
+--- [이름표 교체 완료] ---
+     Math  영어  Science
+홍길동   100  90      NaN
+이순신    70  95     88.0
 ```
 
-```python
-df2.isna()
-```
+![.rename()을 이용한 컬럼/인덱스 라벨 교체](./img/df_rename.svg)
 
-결측값인지의 여부를 `df.isnull()`로도 알 수 있다.
+---
 
-```python
-df2.isnull()
-```
+### 🎁 [보너스] 숫자들 간의 궁합 보기 (`.corr()`)
 
-함수 `count()`로 결측값을 제외한 모든 열의 원소 수를 알 수 있다.
-
-```python
-df2.count()
-```
-
-`df.count(axis=1)`로 결측값을 제외한 모든 행의 원소 수를 알 수 있다.
+서로 다른 숫자 열들이 얼마나 "비슷한 패턴으로 오르고 내리는지"를 한 방에 보여주는 통계 함수입니다.
+- `1.0`에 가까울수록: 한쪽이 오르면 다른 쪽도 미친 듯이 같이 오름 (양의 상관관계)
+- `1`에 가까울수록: 한쪽이 오르면 다른 쪽은 미친 듯이 떨어짐 (음의 상관관계)
+- `0`에 가까울수록: 둘은 아무 상관 없음
 
 ```python
-df2.count(axis=1)
-```
-
-함수 `value_counts()`는 고유한 값의 빈도를 포함하는 시리즈를 반환한다.
-
-#### ⑦ 행과 열 삭제: drop()
-
-필요 없는 행이나 열을 제거할 때는 `drop()` 함수를 사용합니다. 이때 `axis` 설정이 매우 중요합니다.
-- `axis=0`: 행(Row) 삭제 (가로줄)
-- `axis=1`: 열(Column) 삭제 (세로줄)
-
-```python
-# 6.4.6 'A' 컬럼 삭제 (axis=1)
-df_dropped_col = df.drop('A', axis=1)
-
-# 6.4.6 '2024-01-02' 인덱스 행 삭제 (axis=0)
-df_dropped_row = df.drop(df.index[0], axis=0)
-```
-
-#### ⑧ 컬럼 이름 변경: rename()
-
-컬럼 이름을 보기 좋게 바꿀 때 사용합니다. 딕셔너리 형태로 `{'기존이름': '새이름'}`을 전달합니다.
-
-```python
-# 6.4.6 A를 "Alpha", B를 "Beta"로 변경
-df_renamed = df.rename(columns={'A': 'Alpha', 'B': 'Beta'})
-# 6.4.6 print(df_renamed)
-```
-
-#### ⑨ 변수 간 상관관계: corr()
-
-두 숫자형 변수가 얼마나 서로 관련이 있는지(-1 ~ 1 사이의 값) 상관계수(Correlation)를 보여줍니다. 데이터 분석 시 변수들 사이의 숨겨진 관계를 숫자로 빠르게 파악할 때 유용합니다.
-
-```python
-# 6.4.6 각 숫자형 열들 사이의 상관계수 계산
+# 성적표의 과목 간 상관계수 구하기
+print("--- [과목별 상관계수 테이블] ---")
 print(df.corr())
 ```
+**[출력 결과]**
+```text
+--- [과목별 상관계수 테이블] ---
+          수학        영어        과학
+수학  1.000000 -1.000000       NaN
+영어 -1.000000  1.000000       NaN
+과학       NaN       NaN  1.000000
+```
+
+![.corr()을 통한 속성 간 상관계수(Correlation) 시각화](./img/df_corr.svg)
+
+> 이 기능은 본격적인 통계 분석 전, 데이터의 숨겨진 유전자 지도를 그려보는 아주 강력한 도구입니다.

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.loc 와 .index 의 콤보: 번호(Position)로 간접 참조하기</text>
+
+  <!-- 1. 선생님 (loc 명령어) -->
+  <g transform="translate(40, 100)">
+    <rect x="0" y="0" width="150" height="80" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="75" y="30" font-family="monospace" font-size="20" fill="#82AAFF" font-weight="bold" text-anchor="middle">.loc [명단]</text>
+    
+    <text x="75" y="60" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">"이름표만 받는다!"</text>
+  </g>
+
+  <!-- 번호를 이름표로 바꿔주는 장치 (pf.index 배열) -->
+  <g transform="translate(250, 70)">
+    <!-- 조교의 책상 느낌 -->
+    <rect x="0" y="0" width="160" height="150" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <rect x="0" y="0" width="160" height="30" fill="#BBDEFB" rx="3" />
+    <text x="80" y="20" font-family="monospace" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">pf.index 배열</text>
+
+    <!-- 번호(i) -> 이름(Value) 변환표 -->
+    <text x="40" y="55" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">idx 0</text>
+    <path d="M 65 50 L 95 50" fill="none" stroke="#2196F3" stroke-width="2" />
+    <polygon points="90,47 95,50 90,53" fill="#2196F3" />
+    <text x="120" y="55" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">윤일형</text>
+
+    <text x="40" y="80" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">idx 1</text>
+    <path d="M 65 75 L 95 75" fill="none" stroke="#2196F3" stroke-width="2" />
+    <polygon points="90,72 95,75 90,78" fill="#2196F3" />
+    <text x="120" y="80" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+
+    <text x="40" y="105" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">idx 2</text>
+    <path d="M 65 100 L 95 100" fill="none" stroke="#2196F3" stroke-width="2" />
+    <polygon points="90,97 95,100 90,103" fill="#2196F3" />
+    <text x="120" y="105" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">홍소희</text>
+
+    <text x="40" y="130" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">idx 3</text>
+    <path d="M 65 125 L 95 125" fill="none" stroke="#2196F3" stroke-width="2" />
+    <polygon points="90,122 95,125 90,128" fill="#2196F3" />
+    <text x="120" y="130" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">유한빈</text>
+  </g>
+
+  <!-- 데이터 전달 흐름 화살표 -->
+  <!-- 1) 외부에서 번호 요청 -->
+  <text x="330" y="250" font-family="sans-serif" font-size="14" fill="#E91E63" font-weight="bold" text-anchor="middle">"0번 학생 찾아줘!" (pf.index[0])</text>
+  <path d="M 330 230 L 330 180" fill="none" stroke="#E91E63" stroke-width="4" stroke-dasharray="3,3" />
+  <polygon points="325,185 330,175 335,185" fill="#E91E63" />
+
+  <!-- 2) 이름표를 loc 에 전달 -->
+  <path d="M 240 100 Q 215 100 200 130 L 200 130" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="205,125 200,135 195,125" fill="#4CAF50" />
+  <text x="210" y="90" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">['윤일형'] 리턴</text>
+
+  <!-- 결과 표 (최종) -->
+  <g transform="translate(460, 90)">
+    <rect x="-10" y="0" width="220" height="90" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="100" y="-10" font-family="monospace" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">결과 추출 화면</text>
+    
+    <rect x="30" y="0" width="160" height="30" fill="#E8F5E9" rx="3" stroke="#8BC34A" stroke-width="1"/>
+    <text x="60" y="20" font-family="sans-serif" font-size="11" fill="#1B5E20" font-weight="bold" text-anchor="middle">중간</text>
+    <text x="100" y="20" font-family="sans-serif" font-size="11" fill="#1B5E20" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="140" y="20" font-family="sans-serif" font-size="11" fill="#1B5E20" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="175" y="20" font-family="sans-serif" font-size="11" fill="#1B5E20" font-weight="bold" text-anchor="middle">출석</text>
+
+    <rect x="-10" y="30" width="40" height="60" fill="#FFE0B2" rx="3" stroke="#FFCA28" />
+    <text x="10" y="65" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">윤일형</text>
+
+    <!-- 값 -->
+    <text x="60" y="65" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">25</text>
+    <text x="100" y="65" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">35</text>
+    <text x="140" y="65" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">8</text>
+    <text x="175" y="65" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">18</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#F57F17" font-weight="bold" text-anchor="middle">번호(Pos)로 명단 구조체에서 이름표(Label)를 우회하여 찾아오는 간접 메모리 참조 기법!</text>
+  </g>
+
+</svg>

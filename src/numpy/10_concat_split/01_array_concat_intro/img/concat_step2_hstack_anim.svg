@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .text-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #555; }
+      .code-label { font-family: 'Courier New', Courier, monospace; font-size: 24px; font-weight: bold; fill: #d63384; }
+      .box { rx: 8px; ry: 8px; stroke-width: 2px; }
+      .train-A { fill: #cce5ff; stroke: #004085; }
+      .train-B { fill: #d4edda; stroke: #155724; }
+      .cell-text { font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; text-anchor: middle; dominant-baseline: middle; fill: #333; }
+      .grid-line { stroke: rgba(0,0,0,0.2); stroke-width: 1px; }
+      .moving-cart {
+        animation: slideLeft 3s ease-in-out infinite alternate;
+      }
+      .link-bar {
+        stroke: #333; stroke-width: 8; stroke-linecap: round;
+        animation: showLink 3s ease-in-out infinite alternate;
+      }
+      @keyframes slideLeft {
+        0%, 10% { transform: translate(450px, 80px); }
+        90%, 100% { transform: translate(300px, 80px); }
+      }
+      @keyframes showLink {
+        0%, 80% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="300" fill="#f8f9fa" rx="15" ry="15"/>
+  <text x="400" y="35" class="title" text-anchor="middle">Step 2. 수평 결합 (hstack): 기차 화물칸 이어붙이기</text>
+  <text x="400" y="65" class="code-label" text-anchor="middle">np.hstack((A, B))</text>
+
+  <!-- Link Bar -->
+  <line x1="280" y1="140" x2="310" y2="140" class="link-bar" />
+
+  <!-- Train A (Fixed) -->
+  <g transform="translate(180, 80)">
+    <text x="60" y="-15" class="text-label" text-anchor="middle">기차칸 A</text>
+    <rect x="0" y="0" width="120" height="120" class="box train-A" />
+    <line x1="60" y1="0" x2="60" y2="120" class="grid-line" />
+    <line x1="0" y1="60" x2="120" y2="60" class="grid-line" />
+    <text x="30" y="30" class="cell-text">1</text><text x="90" y="30" class="cell-text">2</text>
+    <text x="30" y="90" class="cell-text">3</text><text x="90" y="90" class="cell-text">4</text>
+    <circle cx="30" cy="130" r="15" fill="#333" /><circle cx="90" cy="130" r="15" fill="#333" />
+  </g>
+
+  <!-- Train B (Moving) -->
+  <g class="moving-cart">
+    <text x="60" y="-15" class="text-label" text-anchor="middle">기차칸 B</text>
+    <rect x="0" y="0" width="120" height="120" class="box train-B" />
+    <line x1="60" y1="0" x2="60" y2="120" class="grid-line" />
+    <line x1="0" y1="60" x2="120" y2="60" class="grid-line" />
+    <text x="30" y="30" class="cell-text">5</text><text x="90" y="30" class="cell-text">6</text>
+    <text x="30" y="90" class="cell-text">7</text><text x="90" y="90" class="cell-text">8</text>
+    <circle cx="30" cy="130" r="15" fill="#333" /><circle cx="90" cy="130" r="15" fill="#333" />
+  </g>
+</svg>

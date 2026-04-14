@@ -1,132 +1,85 @@
 ---
 layout: mathplotlib
-title: "5.1.3 figure와 서브플롯"
+title: "5.1.3 화면 분할: Figure와 Subplot 레이아웃"
 ---
 
-## 5.1.3 figure와 서브플롯
+## 5.1.3 다중 그래프 화면 분할 기법 (Figure & Subplot)
 
-#### ① figure와 axes 개요
+데이터 시각화를 하다 보면 한 화면에 산점도, 선 그래프, 막대그래프를 동시에 여러 개 띄워놓고 비교하고 싶을 때가 있습니다. 이를 위해 Matplotlib이 그래프를 그리는 **공간 구조(Hierarchy)**를 완벽하게 이해해야 합니다.
 
-`matplotlib`에서 `figure`와 `axes`는 그래프를 생성하고 구성하는 데 중요한 역할을 하는 요소이다. 이 두 가지 개념을 자세히 알아보자.
+### ① Figure, Axes, Axis의 계층 구조
 
-전체 그림인 `Figure`는 그래프를 담는 캔버스나 종이 시트와 같이 생각할 수 있다. `Figure`는 그래프의 전체적인 레이아웃과 스타일을 관리한다. 하나의 `Figure` 객체에는 하나 이상의 `Axes` 객체가 포함될 수 있다. `Axes`는 `Figure` 내부에서 실제 그래프가 그려지는 영역을 나타낸다. `Axes`에는 x 축(axis)과 y 축(axis)이 있으며, 그래프의 데이터를 시각화하는 데 사용된다. 하나의 `Figure` 안에 여러 개의 `Axes`를 배치하여 서브플롯을 만들 수 있다. 정리해 보면 `figure`와 `axes` 구성 요소는 계층적 구조이다.
+> **[미술학원 비유로 이해하기]**
+> - **`Figure` (피규어)**: 이젤 위에 올려놓은 거대한 하나의 **'전체 캔버스(종이)'** 입니다.
+> - **`Axes` (액시즈/서브플롯)**: 캔버스 안에 펜으로 그린 사각형 **'스케치북(구역)'** 하나하나를 말합니다. 그래프 4개를 그렸다면 Axes 객체도 4개가 됩니다.
+> - **`Axis` (액시스)**: 각 스케치북 구역 안에 십자선으로 긋는 **'X축, Y축 눈금선'** 입니다.
 
-- **Figure 객체**: 전체 그림
-- **Axes 객체(axes)**: Figure 객체에 속하며 시각화할 데이터를 추가하는 공간
-- **Axis 객체**: Axes 객체에 속하는 축을 말하며, Axis는 다시 X Axis, Y Axis로 분류
+아래 구조도는 이 세 가지 필수 객체가 어떻게 포함 관계를 가지는지 명확히 보여줍니다.
 
-다음 그림은 세 객체 `figure`와 `axes`, 그리고 `axis` 간의 계층적 관계를 보여준다.
+![Figure와 Axes 구조도](img/figure_axes_hierarchy.svg)
 
-![전체 종이인 figure와 부분 그림인 axes](img/page_012.png)
+---
 
-#### ② 서브플롯과 방법
+### ② 격자(Grid) 구조로 서브플롯 분할하기
 
-`matplotlib`에서 서브플롯이란 하나의 `Figure`에 여러 개의 그래프를 동시에 그리는 레이아웃을 말한다. 여기에서는 서브플롯과 부분플롯이란 용어를 혼용해서 쓸 예정이다. `matplotlib`을 사용하면서 부분플롯을 만들어야 하는 상황이 생길 수 있다. 부분플롯을 그리는 방법으로 `plt.subplot()`과 `plt.subplots()`, 그리고 `fig.add_subplot()`이 주로 사용된다. 세 가지 방법으로 부분플롯을 그리는 간단한 코드와 결과를 확인해 보도록 하자.
+캔버스(`Figure`) 영역을 2행 2열처럼 쪼개어 각각의 구역(`Axes`)에 다른 그래프를 그리는 기법을 **서브플롯(Subplot)**이라고 합니다. 
 
-- `plt.subplot()`
-- `plt.subplots()`
-- `fig.add_subplot()`
+과거의 방식과 최근 실무 방식의 두 가지가 존재합니다.
 
-#### ③ 서브플롯 plt.subplot() 개요
+![서브플롯 분할 방식 비교](img/subplot_grid.svg)
 
-다음은 `plt.subplot(m, n, index)`로 부분플롯을 그린 그림이다. `m`은 행의 수, `n`은 열의 수이며, `index`는 1부터 시작하는 부분플롯의 번호를 말한다.
-
-다음은 2행, 2열의 부분플롯과 `index`를 보여주고 있다. `index`는 행이 우선으로 1부터 4까지이다.
-
-![2행 2열의 서브플롯과 index 참조](img/page_013.png)
-
-다음은 2행 3열의 부분플롯을 `plt.subplot(m, n, index)`로 그린 결과이다. `index`를 1, 5, 6만 그리기 때문에 중간 2, 3, 4 부분이 비어 있는 것을 볼 수 있다.
+#### 방식 1: `plt.subplot` (절차적, 과거 방식)
+`plt.subplot(행, 열, 칸번호)` 를 호출하여 "지금부터 n번째 방에 들어간다~" 라고 선언한 뒤 그래프를 그립니다.
 
 ```python
 import matplotlib.pyplot as plt
 
+# 가로 9인치, 세로 4인치의 거대한 캔버스(Figure) 준비
 plt.figure(figsize=(9, 4))
 
-plt.subplot(2, 3, 1)
-plt.subplot(2, 3, 5)
-plt.subplot(2, 3, 6)
+plt.subplot(2, 3, 1) # 2행 3열의 1번 방에 진입
+plt.plot([1, 2], [1, 2])     # 1번 방에 선 그리기
 
-plt.plot()
-plt.show()
+plt.subplot(2, 3, 6) # 갑자기 2행 3열의 6번 방으로 이동
+plt.plot([1, 2], [2, 1])     # 6번 방에 선 그리기
+
+plt.show()  # 2, 3, 4, 5번 방은 텅 빈 채로 출력됩니다.
 ```
 
-#### ④ 서브플롯 plt.subplots() 개요
+![과거 subplot 분할 방식](img/subplot_old.svg)
 
-다음은 `plt.subplots(m, n)`으로 부분플롯을 그린 그림이다. 부분플롯에서 `m`은 행의 수, `n`은 열의 수이다. 다음은 `plt.subplots(2, 2)`로 2행, 2열의 부분플롯을 사용한 결과 그림이다. 부분플롯인 `axes[m, n]`으로 행이 `m`, 열이 `n`인 부분플롯에 원하는 그래프를 그릴 수 있다.
 
-![2행 2열의 서브플롯과 axes 참조](img/page_014.png)
-
-다음은 2행 4열의 부분플롯을 `plt.subplots(2, 4)`로 그린 결과이다.
-
-```python
-import matplotlib.pyplot as plt
-plt.figure(figsize=(9, 4))
-
-plt.subplots(2, 4) # 2행 4열의 서브플롯
-
-plt.show()
-```
-
-#### ⑤ 서브플롯 fig.add_subplot() 개요
-
-다음은 `fig.add_subplot(m, n, index)`으로 부분플롯을 그린 그림이다. 부분플롯에서 `m`은 행의 수, `n`은 열의 수이며, `index`는 1부터 시작하는 부분플롯의 번호이다.
-
-다음은 3행, 2열의 부분플롯과 `index`를 보여주고 있다. `index`는 행이 우선으로 1부터 6까지이다. 다음 그림에서 `(3, 2, 1)`은 `(321)`로 쓰는 것이 가능하다. 다만 `(321)`로 사용하는 경우, 단 단위 자리만 가능하므로 1에서 9까지만 가능하다.
+#### 방식 2: `plt.subplots` (객체지향, 현대 실무 표준 ★)
+**가장 추천하는 방식**입니다. 캔버스(`fig`)와 모눈종이 구역 리스트(`axes`)를 한 번에 생성하여 배열 `[행, 열]` 인덱스로 깔끔하게 접근합니다.
 
 ```python
 import matplotlib.pyplot as plt
 
-# 5.1.3 define figure
-fig = plt.figure()
+# fig는 전체 캔버스, ax는 2x2 크기의 Axes 배열(리스트)입니다.
+fig, ax = plt.subplots(2, 2, figsize=(8, 8)) 
 
-# 5.1.3 add subplots
-fig.add_subplot(321).set_title('321')
-fig.add_subplot(322).set_title('322')
-fig.add_subplot(323).set_title('323')
-fig.add_subplot(324).set_title('324')
-fig.add_subplot(325).set_title('325')
-fig.add_subplot(326).set_title('326')
+# 원하는 모눈종이 칸(ax[행, 열])을 정밀하게 지정해서 그립니다.
+ax[0, 0].plot([1, 2, 3], [1, 4, 9], 'ro-')
+ax[0, 0].set_title("1행 1열: Line Plot")
 
-# 5.1.3 adjust spaces
-fig.subplots_adjust(wspace=.2, hspace=.7)
+ax[0, 1].scatter([1, 2, 3], [1, 2, 3], color='blue')
+ax[0, 1].set_title("1행 2열: Scatter")
 
-plt.show()
-```
+ax[1, 0].bar(['X', 'Y'], [10, 20], color='green')
+ax[1, 0].set_title("2행 1열: Bar Plot")
 
-다음은 2행 2열의 부분플롯을 `plt.add_subplot(m, n, index)`으로 그린 결과이다. `index`를 2, 3, 4만 그리기 때문에 중간에 1만 비어 있는 것을 볼 수 있다.
+ax[1, 1].plot([1, 2], [2, 1], 'k--')
+ax[1, 1].set_title("2행 2열: Empty/Line")
 
-```python
-import matplotlib.pyplot as plt
-fig = plt.figure(figsize=(7, 5))
-ax2 = fig.add_subplot(2, 2, 2)
-ax3 = fig.add_subplot(2, 2, 3)
-ax4 = fig.add_subplot(2, 2, 4)
-```
-
-#### ⑥ [추천] 객체 지향적 서브플롯 생성과 레이아웃 관리
-
-최신 파이썬 시각화 트렌드에서는 `plt.subplots()`를 사용하여 **Figure와 Axes를 동시에 생성**하는 객체 지향 방식을 가장 많이 사용합니다.
-
-```python
-# 5.1.3 fig는 전체 창, ax는 그래프 영역들의 리스트(배열)입니다.
-fig, ax = plt.subplots(2, 2, figsize=(8, 8)) # 2행 2열 (총 4개)
-
-# 5.1.3 ax[행, 열]로 접근합니다.
-ax[0, 0].plot([1, 2, 3], [1, 4, 9])
-ax[0, 0].set_title("Line Plot (0, 0)")
-
-ax[0, 1].scatter([1, 2, 3], [1, 2, 3])
-ax[0, 1].set_title("Scatter Plot (0, 1)")
-
-ax[1, 0].bar(['X', 'Y'], [10, 20])
-ax[1, 0].set_title("Bar Plot (1, 0)")
-
-ax[1, 1].hist([1, 1, 2, 3, 3, 3, 4, 5])
-ax[1, 1].set_title("Histogram (1, 1)")
-
-# 5.1.3 레이아웃 자동 정리 (겹침 방지)
+# [핵심 꿀팁] 서브플롯 간에 텍스트가 겹치지 않게 자동으로 간격을 넓혀줍니다!
 plt.tight_layout() 
 plt.show()
 ```
 
-여러 그래프를 그리면 글자가 겹치는 경우가 많습니다. 이때 `plt.tight_layout()`을 호출해주면 그래프 간의 간격을 자동으로 조절하여 겹치지 않게 해줍니다. `plt.show()` 직전에 호출하는 것이 좋습니다. 수동으로 간격을 조절하려면 `plt.subplots_adjust(wspace=0.5, hspace=0.5)` 등을 사용할 수 있습니다.
+![현대적 subplots 분할 방식](img/subplots_new.svg)
+
+
+> **🔥 코딩 고수의 꿀팁: `tight_layout()`**
+> 서브플롯을 여러 개 만들다 보면 그래프끼리 따닥따닥 붙어서 서로의 숫자와 제목(Title)이 겹쳐 거미줄처럼 보일 때가 많습니다. 출력 직전 마지막 줄에 `plt.tight_layout()` 한 줄만 호출해주면 AI가 알아서 보기 좋게 여백을 띄워줍니다!
+
+이어지는 다음 장에서는 모눈종이를 2x2처럼 규칙적인 격자뿐만 아니라, **"위쪽 방은 작게, 아래쪽 방은 엄청 크게"** 내 마음대로 테트리스처럼 쪼갤 수 있는 고급 레이아웃 `GridSpec`에 대해 알아봅니다.

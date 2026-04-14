@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .box { rx: 10px; ry: 10px; fill: #fcfcfc; stroke: #ccc; stroke-width: 3px; }
+      .text-bold { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 22px; font-weight: bold; fill: #fff; }
+      .chart-col { stroke: #333; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">막대형 쌍둥이 차트: Countplot vs Histplot</text>
+
+  <!-- CountPlot -->
+  <g transform="translate(80, 90)">
+    <rect x="0" y="0" width="300" height="220" class="box" fill="#f8f9fa" stroke="#e67e22" />
+    <rect x="0" y="0" width="300" height="50" rx="10" ry="10" fill="#e67e22" />
+    <rect x="0" y="25" width="300" height="25" fill="#e67e22" />
+    <text x="150" y="32" class="text-bold" text-anchor="middle">Countplot (카운트 플롯)</text>
+    
+    <text x="150" y="85" class="title" fill="#d35400" text-anchor="middle">대상: 범주형 변수 (X축: 등급, 범주)</text>
+    
+    <!-- Drawing Bar Chart -->
+    <line x1="40" y1="200" x2="260" y2="200" stroke="#333" stroke-width="2" />
+    
+    <!-- Bars -->
+    <rect x="60" y="120" width="40" height="80" fill="#e67e22" class="chart-col" />
+    <rect x="130" y="150" width="40" height="50" fill="#e67e22" class="chart-col" />
+    <rect x="200" y="90" width="40" height="110" fill="#e67e22" class="chart-col" />
+    
+    <text x="80" y="215" class="title" fill="#333" font-size="14" text-anchor="middle">A등급</text>
+    <text x="150" y="215" class="title" fill="#333" font-size="14" text-anchor="middle">B등급</text>
+    <text x="220" y="215" class="title" fill="#333" font-size="14" text-anchor="middle">C등급</text>
+    
+    <!-- Gap notation -->
+    <path d="M 100 165 L 130 165" fill="none" stroke="#dc3545" stroke-dasharray="2,2" />
+    <text x="115" y="160" class="title" fill="#dc3545" font-size="12" text-anchor="middle">간격 존재</text>
+  </g>
+
+  <!-- HistPlot -->
+  <g transform="translate(470, 90)">
+    <rect x="0" y="0" width="300" height="220" class="box" fill="#f8f9fa" stroke="#0056b3" />
+    <rect x="0" y="0" width="300" height="50" rx="10" ry="10" fill="#0056b3" />
+    <rect x="0" y="25" width="300" height="25" fill="#0056b3" />
+    <text x="150" y="32" class="text-bold" text-anchor="middle">Histplot (히스토그램)</text>
+    
+    <text x="150" y="85" class="title" fill="#0d6efd" text-anchor="middle">대상: 수치형 변수 (X축: 값의 범위 구간)</text>
+    
+    <!-- Drawing Hist Chart -->
+    <line x1="40" y1="200" x2="260" y2="200" stroke="#333" stroke-width="2" />
+    
+    <!-- Bars (continuous) -->
+    <rect x="60" y="180" width="40" height="20" fill="#0056b3" class="chart-col" />
+    <rect x="100" y="130" width="40" height="70" fill="#0056b3" class="chart-col" />
+    <rect x="140" y="100" width="40" height="100" fill="#0056b3" class="chart-col" />
+    <rect x="180" y="140" width="40" height="60" fill="#0056b3" class="chart-col" />
+    <rect x="220" y="170" width="40" height="30" fill="#0056b3" class="chart-col" />
+    
+    <text x="60" y="215" class="title" fill="#333" font-size="12" text-anchor="middle">0</text>
+    <text x="140" y="215" class="title" fill="#333" font-size="12" text-anchor="middle">50</text>
+    <text x="220" y="215" class="title" fill="#333" font-size="12" text-anchor="middle">100</text>
+    
+    <!-- Gap notation -->
+    <path d="M 120 90 L 160 90" fill="none" stroke="#28a745" stroke-dasharray="2,2" />
+    <text x="140" y="85" class="title" fill="#28a745" font-size="12" text-anchor="middle">간격 없이 이어짐</text>
+  </g>
+</svg>

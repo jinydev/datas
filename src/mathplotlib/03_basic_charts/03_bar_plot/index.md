@@ -1,146 +1,81 @@
 ---
 layout: mathplotlib
-title: "5.3.3 막대 그래프"
+title: "5.3.3 막대 그래프 (Bar Plot)와 오차 막대"
 ---
 
-## 5.3.3 막대 그래프
+## 5.3.3 막대 그래프 (Bar Plot)의 원리
 
-#### ① 막대 그래프 함수 bar()와 barh()
+막대 그래프는 여러 **그룹(범주형 변수)**들의 크기, 판매량, 혹은 평균 수치 등을 비교할 때 가장 전 세계적으로 흔하게 사용하는 그래프입니다. 
 
-막대 그래프는 이산형 자료의 값을 직사각형 막대를 사용하여 데이터를 시각화하는 방법이다. 함수 `bar()`를 사용하여 막대 그래프를 그려보자.
+### ① Matplotlib의 기본 막대그래프: `plt.bar()`
 
-다음 코드에서 점수를 나타내는 막대의 세로 높이를 `point`에, 대응되는 학생의 해당 학생 이름을 `name`에 저장한다. 함수 `bar(name, ...)`의 첫 인자는 x축에 표시되는 학생 이름인 `name`이다. 인자 `color`로 막대의 색상을 지정할 수 있다. 다음 결과에서 보듯이 함수 `bar`는 세로 막대 방향으로 그려진다.
-
-```python
-import matplotlib.pyplot as plt
-
-point = [99, 65, 79, 80, 90]
-name = ["영희", "철수", "동수", "미현", "현수"]
-
-plt.bar(name, point, color=["blue", "chartreuse", "purple", "grey", "orange"])
-plt.title('데이터분석 점수');
-```
-
-함수 `barh()`로 막대 그래프를 가로로 그려보자. 인자 `height`로 막대의 너비를 조절할 수 있다.
+Matplotlib으로 직접 그릴 때는 X축 명찰 리스트와, Y축에 해당하는 정확한 값 리스트를 내가 직접 하나하나 입력해줘야 합니다.
 
 ```python
 import matplotlib.pyplot as plt
 
-point = [99, 65, 79, 80, 90]
+# 데이터 직접 준비
 name = ["영희", "철수", "동수", "미현", "현수"]
+point = [99, 65, 79, 80, 90]
 
-plt.barh(name, point, height=.6, color=["blue", "chartreuse", "purple", "grey", "orange"])
-plt.title('데이터분석 점수')
-plt.xlabel('점수')
-plt.ylabel('이름');
-```
+plt.figure(figsize=(6, 4))
+# X에는 이름, Y(높이)에는 점수를 직접 지정합니다.
+plt.bar(name, point, color=["blue", "green", "purple", "grey", "orange"])
 
-수직 막대그래프는 범주별 랭킹을 직관적으로 보여주며, 가로형(`barh`) 막대그래프는 항목 이름이 길거나 순위를 강조하여 텍스트 겹침을 방지하고 싶을 때 매우 유용합니다. `barh`를 쓸 때는 X축과 Y축의 라벨 의미가 서로 직교로 바뀌게 됨에 주의해야 합니다.
-
-#### ② 내장 데이터 LifeCycleSavings의 막대 그래프
-
-내장 데이터 `LifeCycleSavings`는 "국가별 생애주기 저축 데이터"이다. 5개의 변수와 50개의 관측 값이 있다.
-
-```python
-from pydataset import data
-
-lcs = data('LifeCycleSavings')
-lcs.info()
-lcs.describe()
-```
-
-내장 데이터 `LifeCycleSavings`의 첫 5개의 관측 값은 다음과 같다.
-
-```python
-lcs.iloc[:5]
-```
-
-데이터 `LifeCycleSavings`의 상위 5행과 두 번째 열 `pop15`로 구성된 데이터프레임을 객체 `df`에 저장한다.
-
-```python
-df = lcs[:5][['pop15']]
-print(df)
-```
-
-다음은 "15세 미만의 인구비율"을 나타내는 열 `pop15` 값을 `plt.bar()`로 그린 결과이다.
-
-```python
-plt.bar(df.index, df.pop15)
-plt.title("국가별 15세미만 인구비율")
-plt.xlabel("국가")
-plt.ylabel("15세미만 인구비율(%)");
-```
-
-#### ③ 메소드 value_counts()를 활용한 막대 그래프
-
-다음은 이미 살펴본 내장 데이터 `mtcars` 정보이다.
-
-```python
-from pydataset import data
-
-mtc = data('mtcars')
-mtc.info()
-```
-
-두 번째 열 `cyl`은 자동차의 실린더(기통) 수이다. 자료 `mtcars`에서 실린더 수 빈도를 알기 위해 `mtc.cyl.value_counts()`를 사용한다.
-
-```python
-mtc_cyl = mtc.cyl.value_counts()
-# 5.3.3 14
-# 5.3.3 11
-# 5.3.3 7
-# 5.3.3 Name: cyl, dtype: int64
-```
-이는 8기통이 14대, 4기통이 11대, 6기통이 7대임을 나타낸다. 기본적으로 빈도 수가 많은 것이 먼저 표시된다.
-
-이 분포를 사용해 간단히 다음 막대 그래프를 그릴 수 있다.
-
-```python
-plt.bar(mtc_cyl.index, mtc_cyl)
-plt.title("자동차 실린더(기통) 분포")
-plt.xlabel("실린더 수")
-plt.ylabel("자동차 수");
-```
-
-#### ④ 패키지 seaborn의 함수 sns.countplot()으로 그리는 막대 그래프
-
-**[실전 꿀팁]: 막대 그래프 2대장 (barplot vs countplot)**
-- **`countplot`**: 분류 항복별 **데이터 개수(빈도)**를 셉니다. (예: "기어가 4개인 자동차는 총 몇 대지?")
-- **`barplot`**: 구분에 따른 특정 데이터의 **평균값**을 막대 높이로 표시합니다. (다양한 집단 간의 대표값을 보여줄 때 매우 강력합니다.)
-
-이번에는 데이터 시각화 패키지 `seaborn`을 사용해 보자. `seaborn`은 내부적으로 `matplotlib`을 사용하며 보다 간단하고 다양한 데이터를 시각화 할 수 있는 라이브러리이다.
-
-패키지 `seaborn`의 함수 `sns.countplot(data, x='gear', ...)`는 데이터프레임 `mtc`의 변수 `gear`의 빈도 수를 나타내는 막대 그래프를 그려준다.
-
-다음으로 데이터프레임 `mtc`의 변수 `gear`의 빈도 수의 막대 그래프를 그린다.
-
-```python
-import seaborn as sns
-sns.countplot(data=mtc, x='gear');
-```
-
-함수 `sns.countplot()`의 반환 객체는 `Axes`라는 객체이며 이를 활용하면 빈도 수를 알 수 있고, 이 값을 막대 그래프에 표시할 수 있다. 이 빈도 수를 막대 그래프에 직접 표시해 보자.
-
-다음 코드와 같이 반환 받은 `Axes`를 변수 `ax`에 `ax.patches`로 그래프의 각 막대(patch)에 대해 반복문을 실행한다. 반복문에서 `p.get_height()`로 현재 막대의 높이, 즉 빈도 수를 가져오고 `ax.text(x, y, s=int(height), ...)`로 빈도수 값(height)을 막대 위 위치 (x, y)에 표시한다. 다음 막대 그래프의 결과로 변수 `gear`는 자동차의 기어 수는 3, 4, 5가 있으며 각각 15대, 12대, 5대의 빈도임을 알 수 있다.
-
-```python
-import seaborn as sns
-ax = sns.countplot(data=mtc, x='gear', order=mtc.gear.value_counts().index)
-
-for p in ax.patches:
-    height = p.get_height() # 빈도 수
-    ax.text(x = (p.get_x() + p.get_width() / 2.), y = (height + .2),
-            s = int(height), ha = 'center', size = 12, color = 'blue')
-
-ax.set_ylim(0, 17) # y축의 범위를 0부터 17까지로 설정
+plt.title('데이터분석 기말고사 점수')
+plt.ylabel('점수')
 plt.show()
 ```
 
-객체 Axes의 메소드 `text(x, y, s, ...)`는 위치 (x, y)에 글자 s를 표시하는 메소드이다.
+![Matplotlib 수작업 막대그래프](img/bar_matplotlib_basic.svg)
 
-*   `x = (p.get_x() + p.get_width() / 2.)`: 텍스트를 막대의 중앙에 위치
-*   `y = (height + .2)`: 텍스트를 막대의 바로 위에 위치
-*   `s = int(height)`: 텍스트 내용은 막대의 높이 (빈도 수)로 설정
-*   `ha = 'center'`: 텍스트를 중앙 정렬
-*   `size = 12`: 텍스트 크기를 12로 설정
-*   `color = 'blue'`: 텍스트 색상을 파란색으로 설정
+만약 항목 이름이 매우 길면 가로 막대 그래프인 `plt.barh()`를 사용하면 글자가 겹치지 않아 좋습니다. 하지만 이런 방식은 원시 데이터(Raw Data)가 이미 말끔하게 집계되어 있을 때나 가능합니다. 타이타닉 호 탑승객처럼 891명의 날것의 데이터가 있을 때는 어떻게 그려야 할까요?
+
+---
+
+### ② Seaborn 막대 그래표의 마법: `sns.barplot()`
+
+앞서 5.2.4장에서 빈도수(인원수)를 세어 주는 `countplot`을 배웠습니다. 그렇다면 인원수가 아니라 그룹별 **평균값**을 구하고 싶을 때는 무엇을 쓸까요? 
+
+> **용도**: "1등급 탑승객들의 **평균** 요금 달러 값과, 3등급 탑승객들의 **평균** 요금 달러 값을 막대그래프로 비교해줘!"
+
+`barplot`은 그룹별(범주형)로 여러 개의 숫자(수치형)들이 뭉쳐 있을 때, **내부적으로 알아서 그룹별 평균을 구해서** 그 높이만큼 막대를 자동으로 세워줍니다.
+
+![Seaborn Barplot의 평균과 오차 막대 원리](../img/barplot_mean_error.svg)
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset('titanic')
+
+plt.figure(figsize=(6, 4))
+
+# X에는 범주형(객실 등급), Y에는 수치형(운임 요금)을 넣습니다.
+sns.barplot(data=df, x='pclass', y='fare')
+
+plt.title("타이타닉 객실 등급별 평균 운임 요금")
+plt.xlabel("객실 등급 (Pclass)")
+plt.ylabel("평균 요금 (Fare)")
+
+plt.show()
+```
+
+![Seaborn 평균 막대그래프와 오차막대](img/titanic_barplot.svg)
+
+**[출력 원리 해석]**
+- **막대의 높이 (평균)**: 1등급 요금 막대는 높이가 압도적으로 $80 위치에 솟아오르고, 3등급 요금 막대는 $13 부근에 짧게 그려집니다. 우리가 직접 평균값을 계산하지 않았는데도 Seaborn이 알아서 대신 구해 그려줍니다.
+- **오차 막대 (Error Bar, 검은색 침)**: 막대 꼭대기에 꽂힌 까만색 바늘을 볼 수 있습니다. 이 검은 선은 **데이터의 오차(편차/신뢰구간)**를 보여줍니다. 1등급 막대에 꽂힌 침이 유독 상하로 길다는 뜻은, "1등급 승객들 내부에서도 요금을 10달러 낸 사람과 500달러 낸 사람 등 요금 차이(불평등)가 엄청 심하다!"라는 것을 시각적으로 알려주는 핵심 단서입니다.
+
+---
+
+### 🚨 최후의 요약: `countplot` VS `barplot`
+
+마지막으로 초보자들이 가장 자주 헷갈리는 두 막대그래프를 확실히 구분합시다.
+
+1. **`countplot(x=범주형)`** 
+    - 역할: "**몇 명(몇 번)**이야?" 빈도수를 구합니다.
+    - Y값 입력 여부: **X값 하나만 입력**하면 Y축(Count)은 기계가 알아서 세어줍니다.
+2. **`barplot(x=범주형, y=수치형)`** 
+    - 역할: "그래서 그룹별로 **평균 점수(요금등)**가 몇 점인데?"
+    - Y값 입력 여부: **반드시 X와 Y 변수를 둘 다 입력**해야 합니다. 그러면 기계가 Y값들의 평균을 구해 그려줍니다.

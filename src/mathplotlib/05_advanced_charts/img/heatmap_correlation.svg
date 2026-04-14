@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; font-weight: bold; fill: #333; }
+      .cell-text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; fill: #fff; font-weight: bold; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">히트맵(Heatmap)과 상관계수의 "온도" 시각화</text>
+
+  <!-- Heatmap Matrix -->
+  <g transform="translate(150, 80)">
+    <!-- Y Labels -->
+    <text x="-10" y="45" class="text-desc" text-anchor="end">Engine Size</text>
+    <text x="-10" y="105" class="text-desc" text-anchor="end">Horsepower</text>
+    <text x="-10" y="165" class="text-desc" text-anchor="end">City MPG</text>
+
+    <!-- X Labels -->
+    <text x="40" y="-10" class="text-desc" text-anchor="middle">Engine Size</text>
+    <text x="120" y="-10" class="text-desc" text-anchor="middle">Horsepow</text>
+    <text x="200" y="-10" class="text-desc" text-anchor="middle">City MPG</text>
+
+    <!-- Row 1 -->
+    <rect x="0" y="15" width="80" height="60" fill="#cb2a27" />   <!-- 1.0 -->
+    <text x="40" y="52" class="cell-text" text-anchor="middle">1.0</text>
+    
+    <rect x="80" y="15" width="80" height="60" fill="#eb7359" />  <!-- 0.8 -->
+    <text x="120" y="52" class="cell-text" text-anchor="middle">0.82</text>
+    
+    <rect x="160" y="15" width="80" height="60" fill="#3f51b5" />  <!-- -0.8 -->
+    <text x="200" y="52" class="cell-text" text-anchor="middle">-0.78</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="75" width="80" height="60" fill="#eb7359" />   <!-- 0.8 -->
+    <text x="40" y="112" class="cell-text" text-anchor="middle">0.82</text>
+    
+    <rect x="80" y="75" width="80" height="60" fill="#cb2a27" />  <!-- 1.0 -->
+    <text x="120" y="112" class="cell-text" text-anchor="middle">1.0</text>
+    
+    <rect x="160" y="75" width="80" height="60" fill="#2c3e50" />  <!-- -0.9 -->
+    <text x="200" y="112" class="cell-text" text-anchor="middle">-0.91</text>
+
+    <!-- Row 3 -->
+    <rect x="0" y="135" width="80" height="60" fill="#3f51b5" />  <!-- -0.8 -->
+    <text x="40" y="172" class="cell-text" text-anchor="middle">-0.78</text>
+    
+    <rect x="80" y="135" width="80" height="60" fill="#2c3e50" /> <!-- -0.9 -->
+    <text x="120" y="172" class="cell-text" text-anchor="middle">-0.91</text>
+    
+    <rect x="160" y="135" width="80" height="60" fill="#cb2a27" /> <!-- 1.0 -->
+    <text x="200" y="172" class="cell-text" text-anchor="middle">1.0</text>
+  </g>
+
+  <!-- Colorbar / Legend -->
+  <g transform="translate(480, 80)">
+    <!-- Gradient box -->
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" /> <!-- Cold / -1 -->
+        <stop offset="50%" style="stop-color:#f1f2f6;stop-opacity:1" /> <!-- Neutral / 0 -->
+        <stop offset="100%" style="stop-color:#cb2a27;stop-opacity:1" /> <!-- Hot / +1 -->
+      </linearGradient>
+    </defs>
+    <rect x="0" y="15" width="30" height="180" fill="url(#grad1)" stroke="#333" />
+    
+    <!-- Colorbar texts -->
+    <text x="40" y="25" class="text-desc" fill="#cb2a27"> +1.0 (강한 양의 상관관계)</text>
+    <text x="40" y="110" class="text-desc" fill="#adb5bd"> 0.0 (관계 없음)</text>
+    <text x="40" y="195" class="text-desc" fill="#2c3e50"> -1.0 (강한 음의 상관관계)</text>
+
+    <!-- Notes -->
+    <text x="0" y="240" class="text-desc" font-size="13" fill="#6c757d">엔진이 크면 마력도 폭발적이다! → 붉은색 (양수)</text>
+    <text x="0" y="260" class="text-desc" font-size="13" fill="#6c757d">엔진이 크면 연비는 박살난다! → 푸른색 (음수)</text>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <!-- Title Area -->
+    <rect width="600" height="40" fill="#ef4444" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📊 키와 몸무게의 선형 관계 (Scatter Plot)</text>
+
+    <!-- Graph Area -->
+    <g transform="translate(60, 60)">
+        <!-- Axes -->
+        <path d="M 0 0 L 0 180 L 480 180" stroke="#64748b" stroke-width="2" fill="none" />
+        
+        <!-- Grid -->
+        <g stroke="#cbd5e1" stroke-dasharray="2,2" stroke-width="1">
+            <line x1="0" y1="45" x2="480" y2="45" /> 
+            <line x1="0" y1="90" x2="480" y2="90" /> 
+            <line x1="0" y1="135" x2="480" y2="135" />
+            <line x1="80" y1="0" x2="80" y2="180" />
+            <line x1="160" y1="0" x2="160" y2="180" />
+            <line x1="240" y1="0" x2="240" y2="180" />
+            <line x1="320" y1="0" x2="320" y2="180" />
+            <line x1="400" y1="0" x2="400" y2="180" />
+        </g>
+
+        <!-- Scatter Points: heights[160, 165, 170, 175, 180] weights[55, 60, 68, 70, 85] -->
+        <circle cx="80" cy="140" r="10" fill="#ef4444" fill-opacity="0.8" />
+        <circle cx="160" cy="110" r="10" fill="#ef4444" fill-opacity="0.8" />
+        <circle cx="240" cy="62" r="10" fill="#ef4444" fill-opacity="0.8" />
+        <circle cx="320" cy="50" r="10" fill="#ef4444" fill-opacity="0.8" />
+        <circle cx="400" cy="-40" r="10" fill="#ef4444" fill-opacity="0.8" />
+        
+        <!-- Y Labels (weights: 50~90) -->
+        <text x="-10" y="145" fill="#64748b" font-size="12" text-anchor="end">~55kg</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">~70kg</text>
+        <text x="-10" y="-35" fill="#64748b" font-size="12" text-anchor="end">~85kg</text>
+
+        <!-- X Labels (heights: 160~180) -->
+        <text x="80" y="195" fill="#64748b" font-size="12" text-anchor="middle">160cm</text>
+        <text x="240" y="195" fill="#64748b" font-size="12" text-anchor="middle">170cm</text>
+        <text x="400" y="195" fill="#64748b" font-size="12" text-anchor="middle">180cm</text>
+        
+        <!-- Trend Line Illustration -->
+        <path d="M 60 160 L 420 -60" fill="none" stroke="#fca5a5" stroke-width="2" stroke-dasharray="6,4" />
+    </g>
+
+    <rect x="250" y="250" width="330" height="35" rx="5" fill="#fee2e2" />
+    <text x="415" y="272" fill="#b91c1c" font-size="12" font-weight="bold" text-anchor="middle">💡 X축(키)과 Y축(몸무게) 두 변수의 양(+)의 상관관계 확인</text>
+</svg>

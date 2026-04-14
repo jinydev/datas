@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">4단계: .str.contains() 부분 일치 텍스트 검색</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="380" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#FFC107" stroke-width="2"/>
+    <text x="190" y="30" font-family="monospace" font-size="16" fill="#FFE082" font-weight="bold" text-anchor="middle">df.index<tspan fill="#FFCA28">.str.contains(</tspan><tspan fill="#FFF">'3'</tspan><tspan fill="#FFCA28">)</tspan></text>
+  </g>
+
+  <!-- 컴베이어 벨트 문자열 스캐너 묘사 -->
+  <g transform="translate(100, 160)">
+    <!-- 벨트 -->
+    <path d="M 0 60 L 500 60" fill="none" stroke="#B0BEC5" stroke-width="4" />
+    <circle cx="0" cy="60" r="8" fill="#78909C" />
+    <circle cx="500" cy="60" r="8" fill="#78909C" />
+    
+    <!-- 1월 인덱스 (통과 못함) -->
+    <g transform="translate(30, 20)">
+      <rect x="0" y="0" width="100" height="30" fill="#ECEFF1" rx="5" stroke="#CFD8DC" />
+      <text x="50" y="20" font-family="sans-serif" font-size="14" fill="#90A4AE" text-anchor="middle">2016년1월</text>
+      <!-- x표 -->
+      <path d="M 40 -15 L 60 5 M 40 5 L 60 -15" stroke="#F44336" stroke-width="3" />
+    </g>
+
+    <!-- 2월 인덱스 (통과 못함) -->
+    <g transform="translate(140, 20)">
+      <rect x="0" y="0" width="100" height="30" fill="#ECEFF1" rx="5" stroke="#CFD8DC" />
+      <text x="50" y="20" font-family="sans-serif" font-size="14" fill="#90A4AE" text-anchor="middle">2016년2월</text>
+      <!-- x표 -->
+      <path d="M 40 -15 L 60 5 M 40 5 L 60 -15" stroke="#F44336" stroke-width="3" />
+    </g>
+
+    <!-- 스캐너 기계 몸체 -->
+    <g transform="translate(260, -40)">
+      <rect x="0" y="0" width="120" height="80" fill="#E1F5FE" rx="10" filter="url(#shadow)" stroke="#03A9F4" stroke-width="3" />
+      <text x="60" y="30" font-family="sans-serif" font-size="16" fill="#01579B" font-weight="bold" text-anchor="middle">"3" 스캐너</text>
+      <!-- 스캔 레이저 빔 -->
+      <path d="M 60 50 L 20 100 L 100 100 Z" fill="#FFEB3B" opacity="0.4" />
+    </g>
+
+    <!-- 3월 인덱스 (스캔 당하는 중! 통과!) -->
+    <g transform="translate(270, 20)">
+      <rect x="0" y="0" width="100" height="30" fill="#FFF9C4" rx="5" stroke="#FBC02D" stroke-width="2"/>
+      <text x="50" y="20" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">2016년<tspan fill="#D32F2F" font-size="18">3</tspan>월</text>
+      
+      <!-- 통과 V표 -->
+      <path d="M 40 -20 L 50 -10 L 65 -25" fill="none" stroke="#4CAF50" stroke-width="4" />
+    </g>
+
+    <!-- 4월 인덱스 (아직 대기중) -->
+    <g transform="translate(420, 20)">
+      <rect x="0" y="0" width="100" height="30" fill="#FFFFFF" rx="5" stroke="#CFD8DC" />
+      <text x="50" y="20" font-family="sans-serif" font-size="14" fill="#546E7A" text-anchor="middle">2016년4월</text>
+    </g>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">"일치 여부"를 넘어 문자열 안에 특정 키워드나 정규식 패턴이 있는지를 스캔하여 도출해 냅니다.</text>
+  </g>
+
+</svg>

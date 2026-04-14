@@ -1,199 +1,80 @@
 ---
 layout: mathplotlib
-title: "5.5.2 상관관계 시각화"
+title: "5.5.2 상관관계 폭격기: Heatmap과 Pairplot"
 ---
 
-## 5.5.2 상관관계 시각화
+## 5.5.2 상관관계 시각화 끝판왕
 
-#### ① 패키지 seaborn의 함수 sns.pairplot()
+데이터 분석에서 가장 짜릿한 순간은 "A가 오르면 B도 오르더라!" 같은 숨겨진 데이터 간의 연관성(상관관계)을 밝혀내는 순간입니다. 열(피처)이 десятки 개가 넘어가는 실무 데이터셋에서 이를 일일이 산점도로 그리는 것은 불가능하므로, 우리에겐 `Heatmap`과 `Pairplot`이라는 궁극의 무기가 필요합니다.
 
-패키지 `seaborn`의 상관관계 시각화 함수 `sns.pairplot()`는 두 개 이상의 변수 n개에 대해 모든 가능한 두 변수 간의 관계를 n x n 테이블 형태로 그리는 관계 행렬의 그림을 그려준다.
+### ① 상관계수와 히트맵 (Heatmap)의 마법
 
-내장 데이터 `mtcars`에서 앞 부분 4개의 변수만 추출해 상관관계 그래프를 그려보도록 한다. 이를 위해 먼저 4개의 변수인 연비(mpg), 실린더(cyl), 배기량(disp) 및 마력(hp)으로 구성된 데이터프레임 `mincars`를 생성한다.
+두 데이터가 얼마나 끈끈하게 연결되어 있는지를 나타내는 수치를 **상관계수(-1 ~ +1)**라고 합니다.
+- **+1에 가까울수록**: 강력한 비례 (수학 점수와 과학 점수)
+- **-1에 가까울수록**: 강력한 반비례 (놀이공원 방문객 수와 비 오는 날씨)
+- **0에 가까울수록**: 아무 상관 없음 (고양이의 몸무게와 다음 날 주식 가격)
 
-```python
-from pydataset import data
-mtc = data('mtcars')
+![상관관계와 히트맵 색상의 원리](../img/heatmap_correlation.svg)
 
-mincars = mtc.iloc[:, :4]
-mincars.head()
-```
-
-다음으로 `mtc` 전체 열 중에서 `mtc.columns[:4]`는 앞 부분 4개 열 이름만을 추출할 수 있다. 코드 `mtc.columns[:4].to_list()`는 앞 부분 4개 열 이름으로 구성된 리스트를 반환한다.
-
-```python
-print(mtc.columns[:4])
-print(mtc.columns[:4].to_list())
-```
-**출력:**
-```
-Index(['mpg', 'cyl', 'disp', 'hp'], dtype='object')
-['mpg', 'cyl', 'disp', 'hp']
-```
-
-그러므로 다음 코드는 앞 부분 4개 열만으로 구성된 데이터프레임을 만들 수도 있다.
-
-```python
-mincars = mtc[mtc.columns[:4].to_list()]
-mincars.head(3)
-```
-
-준비된 데이터프레임 `mincars`를 인자로 `seaborn`의 `pairplot(mincars)`을 호출하면 간단히 16개의 그림을 그릴 수 있다. 결과는 4 x 4 행렬 형태로 그려진다. 데이터의 4개의 변수가 x축과 y축의 값이 된다. 행렬의 대각선에는 4개 변수의 도수분포표가 표시된다. 또한, 대각선을 중심으로 우측상단과 좌측하단은 x축과 y축이 서로 동일한 산점도가 배치된다.
-
-```python
-import seaborn as sns
-sns.pairplot(mincars);
-```
-
-인자 `kind='reg'`를 사용하면 두 변수의 관계를 가장 잘 나타내는 직선(추세선 또는 회귀선)이 포함된 산점도가 그려진다.
-
-```python
-sns.pairplot(mincars, kind='reg');
-```
-
-인자 `diag_kind='kde'`는 대각선에 그려지는 도수분포표(hist)를 밀도 그래프인 밀도 그림(kde)으로 바꿀 수 있다. 또한, 인자 `corner=True`를 사용하면 대칭인 부분에서 왼쪽 하단 부분만 그려진다.
-
-```python
-sns.pairplot(mincars, diag_kind='kde', corner=True);
-```
-
-인자 `hue='cyl'`을 지정하면 지정된 열인 실린더 수 `cyl`은 행과 열에서 제외되고 각각의 그림에서 색상으로 실린더 수가 구분되어 그려진다. 또한, 대각선 그림이 밀도 그림으로 그려진다. 대각선의 밀도 그림을 통해 실린더 수(cyl)가 많아지면 연비(mpg)가 낮아지고, 배기량(disp)과 마력(hp)은 커지는 것을 좀 더 명확히 알 수 있다.
-
-```python
-sns.pairplot(mincars, hue='cyl');
-```
-
-#### ② 상관관계 계수와 함수 sns.heatmap() 활용
-
-**[실전 꿀팁]: 상관관계의 핵심, 히트맵(Heatmap)**
-숫자로만 된 `corr()` 결과를 표로 보면 한눈에 파악하기 힘듭니다. **히트맵(Heatmap)**을 그리면 두 변수가 얼마나 서로 관련이 있는지(-1 ~ 1 사이의 값)를 색상의 진하기로 즉시 파악할 수 있어, 데이터 간의 "숨겨진 관계"를 찾을 때 가장 유용합니다.
-
-유명한 붓꽃 데이터 `iris`를 `seaborn`에서 가져오자.
-
-```python
-# 5.5.2 iris 데이터셋 로드
-import seaborn as sns
-iris = sns.load_dataset("iris")
-iris.info()
-```
-
-붓꽃의 품종 `species`는 `virginica`, `setosa`, `versicolor` 3개이며, `sepal_length`, `sepal_width`, `petal_length`, `petal_width` 등 4개의 실수 열이 있다.
-
-```python
-iris.sample(5)
-```
-
-상관계수(correlation coefficient)는 상관관계 분석에서 두 변수 간에 선형 관계의 정도를 수량화한 값이다. 상관계수 r은 -1에서 1까지의 실수 값으로 선형관계를 나타낸다.
-
-데이터프레임 `iris`의 메소드 `corr()`으로 열의 값이 수인 변수 간의 상관관계의 데이터프레임을 얻을 수 있다. 다음 상관관계 계수 결과로 대각선은 1이며 대각선을 기준으로 대칭인 것을 알 수 있다. 꽃잎 너비인 `petal_width`와 꽃잎 길이인 `petal_length`의 상관관계는 0.963으로 매우 관계가 높다는 것을 알 수 있다.
-
-```python
-# 5.5.2 상관관계 계수 계산
-import pandas as pd
-pd.set_option('display.precision', 3)
-
-corr_iris = iris[iris.columns[:-1].to_list()].corr()
-print(corr_iris)
-```
-**출력:**
-```
-              sepal_length  sepal_width  petal_length  petal_width
-sepal_length         1.000       -0.118         0.872        0.818
-sepal_width         -0.118        1.000        -0.428       -0.366
-petal_length         0.872       -0.428         1.000        0.963
-petal_width          0.818       -0.366         0.963        1.000
-```
-
-여러 개의 변수로 만들어진 상관관계 계수를 색깔로 표현하면 변수들의 관계를 쉽게 파악할 수 있다. 값에 따라 색깔이 변하는 행렬 그림이 히트맵(heatmap)이다. 함수 `sns.heatmap(corr_iris)`를 이용하면 상관관계 계수를 히트맵을 쉽게 만들 수 있다. 그림 오른쪽 색상 막대(color bar)에서 보듯이 상관계수가 1에 가까우면 밝아지고 -1에 가까우면 어두워진다. 그러므로 상관계수가 1인 대각선이 가장 밝다.
-
-```python
-sns.heatmap(corr_iris, annot=True);
-```
-
-위 히트맵을 보기 좋게 좌측 하단의 삼각 행렬만 남도록 수정해 보자. 이를 위해 먼저 필요한 마스크(mask)를 만들자. 다음 코드는 `corr_iris`와 같은 모양인 4 x 4가 모두 0으로 채워진 2차원 행렬 `mask`를 생성한다.
-
-```python
-# 5.5.2 mask 만들기
-import numpy as np
-mask = np.zeros_like(corr_iris)
-print(mask)
-```
-
-다음 함수 배열의 오른쪽 위 인덱스(index)를 반환하는 `np.triu_indices_from()`를 활용해 `mask`의 오른쪽 위 대각 행렬을 모두 1로 수정한 `mask`를 생성한다.
-
-```python
-# 5.5.2 오른쪽 위 대각 행렬을 1로 바꾸기
-mask[np.triu_indices_from(mask)] = 1
-print(mask)
-```
-
-상관계수로 그린 히트맵에서 대각선은 상관계수가 항상 1이 되며 오른쪽 위는 왼쪽 아래와 값이 같다. 그러므로 이 부분을 모두 제거하려면 마스크와 상관행렬의 첫 번째 행과 마지막 열을 제거해야 한다. 이를 위해 `mask[1:, :-1]`로 행과 열에 슬라이싱을 사용하여 배열 `mask`의 일부를 선택한다. 다음 코드로 3행 3열로 줄어든 새로운 마스크 `mask_new`를 만들자.
-
-```python
-mask_new = mask[1:, :-1] # mask 첫 번째 행, 마지막 열 제거
-print(mask_new)
-```
-
-마찬가지로, 다음 코드로 상관관계 계수 데이터프레임의 첫 번째 행과 마지막 열을 제거한 새로운 데이터프레임 `corr_iris_new`를 만들자.
-
-```python
-# 5.5.2 상관관계 계수 dataframe 첫 번째 행, 마지막 열 제거
-corr_iris_new = corr_iris.iloc[1:, :-1]
-print(corr_iris_new)
-```
-
-이제, 인자 `mask=mask_new`를 사용하고 인자 `cmap='coolwarm'`과 `cbar_kws={'shrink': .4}` 등 몇 가지를 추가해 히트맵을 보기 좋게 수정하자. 결과 히트맵을 보면 3개의 서로 다른 변수 간의 상관관계 계수를 쉽게 파악할 수 있다. 인자 `cmap='coolwarm'`을 지정해 양의 상관관계는 붉은 색으로 음의 상관관계는 파란 색으로 표시할 수 있다.
-
-```python
-sns.heatmap(corr_iris_new, annot=True, cmap='coolwarm', mask=mask_new,
-            annot_kws={"size": 10}, vmin=-1, vmax=1,
-            cbar_kws={'shrink': .4}, # 범례 크기 줄이기
-            linewidths=.5);          # 경계 선 추가
-```
-
-다음 함수 `sns.pairplot(iris, hue='species')` 코드는 붓꽃 품종 `species`에 따른 4개 변수에 대한 상관관계 산점도를 시각화할 수 있다. 대각선에는 붓꽃 품종 3개의 밀도 함수를 그려준다. 꽃잎 너비인 `petal_width`와 꽃잎 길이인 `petal_length`의 밀도 함수를 살펴보면 붓꽃의 품종 3개가 잘 구분되는 것을 알 수 있다. 이를 통해 꽃잎 너비와 꽃잎 길이로 붓꽃 품종을 어느 정도 구분할 수 있다는 것을 알 수 있다.
-
-```python
-sns.pairplot(iris, hue='species');
-```
-
-다음은 인자 `palette="husl"`, `markers=["o", "s", "D"]`를 사용해 품종에 따라 색상과 마커를 수정한 결과이다.
-
-```python
-sns.pairplot(iris, hue="species", palette="husl", markers=["o", "s", "D"]);
-```
-
-상관관계 그림을 좀 더 수정하려면 함수 `sns.pairplot()`의 반환 객체인 `PairGrid`를 사용한다. 반환 객체인 `PairGrid` 객체 `g`를 사용한 다음 `g.map_lower(sns.kdeplot, ...)` 호출로 좌측 하단을 산점도에 밀도 추정 그림도 추가할 수 있다.
-
-```python
-g = sns.pairplot(iris, hue="species", palette="husl", height=2.0,
-                 markers=["o", "s", "D"]);
-
-g.map_lower(sns.kdeplot, levels=4, color=".2");
-```
-
-#### ③ 시각화 종합 실습 (ToothGrowth 데이터)
-
-기니피그의 치아 성장 데이터(`ToothGrowth`)를 사용하여 다양한 그래프와 상관관계를 직접 분석해 볼 수 있습니다. `supp`는 보충제 종류(VC: 비타민C, OJ: 오렌지주스), `dose`는 투여량, `len`은 치아 성장을 의미합니다. 변수 간의 관계 수치를 히트맵으로 증명할 수 있습니다.
+판다스의 `corr()` 함수로 구한 거대한 숫자 행렬을, Seaborn의 `heatmap`에 집어넣는 순간 지루한 숫자들이 **아름다운 온도 지도**로 탈바꿈합니다! 차가운 파란색, 뜨거운 빨간색으로 그 관계를 한눈에 볼 수 있습니다.
 
 ```python
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from pydataset import data
 
-# 5.5.2 데이터 불러오기
-df = data('ToothGrowth')
+# 붓꽃(iris) 데이터 로딩
+iris = sns.load_dataset("iris")
 
-# 5.5.2 문자열(Category) 컬럼은 제외하고 숫자형 데이터만 추출
-numeric_df = df[['len', 'dose']]
+# 1. 꽃받침(sepal)과 꽃잎(petal)의 길이/너비 상관계수 계산
+corr_iris = iris.corr(numeric_only=True)
 
-# 5.5.2 상관계수 계산
-corr = numeric_df.corr()
+plt.figure(figsize=(7, 5))
+# 2. 히트맵 그리기 (annot=True는 네모 칸 안에 실제 숫자를 써줌)
+# cmap='coolwarm' (차가운 파란색부터 뜨거운 빨간색까지)
+sns.heatmap(corr_iris, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
 
-# 5.5.2 히트맵 그리기
-sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
-plt.title("비타민 잔류량과 치아성장의 상관관계")
+plt.title("붓꽃 부위별 크기 상관관계 히트맵")
 plt.show()
 ```
-> **해석**: `dose`와 `len`의 상관계수가 높게 나온다면, 투여량이 많을수록(강한 양의 상관관계) 치아 길이가 길어진다는 뜻입니다. 시각화 전체 프로세스에서 데이터의 분포 파악(histplot), 산점도 관계(scatterplot), 범주 간의 차이 비교(boxplot), 관계 검증(heatmap)의 일련의 데이터 확인 탬플릿을 숙지하세요.
+
+![붓꽃 부위별 크기 상관관계 히트맵](img/iris_heatmap.svg)
+
+**[출력 원리 해석]**
+대각선 영역은 무조건 자기 자신과의 비교이므로 뜨거운 빨간색(1.0)이 나옵니다. 
+우리가 주목해야 할 곳은 다른 변수들이 교차하는 지점입니다. 예를 들어 `petal_length`(꽃잎 길이)와 `petal_width`(꽃잎 너비)가 교차하는 칸의 수치가 **+0.96**으로 매우 붉게 타오르고 있다면, "꽃잎이 긴 붓꽃은 무조건 너비도 넓다"라는 강력한 생물학적 규칙을 컴퓨터가 수식 없이 알아낸 것입니다.
+
+---
+
+### ② 융단 폭격: 산점도 행렬 `sns.pairplot()`
+
+히트맵이 색깔로 직관적인 느낌을 준다면, `pairplot`은 그냥 데이터 안에 있는 모든 수치형 열 조합을 다 가져와서 싹 다 산점도로 그려버리는 "무차별 융단 폭격" 그래프입니다. 데이터 탐색 초기(EDA) 단계에서 가장 많이 사용되는 필살기입니다.
+
+```python
+# 붓꽃 품종(species)별로 색깔을 다르게(hue) 칠해서 모든 조합 그리기!
+sns.pairplot(iris, hue='species', palette='husl', markers=["o", "s", "D"])
+plt.show()
+```
+
+![품종별 다차원 산점도 행렬 16종 세트](img/iris_pairplot.svg)
+
+**[출력 원리 해석]**
+코드는 단 한 줄이지만, 화면에는 무려 16장(4x4)의 화려한 차트가 생성됩니다.
+- **대각선**: 자기 자신과의 공간이므로 산점도 대신 5.4.2장에서 배운 **분포 곡선(KDE)**이 그려집니다. 품종별(종류별)로 봉우리가 3개 떨어져 나온 것을 볼 수 있습니다.
+- **나머지 공간**: 두 열 사이의 관계를 나타내는 **산점도**가 그려집니다. 특정 산점도에서 특정 색깔(품종)의 점들이 저 멀리 혼자 동떨어져 있다면, 바로 그 두 개의 열이 해당 품종을 분류하는 핵심 키(Key) 변수라는 뜻입니다!
+
+---
+
+### 🎓 피날레: 데이터 분석가의 실전 마인드셋
+
+축하합니다! 당신은 지금까지 약 15종류의 시각화 무기를 손에 넣었습니다.
+
+1. 데이터를 받으면 `df.info()`, `df.describe()`로 **엑스레이**를 찍고 결측치를 확인한다.
+2. 수많은 열을 보며 **"범주형 데이터"**인지 **"수치형 숫자 데이터"**인지 두뇌로 먼저 분별한다.
+3. 무조건 `pairplot()`과 `heatmap()`을 냅다 던져서, 어떤 변수들끼리 연관성이 높은지 1차 융단 폭격을 가한다.
+4. 연관성이 짙어 보이는 주요 변수들을 핀셋으로 뽑은 뒤, 
+   - 갯수 차이가 핵심이면 **Countplot / Barplot**
+   - 시간에 따른 추세가 핵심이면 **Lineplot**
+   - 상/하위 점수 차이와 이상값(Outlier)이 핵심이면 **Boxplot**과 **Violin Plot**을 우아하게 그려낸다.
+
+이것이 실리콘밸리 데이터 엔지니어부터 전 세계 AI 연구원들이 사용하는 불변의 진리이자 프로세스입니다. 이제 여러분의 데이터를 직접 시각화해 볼 시간입니다!

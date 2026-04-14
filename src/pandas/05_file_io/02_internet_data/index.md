@@ -1,110 +1,111 @@
 ---
 layout: pandas
-title: "6.5.2 인터넷 자료 활용"
+title: "6.5.2 실전! 지저분한 공공데이터 정제하기"
 ---
 
-# 6.5.2 인터넷 자료 활용
+## 6.5.2 실전 공공데이터 파싱(Parsing)과 타입 캐스팅
 
-**[실전 꿀팁]: 웹(URL) 데이터와 클립보드 바로 읽기**
-- **URL에서 바로 읽기**: 인터넷 주소(URL)만 알면 파일을 다운로드할 권한 없이 `pd.read_csv("https://...")` 형태로 바로 데이터를 로드할 수 있습니다. (예: GitHub Raw 데이터 등)
-- **클립보드 읽기**: 엑셀이나 웹페이지의 표를 마우스로 드래그해서 `Ctrl+C` (복사) 한 뒤, 파이썬에서 `pd.read_clipboard()`를 실행하면 마법처럼 데이터프레임이 생성됩니다. 급하게 표 데이터를 테스트할 때 매우 유용합니다.
-- **한글 인코딩**: 공공데이터 포털 등에서 받은 CSV 파일을 열 때 글자가 깨지면, `encoding='cp949'` 또는 `encoding='euc-kr'` 옵션을 주면 깔끔하게 해결됩니다.
+**[전산학적/수학적 의미: 파서 옵션 제어 및 동적 타입 형변환(Type Casting)]**
+인터넷 웹페이지나 공공 구청에서 제공하는 CSV 파일들은 컴퓨터 친화적이기보다는 사람 눈에 보기 좋게 타이틀 제목을 넣거나 숫자 3자리마다 콤마(`,`)를 찍어두는 경우가 많습니다. 판다스 엔진이 이러한 문자열(String) 형태의 숫자를 산술 연산 체계(Integer/Float)로 정상적으로 해독(Parsing)할 수 있도록, 불필요한 줄을 건너뛰고(`skiprows`) 천 단위 구분 기호를 제거하여 파이썬 원시 타입으로 강제 형변환(Type Casting)하는 기술을 배웁니다.
 
-### ① 인터넷 자료의 파일 읽기와 쓰기
+**[비유로 이해하기: 번역기와 찌꺼기 필터링]**
+- **글자 깨짐 방지**: 중국어나 암호처럼 글자가 깨지면 `encoding='cp949'` 라는 한글 전용 해독 안경을 씌워줍니다.
+- **불필요한 인사말 제거**: 표 맨 위에 있는 "2022년도 총괄표~" 같은 쓸데없는 제목 1줄을 잘라내고 핵심 표부터 읽어오도록 지시합니다(`skiprows=1`).
+- **숫자 변장 벗기기**: `"1,234"` 처럼 콤마가 붙어있으면 컴퓨터는 이를 글자로 인식해 덧셈을 못합니다. "야, 저 쉼표(,)는 진짜 글자가 아니라 천 단위 구분 기호야!" 라고 알려줘서 진짜 숫자 `1234`로 둔갑시킵니다(`thousands=','`).
 
-```python
-import pandas 상 pd
+![공공데이터 파싱 다이어그램](img/real_world_data.svg)
 
-traffic = pd.read_csv("data/2022년도시도별교통사고.csv", encoding='cp949')
-print(traffic)
-```
+---
 
-다음처럼 csv 파일의 첫 행에 제목이 있고 다음 행에 열 제목이 있으므로 위 코드로는 열 명을 맞게 지정할 수 없다.
+### [1단계] 한글 깨짐과 불필요한 행 제거 (`encoding`, `skiprows`)
 
-![2022년도시도별교통사고.csv 파일 내용](img/page_021.jpg)
-
-다음 코드와 같이 키워드 인자 `skiprows=1`을 지정하면 위에서 첫 행을 무시하고 읽으므로 정상적으로 열 명이 지정된 데이터프레임에 저장할 수 있다. 데이터프레임 `traffic`의 인덱스는 자동으로 `RangeIndex`인 0부터 차례대로 순번이 붙는다.
-
-```python
-traffic = pd.read_csv("data/2022년도시도별교통사고.csv", encoding='cp949', skiprows=1)
-print(traffic)
-```
-
-다음처럼 `index_col=0`을 지정하면 인덱스 레이블이 기본 정수가 아닌 첫 열 '시도'를 인덱스 레이블로 지정한 데이터프레임을 얻을 수 있다.
-
-```python
-traffic = pd.read_csv("data/2022년도시도별교통사고.csv", encoding='cp949', skiprows=1, index_col=0)
-traffic.head()
-```
-
-**주의:** `traffic.info()`를 보면 수에 콤마가 붙은 수를 정수로 인식하지 못하고 문자열로 인식해 열의 자료형이 `object`로 표시되는 것을 볼 수 있다.
-
-```python
-traffic.info()
-```
-
-다음처럼 간편하게 `thousands=','`를 지정하면 간단히 콤마 `,`가 붙은 수를 수로 읽어 데이터프레임에 저장할 수 있다.
+공공데이터포털에서 가져온 대한민국 교통사고 데이터를 그대로 열어보면 여러 문제가 터집니다.
 
 ```python
 import pandas as pd
 
-traffic = pd.read_csv("data/2022년도시도별교통사고.csv", encoding='cp949', skiprows=1, index_col=0, thousands=',')
-traffic.head()
+# 1. encoding='cp949' : 공공기관 엑셀/CSV에서 한글이 깨질 때의 만병통치약입니다!
+# 2. skiprows=1 : 첫 번째 줄에 문서 제목이 적혀있어서, 그걸 무시하고 2번째 줄(컬럼명)부터 읽게 합니다.
+# 3. index_col=0 : 첫 번째 열인 '시도' 지역명을 판다스의 굵은 글씨 인덱스(이름표)로 씁니다.
+
+traffic_raw = pd.read_csv("data/2022년도시도별교통사고.csv", encoding='cp949', skiprows=1, index_col=0)
+
+print("--- 🩺 1차 시도: 파싱 직후의 정보 스캔 ---")
+traffic_raw.info()
+```
+**[출력 결과]**
+```text
+<class 'pandas.core.frame.DataFrame'>
+Index: 17 entries, 서울 to 세종
+Data columns (total 3 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   사고건수  17 non-null     object  <-- 🚨 경고!
+ 1   사망자수  17 non-null     int64 
+ 2   부상자수  17 non-null     object  <-- 🚨 경고!
+dtypes: int64(1), object(2)
 ```
 
-이제 `info()`를 보면 모든 열의 자료형이 `int64`인 것을 알 수 있다.
+![옵션 설정 누락으로 인한 CSV 파싱 대참사](./img/parsing_issues.svg)
+
+> **🚨 의사의 진단 소견:** 사망자수는 백 단위라 숫자로 잘 들어왔는데, 사고건수와 부상자수는 천 단위 콤마(`,`)가 찍혀 있어서 파이썬이 **문자열(`object`)**로 착각하고 있습니다. 이 상태로는 `.sum()` 같은 덧셈이 불가능합니다!
+
+---
+
+### [2단계] 진짜 숫자로 변환하기 (`thousands`)
+
+`.read_csv()` 함수 안에 옵션 하나만 틱 추가해주면 판다스가 알아서 안경을 고쳐 쓰고 숫자로 완벽하게 변환해 줍니다.
 
 ```python
+# thousands=',' 옵션을 투입하여 콤마를 제거하며 숫자로 빨아들입니다!
+traffic = pd.read_csv("data/2022년도시도별교통사고.csv", encoding='cp949', skiprows=1, index_col=0, thousands=',')
+
+print("--- 🩺 2차 시도: 다시 스캔 ---")
 traffic.info()
 ```
-
-다음 `traffic.describe()`로 모든 열의 기초 통계량을 확인할 수 있다.
-
-```python
-traffic.describe()
+**[출력 결과]**
+```text
+<class 'pandas.core.frame.DataFrame'>
+Index: 17 entries, 서울 to 세종
+Data columns (total 3 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   사고건수  17 non-null     int64   <-- ✅ 완벽한 숫자로 변신!
+ 1   사망자수  17 non-null     int64 
+ 2   부상자수  17 non-null     int64   <-- ✅ 완벽한 숫자로 변신!
 ```
 
-### ② 데이터프레임의 간편한 데이터 시각화
+![thousands 옵션으로 문자열을 파이썬 숫자로 강제 형변환](./img/thousands.svg)
 
-패키지 `seaborn`을 활용해 간편히 데이터 시각화가 가능하다. 다음 코드는 패키지 `seaborn`의 `sns.barplot()`을 사용해 세로 막대그래프를 그릴 수 있다.
+이제 숫자로 완벽히 들어왔으므로 `traffic.describe()`를 통해 평균 수치 등을 구하거나, 덧셈을 수행할 수 있습니다.
+
+---
+
+### [3단계] 덤: 숫자 데이터를 바탕으로 막대그래프 그리기
+
+데이터의 클렌징(정제)이 숫자 형태로 완벽하게 끝났다면, 파이썬의 강력한 시각화 라이브러리인 **Seaborn** 을 이용해 이 예쁘장한 데이터프레임을 통째로 던져주어 그래프를 그릴 수 있습니다.
+
+> **그래프 한글 깨짐 방지**: `matplotlib.pyplot`의 폰트를 맑은 고딕 등으로 세팅해야 지역명(서울, 부산)이 엑박(ㅁㅁ)으로 안 깨집니다!
 
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+# ① 그래프 한글 폰트(맑은 고딕) 설정 및 마이너스 기호 깨짐 방지
 plt.rcParams['font.family'] = 'Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] = False
 
-sns.barplot(traffic)
+# ② 특정 열(사망자수)만 뽑아내기. 
+# 그리고 Seaborn이 지역별로 가로축에 뿌리기 좋게 .T (Transpose, 행/열 피벗 회전) 를 해줍니다!!
+death_data = traffic[['사망자수(명)']].T
+
+# ③ 마법의 막대그래프 함수
+sns.barplot(data=death_data)
+
+# ④ 그래프 창 띄우기
 plt.show()
 ```
 
-다음 코드 `traffic[['사망자수(명)']].T`로는 '사망자수(명)'의 행과 열을 바꾼 데이터프레임을 반환한다. 이를 `sns.barplot()`의 인자로 사용하면 '사망자수(명)'를 시도 지역별로 막대그래프를 그릴 수 있다.
+![정제된 데이터의 Seaborn 막대그래프 시각화 원리](./img/seaborn_plot.svg)
 
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-sns.barplot(traffic[['사망자수(명)']].T)
-plt.show()
-```
-
-다음 코드 `sns.barplot(traffic[[traffic.columns[0]]].T)`과 같이 `traffic.columns[0]`인 '사고건수(건)'의 행과 열을 바꿔 '사고건수(건)'를 시도 지역별로 막대그래프를 그릴 수 있다.
-
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-sns.barplot(traffic[[traffic.columns[0]]].T)
-plt.show()
-```
-
-다음 코드 `sns.barplot(traffic[[traffic.columns[2]]].T)`과 같이 `traffic.columns[2]`인 '부상자수(명)'의 행과 열을 바꿔 '부상자수(명)'을 시도 지역별로 막대그래프를 그릴 수 있다.
-
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-sns.barplot(traffic[[traffic.columns[2]]].T)
-plt.show()
-```
+이 코드를 실행하시면 팝업창에 각 지역별 교통사고 사망자 수가 막대그래프로 예쁘게 솟아오른 것을 감상하실 수 있습니다. (데이터 클렌징의 진정한 묘미입니다!)

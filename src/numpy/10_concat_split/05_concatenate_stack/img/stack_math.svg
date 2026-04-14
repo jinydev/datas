@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .math { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-style: italic; fill: #222; }
+      .math-bold { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-weight: bold; fill: #222; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .arr-1 { fill: #f8d7da; stroke: #dc3545; }
+      .arr-2 { fill: #d4edda; stroke: #28a745; }
+      .grid-line { stroke: rgba(0,0,0,0.1); stroke-width: 1px; }
+      .arrow { fill: none; stroke: #b0b0b0; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .bracket-line { fill: none; stroke: #333; stroke-width: 4; }
+      .bracket-line-large { fill: none; stroke: #0056b3; stroke-width: 8; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  
+  <text x="425" y="30" class="title" text-anchor="middle">수학적 차원 승급 사상 (2D Tensor + 2D Tensor → 3D Tensor)</text>
+
+  <!-- Left Side: Two 2x3 Matrices -->
+  <g transform="translate(60, 50)">
+    <text x="-5" y="52" class="math-bold" text-anchor="end">A =</text>
+    <path d="M 30 5 L 20 5 L 20 85 L 30 85" class="bracket-line" />
+    <rect x="40" y="5" width="150" height="80" class="box arr-1" />
+    <text x="65" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="115" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="165" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="65" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="115" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="165" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="90" y1="5" x2="90" y2="85" class="grid-line" />
+    <line x1="140" y1="5" x2="140" y2="85" class="grid-line" />
+    <line x1="40" y1="45" x2="190" y2="45" class="grid-line" />
+    <path d="M 200 5 L 210 5 L 210 85 L 200 85" class="bracket-line" />
+
+    <!-- Matrix B -->
+    <text x="-5" y="162" class="math-bold" text-anchor="end">B =</text>
+    <path d="M 30 115 L 20 115 L 20 195 L 30 195" class="bracket-line" />
+    <rect x="40" y="115" width="150" height="80" class="box arr-2" />
+    <text x="65" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="115" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="165" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="65" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="115" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="165" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="90" y1="115" x2="90" y2="195" class="grid-line" />
+    <line x1="140" y1="115" x2="140" y2="195" class="grid-line" />
+    <line x1="40" y1="155" x2="190" y2="155" class="grid-line" />
+    <path d="M 200 115 L 210 115 L 210 195 L 200 195" class="bracket-line" />
+
+    <text x="115" y="235" class="title" font-size="14" text-anchor="middle" fill="#dc3545">단순 2D 공간의 행렬들</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 320 150 L 400 150 M 390 140 L 400 150 L 390 160" class="arrow" stroke="#b0b0b0" stroke-width="4" />
+  <text x="360" y="120" class="math-bold" text-anchor="middle" font-size="20">T = stack</text>
+  <text x="360" y="180" class="math-bold" text-anchor="middle" font-size="16">(axis=0)</text>
+
+  <!-- Right Side: 3D Stack Tensor -->
+  <g transform="translate(460, 40)">
+    
+    <!-- Outer 3D Bracket Left -->
+    <path d="M 40 -5 L 15 -5 L 15 210 L 40 210" class="bracket-line-large" stroke-linecap="square" />
+
+    <!-- First Inner 2D matrix -->
+    <path d="M 65 5 L 55 5 L 55 85 L 65 85" class="bracket-line" />
+    <rect x="75" y="5" width="150" height="80" class="box arr-1" />
+    <text x="100" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="150" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="200" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="100" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="150" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="200" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="125" y1="5" x2="125" y2="85" class="grid-line" />
+    <line x1="175" y1="5" x2="175" y2="85" class="grid-line" />
+    <line x1="75" y1="45" x2="225" y2="45" class="grid-line" />
+    <path d="M 235 5 L 245 5 L 245 85 L 235 85" class="bracket-line" />
+
+    <!-- Second Inner 2D Matrix -->
+    <path d="M 65 115 L 55 115 L 55 195 L 65 195" class="bracket-line" />
+    <rect x="75" y="115" width="150" height="80" class="box arr-2" />
+    <text x="100" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="150" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="200" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="100" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="150" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="200" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="125" y1="115" x2="125" y2="195" class="grid-line" />
+    <line x1="175" y1="115" x2="175" y2="195" class="grid-line" />
+    <line x1="75" y1="155" x2="225" y2="155" class="grid-line" />
+    <path d="M 235 115 L 245 115 L 245 195 L 235 195" class="bracket-line" />
+
+    <!-- Outer 3D Bracket Right -->
+    <path d="M 260 -5 L 285 -5 L 285 210 L 260 210" class="bracket-line-large" stroke-linecap="square" />
+
+    <text x="150" y="245" class="title" font-size="16" text-anchor="middle" fill="#0056b3">외벽 한 층이 더 쳐진 3D Tensor 공간! (2 × 2 × 3)</text>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#2563eb" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🟦 기본 Scatter Plot (총 청구액과 팁의 관계)</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+        
+        <line x1="0" y1="0" x2="0" y2="250" />
+        <line x1="80" y1="0" x2="80" y2="250" />
+        <line x1="160" y1="0" x2="160" y2="250" />
+        <line x1="240" y1="0" x2="240" y2="250" />
+        <line x1="320" y1="0" x2="320" y2="250" />
+        <line x1="400" y1="0" x2="400" y2="250" />
+        <line x1="480" y1="0" x2="480" y2="250" />
+    </g>
+
+    <!-- Content -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <!-- Y Axis Labels (Tip in $) -->
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">10.0</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">8.0</text>
+        <text x="-10" y="105" fill="#64748b" font-size="12" text-anchor="end">6.0</text>
+        <text x="-10" y="155" fill="#64748b" font-size="12" text-anchor="end">4.0</text>
+        <text x="-10" y="205" fill="#64748b" font-size="12" text-anchor="end">2.0</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0.0</text>
+        
+        <!-- X Axis Labels (Total Bill in $) -->
+        <text x="0" y="275" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="80" y="275" fill="#64748b" font-size="12" text-anchor="middle">10</text>
+        <text x="160" y="275" fill="#64748b" font-size="12" text-anchor="middle">20</text>
+        <text x="240" y="275" fill="#64748b" font-size="12" text-anchor="middle">30</text>
+        <text x="320" y="275" fill="#64748b" font-size="12" text-anchor="middle">40</text>
+        <text x="400" y="275" fill="#64748b" font-size="12" text-anchor="middle">50</text>
+
+        <!-- Scatter Points (Blue, single color) -->
+        <!-- Tip scale: Y = 250 - (tip * 25), Bill Scale: X = bill * 8 -->
+        <g fill="#3b82f6" fill-opacity="0.8">
+            <circle cx="85" cy="210" r="5" />
+            <circle cx="95" cy="200" r="5" />
+            <circle cx="120" cy="180" r="5" />
+            <circle cx="135" cy="165" r="5" />
+            <circle cx="150" cy="190" r="5" />
+            
+            <circle cx="160" cy="170" r="5" />
+            <circle cx="170" cy="150" r="5" />
+            <circle cx="190" cy="130" r="5" />
+            <circle cx="200" cy="145" r="5" />
+            <circle cx="210" cy="120" r="5" />
+            
+            <circle cx="230" cy="100" r="5" />
+            <circle cx="250" cy="110" r="5" />
+            <circle cx="270" cy="85" r="5" />
+            <circle cx="290" cy="60" r="5" />
+            <circle cx="310" cy="70" r="5" />
+            
+            <circle cx="330" cy="50" r="5" />
+            <circle cx="370" cy="30" r="5" />
+            <circle cx="390" cy="10" r="5" />
+            <circle cx="420" cy="15" r="5" />
+        </g>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">팁 (tip)</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">총 청구액 (total_bill)</text>
+    </g>
+</svg>

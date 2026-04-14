@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">강제 인덱스(Index) 기준 적용 (Strict Index Alignment)</text>
+
+  <!-- 파이썬 명령 박스(코드) -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="350" height="150" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="25" fill="#37474F" rx="5" />
+    <circle cx="15" cy="12" r="5" fill="#FF5252" />
+    <circle cx="30" cy="12" r="5" fill="#FFCA28" />
+    <circle cx="45" cy="12" r="5" fill="#8BC34A" />
+
+    <text x="15" y="55" font-family="monospace" font-size="14" fill="#82AAFF" font-weight="bold">pd.DataFrame(</text>
+    
+    <text x="30" y="80" font-family="monospace" font-size="14" fill="#F07178">data</text>
+    <text x="65" y="80" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="80" y="80" font-family="monospace" font-size="14" fill="#C3E88D">{'국어':s_kor, '영어':s_eng, ...}</text>
+    
+    <text x="30" y="105" font-family="monospace" font-size="14" fill="#F07178">index</text>
+    <text x="75" y="105" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="90" y="105" font-family="monospace" font-size="14" fill="#FFF">['노', '장', '박', '강']</text>
+    
+    <text x="15" y="130" font-family="monospace" font-size="14" fill="#82AAFF" font-weight="bold">)</text>
+
+    <!-- 기준 선포 -->
+    <path d="M 330 100 L 400 100" fill="none" stroke="#FF9800" stroke-width="3" stroke-dasharray="3,3" />
+    <polygon points="395,93 405,100 395,107" fill="#FF9800" />
+    <text x="365" y="90" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">기준 명부</text>
+  </g>
+
+  <!-- 결과 표 -->
+  <g transform="translate(420, 70)">
+    <rect x="0" y="0" width="220" height="180" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3"/>
+    
+    <!-- 컬럼 헤더 -->
+    <rect x="40" y="0" width="180" height="30" fill="#E3F2FD" rx="3" />
+    <text x="70" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">국어</text>
+    <text x="130" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">영어</text>
+    <text x="190" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">수학</text>
+    
+    <!-- 인덱스: 강제 할당된 [노, 장, 박, 강] -->
+    <rect x="0" y="30" width="40" height="150" fill="#FFE0B2" rx="3" stroke="#FF9800" stroke-width="2"/>
+    <text x="20" y="65" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">노</text>
+    <text x="20" y="100" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">장</text>
+    <text x="20" y="135" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">박</text>
+    <text x="20" y="170" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">강</text>
+
+    <!-- 데이터 영역 -->
+    <!-- 국어: 노, 장, 박 있음 (강은 없음) -->
+    <text x="70" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">90.0</text>
+    <text x="70" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">80.0</text>
+    <text x="70" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">60.0</text>
+    <rect x="50" y="155" width="40" height="20" fill="#FFCDD2" rx="3" />
+    <text x="70" y="170" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    
+    <!-- 영어: 노 없음, 장, 박, 강 있음 -->
+    <rect x="110" y="50" width="40" height="20" fill="#FFCDD2" rx="3" />
+    <text x="130" y="65" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="130" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">45.0</text>
+    <text x="130" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">73.0</text>
+    <text x="130" y="170" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">99.0</text>
+    
+    <!-- 수학: 0,1,2,3 인덱스였음. '노장박강'과 하나도 안겹침 -> 전부 NaN -->
+    <rect x="170" y="50" width="40" height="125" fill="#FFCDD2" rx="3" />
+    <text x="190" y="65" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="190" y="100" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="190" y="135" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="190" y="170" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 290)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#E8F5E9" rx="10" stroke="#4CAF50" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">내가 설정한 명부를 기준으로만 데이터를 뽑아옵니다! (수학은 전멸)</text>
+  </g>
+
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Fancy Indexing (리스트 배열로 콕 집어 멀티 추출!)</text>
+
+  <!-- 원본 Series 박스 -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="160" height="250" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#CFD8DC" stroke-width="2"/>
+    <rect x="0" y="0" width="160" height="30" fill="#ECEFF1" rx="5" />
+    <text x="80" y="20" font-family="sans-serif" font-size="14" fill="#455A64" font-weight="bold" text-anchor="middle">원본 Series</text>
+
+    <!-- 원본 데이터 -->
+    <rect x="15" y="40" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="57" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">a</text>
+    <text x="90" y="57" font-family="sans-serif" font-size="14" fill="#333">90</text>
+    
+    <rect x="15" y="70" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="87" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">b</text>
+    <text x="90" y="87" font-family="sans-serif" font-size="14" fill="#333">85</text>
+    
+    <rect x="15" y="100" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="117" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">c</text>
+    <text x="90" y="117" font-family="sans-serif" font-size="14" fill="#333">78</text>
+    
+    <rect x="15" y="130" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="147" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">d</text>
+    <text x="90" y="147" font-family="sans-serif" font-size="14" fill="#333">95</text>
+    
+    <rect x="15" y="160" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="177" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">e</text>
+    <text x="90" y="177" font-family="sans-serif" font-size="14" fill="#333">88</text>
+    
+    <rect x="15" y="190" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="207" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">f</text>
+    <text x="90" y="207" font-family="sans-serif" font-size="14" fill="#333">100</text>
+    
+    <text x="80" y="240" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">Name: score</text>
+  </g>
+
+  <!-- 추출 지시 (코드) -->
+  <g transform="translate(260, 110)">
+    <rect x="0" y="0" width="180" height="80" fill="#D32F2F" rx="5" filter="url(#shadow)" />
+    <text x="90" y="25" font-family="sans-serif" font-size="14" fill="#FFF" font-weight="bold" text-anchor="middle">"a", "f", "d"</text>
+    <text x="90" y="45" font-family="sans-serif" font-size="12" fill="#FFCDD2" text-anchor="middle">순서대로 뽑아줘!</text>
+    
+    <text x="90" y="65" font-family="monospace" font-size="14" fill="#FFEB3B" font-weight="bold" text-anchor="middle">s[ ['a','f','d'] ]</text>
+    
+    <!-- 타겟팅 화살표 -->
+    <path d="M 0 40 L -20 15" fill="none" stroke="#D32F2F" stroke-width="2" /> <!-- a로 -->
+    <circle cx="-20" cy="15" r="4" fill="#D32F2F" />
+    
+    <path d="M 0 40 L -20 145" fill="none" stroke="#D32F2F" stroke-width="2" /> <!-- f로 -->
+    <circle cx="-20" cy="145" r="4" fill="#D32F2F" />
+    
+    <path d="M 0 40 L -20 85" fill="none" stroke="#D32F2F" stroke-width="2" /> <!-- d로 -->
+    <circle cx="-20" cy="85" r="4" fill="#D32F2F" />
+  </g>
+  
+  <!-- 추출 결과물 화살표 -->
+  <g transform="translate(440, 140)">
+    <path d="M 0 0 L 40 0" fill="none" stroke="#607D8B" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="35,-7 45,0 35,7" fill="#607D8B" />
+  </g>
+
+  <!-- 결과 Series 박스 -->
+  <g transform="translate(500, 100)">
+    <rect x="0" y="0" width="160" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3"/>
+    <rect x="0" y="0" width="160" height="30" fill="#81C784" rx="5" />
+    <text x="80" y="20" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">새로운 반환 Series</text>
+
+    <!-- 재정렬된 데이터 -->
+    <rect x="15" y="40" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="57" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">a</text>
+    <text x="90" y="57" font-family="sans-serif" font-size="14" fill="#333">90</text>
+    
+    <rect x="15" y="70" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="87" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">f</text>
+    <text x="90" y="87" font-family="sans-serif" font-size="14" fill="#333">100</text>
+    
+    <rect x="15" y="100" width="130" height="25" fill="#E8F5E9" />
+    <text x="30" y="117" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">d</text>
+    <text x="90" y="117" font-family="sans-serif" font-size="14" fill="#333">95</text>
+    
+    <text x="80" y="140" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">Name: score</text>
+  </g>
+
+</svg>

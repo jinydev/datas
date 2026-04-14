@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.3.1 산점도</title>
-  <meta name="title" content="5.3.1 산점도" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.3.1 산점도"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.3.1 산점도 (Scatter Plot)와 hue의 마법</title>
+  <meta name="title" content="5.3.1 산점도 (Scatter Plot)와 hue의 마법" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.3.1 산점도 (Scatter Plot)와 hue의 마법"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/mathplotlib/03_basic_charts/01_scatter_plot/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.3.1 산점도"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.3.1 산점도 (Scatter Plot)와 hue의 마법"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="5.3.1 산점도" />
+<meta property="og:title" content="5.3.1 산점도 (Scatter Plot)와 hue의 마법" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="5.3.1 산점도" />
+<meta property="twitter:title" content="5.3.1 산점도 (Scatter Plot)와 hue의 마법" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.3.1 산점도","url":"https://datas.jiny.dev/mathplotlib/03_basic_charts/01_scatter_plot/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.3.1 산점도 (Scatter Plot)와 hue의 마법","url":"https://datas.jiny.dev/mathplotlib/03_basic_charts/01_scatter_plot/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -367,21 +367,21 @@
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/01_pandas_visualization/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.1 패키지 판다스와 시각화 라이브러리 설치
+                                    5.0.1 판다스 내장 시각화와 한계
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치
+                                    5.0.2 시각화 생태계: Matplotlib과 Seaborn
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.3 토이 데이터와 데이터프레임 활용
+                                    5.0.3 장난감(Toy) 데이터를 활용한 실습 준비
                                 </a>
                             </li>
                             
@@ -411,35 +411,35 @@
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/01_visualization_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.1 데이터 시각화 개요
+                                    5.1.1 데이터 시각화의 목적과 본질
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/02_simple_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.2 간단한 직선 그래프 그리기
+                                    5.1.2 가장 단순한 선 그래프 (plot) 그리기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/03_figure_subplot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.3 figure와 서브플롯
+                                    5.1.3 도화지(Figure)와 액자(Ax) 구조 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃
+                                    5.1.4 비대칭 테트리스 레이아웃 (GridSpec)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/05_styling/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.5 그래프 속성과 스타일링
+                                    5.1.5 스타일링 끝판왕 (색상, 영웅, 격자)
                                 </a>
                             </li>
                             
@@ -469,28 +469,28 @@
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/01_pydataset_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.1 pydataset 소개
+                                    5.2.1 Seaborn과 장난감 데이터셋 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/02_pydataset_install/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.2 패키지 pydataset 설치
+                                    5.2.2 초기 데이터 탐색 (EDA) 기법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/03_pydataset_import/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.3 pydataset 주요 자료 가져오기
+                                    5.2.3 시각화를 결정짓는 2가지 변수 타입
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.4 seaborn으로 그래프 그리기
+                                    5.2.4 Seaborn 첫 그래프: Countplot과 Histplot
                                 </a>
                             </li>
                             
@@ -520,21 +520,21 @@
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/01_scatter_plot/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    5.3.1 산점도
+                                    5.3.1 산점도 (Scatter Plot)와 hue의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/02_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.2 선 그리기
+                                    5.3.2 선 그래프 (Line Plot)와 시계열 데이터
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/03_bar_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.3 막대 그래프
+                                    5.3.3 막대 그래프 (Bar Plot)와 오차 막대
                                 </a>
                             </li>
                             
@@ -564,21 +564,21 @@
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/01_box_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.1 상자그림
+                                    5.4.1 상자그림 (Box Plot) 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/02_histogram/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.2 히스토그램
+                                    5.4.2 히스토그램 (Histogram)과 데이터 통(Bins)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/03_pie_chart/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.3 파이 차트
+                                    5.4.3 파이 차트 (Pie Chart)와 시각화의 함정
                                 </a>
                             </li>
                             
@@ -608,14 +608,14 @@
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/01_violin_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.1 바이올린 플롯
+                                    5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/02_correlation_viz/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.2 상관관계 시각화
+                                    5.5.2 상관관계 폭격기: Heatmap과 Pairplot
                                 </a>
                             </li>
                             
@@ -662,125 +662,100 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">5.3.1 산점도</li>
+        <li class="breadcrumb-item active" aria-current="page">5.3.1 산점도 (Scatter Plot)와 hue의 마법</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h2 id="531-산점도와-막대-그래프">5.3.1 산점도와 막대 그래프</h2>
+            <h2 id="531-산점도-scatter-plot와-고차원-매핑">5.3.1 산점도 (Scatter Plot)와 고차원 매핑</h2>
 
-<h3 id="531-산점도">5.3.1 산점도</h3>
-
-<h4 id="-산점도-개요와-함수-plot">① 산점도 개요와 함수 plot()</h4>
-
-<p>산점도(scatter plot)는 두 연속형 변수 좌표상의 점을 표시해 이 두 변수 사이의 관계를 나타내는 그래프이다. x좌표와 y좌표 (x, y)의 값이 (3, 7), (5, 10)인 2개의 점을 그리는 간단한 산점도를 그려보자. 첫 번째 인자는 두 점의 x 값만 모은 리스트이며, 두 번째가 y 값 리스트인 것에 주의하자.</p>
+<h3 id="-산점도의-존재-이유-두-수치형-데이터의-관계">① 산점도의 존재 이유 (두 수치형 데이터의 관계)</h3>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">scatter(x, y, ...)</code> 인자: x = [x1, x2, x3, …], y = [y1, y2, y3, …]</p>
-  <ul>
-    <li>좌표 (x1, y1), (x2, y2), (x3, y3) … 점을 그리기</li>
-  </ul>
+  <p><strong>용도</strong>: “내가 식당에서 밥을 <strong>많이</strong> 먹으면(총 청구액), 웨이터에게 주는 <strong>팁(Tip)</strong>도 그만큼 <strong>많아질까?</strong>”</p>
 </blockquote>
 
-<p>다음 코드처럼 <code class="language-plaintext highlighter-rouge">scatter()</code> 인자로 <code class="language-plaintext highlighter-rouge">[3, 5]</code>, <code class="language-plaintext highlighter-rouge">[7, 10]</code>으로 기술해 실행한다.</p>
+<p>이런 단순한 궁금증을 해결하려고 할 때, 두 개의 <strong>수치형(연속된 숫자)</strong> 변수 간의 <strong>상관관계(Correlation)</strong>를 시각적으로 확인하기 위해 허공(좌표 평면)에 점을 콕콕 찍어서 그리는 그래프가 바로 산점도입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="p">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="sh">'</span><span class="s">retina</span><span class="sh">'</span> <span class="c1"># matplotlib 그림을 선명하게 그리기 위한 설정
-</span>
-<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<ul>
+  <li>점들이 우상향(↗)으로 퍼져 있다면 = <strong>양(+)의 상관관계</strong> (밥을 많이 먹을수록 팁도 많이 준다!)</li>
+  <li>점들이 우하향(↘)으로 퍼져 있다면 = <strong>음(-)의 상관관계</strong></li>
+  <li>점들이 마구잡이로 흩어져 있다면 = <strong>무상관</strong> (관계가 전혀 없다)</li>
+</ul>
 
-<span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="c1"># x좌표와 y좌표 (x, y)의 값이 (3, 7), (5, 10)인 2개의 점을 그리는 간단한 산점도
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
+<h3 id="-seaborn의-scatterplot-기본-그리기">② Seaborn의 <code class="language-plaintext highlighter-rouge">scatterplot</code> 기본 그리기</h3>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">scatter(x, y)</code>는 적어도 인자는 2개여야 한다. 다음 코드처럼 <code class="language-plaintext highlighter-rouge">range()</code> 함수를 사용하면 다수의 좌표로 간단히 산점도를 그릴 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>다음은 x와 y 모두 시퀀스 인자를 사용한 코드이다. 5개의 좌표 (3, 13), (4, 14), (5, 15), (6, 16), (7, 17)를 그린 산점도이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="nf">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>인자 x와 y의 목록 길이는 반드시 같아야 한다. 다르면 오류(<code class="language-plaintext highlighter-rouge">ValueError: x and y must be the same size</code>)가 발생한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 5.3.1 plt.scatter(range(3, 7), range(13, 18)) # x는 4개, y는 5개이므로 오류 발생
-# 5.3.1 plt.show()
-</span></code></pre></div></div>
-
-<h4 id="-내장-데이터-기니피그의-치아-성장-toothgrowth">② 내장 데이터 기니피그의 치아 성장 ToothGrowth</h4>
-
-<p>패키지 <code class="language-plaintext highlighter-rouge">pydataset</code>의 내장 데이터 <code class="language-plaintext highlighter-rouge">ToothGrowth</code>에서 산점도를 그려 두 변수의 관계를 알아보자. <code class="language-plaintext highlighter-rouge">ToothGrowth</code>는 60개의 관측 값과 3개의 변수로 구성된 동물 기니피그의 치아성장 세포에 대한 비타민 C의 영향을 설명한 자료이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pydataset</span> <span class="kn">import</span> <span class="n">data</span>
-
-<span class="n">tg</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">ToothGrowth</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">tg</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>다음은 치아성장 세포의 상위 5개의 데이터이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tg</span><span class="p">.</span><span class="nf">head</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>matplotlib에서 제목과 레이블을 한글로 표시하려면 다음처럼 주피터 노트북에서 matplotlib의 한글 처리를 위한 코드가 필요하다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># 5.3.1 한글 처리를 위한 코드
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">rc</span><span class="p">(</span><span class="sh">'</span><span class="s">font</span><span class="sh">'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="sh">'</span><span class="s">Malgun Gothic</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 폰트 지정
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">rc</span><span class="p">(</span><span class="sh">'</span><span class="s">axes</span><span class="sh">'</span><span class="p">,</span> <span class="n">unicode_minus</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="c1"># 음수 - 표시
-# 5.3.1 plt.rcParams['font.family'] = 'Malgun Gothic'
-# 5.3.1 plt.rcParams['axes.unicode_minus'] = False
-</span></code></pre></div></div>
-
-<p>다음 코드로 두 변수 <code class="language-plaintext highlighter-rouge">dose</code>(비타민 용량), <code class="language-plaintext highlighter-rouge">len</code>(치아세포 길이)의 상관 관계 산점도를 그릴 수 있다. 결과를 통해 비타민 용량이 증가할수록 치아세포 길이가 길어지는 것을 알 수 있다.</p>
-
-<p>plt.scatter(tg.dose, tg.len)
-plt.title(“기니피그의 비타민과 치아성장 관계”)
-plt.xlabel(“비타민 용량”)
-plt.ylabel(“치아성장 세포길이”)</p>
-
-<p>plt.show()</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-#### ③ 실전 예제: 버블 차트 (Size Variation)
-
-산점도에서 점의 **크기(s)**를 다르게 지정하면 3차원의 정보를 평면에 표현할 수 있습니다. (X축, Y축, 크기) 이렇게 크기로 정보를 표현하는 그래프를 **버블 차트(Bubble Chart)**라고도 합니다.
-
-```python
-# 5.3.1 데이터 준비
-x = [10, 20, 30, 40, 50]
-y = [20, 30, 10, 50, 40]
-size = [100, 200, 500, 1000, 300] # 점의 크기 (면적을 의미함)
-
-plt.figure(figsize=(6, 4))
-# 5.3.1 s: 점 크기 배열 매핑, alpha: 투명도 (점이 겹칠 때 밀도를 확인하기 유용함)
-plt.scatter(x, y, s=size, c='green', alpha=0.5) 
-
-plt.title("버블 차트 예제")
-plt.show()
-</code></pre></div></div>
-
-<h4 id="-seaborn을-활용한-세련된-산점도">④ Seaborn을 활용한 세련된 산점도</h4>
-
-<p><strong>[비유로 이해하기: Why Seaborn?]</strong>
-Matplotlib가 도화지에 붓으로 하나하나 직접 그리는 것이라면, <strong>Seaborn</strong>은 최신 유행 테마가 적용된 “고급 템플릿”을 쓰는 것과 같습니다. <code class="language-plaintext highlighter-rouge">sns.set_theme(style="darkgrid")</code> 한 줄이면 차트가 훨씬 예뻐지며, <code class="language-plaintext highlighter-rouge">hue</code> 옵션을 통해 제3의 변수(예: 성별, 종류)를 색상으로 순식간에 구분할 수 있습니다.</p>
+<p>식당 팁 데이터를 불러와서, <code class="language-plaintext highlighter-rouge">total_bill</code>(총 청구 요금)과 <code class="language-plaintext highlighter-rouge">tip</code>(팁) 사이의 관계를 점으로 찍어보겠습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
-<span class="kn">from</span> <span class="n">pydataset</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
-<span class="n">tips</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">tips</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">darkgrid</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 팁(tips) 데이터셋 소환!
+</span><span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">tips</span><span class="sh">'</span><span class="p">)</span>
 
-<span class="c1"># 5.3.1 x축: 총 청구액, y축: 팁, hue: 색깔로 구분할 기준 (성별)
-</span><span class="n">sns</span><span class="p">.</span><span class="nf">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">total_bill</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">tip</span><span class="sh">'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">sex</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">총 청구액과 팁의 관계 (성별 구분)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">darkgrid</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># 그래프 배경을 세련된 회색 모눈종이로 변경
+</span>
+<span class="c1"># X축에는 청구 요금, Y축에는 팁을 지정하여 점 찍기
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">total_bill</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">tip</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">총 청구액과 팁의 관계</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<p><img src="img/tips_scatter_basic.svg" alt="기본 산점도" /></p>
+
+<p><strong>[출력 원리 해석]</strong>
+실행해 보면 점들이 전체적으로 ↗ 방향으로 형성되어 “아, 요금이 높을수록 팁도 많이 주는 경향이 있구나!”라는 것을 알 수 있습니다. 하지만 이 그림은 온통 <strong>한 가지 색깔의 파란 점</strong>들뿐입니다.</p>
+
+<hr />
+
+<h3 id="-hue-seaborn-최고의-마법-3차원-정보-파악">③ <code class="language-plaintext highlighter-rouge">hue</code>: Seaborn 최고의 마법 (3차원 정보 파악)</h3>
+
+<p>기존 파이썬 Matplotlib으로 남성과 여성의 점 색깔을 다르게 칠하려면, 남성 데이터와 여성 데이터를 따로 분리(필터링)해서 <code class="language-plaintext highlighter-rouge">plt.scatter()</code>를 두 번 호출하고 막대한 코딩을 해야 했습니다.</p>
+
+<p>하지만 Seaborn에서는 <strong><code class="language-plaintext highlighter-rouge">hue</code> (색조)</strong> 라는 마법의 파라미터 하나로 이 고통이 단번에 끝납니다!</p>
+
+<p><img src="../img/scatter_hue_magic.svg" alt="Hue 매핑 원리 애니메이션" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">hue</code>에 방금 전 5.2.3장에서 배웠던 <strong>범주형 데이터(남자/여자, 흡연/비흡연, 요일 등)</strong> 열 이름을 적어주면 끝납니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># hue='sex' 단 하나를 추가했습니다!
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">total_bill</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">tip</span><span class="sh">'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">sex</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">총 청구액과 팁 (성별 구분)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/tips_scatter_hue.svg" alt="Hue 파라미터가 적용된 산점도" /></p>
+
+<p><strong>[출력 원리 해석]</strong>
+마법처럼 그래프가 그려집니다! 남성은 파란색 점, 여성은 주황색 점으로 찍히며, 우측 상단에 자동으로 <strong>친절한 범례(Legend)</strong>까지 만들어집니다. 우리는 평면 2D 화면에 X(요금), Y(팁), 색깔(성별)이라는 <strong>3차원 정보</strong>를 눈앞에 펼친 것입니다.</p>
+
+<blockquote>
+  <p><strong>💡 데이터 탐정의 시선</strong>
+색깔을 칠하고 보니, 아주 극단적으로 “엄청나게 많은 요금을 내고 팁을 10달러씩 날리는 호탕한 부자 손님들” 공간(그래프 가장 우측 상단)에 찍힌 점들은 거의 대다수가 <strong>파란 점(남성)</strong>이라는 숨겨진 진실을 발견할 수 있습니다!</p>
+</blockquote>
+
+<hr />
+
+<h3 id="-더-나아가기-점의-크기size와-버블-차트">④ 더 나아가기: 점의 크기(<code class="language-plaintext highlighter-rouge">size</code>)와 버블 차트</h3>
+
+<p>점의 색상을 바꿀 수 있다면, 점의 <strong>크기</strong>도 바꿀 수 있지 않을까요? <code class="language-plaintext highlighter-rouge">size</code> 매개변수에 데이터 열을 주면, 그 값의 크기에 비례하여 점의 크기 자체가 풍선(버블)처럼 커집니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># size='size' : 식사에 참여한 총 인원수(1명~6명)에 비례해서 점의 굵기를 다르게!
+# sizes=(20, 200) : 점 크기를 최소 20픽셀에서 최대 200픽셀 사이로 스케일링!
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">total_bill</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">tip</span><span class="sh">'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">sex</span><span class="sh">'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="sh">'</span><span class="s">size</span><span class="sh">'</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="img/tips_scatter_bubble.svg" alt="크기와 색상이 매핑된 버블 차트" /></p>
+
+<p>이처럼 산점도 하나만으로도 <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">y</code>, <code class="language-plaintext highlighter-rouge">hue</code>, <code class="language-plaintext highlighter-rouge">size</code>를 총동원하여 <strong>무려 4가지 속성의 데이터를 2D 도화지 한 장에 압축해서 폭격</strong>하는 것이 데이터 시각화의 진정한 묘미입니다! 다음 장에서는 시간의 흐름을 보여주는 <strong>선 그래프(Line Plot)</strong>를 배웁니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

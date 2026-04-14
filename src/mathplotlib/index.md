@@ -4,40 +4,40 @@ title: 데이터 시각화 (Matplotlib/Seaborn)
 permalink: /mathplotlib/
 ---
 
-# 데이터 시각화 (Matplotlib/Seaborn) 핵심 가이드
+# 데이터 시각화 (Matplotlib/Seaborn)
 
 파이썬의 대표적인 시각화 라이브러리인 `Matplotlib`과 통계 기반 고급 시각화 라이브러리인 `Seaborn`을 활용하여 데이터를 한눈에 파악할 수 있는 그래프를 그리는 방법을 학습합니다.
 
 ---
 
-## 00. 데이터 분석 패키지 시작하기 {#section-00}
-- [01. 패키지 판다스와 시각화 라이브러리 설치](/mathplotlib/00_data_analysis_packages/20_pandas_visualization/)
-- [02. 패키지 matplotlib, seaborn, pydataset 개요와 설치](/mathplotlib/00_data_analysis_packages/21_matplotlib_seaborn/)
-- [03. 토이 데이터와 데이터프레임 활용](/mathplotlib/00_data_analysis_packages/22_toy_data_dataframe/)
+## 5.0 데이터 분석 패키지 시작하기 {#section-00}
+- [5.0.1 판다스 내장 시각화와 한계](/mathplotlib/00_data_analysis_packages/01_pandas_visualization/)
+- [5.0.2 시각화 생태계: Matplotlib과 Seaborn](/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/)
+- [5.0.3 장난감(Toy) 데이터를 활용한 실습 준비](/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/)
 
-## 01. Matplotlib 기초 {#section-01}
-- [01. 데이터 시각화 개요](/mathplotlib/01_matplotlib_basics/01_visualization_intro/)
-- [02. 간단한 직선 그래프 그리기](/mathplotlib/01_matplotlib_basics/02_simple_line_plot/)
-- [03. figure와 서브플롯](/mathplotlib/01_matplotlib_basics/03_figure_subplot/)
-- [04. GridSpec을 사용한 맞춤형 figure 레이아웃](/mathplotlib/01_matplotlib_basics/04_gridspec_layout/)
-- [05. 그래프 속성과 스타일링](/mathplotlib/01_matplotlib_basics/05_styling/)
+## 5.1 Matplotlib 기초 {#section-01}
+- [5.1.1 데이터 시각화의 목적과 본질](/mathplotlib/01_matplotlib_basics/01_visualization_intro/)
+- [5.1.2 가장 단순한 선 그래프 (plot) 그리기](/mathplotlib/01_matplotlib_basics/02_simple_line_plot/)
+- [5.1.3 도화지(Figure)와 액자(Ax) 구조 완벽 해부](/mathplotlib/01_matplotlib_basics/03_figure_subplot/)
+- [5.1.4 비대칭 테트리스 레이아웃 (GridSpec)](/mathplotlib/01_matplotlib_basics/04_gridspec_layout/)
+- [5.1.5 스타일링 끝판왕 (색상, 영웅, 격자)](/mathplotlib/01_matplotlib_basics/05_styling/)
 
-## 02. Seaborn과 데이터셋 {#section-02}
-- [01. pydataset 소개](/mathplotlib/02_seaborn_dataset/05_pydataset_intro/)
-- [02. 패키지 pydataset 설치](/mathplotlib/02_seaborn_dataset/06_pydataset_install/)
-- [03. pydataset 주요 자료 가져오기](/mathplotlib/02_seaborn_dataset/07_pydataset_import/)
-- [04. seaborn으로 그래프 그리기](/mathplotlib/02_seaborn_dataset/08_seaborn_graph/)
+## 5.2 Seaborn과 데이터셋 {#section-02}
+- [5.2.1 Seaborn과 장난감 데이터셋 개요](/mathplotlib/02_seaborn_dataset/01_pydataset_intro/)
+- [5.2.2 초기 데이터 탐색 (EDA) 기법](/mathplotlib/02_seaborn_dataset/02_pydataset_install/)
+- [5.2.3 시각화를 결정짓는 2가지 변수 타입](/mathplotlib/02_seaborn_dataset/03_pydataset_import/)
+- [5.2.4 Seaborn 첫 그래프: Countplot과 Histplot](/mathplotlib/02_seaborn_dataset/04_seaborn_graph/)
 
-## 03. 기본 그래프 (점, 선, 막대) {#section-03}
-- [01. 산점도](/mathplotlib/03_basic_charts/09_scatter_plot/)
-- [02. 선 그리기](/mathplotlib/03_basic_charts/10_line_plot/)
-- [03. 막대 그래프](/mathplotlib/03_basic_charts/11_bar_plot/)
+## 5.3 기본 그래프 (점, 선, 막대) {#section-03}
+- [5.3.1 산점도 (Scatter Plot)와 hue의 마법](/mathplotlib/03_basic_charts/01_scatter_plot/)
+- [5.3.2 선 그래프 (Line Plot)와 시계열 데이터](/mathplotlib/03_basic_charts/02_line_plot/)
+- [5.3.3 막대 그래프 (Bar Plot)와 오차 막대](/mathplotlib/03_basic_charts/03_bar_plot/)
 
-## 04. 분포와 비율 차트 {#section-04}
-- [01. 상자그림](/mathplotlib/04_distribution_charts/12_box_plot/)
-- [02. 히스토그램](/mathplotlib/04_distribution_charts/13_histogram/)
-- [03. 파이 차트](/mathplotlib/04_distribution_charts/14_pie_chart/)
+## 5.4 분포와 비율 차트 {#section-04}
+- [5.4.1 상자그림 (Box Plot) 완벽 해부](/mathplotlib/04_distribution_charts/01_box_plot/)
+- [5.4.2 히스토그램 (Histogram)과 데이터 통(Bins)](/mathplotlib/04_distribution_charts/02_histogram/)
+- [5.4.3 파이 차트 (Pie Chart)와 시각화의 함정](/mathplotlib/04_distribution_charts/03_pie_chart/)
 
-## 05. 고급 통계 시각화 {#section-05}
-- [01. 바이올린 플롯](/mathplotlib/05_advanced_charts/15_violin_plot/)
-- [02. 상관관계 시각화](/mathplotlib/05_advanced_charts/16_correlation_viz/)
+## 5.5 고급 통계 시각화 {#section-05}
+- [5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭](/mathplotlib/05_advanced_charts/01_violin_plot/)
+- [5.5.2 상관관계 폭격기: Heatmap과 Pairplot](/mathplotlib/05_advanced_charts/02_correlation_viz/)

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #555; }
+      .box { rx: 5px; ry: 5px; stroke: #ccc; stroke-width: 2px; }
+      .r-chan { fill: rgba(220, 53, 69, 0.2); stroke: #dc3545; }
+      .g-chan { fill: rgba(40, 167, 69, 0.2); stroke: #28a745; }
+      .b-chan { fill: rgba(0, 123, 255, 0.2); stroke: #007bff; }
+      .arrow { fill: none; stroke: #b0b0b0; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  
+  <text x="425" y="30" class="title" text-anchor="middle">데이터 과학에서의 활용 (분리된 2D 평면들의 3D 입체화 - 컬러 이미지 채널)</text>
+
+  <!-- Left Side: Separate 2D Channels -->
+  <g transform="translate(140, 60)">
+    <!-- B Channel -->
+    <rect x="0" y="0" width="120" height="70" class="box b-chan" />
+    <text x="60" y="40" class="title" font-size="16" text-anchor="middle" fill="#007bff">B 채널 (2D)</text>
+    
+    <!-- G Channel -->
+    <rect x="0" y="95" width="120" height="70" class="box g-chan" />
+    <text x="60" y="135" class="title" font-size="16" text-anchor="middle" fill="#28a745">G 채널 (2D)</text>
+    
+    <!-- R Channel -->
+    <rect x="0" y="190" width="120" height="70" class="box r-chan" />
+    <text x="60" y="230" class="title" font-size="16" text-anchor="middle" fill="#dc3545">R 채널 (2D)</text>
+    
+    <text x="-40" y="160" class="desc" font-weight="bold" transform="rotate(-90, -40, 160)">분리된 이미지 색상 배열들</text>
+  </g>
+
+  <!-- Middle Base alignment and Stack -->
+  <path d="M 285 160 L 375 160 M 355 145 L 375 160 L 355 175" class="arrow" />
+  <text x="330" y="135" class="title" text-anchor="middle" font-size="22">stack</text>
+  <text x="330" y="190" class="desc" text-anchor="middle" font-weight="bold" fill="#0056b3">차원 생성 &amp; 적층</text>
+
+  <!-- Right Side: 3D Image Tensor -->
+  <g transform="translate(480, 150)">
+    <!-- B Channel (Background) -->
+    <rect x="50" y="-70" width="180" height="130" class="box b-chan" />
+    <text x="140" y="-45" class="title" font-size="16" text-anchor="middle" fill="#0056b3">B 채널 (가장 밑)</text>
+    
+    <!-- G Channel (Middle) -->
+    <rect x="25" y="-45" width="180" height="130" class="box g-chan" />
+    <text x="115" y="-20" class="title" font-size="16" text-anchor="middle" fill="#155724">G 채널 (중간층)</text>
+    
+    <!-- R Channel (Foreground) -->
+    <rect x="0" y="-20" width="180" height="130" class="box r-chan" />
+    <text x="90" y="45" class="title" font-size="18" text-anchor="middle" fill="#721c24">R 채널 (가장 위)</text>
+    <text x="90" y="70" class="desc" font-size="14" text-anchor="middle" fill="#ba2a38">온전한 파이썬 RGB 이미지 객체</text>
+    
+    <!-- 3D Shape Description -->
+    <path d="M -20 0 L -10 0 L -10 90 L -20 90" stroke="#333" stroke-width="3" fill="none" />
+    <text x="-30" y="50" class="title" font-size="14" text-anchor="end" fill="#333">가로 (Width)</text>
+
+    <path d="M 10 -30 L 10 -40 L 170 -40 L 170 -30" stroke="#333" stroke-width="3" fill="none" />
+    <text x="90" y="-50" class="title" font-size="14" text-anchor="middle" fill="#333">세로 (Height)</text>
+
+    <path d="M 200 120 L 210 130 L 260 80 L 250 70" stroke="#0056b3" stroke-width="2" fill="none" stroke-dasharray="4,4" />
+    <text x="250" y="125" class="title" font-size="16" text-anchor="start" fill="#0056b3">깊이 축 (Depth/Channel)</text>
+    <text x="250" y="145" class="desc" font-size="14" text-anchor="start" fill="#0056b3">새롭게 생성된 3번째 차원축!</text>
+  </g>
+</svg>

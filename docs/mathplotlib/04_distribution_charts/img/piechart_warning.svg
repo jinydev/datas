@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#dc3545">시각화의 함정: 파이 차트가 통계학자들에게 미움받는 이유</text>
+
+  <!-- Left: Pie Chart (Illusion) -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="280" height="230" rx="5" ry="5" fill="#f8f9fa" stroke="#ccc" stroke-width="2" />
+    <text x="140" y="30" class="title" fill="#dc3545" text-anchor="middle">파이 차트 (Pie Chart)</text>
+    <text x="140" y="50" class="text-desc" fill="#6c757d" font-size="14" text-anchor="middle">"A, B, C 중에 누가 1등이지? 다 비슷비슷한데?"</text>
+    
+    <g transform="translate(140, 140)">
+      <!-- A: 33% -->
+      <!-- B: 35% -->
+      <!-- C: 32% -->
+      <!-- Just drew approx similar slices -->
+      <path d="M 0 0 L -60 -50 A 80 80 0 0 1 50 -60 Z" fill="#0d6efd" stroke="#fff" stroke-width="2" /> <!-- B (slightly larger) -->
+      <path d="M 0 0 L 50 -60 A 80 80 0 0 1 -10 80 Z" fill="#28a745" stroke="#fff" stroke-width="2" /> <!-- A -->
+      <path d="M 0 0 L -10 80 A 80 80 0 0 1 -60 -50 Z" fill="#ffc107" stroke="#fff" stroke-width="2" /> <!-- C -->
+      
+      <text x="40" y="20" class="text-desc" fill="#fff" font-size="12">A?</text>
+      <text x="-10" y="-40" class="text-desc" fill="#fff" font-size="12">B?</text>
+      <text x="-30" y="30" class="text-desc" fill="#fff" font-size="12">C?</text>
+    </g>
+  </g>
+
+  <!-- Middle Arrow -->
+  <g transform="translate(400, 180)">
+    <path d="M 0 -10 L 40 -10" fill="none" stroke="#6c757d" stroke-width="4" />
+    <polygon points="35,-15 45,-10 35,-5" fill="#6c757d" />
+  </g>
+
+  <!-- Right: Bar Chart (Truth) -->
+  <g transform="translate(460, 80)">
+    <rect x="0" y="0" width="280" height="230" rx="5" ry="5" fill="#e8f5e9" stroke="#198754" stroke-width="3" />
+    <text x="140" y="30" class="title" fill="#198754" text-anchor="middle">막대 그래프 (Bar Chart)</text>
+    <text x="140" y="50" class="text-desc" fill="#198754" font-size="14" text-anchor="middle">"인간의 눈은 높이(길이)를 더 정확하게 구별한다!"</text>
+    
+    <g transform="translate(50, 60)">
+      <line x1="0" y1="140" x2="180" y2="140" stroke="#333" stroke-width="2" />
+      <line x1="0" y1="20" x2="0" y2="140" stroke="#333" stroke-width="2" />
+      
+      <!-- Bars representing 32, 35, 33 -->
+      <rect x="25" y="55" width="30" height="85" fill="#198754" /> <!-- C: 32 (shortest) -->
+      <rect x="75" y="45" width="30" height="95" fill="#198754" /> <!-- A: 33 (middle) -->
+      <rect x="125" y="35" width="30" height="105" fill="#198754" /> <!-- B: 35 (tallest) -->
+      
+      <text x="40" y="160" class="text-desc" font-size="14" text-anchor="middle">C</text>
+      <text x="90" y="160" class="text-desc" font-size="14" text-anchor="middle">A</text>
+      <text x="140" y="160" class="text-desc" font-size="14" text-anchor="middle">B</text>
+
+      <text x="40" y="45" class="text-desc" fill="#dc3545" font-size="12" text-anchor="middle">최하위</text>
+      <text x="140" y="25" class="text-desc" fill="#0056b3" font-size="12" text-anchor="middle">1등!</text>
+    </g>
+  </g>
+</svg>

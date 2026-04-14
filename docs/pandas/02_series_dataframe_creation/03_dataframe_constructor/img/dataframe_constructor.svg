@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">DataFrame 생성자(Constructor) 주문서 조립 과정</text>
+
+  <!-- 파이썬 주문서 (코드) -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="300" height="150" fill="#263238" rx="5" filter="url(#shadow)" />
+    <rect x="0" y="0" width="300" height="25" fill="#37474F" rx="5" />
+    <circle cx="15" cy="12" r="5" fill="#FF5252" />
+    <circle cx="30" cy="12" r="5" fill="#FFCA28" />
+    <circle cx="45" cy="12" r="5" fill="#8BC34A" />
+    
+    <text x="15" y="45" font-family="monospace" font-size="12" fill="#82AAFF">pd.DataFrame(</text>
+    
+    <text x="30" y="65" font-family="monospace" font-size="12" fill="#F07178">data</text>
+    <text x="60" y="65" font-family="monospace" font-size="12" fill="#89DDFF">=</text>
+    <text x="70" y="65" font-family="monospace" font-size="12" fill="#C3E88D">raw_materials</text>
+    <text x="165" y="65" font-family="monospace" font-size="12" fill="#FFF">,</text>
+    
+    <text x="30" y="85" font-family="monospace" font-size="12" fill="#F07178">index</text>
+    <text x="70" y="85" font-family="monospace" font-size="12" fill="#89DDFF">=</text>
+    <text x="80" y="85" font-family="monospace" font-size="12" fill="#FFF">['1일차', '2일차', '3일차'],</text>
+    
+    <text x="30" y="105" font-family="monospace" font-size="12" fill="#F07178">columns</text>
+    <text x="80" y="105" font-family="monospace" font-size="12" fill="#89DDFF">=</text>
+    <text x="90" y="105" font-family="monospace" font-size="12" fill="#FFF">['오전매출', '오후매출'],</text>
+    
+    <text x="30" y="125" font-family="monospace" font-size="12" fill="#F07178">dtype</text>
+    <text x="70" y="125" font-family="monospace" font-size="12" fill="#89DDFF">=</text>
+    <text x="80" y="125" font-family="monospace" font-size="12" fill="#FFCB6B">float</text>
+
+    <text x="15" y="145" font-family="monospace" font-size="12" fill="#82AAFF">)</text>
+  </g>
+
+  <!-- 매핑 화살표 -->
+  
+  <!-- data 화살표 -->
+  <path d="M 230 145 L 290 145 L 290 200 L 460 200 L 460 160" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="3,3" />
+  
+  <!-- index 화살표 -->
+  <path d="M 265 160 L 320 160 L 320 230 L 400 230 L 400 160" fill="none" stroke="#FF9800" stroke-width="2" stroke-dasharray="3,3" />
+  
+  <!-- columns 화살표 -->
+  <path d="M 270 175 L 340 175 L 340 100 L 460 100 L 460 120" fill="none" stroke="#2196F3" stroke-width="2" stroke-dasharray="3,3" />
+
+  <!-- 결과 표 (케이스 B) -->
+  <g transform="translate(390, 80)">
+    <rect x="-30" y="40" width="220" height="110" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#607D8B" stroke-width="2"/>
+    
+    <!-- 컬럼 헤더 -->
+    <rect x="25" y="40" width="165" height="25" fill="#E3F2FD" rx="3" stroke="#90CAF9" stroke-width="1"/>
+    <text x="65" y="57" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold">오전매출</text>
+    <text x="135" y="57" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold">오후매출</text>
+    
+    <!-- 인덱스 헤더 -->
+    <rect x="-30" y="65" width="55" height="85" fill="#FFF3E0" rx="3" stroke="#FFCC80" stroke-width="1"/>
+    <text x="-3" y="85" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">1일차</text>
+    <text x="-3" y="110" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">2일차</text>
+    <text x="-3" y="135" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">3일차</text>
+    
+    <!-- 데이터/값 영역 -->
+    <rect x="25" y="65" width="165" height="85" fill="#F1F8E9" rx="3" stroke="#C8E6C9" stroke-width="1"/>
+    
+    <text x="65" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">10.0</text>
+    <text x="135" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">20.0</text>
+    
+    <text x="65" y="110" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">30.0</text>
+    <text x="135" y="110" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">40.0</text>
+    
+    <text x="65" y="135" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">50.0</text>
+    <text x="135" y="135" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">60.0</text>
+
+    <!-- float 형 변환 코멘트 -->
+    <rect x="200" y="90" width="100" height="30" fill="#FFECB3" rx="4" />
+    <path d="M 180 100 L 200 100 L 200 110 L 180 110 Z" fill="#FFECB3" />
+    <text x="250" y="110" font-family="sans-serif" font-size="11" fill="#F57F17" font-weight="bold" text-anchor="middle">dtype=float 적용</text>
+  </g>
+
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">3단계: 좌표로 행과 열 동시 조준 (2차원 부분행렬 슬라이싱)</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(40, 130)">
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#9C27B0" stroke-width="2"/>
+    <text x="110" y="35" font-family="monospace" font-size="18" fill="#CE93D8" font-weight="bold" text-anchor="middle">pf.iloc[0:2, 1:3]</text>
+
+    <!-- 행 번역 -->
+    <path d="M 95 45 L 95 65" stroke="#FF5252" stroke-width="2" />
+    <text x="95" y="80" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="middle">[0, 1] 행</text>
+
+    <!-- 열 번역 -->
+    <path d="M 160 45 L 160 65" stroke="#FFA000" stroke-width="2" />
+    <text x="160" y="80" font-family="sans-serif" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">[1, 2] 열</text>
+  </g>
+
+  <!-- 교차점 메타포 (십자선 영역) -->
+  <g transform="translate(300, 140)">
+    <path d="M 0 10 L 80 10" fill="none" stroke="#9C27B0" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="75,3 85,10 75,17" fill="#9C27B0" />
+    <text x="40" y="-10" font-family="sans-serif" font-size="12" fill="#7B1FA2" font-weight="bold" text-anchor="middle">블록 오려내기</text>
+  </g>
+
+  <!-- 전체 데이터프레임과 추출될 교차 영역 시각화 -->
+  <g transform="translate(420, 80)">
+    <!-- 전체 배경 흐리게 -->
+    <rect x="-30" y="0" width="180" height="150" fill="#F5F5F5" rx="5" stroke="#E0E0E0" stroke-width="1"/>
+    
+    <!-- 컬럼 인덱스 (흐림) -->
+    <rect x="30" y="0" width="120" height="25" fill="#EEEEEE" rx="3" stroke="#E0E0E0" />
+    <text x="50" y="17" font-family="monospace" font-size="12" fill="#BDBDBD" font-weight="bold" text-anchor="middle">[0]</text>
+    <text x="90" y="17" font-family="monospace" font-size="12" fill="#BDBDBD" font-weight="bold" text-anchor="middle">[1]</text>
+    <text x="130" y="17" font-family="monospace" font-size="12" fill="#BDBDBD" font-weight="bold" text-anchor="middle">[2]</text>
+
+    <!-- 로우 인덱스 (흐림) -->
+    <rect x="-30" y="25" width="60" height="125" fill="#EEEEEE" rx="3" stroke="#E0E0E0" />
+    <text x="0" y="55" font-family="monospace" font-size="12" fill="#BDBDBD" font-weight="bold" text-anchor="middle">[0]</text>
+    <text x="0" y="90" font-family="monospace" font-size="12" fill="#BDBDBD" font-weight="bold" text-anchor="middle">[1]</text>
+    <text x="0" y="125" font-family="monospace" font-size="12" fill="#BDBDBD" font-weight="bold" text-anchor="middle">[2]</text>
+
+    <!-- 안 뽑히는 값 채우기 -->
+    <text x="50" y="55" font-family="sans-serif" font-size="10" fill="#E0E0E0" text-anchor="middle">25</text>
+    <text x="50" y="90" font-family="sans-serif" font-size="10" fill="#E0E0E0" text-anchor="middle">18</text>
+    <text x="50" y="125" font-family="sans-serif" font-size="10" fill="#E0E0E0" text-anchor="middle">17</text>
+    <text x="90" y="125" font-family="sans-serif" font-size="10" fill="#E0E0E0" text-anchor="middle">17</text>
+    <text x="130" y="125" font-family="sans-serif" font-size="10" fill="#E0E0E0" text-anchor="middle">10</text>
+
+    <!-- 선택된 영역 (교차 행렬) 하이라이트 -->
+    <rect x="70" y="32" width="80" height="70" fill="#FFFFFF" rx="3" filter="url(#shadow)" stroke="#9C27B0" stroke-width="2" />
+    
+    <!-- 인덱스와 컬럼 이름 회복 (iloc의 특징) -->
+    <!-- 가상 이름표를 위에 살짝 보여줌 -->
+    <text x="90" y="45" font-family="sans-serif" font-size="9" fill="#9C27B0" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="130" y="45" font-family="sans-serif" font-size="9" fill="#9C27B0" font-weight="bold" text-anchor="middle">과제</text>
+    
+    <text x="80" y="65" font-family="sans-serif" font-size="8" fill="#FF5252" font-weight="bold" text-anchor="end">윤일형</text>
+    <text x="80" y="90" font-family="sans-serif" font-size="8" fill="#FF5252" font-weight="bold" text-anchor="end">강수희</text>
+
+    <!-- 값 렌더링 (찐하게) -->
+    <text x="95" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">35</text>
+    <text x="135" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">8</text>
+    
+    <text x="95" y="90" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">27</text>
+    <text x="135" y="90" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#F3E5F5" rx="10" stroke="#CE93D8" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#6A1B9A" font-weight="bold" text-anchor="middle">넘파이(NumPy) 2차원 배열과 똑같이 연속된 메모리 블럭을 잘라냅니다.</text>
+  </g>
+
+</svg>

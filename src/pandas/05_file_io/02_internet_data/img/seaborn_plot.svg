@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">3단계: 정제된 DataFrame을 Seaborn 막대그래프로 시각화</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="300" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#9C27B0" stroke-width="2"/>
+    <text x="150" y="30" font-family="monospace" font-size="16" fill="#CE93D8" font-weight="bold" text-anchor="middle">sns.barplot(data=<tspan fill="#FFEB3B">death_data</tspan>)</text>
+  </g>
+
+  <!-- 왼쪽: 정제가 끝난 클린 데이터프레임 -->
+  <g transform="translate(80, 150)">
+    <rect x="-30" y="0" width="160" height="130" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3"/>
+    <text x="50" y="-15" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">정제된 숫자 데이터프레임</text>
+
+    <!-- 인덱스 지역명 -->
+    <rect x="-20" y="30" width="40" height="90" fill="#E8F5E9" rx="3" stroke="#A5D6A7" />
+    <text x="0" y="50" font-family="sans-serif" font-size="12" fill="#1B5E20" font-weight="bold" text-anchor="middle">서울</text>
+    <text x="0" y="75" font-family="sans-serif" font-size="12" fill="#1B5E20" font-weight="bold" text-anchor="middle">부산</text>
+    <text x="0" y="100" font-family="sans-serif" font-size="12" fill="#1B5E20" font-weight="bold" text-anchor="middle">대구</text>
+
+    <!-- 값들 -->
+    <rect x="30" y="10" width="80" height="20" fill="#C8E6C9" rx="3" />
+    <text x="70" y="24" font-family="sans-serif" font-size="10" fill="#1B5E20" font-weight="bold" text-anchor="middle">사망자수</text>
+
+    <text x="70" y="50" font-family="monospace" font-size="16" fill="#000" font-weight="bold" text-anchor="middle">248</text>
+    <text x="70" y="75" font-family="monospace" font-size="16" fill="#000" font-weight="bold" text-anchor="middle">135</text>
+    <text x="70" y="100" font-family="monospace" font-size="16" fill="#000" font-weight="bold" text-anchor="middle">89</text>
+  </g>
+
+  <!-- 중앙 통과 화살표 -->
+  <g transform="translate(290, 190)">
+    <path d="M 0 10 L 60 10" fill="none" stroke="#9C27B0" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="53,3 65,10 53,17" fill="#9C27B0" />
+    <text x="30" y="-5" font-family="sans-serif" font-size="12" fill="#7B1FA2" font-weight="bold" text-anchor="middle">그래프 뼈대 구축</text>
+  </g>
+
+  <!-- 오른쪽: 팝업창 막대그래프 -->
+  <g transform="translate(420, 120)">
+    <rect x="-30" y="0" width="220" height="160" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#CE93D8" stroke-width="3"/>
+    
+    <!-- 창 닫기 버튼 묘사 -->
+    <rect x="-30" y="0" width="220" height="20" fill="#F3E5F5" rx="5" />
+    <circle cx="170" cy="10" r="5" fill="#F44336" />
+    <circle cx="155" cy="10" r="5" fill="#FFC107" />
+    <circle cx="140" cy="10" r="5" fill="#4CAF50" />
+    <text x="0" y="14" font-family="sans-serif" font-size="10" fill="#6A1B9A" font-weight="bold">Figure 1</text>
+
+    <!-- 그래프 좌표축 -->
+    <path d="M -15 30 L -15 130 L 170 130" fill="none" stroke="#607D8B" stroke-width="2" />
+    <!-- 단위 표시 -->
+    <text x="-25" y="40" font-family="monospace" font-size="10" fill="#607D8B">300</text>
+    <text x="-25" y="70" font-family="monospace" font-size="10" fill="#607D8B">200</text>
+    <text x="-25" y="100" font-family="monospace" font-size="10" fill="#607D8B">100</text>
+    
+    <!-- 점선 눈금 -->
+    <path d="M -15 40 L 170 40" fill="none" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M -15 70 L 170 70" fill="none" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M -15 100 L 170 100" fill="none" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="2,2"/>
+
+    <!-- 서울 막대 (248) -->
+    <rect x="10" y="55" width="30" height="75" fill="#FF5252" rx="3" />
+    <text x="25" y="145" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">서울</text>
+
+    <!-- 부산 막대 (135) -->
+    <rect x="60" y="89" width="30" height="41" fill="#448AFF" rx="3" />
+    <text x="75" y="145" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">부산</text>
+
+    <!-- 대구 막대 (89) -->
+    <rect x="110" y="103" width="30" height="27" fill="#69F0AE" rx="3" />
+    <text x="125" y="145" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">대구</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#F3E5F5" rx="10" stroke="#9C27B0" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#6A1B9A" font-weight="bold" text-anchor="middle">전처리가 완전히 끝난 깔끔한 데이터를 Seaborn에 넘기면 그래프가 자동으로 생성됩니다.</text>
+  </g>
+
+</svg>

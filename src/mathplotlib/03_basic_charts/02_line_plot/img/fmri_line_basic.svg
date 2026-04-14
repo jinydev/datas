@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#2563eb" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📉 환자들의 뇌파 신호 (평균 선과 신뢰구간 그림자)</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+        
+        <line x1="0" y1="0" x2="0" y2="250" />
+        <line x1="96" y1="0" x2="96" y2="250" />
+        <line x1="192" y1="0" x2="192" y2="250" />
+        <line x1="288" y1="0" x2="288" y2="250" />
+        <line x1="384" y1="0" x2="384" y2="250" />
+        <line x1="480" y1="0" x2="480" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">0.5</text>
+        <text x="-10" y="130" fill="#64748b" font-size="12" text-anchor="end">0.0</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">-0.5</text>
+        
+        <text x="0" y="275" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="120" y="275" fill="#64748b" font-size="12" text-anchor="middle">5</text>
+        <text x="240" y="275" fill="#64748b" font-size="12" text-anchor="middle">10</text>
+        <text x="360" y="275" fill="#64748b" font-size="12" text-anchor="middle">15</text>
+        <text x="480" y="275" fill="#64748b" font-size="12" text-anchor="middle">20</text>
+
+        <!-- Confidence Interval Polygon -->
+        <!-- Y mapping: 250 px height. 0.0 is y=125, +0.5 is y=0, -0.5 is y=250 -->
+        <path d="
+            M 0 120 
+            Q 50 140 100 40 
+            T 150 -10
+            T 220 180
+            T 350 120
+            T 480 125
+            L 480 135
+            Q 350 135 230 220
+            T 120 70
+            T 0 130 Z" 
+            fill="#93c5fd" fill-opacity="0.5" />
+
+        <!-- Mean Line -->
+        <path d="
+            M 0 125 
+            Q 50 145 120 20
+            T 230 190
+            T 350 125
+            T 480 130" 
+            fill="none" stroke="#2563eb" stroke-width="3" />
+
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">뇌파 신호 (signal)</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">시간 (timepoint)</text>
+
+        <!-- Tooltip arrow -->
+        <path d="M 120 5 L 80 -10 L 150 -15 Z" fill="#eff6ff" stroke="#3b82f6" />
+        <text x="110" y="-18" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">신뢰 구간(95% CI)</text>
+    </g>
+</svg>

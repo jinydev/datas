@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#db2777" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🎻 요일별 레스토랑 결제 요금 분포 (기본 바이올린)</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">50</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">40</text>
+        <text x="-10" y="105" fill="#64748b" font-size="12" text-anchor="end">30</text>
+        <text x="-10" y="155" fill="#64748b" font-size="12" text-anchor="end">20</text>
+        <text x="-10" y="205" fill="#64748b" font-size="12" text-anchor="end">10</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- Violins -->
+        <!-- Y max = 50. 250px height. multiplier = 5. Y = 250 - (val*5) -->
+        
+        <!-- Thur (x=60) (Pastel blue) -->
+        <!-- median ~ 16 (170), Q1=12(190), Q3=20(150), span 10 to 40(50). Mode around 15 -->
+        <g transform="translate(60, 0)">
+            <path d="M 0 50 Q -40 160 0 200 Q 40 160 0 50 Z" fill="#bae6fd" stroke="#0ea5e9" stroke-width="1.5" />
+            <!-- Inner box -->
+            <path d="M 0 60 L 0 190" stroke="#1e293b" stroke-width="2" />
+            <rect x="-4" y="150" width="8" height="40" fill="#1e293b" />
+            <circle cx="0" cy="170" r="2" fill="white" />
+        </g>
+
+        <!-- Fri (x=180) (Pastel orange) -->
+        <!-- median ~ 15 (175), Q1=10(200), Q3=20(150), span 5 to 40. Mode around 12 -->
+        <g transform="translate(180, 0)">
+            <path d="M 0 50 Q -45 180 0 225 Q 45 180 0 50 Z" fill="#ffedd5" stroke="#f97316" stroke-width="1.5" />
+            <path d="M 0 60 L 0 220" stroke="#1e293b" stroke-width="2" />
+            <rect x="-4" y="150" width="8" height="50" fill="#1e293b" />
+            <circle cx="0" cy="175" r="2" fill="white" />
+        </g>
+
+        <!-- Sat (x=300) (Pastel green) -->
+        <!-- median ~ 18 (160), Q1=14(180), Q3=24(130), span 5 to 50(0). Moderately spread -->
+        <g transform="translate(300, 0)">
+            <path d="M 0 0 Q -50 150 0 225 Q 50 150 0 0 Z" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5" />
+            <path d="M 0 10 L 0 215" stroke="#1e293b" stroke-width="2" />
+            <rect x="-4" y="130" width="8" height="50" fill="#1e293b" />
+            <circle cx="0" cy="160" r="2" fill="white" />
+        </g>
+
+        <!-- Sun (x=420) (Pastel red) -->
+        <!-- median ~ 20 (150), Q1=16(170), Q3=28(110), span 7 to 50(0). Long neck -->
+        <g transform="translate(420, 0)">
+            <path d="M 0 0 Q -20 50 0 215 Q 20 50 0 0 M 0 130 Q -50 180 0 215 Q 50 180 0 130" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" />
+            <path d="M 0 10 L 0 210" stroke="#1e293b" stroke-width="2" />
+            <rect x="-4" y="110" width="8" height="60" fill="#1e293b" />
+            <circle cx="0" cy="150" r="2" fill="white" />
+        </g>
+
+        <text x="60" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Thur</text>
+        <text x="180" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Fri</text>
+        <text x="300" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Sat</text>
+        <text x="420" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Sun</text>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">total_bill</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">day</text>
+    </g>
+
+    <rect x="150" y="345" width="300" height="35" rx="5" fill="#fdf2f8" />
+    <text x="300" y="367" fill="#be185d" font-size="12" font-weight="bold" text-anchor="middle">💡 가운데는 Box Plot, 테두리는 거울 반전 히스토그램(KDE)</text>
+</svg>

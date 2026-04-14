@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">3단계: 맨 바닥에 새로운 행(Row) 개척하며 데이터 밀어넣기</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="400" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#9C27B0" stroke-width="2"/>
+    <text x="200" y="30" font-family="monospace" font-size="16" fill="#CE93D8" font-weight="bold" text-anchor="middle">df2.<tspan fill="#FF5252">loc</tspan>[<tspan fill="#FFCA28">'총계'</tspan>] = df2.sum(axis=0)</text>
+  </g>
+
+  <!-- 위에서 떨어지는 데이터 덩어리 (수직 압축된 합계 시리즈) -->
+  <g transform="translate(360, 140)">
+    <!-- 총계 블록 떨어짐 -->
+    <path d="M 50 -10 L 50 20" fill="none" stroke="#FF5252" stroke-width="4" stroke-dasharray="4,4" />
+    <polygon points="45,15 50,22 55,15" fill="#FF5252" />
+    <text x="50" y="-20" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="middle">df2.sum(axis=0) 결과물</text>
+
+    <!-- 세로로 긴 데이터를 눕혀서 가로 블록으로 보여줌 (Series가 행 위치에 맞춰짐) -->
+    <rect x="0" y="30" width="100" height="20" fill="#FFEbee" rx="3" stroke="#FFCDD2" />
+    <text x="50" y="44" font-family="monospace" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">799, 25, 1569 ...</text>
+  </g>
+
+  <!-- 상단 원본 표 영역 -->
+  <g transform="translate(100, 130)">
+    <rect x="-40" y="-10" width="200" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#CFD8DC" stroke-width="2"/>
+    <text x="60" y="-25" font-family="sans-serif" font-size="12" fill="#546E7A" font-weight="bold" text-anchor="middle">현재 DataFrame</text>
+    
+    <!-- 기존 열 이름 -->
+    <rect x="40" y="10" width="100" height="20" fill="#E3F2FD" rx="3" />
+    
+    <!-- 기존 1~4월 데이터 -->
+    <rect x="-30" y="40" width="50" height="85" fill="#FFF3E0" rx="3" />
+    <text x="-5" y="55" font-family="sans-serif" font-size="10" fill="#E65100" text-anchor="middle">1월~4월</text>
+    
+    <rect x="40" y="40" width="100" height="85" fill="#BBDEFB" rx="3" />
+    
+    <!-- 바닥 개척 공사 중 묘사 (점선 영역) -->
+    <rect x="-35" y="145" width="185" height="40" fill="#F3E5F5" rx="5" stroke="#CE93D8" stroke-dasharray="4,4" />
+    <text x="60" y="195" font-family="sans-serif" font-size="12" fill="#6A1B9A" font-weight="bold" text-anchor="middle">.loc 로 지하 1층 강제 확장 (총계)</text>
+    
+    <!-- 새 인덱스 라벨 -->
+    <rect x="-30" y="152" width="50" height="25" fill="#E1BEE7" rx="3" stroke="#9C27B0" stroke-width="2"/>
+    <text x="-5" y="169" font-family="sans-serif" font-size="11" fill="#4A148C" font-weight="bold" text-anchor="middle">총계</text>
+
+    <!-- 값 들어갈 방 -->
+    <rect x="40" y="152" width="100" height="25" fill="#E1BEE7" rx="3" />
+  </g>
+
+  <!-- 데이터 꽂히는 화살표 (오른쪽에서 왼쪽 빈방으로) -->
+  <path d="M 350 185 L 250 185" fill="none" stroke="#9C27B0" stroke-width="5" stroke-dasharray="5,5" />
+  <polygon points="255,178 245,185 255,192" fill="#9C27B0" />
+  <text x="300" y="175" font-family="sans-serif" font-size="14" fill="#6A1B9A" font-weight="bold" text-anchor="middle">쏙 들어감!</text>
+
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-290" y="-15" width="580" height="35" fill="#F3E5F5" rx="10" stroke="#9C27B0" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#6A1B9A" font-weight="bold" text-anchor="middle">`.loc[없는이름]` 을 쓰면, 데이터를 읽지 않고 아예 바닥에 새 줄(Row)을 추가해버리는 마법이 펼쳐집니다.</text>
+  </g>
+
+</svg>

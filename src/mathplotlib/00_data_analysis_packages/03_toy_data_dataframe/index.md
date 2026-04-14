@@ -1,149 +1,113 @@
 ---
-layout: python
-title: "5.0.3 토이 데이터와 데이터프레임 활용"
+layout: mathplotlib
+title: "5.0.3 토이 데이터 로딩과 첫 그래프 그리기"
 ---
 
-# 5.0.3 토이 데이터와 데이터프레임 활용
+## 5.0.3 토이 데이터(Toy Data) 소환과 2D 맵핑 기초
 
-## 패키지 pydataset의 모든 내장 데이터
+앞서 설치한 `pydataset` 라이브러리를 사용하면 지루한 CSV 저장/불러오기 과정을 생략하고, 전 세계 데이터 사이언티스트들이 튜토리얼용으로 공통으로 사용하는 고품질 장난감 데이터(Toy Data)를 즉시 메모리에 올려서 시각화 실습에 집중할 수 있습니다.
 
-설치된 `pydataset`의 전체적인 정보를 얻기 위해 데이터셋 목록을 표시해 보자. 패키지 `pydataset`에서 데이터를 불러와 `data()`를 실행하면 데이터셋 식별자(dataset_id)와 제목(title)이 포함된 데이터프레임을 반환 받을 수 있다. 다음으로 패키지 `pydataset`에는 757개의 샘플 데이터가 있다는 것을 알 수 있다. 열 `dataset_id`는 데이터 셋의 식별자(ID)이며 열 `title`은 데이터 셋 이름이다.
+### pydataset 전체 데이터셋 목록 확인
+
+`pydataset` 안에는 무려 757종의 데이터가 들어 있습니다. 어떤 데이터가 있는지 `data()` 명령어로 탐색해 보겠습니다.
 
 ```python
-from pydataset import data # pydataset 모듈에서 data 함수를 메모리에 올려 사용할 수 있도록 한다.
+from pydataset import data 
 
+# 함수의 인자를 비워두면, 제공하는 전체 데이터셋 목록표가 DataFrame으로 나옵니다.
 all_data = data()
-all_data
+print(all_data.head())
 ```
-**출력 (예시):**
-```
-    dataset_id                                              title
-0   AirPassengers       Monthly Airline Passenger Numbers 1949-1960
-1         BJsales                 Sales Data with Leading Indicator
-2             BOD                         Biochemical Oxygen Demand
-...
-756    sleepstudy       Reaction times in a sleep deprivation study
-
-[757 rows x 2 columns]
+**[출력 결과]**
+```text
+      dataset_id                                              title
+0  AirPassengers       Monthly Airline Passenger Numbers 1949-1960
+1        BJsales                 Sales Data with Leading Indicator
+2            BOD                         Biochemical Oxygen Demand
+3   Formaldehyde                     Determination of Formaldehyde
+4   HairEyeColor         Hair and Eye Color of Statistics Students
 ```
 
-## 패키지 pydataset 내의 데이터 cars
+---
 
-간단한 데이터 셋인 `cars`의 내용을 알아보자. 자동차의 속도 `speed`와 정차 길이 `dist`가 있는 테이블 형태의 데이터인 것을 알 수 있다. 첫 열은 각 행의 번호이며 첫 줄의 `speed`와 `dist`는 각 열 이름이다.
+### [실전 1] `cars` (자동차 제동거리) 데이터 뽑아오기
+
+가장 기초적인 인과관계를 나타내는 `cars` 데이터를 불러와서, `speed`(달리던 속도)와 `dist`(브레이크 밟고 멈출 때까지 미끄러진 제동거리)의 관계를 확인해 보겠습니다.
 
 ```python
+# 'cars'라는 문자열을 넘기면, 해당 데이터가 2차원 표(DataFrame)로 뽑혀 나옵니다!
 cars = data('cars')
-cars
+print(cars.head())
 ```
-**출력 (예시):**
+**[출력 결과]**
+```text
+   speed  dist
+1      4     2
+2      4    10
+3      7     4
+4      7    22
+5      8    16
 ```
-    speed  dist
-1       4     2
-2       4    10
-3       7     4
-4       7    22 # 시속 7인 차가 정차하는데 22미터가 측정된 하나의 관측 값을 말한다
-...
-49     24   120
-50     25    85
-```
+> **수학적 의미 해석**: `speed` 4mph로 달리던 첫 번째 차는 브레이크를 밟고 2피트(ft)만에 멈췄고, `speed` 7mph로 달리던 네 번째 차는 무려 22피트나 미끄러졌음을 의미합니다.
 
-데이터 시각화 `matplotlib`을 사용해 산점도(scatter plot)를 그려보자. 다음 `plt.scatter(x = cars.speed, y = cars.dist)`로 데이터 `cars`에서 50개 데이터 좌표를 작은 원으로 그린 그림을 볼 수 있다.
+### 차트 도화지(2D 공간)에 표 데이터 매핑(Mapping)하기
 
-```python
-import matplotlib.pyplot as plt
+이 DataFrame을 `matplotlib`이나 `seaborn`에 넘겨주어 "스피드를 X축(가로)으로 삼고, 미끄러진 거리를 Y축(세로)으로 삼아 교차하는 지점에 점을 찍어줘!" 라고 선언하면 산점도(Scatter Plot)가 그려집니다.
 
-plt.scatter(x = cars.speed, y = cars.dist)
-plt.show() # 일반 프로그램 실행에서는 반드시 필요한 구문이나, 주피터 노트북 실행에서는 생략이 가능하다.
-```
-**출력:**
-![cars 산점도 matplotlib](/Users/hojin8/docs/070.강의/c01.빅데이터분석/파이썬으로_배우는_데이터분석입문/파이썬으로_배우는_데이터분석입문2/temp_images/page_020.png)
-
-다음은 패키지 `seaborn`의 함수 `scatterplot`으로 산점도를 그린 결과이다.
+![DataFrame 컬럼을 좌표공간의 축으로 매핑하는 원리](img/scatter_mapping.svg)
 
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-sns.scatterplot(x = cars.speed, y = cars.dist)
-plt.show()
+# Seaborn 마법 지팡이(템플릿)를 사용하여 점을 찍습니다.
+# (데이터를 넣어도 되고, 판다스 시리즈 객체를 직접 지정해도 됩니다)
+sns.scatterplot(x=cars['speed'], y=cars['dist'])
+
+# 모니터에 지금까지 도화지에 그렸던 그림들을 출력하라!
+plt.show() 
 ```
-**출력:**
-![cars 산점도 seaborn](/Users/hojin8/docs/070.강의/c01.빅데이터분석/파이썬으로_배우는_데이터분석입문/파이썬으로_배우는_데이터분석입문2/temp_images/page_020.png)
 
-> [!TIP]
-> **주피터 노트북에서 그림을 선명하게 그리기와 한글 설정**
+> **[시각화 꿀팁] 주피터 노트북 한글 폰트 & 화질 향상**
 >
-> 주피터 노트북 또는 VS Code의 반응형 윈도(Interactive Window)에서 `matplotlib`이나 `seaborn`의 그림을 선명하게 그리려면 다음을 설정한 이후에 그리도록 한다.
->
+> 시각화 중 지역명 같은 한글이 네모(ㅁㅁ)로 깨진다면, 스크립트 최상단에 다음 환경설정 부적을 붙여주세요.
 > ```python
-> %config InlineBackend.figure_format = 'retina'
-> ```
->
-> 다음은 `matplotlib`에서 한글을 처리하기 위한 실행 시간 환경 설정(runtime configuration)을 의미한다. 인터프리터에서 실행 시간에 한 번만 실행되면 이후에 한글 지원이 가능하다.
->
-> ```python
-> import matplotlib.pyplot as plt
->
-> plt.rc('font', family='Malgun Gothic')
-> plt.rc('axes', unicode_minus=False)
-> ```
->
-> 위 문장은 다음 `plt.rcParams[...]` 설정 문장으로도 가능하다.
->
-> ```python
-> plt.rcParams['font.family'] = 'Malgun Gothic'
-> plt.rcParams['axes.unicode_minus'] = False
+> plt.rcParams['font.family'] = 'Malgun Gothic' # 윈도우(맑은고딕) / 맥(AppleGothic)
+> plt.rcParams['axes.unicode_minus'] = False     # 마이너스(-) 기호 깨짐 방지
+> %config InlineBackend.figure_format = 'retina' # 모니터 출력 화질 2배 강화
 > ```
 
-## 판다스의 데이터프레임
+---
 
-판다스가 지원하는 테이블 형태의 행과 열로 구성된 자료구조는 데이터프레임(DataFrame)이다. 다음 코드로 데이터 `mpg`(miles per gallon)의 데이터프레임 객체를 변수 `mpg`에 저장한 후, `mpg`의 메소드 `head()`로 `mpg`의 첫 5개의 행을 볼 수 있다.
+### [실전 2] `mpg` (다차원 자동차 연비) 데이터와 군집 시각화
+
+조금 더 속성이 많은 `mpg` 데이터를 꺼내보겠습니다.
 
 ```python
 mpg = data('mpg')
-mpg.head()
+print(mpg.head())
 ```
-**출력 (예시):**
-```
-  manufacturer model  displ  year  cyl       trans  drv  cty  hwy fl    class
-1         audi    a4    1.8  1999    4    auto(l5)    f   18   29  p  compact
-2         audi    a4    1.8  1999    4  manual(m5)    f   21   29  p  compact
+**[출력 결과]**
+```text
+  manufacturer model  displ  year  cyl       trans drv  cty  hwy fl    class
+1         audi    a4    1.8  1999    4    auto(l5)   f   18   29  p  compact
+2         audi    a4    1.8  1999    4  manual(m5)   f   21   29  p  compact
 ...
 ```
 
-또한, 메소드 `mpg.info()`로 `mpg`가 234개 자동차 모델의 제조사(열 `manufacturer`)와 모델 이름(열 `model`), 도심 연비(열 `cty`)와 고속도로 연비(열 `hwy`) 등의 11개의 열로 구성된 데이터프레임인 것을 알 수 있다.
+- **displ (Displacement)**: 자동차 배기량 (엔진 크기)
+- **cty (City)**: 도심 주행 연비 (1갤런당 달리는 거리)
+- **drv (Drive)**: 구동 방식 (f: 전륜, r: 후륜, 4: 사륜)
+
+단순히 배기량(X축)과 연비(Y축)만 점으로 그리지 않고, `seaborn`만의 강력한 기능인 **`hue` (색상 매핑)** 를 사용하여 **색상**이라는 3번째 차원을 그래프에 입힐 수 있습니다.
 
 ```python
-mpg.info()
-```
-**출력 (예시):**
-```
-<class 'pandas.core.frame.DataFrame'>
-Int64Index: 234 entries, 1 to 234
-Data columns (total 11 columns):
- #   Column        Non-Null Count  Dtype  
----  ------        --------------  -----  
- 0   manufacturer  234 non-null    object 
- 1   model         234 non-null    object 
- 2   displ         234 non-null    float64
-...
- 8   hwy           234 non-null    int64  
-...
-dtypes: float64(1), int64(4), object(6)
-memory usage: 21.9 KB
-```
-
-데이터프레임 `mpg`의 열 `cty`는 `mpg.cty`로 참조한다. 다음 코드 `sns.scatterplot(x = mpg.displ, y = mpg.cty, hue = mpg.drv)`로 가로 x 축인 자동차 배기량(`displ`: displacement)에 따른 세로 y 축 도심 연비(`cty`: city)를 나타내는 산점도를 그릴 수 있다. 또한 인자 `hue=mpg.drv`를 지정해 각각의 데이터를 구동방식(`drv`)에 따라 구분한다. 자동차 구동방식 `drv`는 f(front-wheel drive, 전륜), r(rear wheel drive, 후륜), 4(4wd, 4륜) 등 3 종류가 있다.
-
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-sns.scatterplot(x = mpg.displ, y = mpg.cty, hue = mpg.drv)
+# hue 옵션에 'drv(구동 방식)' 컬럼을 지정하면, 구동 방식별로 알아서 그룹핑하여 색상을 다르게 칠해줍니다!
+sns.scatterplot(data=mpg, x='displ', y='cty', hue='drv')
 plt.show()
 ```
-**출력:**
-![mpg 산점도](/Users/hojin8/docs/070.강의/c01.빅데이터분석/파이썬으로_배우는_데이터분석입문/파이썬으로_배우는_데이터분석입문2/temp_images/page_022.png)
 
-- 구동장치가 앞에 있는 자동차가 도심 연비가 높다는 경향을 알 수 있다.
-- 자동차 배기량(`displ`)이 커질수록 도심 연비가 떨어지는 경향을 알 수 있다.
+![배기량과 연비, 차종별 산점도](img/mpg_scatter_hue.svg)
+
+- 점이 우하향으로 분포합니다. 즉, 엔진이 무식하게 클수록(배기량 증가) 기름을 엄청나게 먹는다(연비 최악)는 당연한 **자연의 법칙**을 눈으로 증명할 수 있습니다.
+- 파란색(전륜, f) 차들이 주로 좌상단(가볍고 연비 좋음)에 몰려 있고, 초록색(사륜, 4) 차들이 우하단(무겁고 연비 나쁨)에 밀집해 있는 것을 알 수 있습니다.

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#7c3aed" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🎨 요일별/성별 결제 요금 극한의 대칭 (split=True)</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">50</text>
+        <text x="-10" y="130" fill="#64748b" font-size="12" text-anchor="end">25</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- Violins (split=True) -->
+        <!-- Blue (Male) on LEFT side (negative X). Orange (Female) on RIGHT side (positive X) -->
+        
+        <!-- Thur (x=60) -->
+        <!-- Male (left): path from x=0 down then left Q to center -->
+        <!-- Female (right): path from x=0 down then right Q to center -->
+        <g transform="translate(60, 0)">
+            <path d="M 0 50 Q -40 170 0 200 Z" fill="#93c5fd" stroke="#1e3a8a" stroke-width="1.5" />
+            <path d="M 0 40 Q 30 150 0 220 Z" fill="#fdba74" stroke="#7c2d12" stroke-width="1.5" />
+            
+            <path d="M 0 45 L 0 210" stroke="#1e293b" stroke-width="2" />
+            <rect x="-3" y="160" width="6" height="30" fill="#1e293b" />
+            <circle cx="0" cy="175" r="2" fill="white" />
+        </g>
+
+        <!-- Fri (x=180) -->
+        <g transform="translate(180, 0)">
+            <path d="M 0 40 Q -50 180 0 220 Z" fill="#93c5fd" stroke="#1e3a8a" stroke-width="1.5" />
+            <path d="M 0 70 Q 30 170 0 230 Z" fill="#fdba74" stroke="#7c2d12" stroke-width="1.5" />
+            
+            <path d="M 0 50 L 0 225" stroke="#1e293b" stroke-width="2" />
+            <rect x="-3" y="150" width="6" height="40" fill="#1e293b" />
+            <circle cx="0" cy="170" r="2" fill="white" />
+        </g>
+
+        <!-- Sat (x=300) -->
+        <!-- Male reaches 50! -->
+        <g transform="translate(300, 0)">
+            <path d="M 0 0 Q -50 160 0 210 Z" fill="#93c5fd" stroke="#1e3a8a" stroke-width="1.5" />
+            <path d="M 0 20 Q 30 180 0 230 Z" fill="#fdba74" stroke="#7c2d12" stroke-width="1.5" />
+            
+            <path d="M 0 5 L 0 220" stroke="#1e293b" stroke-width="2" />
+            <rect x="-3" y="120" width="6" height="60" fill="#1e293b" />
+            <circle cx="0" cy="150" r="2" fill="white" />
+        </g>
+
+        <!-- Sun (x=420) -->
+        <g transform="translate(420, 0)">
+            <path d="M 0 0 Q -10 30 0 100 Q -60 170 0 220 Z" fill="#93c5fd" stroke="#1e3a8a" stroke-width="1.5" />
+            <path d="M 0 30 Q 50 180 0 210 Z" fill="#fdba74" stroke="#7c2d12" stroke-width="1.5" />
+            
+            <path d="M 0 10 L 0 215" stroke="#1e293b" stroke-width="2" />
+            <rect x="-3" y="110" width="6" height="65" fill="#1e293b" />
+            <circle cx="0" cy="140" r="2" fill="white" />
+        </g>
+
+        <text x="60" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Thur</text>
+        <text x="180" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Fri</text>
+        <text x="300" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Sat</text>
+        <text x="420" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">Sun</text>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">total_bill</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">day</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(480, 60)">
+        <rect x="0" y="0" width="80" height="60" fill="white" stroke="#cbd5e1" rx="5" />
+        <text x="10" y="15" fill="#475569" font-size="10" font-weight="bold">sex</text>
+        
+        <rect x="10" y="25" width="10" height="10" fill="#93c5fd" stroke="#1e3a8a" />
+        <text x="30" y="34" fill="#475569" font-size="12">Male</text>
+
+        <rect x="10" y="40" width="10" height="10" fill="#fdba74" stroke="#7c2d12" />
+        <text x="30" y="49" fill="#475569" font-size="12">Female</text>
+    </g>
+
+    <rect x="50" y="345" width="500" height="35" rx="5" fill="#f5f3ff" />
+    <text x="300" y="367" fill="#5b21b6" font-size="12" font-weight="bold" text-anchor="middle">💡 왼쪽 몸통은 남성(Male), 오른쪽 몸통은 여성(Female) 등판 맞대기 융합!</text>
+</svg>

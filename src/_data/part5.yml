@@ -1,0 +1,28 @@
+- title: "9.1.1 생성형 AI의 발전과 LLM의 원리 이해"
+  url: /llm_mlops/01_genai_intro/
+- title: "9.1.2 프롬프트 엔지니어링 마스터"
+  url: /llm_mlops/02_prompt_engineering/
+- title: "9.1.3 OpenAI API 기반 파이썬 연동 기초"
+  url: /llm_mlops/03_openai_api/
+- title: "9.1.4 LangChain 프롬프트 체인 엮기"
+  url: /llm_mlops/04_langchain_basics/
+- title: "9.2.1 텍스트 스플릿과 벡터 데이터베이스"
+  url: /llm_mlops/05_vector_db/
+- title: "9.2.2 RAG (검색 증강 생성) 사내 챗봇 구축"
+  url: /llm_mlops/06_rag_system/
+- title: "9.2.3 AI 에이전트와 도구(Tools) 활용"
+  url: /llm_mlops/07_ai_agent/
+- title: "9.3.1 오픈소스 LLM 생태계와 모델 다운로드"
+  url: /llm_mlops/08_open_source_llm/
+- title: "9.3.2 LoRA를 활용한 파라미터 효율적 파인튜닝 (PEFT)"
+  url: /llm_mlops/09_lora_peft/
+- title: "9.3.3 나만의 커스텀 페르소나 모델 미세조정"
+  url: /llm_mlops/10_custom_llm/
+- title: "9.4.1 FastAPI를 이용한 백엔드 서버 서빙"
+  url: /llm_mlops/11_model_serving/
+- title: "9.4.2 Streamlit 챗봇 프론트엔드 대시보드 구축"
+  url: /llm_mlops/12_streamlit_gui/
+- title: "9.4.3 Docker 컨테이너화 및 클라우드 배포"
+  url: /llm_mlops/13_docker_mlops/
+- title: "9.4.4 최종 캡스톤: RAG 풀스택 웹 서비스 런칭"
+  url: /llm_mlops/14_final_capstone/

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Series 슬라이싱: "숫자 위치 vs 문자 이름표"</text>
+
+  <!-- 원본 데이터 표시 -->
+  <g transform="translate(250, 60)">
+    <rect x="0" y="0" width="200" height="40" fill="#E8F5E9" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="100" y="25" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">원본 Series (s)</text>
+    
+    <text x="20" y="70" font-family="sans-serif" font-size="12" fill="#757575" font-weight="bold">a</text>
+    <text x="50" y="70" font-family="sans-serif" font-size="12" fill="#757575" font-weight="bold">b</text>
+    <text x="80" y="70" font-family="sans-serif" font-size="12" fill="#757575" font-weight="bold">c</text>
+    <text x="110" y="70" font-family="sans-serif" font-size="12" fill="#757575" font-weight="bold">d</text>
+    <text x="140" y="70" font-family="sans-serif" font-size="12" fill="#757575" font-weight="bold">e</text>
+    <text x="170" y="70" font-family="sans-serif" font-size="12" fill="#757575" font-weight="bold">f</text>
+    
+    <!-- 십진 번호표 -->
+    <text x="20" y="55" font-family="sans-serif" font-size="10" fill="#B0BEC5">0</text>
+    <text x="50" y="55" font-family="sans-serif" font-size="10" fill="#B0BEC5">1</text>
+    <text x="80" y="55" font-family="sans-serif" font-size="10" fill="#B0BEC5">2</text>
+    <text x="110" y="55" font-family="sans-serif" font-size="10" fill="#B0BEC5">3</text>
+    <text x="140" y="55" font-family="sans-serif" font-size="10" fill="#B0BEC5">4</text>
+    <text x="170" y="55" font-family="sans-serif" font-size="10" fill="#B0BEC5">5</text>
+    
+    <rect x="15" y="80" width="20" height="20" fill="#FFF" stroke="#CCC" />
+    <text x="25" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">1.0</text>
+    
+    <rect x="45" y="80" width="20" height="20" fill="#FFF" stroke="#CCC" />
+    <text x="55" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">3.0</text>
+    
+    <rect x="75" y="80" width="20" height="20" fill="#FFF" stroke="#CCC" />
+    <text x="85" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">5.0</text>
+    
+    <rect x="105" y="80" width="20" height="20" fill="#FFF" stroke="#CCC" />
+    <text x="115" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">NaN</text>
+    
+    <rect x="135" y="80" width="20" height="20" fill="#FFF" stroke="#CCC" />
+    <text x="145" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">6.0</text>
+    
+    <rect x="165" y="80" width="20" height="20" fill="#FFF" stroke="#CCC" />
+    <text x="175" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">8.0</text>
+  </g>
+
+  <!-- 왼쪽: 문자 슬라이싱 -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="240" height="100" fill="#FFF3E0" rx="5" filter="url(#shadow)" stroke="#FF9800" stroke-width="2"/>
+    <text x="120" y="25" font-family="monospace" font-size="16" fill="#E65100" font-weight="bold" text-anchor="middle">s['c':'e']</text>
+    <text x="120" y="45" font-family="sans-serif" font-size="12" fill="#D84315" text-anchor="middle">문자(Label) 기준 자르기</text>
+    
+    <rect x="65" y="60" width="110" height="30" fill="#FFE0B2" stroke="#FFB74D" />
+    <text x="75" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">c: 5.0</text>
+    <text x="120" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">d: NaN</text>
+    <text x="165" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">e: 6.0</text>
+    
+    <rect x="0" y="-30" width="240" height="20" fill="#FFCC80" rx="3" />
+    <text x="120" y="-15" font-family="sans-serif" font-size="12" fill="#BF360C" font-weight="bold" text-anchor="middle">주의: 끝점('e')까지 "포함(Include)" 됨!</text>
+    
+    <path d="M 120 -30 L 250 -100" fill="none" stroke="#FF9800" stroke-width="2" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- 오른쪽: 숫자 슬라이싱 -->
+  <g transform="translate(380, 200)">
+    <rect x="0" y="0" width="240" height="100" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <text x="120" y="25" font-family="monospace" font-size="16" fill="#1565C0" font-weight="bold" text-anchor="middle">s[1:4]</text>
+    <text x="120" y="45" font-family="sans-serif" font-size="12" fill="#0D47A1" text-anchor="middle">숫자(Position) 기준 자르기</text>
+    
+    <rect x="65" y="60" width="110" height="30" fill="#BBDEFB" stroke="#64B5F6" />
+    <text x="75" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">b: 3.0</text>
+    <text x="120" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">c: 5.0</text>
+    <text x="165" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">d: NaN</text>
+    
+    <rect x="0" y="-30" width="240" height="20" fill="#90CAF9" rx="3" />
+    <text x="120" y="-15" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">기본: 끝점(4) 바로 앞 "제외(Exclude)" 됨!</text>
+    
+    <path d="M 120 -30 L -10 -100" fill="none" stroke="#2196F3" stroke-width="2" stroke-dasharray="3,3" />
+  </g>
+
+</svg>

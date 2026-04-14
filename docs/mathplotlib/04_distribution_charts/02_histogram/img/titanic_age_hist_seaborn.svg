@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#9333ea" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📈 타이타닉 승객 나이 분포 (Seaborn, kde=True)</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">120</text>
+        <text x="-10" y="130" fill="#64748b" font-size="12" text-anchor="end">60</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- 16 bins (binwidth=5) over 0 to 80 -> 30px width per bin -->
+        <!-- Simulated counts: 40, 20, 25, 30, 90, 110, 80, 60, 45, 30, 20, 15, 10, 5, 2, 1 -->
+        <!-- Height mapped to 250px (y = 250 - val*2 for visual scale) -->
+        
+        <g fill="#c084fc" fill-opacity="0.6" stroke="#9333ea" stroke-width="1">
+            <rect x="0" y="170" width="30" height="80" />   <!-- 40 -->
+            <rect x="30" y="210" width="30" height="40" />  <!-- 20 -->
+            <rect x="60" y="200" width="30" height="50" />  <!-- 25 -->
+            <rect x="90" y="190" width="30" height="60" />  <!-- 30 -->
+            
+            <rect x="120" y="70" width="30" height="180" /> <!-- 90 -->
+            <rect x="150" y="30" width="30" height="220" /> <!-- 110 -->
+            <rect x="180" y="90" width="30" height="160" /> <!-- 80 -->
+            
+            <rect x="210" y="130" width="30" height="120" /> <!-- 60 -->
+            <rect x="240" y="160" width="30" height="90" /> <!-- 45 -->
+            <rect x="270" y="190" width="30" height="60" /> <!-- 30 -->
+            
+            <rect x="300" y="210" width="30" height="40" /> <!-- 20 -->
+            <rect x="330" y="220" width="30" height="30" /> <!-- 15 -->
+            <rect x="360" y="230" width="30" height="20" /> <!-- 10 -->
+            <rect x="390" y="240" width="30" height="10" /> <!-- 5 -->
+            <rect x="420" y="246" width="30" height="4" />  <!-- 2 -->
+            <rect x="450" y="248" width="30" height="2" />  <!-- 1 -->
+        </g>
+        
+        <!-- KDE Curve -->
+        <!-- Smooth path through the tops of the bins -->
+        <path d="M 0 170 Q 30 220 60 200 T 135 60 T 165 30 T 225 130 T 285 190 T 375 230 T 480 250" fill="none" stroke="#7e22ce" stroke-width="3" />
+
+        <text x="0" y="275" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="120" y="275" fill="#64748b" font-size="12" text-anchor="middle">20</text>
+        <text x="240" y="275" fill="#64748b" font-size="12" text-anchor="middle">40</text>
+        <text x="360" y="275" fill="#64748b" font-size="12" text-anchor="middle">60</text>
+        <text x="480" y="275" fill="#64748b" font-size="12" text-anchor="middle">80</text>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">Count</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">age</text>
+    </g>
+
+    <rect x="150" y="345" width="300" height="35" rx="5" fill="#faf5ff" />
+    <text x="300" y="367" fill="#7e22ce" font-size="12" font-weight="bold" text-anchor="middle">💡 KDE(등고선)를 켜면 구간별 들쭉날쭉함이 무마되어 추세가 보임!</text>
+</svg>

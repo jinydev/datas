@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.plot() 한 방으로 시계열 꺾은선 차트 그리기</text>
+
+  <!-- 데이터프레임 (입력) -->
+  <g transform="translate(60, 100)">
+    <rect x="0" y="0" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="25" fill="#E0F7FA" rx="5" />
+    <text x="90" y="18" font-family="sans-serif" font-size="12" fill="#006064" font-weight="bold" text-anchor="middle">df_time[['A', 'B']]</text>
+    
+    <!-- 인덱스와 데이터 -->
+    <text x="10" y="45" font-family="monospace" font-size="10" fill="#F57F17">3-02</text>
+    <text x="60" y="45" font-family="monospace" font-size="10" fill="#4CAF50">1.62</text>
+    <text x="120" y="45" font-family="monospace" font-size="10" fill="#2196F3">-0.61</text>
+    
+    <text x="10" y="70" font-family="monospace" font-size="10" fill="#F57F17">3-03</text>
+    <text x="60" y="70" font-family="monospace" font-size="10" fill="#4CAF50">0.86</text>
+    <text x="120" y="70" font-family="monospace" font-size="10" fill="#2196F3">-2.30</text>
+    
+    <text x="10" y="95" font-family="monospace" font-size="10" fill="#F57F17">3-04</text>
+    <text x="60" y="95" font-family="monospace" font-size="10" fill="#4CAF50">0.31</text>
+    <text x="120" y="95" font-family="monospace" font-size="10" fill="#2196F3">-0.24</text>
+
+    <!-- X축 연결 (날짜 -> 차트 X축) -->
+    <path d="M 25 105 Q 25 170 300 220" fill="none" stroke="#F57F17" stroke-width="2" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- 변환 애로우 -->
+  <g transform="translate(260, 150)">
+    <path d="M 0 0 L 100 0" fill="none" stroke="#673AB7" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="95,-7 105,0 95,7" fill="#673AB7" />
+    <text x="50" y="-10" font-family="monospace" font-size="16" fill="#512DA8" font-weight="bold" text-anchor="middle">.plot()</text>
+  </g>
+
+  <!-- 차트 (출력) -->
+  <g transform="translate(400, 60)">
+    <rect x="0" y="0" width="250" height="200" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#B0BEC5" stroke-width="2"/>
+    <text x="125" y="25" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">Time Series Trend</text>
+    
+    <!-- 축 -->
+    <path d="M 30 160 L 220 160" fill="none" stroke="#90A4AE" stroke-width="2"/>
+    <path d="M 30 40 L 30 160" fill="none" stroke="#90A4AE" stroke-width="2"/>
+    
+    <!-- X축 라벨 (자동 맵핑된 날짜) -->
+    <text x="50" y="175" font-family="monospace" font-size="9" fill="#F57F17" font-weight="bold" text-anchor="middle">3-02</text>
+    <text x="100" y="175" font-family="monospace" font-size="9" fill="#F57F17" font-weight="bold" text-anchor="middle">3-03</text>
+    <text x="150" y="175" font-family="monospace" font-size="9" fill="#F57F17" font-weight="bold" text-anchor="middle">3-04</text>
+    <text x="200" y="175" font-family="monospace" font-size="9" fill="#F57F17" font-weight="bold" text-anchor="middle">3-05</text>
+
+    <!-- A 꺾은선 (초록색) -->
+    <path d="M 50 60 L 100 90 L 150 110 L 200 130" fill="none" stroke="#4CAF50" stroke-width="3" />
+    <circle cx="50" cy="60" r="4" fill="#4CAF50" />
+    <circle cx="100" cy="90" r="4" fill="#4CAF50" />
+    <circle cx="150" cy="110" r="4" fill="#4CAF50" />
+    <circle cx="200" cy="130" r="4" fill="#4CAF50" />
+    
+    <!-- B 꺾은선 (파란색) -->
+    <path d="M 50 140 L 100 180 L 150 120 L 200 135" fill="none" stroke="#2196F3" stroke-width="3" />
+    <circle cx="50" cy="140" r="4" fill="#2196F3" />
+    <circle cx="100" cy="180" r="4" fill="#2196F3" />
+    <circle cx="150" cy="120" r="4" fill="#2196F3" />
+    <circle cx="200" cy="135" r="4" fill="#2196F3" />
+
+    <!-- 범례 -->
+    <rect x="200" y="40" width="40" height="40" fill="#FFF" stroke="#CFD8DC" rx="2" />
+    <line x1="205" y1="50" x2="220" y2="50" stroke="#4CAF50" stroke-width="2" />
+    <text x="225" y="53" font-family="sans-serif" font-size="9" fill="#333">A</text>
+    <line x1="205" y1="65" x2="220" y2="65" stroke="#2196F3" stroke-width="2" />
+    <text x="225" y="68" font-family="sans-serif" font-size="9" fill="#333">B</text>
+  </g>
+
+  <g transform="translate(350, 310)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#F3E5F5" rx="10" stroke="#9C27B0" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#6A1B9A" font-weight="bold" text-anchor="middle">Pandas와 Matplotlib이 만나 코딩 단 1줄에 완벽한 꺾은선 차트 완성!</text>
+  </g>
+
+</svg>

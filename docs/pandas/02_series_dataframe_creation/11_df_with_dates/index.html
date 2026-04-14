@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.11 날짜를 포함한 데이터프레임</title>
-  <meta name="title" content="6.2.11 날짜를 포함한 데이터프레임" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.11 날짜를 포함한 데이터프레임"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.11 완전체 시계열 데이터프레임 만들기</title>
+  <meta name="title" content="6.2.11 완전체 시계열 데이터프레임 만들기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.11 완전체 시계열 데이터프레임 만들기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/11_df_with_dates/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.11 날짜를 포함한 데이터프레임"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.11 완전체 시계열 데이터프레임 만들기"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.2.11 날짜를 포함한 데이터프레임" />
+<meta property="og:title" content="6.2.11 완전체 시계열 데이터프레임 만들기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.2.11 날짜를 포함한 데이터프레임" />
+<meta property="twitter:title" content="6.2.11 완전체 시계열 데이터프레임 만들기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.11 날짜를 포함한 데이터프레임","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/11_df_with_dates/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.11 완전체 시계열 데이터프레임 만들기","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/11_df_with_dates/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,26 +709,102 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.2.11 날짜를 포함한 데이터프레임</li>
+        <li class="breadcrumb-item active" aria-current="page">6.2.11 완전체 시계열 데이터프레임 만들기</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="6211-날짜를-포함한-데이터프레임">6.2.11 날짜를 포함한 데이터프레임</h1>
+            <h2 id="6211-시간datetime-인덱스를-가진-시계열-데이터프레임-구조화">6.2.11 시간(Datetime) 인덱스를 가진 시계열 데이터프레임 구조화</h2>
 
-<p>다음 변수 <code class="language-plaintext highlighter-rouge">dates</code>에는 연속된 날짜 6개가 저장된다. 자동으로 <code class="language-plaintext highlighter-rouge">freq='D'</code>가 된다.</p>
+<p><strong>[수학적/데이터 과학적 의미: 시계열 매트릭스(Time Series Matrix)]</strong>
+$T$라는 시간 축(Time Axis) 위에 정사영된 관측치(Observations)들의 다차원 배열입니다. 단순한 라벨 문자열이나 고정된 정수가 아니라, <strong>흐르는 시간(Datetime객체)을 인덱스 축으로 설정</strong>함으로써 주식 가격 예측, 기상 예측 등 시간에 따른 변화량을 분석하는 완벽한 시계열 분석(Time Series Analysis) 구조를 완성합니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">date_range</span><span class="p">(</span><span class="sh">"</span><span class="s">20250302</span><span class="sh">"</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<p><strong>[비유로 이해하기: 은행의 일일 거래 장부]</strong></p>
+<ul>
+  <li>매일매일 날짜가 적혀있는 은행의 입출금 장부를 생각해 보세요.</li>
+  <li>이 장부의 가장 왼쪽 줄(‘Index’)은 무조건 <strong>날짜</strong>입니다.</li>
+  <li>그리고 나머지 칸(‘Columns’)들에는 A지점 매출액, B지점 매출액 등의 값이 기록됩니다.</li>
+  <li>이전 장에서 배운 <code class="language-plaintext highlighter-rouge">date_range()</code> 자동 날짜 생성기를 이 장부의 왼쪽 줄로 통째로 꽂아 넣는 과정입니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="1단계-캘린더-생성기date_range로-날짜-축-준비하기">[1단계] 캘린더 생성기(date_range)로 날짜 축 준비하기</h3>
+
+<p>먼저 데이터프레임의 왼쪽 기둥이 될 시간 축 데이터를 뽑아냅니다. 3월 2일부터 시작하는 6일 치의 일일 캘린더입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 1. 2025년 3월 2일부터 6일간의 연속된 날짜를 생성
+</span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="sh">"</span><span class="s">20250302</span><span class="sh">"</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 준비된 캘린더 축 (Index) ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
 </code></pre></div></div>
-
-<p>위 <code class="language-plaintext highlighter-rouge">dates</code>를 <code class="language-plaintext highlighter-rouge">index</code>로 지정하고 열 이름 목록 각각 A, B, C, D로 지정한 <code class="language-plaintext highlighter-rouge">df</code>를 만든다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="sh">"</span><span class="s">ABCD</span><span class="sh">"</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 준비된 캘린더 축 (Index) ---
+DatetimeIndex(['2025-03-02', '2025-03-03', '2025-03-04', '2025-03-05',
+               '2025-03-06', '2025-03-07'],
+              dtype='datetime64[ns]', freq='D')
 </code></pre></div></div>
+
+<hr />
+
+<h3 id="2단계-난수random-데이터와-결합하여-시계열-표-완성하기">[2단계] 난수(Random) 데이터와 결합하여 시계열 표 완성하기</h3>
+
+<p>실제 주식 시장 데이터라고 상상하며, <code class="language-plaintext highlighter-rouge">numpy</code>를 이용해 가짜 변동성 데이터(난수)를 생성한 뒤 날짜 인덱스와 결합합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2. 넘파이 난수(표준정규분포)를 이용해 6행 4열짜리 변동성 데이터 생성
+# (날짜가 6일이므로, 행의 개수를 반드시 6으로 맞춰야 조립됩니다!)
+</span><span class="n">random_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># 3. 데이터, 날짜 축(index), 컬럼명(columns)을 모아서 데이터프레임 합체!
+</span><span class="n">df_time</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">random_data</span><span class="p">,</span> 
+    <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span>                 <span class="c1"># 위에서 만든 시간축을 좌측 인덱스에 삽입!
+</span>    <span class="n">columns</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="sh">"</span><span class="s">ABCD</span><span class="sh">"</span><span class="p">)</span>         <span class="c1"># ['A', 'B', 'C', 'D'] 로 컬럼명 지정
+</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">🏢 완성된 시계열 데이터프레임:</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_time</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🏢 완성된 시계열 데이터프레임:
+
+                   A         B         C         D
+2025-03-02  1.624345 -0.611756 -0.528172 -1.072969
+2025-03-03  0.865408 -2.301539  1.744812 -0.761207
+2025-03-04  0.319039 -0.249370  1.462108 -2.060141
+2025-03-05 -0.322417 -0.384054  1.133769 -1.099891
+2025-03-06 -0.172428 -0.877858  0.042214  0.582815
+2025-03-07 -1.100619  1.144724  0.901591  0.502494
+</code></pre></div></div>
+
+<p><img src="./img/df_time_series.svg" alt="시간 축 인덱스가 적용된 시계열 데이터프레임 구조화" /></p>
+
+<blockquote>
+  <p><strong>데이터 분석가의 렌즈:</strong>
+좌측의 날짜가 단순한 문자열이 아니라 판다스의 고유한 <code class="language-plaintext highlighter-rouge">DatetimeIndex</code> 객체 구조 속에 들어있다는 것이 핵심입니다. 덕분에 향후 이 표에서 “금요일 데이터만 평균 내줘!”, “3월 3일부터 5일 사이의 B열 값 누적합을 구해줘!” 같은 복잡한 시간 기반 연산이 단 한 줄의 코드로 돌파 가능해집니다.</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><strong>💡 Matplotlib 연계 꿀팁 (시계열 차트 그리기)</strong>
+날짜가 인덱스로 설정된 데이터프레임은 <code class="language-plaintext highlighter-rouge">.plot()</code>을 호출하는 순간, X축이 날짜로 완벽하게 자동 맵핑된 시계열 트렌드 꺾은선 그래프를 그려줍니다!</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># A열과 B열의 날짜별 변화 추이 그리기
+</span><span class="n">df_time</span><span class="p">[[</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">]].</span><span class="nf">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Time Series Trend</span><span class="sh">"</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<p><img src="./img/df_time_plot.svg" alt="판다스와 맷플롯립의 연계: 한 줄 시계열 차트" /></p>
 
 
             <!-- 구글 애드센스 출력 -->

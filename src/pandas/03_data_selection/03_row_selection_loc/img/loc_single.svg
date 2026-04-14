@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">1단계: 한 행만 추출 (Series 반환)</text>
+
+  <!-- 파이썬 코드 박스 -->
+  <g transform="translate(60, 130)">
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="110" y="35" font-family="monospace" font-size="18" fill="#81C784" font-weight="bold" text-anchor="middle">pf.loc['윤일형']</text>
+  </g>
+
+  <!-- 추출 애로우 (가로 -> 세로 회전) -->
+  <g transform="translate(290, 150)">
+    <path d="M 0 10 Q 50 10 70 -20" fill="none" stroke="#FF5252" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="65,-15 70,-25 75,-15" fill="#FF5252" transform="rotate(30 70 -20)" />
+    
+    <text x="40" y="40" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="middle">컬럼(Column)들이</text>
+    <text x="40" y="60" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="middle">좌측 인덱스로 이동!</text>
+  </g>
+
+  <!-- 추출된 단일 서랍장 (Series) -->
+  <g transform="translate(450, 60)">
+    <rect x="0" y="0" width="120" height="200" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#FF9800" stroke-dasharray="4,4"/>
+    <rect x="0" y="0" width="120" height="30" fill="#FFE0B2" rx="3" />
+    <text x="60" y="20" font-family="monospace" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">Series 형식</text>
+
+    <!-- 인덱스 (과목) -->
+    <rect x="10" y="40" width="50" height="150" fill="#FFF3E0" rx="3" />
+    <text x="35" y="65" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">중간</text>
+    <text x="35" y="105" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="35" y="145" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="35" y="185" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">출석</text>
+
+    <!-- 값 (윤일형 성적) -->
+    <text x="90" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">25</text>
+    <text x="90" y="105" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">35</text>
+    <text x="90" y="145" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">8</text>
+    <text x="90" y="185" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">18</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#F57F17" font-weight="bold" text-anchor="middle">가로줄 하나를 뽑으면 구조상 세로로 회전하여 Series로 제공됩니다.</text>
+  </g>
+
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">생성 시 dtype 파라미터로 상자 크기(메모리) 강제 압축하기</text>
+
+  <!-- 파이썬 명령 박스(코드) -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="300" height="150" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <rect x="0" y="0" width="300" height="25" fill="#37474F" rx="5" />
+    <circle cx="15" cy="12" r="5" fill="#FF5252" />
+    <circle cx="30" cy="12" r="5" fill="#FFCA28" />
+    <circle cx="45" cy="12" r="5" fill="#8BC34A" />
+
+    <text x="15" y="55" font-family="monospace" font-size="14" fill="#82AAFF" font-weight="bold">pd.DataFrame(</text>
+    
+    <text x="30" y="80" font-family="monospace" font-size="14" fill="#F07178">data</text>
+    <text x="65" y="80" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="80" y="80" font-family="monospace" font-size="14" fill="#C3E88D">num_dict,</text>
+    
+    <text x="30" y="105" font-family="monospace" font-size="14" fill="#F07178">dtype</text>
+    <text x="75" y="105" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="90" y="105" font-family="monospace" font-size="14" fill="#FFCB6B">np.int8</text>
+    
+    <text x="15" y="130" font-family="monospace" font-size="14" fill="#82AAFF" font-weight="bold">)</text>
+
+    <!-- 강조 박스 -->
+    <rect x="25" y="90" width="130" height="20" fill="none" stroke="#FFEB3B" stroke-width="2" stroke-dasharray="2,2" rx="3" />
+    
+    <!-- 압축 표시 -->
+    <path d="M 280 100 L 400 100" fill="none" stroke="#FF9800" stroke-width="4" stroke-dasharray="3,3" />
+    <polygon points="395,93 405,100 395,107" fill="#FF9800" />
+    <text x="350" y="90" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">메모리 다이어트!</text>
+  </g>
+
+  <!-- 결과 표 & 상자 비교 -->
+  <g transform="translate(420, 80)">
+    
+    <!-- 기본 할당 int64 (거대한 상자) -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="200" height="60" fill="#E3F2FD" rx="5" stroke="#90CAF9" stroke-width="2" stroke-dasharray="4,4" />
+      <text x="100" y="20" font-family="monospace" font-size="12" fill="#1565C0" text-anchor="middle">기본할당: int64 (8 bytes)</text>
+      <rect x="20" y="30" width="160" height="20" fill="#BBDEFB" rx="2" />
+      <text x="100" y="44" font-family="sans-serif" font-size="10" fill="#0D47A1" text-anchor="middle">[ 00000000 00000000 ... 5A ]</text>
+      <!-- X 표시 -->
+      <path d="M 5 5 L 195 55" stroke="#FF5252" stroke-width="3" opacity="0.5"/>
+      <path d="M 195 5 L 5 55" stroke="#FF5252" stroke-width="3" opacity="0.5"/>
+    </g>
+
+    <path d="M 100 70 L 100 90" fill="none" stroke="#8BC34A" stroke-width="3" />
+    <polygon points="95,85 100,92 105,85" fill="#8BC34A" />
+
+    <!-- 압축된 int8 (작은 상자) -->
+    <g transform="translate(50, 100)">
+      <rect x="0" y="0" width="100" height="60" fill="#E8F5E9" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3" />
+      <text x="50" y="20" font-family="monospace" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">int8</text>
+      <text x="50" y="35" font-family="sans-serif" font-size="10" fill="#2E7D32" font-weight="bold" text-anchor="middle">(1 byte)</text>
+      <rect x="20" y="40" width="60" height="15" fill="#C8E6C9" rx="2" />
+      <text x="50" y="52" font-family="sans-serif" font-size="10" fill="#1B5E20" text-anchor="middle">[ 5A ]</text>
+    </g>
+
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 290)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#F57F17" font-weight="bold" text-anchor="middle">메모리 사용량을 1/8 로 줄이는 빅데이터 필수 스킬!</text>
+  </g>
+
+</svg>

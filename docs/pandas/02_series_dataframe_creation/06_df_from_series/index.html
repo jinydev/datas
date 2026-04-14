@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.6 여러 Series로 DataFrame 생성</title>
-  <meta name="title" content="6.2.6 여러 Series로 DataFrame 생성" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.6 여러 Series로 DataFrame 생성"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기</title>
+  <meta name="title" content="6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/06_df_from_series/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.6 여러 Series로 DataFrame 생성"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.2.6 여러 Series로 DataFrame 생성" />
+<meta property="og:title" content="6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.2.6 여러 Series로 DataFrame 생성" />
+<meta property="twitter:title" content="6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.6 여러 Series로 DataFrame 생성","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/06_df_from_series/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/06_df_from_series/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,77 +709,175 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.2.6 여러 Series로 DataFrame 생성</li>
+        <li class="breadcrumb-item active" aria-current="page">6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="626-여러-series로-dataframe-생성">6.2.6 여러 Series로 DataFrame 생성</h1>
+            <h2 id="626-단일-series들을-모아서-dataframe으로-조립하기">6.2.6 단일 Series들을 모아서 DataFrame으로 조립하기</h2>
 
-<p>다음 Series <code class="language-plaintext highlighter-rouge">courses</code>를 정의한다.</p>
+<p><strong>[수학적 의미: 열 벡터(Column Vector)의 결합(Concatenation)]</strong>
+1차원 열 벡터(Column Vector) 여러 개를 옆으로 나란히 병합(Concatenation)하여 하나의 2차원 행렬(Matrix)로 승격시키는 선형대수학적 구조 확장입니다. 축 방향(<code class="language-plaintext highlighter-rouge">axis</code>)을 어디로 설정하느냐에 따라 식을 수직으로 얹을지, 수평으로 붙일지가 결정됩니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">courses</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">"</span><span class="s">Spark</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">PySpark</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">Hadoop</span><span class="sh">"</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">courses</span><span class="sh">'</span><span class="p">)</span>
+<p><strong>[비유로 이해하기: 낱장으로 나뒹구는 서류를 바인더에 끼워 넣기]</strong></p>
+<ul>
+  <li>Series 하나하나는 부서원 한 명이 작성한 <strong>낱장 서류 1줄</strong>입니다.</li>
+  <li>이 낱장들을 클립으로 묶거나(<code class="language-plaintext highlighter-rouge">dict</code>), 스테이플러로 나란히 찍거나(<code class="language-plaintext highlighter-rouge">pd.concat</code>), 빈 바인더에 한 장씩 끼워 넣으면(<code class="language-plaintext highlighter-rouge">빈 DataFrame에 열 추가</code>) 완벽한 한 권의 장부(DataFrame)가 탄생합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="준비물-조립을-기다리는-시리즈-2개-만들기">[준비물] 조립을 기다리는 시리즈 2개 만들기</h3>
+
+<p>먼저 데이터프레임을 조립할 기초 블록인 ‘강의명’과 ‘수강료’ 시리즈 2개를 준비합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">courses</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">"</span><span class="s">Spark</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">PySpark</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Hadoop</span><span class="sh">"</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">과목명</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">fees</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">250000</span><span class="p">,</span> <span class="mi">300000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">수강료</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 준비된 재료 (Series) ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">courses</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음 Series <code class="language-plaintext highlighter-rouge">fees</code>를 정의한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fees</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">250000</span><span class="p">,</span> <span class="mi">300000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">fees</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">fees</span><span class="p">)</span>
 </code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 준비된 재료 (Series) ---
+0      Spark
+1    PySpark
+2     Hadoop
+Name: 과목명, dtype: object
 
-<p>위 두 시리즈 <code class="language-plaintext highlighter-rouge">courses</code>와 <code class="language-plaintext highlighter-rouge">fees</code>를 열로 하는 데이터프레임은 다음처럼 생성할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span><span class="n">courses</span><span class="p">.</span><span class="n">name</span><span class="p">:</span> <span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">.</span><span class="n">name</span><span class="p">:</span> <span class="n">fees</span><span class="p">})</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+0    250000
+1    300000
+2    200000
+Name: 수강료, dtype: int64
 </code></pre></div></div>
 
-<p>또는 <code class="language-plaintext highlighter-rouge">pd.concat([목록])</code>을 이용해 간단히 데이터프레임을 생성할 수 있다. 이는 목록의 항목을 붙인 데이터프레임을 반환한다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">courses</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">"</span><span class="s">Spark</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">PySpark</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">Hadoop</span><span class="sh">"</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">courses</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">fees</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">250000</span><span class="p">,</span> <span class="mi">300000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">fees</span><span class="sh">'</span><span class="p">)</span>
+<h3 id="1단계-딕셔너리dict를-클립으로-사용해-조립하기">[1단계] 딕셔너리(Dict)를 클립으로 사용해 조립하기</h3>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<p>딕셔너리의 특징을 이용하여 <code class="language-plaintext highlighter-rouge">열 이름표 : 시리즈</code> 형태로 묶어주는 가장 정석적이고 안정적인 방법입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 시리즈가 원래 가진 name을 키 필드로 씁니다.
+</span><span class="n">df_dict</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span>
+    <span class="n">courses</span><span class="p">.</span><span class="n">name</span><span class="p">:</span> <span class="n">courses</span><span class="p">,</span> 
+    <span class="n">fees</span><span class="p">.</span><span class="n">name</span><span class="p">:</span> <span class="n">fees</span>
+<span class="p">})</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [방법 1] 딕셔너리 바인딩 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_dict</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [방법 1] 딕셔너리 바인딩 ---
+       과목명     수강료
+0    Spark  250000
+1  PySpark  300000
+2   Hadoop  200000
 </code></pre></div></div>
 
-<p>위 코드에서 <code class="language-plaintext highlighter-rouge">axis=1</code>을 생략하면 <code class="language-plaintext highlighter-rouge">axis=0</code>이 되어 세로로 추가된 시리즈 파환한다.</p>
+<p><img src="./img/df_series_dict.svg" alt="딕셔너리로 여러 개의 시리즈 결합하기" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<hr />
+
+<h3 id="2단계-pdconcat-으로-옆으로-나란히-풀칠하기-강력-추천">[2단계] pd.concat 으로 옆으로 나란히 풀칠하기 (강력 추천!)</h3>
+
+<p>여러 개의 시리즈를 병합할 때 실무에서 가장 많이 쓰는 마법의 함수 <code class="language-plaintext highlighter-rouge">pd.concat</code>입니다. <code class="language-plaintext highlighter-rouge">axis</code> 방향키만 잘 돌려주면 가로나 세로로 자유자재로 붙일 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># axis=1 (행 기준 유지, 기둥을 "옆으로(가로)" 추가!)
+# 시리즈가 가진 name이 자동으로 열 이름표가 됩니다.
+</span><span class="n">df_concat_col</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [방법 2] 옆으로 나란히 합체 (axis=1) ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_concat_col</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [방법 2] 옆으로 나란히 합체 (axis=1) ---
+       과목명     수강료
+0    Spark  250000
+1  PySpark  300000
+2   Hadoop  200000
 </code></pre></div></div>
 
-<p>물론, 다음으로도 데이터프레임을 생성할 수 있다. 그러나 하나의 시리즈가 행이 된다. 시리즈의 <code class="language-plaintext highlighter-rouge">name</code>은 행의 <code class="language-plaintext highlighter-rouge">index</code>가 된다.</p>
+<p><img src="./img/df_series_concat.svg" alt="pd.concat으로 가로축 방향 결합하기" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">([</span><span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<blockquote>
+  <p><strong>주의: <code class="language-plaintext highlighter-rouge">axis=0</code> (기본값) 이라면?</strong>
+옆으로 붙는 게 아니라, 아래로(수직) 이어 붙어 <strong>거대한 1차원 시리즈 1개</strong>로 붕괴합니다!</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 출력:
+# 0      Spark
+# 1    PySpark
+# ...
+# 0     250000
+# 1     300000
+</span></code></pre></div>  </div>
+</blockquote>
+
+<hr />
+
+<h3 id="3단계-dataframe에-냅다-넣고-뒤집기-transpose-t">[3단계] DataFrame에 냅다 넣고, 뒤집기 (Transpose, T)</h3>
+
+<p>데이터프레임 생성자에 빈 리스트로 시리즈들을 뭉텅이로 넣으면 어떻게 될까요? 판다스는 1차원 시리즈 하나를 통째로 <strong>“가로 한 줄(행)”</strong> 로 판단해 버립니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 시리즈를 행(가로줄) 취급해서 만든 표
+</span><span class="n">df_row</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">([</span><span class="n">courses</span><span class="p">,</span> <span class="n">fees</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [방법 3] 행으로 층층이 쌓인 표 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_row</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [방법 3] 행으로 층층이 쌓인 표 ---
+           0        1       2
+과목명    Spark  PySpark  Hadoop
+수강료   250000   300000  200000
 </code></pre></div></div>
 
-<p>다음 <code class="language-plaintext highlighter-rouge">df.T</code>의 속성(transpose)으로 행과 열을 바꿔 위에서 만든 것처럼 시리즈를 열로 만들 수 있다.</p>
+<p>수학에서 행렬의 가로세로를 바꿀 때 쓰이는 <strong>전치 행렬(Transpose)</strong> 속성인 <code class="language-plaintext highlighter-rouge">.T</code>를 사용해 표를 직각으로 세워 해결할 수 있습니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">T</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 빙그르르-! 행과 열 뒤집기
+</span><span class="n">df_transposed</span> <span class="o">=</span> <span class="n">df_row</span><span class="p">.</span><span class="n">T</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 행과 열을 스위치(.T)한 결과 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_transposed</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 행과 열을 스위치(.T)한 결과 ---
+       과목명     수강료
+0    Spark  250000
+1  PySpark  300000
+2   Hadoop  200000
 </code></pre></div></div>
 
-<p>다음 코드로 빈 데이터프레임을 생성하자.</p>
+<p><img src="./img/df_series_transpose.svg" alt="전치 행렬을 통해 행과 열 뒤집기" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">()</span>
+<hr />
+
+<h3 id="4단계-빈-바인더에-서류-한-장씩-꽂아-넣기-점진적-추가">[4단계] 빈 바인더에 서류 한 장씩 꽂아 넣기 (점진적 추가)</h3>
+
+<p>미리 뼈대를 다 짜고 만들 필요 없이, 빈 껍데기(<code class="language-plaintext highlighter-rouge">pd.DataFrame()</code>)만 하나 던져두고 나중에 시리즈를 열(Column) 단위로 하나씩 대입해 채워나가는 건축가 스타일입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 뼈대만 있는 텅 빈 DataFrame 생성
+</span><span class="n">df_empty</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">()</span>
+
+<span class="c1"># 2. 열 추가 (기둥을 하나씩 세웁니다)
+</span><span class="n">df_empty</span><span class="p">[</span><span class="n">courses</span><span class="p">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">courses</span>
+<span class="n">df_empty</span><span class="p">[</span><span class="n">fees</span><span class="p">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">fees</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [방법 4] 빈 뼈대에 기둥 세우기 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_empty</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [방법 4] 빈 뼈대에 기둥 세우기 ---
+       과목명     수강료
+0    Spark  250000
+1  PySpark  300000
+2   Hadoop  200000
 </code></pre></div></div>
 
-<p>다음 코드로 빈 <code class="language-plaintext highlighter-rouge">df</code>에 열 <code class="language-plaintext highlighter-rouge">courses</code>를 만든다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">courses</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="sh">"</span><span class="s">Spark</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">PySpark</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">Hadoop</span><span class="sh">"</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">courses</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="n">courses</span><span class="p">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">courses</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음 코드로 <code class="language-plaintext highlighter-rouge">df</code>에 다시 열 <code class="language-plaintext highlighter-rouge">fees</code>를 추가한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fees</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">250000</span><span class="p">,</span> <span class="mi">300000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">fees</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="n">fees</span><span class="p">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">fees</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div></div>
+<p><img src="./img/df_series_empty.svg" alt="빈 데이터프레임에 파생 열 동적 추가하기" /></p>
 
 
             <!-- 구글 애드센스 출력 -->

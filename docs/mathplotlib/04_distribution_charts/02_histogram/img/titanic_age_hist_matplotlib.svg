@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#2563eb" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📊 타이타닉 탑승객 나이 분포 (Matplotlib) - 10 Bins</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">250</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">200</text>
+        <text x="-10" y="105" fill="#64748b" font-size="12" text-anchor="end">150</text>
+        <text x="-10" y="155" fill="#64748b" font-size="12" text-anchor="end">100</text>
+        <text x="-10" y="205" fill="#64748b" font-size="12" text-anchor="end">50</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- 10 bins over 0 to 80 -> bin width = 8 -> 48px width per bin -->
+        <!-- Simulated counts: 50, 40, 200, 150, 100, 70, 40, 15, 5, 2 -->
+        <!-- Height = count (1px per count) -->
+        
+        <g fill="#87ceeb" stroke="#000000" stroke-width="1.5">
+            <!-- 0-8 -->
+            <rect x="0" y="200" width="48" height="50" />
+            <!-- 8-16 -->
+            <rect x="48" y="210" width="48" height="40" />
+            <!-- 16-24 -->
+            <rect x="96" y="50" width="48" height="200" />
+            <!-- 24-32 -->
+            <rect x="144" y="100" width="48" height="150" />
+            <!-- 32-40 -->
+            <rect x="192" y="150" width="48" height="100" />
+            <!-- 40-48 -->
+            <rect x="240" y="180" width="48" height="70" />
+            <!-- 48-56 -->
+            <rect x="288" y="210" width="48" height="40" />
+            <!-- 56-64 -->
+            <rect x="336" y="235" width="48" height="15" />
+            <!-- 64-72 -->
+            <rect x="384" y="245" width="48" height="5" />
+            <!-- 72-80 -->
+            <rect x="432" y="248" width="48" height="2" />
+        </g>
+        
+        <text x="0" y="275" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="96" y="275" fill="#64748b" font-size="12" text-anchor="middle">16</text>
+        <text x="192" y="275" fill="#64748b" font-size="12" text-anchor="middle">32</text>
+        <text x="288" y="275" fill="#64748b" font-size="12" text-anchor="middle">48</text>
+        <text x="384" y="275" fill="#64748b" font-size="12" text-anchor="middle">64</text>
+        <text x="480" y="275" fill="#64748b" font-size="12" text-anchor="middle">80</text>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">인원수 (Frequency)</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">나이 (Age)</text>
+    </g>
+
+    <rect x="150" y="345" width="300" height="35" rx="5" fill="#eff6ff" />
+    <text x="300" y="367" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">💡 bins=10 으로 인해 8살 단위로 두꺼운 막대들이 형성됨</text>
+</svg>

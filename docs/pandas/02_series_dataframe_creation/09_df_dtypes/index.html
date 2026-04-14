@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.9 열과 전체 자료형 속성 dtypes</title>
-  <meta name="title" content="6.2.9 열과 전체 자료형 속성 dtypes" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.9 열과 전체 자료형 속성 dtypes"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)</title>
+  <meta name="title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/09_df_dtypes/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.9 열과 전체 자료형 속성 dtypes"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.2.9 열과 전체 자료형 속성 dtypes" />
+<meta property="og:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.2.9 열과 전체 자료형 속성 dtypes" />
+<meta property="twitter:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.9 열과 전체 자료형 속성 dtypes","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/09_df_dtypes/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/09_df_dtypes/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,32 +709,122 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.2.9 열과 전체 자료형 속성 dtypes</li>
+        <li class="breadcrumb-item active" aria-current="page">6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="629-열과-전체-자료형-속성-dtypes">6.2.9 열과 전체 자료형 속성 dtypes</h1>
+            <h2 id="629-열과-전체-자료형-속성dtypes-다루기">6.2.9 열과 전체 자료형 속성(dtypes) 다루기</h2>
 
-<p>다음 <code class="language-plaintext highlighter-rouge">df</code>는 키워드 인자 <code class="language-plaintext highlighter-rouge">data</code>에 <code class="language-plaintext highlighter-rouge">dict</code> <code class="language-plaintext highlighter-rouge">d</code>를 대입해 생성한다.</p>
+<p><strong>[컴퓨터 과학적 의미: 이기종(Heterogeneous) 데이터의 자료형 명세]</strong>
+데이터프레임의 각 열(Column)은 독립적인 벡터이므로 서로 다른 메모리 크기와 형태를 가지는 자료형(Data Type)을 수용할 수 있습니다. <code class="language-plaintext highlighter-rouge">dtypes</code> 속성은 각 컬럼 벡터가 C/C++ 레벨에서 어떤 바이트 크기(예: <code class="language-plaintext highlighter-rouge">int64</code>, <code class="language-plaintext highlighter-rouge">float32</code>, <code class="language-plaintext highlighter-rouge">object</code>)로 할당되어 있는지 보여주는 명세서(Specification)와 같습니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">col1</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="sh">'</span><span class="s">col2</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<p><strong>[비유로 이해하기: 부서별 창고의 보관함 규격 확인하기]</strong></p>
+<ul>
+  <li>‘나이’ 열은 작은 숫자만 들어가므로 <strong>소형 보관함(<code class="language-plaintext highlighter-rouge">int8</code>)</strong> 만 있어도 충분합니다.</li>
+  <li>‘소득’ 열은 엄청나게 큰 숫자가 들어가므로 <strong>초대형 보관함(<code class="language-plaintext highlighter-rouge">int64</code>)</strong> 이 필요합니다.</li>
+  <li>‘이름’ 열은 글자가 들어가므로 숫자가 아닌 <strong>텍스트 전용 보관함(<code class="language-plaintext highlighter-rouge">object</code>)</strong> 에 담아야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">dtypes</code> 명령은 이 보관함들이 부서별로 어떤 사이즈로 짜여 있는지 한눈에 보여주는 도면입니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="1단계-현재-데이터프레임의-자료형-확인하기-dtypes">[1단계] 현재 데이터프레임의 자료형 확인하기 (<code class="language-plaintext highlighter-rouge">dtypes</code>)</h3>
+
+<p>기본적으로 판다스는 우리가 넣은 데이터를 보고 “이 정도면 충분하겠지” 하고 자동으로 넉넉하게 자료형을 잡아줍니다. 정수형은 <code class="language-plaintext highlighter-rouge">int64</code>(64비트 정수), 실수형은 <code class="language-plaintext highlighter-rouge">float64</code>(64비트 실수), 문자는 <code class="language-plaintext highlighter-rouge">object</code>가 기본입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 임의의 데이터 딕셔너리
+</span><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">'</span><span class="s">이름</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">Alice</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Bob</span><span class="sh">'</span><span class="p">],</span>
+    <span class="sh">'</span><span class="s">나이</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="sh">'</span><span class="s">키</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mf">165.5</span><span class="p">,</span> <span class="mf">178.2</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_dict</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 원본 데이터프레임 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># 각 열의 보관함 규격 확인하기!
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 열별 자료형(dtypes) 확인 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>다음 속성 <code class="language-plaintext highlighter-rouge">df.dtypes</code>로 열과 전체 자료형을 알 수 있다. 정수의 기본형이 <code class="language-plaintext highlighter-rouge">int64</code>이다.</p>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 원본 데이터프레임 ---
+      이름  나이      키
+0  Alice  25  165.5
+1    Bob  30  178.2
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">dtypes</span>
+--- 열별 자료형(dtypes) 확인 ---
+이름     object   &lt;-- 문자열은 object로 처리됨
+나이      int64   &lt;-- 정수는 자동으로 64비트 공간 할당
+키     float64   &lt;-- 소수점은 자동으로 64비트 공간 할당
+dtype: object
 </code></pre></div></div>
 
-<p>다시 <code class="language-plaintext highlighter-rouge">d</code>를 사용해 데이터프레임을 생성할 경우, 키워드 인자 <code class="language-plaintext highlighter-rouge">dtype=np.int8</code> 설정으로 정수 자료형을 <code class="language-plaintext highlighter-rouge">int8</code>로 지정할 수 있다.</p>
+<p><img src="./img/df_dtypes.svg" alt="dtypes로 열별 자료형 파악하기" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">)</span>
-<span class="n">df</span><span class="p">.</span><span class="n">dtypes</span>
+<hr />
+
+<h3 id="2단계-메모리-다이어트-생성할-때-자료형-강제하기-dtype">[2단계] 메모리 다이어트! 생성할 때 자료형 강제하기 (<code class="language-plaintext highlighter-rouge">dtype</code>)</h3>
+
+<p>엄청나게 큰 빅데이터를 다룰 때 모든 숫자를 <code class="language-plaintext highlighter-rouge">int64</code>로 잡으면 메모리(RAM)가 펑 터질 수 있습니다. “나이는 100을 넘기 힘드니 아주 작은 상자(<code class="language-plaintext highlighter-rouge">int8</code>)에 담아!” 라고 미리 강제할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 숫자 데이터만 있는 딕셔너리
+</span><span class="n">num_dict</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">수학</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="sh">'</span><span class="s">영어</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">95</span><span class="p">]}</span>
+
+<span class="c1"># 데이터프레임을 만들 때, 모든 상자를 '8비트 정수(int8)'로 강제 통일!
+</span><span class="n">df_tiny</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">num_dict</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 초소형 상자(int8)가 적용된 dtypes ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_tiny</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 초소형 상자(int8)가 적용된 dtypes ---
+수학    int8
+영어    int8
+dtype: object
+</code></pre></div></div>
+<blockquote>
+  <p><strong>💡 RAM 절약 효과:</strong> <code class="language-plaintext highlighter-rouge">int64</code>는 숫자 하나당 8바이트를 차지하지만, <code class="language-plaintext highlighter-rouge">int8</code>은 단 1바이트만 차지합니다. 메모리 사용량을 1/8로 줄인 셈입니다!</p>
+</blockquote>
+
+<p><img src="./img/df_dtype_force.svg" alt="메모리 다이어트: dtype 강제지정" /></p>
+
+<hr />
+
+<h3 id="3단계-이미-만들어진-표의-자료형-바꾸기-astype">[3단계] 이미 만들어진 표의 자료형 바꾸기 (<code class="language-plaintext highlighter-rouge">astype</code>)</h3>
+
+<p>일단 생성된 이후에 “앗, 이 열은 숫자가 아니라 문자로 바꿔서 저장해야겠어”라고 생각이 든다면 <code class="language-plaintext highlighter-rouge">astype()</code> 함수를 사용해 트랜스포머처럼 형태를 변환시킵니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '나이' 열을 정수(int64)에서 문자열(str)로 변환해 덮어씌웁니다.
+</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">나이</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">나이</span><span class="sh">'</span><span class="p">].</span><span class="nf">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 변환 후 자료형 확인 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 변환 후 자료형 확인 ---
+이름     object
+나이     object   &lt;-- int64에서 object(문자)로 성공적으로 변환됨!
+키     float64
+dtype: object
+</code></pre></div></div>
+
+<p><img src="./img/df_astype.svg" alt="astype을 활용한 자료형의 변환" /></p>
+
+<blockquote>
+  <p><strong>주의점:</strong> 숫자가 포함된 문자열 열을 다시 숫자로 바꾸려면 <code class="language-plaintext highlighter-rouge">pd.to_numeric(df['열이름'])</code> 을 사용하는 것이 에러를 방지하는 가장 안전한 실무 패턴입니다.</p>
+</blockquote>
 
 
             <!-- 구글 애드센스 출력 -->

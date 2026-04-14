@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Series 성적표 정렬 (sort_values vs sort_index)</text>
+
+  <!-- 원본 데이터 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="140" height="230" fill="#E8F5E9" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="70" y="-10" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">원본 Series</text>
+    
+    <rect x="15" y="15" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="35" y="35" font-family="sans-serif" font-size="12" fill="#757575">희빈</text>
+    <text x="90" y="35" font-family="sans-serif" font-size="14" fill="#333">99</text>
+    
+    <rect x="15" y="55" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="35" y="75" font-family="sans-serif" font-size="12" fill="#757575">수영</text>
+    <text x="90" y="75" font-family="sans-serif" font-size="14" fill="#333">84</text>
+    
+    <rect x="15" y="95" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="35" y="115" font-family="sans-serif" font-size="12" fill="#757575">현수</text>
+    <text x="90" y="115" font-family="sans-serif" font-size="14" fill="#333">92</text>
+    
+    <rect x="15" y="135" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="35" y="155" font-family="sans-serif" font-size="12" fill="#757575">지호</text>
+    <text x="90" y="155" font-family="sans-serif" font-size="14" fill="#333">65</text>
+    
+    <rect x="15" y="175" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="35" y="195" font-family="sans-serif" font-size="12" fill="#757575">지민</text>
+    <text x="90" y="195" font-family="sans-serif" font-size="14" fill="#333">78</text>
+  </g>
+
+  <!-- sort_values() -->
+  <g transform="translate(280, 80)">
+    <!-- 화살표 -->
+    <path d="M -60 20 L -10 20" fill="none" stroke="#2196F3" stroke-width="3" stroke-dasharray="4,4" />
+    <polygon points="-15,13 -5,20 -15,27" fill="#2196F3" />
+    
+    <rect x="0" y="0" width="150" height="200" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <text x="75" y="-10" font-family="monospace" font-size="16" fill="#1565C0" font-weight="bold" text-anchor="middle">sort_values()</text>
+    <text x="75" y="215" font-family="sans-serif" font-size="12" fill="#1565C0" text-anchor="middle">"점수 기준 1등~꼴등 줄세우기"</text>
+    <path d="M 125 15 L 125 185" fill="none" stroke="#FF5252" stroke-width="4" />
+    <polygon points="118,175 125,185 132,175" fill="#FF5252" />
+
+    <text x="35" y="35" font-family="sans-serif" font-size="12" fill="#1565C0">지호</text>
+    <text x="90" y="35" font-family="sans-serif" font-size="14" fill="#D32F2F" font-weight="bold">65</text>
+    
+    <text x="35" y="70" font-family="sans-serif" font-size="12" fill="#1565C0">지민</text>
+    <text x="90" y="70" font-family="sans-serif" font-size="14" fill="#D32F2F" font-weight="bold">78</text>
+    
+    <text x="35" y="105" font-family="sans-serif" font-size="12" fill="#1565C0">수영</text>
+    <text x="90" y="105" font-family="sans-serif" font-size="14" fill="#D32F2F" font-weight="bold">84</text>
+    
+    <text x="35" y="140" font-family="sans-serif" font-size="12" fill="#1565C0">현수</text>
+    <text x="90" y="140" font-family="sans-serif" font-size="14" fill="#D32F2F" font-weight="bold">92</text>
+
+    <text x="35" y="175" font-family="sans-serif" font-size="12" fill="#1565C0">희빈</text>
+    <text x="90" y="175" font-family="sans-serif" font-size="14" fill="#D32F2F" font-weight="bold">99</text>
+  </g>
+
+  <!-- sort_index() -->
+  <g transform="translate(500, 80)">
+    <!-- 화살표 -->
+    <path d="M -280 150 L -10 150" fill="none" stroke="#FF9800" stroke-width="3" stroke-dasharray="4,4" />
+    <polygon points="-15,143 -5,150 -15,157" fill="#FF9800" />
+    
+    <rect x="0" y="0" width="150" height="200" fill="#FFF8E1" rx="5" filter="url(#shadow)" stroke="#FFC107" stroke-width="2"/>
+    <text x="75" y="-10" font-family="monospace" font-size="16" fill="#E65100" font-weight="bold" text-anchor="middle">sort_index()</text>
+    <text x="75" y="215" font-family="sans-serif" font-size="12" fill="#E65100" text-anchor="middle">"출석부 가나다순으로 줄세우기"</text>
+    
+    <path d="M 25 15 L 25 185" fill="none" stroke="#FF5252" stroke-width="4" />
+    <polygon points="18,175 25,185 32,175" fill="#FF5252" />
+
+    <text x="45" y="35" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">수영</text>
+    <text x="100" y="35" font-family="sans-serif" font-size="14" fill="#F57C00">84</text>
+    
+    <text x="45" y="70" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">지민</text>
+    <text x="100" y="70" font-family="sans-serif" font-size="14" fill="#F57C00">78</text>
+    
+    <text x="45" y="105" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">지호</text>
+    <text x="100" y="105" font-family="sans-serif" font-size="14" fill="#F57C00">65</text>
+    
+    <text x="45" y="140" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">현수</text>
+    <text x="100" y="140" font-family="sans-serif" font-size="14" fill="#F57C00">92</text>
+
+    <text x="45" y="175" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">희빈</text>
+    <text x="100" y="175" font-family="sans-serif" font-size="14" fill="#F57C00">99</text>
+  </g>
+</svg>

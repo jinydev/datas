@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">현실 세계의 공공데이터(Raw Data) 파싱 정제</text>
+
+  <!-- 왼쪽: 지저분한 원본 파일 (공공데이터) -->
+  <g transform="translate(60, 100)">
+    <rect x="0" y="0" width="160" height="180" fill="#FFFDE7" rx="5" filter="url(#shadow)" stroke="#FBC02D" stroke-width="3"/>
+    
+    <!-- 문서 상단 쓰레기 제목 (skiprows 구역) -->
+    <rect x="10" y="10" width="140" height="30" fill="#FFCCBC" rx="3" />
+    <text x="80" y="30" font-family="sans-serif" font-size="12" fill="#D84315" font-weight="bold" text-anchor="middle">"2022년도 총괄 보고서"</text>
+
+    <!-- 깨진 글자 (Encoding 구역) -->
+    <rect x="10" y="50" width="140" height="20" fill="#ECEFF1" rx="3" />
+    <text x="80" y="65" font-family="monospace" font-size="14" fill="#607D8B" font-weight="bold" text-anchor="middle">¿À·ù!!! </text>
+
+    <!-- 콤마 박힌 문자열 숫자 (Thousands 구역) -->
+    <rect x="10" y="80" width="140" height="80" fill="#E3F2FD" rx="3" stroke="#90CAF9" />
+    <text x="80" y="100" font-family="sans-serif" font-size="12" fill="#1565C0" text-anchor="middle">사망자 | 부상자(명)</text>
+    <text x="80" y="125" font-family="monospace" font-size="16" fill="#D32F2F" font-weight="bold" text-anchor="middle">1<tspan fill="#000">,</tspan>592 | 8<tspan fill="#000">,</tspan>432</text>
+    <text x="80" y="145" font-family="sans-serif" font-size="10" fill="#D32F2F" text-anchor="middle">(문자열 취급! 연산불가)</text>
+
+    <text x="80" y="200" font-family="sans-serif" font-size="14" fill="#F57F17" font-weight="bold" text-anchor="middle">더러운(Raw) 원본</text>
+  </g>
+
+  <!-- 중앙: 판다스 블랙박스 파서 기계 -->
+  <g transform="translate(260, 100)">
+    <path d="M 0 50 L 50 20 L 50 160 L 0 130 Z" fill="#E1BEE7" stroke="#9C27B0" stroke-width="2" />
+    <rect x="50" y="20" width="100" height="140" fill="#F3E5F5" filter="url(#shadow)" stroke="#9C27B0" stroke-width="3"/>
+    <path d="M 150 20 L 200 50 L 200 130 L 150 160 Z" fill="#E1BEE7" stroke="#9C27B0" stroke-width="2" />
+
+    <text x="100" y="55" font-family="sans-serif" font-size="16" fill="#6A1B9A" font-weight="bold" text-anchor="middle">read_csv</text>
+    <text x="100" y="75" font-family="sans-serif" font-size="12" fill="#8E24AA" font-weight="bold" text-anchor="middle">(파서 엔진)</text>
+
+    <!-- 옵션 다이얼들 -->
+    <rect x="60" y="90" width="80" height="20" fill="#FFF" rx="3" stroke="#CE93D8" />
+    <text x="100" y="104" font-family="monospace" font-size="11" fill="#4A148C" text-anchor="middle">encoding</text>
+    
+    <rect x="60" y="115" width="80" height="20" fill="#FFF" rx="3" stroke="#CE93D8" />
+    <text x="100" y="129" font-family="monospace" font-size="11" fill="#4A148C" text-anchor="middle">skiprows</text>
+    
+    <rect x="60" y="140" width="80" height="20" fill="#FFF" rx="3" stroke="#CE93D8" />
+    <text x="100" y="154" font-family="monospace" font-size="11" fill="#4A148C" text-anchor="middle">thousands</text>
+  </g>
+
+  <!-- 오른쪽: 완벽한 클린 데이터프레임 -->
+  <g transform="translate(480, 100)">
+    <rect x="0" y="0" width="160" height="180" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3"/>
+    
+    <rect x="10" y="10" width="140" height="20" fill="#E8F5E9" rx="3" />
+    <text x="80" y="24" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">사망자 | 부상자(명)</text>
+
+    <!-- 정제된 순수 숫자 데이터 -->
+    <text x="80" y="60" font-family="monospace" font-size="16" fill="#1B5E20" font-weight="bold" text-anchor="middle">1592 | 8432</text>
+    
+    <!-- 계산 가능 묘사 -->
+    <rect x="10" y="75" width="140" height="60" fill="#F1F8E9" rx="3" stroke="#C8E6C9" />
+    <text x="80" y="95" font-family="sans-serif" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">df.sum() 연산</text>
+    <text x="80" y="120" font-family="monospace" font-size="16" fill="#2196F3" font-weight="bold" text-anchor="middle">✓ 통과!</text>
+
+    <text x="80" y="200" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">클린(Clean) 데이터</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 320)">
+    <rect x="-310" y="-15" width="620" height="35" fill="#F3E5F5" rx="10" stroke="#9C27B0" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#4A148C" font-weight="bold" text-anchor="middle">pd.read_csv() 함수에 몇 가지 잔소리(옵션)를 곁들이면, 더럽혀진 데이터를 즉시 계산 가능한 숫자로 바꿉니다.</text>
+  </g>
+
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">1단계: 첫 번째 행 뽑기 (단일 우회 참조)</text>
+
+  <!-- 파이썬 명령 스텝 1 (번호로 이름 조회) -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="220" height="60" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#4FC3F7" stroke-width="2"/>
+    <text x="110" y="20" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">Step 1. 이름 알아내기</text>
+    <text x="110" y="45" font-family="monospace" font-size="18" fill="#1565C0" font-weight="bold" text-anchor="middle">pf.index[<tspan fill="#FF5252">0</tspan>]</text>
+  </g>
+
+  <path d="M 150 140 L 150 180" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="145,175 150,185 155,175" fill="#2196F3" />
+  <rect x="160" y="150" width="80" height="25" fill="#FFF8E1" rx="5" stroke="#FFC107" stroke-width="1"/>
+  <text x="200" y="167" font-family="sans-serif" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">'윤일형'</text>
+
+  <!-- 파이썬 명령 스텝 2 (loc 함수에 전달) -->
+  <g transform="translate(40, 200)">
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="110" y="20" font-family="sans-serif" font-size="12" fill="#81C784" font-weight="bold" text-anchor="middle">Step 2. loc으로 추출</text>
+    <text x="110" y="45" font-family="monospace" font-size="18" fill="#FFF" font-weight="bold" text-anchor="middle">pf.loc[<tspan fill="#FFC107">'윤일형'</tspan>]</text>
+  </g>
+
+  <!-- 추출 애로우 -->
+  <g transform="translate(280, 230)">
+    <path d="M 0 0 L 120 0" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="115,-7 125,0 115,7" fill="#4CAF50" />
+    <text x="60" y="-10" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">최종 반환 (Series)</text>
+  </g>
+
+  <!-- 추출된 데이터 (Series) -->
+  <g transform="translate(450, 70)">
+    <rect x="0" y="0" width="120" height="190" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#FF9800" stroke-width="2" stroke-dasharray="4,4"/>
+    <rect x="0" y="0" width="120" height="30" fill="#FFE0B2" rx="3" />
+    <text x="60" y="20" font-family="monospace" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">Series 형식</text>
+
+    <!-- 인덱스 (과목명) -->
+    <rect x="10" y="40" width="50" height="140" fill="#FFF3E0" rx="3" />
+    <text x="35" y="65" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">중간</text>
+    <text x="35" y="100" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="35" y="135" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="35" y="170" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">출석</text>
+
+    <!-- 값 -->
+    <text x="90" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">25</text>
+    <text x="90" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">35</text>
+    <text x="90" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">8</text>
+    <text x="90" y="170" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">18</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#E8F5E9" rx="10" stroke="#4CAF50" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">pf.index 구조체 또한 파이썬 배열이기 때문에, [0] 으로 접근하여 추출합니다.</text>
+  </g>
+
+</svg>

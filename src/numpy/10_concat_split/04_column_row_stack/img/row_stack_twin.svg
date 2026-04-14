@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250">
+  <style>
+    .text { font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: bold; }
+    .box { fill: #f8bbd0; stroke: #e91e63; stroke-width: 3; rx: 8; }
+    .title { font-size: 24px; font-weight: 800; fill: #2c3e50; text-anchor: middle; }
+    .mask { fill: #fff3e0; stroke: #ff9800; stroke-width: 3; rx: 8; }
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="15"/>
+  <text x="400" y="40" class="title">row_stack()은 vstack()과 완전히 동일한 쌍둥이 함수 (100% 일치)</text>
+  
+  <g transform="translate(300, 100)">
+    <rect x="0" y="0" width="200" height="80" class="box"/>
+    <text x="100" y="45" class="text" fill="#e91e63" font-size="22" text-anchor="middle">np.vstack()</text>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-50; 0,0" dur="3s" repeatCount="indefinite"/>
+      <rect x="0" y="0" width="200" height="80" class="mask"/>
+      <text x="100" y="45" class="text" fill="#ff9800" font-size="22" text-anchor="middle">np.row_stack()</text>
+      <path d="M 0 40 Q -30 20 0 0" stroke="#ff9800" stroke-width="2" fill="none"/>
+      <path d="M 200 40 Q 230 20 200 0" stroke="#ff9800" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

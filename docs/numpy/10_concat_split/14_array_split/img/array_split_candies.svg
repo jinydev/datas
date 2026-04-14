@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .code-txt { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #d63384; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .candy { fill: #fff3cd; stroke: #ffc107; stroke-width: 2px; rx: 15px; ry: 15px; }
+      .arr-x { fill: #e2e3e5; stroke: #adb5bd; }
+      .solid-arrow { fill: none; stroke: #28a745; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="30" class="title" text-anchor="middle">np.array_split(배열, 4) : 나누어 떨어지지 않아도 에러 없이 유연하게 분할</text>
+  <text x="425" y="55" class="title" text-anchor="middle" font-size="14" fill="#0056b3">※ 실무/데이터 전처리에서 ValueError 방지를 위해 가장 유용하게 사용됨!</text>
+
+  <!-- 9 Candies Top -->
+  <g transform="translate(100, 80)">
+    <text x="270" y="-10" class="title" text-anchor="middle" fill="#d39e00">원소 9개 (4등분 불가 구역)</text>
+    
+    <rect x="0" y="10" width="50" height="30" class="candy" />
+    <rect x="60" y="10" width="50" height="30" class="candy" />
+    <rect x="120" y="10" width="50" height="30" class="candy" />
+    <rect x="180" y="10" width="50" height="30" class="candy" />
+    <rect x="240" y="10" width="50" height="30" class="candy" />
+    <rect x="300" y="10" width="50" height="30" class="candy" />
+    <rect x="360" y="10" width="50" height="30" class="candy" />
+    <rect x="420" y="10" width="50" height="30" class="candy" />
+    <rect x="480" y="10" width="50" height="30" class="candy" />
+    
+    <text x="25" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">0</text>
+    <text x="85" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">1</text>
+    <text x="145" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">2</text>
+    <text x="205" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">3</text>
+    <text x="265" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">4</text>
+    <text x="325" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">5</text>
+    <text x="385" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">6</text>
+    <text x="445" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">7</text>
+    <text x="505" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">8</text>
+  </g>
+
+  <!-- Flow -->
+  <path d="M 400 130 L 400 160" class="solid-arrow" />
+  <text x="420" y="150" class="code-txt" fill="#28a745">앞에서부터 덤핑(3-2-2-2)</text>
+
+  <!-- Split Arrays -->
+  <g transform="translate(100, 180)">
+    
+    <!-- Group 1 -->
+    <rect x="20" y="0" width="130" height="50" class="box arr-x" />
+    <path d="M 63 0 L 63 50 M 106 0 L 106 50" stroke="#ccc" stroke-width="2" />
+    <text x="41" y="32" class="code-txt" text-anchor="middle">0</text>
+    <text x="84" y="32" class="code-txt" text-anchor="middle">1</text>
+    <text x="127" y="32" class="code-txt" text-anchor="middle">2</text>
+    <text x="85" y="70" class="title" fill="#0056b3" text-anchor="middle">3개 덩어리</text>
+    
+    <text x="165" y="32" class="title" fill="#28a745" text-anchor="middle">,</text>
+    
+    <!-- Group 2 -->
+    <rect x="180" y="0" width="90" height="50" class="box arr-x" />
+    <path d="M 225 0 L 225 50" stroke="#ccc" stroke-width="2" />
+    <text x="202" y="32" class="code-txt" text-anchor="middle">3</text>
+    <text x="247" y="32" class="code-txt" text-anchor="middle">4</text>
+    <text x="225" y="70" class="title" fill="#0056b3" text-anchor="middle">2개 덩어리</text>
+
+    <text x="285" y="32" class="title" fill="#28a745" text-anchor="middle">,</text>
+
+    <!-- Group 3 -->
+    <rect x="300" y="0" width="90" height="50" class="box arr-x" />
+    <path d="M 345 0 L 345 50" stroke="#ccc" stroke-width="2" />
+    <text x="322" y="32" class="code-txt" text-anchor="middle">5</text>
+    <text x="367" y="32" class="code-txt" text-anchor="middle">6</text>
+    <text x="345" y="70" class="title" fill="#0056b3" text-anchor="middle">2개 덩어리</text>
+
+    <text x="405" y="32" class="title" fill="#28a745" text-anchor="middle">,</text>
+
+    <!-- Group 4 -->
+    <rect x="420" y="0" width="90" height="50" class="box arr-x" />
+    <path d="M 465 0 L 465 50" stroke="#ccc" stroke-width="2" />
+    <text x="442" y="32" class="code-txt" text-anchor="middle">7</text>
+    <text x="487" y="32" class="code-txt" text-anchor="middle">8</text>
+    <text x="465" y="70" class="title" fill="#0056b3" text-anchor="middle">2개 덩어리</text>
+
+    <text x="0" y="35" class="title" fill="#28a745" font-size="30">[</text>
+    <text x="530" y="35" class="title" fill="#28a745" font-size="30">]</text>
+  </g>
+</svg>

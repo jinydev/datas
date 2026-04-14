@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#2563eb" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📊 (Matplotlib) 데이터분석 기말고사 점수 수동 입력</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(100, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="400" y2="0" />
+        <line x1="0" y1="50" x2="400" y2="50" />
+        <line x1="0" y1="100" x2="400" y2="100" />
+        <line x1="0" y1="150" x2="400" y2="150" />
+        <line x1="0" y1="200" x2="400" y2="200" />
+        <line x1="0" y1="250" x2="400" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(100, 70)">
+        <path d="M 0 0 L 0 250 L 400 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">100</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">80</text>
+        <text x="-10" y="105" fill="#64748b" font-size="12" text-anchor="end">60</text>
+        <text x="-10" y="155" fill="#64748b" font-size="12" text-anchor="end">40</text>
+        <text x="-10" y="205" fill="#64748b" font-size="12" text-anchor="end">20</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- Values: 99, 65, 79, 80, 90 -->
+        <!-- Y max = 250 px / 100 max val = 2.5 multiplier -->
+
+        <g>
+            <!-- point=99, height=247.5, y=2.5 -->
+            <rect x="25" y="2.5" width="40" height="247.5" fill="#2563eb" rx="2" />
+            <text x="45" y="270" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="middle">영희</text>
+            <text x="45" y="-5" fill="#1d4ed8" font-size="12" font-weight="bold" text-anchor="middle">99</text>
+
+            <!-- point=65, height=162.5, y=87.5 -->
+            <rect x="105" y="87.5" width="40" height="162.5" fill="#16a34a" rx="2" />
+            <text x="125" y="270" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="middle">철수</text>
+            <text x="125" y="80" fill="#15803d" font-size="12" font-weight="bold" text-anchor="middle">65</text>
+
+            <!-- point=79, height=197.5, y=52.5 -->
+            <rect x="185" y="52.5" width="40" height="197.5" fill="#9333ea" rx="2" />
+            <text x="205" y="270" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="middle">동수</text>
+            <text x="205" y="45" fill="#7e22ce" font-size="12" font-weight="bold" text-anchor="middle">79</text>
+
+            <!-- point=80, height=200, y=50 -->
+            <rect x="265" y="50" width="40" height="200" fill="#94a3b8" rx="2" />
+            <text x="285" y="270" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="middle">미현</text>
+            <text x="285" y="42" fill="#475569" font-size="12" font-weight="bold" text-anchor="middle">80</text>
+
+            <!-- point=90, height=225, y=25 -->
+            <rect x="345" y="25" width="40" height="225" fill="#ea580c" rx="2" />
+            <text x="365" y="270" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="middle">현수</text>
+            <text x="365" y="17" fill="#c2410c" font-size="12" font-weight="bold" text-anchor="middle">90</text>
+        </g>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">점수</text>
+    </g>
+
+    <rect x="150" y="345" width="300" height="35" rx="5" fill="#f0fdf4" />
+    <text x="300" y="367" fill="#166534" font-size="12" font-weight="bold" text-anchor="middle">💡 값을 하나하나 리스트로 선언해서 X와 Y에 1:1 수동 매핑함</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .code-txt { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #d63384; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .arr-a { fill: #cce5ff; stroke: #0056b3; }
+      .arr-b { fill: #d4edda; stroke: #28a745; }
+      .arr-c { fill: #fff3cd; stroke: #ffc107; }
+      .solid-arrow { fill: none; stroke: #28a745; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .knife { stroke: #dc3545; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="30" class="title" text-anchor="middle">np.split(배열, [2, 6]) : 원하는 인덱스 자리 앞에서 정밀하게 불균등 칼질하기</text>
+
+  <!-- Array 1~9 -->
+  <g transform="translate(150, 80)">
+    <rect x="0" y="0" width="540" height="50" class="box" />
+    <path d="M 60 0 L 60 50 M 120 0 L 120 50 M 180 0 L 180 50 M 240 0 L 240 50 M 300 0 L 300 50 M 360 0 L 360 50 M 420 0 L 420 50 M 480 0 L 480 50" stroke="#ccc" stroke-width="2" />
+    
+    <text x="30" y="32" class="code-txt" fill="#333">1</text>
+    <text x="90" y="32" class="code-txt" fill="#333">2</text>
+    
+    <text x="150" y="32" class="code-txt" fill="#333">3</text>
+    <text x="210" y="32" class="code-txt" fill="#333">4</text>
+    <text x="270" y="32" class="code-txt" fill="#333">5</text>
+    <text x="330" y="32" class="code-txt" fill="#333">6</text>
+    
+    <text x="390" y="32" class="code-txt" fill="#333">7</text>
+    <text x="450" y="32" class="code-txt" fill="#333">8</text>
+    <text x="510" y="32" class="code-txt" fill="#333">9</text>
+    
+    <!-- Index markers -->
+    <text x="0" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">0</text>
+    <text x="60" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">1</text>
+    <text x="120" y="70" class="code-txt" fill="#dc3545" font-size="16" text-anchor="middle">2</text>
+    <text x="180" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">3</text>
+    <text x="240" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">4</text>
+    <text x="300" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">5</text>
+    <text x="360" y="70" class="code-txt" fill="#dc3545" font-size="16" text-anchor="middle">6</text>
+    <text x="420" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">7</text>
+    <text x="480" y="70" class="code-txt" fill="#6c757d" font-size="14" text-anchor="middle">8</text>
+
+    <!-- Knife marks at Index 2 and 6 -->
+    <path d="M 120 -20 L 120 20" class="knife" />
+    <polygon points="115,20 125,20 120,30" fill="#dc3545" />
+    <text x="120" y="-30" class="code-txt" fill="#dc3545" text-anchor="middle" font-size="14">인덱스 2 앞 절단!</text>
+    
+    <path d="M 360 -20 L 360 20" class="knife" />
+    <polygon points="355,20 365,20 360,30" fill="#dc3545" />
+    <text x="360" y="-30" class="code-txt" fill="#dc3545" text-anchor="middle" font-size="14">인덱스 6 앞 절단!</text>
+  </g>
+
+  <!-- Splitted Array Result -->
+  <g transform="translate(110, 210)">
+    <rect x="0" y="0" width="120" height="50" class="box arr-a" />
+    <path d="M 60 0 L 60 50" stroke="#0056b3" stroke-width="2" />
+    <text x="30" y="32" class="code-txt" fill="#0056b3" text-anchor="middle">1</text>
+    <text x="90" y="32" class="code-txt" fill="#0056b3" text-anchor="middle">2</text>
+
+    <text x="140" y="32" class="code-txt" fill="#333">,</text>
+
+    <rect x="170" y="0" width="240" height="50" class="box arr-b" />
+    <path d="M 230 0 L 230 50 M 290 0 L 290 50 M 350 0 L 350 50" stroke="#28a745" stroke-width="2" />
+    <text x="200" y="32" class="code-txt" fill="#28a745" text-anchor="middle">3</text>
+    <text x="260" y="32" class="code-txt" fill="#28a745" text-anchor="middle">4</text>
+    <text x="320" y="32" class="code-txt" fill="#28a745" text-anchor="middle">5</text>
+    <text x="380" y="32" class="code-txt" fill="#28a745" text-anchor="middle">6</text>
+    
+    <text x="430" y="32" class="code-txt" fill="#333">,</text>
+    
+    <rect x="460" y="0" width="180" height="50" class="box arr-c" />
+    <path d="M 520 0 L 520 50 M 580 0 L 580 50" stroke="#ffc107" stroke-width="2" />
+    <text x="490" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">7</text>
+    <text x="550" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">8</text>
+    <text x="610" y="32" class="code-txt" fill="#d39e00" text-anchor="middle">9</text>
+
+    <text x="-40" y="35" class="title" fill="#333" font-size="30">[</text>
+    <text x="680" y="35" class="title" fill="#333" font-size="30">]</text>
+  </g>
+</svg>

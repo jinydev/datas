@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .box { rx: 10px; ry: 10px; stroke-width: 3px; }
+      .text-bold { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 22px; font-weight: bold; fill: #fff; }
+      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; fill: #fff; }
+      .vs { font-family: 'Arial Black', sans-serif; font-size: 40px; font-style: italic; fill: #dc3545; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">Matplotlib vs Seaborn : 양대 산맥의 철학 패러다임 차이</text>
+
+  <!-- Matplotlib -->
+  <g transform="translate(80, 90)">
+    <rect x="0" y="0" width="300" height="200" class="box" fill="#34495e" stroke="#2c3e50" />
+    <text x="150" y="40" class="text-bold" text-anchor="middle">Matplotlib (장인 마인드)</text>
+    <text x="150" y="75" class="text-desc" text-anchor="middle" font-weight="bold" fill="#f1c40f">절차적 (Procedural)</text>
+    
+    <text x="150" y="115" class="text-desc" text-anchor="middle" font-size="14">1. 도화지를 8x5 사이즈로 연다.</text>
+    <text x="150" y="140" class="text-desc" text-anchor="middle" font-size="14">2. X축 눈금은 10단위로 쪼갠다.</text>
+    <text x="150" y="165" class="text-desc" text-anchor="middle" font-size="14">3. 점은 빨간색, 선은 파란색!</text>
+    <text x="150" y="190" class="text-desc" text-anchor="middle" fill="#bdc3c7">→ 수동 컨트롤 100% (코드가 긺)</text>
+  </g>
+
+  <text x="425" y="210" class="vs" text-anchor="middle">VS</text>
+
+  <!-- Seaborn -->
+  <g transform="translate(470, 90)">
+    <rect x="0" y="0" width="300" height="200" class="box" fill="#00b894" stroke="#00cec9" />
+    <text x="150" y="40" class="text-bold" text-anchor="middle">Seaborn (마법사 마인드)</text>
+    <text x="150" y="75" class="text-desc" text-anchor="middle" font-weight="bold" fill="#ffeaa7">선언적 (Declarative)</text>
+    
+    <text x="150" y="115" class="text-desc" text-anchor="middle" font-size="14">"이 표(DataFrame)를 통째로 줄테니"</text>
+    <text x="150" y="140" class="text-desc" text-anchor="middle" font-size="14">"Y는 성적, X는 부서별로 나눠서"</text>
+    <text x="150" y="165" class="text-desc" text-anchor="middle" font-size="14">"막대그래프(Bar)로 바로 그려줘!"</text>
+    <text x="150" y="190" class="text-desc" text-anchor="middle" fill="#dfe6e9">→ 알아서 통계처리 및 배색 적용</text>
+  </g>
+
+</svg>

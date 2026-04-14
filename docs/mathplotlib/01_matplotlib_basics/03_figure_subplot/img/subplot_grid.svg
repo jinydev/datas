@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .code { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #d63384; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .ax-box { fill: #e3f2fd; stroke: #0056b3; stroke-width: 2px; rx: 5px; ry: 5px; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="30" class="title" text-anchor="middle">plt.subplots(2, 2) : 2행 2열 격자 구조의 한방 분할</text>
+
+  <g transform="translate(150, 70)">
+    <!-- Code Command -->
+    <rect x="0" y="0" width="550" height="40" rx="5" ry="5" fill="#f8f9fa" />
+    <text x="275" y="27" class="code" text-anchor="middle">fig, axes = plt.subplots(nrows=2, ncols=2)</text>
+
+    <!-- 2x2 Grid -->
+    <g transform="translate(50, 60)">
+      <!-- Top Left -->
+      <rect x="0" y="0" width="200" height="80" class="ax-box" />
+      <text x="100" y="35" class="title" fill="#0056b3" text-anchor="middle">[0, 0]</text>
+      <text x="100" y="60" class="code" fill="#6c757d" text-anchor="middle">axes[0, 0]</text>
+      
+      <!-- Top Right -->
+      <rect x="250" y="0" width="200" height="80" class="ax-box" />
+      <text x="350" y="35" class="title" fill="#0056b3" text-anchor="middle">[0, 1]</text>
+      <text x="350" y="60" class="code" fill="#6c757d" text-anchor="middle">axes[0, 1]</text>
+
+      <!-- Bottom Left -->
+      <rect x="0" y="110" width="200" height="80" class="ax-box" />
+      <text x="100" y="145" class="title" fill="#0056b3" text-anchor="middle">[1, 0]</text>
+      <text x="100" y="170" class="code" fill="#6c757d" text-anchor="middle">axes[1, 0]</text>
+
+      <!-- Bottom Right -->
+      <rect x="250" y="110" width="200" height="80" class="ax-box" />
+      <text x="350" y="145" class="title" fill="#0056b3" text-anchor="middle">[1, 1]</text>
+      <text x="350" y="170" class="code" fill="#6c757d" text-anchor="middle">axes[1, 1]</text>
+    </g>
+  </g>
+</svg>

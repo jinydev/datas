@@ -1,219 +1,111 @@
 ---
 layout: mathplotlib
-title: "5.1.2 간단한 직선 그래프 그리기"
+title: "5.1.2 가장 기초적인 선 그래프(Line Plot)와 스타일링"
 ---
 
-## 5.1.2 간단한 직선 그래프 그리기
+## 5.1.2 가장 기초적인 선 그래프 (Line Plot) 그리기
 
-#### ① 직선 그래프 그리기
+데이터 시각화의 첫걸음은 가장 단순하고 직관적인 **선 그래프(Line Plot)**를 그려보는 것입니다. 선 그래프는 데이터가 시간에 따라 어떻게 변하는지, 즉 **추세(Trend)**를 파악하는 데 가장 탁월한 차트입니다.
 
-다음 코드는 가장 간단하게 `plot()` 함수로 좌표 리스트를 사용해 직선을 그린 결과이다. 다음처럼 `x`가 없는 경우, `x`는 `[0, 1, 2, 3, 4]`에 대응한 좌표를 연결하는 직선의 그림을 그린다.
+### ① 선 그래프 그리는 원리
 
-![직선 그래프](img/page_004.png)
+> **[비유로 이해하기]**
+> 밤하늘의 별자리를 그리는 것과 같습니다. 데이터 좌표(x, y)에 점을 콕콕 찍고, 그 점들을 순서대로 하나의 실로 쭉 이어주는 과정이 바로 선 그래프입니다.
+
+가장 단순한 코드로 직선을 한 번 그어보겠습니다.
 
 ```python
 import matplotlib.pyplot as plt
 
+# X좌표를 따로 주지 않고 Y 좌표 리스트만 주면, 
+# X좌표는 자동으로 0, 1, 2... 순서대로 부여됩니다.
 plt.plot([10, 5, 25, 30, 20])
+
+# 지금까지 도화지에 그렸던 그림들을 모니터에 출력!
 plt.show()
 ```
 
-이러한 선 그래프는 시간에 따른 **변화의 추세(Trend)**를 볼 때 가장 좋습니다. 예를 들어, 시간에 따른 마법사의 마나(MP) 변화를 그려봅시다.
+![자동 X축 선 그래프](img/basic_line.svg)
+
+
+**[출력 원리 해석]**
+위 코드는 `(0, 10)`, `(1, 5)`, `(2, 25)`, `(3, 30)`, `(4, 20)` 지점에 보이지 않는 점을 찍고 파란색 실선으로 이어줍니다. V평수나 매출액의 증감을 보여줄 때 흔히 쓰입니다.
+
+---
+
+### ② X축과 Y축 짝지어 그리기 (게임 캐릭터 마나 추이)
+
+이번에는 X축에 명확한 시간(`time`)을, Y축에 변화하는 마나(`mp`)를 넣어보겠습니다. 그리고 그래프에 제목(`title`)과 축 이름(`xlabel`, `ylabel`)표표도 달아줍니다.
 
 ```python
 import matplotlib.pyplot as plt
 
-# 5.1.2 데이터 준비 (시간, 현재 MP)
-time = [0, 1, 2, 3, 4, 5]
-mp = [100, 80, 60, 40, 20, 0]
-
-plt.plot(time, mp)
-plt.title("Time vs Mana (Battle)")
-plt.xlabel("Time (sec)")
-plt.ylabel("Mana Point")
-plt.show()
-```
-
-다음 코드는 `x`와 `y` 각각 좌표 5개로 직선을 그린 결과이다. 한글 처리를 위한 코드는 노트북에서 이미 이전에 실행했다면 다시 코딩해 실행할 필요는 없다. `plt.title()` 함수로 제목을 표시할 수 있다.
-
-```python
-import matplotlib.pyplot as plt
-
+# 한글 깨짐 방지 부적
 plt.rcParams['font.family'] = 'Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] = False
 
-plt.plot([1, 3, 5, 7, 9], [8, 6, 17, 22, 3])
+# 1. 데이터 준비 (시간, 현재 MP)
+time = [0, 1, 2, 3, 4, 5]
+mp = [100, 80, 60, 40, 20, 0]
 
-plt.title('직선 그래프 그리기')
+# 2. X축 시간과 Y축 마나 대응하여 선 그리기
+plt.plot(time, mp)
+
+# 3. 그래프 설명표 부착
+plt.title("전투 중 마나(MP) 고갈 추이")
+plt.xlabel("시간 (초)")
+plt.ylabel("남은 마나 (MP)")
+
+# 4. 그림 출력
 plt.show()
 ```
 
-![직선 그래프 그리기](img/page_005.png)
+![마나 추이 선 그래프](img/mp_line.svg)
 
-Matplotlib은 이 외에도 다양한 플롯과 기능을 제공하므로, 데이터 시각화에 필요한 다양한 작업을 수행할 수 있다. Matplotlib은 또한 seaborn, pandas 등 다른 데이터 시각화와 데이터 분석 라이브러리들과 함께 사용되기도 한다.
+**[출력 결과 (예상)]**
+우하향하는 직선이 그려지며, 가로축에는 "시간 (초)", 세로축에는 "남은 마나 (MP)"라는 라벨이 예쁘게 달리게 됩니다. 
 
-#### ② 그래프의 여러 속성
+---
 
-함수 `plt.plot()`에서 `marker='o'`, `linestyle='--'`, `color='b'`, `label='소수(Prime Numbers)'` 등으로 다양한 그림의 속성을 지정할 수 있다. 다음은 `x`와 `y` 좌표 값을 그린 코드와 결과이다.
+### ③ 선 그래프 꾸미기 (스타일링의 3요소)
+
+Matplotlib 장인은 붓의 크기, 물감의 색상, 붓의 터치 방식을 모든 것을 세밀하게 조정할 수 있습니다. 
+
+![Matplotlib 3대 스타일링 가이드](img/line_style_guide.svg)
+
+`plt.plot()` 함수에 다양한 인자를 넘겨주어 선의 모양을 바꿀 수 있습니다.
+
+- **`color` 또는 `c`**: 선의 색상 (예: `r`=빨강, `b`=파랑, `g`=초록)
+- **`marker`**: 점의 모양 (예: `o`=동그라미, `^`=세모, `s`=네모, `d`=다이아몬드, `*`=별)
+- **`linestyle` 또는 `ls`**: 선의 종류 (예: `-`=실선, `--`=파선, `:`=점선, `-.`=1점쇄선)
+- **`linewidth` 또는 `lw`**: 선의 두께 (숫자)
+
+**두 개의 선을 각기 다른 스타일로 그리기:**
 
 ```python
 import matplotlib.pyplot as plt
 
-# 5.1.2 데이터 생성
-x = [1, 2, 3, 4, 5]
-y = [2, 3, 5, 7, 11]
+# 첫 번째 선: 빨간색(r), 굵게(lw=3), 점선(--), 다이아몬드 마커(d)
+plt.plot([1, 2, 3, 4], [10, 20, 30, 40], 
+         color='red', linestyle='--', marker='d', linewidth=3, label='매출 A')
 
-# 5.1.2 선 플롯 생성
-plt.plot(x, y, marker='o', linestyle='-', color='b', label='소수(Prime Numbers)')
+# 두 번째 선: 파란색(b), 얇게(lw=0.5), 쩜쩜쩜(:), 별 모양 마커(*)
+plt.plot([1, 2, 3, 4], [40, 30, 20, 10], 
+         color='blue', linestyle=':', marker='*', linewidth=0.5, label='매출 B')
 
-# 5.1.2 축 및 제목 설정
-plt.xlabel('X-축(axis)')
-plt.ylabel('Y-축(axis)')
+plt.title('스타일이 적용된 2개의 선 합치기')
+plt.xlabel('분기')
+plt.ylabel('매출액(억)')
 
-plt.title('소수 크기(Prime Numbers Plot)')
+# 어떤 선이 수입 A/B인지 구별해주는 '범례'를 구석에 표시합니다.
 plt.legend()
-
-# 5.1.2 플롯 표시
 plt.show()
 ```
 
-![소수 크기(Prime Numbers Plot)](img/page_006.png)
+![스타일 2개의 선 결합](img/styled_lines.svg)
 
-속성 `marker`, `linewidth`, `linestyle` 등을 달리해 그린 결과이다.
+> **🔥 코딩 고수의 꿀팁: 포맷 문자열 축약**
+> 색상, 마커, 선종류 세 가지는 너무 자주 쓰여서 하나로 축약할 수 있습니다.
+> `plt.plot(x, y, 'ro--')` 라고만 적으면 파이썬이 알아서 **r(빨간색) + o(동그라미 마커) + --(파선)** 으로 해석해서 그려줍니다!
 
-```python
-import matplotlib.pyplot as plt
-
-plt.plot([1, 2, 3, 4], [10, 20, 30, 40], color='r', linestyle='--',
-         marker='d', linewidth=3, label='thick line')
-
-plt.plot([1, 2, 3, 4], [40, 30, 20, 10], 'b', ls=':', marker='*', lw=0.5,
-         label='thin line')
-
-plt.title('속성 marker linewidth linestyle')
-plt.xlabel('X 축(axis)')
-plt.ylabel('Y 축(axis)')
-
-plt.legend()
-plt.show()
-```
-
-#### ③ 산점도
-
-다음은 `plt.scatter(x, y)`로 좌표 부분에 속성 `marker` 유형을 찍는 산점도를 그린 그림이다. 마커의 기본은 `'o'`로 작은 원이다. 인자 `s`는 크기(size), `c`는 색상(color), `alpha`는 불투명도를 나타낸다.
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# 5.1.2 Fixing random state for reproducibility
-np.random.seed(2025)
-
-N = 80
-x = np.random.rand(N)
-y = np.random.rand(N)
-colors = np.random.rand(N)
-area = (20 * np.random.rand(N))**2  # 5.1.2 to 15 point radii
-
-plt.scatter(x, y, s=area, c=colors, alpha=0.7)
-plt.colorbar()
-plt.show()
-```
-
-![산점도](img/page_007.png)
-
-다음은 논리 첨자(boolean index)를 만들어 모든 좌표 `x`와 `y`에서 `mask1` 또는 `mask2`를 만족하는 좌표만을 뽑아 산점도를 그리는 코드이다.
-
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.random.randint(-100, 100, 1000) # 1000개의 랜덤 값 추출
-y = np.random.randint(-100, 100, 1000) # 1000개의 랜덤 값 추출
-
-mask1 = abs(x) > 50 # x에 저장된 값 중 절댓값이 50보다 큰 값 걸러 냄
-mask2 = abs(y) > 50 # y에 저장된 값 중 절댓값이 50보다 큰 값 걸러 냄
-x = x[mask1 + mask2] # mask1과 mask2 중 하나라도 만족하는 값 저장
-y = y[mask1 + mask2] # mask1과 mask2 중 하나라도 만족하는 값 저장
-
-plt.scatter(x, y, c=x, cmap='jet', alpha=0.4)
-plt.colorbar()
-plt.show()
-```
-
-다음은 모든 좌표 `x`와 `y`에서 `mask1`과 `mask2`를 모두 만족하는 좌표만을 뽑아 산점도를 그리는 코드이다. 그러므로 다음처럼 `x`와 `y`의 절댓값이 모두 50이 넘는 좌표만이 그려진다.
-
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.random.randint(-100, 100, 1000) # 1000개의 랜덤 값 추출
-y = np.random.randint(-100, 100, 1000) # 1000개의 랜덤 값 추출
-
-mask1 = abs(x) > 50 # x에 저장된 값 중 절댓값이 50보다 큰 값 걸러 냄
-mask2 = abs(y) > 50 # y에 저장된 값 중 절댓값이 50보다 큰 값 걸러 냄
-x = x[mask1 * mask2] # mask1과 mask2 모두 만족하는 값 저장
-y = y[mask1 * mask2] # mask1과 mask2 모두 만족하는 값 저장
-
-plt.scatter(x, y, c=x, cmap='jet', alpha=0.4)
-plt.colorbar()
-plt.show()
-```
-
-#### ④ 막대 그래프
-
-함수 `plt.bar()`로 막대 그래프를 그릴 수 있다.
-
-```python
-import matplotlib.pyplot as plt
-
-plt.bar(["Red", "Green", "Blue"], [8, 5, 10])
-plt.show()
-```
-
-![막대 그래프](img/page_009.png)
-
-인자 `color`에 색상 목록으로 각각의 막대에 색상을 지정할 수 있다.
-
-```python
-import matplotlib.pyplot as plt
-
-c = ["red", "green", "blue"]
-plt.bar(c, [10, 4, 12], color=c, alpha=.4)
-plt.show()
-```
-
-#### ⑤ 히스토그램 hist()
-
-함수 `plt.hist()`는 히스토그램을 그리는 함수이다. 함수 `plt.figure(figsize=(6, 4))`는 가로와 세로가 6인치, 4인치인 그림을 그린다.
-
-```python
-import matplotlib.pyplot as plt
-plt.figure(figsize=(6, 4)) # 그림 크기 지정
-
-plt.hist([1, 1, 1, 2, 2, 3, 4, 5, 6, 6, 6, 6], rwidth=.98, bins=[.5, 1.5,
-         2.5, 3.5, 4.5, 5.5, 6.5])
-
-plt.xticks(range(1, 7))
-
-plt.show()
-```
-
-![히스토그램](img/page_010.png)
-
-함수 `plt.savefig('파일명.png')`는 그림을 파일 '파일명.png'로 저장한다.
-
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-dice = np.random.choice(range(1, 7), 1000000,
-                        p=[0.15, 0.25, 0.3, 0.1, 0.1, 0.1])
-plt.figure(figsize=(5, 3), dpi=200)
-
-plt.hist(dice, rwidth=.98, bins=np.arange(.5, 7))
-plt.xticks(range(1, 7))
-
-plt.savefig('주사위.png')
-plt.show()
-```
+선 그래프 외에 점만 흩뿌리는 **산점도**, 기둥을 세우는 **막대그래프** 등은 Round 2에서 Seaborn과 함께 다루겠습니다. 다음 장에서는 이런 수많은 그래프들을 한 화면에 바둑판처럼 예쁘게 배치하는 **Figure와 Subplot(서브플롯) 분할 기법**을 배웁니다.

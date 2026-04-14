@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">주의! 어긋난 인덱스의 병합 결과 (Index Alignment)</text>
+
+  <!-- 원본 시리즈 (인덱스가 어긋남) -->
+  <g transform="translate(80, 80)">
+    <!-- A 시리즈 (0, 1, 2) -->
+    <rect x="0" y="0" width="100" height="150" fill="#FFF3E0" rx="5" filter="url(#shadow)" stroke="#FF9800" stroke-width="2"/>
+    <rect x="0" y="0" width="100" height="30" fill="#FFCC80" rx="5" />
+    <text x="50" y="20" font-family="monospace" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">col_a</text>
+    
+    <text x="30" y="55" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">0</text>
+    <text x="70" y="55" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    
+    <text x="30" y="90" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">1</text>
+    <text x="70" y="90" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">20</text>
+    
+    <text x="30" y="125" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">2</text>
+    <text x="70" y="125" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">30</text>
+    
+    <!-- 더하기 표시 -->
+    <text x="125" y="80" font-family="sans-serif" font-size="24" fill="#B0BEC5" font-weight="bold" text-anchor="middle">+</text>
+
+    <!-- B 시리즈 (1, 2, 3) -->
+    <rect x="150" y="0" width="100" height="150" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <rect x="150" y="0" width="100" height="30" fill="#BBDEFB" rx="5" />
+    <text x="200" y="20" font-family="monospace" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">col_b</text>
+    
+    <text x="180" y="55" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">1</text>
+    <text x="220" y="55" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">3</text>
+    
+    <text x="180" y="90" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">2</text>
+    <text x="220" y="90" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">2</text>
+    
+    <text x="180" y="125" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">3</text>
+    <text x="220" y="125" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">1</text>
+  </g>
+
+  <!-- 변환 애로우 및 메세지 -->
+  <g transform="translate(370, 150)">
+    <path d="M 0 0 L 60 0" fill="none" stroke="#FF5252" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="55,-7 65,0 55,7" fill="#FF5252" />
+    <text x="30" y="-15" font-family="sans-serif" font-size="11" fill="#D32F2F" font-weight="bold" text-anchor="middle">인덱스 기준 병합!</text>
+  </g>
+
+  <!-- 결과 표 -->
+  <g transform="translate(450, 70)">
+    <rect x="0" y="0" width="160" height="180" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3"/>
+    
+    <!-- 컬럼 헤더 -->
+    <rect x="40" y="0" width="120" height="30" fill="#E8F5E9" rx="3" />
+    <text x="70" y="20" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">A</text>
+    <text x="130" y="20" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">B</text>
+    
+    <!-- 합집합 인덱스 (0, 1, 2, 3) -->
+    <rect x="0" y="30" width="40" height="150" fill="#FFF3E0" rx="3" />
+    <text x="20" y="65" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">0</text>
+    <text x="20" y="100" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">1</text>
+    <text x="20" y="135" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">2</text>
+    <text x="20" y="170" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">3</text>
+
+    <!-- 데이터 영역 -->
+    <!-- s1 -->
+    <text x="70" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">10.0</text>
+    <text x="70" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">20.0</text>
+    <text x="70" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">30.0</text>
+    <rect x="50" y="155" width="40" height="20" fill="#FFCDD2" rx="3" />
+    <text x="70" y="170" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    
+    <!-- s2 -->
+    <rect x="110" y="50" width="40" height="20" fill="#FFCDD2" rx="3" />
+    <text x="130" y="65" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="130" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">3.0</text>
+    <text x="130" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">2.0</text>
+    <text x="130" y="170" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">1.0</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 290)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#FFEbee" rx="10" stroke="#F44336" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#C62828" font-weight="bold" text-anchor="middle">서로 없는 인덱스 번호 자리엔 빈칸(NaN)이 채워집니다! (합집합 Union 동작)</text>
+  </g>
+
+</svg>

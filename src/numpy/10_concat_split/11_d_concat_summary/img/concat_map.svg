@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="auto">
+  <defs>
+    <style>
+      .main-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 26px; font-weight: bold; fill: #1c2833; }
+      .sec-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #e74c3c; }
+      .box-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: bold; fill: #fff; }
+      .code { font-family: 'Consolas', monospace; font-size: 17px; font-weight: bold; fill: #2c3e50; }
+      .desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #566573; }
+      
+      .bg { fill: #fdfefe; rx: 15px; ry: 15px; }
+      
+      /* Thematic Groups */
+      .group-vert { fill: #ebf5fb; stroke: #3498db; stroke-width: 2px; rx: 10px; ry: 10px; }
+      .group-horz { fill: #e8f8f5; stroke: #1abc9c; stroke-width: 2px; rx: 10px; ry: 10px; }
+      .group-magic { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2px; rx: 10px; ry: 10px; }
+      .group-core { fill: #f4ecf8; stroke: #9b59b6; stroke-width: 2px; rx: 10px; ry: 10px; }
+      
+      /* Headers */
+      .head-vert { fill: #3498db; }
+      .head-horz { fill: #1abc9c; }
+      .head-magic { fill: #e67e22; }
+      .head-core { fill: #9b59b6; }
+      
+      .node { fill: #fff; stroke: #bdc3c7; stroke-width: 2px; rx: 6px; ry: 6px; }
+    </style>
+  </defs>
+
+  <rect width="900" height="600" class="bg" />
+  
+  <text x="450" y="50" class="main-title" text-anchor="middle">🧩 NumPy 배열 결합(Concat) 마스터 지도</text>
+
+  <!-- Row 1: The Core Functions -->
+  <g transform="translate(40, 90)">
+    <rect x="0" y="0" width="820" height="110" class="group-core" />
+    <path d="M 0 35 L 820 35" stroke="#9b59b6" stroke-width="2" />
+    <rect x="0" y="0" width="820" height="35" rx="10" ry="10" class="head-core" />
+    <rect x="0" y="15" width="820" height="20" class="head-core" /> <!-- corner fix -->
+    <text x="410" y="24" class="box-title" text-anchor="middle">👑 근본 코어 함수 (조상님)</text>
+    
+    <!-- Node: concatenate -->
+    <rect x="40" y="50" width="300" height="45" class="node" />
+    <text x="50" y="78" class="code">np.concatenate()</text>
+    <text x="210" y="77" class="desc">가장 유연한 `axis=N` 제어</text>
+
+    <!-- Node: stack -->
+    <rect x="480" y="50" width="300" height="45" class="node" />
+    <text x="490" y="78" class="code">np.stack()</text>
+    <text x="610" y="77" class="desc">새 축을 파내어 차원(Dimension) 승급</text>
+  </g>
+
+  <!-- Row 2: Directional Wrappers -->
+  <g transform="translate(40, 220)">
+    <!-- Vertical Block -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="390" height="180" class="group-vert" />
+      <path d="M 0 35 L 390 35" stroke="#3498db" stroke-width="2" />
+      <rect x="0" y="0" width="390" height="35" rx="10" ry="10" class="head-vert" />
+      <rect x="0" y="15" width="390" height="20" class="head-vert" />
+      <text x="195" y="24" class="box-title" text-anchor="middle">👇 수직으로 위아래 층 쌓기 (axis=0)</text>
+
+      <rect x="30" y="55" width="330" height="50" class="node" />
+      <text x="195" y="86" class="code" text-anchor="middle" font-size="20">⭐ np.vstack()</text>
+
+      <rect x="30" y="115" width="330" height="50" class="node" />
+      <text x="195" y="146" class="code" text-anchor="middle">np.row_stack()</text>
+      <text x="280" y="145" class="desc" fill="#e74c3c" font-weight="bold">(Alias)</text>
+    </g>
+
+    <!-- Horizontal Block -->
+    <g transform="translate(430, 0)">
+      <rect x="0" y="0" width="390" height="180" class="group-horz" />
+      <path d="M 0 35 L 390 35" stroke="#1abc9c" stroke-width="2" />
+      <rect x="0" y="0" width="390" height="35" rx="10" ry="10" class="head-horz" />
+      <rect x="0" y="15" width="390" height="20" class="head-horz" />
+      <text x="195" y="24" class="box-title" text-anchor="middle">👉 수평으로 나란히 병합 (axis=1)</text>
+
+      <rect x="30" y="55" width="330" height="50" class="node" />
+      <text x="195" y="82" class="code" text-anchor="middle" font-size="18">np.hstack()</text>
+      <text x="195" y="99" class="desc" text-anchor="middle" font-size="12">차원이 똑같아야만 허용 (엄격)</text>
+
+      <rect x="30" y="115" width="330" height="50" class="node" />
+      <text x="195" y="142" class="code" text-anchor="middle" font-size="18">⭐ np.column_stack()</text>
+      <text x="195" y="159" class="desc" text-anchor="middle" font-size="12">1D배열을 자동으로 세로 열기둥으로 승급 (유연)</text>
+    </g>
+  </g>
+
+  <!-- Row 3: Magic Shortcuts -->
+  <g transform="translate(40, 420)">
+    <rect x="0" y="0" width="820" height="140" class="group-magic" />
+    <path d="M 0 35 L 820 35" stroke="#e67e22" stroke-width="2" />
+    <rect x="0" y="0" width="820" height="35" rx="10" ry="10" class="head-magic" />
+    <rect x="0" y="15" width="820" height="20" class="head-magic" />
+    <text x="410" y="24" class="box-title" text-anchor="middle">🎩 초고수의 마법 단축 객체 (대괄호 [])</text>
+
+    <!-- np.r_ -->
+    <rect x="40" y="55" width="340" height="65" class="node" />
+    <text x="55" y="80" class="code" font-size="20">np.r_[ ]</text>
+    <text x="160" y="80" class="desc">Row-wise (hstack 계열)</text>
+    <text x="55" y="105" class="desc" font-size="12">슬라이싱 문법(::), 스칼라 값 혼용 자동 팽창 지원</text>
+
+    <!-- np.c_ -->
+    <rect x="440" y="55" width="340" height="65" class="node" />
+    <text x="455" y="80" class="code" font-size="20">np.c_[ ]</text>
+    <text x="560" y="80" class="desc">Column-wise (column_stack)</text>
+    <text x="455" y="105" class="desc" font-size="12">스칼라 값 자동 열 팽창(Broadcasting) 집중 지원</text>
+  </g>
+</svg>

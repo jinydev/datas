@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">설문지 뭉치(List of Dicts)로 종합 현황판 만들기</text>
+
+  <!-- 원본 리스트 (설문지 3장) -->
+  <g transform="translate(40, 60)">
+    <rect x="-10" y="0" width="230" height="200" fill="#E8F5E9" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="5" y="25" font-family="monospace" font-size="14" fill="#1B5E20" font-weight="bold">survey_data = [</text>
+    
+    <!-- 설문지 1 (행 1) -->
+    <rect x="20" y="40" width="180" height="30" fill="#C8E6C9" rx="3" />
+    <text x="30" y="60" font-family="monospace" font-size="12" fill="#2E7D32" font-weight="bold">{'국':70, '수':89, '영':90}</text>
+    
+    <!-- 설문지 2 (행 2) -->
+    <rect x="20" y="80" width="180" height="30" fill="#C8E6C9" rx="3" />
+    <text x="30" y="100" font-family="monospace" font-size="12" fill="#2E7D32" font-weight="bold">{'국':80, '영':99} <tspan fill="#FF5252">← 수 X</tspan></text>
+    
+    <!-- 설문지 3 (행 3) -->
+    <rect x="20" y="120" width="180" height="30" fill="#C8E6C9" rx="3" />
+    <text x="30" y="140" font-family="monospace" font-size="12" fill="#2E7D32" font-weight="bold">{'수':66, '영':78} <tspan fill="#FF5252">← 국 X</tspan></text>
+
+    <text x="5" y="180" font-family="monospace" font-size="14" fill="#1B5E20" font-weight="bold">]</text>
+  </g>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(300, 140)">
+    <path d="M 0 0 L 80 0" fill="none" stroke="#FFA000" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="75,-7 85,0 75,7" fill="#FFA000" />
+    <text x="40" y="-15" font-family="monospace" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">pd.DataFrame()</text>
+  </g>
+
+  <!-- 결과 표 -->
+  <g transform="translate(420, 80)">
+    <rect x="0" y="0" width="220" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="3"/>
+    
+    <!-- 컬럼 헤더 (모든 Key의 통합) -->
+    <rect x="40" y="0" width="180" height="30" fill="#E3F2FD" rx="3" />
+    <text x="70" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">국어</text>
+    <text x="130" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">수학</text>
+    <text x="190" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">영어</text>
+    
+    <!-- 인덱스 -->
+    <rect x="0" y="30" width="40" height="120" fill="#FFF3E0" rx="3" />
+    <text x="20" y="65" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">0</text>
+    <text x="20" y="100" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">1</text>
+    <text x="20" y="135" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">2</text>
+
+    <!-- 데이터 영역 -->
+    <!-- 학생 0 -->
+    <text x="70" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">70.0</text>
+    <text x="130" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">89.0</text>
+    <text x="190" y="65" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">90</text>
+    
+    <!-- 학생 1 (수학 결측치) -->
+    <text x="70" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">80.0</text>
+    <rect x="110" y="85" width="40" height="20" fill="#FFCDD2" rx="3" />
+    <text x="130" y="100" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="190" y="100" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">99</text>
+    
+    <!-- 학생 2 (국어 결측치) -->
+    <rect x="50" y="120" width="40" height="20" fill="#FFCDD2" rx="3" />
+    <text x="70" y="135" font-family="sans-serif" font-size="12" fill="#C62828" font-weight="bold" text-anchor="middle">NaN</text>
+    <text x="130" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">66.0</text>
+    <text x="190" y="135" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">78</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 280)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#F57F17" font-weight="bold" text-anchor="middle">없는 항목(Key)은 자동으로 빈칸(NaN, 결측치)으로 채워집니다!</text>
+  </g>
+
+</svg>

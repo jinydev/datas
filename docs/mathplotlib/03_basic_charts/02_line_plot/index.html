@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.3.2 선 그리기</title>
-  <meta name="title" content="5.3.2 선 그리기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.3.2 선 그리기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.3.2 선 그래프 (Line Plot)와 시계열 데이터</title>
+  <meta name="title" content="5.3.2 선 그래프 (Line Plot)와 시계열 데이터" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.3.2 선 그래프 (Line Plot)와 시계열 데이터"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/mathplotlib/03_basic_charts/02_line_plot/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.3.2 선 그리기"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.3.2 선 그래프 (Line Plot)와 시계열 데이터"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="5.3.2 선 그리기" />
+<meta property="og:title" content="5.3.2 선 그래프 (Line Plot)와 시계열 데이터" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="5.3.2 선 그리기" />
+<meta property="twitter:title" content="5.3.2 선 그래프 (Line Plot)와 시계열 데이터" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.3.2 선 그리기","url":"https://datas.jiny.dev/mathplotlib/03_basic_charts/02_line_plot/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.3.2 선 그래프 (Line Plot)와 시계열 데이터","url":"https://datas.jiny.dev/mathplotlib/03_basic_charts/02_line_plot/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -367,21 +367,21 @@
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/01_pandas_visualization/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.1 패키지 판다스와 시각화 라이브러리 설치
+                                    5.0.1 판다스 내장 시각화와 한계
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치
+                                    5.0.2 시각화 생태계: Matplotlib과 Seaborn
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.3 토이 데이터와 데이터프레임 활용
+                                    5.0.3 장난감(Toy) 데이터를 활용한 실습 준비
                                 </a>
                             </li>
                             
@@ -411,35 +411,35 @@
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/01_visualization_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.1 데이터 시각화 개요
+                                    5.1.1 데이터 시각화의 목적과 본질
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/02_simple_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.2 간단한 직선 그래프 그리기
+                                    5.1.2 가장 단순한 선 그래프 (plot) 그리기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/03_figure_subplot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.3 figure와 서브플롯
+                                    5.1.3 도화지(Figure)와 액자(Ax) 구조 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃
+                                    5.1.4 비대칭 테트리스 레이아웃 (GridSpec)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/05_styling/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.5 그래프 속성과 스타일링
+                                    5.1.5 스타일링 끝판왕 (색상, 영웅, 격자)
                                 </a>
                             </li>
                             
@@ -469,28 +469,28 @@
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/01_pydataset_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.1 pydataset 소개
+                                    5.2.1 Seaborn과 장난감 데이터셋 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/02_pydataset_install/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.2 패키지 pydataset 설치
+                                    5.2.2 초기 데이터 탐색 (EDA) 기법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/03_pydataset_import/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.3 pydataset 주요 자료 가져오기
+                                    5.2.3 시각화를 결정짓는 2가지 변수 타입
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.4 seaborn으로 그래프 그리기
+                                    5.2.4 Seaborn 첫 그래프: Countplot과 Histplot
                                 </a>
                             </li>
                             
@@ -520,21 +520,21 @@
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/01_scatter_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.1 산점도
+                                    5.3.1 산점도 (Scatter Plot)와 hue의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/02_line_plot/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    5.3.2 선 그리기
+                                    5.3.2 선 그래프 (Line Plot)와 시계열 데이터
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/03_bar_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.3 막대 그래프
+                                    5.3.3 막대 그래프 (Bar Plot)와 오차 막대
                                 </a>
                             </li>
                             
@@ -564,21 +564,21 @@
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/01_box_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.1 상자그림
+                                    5.4.1 상자그림 (Box Plot) 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/02_histogram/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.2 히스토그램
+                                    5.4.2 히스토그램 (Histogram)과 데이터 통(Bins)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/03_pie_chart/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.3 파이 차트
+                                    5.4.3 파이 차트 (Pie Chart)와 시각화의 함정
                                 </a>
                             </li>
                             
@@ -608,14 +608,14 @@
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/01_violin_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.1 바이올린 플롯
+                                    5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/02_correlation_viz/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.2 상관관계 시각화
+                                    5.5.2 상관관계 폭격기: Heatmap과 Pairplot
                                 </a>
                             </li>
                             
@@ -662,373 +662,83 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">5.3.2 선 그리기</li>
+        <li class="breadcrumb-item active" aria-current="page">5.3.2 선 그래프 (Line Plot)와 시계열 데이터</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h2 id="532-선-그리기">5.3.2 선 그리기</h2>
+            <h2 id="532-선-그래프-line-plot와-신뢰-구간의-마법">5.3.2 선 그래프 (Line Plot)와 신뢰 구간의 마법</h2>
 
-<h4 id="-선-그리기-함수-plot">① 선 그리기 함수 plot()</h4>
+<p>앞서 배운 5.1.2장에서는 단순히 점 5개를 잇는 기본적인 <code class="language-plaintext highlighter-rouge">plt.plot()</code>을 배웠습니다. 
+이번 장에서는 시간의 흐름(시계열 데이터)을 다룰 때 압도적인 위력을 발휘하는 <strong>Seaborn의 <code class="language-plaintext highlighter-rouge">lineplot()</code></strong>을 배워보겠습니다.</p>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">plot()</code>으로 간단히 지정한 좌표를 지나는 선을 그릴 수 있다. 선 종류는 인자 <code class="language-plaintext highlighter-rouge">linestyle</code> 또는 간단히 <code class="language-plaintext highlighter-rouge">ls</code>로 지정할 수 있다.</p>
+<h3 id="-선-그래프의-존재-이유-시간의-흐름">① 선 그래프의 존재 이유 (시간의 흐름)</h3>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">plot([x], y, linestyle="-", ...)</code> 인자: <code class="language-plaintext highlighter-rouge">linestyle="-"</code>는 실선(solid line) 표시</p>
+  <p><strong>용도</strong>: “1월부터 12월까지 비행기 탑승객 수(Y)가 <strong>시간(X)</strong>에 따라 어떻게 <strong>변화(추세)</strong>하고 있을까?”</p>
 </blockquote>
 
-<p>다음은 인자 하나인 y축의 값을 지정한 연결선 그림이다. x축 자료가 6개이므로 지정하지 않은 x축은 기본으로 0에서 5까지가 된다.</p>
+<p>산점도(Scatter Plot)가 두 점 사이의 관계를 나타낸다면, 선 그래프(Line Plot)는 데이터가 시간에 따라 어떻게 변해가는지 그 <strong>추세(Trend)</strong>를 한눈에 보여줍니다. 주식 차트, 환율 변동, 기온 변화 등 연속적인 흐름을 그릴 때 반드시 사용해야 합니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">));</span>
-</code></pre></div></div>
+<hr />
 
-<p>다음은 x 값 -5에서 5까지의 그래프 $y = x^2$을 그린 그림이다. x축에서 이웃한 좌표의 거리를 0.1로 지정해서 그린다. 0.1을 더 작게 하면 곡선이 더 부드러워진다. 실수의 배열을 위해 <code class="language-plaintext highlighter-rouge">numpy</code>의 <code class="language-plaintext highlighter-rouge">arange()</code> 함수를 활용한다. 인자 <code class="language-plaintext highlighter-rouge">ls</code>는 <code class="language-plaintext highlighter-rouge">linestyle</code>과 같으며 <code class="language-plaintext highlighter-rouge">":"</code>은 점선(dotted line)이다.</p>
+<h3 id="-seaborn-lineplot의-숨겨진-힘-신뢰-구간">② Seaborn <code class="language-plaintext highlighter-rouge">lineplot</code>의 숨겨진 힘: 신뢰 구간</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<p>만약 X축이 시간이고 Y축이 특정 값일 때, <strong>같은 시간대에 여러 사람의 데이터가 중복해서 존재</strong>한다면 어떻게 점을 이어야 할까요? 
+단순히 점과 점을 이으면 거미줄처럼 엉망진창이 됩니다. 하지만 Seaborn은 놀라운 <strong>통계적 마법</strong>을 부립니다.</p>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="sh">"</span><span class="s">:</span><span class="sh">"</span><span class="p">);</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">'</span><span class="s">$x$</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 레이블에서 앞 뒤의 $는 레이텍(LaTex) 형식의 수식으로 표현한다
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">$y = x^2$</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
+<p><img src="../img/lineplot_shadow_magic.svg" alt="Seaborn Lineplot의 신뢰 구간 원리" /></p>
 
-<p>내장 데이터 <code class="language-plaintext highlighter-rouge">AirPassengers</code>는 1949년부터 1960년까지 월별 국제선 승객 자료이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">airpsngr</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">AirPassengers</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">airpsngr</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>데이터 <code class="language-plaintext highlighter-rouge">AirPassengers</code>는 <code class="language-plaintext highlighter-rouge">time</code>과 <code class="language-plaintext highlighter-rouge">AirPassengers</code>로 구성된 데이터프레임이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">airpsngr</span><span class="p">.</span><span class="nf">head</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>데이터프레임 <code class="language-plaintext highlighter-rouge">airpsngr</code>에서 x축은 연도별 시간 <code class="language-plaintext highlighter-rouge">airpsngr.time</code>이며 y축은 승객 수인 <code class="language-plaintext highlighter-rouge">airpsngr.AirPassengers</code>이다. 그래프를 통해 국제선 승객 성장 추세를 바로 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">airpsngr</span><span class="p">.</span><span class="n">time</span><span class="p">,</span> <span class="n">airpsngr</span><span class="p">.</span><span class="n">AirPassengers</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">darkgreen</span><span class="sh">'</span><span class="p">);</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">'</span><span class="s">연도</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">승객수</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h4 id="-함수-plot의-패러미터-linestyle과-marker">② 함수 plot()의 패러미터 linestyle과 marker</h4>
-
-<p>함수 <code class="language-plaintext highlighter-rouge">plt.plot(x, y, linestyle='-')</code>에서 <code class="language-plaintext highlighter-rouge">linestyle</code>(간단히 <code class="language-plaintext highlighter-rouge">ls</code>)은 선 종류를 지정하는 패러미터이다. 지정하지 않으면 기본적으로 선 종류는 실선인 <code class="language-plaintext highlighter-rouge">'-'</code>이다.</p>
-
-<p><strong>[표 9-1] 함수 plot()의 선 종류 패러미터 linestyle</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">선 스타일 이름</th>
-      <th style="text-align: left">linestyle 값</th>
-      <th style="text-align: left">선 스타일 기호</th>
-      <th style="text-align: left">예제 코드</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">실선(Solid line)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'-'</code></td>
-      <td style="text-align: left">─</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, linestyle='-')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">대시선(Dashed line)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'--'</code></td>
-      <td style="text-align: left">- -</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, linestyle='--')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">점선(Dotted line)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">':'</code></td>
-      <td style="text-align: left">· ·</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, linestyle=':')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">대시 점선(Dash-dot line)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'-.'</code></td>
-      <td style="text-align: left">- ·</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, linestyle='-.')</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>다음 코드로 함수 <code class="language-plaintext highlighter-rouge">plot</code>의 4가지 선 종류의 <code class="language-plaintext highlighter-rouge">linestyle</code>을 확인할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># 5.3.2 데이터 준비
-</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
-<span class="n">y4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
-
-<span class="c1"># 5.3.2 선 스타일별로 그래프 그리기
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">-</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Solid line</span><span class="sh">'</span><span class="p">)</span>    <span class="c1"># 실선
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">--</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Dashed line</span><span class="sh">'</span><span class="p">)</span>  <span class="c1"># 대시선
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">:</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Dotted line</span><span class="sh">'</span><span class="p">)</span>   <span class="c1"># 점선
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y4</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">-.</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Dash-dot line</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 대시 점선
-</span>
-<span class="c1"># 5.3.2 그래프 제목과 축 레이블
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Line Styles in Matplotlib</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">X Axis</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Y Axis</span><span class="sh">"</span><span class="p">)</span>
-
-<span class="c1"># 5.3.2 범례 추가
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">()</span>
-
-<span class="c1"># 5.3.2 그래프 보여주기
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>Matplotlib의 <code class="language-plaintext highlighter-rouge">plt.plot()</code> 메소드를 사용할 때 마커(marker)를 사용하여 각 데이터 포인트를 강조할 수 있다. 마커는 데이터 포인트를 시각적으로 더 쉽게 구분할 수 있게 해준다. 마커의 종류는 다음의 다양한 마커 기호로 인자 <code class="language-plaintext highlighter-rouge">marker</code>에 지정한다.</p>
-
-<p><strong>[표 9-2] 마커 종류 인자 marker</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">마커 이름</th>
-      <th style="text-align: left">marker 값</th>
-      <th style="text-align: left">마커 기호</th>
-      <th style="text-align: left">예제 코드</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">점 (Point)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'.'</code></td>
-      <td style="text-align: left">·</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='.')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">원 (Circle)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'o'</code></td>
-      <td style="text-align: left">●</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='o')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">삼각형 하 (Triangle_down)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'v'</code></td>
-      <td style="text-align: left">▼</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='v')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">삼각형 상 (Triangle_up)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'^'</code></td>
-      <td style="text-align: left">▲</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='^')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">삼각형 우 (Triangle_right)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'&gt;'</code></td>
-      <td style="text-align: left">▶</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='&gt;')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">삼각형 좌 (Triangle_left)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'&lt;'</code></td>
-      <td style="text-align: left">◀</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='&lt;')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">사각형 (Square)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'s'</code></td>
-      <td style="text-align: left">■</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='s')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">다이아몬드 (Diamond)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'D'</code></td>
-      <td style="text-align: left">◆</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='D')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">육각형 (Hexagon)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'h'</code></td>
-      <td style="text-align: left">⬣</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='h')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">별 (Star)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'*'</code></td>
-      <td style="text-align: left">★</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='*')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">십자 (Plus)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'+'</code></td>
-      <td style="text-align: left">+</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='+')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">곱하기 (X)</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'x'</code></td>
-      <td style="text-align: left">x</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.plot(x, y, marker='x')</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>다음은 5가지 마커를 사용한 코드이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># 5.3.2 데이터 준비
-</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">y4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">y5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-
-<span class="c1"># 5.3.2 그래프 그리기
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Circle</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 원
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">^</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Triangle_up</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 삼각형 위
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">s</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Square</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 사각형
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y4</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Star</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 별
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">'</span><span class="s">Pixel</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 픽셀
-</span>
-<span class="c1"># 5.3.2 그래프 제목과 축 레이블
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Marker Styles in Matplotlib</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">X Axis</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Y Axis</span><span class="sh">"</span><span class="p">)</span>
-
-<span class="c1"># 5.3.2 범례 추가
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">()</span>
-
-<span class="c1"># 5.3.2 그래프 보여주기
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>다음 함수 <code class="language-plaintext highlighter-rouge">plot()</code>에서 인자 <code class="language-plaintext highlighter-rouge">ls=' '</code>, <code class="language-plaintext highlighter-rouge">marker='o'</code>는 <code class="language-plaintext highlighter-rouge">scatter()</code>와 유사한 그림을 그릴 수 있다. 인자 <code class="language-plaintext highlighter-rouge">ls=' '</code> 또는 <code class="language-plaintext highlighter-rouge">ls=''</code>로 지정하면 선이 없이 마커만 표시할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="sh">'</span><span class="s"> </span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>이미 알아본 기니피그의 치아성장 세포 데이터 <code class="language-plaintext highlighter-rouge">ToothGrowth</code>에서 사용되는 비타민 C의 종류로는 오렌지 주스(OJ)와 아스코르브산(VC)이 있다. 이 자료 값은 변수 <code class="language-plaintext highlighter-rouge">tg.supp</code>에 저장된다. 다음으로 비타민 C의 종류가 각각 “VC”와 “OJ”인 행 중에서 열 <code class="language-plaintext highlighter-rouge">dose</code>와 <code class="language-plaintext highlighter-rouge">len</code>으로 구성된 데이터프레임을 추출한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vc</span> <span class="o">=</span> <span class="n">tg</span><span class="p">[</span><span class="n">tg</span><span class="p">.</span><span class="n">supp</span> <span class="o">==</span> <span class="sh">'</span><span class="s">VC</span><span class="sh">'</span><span class="p">][[</span><span class="sh">'</span><span class="s">len</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">dose</span><span class="sh">'</span><span class="p">]]</span>
-<span class="n">oj</span> <span class="o">=</span> <span class="n">tg</span><span class="p">[</span><span class="n">tg</span><span class="p">.</span><span class="n">supp</span> <span class="o">==</span> <span class="sh">'</span><span class="s">OJ</span><span class="sh">'</span><span class="p">][[</span><span class="sh">'</span><span class="s">len</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">dose</span><span class="sh">'</span><span class="p">]]</span>
-</code></pre></div></div>
-
-<p>위 자료에서 비타민 C의 “VC” 자료인 <code class="language-plaintext highlighter-rouge">vc</code>를 사용해 열 <code class="language-plaintext highlighter-rouge">dose</code>, <code class="language-plaintext highlighter-rouge">len</code>에 따른 산점도를 그린다. 인자 <code class="language-plaintext highlighter-rouge">lw</code>(line width)는 선의 굵기를 지정한다. 인자 <code class="language-plaintext highlighter-rouge">label</code>에 지정한 글자는 범례에 사용된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">vc</span><span class="p">.</span><span class="n">dose</span><span class="p">,</span> <span class="n">vc</span><span class="p">.</span><span class="nb">len</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">cyan</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">아스코르브산(VC)</span><span class="sh">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>위 그림 위에 비타민 C의 “OJ” 자료로 다시 산점도를 그릴 수 있다. 선과 점을 모양을 바꿔 그려보자. 다음 함수 <code class="language-plaintext highlighter-rouge">plt.legend()</code>를 사용해 범례를 그린다. 범례 위치는 자동으로 지정된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">vc</span><span class="p">.</span><span class="n">dose</span><span class="p">,</span> <span class="n">vc</span><span class="p">.</span><span class="nb">len</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">cyan</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">아스코르브산(VC)</span><span class="sh">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">oj</span><span class="p">.</span><span class="n">dose</span><span class="p">,</span> <span class="n">oj</span><span class="p">.</span><span class="nb">len</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">deeppink</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="sh">'</span><span class="s">:</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">오렌지 주스(OJ)</span><span class="sh">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="p">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">기니피그의 비타민과 치아성장 관계</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">비타민 용량</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">치아성장 세포길이</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>범례 위치는 <code class="language-plaintext highlighter-rouge">loc=(x좌표, y좌표)</code>로 범례의 좌측 상단 모서리 위치를 좌표로 지정할 수 있다. 그러므로 범례 위치는 자유롭게 조정할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">vc</span><span class="p">.</span><span class="n">dose</span><span class="p">,</span> <span class="n">vc</span><span class="p">.</span><span class="nb">len</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">cyan</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">아스코르브산(VC)</span><span class="sh">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">oj</span><span class="p">.</span><span class="n">dose</span><span class="p">,</span> <span class="n">oj</span><span class="p">.</span><span class="nb">len</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">deeppink</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="sh">'</span><span class="s">:</span><span class="sh">'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">오렌지 주스(OJ)</span><span class="sh">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="p">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">기니피그의 비타민과 치아성장 관계</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">비타민 용량</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">치아성장 세포길이</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="sh">'</span><span class="s">lower right</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>범례 위치를 간단히 지정하는 인자 <code class="language-plaintext highlighter-rouge">loc</code>의 값은 다음과 같다. 인자 <code class="language-plaintext highlighter-rouge">loc</code>을 지정하지 않으면 <code class="language-plaintext highlighter-rouge">best</code>와 같다.</p>
-
-<p><strong>[표 9-3] 범례의 위치 지정 패러미터 loc 종류</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">위치 이름</th>
-      <th style="text-align: left">loc 값</th>
-      <th style="text-align: left">예제 코드</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Best</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'best'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='best')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Upper right</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'upper right'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='upper right')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Upper left</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'upper left'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='upper left')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Lower left</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'lower left'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='lower left')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Lower right</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'lower right'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='lower right')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Right</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'right'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='right')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Center left</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'center left'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='center left')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Center right</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'center right'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='center right')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Lower center</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'lower center'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='lower center')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Upper center</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'upper center'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='upper center')</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Center</td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">'center'</code></td>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">plt.legend(loc='center')</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="-seaborn을-활용한-선-그래프-lineplot">③ Seaborn을 활용한 선 그래프 (lineplot)</h4>
-
-<p>시간의 흐름에 따른 변화(시계열)를 볼 때 유용합니다. Seaborn의 <code class="language-plaintext highlighter-rouge">lineplot</code>은 같은 x값에 여러 y값이 존재하면 <strong>자동으로 평균선과 투명한 신뢰구간(그림자)</strong> 영역을 그려주는 매우 강력한 기능을 가지고 있습니다.</p>
+<p>Seaborn은 내부적으로 알아서 같은 시간대의 여러 실험 데이터를 모아 <strong>“평균(Mean)”을 굵은 선</strong>으로 긋고, 그 상하 오차 범위를 계산하여 옅은 색의 <strong>“신뢰 구간(Confidence Interval, CI) 그림자”</strong>로 그려줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
-<span class="c1"># 5.3.2 Seaborn 내장 예제 데이터
-</span><span class="n">fmri</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">"</span><span class="s">fmri</span><span class="sh">"</span><span class="p">)</span> 
+<span class="c1"># fmri: 수많은 환자들의 시간에 따른 뇌파 신호 데이터셋
+</span><span class="n">fmri</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">"</span><span class="s">fmri</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="c1"># 5.3.2 hue='event': 사건별로 선 색깔 다르게, style='event': 사건별로 선 모양(실선/점선) 다르게
-</span><span class="n">sns</span><span class="p">.</span><span class="nf">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">fmri</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">"</span><span class="s">timepoint</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">"</span><span class="s">signal</span><span class="sh">"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">"</span><span class="s">event</span><span class="sh">"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">event</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">시간에 따른 fMRI 신호 변화</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">darkgrid</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># X축: 시간(timepoint), Y축: 뇌파 신호(signal)
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">fmri</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">"</span><span class="s">timepoint</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">"</span><span class="s">signal</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">시간에 따른 환자들의 뇌파 신호 (평균과 신뢰 구간)</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<p><img src="img/fmri_line_basic.svg" alt="환자 뇌파 신호 평균과 신뢰구간" /></p>
+
+<p><strong>[출력 원리 해석]</strong>
+그래프를 실행해보면, 파란 굵은 곡선 주변을 투명한 파란 하늘색 띠(그림자)가 감싸고 있습니다.
+그림자가 좁은 곳은 “그 시간에 환자들의 뇌파가 거의 비슷했다”는 뜻이고, 
+그림자가 넓은 곳은 “그 시간에 환자들마다 뇌파 차이가 극심하게 컸다”는 것을 시각적으로 단번에 알려주는 통계적 걸작입니다!</p>
+
+<hr />
+
+<h3 id="-hue와-style로-정보의-깊이-더하기">③ <code class="language-plaintext highlighter-rouge">hue</code>와 <code class="language-plaintext highlighter-rouge">style</code>로 정보의 깊이 더하기</h3>
+
+<p>산점도에서 배웠던 <strong><code class="language-plaintext highlighter-rouge">hue</code>(색상)</strong> 마법은 선 그래프에서도 유효합니다. 더 대단한 점은, 선의 종류(실선, 점선 등)를 구분해주는 <strong><code class="language-plaintext highlighter-rouge">style</code></strong> 옵션까지 자동으로 먹힌다는 점입니다!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># hue='event' : 자극을 받은 그룹(stim)과 안 받은 그룹(cue)의 선 색깔을 다르게 칠해라!
+# style='event' : 두 그룹의 선 모양(실선 vs 점선)도 알아서 다르게 그려라!
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">fmri</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">"</span><span class="s">timepoint</span><span class="sh">"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">"</span><span class="s">signal</span><span class="sh">"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">"</span><span class="s">event</span><span class="sh">"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">event</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">자극(stim) vs 비자극(cue) 환자 그룹별 뇌파 흐름 비교</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/fmri_line_hue.svg" alt="그룹별 뇌파 다차원 흐름" /></p>
+
+<p><strong>[출력 원리 해석]</strong>
+<code class="language-plaintext highlighter-rouge">stim</code>(자극을 준) 환자 그룹은 파란색 실선으로 뇌파가 솟구치고, <code class="language-plaintext highlighter-rouge">cue</code>(자극을 주지 않은 통제군) 환자 그룹은 주황색 점선으로 잔잔하게 흐르는 모습이 한눈에 파악됩니다.</p>
+
+<p>선 하나 그렸을 뿐인데, 전문가 브리핑에 쓰여도 손색이 없을 만큼 완벽한 통계 차트가 생성되었습니다! 다음 장에서는 범주형 데이터를 크기순으로 쾅쾅 박아넣는 <strong>막대그래프(Bar Plot)</strong>를 그려보겠습니다.</p>
 
 
             <!-- 구글 애드센스 출력 -->

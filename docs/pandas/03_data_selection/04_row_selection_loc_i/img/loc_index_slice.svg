@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">2단계: 번호 기반 범위 슬라이싱 (pf.index[1:4])</text>
+
+  <!-- 파이썬 명령 스텝 1 (명단 배열 자르기) -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="220" height="60" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#4FC3F7" stroke-width="2"/>
+    <text x="110" y="20" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">Step 1. 명단 리스트 슬라이싱</text>
+    <text x="110" y="45" font-family="monospace" font-size="18" fill="#1565C0" font-weight="bold" text-anchor="middle">pf.index[<tspan fill="#FF5252">1:4</tspan>]</text>
+  </g>
+
+  <!-- 명단 추출 과정 설명 (1, 2, 3 포함, 4 제외) -->
+  <path d="M 170 140 L 170 180" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="165,175 170,185 175,175" fill="#2196F3" />
+  
+  <rect x="70" y="150" width="200" height="25" fill="#FFF8E1" rx="5" stroke="#FFC107" stroke-width="1"/>
+  <text x="170" y="167" font-family="sans-serif" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">['강수희', '홍소희', '유한빈']</text>
+
+  <!-- 파이썬 명령 스텝 2 (명단 전부 넘김) -->
+  <g transform="translate(60, 200)">
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="110" y="20" font-family="sans-serif" font-size="12" fill="#81C784" font-weight="bold" text-anchor="middle">Step 2. loc으로 동시 추출</text>
+    <text x="110" y="45" font-family="monospace" font-size="16" fill="#FFF" font-weight="bold" text-anchor="middle">pf.loc[<tspan fill="#FFC107">명단리스트</tspan>]</text>
+  </g>
+
+  <!-- 추출 애로우 -->
+  <g transform="translate(300, 230)">
+    <path d="M 0 0 L 100 0" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="95,-7 105,0 95,7" fill="#4CAF50" />
+    <text x="50" y="-10" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">표의 형태(DataFrame)</text>
+  </g>
+
+  <!-- 결과 표 (데이터프레임) -->
+  <g transform="translate(440, 90)">
+    <rect x="-30" y="0" width="220" height="120" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#0D47A1" stroke-width="2"/>
+    <text x="80" y="-10" font-family="monospace" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">DataFrame 형식</text>
+    
+    <rect x="30" y="0" width="160" height="30" fill="#E3F2FD" rx="3" stroke="#90CAF9" stroke-width="1"/>
+    <text x="60" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">중간</text>
+    <text x="100" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="140" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="175" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">출석</text>
+
+    <!-- 인덱스 (강수희, 홍소희, 유한빈) -->
+    <rect x="-30" y="30" width="60" height="90" fill="#FFF3E0" rx="3" stroke="#FFCA28" />
+    <text x="0" y="55" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+    <text x="0" y="85" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">홍소희</text>
+    <text x="0" y="115" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">유한빈</text>
+
+    <!-- 값 -->
+    <text x="60" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">18</text>
+    <text x="100" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">27</text>
+    <text x="140" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    <text x="175" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">20</text>
+
+    <text x="60" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">17</text>
+    <text x="100" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">17</text>
+    <text x="140" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    <text x="175" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">19</text>
+
+    <text x="60" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">12</text>
+    <text x="100" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">22</text>
+    <text x="140" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">9</text>
+    <text x="175" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">20</text>
+  </g>
+
+  <!-- 파이썬 리스트 슬라이싱 규칙 주의! -->
+  <g transform="translate(600, 110)">
+    <rect x="0" y="0" width="70" height="30" fill="#FFEB3B" stroke="#FBC02D" rx="3" />
+    <text x="35" y="20" font-family="monospace" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">끝점(4) 제외</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">이 방식은 파이썬 기본 리스트 문법이므로 4번 인덱스(신수빈)는 제외된다는 점에 주의하세요!</text>
+  </g>
+
+</svg>

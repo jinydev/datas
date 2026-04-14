@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#dc2626" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🔥 붓꽃 부위별 크기 상관관계 히트맵 (Heatmap)</text>
+
+    <!-- Grid -->
+    <g transform="translate(100, 80)">
+        <!-- Variables: sepal_length, sepal_width, petal_length, petal_width -->
+        <!-- Size: 4x4 matrix, each cell 80x80 -->
+        <!-- Values approx:
+             SL  SW   PL   PW
+        SL  1.0 -0.11 0.87 0.82
+        SW -0.11 1.0 -0.42 -0.36
+        PL  0.87 -0.42 1.0  0.96
+        PW  0.82 -0.36 0.96 1.0
+        -->
+        <!-- cmap='coolwarm' -> -1 is blue (#3b82f6), 0 is white (#f8fafc), 1 is red (#ef4444) -->
+        
+        <!-- Row 1: SL -->
+        <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="80" height="80" fill="#ef4444" stroke="#e2e8f0" />
+            <text x="40" y="45" fill="white" font-size="14" font-weight="bold" text-anchor="middle">1.0</text>
+            
+            <!-- -0.11 -->
+            <rect x="80" y="0" width="80" height="80" fill="#e0f2fe" stroke="#e2e8f0" />
+            <text x="120" y="45" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">-0.11</text>
+            
+            <!-- 0.87 -->
+            <rect x="160" y="0" width="80" height="80" fill="#f87171" stroke="#e2e8f0" />
+            <text x="200" y="45" fill="#7f1d1d" font-size="14" font-weight="bold" text-anchor="middle">0.87</text>
+            
+            <!-- 0.82 -->
+            <rect x="240" y="0" width="80" height="80" fill="#fca5a5" stroke="#e2e8f0" />
+            <text x="280" y="45" fill="#7f1d1d" font-size="14" font-weight="bold" text-anchor="middle">0.82</text>
+        </g>
+        
+        <!-- Row 2: SW -->
+        <g transform="translate(0, 80)">
+            <!-- -0.11 -->
+            <rect x="0" y="0" width="80" height="80" fill="#e0f2fe" stroke="#e2e8f0" />
+            <text x="40" y="45" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">-0.11</text>
+            
+            <rect x="80" y="0" width="80" height="80" fill="#ef4444" stroke="#e2e8f0" />
+            <text x="120" y="45" fill="white" font-size="14" font-weight="bold" text-anchor="middle">1.0</text>
+            
+            <!-- -0.42 -->
+            <rect x="160" y="0" width="80" height="80" fill="#bae6fd" stroke="#e2e8f0" />
+            <text x="200" y="45" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">-0.42</text>
+            
+            <!-- -0.36 -->
+            <rect x="240" y="0" width="80" height="80" fill="#bae6fd" stroke="#e2e8f0" />
+            <text x="280" y="45" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">-0.36</text>
+        </g>
+
+        <!-- Row 3: PL -->
+        <g transform="translate(0, 160)">
+            <!-- 0.87 -->
+            <rect x="0" y="0" width="80" height="80" fill="#f87171" stroke="#e2e8f0" />
+            <text x="40" y="45" fill="#7f1d1d" font-size="14" font-weight="bold" text-anchor="middle">0.87</text>
+            
+            <!-- -0.42 -->
+            <rect x="80" y="0" width="80" height="80" fill="#bae6fd" stroke="#e2e8f0" />
+            <text x="120" y="45" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">-0.42</text>
+            
+            <rect x="160" y="0" width="80" height="80" fill="#ef4444" stroke="#e2e8f0" />
+            <text x="200" y="45" fill="white" font-size="14" font-weight="bold" text-anchor="middle">1.0</text>
+            
+            <!-- 0.96 -->
+            <rect x="240" y="0" width="80" height="80" fill="#ef4444" fill-opacity="0.9" stroke="#e2e8f0" />
+            <text x="280" y="45" fill="white" font-size="14" font-weight="bold" text-anchor="middle">0.96</text>
+        </g>
+
+        <!-- Row 4: PW -->
+        <g transform="translate(0, 240)">
+            <!-- 0.82 -->
+            <rect x="0" y="0" width="80" height="80" fill="#fca5a5" stroke="#e2e8f0" />
+            <text x="40" y="45" fill="#7f1d1d" font-size="14" font-weight="bold" text-anchor="middle">0.82</text>
+            
+            <!-- -0.36 -->
+            <rect x="80" y="0" width="80" height="80" fill="#bae6fd" stroke="#e2e8f0" />
+            <text x="120" y="45" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">-0.36</text>
+            
+            <!-- 0.96 -->
+            <rect x="160" y="0" width="80" height="80" fill="#ef4444" fill-opacity="0.9" stroke="#e2e8f0" />
+            <text x="200" y="45" fill="white" font-size="14" font-weight="bold" text-anchor="middle">0.96</text>
+            
+            <rect x="240" y="0" width="80" height="80" fill="#ef4444" stroke="#e2e8f0" />
+            <text x="280" y="45" fill="white" font-size="14" font-weight="bold" text-anchor="middle">1.0</text>
+        </g>
+
+        <!-- Labels -->
+        <text x="40" y="340" fill="#475569" font-size="12" text-anchor="middle">sepal_length</text>
+        <text x="120" y="340" fill="#475569" font-size="12" text-anchor="middle">sepal_width</text>
+        <text x="200" y="340" fill="#475569" font-size="12" text-anchor="middle">petal_length</text>
+        <text x="280" y="340" fill="#475569" font-size="12" text-anchor="middle">petal_width</text>
+
+        <text x="-20" y="45" fill="#475569" font-size="12" text-anchor="end">sepal_length</text>
+        <text x="-20" y="125" fill="#475569" font-size="12" text-anchor="end">sepal_width</text>
+        <text x="-20" y="205" fill="#475569" font-size="12" text-anchor="end">petal_length</text>
+        <text x="-20" y="285" fill="#475569" font-size="12" text-anchor="end">petal_width</text>
+
+        <!-- Colorbar (legend) -->
+        <rect x="360" y="0" width="20" height="320" fill="url(#grad)" stroke="#cbd5e1" />
+        <text x="390" y="10" fill="#1e293b" font-size="12">1.0 (강한 양)</text>
+        <text x="390" y="165" fill="#1e293b" font-size="12">0.0</text>
+        <text x="390" y="320" fill="#1e293b" font-size="12">-1.0 (강한 음)</text>
+
+        <!-- Highlight strong correlation -->
+        <rect x="240" y="160" width="80" height="80" fill="none" stroke="#fcd34d" stroke-width="4" />
+        <path d="M 320 200 L 370 200" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)" />
+        <text x="380" y="205" fill="#d97706" font-size="12" font-weight="bold">굉장히 강한 양(+)의 상관관계!</text>
+    </g>
+
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#f8fafc;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+        </linearGradient>
+        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
+        </marker>
+    </defs>
+</svg>

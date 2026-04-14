@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .label { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #e74c3c; }
+      .code { font-family: 'Consolas', monospace; font-size: 22px; fill: #d63384; font-weight: bold; }
+      .box { rx: 5px; ry: 5px; stroke-width: 2px; }
+      .val { font-family: 'Consolas', monospace; font-size: 18px; fill: #333; text-anchor: middle;}
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#dc3545">1D Array vsplit() ERROR!</text>
+  <text x="425" y="80" class="code" text-anchor="middle" fill="#dc3545">np.vsplit(a, 2)  ❌ ValueError</text>
+
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="650" height="40" fill="#f8f9fa" stroke="#adb5bd" class="box" />
+    <path d="M 65 0 L 65 40 M 130 0 L 130 40 M 195 0 L 195 40 M 260 0 L 260 40 M 325 0 L 325 40 M 390 0 L 390 40 M 455 0 L 455 40 M 520 0 L 520 40 M 585 0 L 585 40" stroke="#adb5bd" stroke-width="1" />
+    
+    <text x="32.5" y="25" class="val">0</text>
+    <text x="97.5" y="25" class="val">1</text>
+    <text x="162.5" y="25" class="val">2</text>
+    <text x="227.5" y="25" class="val">3</text>
+    <text x="292.5" y="25" class="val">4</text>
+    <text x="357.5" y="25" class="val">5</text>
+    <text x="422.5" y="25" class="val">6</text>
+    <text x="487.5" y="25" class="val">7</text>
+    <text x="552.5" y="25" class="val">8</text>
+    <text x="617.5" y="25" class="val">9</text>
+
+    <!-- Horizontal Cut mark that fails -->
+    <path d="M -30 20 L 680 20" stroke="#dc3545" stroke-width="6" stroke-dasharray="10 6" />
+    <polygon points="-20,15 -30,20 -20,25" fill="#dc3545" />
+
+    <text x="325" y="-20" class="label" text-anchor="middle" fill="#dc3545">"단층짜리 건물을 가로로 자를 순 없다!"</text>
+    <text x="325" y="80" class="label" text-anchor="middle" fill="#dc3545">최소 2층(2차원) 이상이어야 작동합니다.</text>
+  </g>
+</svg>

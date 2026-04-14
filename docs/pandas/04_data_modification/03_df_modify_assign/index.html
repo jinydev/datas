@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.3 데이터프레임 수정 대입</title>
-  <meta name="title" content="6.4.3 데이터프레임 수정 대입" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.3 데이터프레임 수정 대입"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.3 파생 열(Column)과 요약 행(Row) 추가하기</title>
+  <meta name="title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/03_df_modify_assign/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.3 데이터프레임 수정 대입"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.4.3 데이터프레임 수정 대입" />
+<meta property="og:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.4.3 데이터프레임 수정 대입" />
+<meta property="twitter:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.3 데이터프레임 수정 대입","url":"https://datas.jiny.dev/pandas/04_data_modification/03_df_modify_assign/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.3 파생 열(Column)과 요약 행(Row) 추가하기","url":"https://datas.jiny.dev/pandas/04_data_modification/03_df_modify_assign/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,44 +709,135 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.4.3 데이터프레임 수정 대입</li>
+        <li class="breadcrumb-item active" aria-current="page">6.4.3 파생 열(Column)과 요약 행(Row) 추가하기</li>
         
         
         
     </ol>
 </nav>
-        <div class="bd-content ps-lg-4">
-            <h1 id="643-데이터프레임-수정-대입">6.4.3 데이터프레임 수정 대입</h1>
 
-<p><strong>[실전 꿀팁]: 축(Axis) 방향과 데이터 할당</strong></p>
+        <div class="bd-content ps-lg-4">
+            <h2 id="643-연산-결과를-새로운-공간에-할당assign하기">6.4.3 연산 결과를 새로운 공간에 할당(Assign)하기</h2>
+
+<p><strong>[수학적 의미: 열 공간(Column Space) 및 차원의 확장]</strong>
+기존 데이터프레임 매트릭스에 존재하는 열 벡터(Column Vectors)들을 선형 결합(Linear Combination) 등의 수식으로 연산한 뒤, 그 결과로 생성된 새로운 벡터를 매트릭스의 새로운 축(새로운 칼럼이나 새로운 행)으로 연결(Concatenate)하여 구조를 확장하는 과정입니다.</p>
+
+<p><strong>[비유로 이해하기: 엑셀에서 ‘총합’ 컬럼 직접 만들기]</strong></p>
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">axis=0</code></strong>: “Row를 뭉갠다” -&gt; 위아래로 세로 계산하여 각 <strong>열(Column)의 합계</strong>를 구합니다.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">axis=1</code></strong>: “Column을 뭉갠다” -&gt; 좌우로 가로 계산하여 각 <strong>행(Row)의 합계</strong>를 구합니다.</li>
-  <li>새로운 열 추가 시 <code class="language-plaintext highlighter-rouge">df['새로운열'] = 값</code>이 가장 직관적입니다. 반면 <code class="language-plaintext highlighter-rouge">df.assign(새로운열=값)</code> 함수를 쓰면 원본 <code class="language-plaintext highlighter-rouge">df</code>는 손상시키지 않고 새로운 열이 추가된 복사본 뷰 전체를 반환받아 안전하게 작업할 수 있습니다.</li>
+  <li>엑셀에서 여러 셀의 값을 드래그해서 더한 뒤, 가장 오른쪽 빈 줄에 <code class="language-plaintext highlighter-rouge">=SUM(A1:B1)</code> 라고 적고 주욱 내리면 ‘총합’ 열이 새로 생깁니다.</li>
+  <li>마찬가지로 판다스에서도 수식을 구하고, 가장 빈 오른쪽 서랍장에 ‘재해자수’라는 새 이름표만 붙여서 데이터를 털어 넣으면 완벽하게 파생 데이터가 확장됩니다.</li>
 </ul>
 
-<p>다음 코드 <code class="language-plaintext highlighter-rouge">df[['사망(명)', '부상(명)']].sum(axis=1)</code>로 모든 행의 ‘사망(명)’과 ‘부상(명)’의 합을 구해보자.</p>
+<p><img src="img/df_modify_assign.svg" alt="데이터프레임 파생 열 할당 애니메이션" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">부상(명)</span><span class="sh">'</span><span class="p">]].</span><span class="nf">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div></div>
+<hr />
 
-<p>다음 코드 <code class="language-plaintext highlighter-rouge">df.iloc[:, 1:].sum(axis=1)</code>으로도 모든 행의 ‘사망(명)’과 ‘부상(명)’의 합을 구할 수 있다.</p>
+<h3 id="준비물-서울시-교통사고-원본-데이터">[준비물] 서울시 교통사고 원본 데이터</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:].</span><span class="nf">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div></div>
+<p>파이썬 환경설정이나 연산 중 원본 데이터가 손상되지 않도록, 데이터 변형 작업을 할 때는 <code class="language-plaintext highlighter-rouge">.copy()</code> 함수를 사용하여 복사본을 뜨는 것이 안전한 코딩 습관입니다.</p>
 
-<p>새로운 <code class="language-plaintext highlighter-rouge">df2</code>를 만들어 ‘사망(명)’+’부상(명)’의 합을 ‘재해자수’ 열에 대입해 보자.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
-<span class="n">df2</span><span class="p">[</span><span class="sh">'</span><span class="s">재해자수</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">부상(명)</span><span class="sh">'</span><span class="p">]].</span><span class="nf">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 원본 CSV 데이터 읽기
+</span><span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">data/2016-01-2016-12_Seoul_Accident.csv</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">euc-kr</span><span class="sh">'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="nf">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># 원본 데이터 훼손을 막기 위해 복사본(df2) 생성!
+</span><span class="n">df2</span> <span class="o">=</span> <span class="n">df_raw</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 📚 원본 표(앞 4줄) ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
 </code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)
+연월
+2016년1월      192      5    387
+2016년2월      174      6    328
+2016년3월      217      7    435
+2016년4월      216      7    419
+</code></pre></div></div>
 
-<p>마지막에 새로운 행 ‘총계’를 만들어 모든 열의 합을 추가해 보자. 다음처럼 대입하면 <code class="language-plaintext highlighter-rouge">axis=0</code>는 생략 가능하다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="sh">'</span><span class="s">총계</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<h3 id="1단계-조합-연산-결과-얻기-사망자--부상자">[1단계] 조합 연산 결과 얻기 (사망자 + 부상자)</h3>
+
+<p>단순히 전체 ‘사망자’만 더하는 것이 아니라, “특정 달의 (사망자 + 부상자)를 더한 ‘재해자 수’“를 파악하고 싶습니다. 앞서 배운 열 분리와 가로 압축(<code class="language-plaintext highlighter-rouge">axis=1</code>)을 체이닝합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1) 사망과 부상 열만 뜯어내기 -&gt; 2) 가로로 뭉개버리기 (axis=1)
+</span><span class="n">casualties</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">부상(명)</span><span class="sh">'</span><span class="p">]].</span><span class="nf">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [1단계] 사망 + 부상 가로 합계 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">casualties</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>연월
+2016년1월    392
+2016년2월    334
+2016년3월    442
+2016년4월    426
+dtype: int64
+</code></pre></div></div>
+
+<p><img src="./img/assign_step1.svg" alt="부분 열만 가로로 압축하여 새로운 결과물(Series) 도출" /></p>
+
+<blockquote>
+  <p><em>(참고)</em> 넘파이 배열과 다르게, 똑같은 위치를 숫자로 찾고 싶다면 <code class="language-plaintext highlighter-rouge">df2.iloc[:, 1:].sum(axis=1)</code> 형태로 써도 완벽히 위 결과와 똑같이 동작합니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2단계-새로운-파생-열column으로-할당대입하기">[2단계] 새로운 파생 열(Column)으로 할당(대입)하기</h3>
+
+<p>위에서 힘들게 뽑아낸 결과를 기존 <code class="language-plaintext highlighter-rouge">df2</code> 데이터프레임의 가장 우측 빈 공간에 스마일 라벨을 붙여 끼워 넣으려 합니다. 놀랍게도 새 이름을 바로 대괄호 안에 쓰고 <code class="language-plaintext highlighter-rouge">=</code> 연산자로 넣어주면 그대로 빈방이 개설되며 데이터가 들어갑니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '재해자수'라는 이름의 파생 열 새로 만들기 = 할당!
+</span><span class="n">df2</span><span class="p">[</span><span class="sh">'</span><span class="s">재해자수</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">casualties</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [2단계] 새로운 열(재해자수)이 추가된 데이터프레임 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
 </code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)  재해자수
+연월
+2016년1월      192      5    387   392
+2016년2월      174      6    328   334
+2016년3월      217      7    435   442
+2016년4월      216      7    419   426
+</code></pre></div></div>
+
+<p><img src="./img/assign_step2.svg" alt="결과물(Series)을 기존 데이터프레임의 새 컬럼에 할당" /></p>
+
+<hr />
+
+<h3 id="3단계-맨-밑바닥에-총계-행row-추가하기">[3단계] 맨 밑바닥에 ‘총계’ 행(Row) 추가하기</h3>
+
+<p>행(Column)을 추가했으면, 이번엔 데이터프레임 맨 아래에 전 과목 통틀어서 1월~4월까지 합친 ‘총계’ 행(Row)을 추가해 봅시다. 
+<strong>이전 챕터에서 배운 <code class="language-plaintext highlighter-rouge">.loc</code></strong>가 이때 사용됩니다! 그냥 없는 이름을 부른 뒤 <code class="language-plaintext highlighter-rouge">=</code>로 할당해버리는 것입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1) 싹 다 세로로 눌러서 총합 계산 (df2.sum(axis=0))
+# 2) '총계' 라는 행 레이블명(이름표)을 새로 만들어서 거기에 삽입!
+</span><span class="n">df2</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="sh">'</span><span class="s">총계</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [3단계] </span><span class="sh">'</span><span class="s">총계</span><span class="sh">'</span><span class="s"> 행이 추가된 완벽한 데이터프레임 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)  재해자수
+연월
+2016년1월      192      5    387   392
+2016년2월      174      6    328   334
+2016년3월      217      7    435   442
+2016년4월      216      7    419   426
+총계         799     25   1569  1594  &lt;-- 세로 합계가 추가되었습니다!
+</code></pre></div></div>
+
+<p><img src="./img/assign_step3.svg" alt=".loc을 이용하여 새로운 행(Row) 개척과 동시에 할당" /></p>
+
+<blockquote>
+  <p><strong>😎 판다스 꿀팁: <code class="language-plaintext highlighter-rouge">.assign()</code> 메서드</strong>
+파이썬 실무 개발에서는 원본 <code class="language-plaintext highlighter-rouge">df2</code>를 망가트리지 않기 위해:
+<code class="language-plaintext highlighter-rouge">df3 = df2.assign(재해자수 = df2['사망(명)'] + df2['부상(명)'])</code> 
+형태로 할당 함수를 많이 씁니다. (결과는 똑같지만 코드가 훨씬 안전해집니다!)</p>
+</blockquote>
 
 
             <!-- 구글 애드센스 출력 -->

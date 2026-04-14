@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .box { rx: 10px; ry: 10px; stroke-width: 3px; }
+      .text-bold { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #fff; }
+      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #fff; }
+      .arrow { fill: none; stroke: #6c757d; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#f8f9fa" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" font-size="22">파이썬 데이터 분석 파이프라인 (생태계)</text>
+
+  <!-- 1. NumPy -->
+  <g transform="translate(50, 90)">
+    <rect x="0" y="0" width="200" height="150" class="box" fill="#013243" stroke="#34495e" />
+    <text x="100" y="40" class="text-bold" text-anchor="middle">NumPy</text>
+    <text x="100" y="70" class="text-desc" text-anchor="middle">엔진 / 뼈대</text>
+    <text x="100" y="100" class="text-desc" text-anchor="middle">빠른 수치 계산 (C언어)</text>
+    <text x="100" y="125" class="text-desc" text-anchor="middle" fill="#f1c40f">성능의 원천 ⚙️</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 260 165 L 310 165" class="arrow" />
+  <polygon points="305,160 315,165 305,170" fill="#6c757d" />
+
+  <!-- 2. Pandas -->
+  <g transform="translate(330, 90)">
+    <rect x="0" y="0" width="200" height="150" class="box" fill="#150458" stroke="#34495e" />
+    <text x="100" y="40" class="text-bold" text-anchor="middle">Pandas</text>
+    <text x="100" y="70" class="text-desc" text-anchor="middle">가공 공장 / 공구상자</text>
+    <text x="100" y="100" class="text-desc" text-anchor="middle">2차원 표(DataFrame)</text>
+    <text x="100" y="125" class="text-desc" text-anchor="middle" fill="#f1c40f">데이터 전처리 🍳</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 540 165 L 590 165" class="arrow" />
+  <polygon points="585,160 595,165 585,170" fill="#6c757d" />
+
+  <!-- 3. Matplotlib & Seaborn -->
+  <g transform="translate(610, 90)">
+    <rect x="0" y="0" width="200" height="150" class="box" fill="#c0392b" stroke="#e74c3c" />
+    <text x="100" y="35" class="text-bold" text-anchor="middle" font-size="16">Matplotlib / Seaborn</text>
+    <text x="100" y="70" class="text-desc" text-anchor="middle">모니터 / 디스플레이</text>
+    <text x="100" y="100" class="text-desc" text-anchor="middle">전처리된 데이터를 표현</text>
+    <text x="100" y="125" class="text-desc" text-anchor="middle" fill="#f1c40f">시각화 🎨</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="425" y="300" class="title" text-anchor="middle" fill="#e74c3c">요리가 완료된 DataFrame을 시각화 라이브러리에 통째로 던지는 것이 현대적 표준!</text>
+</svg>

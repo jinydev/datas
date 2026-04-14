@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250">
+  <style>
+    .text { font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: bold; }
+    .boxA { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 4; }
+    .boxC { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; rx: 4; }
+    .title { font-size: 24px; font-weight: 800; fill: #2c3e50; text-anchor: middle; }
+    .err { fill: #dc3545; font-size: 20px; font-weight: 900; text-anchor: middle;}
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="15"/>
+  <text x="400" y="40" class="title">hstack의 한계: 차원이 다르면 결합 불가!</text>
+
+  <g transform="translate(250, 100)">
+    <rect x="0" y="0" width="100" height="90" class="boxA"/>
+    <text x="50" y="50" class="text" fill="#2196f3" text-anchor="middle">a (3x4)</text>
+    <text x="50" y="70" class="text" fill="#2196f3" text-anchor="middle" font-size="12">2차원 평면</text>
+  </g>
+  
+  <g transform="translate(420, 100)">
+    <animateTransform attributeName="transform" type="translate" values="420,100; 360,100; 420,100" dur="2s" repeatCount="indefinite"/>
+    <rect x="0" y="40" width="90" height="20" class="boxC"/>
+    <text x="45" y="55" class="text" fill="#ff9800" text-anchor="middle">c (3, )</text>
+    <text x="45" y="75" class="text" fill="#ff9800" text-anchor="middle" font-size="12">1차원 선</text>
+    
+    <path d="M -10 30 L 10 50 M -10 50 L 10 30" stroke="#f44336" stroke-width="4" fill="none" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <text x="-20" y="20" class="err">차원 불일치 에러!</text>
+  </g>
+</svg>

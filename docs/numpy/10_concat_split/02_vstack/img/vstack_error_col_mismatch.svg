@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <style>
+    .text { font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: bold; }
+    .boxA { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 4; }
+    .boxD { fill: #ffebee; stroke: #f44336; stroke-width: 2; rx: 4; }
+    .title { font-size: 24px; font-weight: 800; fill: #2c3e50; text-anchor: middle; }
+    .err { fill: #dc3545; font-size: 20px; font-weight: 900; text-anchor: middle;}
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="15"/>
+  <text x="400" y="40" class="title">주의: 층수(Row)는 달라도 되지만 가로폭(열)은 무조건 일치해야 함!</text>
+  
+  <g transform="translate(400, 160)">
+    <rect x="-40" y="0" width="80" height="90" class="boxA"/>
+    <text x="0" y="50" class="text" fill="#2196f3" text-anchor="middle">A(3x2)</text>
+  </g>
+  <g transform="translate(400, 70)">
+    <animateTransform attributeName="transform" type="translate" values="400,70; 400,120; 400,70" dur="2s" repeatCount="indefinite"/>
+    <rect x="-60" y="-20" width="120" height="30" class="boxD"/>
+    <text x="0" y="0" class="text" fill="#f44336" text-anchor="middle">d(3,)</text>
+    <path d="M -50 -10 L 50 30 M -50 30 L 50 -10" stroke="#f44336" stroke-width="4" fill="none" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <text x="100" y="5" class="err">크기 불일치!</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .text-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #555; }
+      .code-label { font-family: 'Courier New', Courier, monospace; font-size: 24px; font-weight: bold; fill: #d63384; }
+      .box { rx: 8px; ry: 8px; stroke-width: 2px; }
+      .apt-C { fill: #fff3cd; stroke: #856404; }
+      .apt-D { fill: #f8d7da; stroke: #721c24; }
+      .cell-text { font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; text-anchor: middle; dominant-baseline: middle; fill: #333; }
+      .grid-line { stroke: rgba(0,0,0,0.2); stroke-width: 1px; }
+      .moving-module {
+        animation: slideDown 3s ease-in-out infinite alternate;
+      }
+      .crane-line {
+        stroke: #666; stroke-width: 2; stroke-dasharray: 4 4;
+        animation: craneMove 3s ease-in-out infinite alternate;
+      }
+      @keyframes slideDown {
+        0%, 15% { transform: translate(310px, 80px); }
+        85%, 100% { transform: translate(310px, 170px); }
+      }
+      @keyframes craneMove {
+        0%, 15% { y2: 80px; }
+        85%, 100% { y2: 170px; opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="350" fill="#f8f9fa" rx="15" ry="15"/>
+  <text x="400" y="35" class="title" text-anchor="middle">Step 3. 수직 결합 (vstack): 아파트 모듈 쌓아 올리기</text>
+  <text x="400" y="65" class="code-label" text-anchor="middle">np.vstack((C, D))</text>
+
+  <!-- Crane support -->
+  <line x1="400" y1="70" x2="400" y2="80" class="crane-line" />
+  <path d="M 380 70 L 420 70" stroke="#666" stroke-width="4" />
+
+  <!-- Apt C (Fixed Base) -->
+  <g transform="translate(310, 230)">
+    <text x="-20" y="35" class="text-label" text-anchor="end">기초 C</text>
+    <rect x="0" y="0" width="180" height="60" class="box apt-C" />
+    <line x1="60" y1="0" x2="60" y2="60" class="grid-line" />
+    <line x1="120" y1="0" x2="120" y2="60" class="grid-line" />
+    <text x="30" y="30" class="cell-text">1</text>
+    <text x="90" y="30" class="cell-text">2</text>
+    <text x="150" y="30" class="cell-text">3</text>
+    <!-- ground line -->
+    <line x1="-50" y1="65" x2="230" y2="65" stroke="#999" stroke-width="3" />
+  </g>
+
+  <!-- Apt D (Moving Mod) -->
+  <g class="moving-module">
+    <text x="-20" y="35" class="text-label" text-anchor="end">모듈 D</text>
+    <rect x="0" y="0" width="180" height="60" class="box apt-D" />
+    <line x1="60" y1="0" x2="60" y2="60" class="grid-line" />
+    <line x1="120" y1="0" x2="120" y2="60" class="grid-line" />
+    <text x="30" y="30" class="cell-text">4</text>
+    <text x="90" y="30" class="cell-text">5</text>
+    <text x="150" y="30" class="cell-text">6</text>
+  </g>
+</svg>

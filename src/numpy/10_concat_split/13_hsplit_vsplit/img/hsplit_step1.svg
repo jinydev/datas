@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .label { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #e74c3c; }
+      .code { font-family: 'Consolas', monospace; font-size: 20px; fill: #d63384; font-weight: bold; }
+      .box { rx: 5px; ry: 5px; stroke-width: 2px; }
+      .slice { stroke: #e74c3c; stroke-width: 4px; stroke-dasharray: 6 4; }
+      .val { font-family: 'Consolas', monospace; font-size: 18px; fill: #333; text-anchor: middle;}
+    </style>
+  </defs>
+
+  <rect width="850" height="400" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">1D Array hsplit() Operations</text>
+
+  <!-- Part 1: np.hsplit(a, 2) -->
+  <g transform="translate(100, 80)">
+    <text x="325" y="-10" class="code" text-anchor="middle" fill="#0056b3">1. np.hsplit(a, 2)</text>
+    <rect x="0" y="20" width="650" height="40" fill="#f8f9fa" stroke="#adb5bd" class="box" />
+    <path d="M 65 20 L 65 60 M 130 20 L 130 60 M 195 20 L 195 60 M 260 20 L 260 60 M 325 20 L 325 60 M 390 20 L 390 60 M 455 20 L 455 60 M 520 20 L 520 60 M 585 20 L 585 60" stroke="#adb5bd" stroke-width="1" />
+    
+    <text x="32.5" y="45" class="val">0</text>
+    <text x="97.5" y="45" class="val">1</text>
+    <text x="162.5" y="45" class="val">2</text>
+    <text x="227.5" y="45" class="val">3</text>
+    <text x="292.5" y="45" class="val">4</text>
+    <text x="357.5" y="45" class="val">5</text>
+    <text x="422.5" y="45" class="val">6</text>
+    <text x="487.5" y="45" class="val">7</text>
+    <text x="552.5" y="45" class="val">8</text>
+    <text x="617.5" y="45" class="val">9</text>
+
+    <!-- Cut mark 2 groups (cut at 325) -->
+    <path d="M 325 0 L 325 80" class="slice" />
+    <polygon points="320,80 330,80 325,90" fill="#e74c3c" />
+    <text x="325" y="110" class="label" text-anchor="middle">정확히 2등분</text>
+  </g>
+
+  <!-- Part 2: np.hsplit(a, [2, 5]) -->
+  <g transform="translate(100, 240)">
+    <text x="325" y="-10" class="code" text-anchor="middle" fill="#0056b3">2. np.hsplit(a, [2, 5])</text>
+    <rect x="0" y="20" width="650" height="40" fill="#f8f9fa" stroke="#adb5bd" class="box" />
+    <path d="M 65 20 L 65 60 M 130 20 L 130 60 M 195 20 L 195 60 M 260 20 L 260 60 M 325 20 L 325 60 M 390 20 L 390 60 M 455 20 L 455 60 M 520 20 L 520 60 M 585 20 L 585 60" stroke="#adb5bd" stroke-width="1" />
+    
+    <text x="32.5" y="45" class="val">0</text>
+    <text x="97.5" y="45" class="val">1</text>
+    <text x="162.5" y="45" class="val">2</text>
+    <text x="227.5" y="45" class="val">3</text>
+    <text x="292.5" y="45" class="val">4</text>
+    <text x="357.5" y="45" class="val">5</text>
+    <text x="422.5" y="45" class="val">6</text>
+    <text x="487.5" y="45" class="val">7</text>
+    <text x="552.5" y="45" class="val">8</text>
+    <text x="617.5" y="45" class="val">9</text>
+
+    <!-- Cut mark at index 2 (130) -->
+    <path d="M 130 0 L 130 80" class="slice" />
+    <polygon points="125,80 135,80 130,90" fill="#e74c3c" />
+    <text x="130" y="110" class="label" text-anchor="middle">인덱스 2 앞</text>
+
+    <!-- Cut mark at index 5 (325) -->
+    <path d="M 325 0 L 325 80" class="slice" />
+    <polygon points="320,80 330,80 325,90" fill="#e74c3c" />
+    <text x="325" y="110" class="label" text-anchor="middle">인덱스 5 앞</text>
+  </g>
+</svg>

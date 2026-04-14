@@ -1,158 +1,76 @@
 ---
 layout: mathplotlib
-title: "5.2.3 pydataset 주요 자료 가져오기"
+title: "5.2.3 시각화를 결정짓는 2가지 변수 타입"
 ---
 
-## 5.2.3 pydataset 주요 자료 가져오기
+## 5.2.3 시각화를 결정짓는 2가지 데이터(변수) 타입
 
-#### ① 주요 자료 titanic 가져오기
+데이터 탐색(EDA)을 마쳤다면, 수많은 데이터 컬럼(열)들을 보고 머릿속으로 두 가지 부류로 데이터를 나눌 줄 알아야 합니다. 이 두 가지를 구분하지 못하면, **"어떤 그래프를 그려야 할지"** 를 전혀 결정할 수 없게 됩니다.
 
-**[실전 꿀팁]: 연습할 때 단골로 등장하는 "국민 데이터셋 4대장"**
-- **iris**: 붓꽃의 꽃잎/꽃받침 길이 데이터 (분류 알고리즘 연습용)
-- **mtcars**: 1974년 자동차 디자인/성능 데이터 (회귀 분석 연습용)
-- **titanic**: 타이타닉호 승객 생존 여부 (분류/상관분석 연습용)
-- **tips**: 식당에서의 팁(Tip) 결제 데이터 (시각화/그룹분석 연습용)
+![범주형 데이터와 수치형 데이터 비교](../img/variable_types.svg)
 
-데이터에 대한 정보를 모를 때 편리하게 사용할 수 있다. 타이타닉 데이터셋은 1912년 영국에서 미국으로의 처녀 출항에 침몰한 타이타닉 배의 생존자와 사망자 정보 데이터셋이다.
+### ① 범주형 변수 (Categorical Variable)
 
-```python
-df = data('titanic', show_doc=True)
-```
+> **특징**: "평균을 내는 것이 의미가 없고, 종류별로 몇 개인지 **빈도수(Count)**를 셉니다."
 
-다음 `df = data('dataset_id')`는 'dataset_id'의 데이터셋을 가져올 수 있다. 다음은 유명한 타이타닉 데이터셋을 가져오는 코드이다.
+범주형 변수는 사물이나 사람의 상태, 그룹, 종류를 나누는 **명찰**과 같습니다.
+- **문자열 형태**: 성별(`sex`), 탑승 항구(`embarked`), 혈액형(A/B/O/AB), 과일 종류(사과/배/포도)
+- **숫자 형태(코드)**: 생존 여부(`survived`의 0과 1), 좌석 등급(`pclass`의 1, 2, 3) 
+    *(1등급과 2등급의 평균을 내서 1.5등급을 만드는 것은 의미가 없습니다)*
 
-```python
-df = data('titanic')
-print(df)
-```
-**출력:**
-```
-          class     age    sex survived
-1     1st class  adults    man      yes
-2     1st class  adults    man      yes
-3     1st class  adults    man      yes
-4     1st class  adults    man      yes
-5     1st class  adults    man      yes
-...         ...     ...    ...      ...
-1312  3rd class   child  women       no
-1313  3rd class   child  women       no
-1314  3rd class   child  women       no
-1315  3rd class   child  women       no
-1316  3rd class   child  women       no
-
-[1316 rows x 4 columns]
-```
-
-다음으로 타이타닉 데이터셋 정보를 볼 수 있다.
+#### 판다스로 범주형 변수 탐색하기 (`value_counts()`)
+그래프를 그리기 전, 판다스에서 `value_counts()` 함수를 쓰면 그룹별 인원수를 셀 수 있습니다.
 
 ```python
-df.info()
+import seaborn as sns
+df = sns.load_dataset('titanic')
+
+# 승객들의 남/녀 비율 빈도수를 세어봅니다.
+print(df['sex'].value_counts())
 ```
 
-다음으로 타이타닉 데이터셋의 열 정보를 볼 수 있다.
+**[출력 확인]**
+```text
+male      577
+female    314
+Name: sex, dtype: int64
+```
+- 타이타닉 호에는 남성이 577명, 여성이 314명 탑승했습니다. (이 데이터는 나중에 **막대그래프**나 **파이 차트**로 그리기 딱 좋습니다)
+
+---
+
+### ② 수치형 변수 (Numerical Variable)
+
+> **특징**: "더하고, 빼고, **평균**을 내는 것이 아주 중요합니다."
+
+수치형 변수는 실제로 자로 재거나 측정할 수 있는 연속된 진짜 **숫자**들입니다.
+- 나이(`age`), 탑승 요금(`fare`), 온도, 키, 몸무게 등
+
+#### 판다스로 수치형 변수 탐색하기 (평균과 분포)
+앞서 배운 `describe()` 같은 요약 함수나, 조건부 평균 계산 기능이 아주 유용하게 쓰입니다.
 
 ```python
-df.describe()
-```
-**출력:**
-```
-            class     age    sex survived
-count        1316    1316   1316     1316
-unique          3       2      2        2
-top     3rd class  adults    man       no
-freq          706    1207    869      817
+# 전체 승객 탑승 요금(fare)의 평균 가격
+print("전체 평균 요금:", df['fare'].mean())
+
+# 각 객실 등급별(pclass) 탑승 요금(fare)의 평균 가격 비교!
+print(df.groupby('pclass')['fare'].mean())
 ```
 
-다음은 좌석 등급인 열 'class'의 종류와 빈도 수이다.
+**[출력 확인]**
 
-```python
-df['class'].value_counts()
-# 5.2.3 rd class    706
-# 5.2.3 st class    325
-# 5.2.3 nd class    285
-# 5.2.3 Name: class, dtype: int64
+![판다스 조건부 요약 통계량 산출](img/groupby_mean.svg)
+
+```text
+전체 평균 요금: 32.204
+
+pclass
+1    84.154687  (1등급은 매우 비쌈!)
+2    20.662183
+3    13.675550
+Name: fare, dtype: float64
 ```
 
-다음은 열 'age'의 종류와 빈도 수이다.
+이와 같이 **[범주형 변수 + 범주형 변수]**, **[수치형 변수 + 범주형 변수]**, **[수치형 변수 + 수치형 변수]** 조합을 어떻게 사용하느냐에 따라 우리가 앞으로 그릴 `Seaborn` 마법사의 그래프 마법 주문(함수)이 완전히 달라지게 됩니다. 
 
-```python
-df.age.value_counts()
-# 5.2.3 adults    1207
-# 5.2.3 child      109
-# 5.2.3 Name: age, dtype: int64
-```
-
-다음은 열 'sex'의 종류와 빈도 수이다.
-
-```python
-df.sex.value_counts()
-# 5.2.3 man      869
-# 5.2.3 women    447
-# 5.2.3 Name: sex, dtype: int64
-```
-
-다음은 생존자 정보인 열 'survived'의 종류와 빈도 수이다.
-
-```python
-df.survived.value_counts()
-# 5.2.3 no     817
-# 5.2.3 yes    499
-# 5.2.3 Name: survived, dtype: int64
-```
-
-다음은 데이터프레임에서 모든 열의 종류와 빈도 수이다.
-
-```python
-df.value_counts()
-```
-
-#### ② 자동차 연비 자료 mpg 가져오기
-
-다음으로 데이터프레임 `all_data`에서 열 `title`이 문자열 'car'를 포함한 행을 알아볼 수 있다. 데이터셋 id로 `mpg`가 보인다. 데이터셋 mpg(miles per gallon)는 1999년과 2008년의 인기 차종 38개에 대한 연비 데이터이다.
-
-```python
-all_data[all_data.title.str.contains('car')]
-```
-
-위에서 찾은 연비 데이터 `mpg`로 데이터를 가져오자.
-
-```python
-df_mpg = data('mpg')
-print(df_mpg)
-```
-
-미국 자동차 연비 데이터인 `mpg`의 요약 정보는 다음과 같다.
-
-```python
-data('mpg', show_doc=True)
-```
-
-데이터프레임 `df_mpg`의 정보는 다음과 같다.
-
-```python
-df_mpg.info()
-```
-
-연비 데이터의 데이터프레임 값이 수인 열의 주요 통계 정보는 다음과 같다.
-
-```python
-df_mpg.describe()
-```
-
-연비 데이터의 모델인 열 `model`의 종류는 다음과 같다.
-
-```python
-df_mpg.model.value_counts()
-```
-
-연비 데이터의 실린더 수인 열 `cyl`의 종류는 다음과 같다.
-
-```python
-df_mpg.cyl.value_counts()
-```
-
-연비 데이터의 자동차 회사 정보인 열 `manufacturer`의 빈도는 다음과 같다.
-
-```python
-df_mpg.manufacturer.value_counts()
-```
+다음 장에서는 본격적으로 Seaborn 안에서 가장 기본적인 통계 그래프인 **히스토그램(Histogram)**과 빈도수 차트를 하나 연습삼아 맛보겠습니다.

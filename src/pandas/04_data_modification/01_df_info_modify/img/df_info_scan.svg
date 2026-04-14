@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.info() 엑스레이 판독 핵심 요약</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(40, 60)">
+    <rect x="0" y="0" width="160" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="80" y="30" font-family="monospace" font-size="16" fill="#81C784" font-weight="bold" text-anchor="middle">df.info()</text>
+  </g>
+
+  <!-- 출력 화면 목업 -->
+  <g transform="translate(100, 130)">
+    <!-- 터미널 창 느낌 -->
+    <rect x="-60" y="-10" width="560" height="150" fill="#2E2E2E" rx="5" filter="url(#shadow)" />
+    
+    <text x="-40" y="20" font-family="monospace" font-size="12" fill="#B0BEC5">RangeIndex: 12 entries, 0 to 11</text>
+    <text x="-40" y="40" font-family="monospace" font-size="12" fill="#B0BEC5">Data columns (total <tspan fill="#FFEB3B">3</tspan> columns):</text>
+    
+    <!-- 테이블 헤더 -->
+    <text x="-40" y="65" font-family="monospace" font-size="12" fill="#90A4AE"> #   Column     Non-Null Count  Dtype  </text>
+    <text x="-40" y="75" font-family="monospace" font-size="12" fill="#90A4AE">---  ------     --------------  -----  </text>
+    
+    <!-- 데이터 1 -->
+    <text x="-40" y="95" font-family="monospace" font-size="12" fill="#FFF"> 0   <tspan fill="#4FC3F7">사고(건)</tspan>   <tspan fill="#69F0AE">12 non-null</tspan>     <tspan fill="#FF8A65">int64</tspan>  </text>
+    <!-- 데이터 2 -->
+    <text x="-40" y="115" font-family="monospace" font-size="12" fill="#FFF"> 1   <tspan fill="#4FC3F7">사망(명)</tspan>   <tspan fill="#69F0AE">12 non-null</tspan>     <tspan fill="#FF8A65">int64</tspan>  </text>
+  </g>
+
+  <!-- 설명 지시선 & 박스 -->
+  <!-- 1. 총 개수 -->
+  <path d="M 270 145 L 340 145 L 340 100" fill="none" stroke="#FFEB3B" stroke-width="2" stroke-dasharray="3,3" />
+  <rect x="290" y="70" width="100" height="30" fill="#FFFDE7" rx="3" stroke="#FBC02D" />
+  <text x="340" y="90" font-family="sans-serif" font-size="11" fill="#F57F17" font-weight="bold" text-anchor="middle">결측치 유무 점검!</text>
+
+  <!-- 2. 컬럼명 -->
+  <path d="M 120 220 L 120 270" fill="none" stroke="#4FC3F7" stroke-width="2" stroke-dasharray="3,3" />
+  <rect x="70" y="270" width="100" height="30" fill="#E1F5FE" rx="3" stroke="#03A9F4" />
+  <text x="120" y="290" font-family="sans-serif" font-size="11" fill="#01579B" font-weight="bold" text-anchor="middle">컬럼(열) 이름</text>
+
+  <!-- 3. 자료형 확인 -->
+  <path d="M 400 220 L 400 270" fill="none" stroke="#FF8A65" stroke-width="2" stroke-dasharray="3,3" />
+  <rect x="350" y="270" width="100" height="30" fill="#FBE9E7" rx="3" stroke="#FF5722" />
+  <text x="400" y="290" font-family="sans-serif" font-size="11" fill="#BF360C" font-weight="bold" text-anchor="middle">숫자형/문자형 검증</text>
+
+  <!-- 우측 핵심 요점정리 박스 -->
+  <g transform="translate(500, 100)">
+    <rect x="-10" y="0" width="180" height="120" fill="#E8F5E9" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="80" y="25" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">🩺 반드시 확인할 3가지</text>
+    
+    <text x="10" y="55" font-family="sans-serif" font-size="12" fill="#1B5E20">1. 총 행(row) 개수</text>
+    <text x="10" y="80" font-family="sans-serif" font-size="12" fill="#1B5E20">2. 결측치(빈칸) 유무</text>
+    <text x="10" y="105" font-family="sans-serif" font-size="12" fill="#1B5E20">3. 제대로된 형태(Dtype)</text>
+  </g>
+
+</svg>

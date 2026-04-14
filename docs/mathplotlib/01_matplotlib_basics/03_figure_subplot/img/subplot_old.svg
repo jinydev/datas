@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#64748b" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🧩 plt.subplot(2, 3, x) 공간 할당 원리</text>
+
+    <!-- Figure outline -->
+    <rect x="70" y="60" width="460" height="180" fill="white" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4" />
+
+    <!-- 2x3 grid: width: 460/3 = 153.3, height: 180/2 = 90 -->
+    <!-- Cell 1 -->
+    <g transform="translate(80, 70)">
+        <rect width="133" height="70" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+        <text x="66" y="30" fill="#94a3b8" font-size="12" text-anchor="middle">방 1번</text>
+        <path d="M 10 60 L 123 10" stroke="#3b82f6" stroke-width="2" fill="none" />
+    </g>
+
+    <!-- Cell 2 -->
+    <g transform="translate(233, 70)">
+        <rect width="133" height="70" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,2" />
+        <text x="66" y="40" fill="#cbd5e1" font-size="12" text-anchor="middle">방 2번 (비어있음)</text>
+    </g>
+
+    <!-- Cell 3 -->
+    <g transform="translate(386, 70)">
+        <rect width="133" height="70" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,2" />
+        <text x="66" y="40" fill="#cbd5e1" font-size="12" text-anchor="middle">방 3번 (비어있음)</text>
+    </g>
+
+    <!-- Cell 4 -->
+    <g transform="translate(80, 160)">
+        <rect width="133" height="70" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,2" />
+        <text x="66" y="40" fill="#cbd5e1" font-size="12" text-anchor="middle">방 4번 (비어있음)</text>
+    </g>
+
+    <!-- Cell 5 -->
+    <g transform="translate(233, 160)">
+        <rect width="133" height="70" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,2" />
+        <text x="66" y="40" fill="#cbd5e1" font-size="12" text-anchor="middle">방 5번 (비어있음)</text>
+    </g>
+
+    <!-- Cell 6 -->
+    <g transform="translate(386, 160)">
+        <rect width="133" height="70" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+        <text x="66" y="30" fill="#94a3b8" font-size="12" text-anchor="middle">방 6번</text>
+        <path d="M 10 10 L 123 60" stroke="#ef4444" stroke-width="2" fill="none" />
+    </g>
+
+    <!-- Note -->
+    <rect x="200" y="250" width="200" height="35" rx="5" fill="#f1f5f9" />
+    <text x="300" y="272" fill="#475569" font-size="12" font-weight="bold" text-anchor="middle">💡 1번칸과 6번칸에만 그래프가 그려진 모습</text>
+</svg>

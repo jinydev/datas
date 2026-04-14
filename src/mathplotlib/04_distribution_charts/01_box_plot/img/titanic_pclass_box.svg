@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#14b8a6" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">✨ 객실 등급(Pclass)에 따른 요금 분포 (Seaborn)</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="480" y2="0" />
+        <line x1="0" y1="50" x2="480" y2="50" />
+        <line x1="0" y1="100" x2="480" y2="100" />
+        <line x1="0" y1="150" x2="480" y2="150" />
+        <line x1="0" y1="200" x2="480" y2="200" />
+        <line x1="0" y1="250" x2="480" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 480 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">500</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">400</text>
+        <text x="-10" y="105" fill="#64748b" font-size="12" text-anchor="end">300</text>
+        <text x="-10" y="155" fill="#64748b" font-size="12" text-anchor="end">200</text>
+        <text x="-10" y="205" fill="#64748b" font-size="12" text-anchor="end">100</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- Map Y=500 -> 250 height. 1 val = 0.5px. Ypos = 250 - (val / 2) -->
+        
+        <!-- Pclass 1 (Set2 color palette: #fc8d62 approx) -->
+        <!-- Center x=100. Q1=30, Median=60(y=220), Q3=93. Whiskers: 0 to 160(y=170) -->
+        <g>
+            <path d="M 100 170 L 100 250" stroke="#1e293b" stroke-width="1.5" />
+            <path d="M 85 170 L 115 170" stroke="#1e293b" stroke-width="1.5" />
+            <rect x="70" y="203.5" width="60" height="31.5" fill="#fc8d62" stroke="#1e293b" stroke-width="1.5" />
+            <path d="M 70 220 L 130 220" stroke="#1e293b" stroke-width="2" />
+            
+            <circle cx="100" cy="140" r="3" fill="#1e293b" opacity="0.6" /> <!-- 220 -->
+            <circle cx="100" cy="120" r="3" fill="#1e293b" opacity="0.6" />
+            <circle cx="100" cy="115" r="3" fill="#1e293b" opacity="0.6" /> <!-- 270 -->
+            <circle cx="100" cy="0" r="3" fill="#1e293b" opacity="0.6" /> <!-- 500! -->
+            <circle cx="100" cy="-2" r="3" fill="#1e293b" opacity="0.6" />
+        </g>
+        
+        <!-- Pclass 2 (Set2: #8da0cb) -->
+        <!-- Center x=240. Q1=13(243.5), Median=14(243), Q3=26(237). Whiskers: 0 to 40(y=230) -->
+        <g>
+            <path d="M 240 230 L 240 250" stroke="#1e293b" stroke-width="1.5" />
+            <path d="M 225 230 L 255 230" stroke="#1e293b" stroke-width="1.5" />
+            <rect x="210" y="237" width="60" height="6.5" fill="#8da0cb" stroke="#1e293b" stroke-width="1.5" />
+            <path d="M 210 243 L 270 243" stroke="#1e293b" stroke-width="2" />
+            
+            <circle cx="240" cy="215" r="3" fill="#1e293b" opacity="0.6" /> <!-- 70 -->
+            <circle cx="240" cy="213" r="3" fill="#1e293b" opacity="0.6" /> <!-- 75 -->
+        </g>
+
+        <!-- Pclass 3 (Set2: #e78ac3) -->
+        <!-- Center x=380. Q1=7.7(246), Median=8.0(246), Q3=15.5(242). Whiskers: 0 to 25.5(237) -->
+        <g>
+            <path d="M 380 237 L 380 250" stroke="#1e293b" stroke-width="1.5" />
+            <path d="M 365 237 L 395 237" stroke="#1e293b" stroke-width="1.5" />
+            <rect x="350" y="242" width="60" height="4" fill="#e78ac3" stroke="#1e293b" stroke-width="1.5" />
+            <path d="M 350 246 L 410 246" stroke="#1e293b" stroke-width="2" />
+            
+            <circle cx="380" cy="221" r="3" fill="#1e293b" opacity="0.6" /> <!-- 58 -->
+            <circle cx="380" cy="216" r="3" fill="#1e293b" opacity="0.6" /> <!-- 68 -->
+        </g>
+
+        <text x="100" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">1</text>
+        <text x="240" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">2</text>
+        <text x="380" y="275" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">3</text>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">요금 (Fare)</text>
+        <text x="240" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">객실 등급 (pclass)</text>
+    </g>
+
+    <rect x="150" y="345" width="300" height="35" rx="5" fill="#f0fdfa" />
+    <text x="300" y="367" fill="#0f766e" font-size="12" font-weight="bold" text-anchor="middle">💡 1등급 객실 안에서도 요금 격차가 극심하게 큼을 증명!</text>
+</svg>

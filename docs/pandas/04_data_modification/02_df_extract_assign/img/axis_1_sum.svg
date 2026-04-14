@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">2단계: 왼쪽에서 오른쪽으로 찌그러트리기 (axis=1, 각 행의 합)</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="220" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <text x="110" y="30" font-family="monospace" font-size="18" fill="#81D4FA" font-weight="bold" text-anchor="middle">df.sum(axis=1)</text>
+  </g>
+
+  <!-- 원본 테이블 -->
+  <g transform="translate(100, 150)">
+    <!-- 컬럼명 -->
+    <rect x="0" y="0" width="160" height="25" fill="#E3F2FD" rx="3" />
+    <text x="30" y="17" font-family="sans-serif" font-size="11" fill="#0D47A1" text-anchor="middle">사고(건)</text>
+    <text x="80" y="17" font-family="sans-serif" font-size="11" fill="#0D47A1" text-anchor="middle">사망(명)</text>
+    <text x="130" y="17" font-family="sans-serif" font-size="11" fill="#0D47A1" text-anchor="middle">부상(명)</text>
+
+    <!-- 인덱스명 -->
+    <rect x="-60" y="30" width="55" height="75" fill="#FFF3E0" rx="3" />
+    <text x="-32" y="47" font-family="sans-serif" font-size="10" fill="#E65100" text-anchor="middle">1월</text>
+    <text x="-32" y="72" font-family="sans-serif" font-size="10" fill="#E65100" text-anchor="middle">2월</text>
+    <text x="-32" y="97" font-family="sans-serif" font-size="10" fill="#E65100" text-anchor="middle">3월</text>
+
+    <!-- 값 격자 -->
+    <text x="30" y="47" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">192</text>
+    <text x="80" y="47" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">5</text>
+    <text x="130" y="47" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">387</text>
+
+    <text x="30" y="72" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">174</text>
+    <text x="80" y="72" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">6</text>
+    <text x="130" y="72" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">328</text>
+
+    <text x="30" y="97" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">217</text>
+    <text x="80" y="97" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">7</text>
+    <text x="130" y="97" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">435</text>
+
+    <!-- 가로 압축기 시각효과 -->
+    <!-- 1월 -->
+    <rect x="-60" y="35" width="220" height="20" fill="#2196F3" opacity="0.1" />
+    <path d="M 170 45 L 210 45" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="8,4" />
+    <polygon points="205,40 215,45 205,50" fill="#2196F3" />
+    
+    <!-- 2월 -->
+    <rect x="-60" y="60" width="220" height="20" fill="#2196F3" opacity="0.1" />
+    <path d="M 170 70 L 210 70" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="8,4" />
+    <polygon points="205,65 215,70 205,75" fill="#2196F3" />
+    
+    <!-- 3월 -->
+    <rect x="-60" y="85" width="220" height="20" fill="#2196F3" opacity="0.1" />
+    <path d="M 170 95 L 210 95" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="8,4" />
+    <polygon points="205,90 215,95 205,100" fill="#2196F3" />
+  </g>
+
+  <!-- 압축 후 결과 화면 (우측) -->
+  <g transform="translate(420, 130)">
+    <rect x="0" y="-10" width="200" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <text x="100" y="-20" font-family="sans-serif" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">결과: Series 변환 (가로 통계)</text>
+    
+    <!-- 인덱스명 그대로 유지됨 -->
+    <rect x="10" y="25" width="60" height="85" fill="#FFF3E0" rx="3" />
+    <text x="40" y="45" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">1월</text>
+    <text x="40" y="70" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">2월</text>
+    <text x="40" y="95" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">3월</text>
+    
+    <!-- 우측 연산 결과 (합계) -->
+    <text x="120" y="45" font-family="monospace" font-size="20" fill="#333" font-weight="bold" text-anchor="middle">584</text>
+    <text x="120" y="70" font-family="monospace" font-size="20" fill="#333" font-weight="bold" text-anchor="middle">508</text>
+    <text x="120" y="95" font-family="monospace" font-size="20" fill="#333" font-weight="bold" text-anchor="middle">659</text>
+
+    <!-- 세부 공식 노출 (가로 계산식) -->
+    <text x="210" y="43" font-family="sans-serif" font-size="10" fill="#1565C0" text-anchor="start">(192+5+387)</text>
+    <text x="210" y="68" font-family="sans-serif" font-size="10" fill="#1565C0" text-anchor="start">(174+6+328)</text>
+    <text x="210" y="93" font-family="sans-serif" font-size="10" fill="#1565C0" text-anchor="start">(217+7+435)</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#E3F2FD" rx="10" stroke="#2196F3" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">가로로 압축하면 컬럼(과목)은 소멸하고, 각 행(월 단위) 데이터만 남습니다.</text>
+  </g>
+
+</svg>

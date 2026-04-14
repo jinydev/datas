@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">1단계: 한글 깨짐과 불필요한 메타데이터 행 제거</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(40, 60)">
+    <rect x="0" y="0" width="620" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="310" y="30" font-family="monospace" font-size="14" fill="#81C784" font-weight="bold" text-anchor="middle">pd.read_csv(..., <tspan fill="#FFEB3B">encoding='cp949'</tspan>, <tspan fill="#FF5252">skiprows=1</tspan>, <tspan fill="#4FC3F7">index_col=0</tspan>)</text>
+  </g>
+
+  <!-- 왼쪽: 옵션 누락으로 인한 처참한 실패 결과 -->
+  <g transform="translate(80, 150)">
+    <rect x="-30" y="-10" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#F44336" stroke-width="2"/>
+    <text x="60" y="-25" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="middle">그냥 열었을 때 (대참사)</text>
+
+    <rect x="0" y="10" width="120" height="20" fill="#FFEBEE" rx="3" />
+    <text x="60" y="24" font-family="monospace" font-size="12" fill="#B71C1C" text-anchor="middle">"2022년도 총괄표~"</text>
+
+    <!-- 원래 컬럼명이었어야 할 것이 데이터로 밀림 -->
+    <text x="60" y="55" font-family="monospace" font-size="14" fill="#607D8B" font-weight="bold" text-anchor="middle">¿À·ù!!!</text>
+    <text x="60" y="75" font-family="monospace" font-size="14" fill="#607D8B" font-weight="bold" text-anchor="middle">¡Æ§®...</text>
+    
+    <path d="M 20 95 L 100 35 M 20 35 L 100 95" stroke="#F44336" stroke-width="3" opacity="0.6"/>
+  </g>
+
+  <!-- 중앙: 옵션 필터 처방전 -->
+  <g transform="translate(300, 150)">
+    <!-- 화살표 -->
+    <path d="M -10 60 L 100 60" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="90,53 105,60 90,67" fill="#4CAF50" />
+    
+    <!-- 필터 아이콘/처방전 -->
+    <rect x="-5" y="10" width="100" height="25" fill="#E8F5E9" rx="5" stroke="#4CAF50" />
+    <text x="45" y="27" font-family="sans-serif" font-size="10" fill="#2E7D32" font-weight="bold" text-anchor="middle">skiprows=1</text>
+    <text x="45" y="0" font-family="sans-serif" font-size="10" fill="#D32F2F" font-weight="bold" text-anchor="middle">제목 줄 스킵!</text>
+
+    <rect x="-5" y="85" width="100" height="25" fill="#E3F2FD" rx="5" stroke="#2196F3" />
+    <text x="45" y="102" font-family="sans-serif" font-size="10" fill="#1565C0" font-weight="bold" text-anchor="middle">encoding='cp949'</text>
+    <text x="45" y="125" font-family="sans-serif" font-size="10" fill="#2196F3" font-weight="bold" text-anchor="middle">한글 해독 안경!</text>
+  </g>
+
+  <!-- 오른쪽: 옵션 적용 후 정상 결과 -->
+  <g transform="translate(480, 150)">
+    <rect x="-30" y="-10" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="60" y="-25" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">옵션 처방 후 (정상화)</text>
+
+    <!-- 인덱스 열 (index_col=0) -->
+    <rect x="-15" y="40" width="40" height="70" fill="#E8F5E9" rx="3" stroke="#4CAF50"/>
+    <text x="5" y="55" font-family="sans-serif" font-size="10" fill="#1B5E20" font-weight="bold" text-anchor="middle">서울</text>
+    <text x="5" y="80" font-family="sans-serif" font-size="10" fill="#1B5E20" font-weight="bold" text-anchor="middle">부산</text>
+    <text x="5" y="105" font-family="sans-serif" font-size="10" fill="#1B5E20" font-weight="bold" text-anchor="middle">대구</text>
+
+    <text x="-35" y="75" font-family="sans-serif" font-size="10" fill="#2E7D32" font-weight="bold" transform="rotate(-90 -35 75)" text-anchor="middle">index_col=0</text>
+
+    <!-- 정상 헤더 -->
+    <rect x="30" y="10" width="100" height="20" fill="#BBDEFB" rx="3" />
+    <text x="55" y="24" font-family="sans-serif" font-size="10" fill="#0D47A1" font-weight="bold" text-anchor="middle">분류</text>
+    <text x="105" y="24" font-family="sans-serif" font-size="10" fill="#0D47A1" font-weight="bold" text-anchor="middle">수치</text>
+
+    <!-- 값 -->
+    <text x="80" y="55" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">사고건수  230</text>
+    <text x="80" y="80" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">사망자    45</text>
+    <text x="80" y="105" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">부상자    189</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 320)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">cp949로 글자를 살려내고, skiprows로 제목을 치운 뒤, 지역명(0번째 열)으로 인덱스를 세웁니다.</text>
+  </g>
+
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.iloc[ ] : 좌표 번호(Position) 기반 차원 참조 기법</text>
+
+  <!-- 극장 의자 비유 -->
+  <g transform="translate(60, 90)">
+    <rect x="-10" y="-10" width="180" height="150" fill="#E3F2FD" rx="5" filter="url(#shadow)" stroke="#4FC3F7" stroke-width="2"/>
+    <text x="80" y="15" font-family="sans-serif" font-size="12" fill="#0D47A1" font-weight="bold" text-anchor="middle">"두 번째 줄, 세 번째 칸 주세요!"</text>
+    
+    <!-- 영화관 좌석표 묘사 -->
+    <rect x="10" y="40" width="30" height="30" fill="#BBDEFB" rx="5" />
+    <rect x="50" y="40" width="30" height="30" fill="#BBDEFB" rx="5" />
+    <rect x="90" y="40" width="30" height="30" fill="#BBDEFB" rx="5" />
+    <rect x="130" y="40" width="30" height="30" fill="#BBDEFB" rx="5" />
+    
+    <!-- 예매된 좌석 (row 1, col 2 -> 2nd row, 3rd col) -->
+    <rect x="10" y="80" width="30" height="30" fill="#BBDEFB" rx="5" />
+    <rect x="50" y="80" width="30" height="30" fill="#BBDEFB" rx="5" />
+    <rect x="90" y="80" width="30" height="30" fill="#1E88E5" rx="5" stroke="#FFCA28" stroke-width="2" />
+    <rect x="130" y="80" width="30" height="30" fill="#BBDEFB" rx="5" />
+    <text x="105" y="100" font-family="sans-serif" font-size="10" fill="#FFF" font-weight="bold" text-anchor="middle">예매</text>
+  </g>
+
+  <!-- 비교 및 매핑 (loc vs iloc) -->
+  <!-- .loc -->
+  <g transform="translate(320, 80)">
+    <rect x="0" y="0" width="120" height="50" fill="#263238" rx="5" stroke="#4CAF50" stroke-width="2" />
+    <text x="60" y="20" font-family="monospace" font-size="14" fill="#C3E88D" font-weight="bold" text-anchor="middle">.loc</text>
+    <text x="60" y="40" font-family="sans-serif" font-size="12" fill="#FFF" text-anchor="middle">사람 친화적 이름</text>
+  </g>
+
+  <!-- .iloc -->
+  <g transform="translate(320, 160)">
+    <rect x="0" y="0" width="120" height="50" fill="#263238" rx="5" stroke="#FF9800" stroke-width="2" />
+    <text x="60" y="20" font-family="monospace" font-size="14" fill="#FFCC80" font-weight="bold" text-anchor="middle">.iloc</text>
+    <text x="60" y="40" font-family="sans-serif" font-size="12" fill="#FFF" text-anchor="middle">물리적 배열 번호</text>
+  </g>
+
+  <text x="280" y="145" font-family="sans-serif" font-size="18" fill="#999" font-weight="bold" text-anchor="middle">VS</text>
+
+  <!-- 데이터프레임 내부 메모리 좌표 표현 -->
+  <g transform="translate(480, 80)">
+    <rect x="-30" y="0" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#B0BEC5" stroke-width="2"/>
+    <text x="75" y="-10" font-family="sans-serif" font-size="12" fill="#455A64" font-weight="bold" text-anchor="middle">메모리 좌표 테이블(NumPy)</text>
+    
+    <!-- 가상 컬럼 번호 ([0], [1], [2]) -->
+    <rect x="30" y="0" width="120" height="25" fill="#ECEFF1" rx="3" stroke="#CFD8DC" stroke-width="1"/>
+    <text x="50" y="17" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">[0]</text>
+    <text x="90" y="17" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">[1]</text>
+    <text x="130" y="17" font-family="monospace" font-size="12" fill="#FFA000" font-weight="bold" text-anchor="middle">[2]</text>
+
+    <!-- 가상 행 번호 -->
+    <rect x="-30" y="25" width="60" height="125" fill="#ECEFF1" rx="3" stroke="#CFD8DC" />
+    <text x="0" y="55" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">[0]</text>
+    <text x="0" y="90" font-family="monospace" font-size="12" fill="#FFA000" font-weight="bold" text-anchor="middle">[1]</text>
+    <text x="0" y="125" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">[2]</text>
+
+    <!-- 값 격자 무늬 -->
+    <rect x="30" y="25" width="40" height="40" fill="none" stroke="#ECEFF1" stroke-width="1" />
+    <rect x="70" y="25" width="40" height="40" fill="none" stroke="#ECEFF1" stroke-width="1" />
+    <rect x="110" y="25" width="40" height="40" fill="none" stroke="#ECEFF1" stroke-width="1" />
+
+    <rect x="30" y="65" width="40" height="40" fill="none" stroke="#ECEFF1" stroke-width="1" />
+    <rect x="70" y="65" width="40" height="40" fill="none" stroke="#ECEFF1" stroke-width="1" />
+    <!-- 1행 2열 타겟 셀 -->
+    <rect x="110" y="65" width="40" height="40" fill="#FFF8E1" stroke="#FFCA28" stroke-width="2" />
+
+    <!-- 값 넣기 -->
+    <text x="50" y="50" font-family="sans-serif" font-size="10" fill="#CFD8DC" text-anchor="middle">25</text>
+    <text x="90" y="50" font-family="sans-serif" font-size="10" fill="#CFD8DC" text-anchor="middle">35</text>
+    <text x="130" y="50" font-family="sans-serif" font-size="10" fill="#CFD8DC" text-anchor="middle">8</text>
+
+    <text x="50" y="90" font-family="sans-serif" font-size="10" fill="#CFD8DC" text-anchor="middle">18</text>
+    <text x="90" y="90" font-family="sans-serif" font-size="10" fill="#CFD8DC" text-anchor="middle">27</text>
+    <text x="130" y="90" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">10</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-270" y="-15" width="540" height="35" fill="#E3F2FD" rx="10" stroke="#4FC3F7" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#0277BD" font-weight="bold" text-anchor="middle">내부 이름표(Label) 인덱스를 무시하고 컴퓨터 메인 메모리 구조와 똑같이 동작합니다.</text>
+  </g>
+
+</svg>

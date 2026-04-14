@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.info() 와 .describe() : DataFrame 건강검진</text>
+
+  <!-- DataFrame 비유: 환자(X-ray) -->
+  <g transform="translate(100, 150)">
+    <!-- 환자/데이터프레임 바디 -->
+    <rect x="-60" y="-80" width="120" height="160" fill="#E3F2FD" rx="10" filter="url(#shadow)" stroke="#2196F3" stroke-width="3"/>
+    <!-- 데이터 셀 표현 -->
+    <rect x="-40" y="-50" width="80" height="10" fill="#BBDEFB" />
+    <rect x="-40" y="-30" width="80" height="10" fill="#BBDEFB" />
+    <rect x="-40" y="-10" width="80" height="10" fill="#BBDEFB" />
+    <rect x="-40" y="10" width="80" height="10" fill="#BBDEFB" />
+    <rect x="-40" y="30" width="80" height="10" fill="#BBDEFB" />
+    <text x="0" y="-95" font-family="sans-serif" font-size="14" fill="#0D47A1" font-weight="bold" text-anchor="middle">데이터프레임 (환자)</text>
+  </g>
+
+  <!-- 진단 기구 도구들 -->
+  <!-- .info() -->
+  <g transform="translate(350, 90)">
+    <!-- 돋보기 모양/Xray 스캐너 -->
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="110" y="20" font-family="monospace" font-size="14" fill="#81C784" font-weight="bold" text-anchor="middle">df.info()</text>
+    <text x="110" y="45" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">"골격 구조 및 결측치 스캔 (X-ray)"</text>
+  </g>
+
+  <!-- 화살표 (환자 -> info) -->
+  <path d="M 170 120 Q 250 120 340 120" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="335,113 350,120 335,127" fill="#4CAF50" />
+
+  <!-- .describe() -->
+  <g transform="translate(350, 190)">
+    <!-- 청진기/심전도 -->
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#FF9800" stroke-width="2"/>
+    <text x="110" y="20" font-family="monospace" font-size="14" fill="#FFCC80" font-weight="bold" text-anchor="middle">df.describe()</text>
+    <text x="110" y="45" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">"맥박, 혈압 등 기초 통계량 (수치)"</text>
+  </g>
+
+  <!-- 화살표 (환자 -> describe) -->
+  <path d="M 170 180 Q 250 180 340 220" fill="none" stroke="#FF9800" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="331,215 348,223 337,225" fill="#FF9800" transform="rotate(-5 348 223)" />
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#E8F5E9" rx="10" stroke="#4CAF50" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">데이터프레임을 불러오면 분석 전에 무조건 거쳐가야 하는 2대 필수 관문입니다.</text>
+  </g>
+
+</svg>

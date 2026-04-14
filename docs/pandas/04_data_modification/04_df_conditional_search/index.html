@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.4 데이터프레임 조건 검색</title>
-  <meta name="title" content="6.4.4 데이터프레임 조건 검색" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.4 데이터프레임 조건 검색"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.4 데이터프레임 고급 조건 검색 (isin, contains)</title>
+  <meta name="title" content="6.4.4 데이터프레임 고급 조건 검색 (isin, contains)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.4 데이터프레임 고급 조건 검색 (isin, contains)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/04_df_conditional_search/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.4 데이터프레임 조건 검색"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.4 데이터프레임 고급 조건 검색 (isin, contains)"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.4.4 데이터프레임 조건 검색" />
+<meta property="og:title" content="6.4.4 데이터프레임 고급 조건 검색 (isin, contains)" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.4.4 데이터프레임 조건 검색" />
+<meta property="twitter:title" content="6.4.4 데이터프레임 고급 조건 검색 (isin, contains)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.4 데이터프레임 조건 검색","url":"https://datas.jiny.dev/pandas/04_data_modification/04_df_conditional_search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.4 데이터프레임 고급 조건 검색 (isin, contains)","url":"https://datas.jiny.dev/pandas/04_data_modification/04_df_conditional_search/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,72 +709,145 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.4.4 데이터프레임 조건 검색</li>
+        <li class="breadcrumb-item active" aria-current="page">6.4.4 데이터프레임 고급 조건 검색 (isin, contains)</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="644-데이터프레임-조건-검색">6.4.4 데이터프레임 조건 검색</h1>
+            <h2 id="644-고급-논리-검색-기법-isin-strcontains">6.4.4 고급 논리 검색 기법 (<code class="language-plaintext highlighter-rouge">isin</code>, <code class="language-plaintext highlighter-rouge">str.contains</code>)</h2>
 
-<h3 id="-논리-인덱싱boolean-indexing">① 논리 인덱싱(boolean indexing)</h3>
-<p>데이터프레임 원소의 비교 논리 값은 다음으로 반환받을 수 있다. 다음으로 원소 값이 10 초과인 자료가 있는 부분은 <code class="language-plaintext highlighter-rouge">True</code>가 표시된다.</p>
+<p><strong>[전산학적/수학적 의미: 집합 귀속 여부($\in$)와 패턴 매칭(Pattern Matching)]</strong>
+단순한 부등호 비교(<code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>)를 넘어, 특정 속성의 값이 미리 정의된 데이터 집합(Set)의 원소로 포함되는지 검사하거나, 문자열(String) 데이터 스트림 내부에 특정 하위 패턴(Sub-pattern) 형태가 존재하는지 정규표현식(Regex) 기반으로 검사하여 불리언 마스크(Boolean Mask)를 생성하는 고급 추출 기법입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span> <span class="o">&gt;</span> <span class="mi">10</span>
+<p><strong>[비유로 이해하기: VIP 게스트 명단과 키워드 스캐너]</strong></p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">.isin([명단])</code> (VIP 명단 체크):</strong> 클럽 문지기가 들어오는 사람 이름이 A, B, C 세 명으로 적힌 ‘VIP 리스트’에 있는지 없는지 단번에 대조하여 입장시킵니다. (여러 개의 <code class="language-plaintext highlighter-rouge">==</code> 와 <code class="language-plaintext highlighter-rouge">|</code> 연산을 한 번에 묶은 효과입니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">.str.contains('단어')</code> (키워드 스캐닝):</strong> 수백 페이지짜리 문서 더미에서 “사고”라는 단어가 스치기만 해도 그 문서를 전부 뽑아옵니다.</li>
+</ul>
+
+<p><img src="img/df_conditional.svg" alt="고급 조건부 검색 다이어그램" /></p>
+
+<hr />
+
+<h3 id="준비물-서울시-교통사고-원본-데이터">[준비물] 서울시 교통사고 원본 데이터</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">data/2016-01-2016-12_Seoul_Accident.csv</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">euc-kr</span><span class="sh">'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="nf">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 📚 원본 표(앞 5줄) ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)
+연월
+2016년1월      192      5    387
+2016년2월      174      6    328
+2016년3월      217      7    435
+2016년4월      216      7    419
+2016년5월      239     13    522
 </code></pre></div></div>
 
-<p>위의 블리안 인덱싱 결과를 <code class="language-plaintext highlighter-rouge">df2[조건]</code> 내부에 기술하면 <code class="language-plaintext highlighter-rouge">True</code>인 원소만 표시되고 <code class="language-plaintext highlighter-rouge">False</code>인 원소는 <code class="language-plaintext highlighter-rouge">NaN</code>이 표시된다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span><span class="p">[</span><span class="n">df2</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span>
+<h3 id="1단계-복습-단일-논리-연산과-필터링">[1단계] 복습: 단일 논리 연산과 필터링</h3>
+
+<p>앞차시에서 배운 기초 불리언 인덱싱(Boolean Indexing)입니다. 부등호를 사용하면 <code class="language-plaintext highlighter-rouge">True/False</code> 답안지(Mask)가 만들어지고, 이를 대괄호 <code class="language-plaintext highlighter-rouge">[]</code> 안에 넣으면 필터링이 되었습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 부상자가 400명 이상인가? (True/False 시리즈 반환)
+</span><span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">부상(명)</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">400</span>
+
+<span class="c1"># 2. 이 마스크를 던져주어 True인 행만 필터링!
+</span><span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [1단계] 부상자 400명 이상 검색 결과 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)
+연월
+2016년3월      217      7    435
+2016년4월      216      7    419
+2016년5월      239     13    522
 </code></pre></div></div>
 
-<p>데이터프레임 <code class="language-plaintext highlighter-rouge">df2</code>는 총 13개의 행이 있다. <code class="language-plaintext highlighter-rouge">df2[[True, False, ...., False]]</code> 처럼 내부에 논리 값의 목록이나 시리즈를 넣으면 해당 행만 표시된다. 다음처럼 인위적으로 <code class="language-plaintext highlighter-rouge">True</code>와 <code class="language-plaintext highlighter-rouge">False</code>를 13개 만들어 실행해 보자. <code class="language-plaintext highlighter-rouge">True</code>인 처음 6개의 행만 표시된다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span><span class="p">[</span> <span class="p">[</span><span class="bp">True</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span> <span class="o">+</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span><span class="o">*</span><span class="mi">7</span> <span class="p">]</span>
+<h3 id="2단계-isin리스트-이-명단에-있는-사람-다-나와">[2단계] <code class="language-plaintext highlighter-rouge">.isin(리스트)</code>: “이 명단에 있는 사람 다 나와!”</h3>
+
+<p>“사망자가 정확히 5명이거나, 7명이거나, 13명인 달을 뽑아라” 라고 할 때, <code class="language-plaintext highlighter-rouge">(df['사망'] == 5) | (df['사망'] == 7) | ...</code> 처럼 쓰면 코드가 너무 끔찍해집니다. 이때 찾을 값들을 파이썬 리스트로 묶어 <code class="language-plaintext highlighter-rouge">.isin()</code> 한 방에 던져줍니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 사망자가 정확히 [5, 7, 13] 명 중 하나에 해당하는 행 검색
+</span><span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="n">df_vip</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span> <span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [2단계] isin()으로 정확한 타겟값들 한 번에 검색 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_vip</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)
+연월
+2016년1월      192      5    387
+2016년3월      217      7    435
+2016년4월      216      7    419
+2016년5월      239     13    522
 </code></pre></div></div>
 
-<p>데이터프레임 <code class="language-plaintext highlighter-rouge">df2</code>에서 ‘재해자수’ 열의 비교 논리 값은 다음으로 반환받을 수 있다. 반환 값 시리즈에서 원소는 13개의 논리 값이다.</p>
+<p><img src="./img/isin_search.svg" alt=".isin을 이용한 VIP 명단 추출 논리" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span><span class="p">[</span><span class="sh">'</span><span class="s">재해자수</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">400</span>
+<blockquote>
+  <p>검색 목록에 없었던 2월(사망 6명) 데이터만 정확하게 쏙 빠진 것을 볼 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="3단계-혼합-다중-검색-and-or">[3단계] 혼합 다중 검색 (AND, OR)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.isin()</code> 검색도 다른 조건과 <code class="language-plaintext highlighter-rouge">&amp;</code> (AND) 또는 <code class="language-plaintext highlighter-rouge">|</code> (OR) 연산자로 결합할 수 있습니다. 괄호 <code class="language-plaintext highlighter-rouge">()</code> 치는 것을 절대 잊지 마세요!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 사망자가 7명이거나(또는) 부상자가 500명을 초과하는 달 검색
+# (2016년5월은 사망이 13명으로 7명은 아니지만 부상이 500초과이므로 OR 조건 통과!)
+</span><span class="n">complex_search</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">([</span><span class="mi">7</span><span class="p">]))</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">부상(명)</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">)</span> <span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [3단계] 혼합 OR 다중 검색 결과 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">complex_search</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)
+연월
+2016년3월      217      7    435
+2016년4월      216      7    419
+2016년5월      239     13    522
 </code></pre></div></div>
 
-<p>다음 코드로 ‘재해자수’가 400명을 초과한 모든 행을 표시한다.</p>
+<p><img src="./img/complex_search.svg" alt="OR/AND 를 통한 복합 논리 검색식 평가 흐름" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="sh">'</span><span class="s">재해자수</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">400</span><span class="p">]</span>
+<hr />
+
+<h3 id="4단계-strcontains문자-문자열-속에-숨은-글자-찾기">[4단계] <code class="language-plaintext highlighter-rouge">.str.contains('문자')</code>: 문자열 속에 숨은 글자 찾기</h3>
+
+<p>숫자가 아닌 글자 데이터를 다룰 때 가장 많이 쓰는 함수입니다. 지금 데이터프레임의 인덱스 이름들은 <code class="language-plaintext highlighter-rouge">'2016년1월'</code> 같은 문자열(String) 객체입니다. “어디든 좋으니까 ‘3’ 이라는 한 글자라도 들어있으면 찾아와!” 가 가능해집니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 인덱스(df.index)가 문자열(.str) 구조일 때, 문자열 내부에 '3'을 포함(.contains)하는가?
+</span><span class="n">contains_3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="sh">'</span><span class="s">3</span><span class="sh">'</span><span class="p">)</span> <span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [4단계] </span><span class="sh">'</span><span class="s">3</span><span class="sh">'</span><span class="s">이 포함된 문자열(계절) 찾기 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">contains_3</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         사고(건)  사망(명)  부상(명)
+연월
+2016년3월      217      7    435
 </code></pre></div></div>
 
-<h3 id="-isin-함수">② isin() 함수</h3>
-<p>다음 <code class="language-plaintext highlighter-rouge">df['사망(명)'] == 7</code>로는 열 이름 ‘사망(명)’이 7인 논리 값의 시리즈가 반환된다.</p>
+<p><img src="./img/str_contains.svg" alt="str.contains를 활용한 문자열 부분 스캐닝" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">7</span>
-</code></pre></div></div>
-
-<p>함수 <code class="language-plaintext highlighter-rouge">Series.isin([value0, value1, value2, ...])</code>은 시리즈의 각 요소가 전달된 값 시퀀스의 요소와 정확히 일치하는지 여부를 보여주는 논리 값 시리즈를 반환한다. 다음 <code class="language-plaintext highlighter-rouge">df['사망(명)'].isin([7])</code>로는 열 이름 ‘사망(명)’이 7인 논리 값의 시리즈가 반환된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">([</span><span class="mi">7</span><span class="p">])</span>
-</code></pre></div></div>
-
-<p>다음으로 열 이름 ‘사망(명)’이 7과 10인 논리 값의 시리즈가 반환된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-</code></pre></div></div>
-
-<p>위 논리 결과를 첨자로 사용하면, ‘사망(명)’이 7명 또는 10명인 모든 행을 표시할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="p">]</span>
-</code></pre></div></div>
-
-<p>다음처럼 여러 조건의 조합을 처리할 수 있다. 다음은 사망(명)은 7 또는 10이거나 부상(명)은 350을 초과하는 행을 모두 출력한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">사망(명)</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">부상(명)</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">350</span><span class="p">)</span> <span class="p">]</span>
-</code></pre></div></div>
-
-<h3 id="-strcontains-함수">③ str.contains() 함수</h3>
-<p>다음처럼 행 명이나 열 명의 값이 문자열이라면 문자열에 포함된 내용은 함수 <code class="language-plaintext highlighter-rouge">str.contains(부분문자열)</code>로 검색이 가능하다. 다음으로 행 레이블에 ‘3’이 포함된 행을 출력한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="sh">'</span><span class="s">3</span><span class="sh">'</span><span class="p">)</span> <span class="p">]</span>
-</code></pre></div></div>
+<blockquote>
+  <p><strong>현업용 지식:</strong> <code class="language-plaintext highlighter-rouge">str.contains</code> 안에는 강력한 <strong>정규표현식(Regular Expression)</strong> 패턴도 곧바로 들어갈 수 있습니다. 전화번호 형식이나 이메일 형식만 찾아내는 등 데이터 전처리(Pre-processing) 과정의 핵심 마법이 됩니다.</p>
+</blockquote>
 
 
             <!-- 구글 애드센스 출력 -->

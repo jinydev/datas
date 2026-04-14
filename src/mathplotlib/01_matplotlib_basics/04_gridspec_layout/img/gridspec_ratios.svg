@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#14b8a6" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">⚖️ 임의 비율(width_ratios, height_ratios)의 폭파괴</text>
+
+    <g transform="translate(100, 70)">
+        <!-- Frame width=400, height=200 -->
+        <!-- Width: 4 + 6 + 3 = 13 parts (approx 30.7px per part). w1=123, w2=184, w3=92 -->
+        <!-- Height: 1 + 3 + 2 = 6 parts (approx 33.3px per part). h1=33, h2=100, h3=66 -->
+
+        <!-- Row 0 (h=33) -->
+        <rect x="0" y="0" width="123" height="33" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5" />
+        <rect x="123" y="0" width="184" height="33" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5" />
+        <rect x="307" y="0" width="92" height="33" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5" />
+
+        <!-- Row 1 (h=100) -->
+        <rect x="0" y="33" width="123" height="100" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5" />
+        <rect x="123" y="33" width="184" height="100" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5" />
+        <rect x="307" y="33" width="92" height="100" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5" />
+
+        <!-- Row 2 (h=66) -->
+        <rect x="0" y="133" width="123" height="66" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5" />
+        <rect x="123" y="133" width="184" height="66" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5" />
+        <rect x="307" y="133" width="92" height="66" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5" />
+
+        <!-- Labels for Ratios -->
+        <text x="61" y="-10" fill="#0f766e" font-size="14" font-weight="bold" text-anchor="middle">w: 4</text>
+        <text x="215" y="-10" fill="#0f766e" font-size="14" font-weight="bold" text-anchor="middle">w: 6</text>
+        <text x="353" y="-10" fill="#0f766e" font-size="14" font-weight="bold" text-anchor="middle">w: 3</text>
+
+        <text x="-15" y="21" fill="#0f766e" font-size="14" font-weight="bold" text-anchor="end">h: 1</text>
+        <text x="-15" y="88" fill="#0f766e" font-size="14" font-weight="bold" text-anchor="end">h: 3</text>
+        <text x="-15" y="171" fill="#0f766e" font-size="14" font-weight="bold" text-anchor="end">h: 2</text>
+    </g>
+
+    <rect x="150" y="300" width="300" height="35" rx="5" fill="#f0fdfa" />
+    <text x="300" y="322" fill="#0d9488" font-size="12" font-weight="bold" text-anchor="middle">💡 병합 없이도 처음부터 면적을 다르게 분할해 시작할 수 있음</text>
+</svg>

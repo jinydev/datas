@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.loc 와 .columns 의 콤보: 번호(Position)로 열 간접 참조</text>
+
+  <!-- 1. 선생님 (loc 명령어) -->
+  <g transform="translate(40, 100)">
+    <rect x="0" y="0" width="180" height="80" fill="#263238" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="2"/>
+    <text x="90" y="30" font-family="monospace" font-size="20" fill="#82AAFF" font-weight="bold" text-anchor="middle">.loc [:, 열이름]</text>
+    
+    <text x="90" y="60" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">"문자열 이름표만 받는다!"</text>
+  </g>
+
+  <!-- 번호를 이름표로 바꿔주는 장치 (pf.columns 배열) -->
+  <g transform="translate(250, 90)">
+    <!-- 조교의 책상 느낌 -->
+    <rect x="0" y="0" width="180" height="110" fill="#E0F7FA" rx="5" filter="url(#shadow)" stroke="#00ACC1" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="30" fill="#B2EBF2" rx="3" />
+    <text x="90" y="20" font-family="monospace" font-size="14" fill="#006064" font-weight="bold" text-anchor="middle">pf.columns 배열</text>
+
+    <!-- 번호(i) -> 이름(Value) 변환표 (가로 형태가 어울리지만, 보기 편하게 세로로) -->
+    <text x="40" y="55" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">idx 0</text>
+    <path d="M 65 50 L 95 50" fill="none" stroke="#00ACC1" stroke-width="2" />
+    <polygon points="90,47 95,50 90,53" fill="#00ACC1" />
+    <text x="130" y="55" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">'중간'</text>
+
+    <text x="40" y="80" font-family="monospace" font-size="12" fill="#607D8B" font-weight="bold" text-anchor="middle">idx 1</text>
+    <path d="M 65 75 L 95 75" fill="none" stroke="#00ACC1" stroke-width="2" />
+    <polygon points="90,72 95,75 90,78" fill="#00ACC1" />
+    <text x="130" y="80" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">'기말'</text>
+  </g>
+
+  <!-- 데이터 전달 흐름 화살표 -->
+  <!-- 1) 외부에서 번호 요청 -->
+  <text x="340" y="250" font-family="sans-serif" font-size="14" fill="#E91E63" font-weight="bold" text-anchor="middle">"1번 열 이름 찾아줘!" (pf.columns[1])</text>
+  <path d="M 340 230 L 340 200" fill="none" stroke="#E91E63" stroke-width="4" stroke-dasharray="3,3" />
+  <polygon points="335,205 340,195 345,205" fill="#E91E63" />
+
+  <!-- 2) 이름표를 loc 에 전달 -->
+  <path d="M 250 140 Q 220 140 220 130 L 220 130" fill="none" stroke="#00BCD4" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="225,135 220,125 215,135" fill="#00BCD4" />
+  <text x="210" y="115" font-family="sans-serif" font-size="12" fill="#00838F" font-weight="bold" text-anchor="middle">'기말' 리턴</text>
+
+  <!-- 결과 표 (최종) -->
+  <g transform="translate(460, 90)">
+    <rect x="-10" y="0" width="180" height="90" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="2"/>
+    <text x="80" y="-10" font-family="monospace" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">결과 추출 화면</text>
+    
+    <rect x="30" y="0" width="80" height="30" fill="#E0F7FA" rx="3" stroke="#80DEEA" stroke-width="1"/>
+    <text x="70" y="20" font-family="sans-serif" font-size="12" fill="#006064" font-weight="bold" text-anchor="middle">기말</text>
+
+    <rect x="-10" y="30" width="40" height="60" fill="#FFF3E0" rx="3" stroke="#FFCA28" />
+    <text x="10" y="50" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">윤일형</text>
+    <text x="10" y="75" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+
+    <!-- 값 -->
+    <text x="70" y="50" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">35</text>
+    <text x="70" y="75" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">27</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#E0F7FA" rx="10" stroke="#80DEEA" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#006064" font-weight="bold" text-anchor="middle">번호(Position)로 컬럼명 명단 구조체에서 우회하여 해당 열 이름표를 꺼내옵니다.</text>
+  </g>
+
+</svg>

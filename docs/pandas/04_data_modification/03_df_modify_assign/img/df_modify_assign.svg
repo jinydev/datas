@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">새로운 빈 공간을 열어 데이터 집어넣기 (Assignment)</text>
+
+  <!-- 원본 테이블 -->
+  <g transform="translate(100, 100)">
+    <rect x="-30" y="-10" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#455A64" stroke-width="2"/>
+    <text x="60" y="-20" font-family="sans-serif" font-size="14" fill="#546E7A" font-weight="bold" text-anchor="middle">원본 DataFrame</text>
+    
+    <rect x="50" y="20" width="80" height="25" fill="#E3F2FD" rx="3" />
+    <text x="90" y="37" font-family="sans-serif" font-size="12" fill="#0D47A1" text-anchor="middle">기존 열(들)</text>
+
+    <!-- 값 예시 -->
+    <rect x="50" y="55" width="80" height="15" fill="#BBDEFB" rx="3" />
+    <rect x="50" y="80" width="80" height="15" fill="#BBDEFB" rx="3" />
+    <rect x="50" y="105" width="80" height="15" fill="#BBDEFB" rx="3" />
+  </g>
+
+  <!-- 파생 연산 공간 -->
+  <g transform="translate(300, 160)">
+    <path d="M -10 10 L 40 10" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="8,4" />
+    <polygon points="35,3 45,10 35,17" fill="#2196F3" />
+    
+    <!-- 파생 데이터 (Casualties 등) -->
+    <rect x="55" y="-30" width="40" height="80" fill="#FFF8E1" rx="5" filter="url(#shadow)" stroke="#FFB300" stroke-width="2" />
+    <rect x="60" y="-5" width="30" height="15" fill="#FFE0B2" rx="3" />
+    <rect x="60" y="20" width="30" height="15" fill="#FFE0B2" rx="3" />
+    <text x="75" y="65" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">연산 결과</text>
+  </g>
+
+  <!-- 할당 및 합체 과정 -->
+  <g transform="translate(420, 100)">
+    <path d="M 0 70 L 40 70" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="35,63 45,70 35,77" fill="#4CAF50" />
+    <text x="20" y="55" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">할당(=)</text>
+
+    <!-- 확장된 최종 테이블 -->
+    <rect x="60" y="-10" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    
+    <!-- 기존 열 영역 -->
+    <rect x="70" y="20" width="80" height="25" fill="#E3F2FD" rx="3" />
+    <rect x="70" y="55" width="80" height="15" fill="#BBDEFB" rx="3" />
+    <rect x="70" y="80" width="80" height="15" fill="#BBDEFB" rx="3" />
+    <rect x="70" y="105" width="80" height="15" fill="#BBDEFB" rx="3" />
+
+    <!-- 추가된 새 열 위치 -->
+    <rect x="160" y="20" width="70" height="25" fill="#FFF9C4" rx="3" stroke="#FBC02D" stroke-width="2" />
+    <text x="195" y="36" font-family="sans-serif" font-size="11" fill="#F57F17" font-weight="bold" text-anchor="middle">새 이름표</text>
+    
+    <!-- 새 열의 데이터들 -->
+    <rect x="160" y="55" width="70" height="15" fill="#FFE0B2" rx="3" />
+    <rect x="160" y="80" width="70" height="15" fill="#FFE0B2" rx="3" />
+    <rect x="160" y="105" width="70" height="15" fill="#FFE0B2" rx="3" />
+  </g>
+
+  <!-- 우측 맨 위 파이썬 명령 표기 -->
+  <g transform="translate(140, 50)">
+    <text x="250" y="10" font-family="monospace" font-size="20" fill="#4CAF50" font-weight="bold" text-anchor="middle">df['새_이름'] = 연산결과</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#E8F5E9" rx="10" stroke="#4CAF50" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">기존 표가 없다면 새로 기둥(열/행)을 세우고 그 자리에 데이터를 집어넣습니다.</text>
+  </g>
+
+</svg>

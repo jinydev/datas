@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">특정 요일 및 월말/월초 (W-TUE, M, MS) 필터링</text>
+
+  <!-- 달력 1: 매주 화요일 (W-TUE) -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="180" height="200" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="40" fill="#81C784" rx="5" />
+    <text x="90" y="25" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">freq='W-TUE' (화요일)</text>
+
+    <!-- 요일 헤더 -->
+    <text x="30" y="65" font-family="sans-serif" font-size="12" fill="#9E9E9E" text-anchor="middle">일</text>
+    <text x="60" y="65" font-family="sans-serif" font-size="12" fill="#9E9E9E" text-anchor="middle">월</text>
+    <text x="90" y="65" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">화</text>
+    <text x="120" y="65" font-family="sans-serif" font-size="12" fill="#9E9E9E" text-anchor="middle">수</text>
+    <text x="150" y="65" font-family="sans-serif" font-size="12" fill="#9E9E9E" text-anchor="middle">목</text>
+
+    <!-- 화요일 칸에만 동그라미 -->
+    <path d="M 75 75 L 105 75 L 105 200 L 75 200 Z" fill="#E8F5E9" />
+    <circle cx="90" cy="90" r="10" fill="#4CAF50" />
+    <text x="90" y="94" font-family="sans-serif" font-size="10" fill="#FFF" font-weight="bold" text-anchor="middle">7</text>
+    
+    <circle cx="90" cy="120" r="10" fill="#4CAF50" />
+    <text x="90" y="124" font-family="sans-serif" font-size="10" fill="#FFF" font-weight="bold" text-anchor="middle">14</text>
+    
+    <circle cx="90" cy="150" r="10" fill="#4CAF50" />
+    <text x="90" y="154" font-family="sans-serif" font-size="10" fill="#FFF" font-weight="bold" text-anchor="middle">21</text>
+    
+    <circle cx="90" cy="180" r="10" fill="#4CAF50" />
+    <text x="90" y="184" font-family="sans-serif" font-size="10" fill="#FFF" font-weight="bold" text-anchor="middle">28</text>
+  </g>
+
+  <!-- 달력 2: 월 단위 비교 (M vs MS) -->
+  <g transform="translate(250, 80)">
+    <!-- 1월 -->
+    <rect x="0" y="0" width="400" height="60" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <rect x="0" y="0" width="60" height="60" fill="#BBDEFB" rx="5" />
+    <text x="30" y="35" font-family="sans-serif" font-size="16" fill="#0D47A1" font-weight="bold" text-anchor="middle">1월</text>
+    
+    <!-- MS (1일) -->
+    <circle cx="90" cy="30" r="12" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" />
+    <text x="90" y="35" font-family="sans-serif" font-size="12" fill="#2196F3" font-weight="bold" text-anchor="middle">1</text>
+    <text x="90" y="55" font-family="monospace" font-size="10" fill="#1565C0" font-weight="bold" text-anchor="middle">MS</text>
+    
+    <path d="M 110 30 L 330 30" stroke="#E0E0E0" stroke-width="2" stroke-dasharray="2,2"/>
+    
+    <!-- M (31일) -->
+    <circle cx="350" cy="30" r="12" fill="#FFF3E0" stroke="#FF9800" stroke-width="2" />
+    <text x="350" y="35" font-family="sans-serif" font-size="12" fill="#FF9800" font-weight="bold" text-anchor="middle">31</text>
+    <text x="350" y="55" font-family="monospace" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">M</text>
+
+    <!-- 2월 -->
+    <g transform="translate(0, 70)">
+      <rect x="0" y="0" width="400" height="60" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+      <rect x="0" y="0" width="60" height="60" fill="#BBDEFB" rx="5" />
+      <text x="30" y="35" font-family="sans-serif" font-size="16" fill="#0D47A1" font-weight="bold" text-anchor="middle">2월</text>
+      
+      <!-- MS (1일) -->
+      <circle cx="90" cy="30" r="12" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" />
+      <text x="90" y="35" font-family="sans-serif" font-size="12" fill="#2196F3" font-weight="bold" text-anchor="middle">1</text>
+      
+      <path d="M 110 30 L 330 30" stroke="#E0E0E0" stroke-width="2" stroke-dasharray="2,2"/>
+      
+      <!-- M (28일) -->
+      <circle cx="350" cy="30" r="12" fill="#FFF3E0" stroke="#FF9800" stroke-width="2" />
+      <text x="350" y="35" font-family="sans-serif" font-size="12" fill="#FF9800" font-weight="bold" text-anchor="middle">28</text>
+    </g>
+
+    <!-- 3월 -->
+    <g transform="translate(0, 140)">
+      <rect x="0" y="0" width="400" height="60" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+      <rect x="0" y="0" width="60" height="60" fill="#BBDEFB" rx="5" />
+      <text x="30" y="35" font-family="sans-serif" font-size="16" fill="#0D47A1" font-weight="bold" text-anchor="middle">3월</text>
+      
+      <!-- MS (1일) -->
+      <circle cx="90" cy="30" r="12" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" />
+      <text x="90" y="35" font-family="sans-serif" font-size="12" fill="#2196F3" font-weight="bold" text-anchor="middle">1</text>
+      
+      <path d="M 110 30 L 330 30" stroke="#E0E0E0" stroke-width="2" stroke-dasharray="2,2"/>
+      
+      <!-- M (31일) -->
+      <circle cx="350" cy="30" r="12" fill="#FFF3E0" stroke="#FF9800" stroke-width="2" />
+      <text x="350" y="35" font-family="sans-serif" font-size="12" fill="#FF9800" font-weight="bold" text-anchor="middle">31</text>
+    </g>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 315)">
+    <rect x="-300" y="-15" width="600" height="30" fill="#E1F5FE" rx="10" stroke="#03A9F4" stroke-width="2" />
+    <text x="0" y="5" font-family="sans-serif" font-size="14" fill="#0277BD" font-weight="bold" text-anchor="middle">영업일 기준, 결산일 기준 등 실무 날짜 데이터를 생성할 때 가장 유용한 옵션들!</text>
+  </g>
+
+</svg>

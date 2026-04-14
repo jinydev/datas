@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="400" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Seaborn의 진가: hue (색상) 마법으로 3차원 정보 파악하기</text>
+
+  <!-- 왼쪽: Matplotlib의 한계 (모두 같은 색) -->
+  <g transform="translate(40, 70)">
+    <rect x="0" y="0" width="280" height="260" fill="#FFFFFF" rx="10" filter="url(#shadow)" stroke="#B0BEC5" stroke-width="2"/>
+    <text x="140" y="25" font-family="monospace" font-size="14" fill="#607D8B" font-weight="bold" text-anchor="middle">plt.scatter(x, y)</text>
+    
+    <!-- Axes -->
+    <path d="M 40 50 L 40 220 L 250 220" fill="none" stroke="#90A4AE" stroke-width="2" />
+    <text x="140" y="245" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle">X축 (식사 금액)</text>
+    <text x="15" y="135" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle" transform="rotate(-90 15 135)">Y축 (팁)</text>
+
+    <!-- Data Points (모두 회색/파란색 단색) -->
+    <circle cx="80" cy="180" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="100" cy="160" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="110" cy="190" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="140" cy="130" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="150" cy="150" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="160" cy="110" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="190" cy="100" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="210" cy="80" r="5" fill="#2196F3" opacity="0.7" />
+    <circle cx="230" cy="90" r="5" fill="#2196F3" opacity="0.7" />
+
+    <text x="140" y="210" font-family="sans-serif" font-size="11" fill="#757575" text-anchor="middle">남성/여성 구분 불가 (2차원)</text>
+  </g>
+
+  <!-- 마법 지팡이 화살표 -->
+  <text x="350" y="195" font-family="sans-serif" font-size="30" fill="#9C27B0" text-anchor="middle">✨</text>
+  <path d="M 325 210 L 375 210" fill="none" stroke="#9C27B0" stroke-width="3" stroke-dasharray="5,5" />
+  <polygon points="365,205 375,210 365,215" fill="#9C27B0" />
+  <text x="350" y="235" font-family="monospace" font-size="12" fill="#7B1FA2" font-weight="bold" text-anchor="middle">hue='sex'</text>
+
+  <!-- 오른쪽: Seaborn (hue 적용) -->
+  <g transform="translate(390, 70)">
+    <rect x="0" y="0" width="280" height="260" fill="#F3E5F5" rx="10" filter="url(#shadow)" stroke="#9C27B0" stroke-width="3"/>
+    <text x="140" y="25" font-family="monospace" font-size="14" fill="#7B1FA2" font-weight="bold" text-anchor="middle">sns.scatterplot(..., hue='sex')</text>
+    
+    <!-- Axes -->
+    <path d="M 40 50 L 40 220 L 250 220" fill="none" stroke="#90A4AE" stroke-width="2" />
+    
+    <!-- Legend (자동 생성된 범례) -->
+    <rect x="190" y="160" width="60" height="40" fill="#FFFFFF" rx="2" stroke="#CFD8DC" stroke-width="1" />
+    <circle cx="200" cy="175" r="4" fill="#03A9F4" />
+    <text x="210" y="179" font-family="sans-serif" font-size="10" fill="#333">Male</text>
+    <circle cx="200" cy="189" r="4" fill="#FF5252" />
+    <text x="210" y="193" font-family="sans-serif" font-size="10" fill="#333">Female</text>
+
+    <!-- Data Points (색상 분리됨) -->
+    <circle cx="80" cy="180" r="6" fill="#FF5252" opacity="0.9" /> <!-- Female -->
+    <circle cx="100" cy="160" r="6" fill="#03A9F4" opacity="0.9" /> <!-- Male -->
+    <circle cx="110" cy="190" r="6" fill="#FF5252" opacity="0.9" /> <!-- Female -->
+    <circle cx="140" cy="130" r="6" fill="#03A9F4" opacity="0.9" /> <!-- Male -->
+    <circle cx="150" cy="150" r="6" fill="#FF5252" opacity="0.9" /> <!-- Female -->
+    <circle cx="160" cy="110" r="6" fill="#03A9F4" opacity="0.9" /> <!-- Male -->
+    <circle cx="190" cy="100" r="6" fill="#03A9F4" opacity="0.9" /> <!-- Male -->
+    <circle cx="210" cy="80" r="6" fill="#03A9F4" opacity="0.9" /> <!-- Male -->
+    <circle cx="230" cy="90" r="6" fill="#FF5252" opacity="0.9" /> <!-- Female -->
+
+    <text x="135" y="210" font-family="sans-serif" font-size="11" fill="#7B1FA2" font-weight="bold" text-anchor="middle">성별에 따라 완벽하게 시각적 그룹핑! (3차원)</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 360)">
+    <rect x="-330" y="-15" width="660" height="35" fill="#E8EAF6" rx="8" stroke="#3F51B5" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#1A237E" font-weight="bold" text-anchor="middle">hue는 "색조"라는 뜻입니다. 범주형 변수를 hue에 지정하면, 알아서 그룹벌로 색을 다르게 칠해줍니다!</text>
+  </g>
+
+</svg>

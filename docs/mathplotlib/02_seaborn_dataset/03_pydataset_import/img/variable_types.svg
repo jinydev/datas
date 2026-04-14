@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .box { rx: 10px; ry: 10px; fill: #fcfcfc; stroke: #ccc; stroke-width: 3px; }
+      .text-bold { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 22px; font-weight: bold; fill: #fff; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">시각화 그래프를 골라주는 2가지 기둥: 변수의 종류</text>
+
+  <!-- Categorical -->
+  <g transform="translate(80, 90)">
+    <rect x="0" y="0" width="300" height="220" class="box" fill="#fdf2e9" stroke="#e67e22" />
+    <rect x="0" y="0" width="300" height="50" rx="10" ry="10" fill="#e67e22" />
+    <rect x="0" y="25" width="300" height="25" fill="#e67e22" /> <!-- Flatten bottom -->
+    <text x="150" y="32" class="text-bold" text-anchor="middle">범주형 변수 (Catgorical)</text>
+    
+    <text x="150" y="85" class="title" fill="#d35400" text-anchor="middle">분류나 그룹을 나타내는 값</text>
+    <text x="150" y="115" class="title" fill="#6c757d" font-size="16" text-anchor="middle">예시: 성별, 혈액형, 차종류, 합격여부</text>
+    
+    <text x="150" y="155" class="title" fill="#e67e22" text-anchor="middle">사용 차트:</text>
+    <text x="150" y="185" class="title" fill="#333" text-anchor="middle">막대 그래프(Bar Plot), 카운트 플롯,</text>
+    <text x="150" y="205" class="title" fill="#333" text-anchor="middle">파이 차트(Pie Chart) 등</text>
+  </g>
+
+  <text x="425" y="200" class="title" font-size="30" fill="#adb5bd" text-anchor="middle">VS</text>
+
+  <!-- Numerical -->
+  <g transform="translate(470, 90)">
+    <rect x="0" y="0" width="300" height="220" class="box" fill="#e3f2fd" stroke="#0056b3" />
+    <rect x="0" y="0" width="300" height="50" rx="10" ry="10" fill="#0056b3" />
+    <rect x="0" y="25" width="300" height="25" fill="#0056b3" /> <!-- Flatten bottom -->
+    <text x="150" y="32" class="text-bold" text-anchor="middle">수치형 변수 (Numerical)</text>
+    
+    <text x="150" y="85" class="title" fill="#0d6efd" text-anchor="middle">양/크기를 나타내는 숫자</text>
+    <text x="150" y="115" class="title" fill="#6c757d" font-size="16" text-anchor="middle">예시: 키, 나이, 연봉, 기온, 점수</text>
+    
+    <text x="150" y="155" class="title" fill="#0056b3" text-anchor="middle">사용 차트:</text>
+    <text x="150" y="185" class="title" fill="#333" text-anchor="middle">산점도(Scatter), 선 그래프(Line),</text>
+    <text x="150" y="205" class="title" fill="#333" text-anchor="middle">히스토그램(Hist), 상자그림(Box) 등</text>
+  </g>
+
+</svg>

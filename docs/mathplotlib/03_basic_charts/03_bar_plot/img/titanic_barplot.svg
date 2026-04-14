@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#0ea5e9" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">💰 (Seaborn) 타이타닉 객실 등급별 평균 운임 요금</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(100, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="400" y2="0" />
+        <line x1="0" y1="50" x2="400" y2="50" />
+        <line x1="0" y1="100" x2="400" y2="100" />
+        <line x1="0" y1="150" x2="400" y2="150" />
+        <line x1="0" y1="200" x2="400" y2="200" />
+        <line x1="0" y1="250" x2="400" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(100, 70)">
+        <path d="M 0 0 L 0 250 L 400 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <!-- Max around 100 for visual sake, mapped to 250px (multiplier 2.5) -->
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">100</text>
+        <text x="-10" y="55" fill="#64748b" font-size="12" text-anchor="end">80</text>
+        <text x="-10" y="105" fill="#64748b" font-size="12" text-anchor="end">60</text>
+        <text x="-10" y="155" fill="#64748b" font-size="12" text-anchor="end">40</text>
+        <text x="-10" y="205" fill="#64748b" font-size="12" text-anchor="end">20</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- Values: 1: Mean ~84, 2: Mean ~20.6, 3: Mean ~13.6 -->
+        <!-- Map to Y (max 100 = 250px height) => height = val * 2.5 -->
+
+        <g>
+            <!-- Class 1: 84 * 2.5 = 210 -> y=40 -->
+            <rect x="50" y="40" width="60" height="210" fill="#38bdf8" rx="2" />
+            
+            <!-- Error bar for Class 1 (lots of variance, up to 500 but we'll show just confidence interval cap) -->
+            <!-- Say CI is +- 15 = +- 37.5px -->
+            <path d="M 75 40 L 85 40 M 80 40 L 80 2.5 M 75 2.5 L 85 2.5" stroke="#1e293b" stroke-width="2" />
+            <path d="M 80 40 L 80 77.5 M 75 77.5 L 85 77.5" stroke="#1e293b" stroke-width="2" />
+
+            <!-- Class 2: 20 * 2.5 = 50 -> y=200 -->
+            <rect x="170" y="200" width="60" height="50" fill="#3b82f6" rx="2" />
+            
+            <!-- Error bar for Class 2: CI is +- 3 = +- 7.5px -->
+            <path d="M 195 200 L 205 200 M 200 200 L 200 192.5 M 195 192.5 L 205 192.5" stroke="#1e293b" stroke-width="2" />
+            <path d="M 200 200 L 200 207.5 M 195 207.5 L 205 207.5" stroke="#1e293b" stroke-width="2" />
+
+            <!-- Class 3: 13.6 * 2.5 = 34 -> y=216 -->
+            <rect x="290" y="216" width="60" height="34" fill="#0369a1" rx="2" />
+
+            <!-- Error bar for Class 3: CI is +- 2 = +- 5px -->
+            <path d="M 315 216 L 325 216 M 320 216 L 320 211 M 315 211 L 325 211" stroke="#1e293b" stroke-width="2" />
+            <path d="M 320 216 L 320 221 M 315 221 L 325 221" stroke="#1e293b" stroke-width="2" />
+
+            <text x="80" y="270" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">1 등급</text>
+            <text x="200" y="270" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">2 등급</text>
+            <text x="320" y="270" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">3 등급</text>
+            
+            <!-- CI annotations -->
+            <path d="M 90 20 L 140 20" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2,2" marker-end="url(#arrow)" />
+            <rect x="145" y="10" width="135" height="40" fill="#f8fafc" stroke="#64748b" rx="5" />
+            <text x="212" y="25" fill="#334155" font-size="10" font-weight="bold" text-anchor="middle">오차 막대 (Confidence Interval)</text>
+            <text x="212" y="40" fill="#475569" font-size="10" text-anchor="middle">동일 그룹 내 데이터의 편차를 의미</text>
+        </g>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">평균 요금 (Fare)</text>
+        <text x="200" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">객실 등급 (Pclass)</text>
+
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+            </marker>
+        </defs>
+    </g>
+</svg>

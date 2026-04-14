@@ -1,67 +1,69 @@
 ---
 layout: mathplotlib
-title: "5.5.1 바이올린 플롯"
+title: "5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭"
 ---
 
-# 5.5.1 바이올린과 상관관계 시각화
+## 5.5.1 바이올린 플롯 (Violin Plot) 완벽 해부
 
-## 5.5.1 바이올린 플롯
+상자그림(Box Plot)과 히스토그램(KDE 곡선)의 장점만을 뽑아 하나로 합친 **궁극의 분포 차트**가 바로 바이올린 플롯입니다. 그래픽 형태가 마치 현악기인 바이올린을 꼭 닮았다고 하여 붙여진 이름입니다.
 
-### ① 바이올린 개요와 함수 violinplot()
+### ① 바이올린 플롯의 탄생 비밀
 
-**[비유로 이해하기: 박스 플롯 + 밀도 추정 곡선]**
-박스 플롯이 데이터의 "통계적 요약(최소/최대/중앙값)"을 단단한 상자로 보여준다면, **바이올린 플롯(Violin Plot)**은 거기에 더해 "데이터가 실제 어디에 뚱뚱하게 뭉쳐있는지" 그 부드러운 곡선(KDE)까지 한눈에 보여주는 강력한 차트입니다. `split=True` 옵션을 쓰면 두 집단을 반반씩 합쳐서 등 맞대고 비교하기 좋습니다.
+> **용도**: "상자그림은 요약만 해주니까 진짜 데이터가 어떻게 우글거리는지(밀도) 안 보여. 히스토그램이랑 합쳐서 한 번에 볼 수 없을까?"
 
-바이올린 플롯(violin plot)은 상자그림(boxplot)에 데이터 분포의 밀도를 보다 구체적으로 표현하는 방법이다. 바이올린 플롯은 분포 밀도(kernel density)를 좌우 대칭의 항아리 모양으로 그리는 방식으로 데이터의 분포를 표현한다. 패키지 `numpy`의 함수 `np.random.randn(d0, d1, ..., dn)`는 평균이 0, 표준 편차가 1인 정규분포에 대한 난수(random number)를 차원 (d0, d1, ..., dn) 배열을 생성한다.
+![바이올린 플롯의 구조 해부도](../img/violin_anatomy.svg)
 
-다음으로 평균이 0, 표준편차가 1인 정규분포 난수 5개를 확인한다. 난수이므로 실행할 때마다 값이 다르다.
+바이올린 플롯의 한가운데를 자세히 보면 까만색 얇은 선과 점이 있습니다. 이것이 5.4.1장에서 배운 **미니 상자그림(Box Plot)**입니다. 하얀 점이 중앙값(Median)을 의미합니다. 
 
-```python
-import numpy as np
-np.random.randn(5)
-```
+그리고 그 뼈대를 중심으로 양옆으로 거대하게 뻗어나온 호리병 모양의 굴곡이 바로 5.4.2장에서 배운 **히스토그램의 KDE 곡선**입니다. 데이터가 뚱뚱하게 뭉쳐있는 곳일수록 바이올린의 허리 통이 두꺼워집니다.
 
-다음 코드는 2행 3열의 6개 난수를 생성한다.
+---
 
-```python
-np.random.randn(2, 3)
-```
+### ② Seaborn으로 바이올린 연주하기
 
-다음은 함수 `violinplot()`으로 정규분포 난수 2000개로 바이올린을 그린 결과이다. 바이올린 플롯은 항아리 모양의 너비로 분포의 밀도를 나타내고 4분위수의 박스 상자를 내부에 그리는 방식이다.
-
-```python
-data = np.random.randn(2000)
-plt.violinplot(data);
-```
-
-다음 인자 `vert=False`를 사용해 바이올린을 가로로 그릴 수 있다. 인자 `quantiles=[.25, .5, .75]`로 사분위수에 선을 그을 수 있다.
-
-```python
-plt.violinplot(data, quantiles=[.25, .5, .75], vert=False);
-```
-
-### ② 패키지 seaborn의 함수 sns.violinplot()
-
-바이올린을 위해 패키지 `seaborn`의 `violinplot()`을 사용할 수도 있다. `sns.stripplot(data, color='palegreen')`을 사용하면 이미 그린 바이올린 플롯에 데이터 분포를 추가할 수 있다.
+`tips` 데이터를 불러와서, 요일(`day`)마다 손님들이 요금(`total_bill`)을 얼마나 내고 가는지 분포를 비교해 보겠습니다.
 
 ```python
 import seaborn as sns
-sns.violinplot(data, color='gold');
-sns.stripplot(data, color='palegreen');
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset('tips')
+
+plt.figure(figsize=(8, 5))
+
+# x: 비교할 그룹(요일), y: 분포를 볼 숫자(요금)
+sns.violinplot(data=tips, x='day', y='total_bill', palette='pastel')
+
+plt.title("요일별 레스토랑 결제 요금 분포 (바이올린 플롯)")
+plt.show()
 ```
 
-붓꽃 데이터 `iris`에서 품종 `Species`에 따라 꽃받침 길이 `Sepal.Length`의 바이올린 플롯을 그려보자. 함수 `sns.violinplot()`에서 인자 `x='Species'`, `y='Sepal.Length'`, `hue='Species'`를 사용하면 품종에 따라 색상이 달라진다.
+![요일별 요금 분포 기본 바이올린](img/tips_violin_basic.svg)
+
+**[출력 원리 해석]**
+- 목요일(Thur)이나 금요일(Fri)의 바이올린은 아래쪽(10~20달러)이 뚱뚱하고 위쪽 꼬리가 짧습니다. 즉, 가볍게 점심이나 저녁을 먹고 가는 가성비 손님이 많다는 뜻입니다.
+- 일요일(Sun)의 바이올린은 목이 길게 위(40~50달러)까지 쭉 뻗어 있습니다. 주말을 맞아 가족 단위로 외식하며 플렉스(과소비)를 한 손님들의 데이터가 포착된 것입니다.
+
+---
+
+### ③ 바이올린 최고의 마법: `split=True` (등 맞대기)
+
+바이올린 플롯이 그 어떤 차트보다 빛을 발하는 순간은, **"단 두 개의 그룹(예: 남성/여성)"**을 비교할 때입니다. 바이올린은 기본적으로 양쪽이 데칼코마니처럼 똑같은 모양 대칭입니다. 여기서 착안하여, 왼쪽에는 남성의 반쪽을, 오른쪽에는 여성의 반쪽을 붙이는 사기적인 기술이 가능합니다.
 
 ```python
-from pydataset import data
-iris = data('iris')
+plt.figure(figsize=(8, 5))
 
-import seaborn as sns
-sns.violinplot(data=iris, x='Species', y='Sepal.Length', hue='Species');
+# hue='sex' (성별로 쪼갠다)
+# split=True (바이올린을 반으로 갈라 등과 등을 맞대어 붙인다!)
+sns.violinplot(data=tips, x='day', y='total_bill', hue='sex', split=True, palette='muted')
+
+plt.title("요일/성별 요금 분포 한눈에 비교하기")
+plt.show()
 ```
 
-다음 코드 `legend='full'`을 지정해 그림 위에 범례를 추가한다.
+![요일 및 성별 요금 분포 스플릿 바이올린](img/tips_violin_split.svg)
 
-```python
-sns.violinplot(data=iris, x='Species', y='Sepal.Length', hue='Species', legend='full');
-```
+**[출력 원리 해석]**
+그래프를 실행해 보면, 각 요일마다 남성(파란색) 반쪽과 여성(초록색) 반쪽이 서로 등을 맞대고 하나의 기괴하지만 아름다운 바이올린을 형성합니다. 이를 통해 단순히 요일별 비교를 넘어, 같은 요일 안에서도 "토요일에는 남성 결제액 분포가 월등히 위쪽으로 치솟아 있다"는 초고차원적인 3D 데이터를 단 한 장의 시각화로 깔끔하게 증명해 낼 수 있습니다.
+
+다음 장에서는, 데이터 분석의 모든 대단원 마침표를 찍어줄 **관계 행렬 (Pair Plot)과 히트맵 (Heatmap)**을 배웁니다.

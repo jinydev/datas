@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .label { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #6c757d; }
+      .code { font-family: 'Consolas', monospace; font-size: 18px; fill: #d63384; font-weight: bold; }
+      .box { rx: 5px; ry: 5px; stroke-width: 2px; }
+      .val { font-family: 'Times New Roman', serif; font-size: 22px; font-style: italic; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">2D Array Horizontal Concatenation with np.c_</text>
+
+  <!-- Input Arrays -->
+  <!-- x = [[1, 2, 3]] -->
+  <g transform="translate(100, 100)">
+    <text x="90" y="-15" class="label" text-anchor="middle">x (shape: 1x3)</text>
+    <rect x="0" y="0" width="180" height="50" fill="#e3f2fd" stroke="#0056b3" class="box" />
+    <rect x="0" y="0" width="60" height="50" fill="none" stroke="#0056b3" stroke-width="1" />
+    <rect x="60" y="0" width="60" height="50" fill="none" stroke="#0056b3" stroke-width="1" />
+    <text x="30" y="32" class="val" fill="#0056b3">1</text>
+    <text x="90" y="32" class="val" fill="#0056b3">2</text>
+    <text x="150" y="32" class="val" fill="#0056b3">3</text>
+    <path d="M 0 50 L -10 50 L -10 0 L 0 0" fill="none" stroke="#333" stroke-width="2" />
+    <path d="M 180 50 L 190 50 L 190 0 L 180 0" fill="none" stroke="#333" stroke-width="2" />
+  </g>
+
+  <!-- y = [[4, 5, 6]] -->
+  <g transform="translate(350, 100)">
+    <text x="90" y="-15" class="label" text-anchor="middle">y (shape: 1x3)</text>
+    <rect x="0" y="0" width="180" height="50" fill="#e8f5e9" stroke="#198754" class="box" />
+    <rect x="0" y="0" width="60" height="50" fill="none" stroke="#198754" stroke-width="1" />
+    <rect x="60" y="0" width="60" height="50" fill="none" stroke="#198754" stroke-width="1" />
+    <text x="30" y="32" class="val" fill="#198754">4</text>
+    <text x="90" y="32" class="val" fill="#198754">5</text>
+    <text x="150" y="32" class="val" fill="#198754">6</text>
+    <path d="M 0 50 L -10 50 L -10 0 L 0 0" fill="none" stroke="#333" stroke-width="2" />
+    <path d="M 180 50 L 190 50 L 190 0 L 180 0" fill="none" stroke="#333" stroke-width="2" />
+  </g>
+
+  <text x="600" y="135" class="title" fill="#6c757d" font-size="30">→</text>
+
+  <!-- Output Array -->
+  <!-- [[1, 2, 3, 4, 5, 6]] -->
+  <g transform="translate(180, 200)">
+    <rect x="0" y="0" width="180" height="50" fill="#e3f2fd" stroke="#0056b3" class="box" />
+    <rect x="0" y="0" width="60" height="50" fill="none" stroke="#0056b3" stroke-width="1" />
+    <rect x="60" y="0" width="60" height="50" fill="none" stroke="#0056b3" stroke-width="1" />
+    <text x="30" y="32" class="val" fill="#0056b3">1</text>
+    <text x="90" y="32" class="val" fill="#0056b3">2</text>
+    <text x="150" y="32" class="val" fill="#0056b3">3</text>
+
+    <!-- y appended horizontally -->
+    <g transform="translate(180, 0)">
+      <rect x="0" y="0" width="180" height="50" fill="#e8f5e9" stroke="#198754" class="box" />
+      <rect x="0" y="0" width="60" height="50" fill="none" stroke="#198754" stroke-width="1" />
+      <rect x="60" y="0" width="60" height="50" fill="none" stroke="#198754" stroke-width="1" />
+      <text x="30" y="32" class="val" fill="#198754">4</text>
+      <text x="90" y="32" class="val" fill="#198754">5</text>
+      <text x="150" y="32" class="val" fill="#198754">6</text>
+    </g>
+
+    <!-- Enclosing bracket for 2D nature -->
+    <path d="M 0 50 L -10 50 L -10 0 L 0 0" fill="none" stroke="#333" stroke-width="3" />
+    <path d="M 360 50 L 370 50 L 370 0 L 360 0" fill="none" stroke="#333" stroke-width="3" />
+    <text x="180" y="80" class="label" text-anchor="middle">Resulting shape: 1x6</text>
+    <text x="450" y="30" class="code">np.c_[x, y]</text>
+  </g>
+</svg>

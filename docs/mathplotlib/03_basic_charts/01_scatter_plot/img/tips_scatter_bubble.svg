@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#8b5cf6" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🫧 버블 차트 (Hue + Size까지 혼합된 4차원 시각화)</text>
+
+    <!-- Content -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 420 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">10.0</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0.0</text>
+        <text x="0" y="275" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="420" y="275" fill="#64748b" font-size="12" text-anchor="middle">50</text>
+
+        <!-- Data points with varied sizes representing 'size' of the group! -->
+        <!-- Female (Orange) -->
+        <g fill="#f97316" fill-opacity="0.6">
+            <circle cx="85" cy="210" r="8" />  <!-- size=2 -->
+            <circle cx="120" cy="180" r="14" /> <!-- size=4 -->
+            <circle cx="160" cy="170" r="5" />  <!-- size=1 -->
+            <circle cx="210" cy="120" r="12" /> <!-- size=3 -->
+            <circle cx="270" cy="85" r="18" /> <!-- size=5 -->
+        </g>
+
+        <!-- Male (Blue) -->
+        <g fill="#3b82f6" fill-opacity="0.6">
+            <circle cx="135" cy="165" r="8" />
+            <circle cx="170" cy="150" r="22" /> <!-- size=6 -->
+            <circle cx="200" cy="145" r="14" />
+            <circle cx="250" cy="110" r="10" />
+            <circle cx="290" cy="60" r="20" /> <!-- size=5 -->
+            <circle cx="330" cy="50" r="8" />
+            <circle cx="390" cy="10" r="24" /> <!-- huge tip, huge bill, huge group! -->
+            <circle cx="410" cy="15" r="12" />
+        </g>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">팁 (tip)</text>
+        <text x="210" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">총 청구액 (total_bill)</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(510, 70)">
+        <rect x="0" y="0" width="80" height="130" fill="white" stroke="#cbd5e1" rx="5" />
+        
+        <text x="10" y="15" fill="#475569" font-size="10" font-weight="bold">sex</text>
+        <circle cx="15" cy="30" r="5" fill="#3b82f6" fill-opacity="0.6" />
+        <text x="30" y="34" fill="#475569" font-size="10">Male</text>
+        <circle cx="15" cy="43" r="5" fill="#f97316" fill-opacity="0.6" />
+        <text x="30" y="47" fill="#475569" font-size="10">Female</text>
+        
+        <text x="10" y="65" fill="#475569" font-size="10" font-weight="bold">size</text>
+        <circle cx="15" cy="80" r="3" fill="#cbd5e1" />
+        <text x="30" y="83" fill="#475569" font-size="10">1명</text>
+        <circle cx="15" cy="95" r="6" fill="#cbd5e1" />
+        <text x="30" y="98" fill="#475569" font-size="10">3명</text>
+        <circle cx="15" cy="113" r="10" fill="#cbd5e1" />
+        <text x="30" y="117" fill="#475569" font-size="10">6명</text>
+    </g>
+
+    <rect x="50" y="350" width="500" height="30" rx="5" fill="#f5f3ff" />
+    <text x="300" y="369" fill="#5b21b6" font-size="11" font-weight="bold" text-anchor="middle">💡 X축, Y축, 색깔(Sex), 굵기(Size) 무려 4가지 데이터가 2D 평면에 압축됨!</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="400" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Pandas 핵심 코어 구조: Series가 모여 DataFrame으로!</text>
+
+  <!-- 단일 Series 객체 -->
+  <g transform="translate(80, 80)">
+    <text x="50" y="-15" font-family="sans-serif" font-size="16" fill="#D32F2F" font-weight="bold" text-anchor="middle">Series (1차원)</text>
+    <text x="50" y="5" font-family="sans-serif" font-size="12" fill="#757575" text-anchor="middle">"엑셀의 한 줄(열)"</text>
+    
+    <rect x="0" y="20" width="100" height="150" fill="#FFCDD2" rx="5" filter="url(#shadow)" stroke="#E53935" stroke-width="2"/>
+    <rect x="0" y="20" width="100" height="30" fill="#E53935" rx="5" />
+    <text x="50" y="40" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">A_Score</text>
+    
+    <text x="50" y="70" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.12</text>
+    <text x="50" y="100" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.23</text>
+    <text x="50" y="130" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.34</text>
+  </g>
+
+  <!-- 조립 애니메이션 화살표 -->
+  <g transform="translate(230, 160)">
+    <path d="M 0 0 L 80 0" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="75,-7 85,0 75,7" fill="#2196F3" />
+    <text x="40" y="-15" font-family="sans-serif" font-size="24" fill="#2196F3" font-weight="bold" text-anchor="middle">+</text>
+    <text x="40" y="20" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">조립 (병합)</text>
+  </g>
+
+  <!-- 거대한 DataFrame 객체 -->
+  <g transform="translate(370, 80)">
+    <text x="130" y="-15" font-family="sans-serif" font-size="16" fill="#1976D2" font-weight="bold" text-anchor="middle">DataFrame (2차원)</text>
+    <text x="130" y="5" font-family="sans-serif" font-size="12" fill="#757575" text-anchor="middle">"여러 열이 합쳐진 전체 표"</text>
+    
+    <rect x="0" y="20" width="260" height="150" fill="#BBDEFB" rx="5" filter="url(#shadow)" stroke="#1E88E5" stroke-width="3"/>
+    
+    <rect x="0" y="20" width="260" height="30" fill="#1E88E5" rx="5" />
+    <text x="50" y="40" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">A_Score</text>
+    <text x="130" y="40" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">B_Score</text>
+    <text x="210" y="40" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">C_Score</text>
+    
+    <!-- 인덱스 열 -->
+    <rect x="-30" y="50" width="30" height="120" fill="#ECEFF1" stroke="#CFD8DC" />
+    <text x="-15" y="70" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">0</text>
+    <text x="-15" y="100" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">1</text>
+    <text x="-15" y="130" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">2</text>
+    
+    <text x="50" y="70" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.12</text>
+    <text x="130" y="70" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.67</text>
+    <text x="210" y="70" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.45</text>
+    
+    <text x="50" y="100" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.23</text>
+    <text x="130" y="100" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.78</text>
+    <text x="210" y="100" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.56</text>
+    
+    <text x="50" y="130" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.34</text>
+    <text x="130" y="130" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.89</text>
+    <text x="210" y="130" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.67</text>
+  </g>
+
+  <!-- 하단 캡션 -->
+  <g transform="translate(350, 310)">
+    <rect x="-300" y="-30" width="600" height="50" fill="#FFF3E0" rx="10" stroke="#FF9800" stroke-width="2" />
+    <text x="0" y="0" font-family="sans-serif" font-size="15" fill="#E65100" font-weight="bold" text-anchor="middle">DataFrame은 사실 Series라는 '막대기'들이 가로로 합쳐진 거대한 집합체입니다!</text>
+  </g>
+
+</svg>

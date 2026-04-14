@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="400" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Pandas DataFrame의 3대 핵심 구조 (Columns, Index, Values)</text>
+
+  <!-- 데이터프레임 구조 블록 -->
+  <g transform="translate(180, 80)">
+    
+    <!-- 전체 박스 테두리 -->
+    <rect x="-40" y="-30" width="360" height="220" fill="#FFFFFF" rx="10" filter="url(#shadow)" stroke="#1976D2" stroke-width="3"/>
+    
+    <!-- 3. Columns (열 이름표) -->
+    <rect x="40" y="-20" width="230" height="30" fill="#E3F2FD" rx="5" stroke="#64B5F6" stroke-width="2"/>
+    <text x="-15" y="-1" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">3. Columns</text>
+    
+    <text x="70" y="0" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">이름</text>
+    <text x="150" y="0" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">나이</text>
+    <text x="230" y="0" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">연봉</text>
+    
+    <!-- 구분 라인 (가로) -->
+    <line x1="40" y1="15" x2="270" y2="15" stroke="#90CAF9" stroke-width="2" />
+    
+    <!-- 2. Index (행 이름표) -->
+    <rect x="-30" y="25" width="60" height="150" fill="#FFF3E0" rx="4" stroke="#FFB74D" stroke-width="2"/>
+    <text x="0" y="20" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">2. Index</text>
+    
+    <text x="0" y="55" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">a</text>
+    <text x="0" y="95" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">b</text>
+    <text x="0" y="135" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">c</text>
+    
+    <!-- 구분 라인 (세로) -->
+    <line x1="35" y1="25" x2="35" y2="175" stroke="#FFCC80" stroke-width="2" />
+
+    <!-- 1. Values (순수 값) -->
+    <rect x="40" y="25" width="230" height="150" fill="#F1F8E9" rx="4" stroke="#81C784" stroke-width="2"/>
+    <text x="155" y="20" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">1. Values (2차원 행렬 데이터)</text>
+    
+    <!-- 값 텍스트 -->
+    <text x="70" y="55" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">Alice</text>
+    <text x="150" y="55" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">25</text>
+    <text x="230" y="55" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">5000</text>
+    
+    <text x="70" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">Bob</text>
+    <text x="150" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">30</text>
+    <text x="230" y="95" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">4800</text>
+    
+    <text x="70" y="135" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">Charlie</text>
+    <text x="150" y="135" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">35</text>
+    <text x="230" y="135" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">5200</text>
+    
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(100, 310)">
+    <rect x="0" y="0" width="500" height="60" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="250" y="25" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">엑셀의 가로 기둥(열) 제목이 Columns이고, 세로 줄(행) 번호가 Index입니다!</text>
+    <text x="250" y="45" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">그리고 십자 크로스가 만나는 셀(Cell)들의 모음이 바로 Values(값)입니다.</text>
+  </g>
+
+</svg>

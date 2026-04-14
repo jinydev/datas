@@ -1,122 +1,88 @@
 ---
 layout: mathplotlib
-title: "5.3.1 산점도"
+title: "5.3.1 산점도 (Scatter Plot)와 hue의 마법"
 ---
 
-## 5.3.1 산점도와 막대 그래프
+## 5.3.1 산점도 (Scatter Plot)와 고차원 매핑
 
-### 5.3.1 산점도
+### ① 산점도의 존재 이유 (두 수치형 데이터의 관계)
 
-#### ① 산점도 개요와 함수 plot()
+> **용도**: "내가 식당에서 밥을 **많이** 먹으면(총 청구액), 웨이터에게 주는 **팁(Tip)**도 그만큼 **많아질까?**"
 
-산점도(scatter plot)는 두 연속형 변수 좌표상의 점을 표시해 이 두 변수 사이의 관계를 나타내는 그래프이다. x좌표와 y좌표 (x, y)의 값이 (3, 7), (5, 10)인 2개의 점을 그리는 간단한 산점도를 그려보자. 첫 번째 인자는 두 점의 x 값만 모은 리스트이며, 두 번째가 y 값 리스트인 것에 주의하자.
+이런 단순한 궁금증을 해결하려고 할 때, 두 개의 **수치형(연속된 숫자)** 변수 간의 **상관관계(Correlation)**를 시각적으로 확인하기 위해 허공(좌표 평면)에 점을 콕콕 찍어서 그리는 그래프가 바로 산점도입니다.
 
-> `scatter(x, y, ...)` 인자: x = [x1, x2, x3, ...], y = [y1, y2, y3, ...]
-> * 좌표 (x1, y1), (x2, y2), (x3, y3) ... 점을 그리기
+- 점들이 우상향(↗)으로 퍼져 있다면 = **양(+)의 상관관계** (밥을 많이 먹을수록 팁도 많이 준다!)
+- 점들이 우하향(↘)으로 퍼져 있다면 = **음(-)의 상관관계** 
+- 점들이 마구잡이로 흩어져 있다면 = **무상관** (관계가 전혀 없다)
 
-다음 코드처럼 `scatter()` 인자로 `[3, 5]`, `[7, 10]`으로 기술해 실행한다.
+### ② Seaborn의 `scatterplot` 기본 그리기
 
-```python
-%config InlineBackend.figure_format = 'retina' # matplotlib 그림을 선명하게 그리기 위한 설정
-
-import matplotlib.pyplot as plt
-
-plt.scatter([3, 5], [7, 10]) # x좌표와 y좌표 (x, y)의 값이 (3, 7), (5, 10)인 2개의 점을 그리는 간단한 산점도
-plt.show()
-```
-
-함수 `scatter(x, y)`는 적어도 인자는 2개여야 한다. 다음 코드처럼 `range()` 함수를 사용하면 다수의 좌표로 간단히 산점도를 그릴 수 있다.
-
-```python
-plt.scatter(range(1, 5), range(5, 9))
-plt.show()
-```
-
-다음은 x와 y 모두 시퀀스 인자를 사용한 코드이다. 5개의 좌표 (3, 13), (4, 14), (5, 15), (6, 16), (7, 17)를 그린 산점도이다.
-
-```python
-plt.scatter(range(3, 8), range(13, 18))
-plt.show()
-```
-
-인자 x와 y의 목록 길이는 반드시 같아야 한다. 다르면 오류(`ValueError: x and y must be the same size`)가 발생한다.
-
-```python
-# 5.3.1 plt.scatter(range(3, 7), range(13, 18)) # x는 4개, y는 5개이므로 오류 발생
-# 5.3.1 plt.show()
-```
-
-#### ② 내장 데이터 기니피그의 치아 성장 ToothGrowth
-
-패키지 `pydataset`의 내장 데이터 `ToothGrowth`에서 산점도를 그려 두 변수의 관계를 알아보자. `ToothGrowth`는 60개의 관측 값과 3개의 변수로 구성된 동물 기니피그의 치아성장 세포에 대한 비타민 C의 영향을 설명한 자료이다.
-
-```python
-from pydataset import data
-
-tg = data('ToothGrowth')
-tg.info()
-```
-
-다음은 치아성장 세포의 상위 5개의 데이터이다.
-
-```python
-tg.head()
-```
-
-matplotlib에서 제목과 레이블을 한글로 표시하려면 다음처럼 주피터 노트북에서 matplotlib의 한글 처리를 위한 코드가 필요하다.
-
-```python
-import matplotlib.pyplot as plt
-
-# 5.3.1 한글 처리를 위한 코드
-plt.rc('font', family='Malgun Gothic') # 폰트 지정
-plt.rc('axes', unicode_minus=False) # 음수 - 표시
-# 5.3.1 plt.rcParams['font.family'] = 'Malgun Gothic'
-# 5.3.1 plt.rcParams['axes.unicode_minus'] = False
-```
-
-다음 코드로 두 변수 `dose`(비타민 용량), `len`(치아세포 길이)의 상관 관계 산점도를 그릴 수 있다. 결과를 통해 비타민 용량이 증가할수록 치아세포 길이가 길어지는 것을 알 수 있다.
-
-plt.scatter(tg.dose, tg.len)
-plt.title("기니피그의 비타민과 치아성장 관계")
-plt.xlabel("비타민 용량")
-plt.ylabel("치아성장 세포길이")
-
-plt.show()
-```
-
-#### ③ 실전 예제: 버블 차트 (Size Variation)
-
-산점도에서 점의 **크기(s)**를 다르게 지정하면 3차원의 정보를 평면에 표현할 수 있습니다. (X축, Y축, 크기) 이렇게 크기로 정보를 표현하는 그래프를 **버블 차트(Bubble Chart)**라고도 합니다.
-
-```python
-# 5.3.1 데이터 준비
-x = [10, 20, 30, 40, 50]
-y = [20, 30, 10, 50, 40]
-size = [100, 200, 500, 1000, 300] # 점의 크기 (면적을 의미함)
-
-plt.figure(figsize=(6, 4))
-# 5.3.1 s: 점 크기 배열 매핑, alpha: 투명도 (점이 겹칠 때 밀도를 확인하기 유용함)
-plt.scatter(x, y, s=size, c='green', alpha=0.5) 
-
-plt.title("버블 차트 예제")
-plt.show()
-```
-
-#### ④ Seaborn을 활용한 세련된 산점도
-
-**[비유로 이해하기: Why Seaborn?]**
-Matplotlib가 도화지에 붓으로 하나하나 직접 그리는 것이라면, **Seaborn**은 최신 유행 테마가 적용된 "고급 템플릿"을 쓰는 것과 같습니다. `sns.set_theme(style="darkgrid")` 한 줄이면 차트가 훨씬 예뻐지며, `hue` 옵션을 통해 제3의 변수(예: 성별, 종류)를 색상으로 순식간에 구분할 수 있습니다.
+식당 팁 데이터를 불러와서, `total_bill`(총 청구 요금)과 `tip`(팁) 사이의 관계를 점으로 찍어보겠습니다.
 
 ```python
 import seaborn as sns
-from pydataset import data
+import matplotlib.pyplot as plt
 
-tips = data('tips')
-sns.set_theme(style="darkgrid")
+# 팁(tips) 데이터셋 소환!
+tips = sns.load_dataset('tips')
 
-# 5.3.1 x축: 총 청구액, y축: 팁, hue: 색깔로 구분할 기준 (성별)
-sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')
-plt.title("총 청구액과 팁의 관계 (성별 구분)")
+plt.figure(figsize=(6, 4))
+sns.set_theme(style="darkgrid") # 그래프 배경을 세련된 회색 모눈종이로 변경
+
+# X축에는 청구 요금, Y축에는 팁을 지정하여 점 찍기
+sns.scatterplot(data=tips, x='total_bill', y='tip')
+
+plt.title("총 청구액과 팁의 관계")
 plt.show()
 ```
+
+![기본 산점도](img/tips_scatter_basic.svg)
+
+**[출력 원리 해석]**
+실행해 보면 점들이 전체적으로 ↗ 방향으로 형성되어 "아, 요금이 높을수록 팁도 많이 주는 경향이 있구나!"라는 것을 알 수 있습니다. 하지만 이 그림은 온통 **한 가지 색깔의 파란 점**들뿐입니다.
+
+---
+
+### ③ `hue`: Seaborn 최고의 마법 (3차원 정보 파악)
+
+기존 파이썬 Matplotlib으로 남성과 여성의 점 색깔을 다르게 칠하려면, 남성 데이터와 여성 데이터를 따로 분리(필터링)해서 `plt.scatter()`를 두 번 호출하고 막대한 코딩을 해야 했습니다.
+
+하지만 Seaborn에서는 **`hue` (색조)** 라는 마법의 파라미터 하나로 이 고통이 단번에 끝납니다!
+
+![Hue 매핑 원리 애니메이션](../img/scatter_hue_magic.svg)
+
+`hue`에 방금 전 5.2.3장에서 배웠던 **범주형 데이터(남자/여자, 흡연/비흡연, 요일 등)** 열 이름을 적어주면 끝납니다.
+
+```python
+plt.figure(figsize=(7, 5))
+
+# hue='sex' 단 하나를 추가했습니다!
+sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')
+
+plt.title("총 청구액과 팁 (성별 구분)")
+plt.show()
+```
+
+![Hue 파라미터가 적용된 산점도](img/tips_scatter_hue.svg)
+
+**[출력 원리 해석]**
+마법처럼 그래프가 그려집니다! 남성은 파란색 점, 여성은 주황색 점으로 찍히며, 우측 상단에 자동으로 **친절한 범례(Legend)**까지 만들어집니다. 우리는 평면 2D 화면에 X(요금), Y(팁), 색깔(성별)이라는 **3차원 정보**를 눈앞에 펼친 것입니다.
+
+> **💡 데이터 탐정의 시선**
+> 색깔을 칠하고 보니, 아주 극단적으로 "엄청나게 많은 요금을 내고 팁을 10달러씩 날리는 호탕한 부자 손님들" 공간(그래프 가장 우측 상단)에 찍힌 점들은 거의 대다수가 **파란 점(남성)**이라는 숨겨진 진실을 발견할 수 있습니다!
+
+---
+
+### ④ 더 나아가기: 점의 크기(`size`)와 버블 차트
+
+점의 색상을 바꿀 수 있다면, 점의 **크기**도 바꿀 수 있지 않을까요? `size` 매개변수에 데이터 열을 주면, 그 값의 크기에 비례하여 점의 크기 자체가 풍선(버블)처럼 커집니다.
+
+```python
+# size='size' : 식사에 참여한 총 인원수(1명~6명)에 비례해서 점의 굵기를 다르게!
+# sizes=(20, 200) : 점 크기를 최소 20픽셀에서 최대 200픽셀 사이로 스케일링!
+sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', size='size', sizes=(20, 200), alpha=0.6)
+```
+
+![크기와 색상이 매핑된 버블 차트](img/tips_scatter_bubble.svg)
+
+이처럼 산점도 하나만으로도 `x`, `y`, `hue`, `size`를 총동원하여 **무려 4가지 속성의 데이터를 2D 도화지 한 장에 압축해서 폭격**하는 것이 데이터 시각화의 진정한 묘미입니다! 다음 장에서는 시간의 흐름을 보여주는 **선 그래프(Line Plot)**를 배웁니다.

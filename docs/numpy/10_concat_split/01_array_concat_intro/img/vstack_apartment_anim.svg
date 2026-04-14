@@ -1,0 +1,79 @@
+<svg width="500" height="250" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 아파트 콘크리트 질감 -->
+    <linearGradient id="aptA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#48bb78"/>
+      <stop offset="100%" stop-color="#2f855a"/>
+    </linearGradient>
+    <linearGradient id="aptB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#805ad5"/>
+      <stop offset="100%" stop-color="#553c9a"/>
+    </linearGradient>
+    <!-- 결합 스파크 글로우 효과 -->
+    <filter id="sparkGlow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="500" height="250" fill="#f7fafc" rx="8"/>
+  
+  <text x="250" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">
+    Numpy vstack (수직 결합): 아파트 층수 올리기
+  </text>
+
+  <!-- 바닥 기초 라인 -->
+  <line x1="100" y1="210" x2="400" y2="210" stroke="#cbd5e0" stroke-width="4"/>
+
+  <!-- 아파트 1층 (베이스 A) -->
+  <g transform="translate(180, 150)">
+    <rect x="0" y="0" width="140" height="60" fill="url(#aptA)" rx="4"/>
+    <g fill="white" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">
+      <text x="25" y="35">1</text>
+      <text x="70" y="35">2</text>
+      <text x="115" y="35">3</text>
+    </g>
+    <!-- 창문 느낌 -->
+    <rect x="15" y="10" width="20" height="10" fill="#e2e8f0" opacity="0.3"/>
+    <rect x="60" y="10" width="20" height="10" fill="#e2e8f0" opacity="0.3"/>
+    <rect x="105" y="10" width="20" height="10" fill="#e2e8f0" opacity="0.3"/>
+  </g>
+
+  <!-- 아파트 2층 (하강하는 타겟 B) -->
+  <g>
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="180,-100; 180,90; 180,90; 180,-100" 
+      dur="4s" 
+      repeatCount="indefinite" 
+      keyTimes="0; 0.3; 0.8; 1"
+    />
+    <rect x="0" y="0" width="140" height="60" fill="url(#aptB)" rx="4"/>
+    <g fill="white" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">
+      <text x="25" y="35">4</text>
+      <text x="70" y="35">5</text>
+      <text x="115" y="35">6</text>
+    </g>
+    <rect x="15" y="10" width="20" height="10" fill="#e2e8f0" opacity="0.3"/>
+    <rect x="60" y="10" width="20" height="10" fill="#e2e8f0" opacity="0.3"/>
+    <rect x="105" y="10" width="20" height="10" fill="#e2e8f0" opacity="0.3"/>
+  </g>
+
+  <!-- 결합 순간 스파크 애니메이션 -->
+  <g transform="translate(250, 150)">
+    <g opacity="0" filter="url(#sparkGlow2)">
+      <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" dur="4s" repeatCount="indefinite" keyTimes="0; 0.28; 0.3; 0.4; 0.42; 1"/>
+      <circle cx="-50" cy="0" r="10" fill="#fbd38d"/>
+      <circle cx="0" cy="0" r="15" fill="#fbd38d"/>
+      <circle cx="50" cy="0" r="10" fill="#fbd38d"/>
+      <path d="M-20,-20 L20,20 M-20,20 L20,-20 M0,-25 L0,25 M-25,0 L25,0" stroke="#fff" stroke-width="3"/>
+    </g>
+  </g>
+
+  <!-- 코드 스니펫 표시 -->
+  <rect x="160" y="55" width="180" height="30" fill="#2d3748" rx="4" opacity="0.9"/>
+  <text x="250" y="75" font-family="monospace" font-size="14" font-weight="bold" fill="#68d391" text-anchor="middle">
+    np.vstack((A, B))
+  </text>
+</svg>

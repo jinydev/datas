@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#f97316" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">🧩 df.groupby('pclass')['fare'].mean() 작동 원리</text>
+
+    <!-- Original Data -->
+    <g transform="translate(40, 80)">
+        <rect x="0" y="-15" width="100" height="20" fill="#fff7ed" stroke="#fdba74" />
+        <text x="50" y="0" fill="#c2410c" font-size="12" font-weight="bold" text-anchor="middle">원본 DataFrame</text>
+        
+        <rect x="0" y="5" width="50" height="80" fill="#f1f5f9" stroke="#cbd5e1" />
+        <rect x="50" y="5" width="50" height="80" fill="#f1f5f9" stroke="#cbd5e1" />
+        <text x="25" y="20" fill="#475569" font-size="10" font-weight="bold" text-anchor="middle">pclass</text>
+        <text x="75" y="20" fill="#475569" font-size="10" font-weight="bold" text-anchor="middle">fare</text>
+
+        <!-- Mock data rows -->
+        <text x="25" y="40" fill="#eab308" font-size="10" font-weight="bold" text-anchor="middle">1</text>
+        <text x="75" y="40" fill="#64748b" font-size="10" text-anchor="middle">80</text>
+        
+        <text x="25" y="55" fill="#3b82f6" font-size="10" font-weight="bold" text-anchor="middle">3</text>
+        <text x="75" y="55" fill="#64748b" font-size="10" text-anchor="middle">10</text>
+        
+        <text x="25" y="70" fill="#eab308" font-size="10" font-weight="bold" text-anchor="middle">1</text>
+        <text x="75" y="70" fill="#64748b" font-size="10" text-anchor="middle">90</text>
+    </g>
+
+    <!-- Arrow 1: Group By -->
+    <path d="M 150 110 L 220 110" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="185" y="90" fill="#ea580c" font-size="10" font-weight="bold" text-anchor="middle">groupby()</text>
+    <text x="185" y="105" fill="#ea580c" font-size="10" text-anchor="middle">등급별 그룹화</text>
+
+    <!-- Grouped Data -->
+    <g transform="translate(240, 60)">
+        <rect x="0" y="0" width="80" height="60" fill="#fef08a" stroke="#eab308" rx="5" />
+        <text x="40" y="20" fill="#854d0e" font-size="12" font-weight="bold" text-anchor="middle">1 등급 그룹</text>
+        <text x="40" y="40" fill="#854d0e" font-size="10" text-anchor="middle">fare: 80, 90...</text>
+
+        <rect x="0" y="70" width="80" height="60" fill="#bfdbfe" stroke="#3b82f6" rx="5" />
+        <text x="40" y="90" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">3 등급 그룹</text>
+        <text x="40" y="110" fill="#1e40af" font-size="10" text-anchor="middle">fare: 10, 15...</text>
+    </g>
+
+    <!-- Arrow 2: Mean -->
+    <path d="M 330 80 L 390 100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 330 110 L 390 110" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="360" y="90" fill="#ea580c" font-size="10" font-weight="bold" text-anchor="middle">mean()</text>
+    <text x="360" y="105" fill="#ea580c" font-size="10" text-anchor="middle">평균 계산</text>
+
+    <!-- Final Result -->
+    <g transform="translate(410, 80)">
+        <rect x="0" y="-15" width="100" height="20" fill="#fff7ed" stroke="#fdba74" />
+        <text x="50" y="0" fill="#c2410c" font-size="12" font-weight="bold" text-anchor="middle">Series 결과</text>
+        
+        <rect x="0" y="5" width="50" height="60" fill="#f1f5f9" stroke="#cbd5e1" />
+        <rect x="50" y="5" width="60" height="60" fill="#f1f5f9" stroke="#cbd5e1" />
+        
+        <text x="25" y="20" fill="#475569" font-size="10" font-weight="bold" text-anchor="middle">pclass</text>
+        <text x="25" y="40" fill="#eab308" font-size="10" font-weight="bold" text-anchor="middle">1</text>
+        <text x="25" y="55" fill="#3b82f6" font-size="10" font-weight="bold" text-anchor="middle">3</text>
+
+        <text x="80" y="20" fill="#475569" font-size="10" font-weight="bold" text-anchor="middle">fare(mean)</text>
+        <text x="80" y="40" fill="#b45309" font-size="10" font-weight="bold" text-anchor="middle">84.15</text>
+        <text x="80" y="55" fill="#1d4ed8" font-size="10" font-weight="bold" text-anchor="middle">13.67</text>
+    </g>
+
+    <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+        </marker>
+    </defs>
+    
+    <rect x="150" y="240" width="300" height="40" rx="5" fill="#fff7ed" />
+    <text x="300" y="265" fill="#c2410c" font-size="12" font-weight="bold" text-anchor="middle">💡 pclass 1등급의 평균 페어가 훨씬 높다는 것을 도출!</text>
+</svg>

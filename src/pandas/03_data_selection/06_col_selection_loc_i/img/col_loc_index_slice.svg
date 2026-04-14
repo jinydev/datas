@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">2단계: 열 명단 슬라이싱 (pf.columns[1:])</text>
+
+  <!-- 파이썬 명령 스텝 1 (명단 배열 자르기) -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="220" height="60" fill="#E0F7FA" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="2"/>
+    <text x="110" y="20" font-family="sans-serif" font-size="12" fill="#006064" font-weight="bold" text-anchor="middle">Step 1. 열 명단 리스트 슬라이싱</text>
+    <text x="110" y="45" font-family="monospace" font-size="18" fill="#00838F" font-weight="bold" text-anchor="middle">pf.columns[<tspan fill="#FF5252">1:</tspan>]</text>
+  </g>
+
+  <!-- 명단 추출 과정 설명 (1부터 끝까지 포함) -->
+  <path d="M 170 140 L 170 180" fill="none" stroke="#00BCD4" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="165,175 170,185 175,175" fill="#00BCD4" />
+  
+  <rect x="70" y="150" width="200" height="25" fill="#FFF8E1" rx="5" stroke="#FFC107" stroke-width="1"/>
+  <text x="170" y="167" font-family="sans-serif" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">['기말', '과제', '출석']</text>
+
+  <!-- 파이썬 명령 스텝 2 (명단 전부 넘김) -->
+  <g transform="translate(60, 200)">
+    <rect x="0" y="0" width="220" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="110" y="20" font-family="sans-serif" font-size="12" fill="#81C784" font-weight="bold" text-anchor="middle">Step 2. loc으로 동시 열 추출</text>
+    <text x="110" y="45" font-family="monospace" font-size="16" fill="#FFF" font-weight="bold" text-anchor="middle">pf.loc[:, <tspan fill="#FFC107">명단리스트</tspan>]</text>
+  </g>
+
+  <!-- 추출 애로우 -->
+  <g transform="translate(300, 230)">
+    <path d="M 0 0 L 100 0" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="95,-7 105,0 95,7" fill="#4CAF50" />
+    <text x="50" y="-10" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">표의 형태(DataFrame)</text>
+  </g>
+
+  <!-- 결과 표 (데이터프레임) -->
+  <g transform="translate(440, 90)">
+    <rect x="-30" y="0" width="220" height="120" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="2"/>
+    <text x="80" y="-10" font-family="monospace" font-size="14" fill="#00838F" font-weight="bold" text-anchor="middle">DataFrame 형식 반환</text>
+    
+    <rect x="30" y="0" width="160" height="30" fill="#E0F7FA" rx="3" stroke="#80DEEA" stroke-width="1"/>
+    <text x="60" y="20" font-family="sans-serif" font-size="11" fill="#006064" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="100" y="20" font-family="sans-serif" font-size="11" fill="#006064" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="140" y="20" font-family="sans-serif" font-size="11" fill="#006064" font-weight="bold" text-anchor="middle">출석</text>
+
+    <!-- 인덱스 (윤, 강, 홍) -->
+    <rect x="-30" y="30" width="60" height="90" fill="#FFF3E0" rx="3" stroke="#FFCA28" />
+    <text x="0" y="55" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">윤일형</text>
+    <text x="0" y="85" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+    <text x="0" y="115" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">홍소희</text>
+
+    <!-- 값 -->
+    <text x="60" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">35</text>
+    <text x="100" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">8</text>
+    <text x="140" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">18</text>
+
+    <text x="60" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">27</text>
+    <text x="100" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    <text x="140" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">20</text>
+
+    <text x="60" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">17</text>
+    <text x="100" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    <text x="140" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">19</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#FFFDE7" rx="10" stroke="#FBC02D" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">[1:] 슬라이싱을 통해 1번 위치의 컬럼명부터 끝까지 쭉 가져옵니다.</text>
+  </g>
+
+</svg>

@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.4 2차원 행렬의 테이블 데이터 사용</title>
-  <meta name="title" content="6.2.4 2차원 행렬의 테이블 데이터 사용" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.4 2차원 행렬의 테이블 데이터 사용"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기</title>
+  <meta name="title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.4 2차원 행렬의 테이블 데이터 사용"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.2.4 2차원 행렬의 테이블 데이터 사용" />
+<meta property="og:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.2.4 2차원 행렬의 테이블 데이터 사용" />
+<meta property="twitter:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.4 2차원 행렬의 테이블 데이터 사용","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,65 +709,150 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.2.4 2차원 행렬의 테이블 데이터 사용</li>
+        <li class="breadcrumb-item active" aria-current="page">6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="624-2차원-행렬의-테이블-데이터-사용">6.2.4 2차원 행렬의 테이블 데이터 사용</h1>
+            <h2 id="624-2차원-행렬matrix로-데이터프레임-만들기">6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기</h2>
 
-<p>다음 코드처럼 첫 인자에 1차원 리스트를 대입하면 하나의 열이 있는 데이터프레임을 만들 수 있다. 달리 지정하지 않으면 행과 열의 레이블은 기본인 <code class="language-plaintext highlighter-rouge">RangeIndex</code>(0인 정수 시퀀스)로 정해진다.</p>
+<p><strong>[수학적/전산학적 의미: 다차원 배열의 관계형 매핑]</strong>
+수학의 $m \times n$ 크기의 2차원 구형 행렬(Rectangular Matrix) 데이터를 판다스의 DataFrame으로 캐스팅(Casting)하는 과정입니다. 이때 단순한 좌표(0, 1, 2…)로 구성된 공간을 문자열 레이블로 참조 가능한 연관 배열(Associative Array) 구조체로 확장 매핑합니다.</p>
+
+<p><strong>[비유로 이해하기: 아무 이름 없는 엑셀 표에 머리글 씌우기]</strong></p>
+<ul>
+  <li>친구가 엑셀 파일에 숫자만 잔뜩 입력해놓고, 첫 번째 줄에 열 이름(A, B, C…)을 안 적어둔 상황을 떠올려 보세요.</li>
+  <li><strong>2차원 행렬</strong>은 그저 “숫자 덩어리”입니다. 여기에 판다스를 통해 <code class="language-plaintext highlighter-rouge">index</code>와 <code class="language-plaintext highlighter-rouge">columns</code>라는 <strong>“이름표 테이프”</strong>를 붙여주어 제대로 된 표로 둔갑시키는 작업입니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="1단계-1차원-리스트로-만들면-열이-하나인-표가-됩니다">[1단계] 1차원 리스트로 만들면 열이 하나인 표가 됩니다</h3>
+
+<p>데이터프레임은 본질적으로 2차원 구조이지만, 1차원 리스트를 강제로 집어넣으면 “세로로 긴 1개의 열(Column)”을 가진 표로 취급합니다. 이때 이름표를 생략하면 행과 열 모두 0부터 시작하는 숫자가 자동으로 붙습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<span class="c1"># 1차원 리스트 주입
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 1차원 리스트 -&gt; 데이터프레임 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></div>
-
-<p>다음 코드처럼 2차원 리스트를 <code class="language-plaintext highlighter-rouge">data</code>로 사용하고 <code class="language-plaintext highlighter-rouge">index</code>(행 레이블)를 지정할 수 있다. 여전히 열 레이블은 기본인 <code class="language-plaintext highlighter-rouge">RangeIndex</code>이다. 2차원 리스트가 그대로 행과 열이 된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 1차원 리스트 -&gt; 데이터프레임 ---
+    0   &lt;-- 기본 생성된 Columns(열 이름표)
+0  10   &lt;-- 여기서부터는 기본 생성된 Index(행 이름표)
+1  20
+2  30
+3  40
+4  50
 </code></pre></div></div>
 
-<p>다음 <code class="language-plaintext highlighter-rouge">columns=['A', 'B', 'C']</code>로 열 레이블을 직접 지정할 수 있다.</p>
+<p><img src="./img/df_1d_list.svg" alt="1차원 리스트의 세로열 변환" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<hr />
+
+<h3 id="2단계-2차원-리스트list-of-lists로-온전한-표-만들기">[2단계] 2차원 리스트(List of Lists)로 온전한 표 만들기</h3>
+
+<p>이번엔 여러 개의 리스트를 품고 있는 ‘리스트 속의 리스트(2차원)’를 넣어보겠습니다. 행(Index) 이름표도 함께 부여해 봅니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 3행 3열짜리 2차원 리스트
+</span><span class="n">data_2d</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># 데이터와 함께 index 이름표 지정
+</span><span class="n">df_2d</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_2d</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 2차원 리스트 + 행 인덱스 지정 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_2d</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 2차원 리스트 + 행 인덱스 지정 ---
+     0    1    2   &lt;-- 열 이름은 생략해서 0, 1, 2
+a    1    2    3
+b   10   20   30
+c  100  200  300
 </code></pre></div></div>
 
-<p>데이터프레임의 <code class="language-plaintext highlighter-rouge">index</code>와 <code class="language-plaintext highlighter-rouge">columns</code>는 다음으로 참조할 수 있다.</p>
+<p><img src="./img/df_2d_list.svg" alt="2차원 리스트와 행 인덱스 매핑" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">)</span>
+<hr />
+
+<h3 id="3단계-열-이름표columns까지-완벽하게-붙이기">[3단계] 열 이름표(Columns)까지 완벽하게 붙이기</h3>
+
+<p>데이터에 <code class="language-plaintext highlighter-rouge">index</code>(행 이름)와 <code class="language-plaintext highlighter-rouge">columns</code>(열 이름)를 모두 직접 지정하면 완벽한 테이블 구조가 완성됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 이번엔 열 이름표(Columns)까지 지정해 보겠습니다.
+</span><span class="n">df_full</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">data_2d</span><span class="p">,</span> 
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">1번방</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">2번방</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">3번방</span><span class="sh">'</span><span class="p">],</span> 
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">A타입</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B타입</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">C타입</span><span class="sh">'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 완벽하게 라벨링된 표 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">[현재 세팅된 이름표 확인]</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">행 이름:</span><span class="sh">"</span><span class="p">,</span> <span class="n">df_full</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="nf">tolist</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">열 이름:</span><span class="sh">"</span><span class="p">,</span> <span class="n">df_full</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="nf">tolist</span><span class="p">())</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 완벽하게 라벨링된 표 ---
+       A타입  B타입  C타입
+1번방    1    2    3
+2번방   10   20   30
+3번방  100  200  300
+
+[현재 세팅된 이름표 확인]
+행 이름: ['1번방', '2번방', '3번방']
+열 이름: ['A타입', 'B타입', 'C타입']
 </code></pre></div></div>
 
-<p>다음처럼 키워드 인자 <code class="language-plaintext highlighter-rouge">data</code>에 <code class="language-plaintext highlighter-rouge">np.arange()</code>를 대입해 2차원 데이터를 지정할 수 있다.</p>
+<p><img src="./img/df_2d_full.svg" alt="행과 열 이름표 모두 병합 완료" /></p>
+
+<hr />
+
+<h3 id="4단계-최강-조합-numpy-배열을-dataframe으로-바꾸기">[4단계] 최강 조합: NumPy 배열을 DataFrame으로 바꾸기</h3>
+
+<p>실제 머신러닝이나 데이터 전처리 작업에서는 NumPy로 초고속 계산을 수행한 뒤, 최종 결과를 보기 좋게 포장하기 위해 DataFrame으로 변환하는 경우가 매우 많습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+<span class="c1"># 1. 0~11까지의 숫자를 3행 4열로 쪼갠 넘파이 배열 생성
+</span><span class="n">np_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">df_np</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">Col1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Col2</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Col3</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Col4</span><span class="sh">'</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- NumPy 배열 기반 데이터프레임 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_np</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- NumPy 배열 기반 데이터프레임 ---
+   Col1  Col2  Col3  Col4
+0     0     1     2     3
+1     4     5     6     7
+2     8     9    10    11
 </code></pre></div></div>
 
-<p>다음처럼 키워드 인자 <code class="language-plaintext highlighter-rouge">data</code>가 없이 첫 인자에 기술해도 상관없다.</p>
+<p><img src="./img/df_numpy.svg" alt="NumPy 행렬의 초고속 데이터프레임 변환" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음처럼 5행 6열의 [0, 1) 사이의 난수를 가진 데이터프레임을 만들 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
-</code></pre></div></div>
+<blockquote>
+  <p><strong>🔥 파이썬 실습 꿀팁: 난수로 난이도 높이기</strong>
+로또 번호 시뮬레이션용 데이터프레임을 만들고 싶다면 <code class="language-plaintext highlighter-rouge">np.random</code>과 결합하세요!</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1부터 45사이의 난수로 5행 6열 배열 생성
+</span><span class="n">lotto_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span> 
+                        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">번호1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">번호2</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">번호3</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">번호4</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">번호5</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">보너스</span><span class="sh">'</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">lotto_df</span><span class="p">)</span>
+</code></pre></div>  </div>
+</blockquote>
 
 
             <!-- 구글 애드센스 출력 -->

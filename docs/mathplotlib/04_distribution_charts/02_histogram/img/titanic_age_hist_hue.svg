@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#14b8a6" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">👥 남녀별 나이 차단(Step) 히스토그램 겹쳐 그리기</text>
+
+    <!-- Grid lines -->
+    <g transform="translate(80, 70)" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1">
+        <line x1="0" y1="0" x2="400" y2="0" />
+        <line x1="0" y1="50" x2="400" y2="50" />
+        <line x1="0" y1="100" x2="400" y2="100" />
+        <line x1="0" y1="150" x2="400" y2="150" />
+        <line x1="0" y1="200" x2="400" y2="200" />
+        <line x1="0" y1="250" x2="400" y2="250" />
+    </g>
+
+    <!-- axes -->
+    <g transform="translate(80, 70)">
+        <path d="M 0 0 L 0 250 L 400 250" stroke="#475569" stroke-width="2" fill="none" />
+        
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">80</text>
+        <text x="-10" y="67" fill="#64748b" font-size="12" text-anchor="end">60</text>
+        <text x="-10" y="130" fill="#64748b" font-size="12" text-anchor="end">40</text>
+        <text x="-10" y="192" fill="#64748b" font-size="12" text-anchor="end">20</text>
+        <text x="-10" y="255" fill="#64748b" font-size="12" text-anchor="end">0</text>
+
+        <!-- Female (Orange) Element: step -->
+        <path d="M 0 250 L 0 200 L 25 200 L 25 220 L 50 220 L 50 180 L 75 180 L 75 120 L 100 120 L 100 100 L 125 100 L 125 150 L 150 150 L 150 180 L 175 180 L 175 220 L 200 220 L 200 230 L 225 230 L 225 240 L 250 240 L 250 250 Z" fill="#fdba74" fill-opacity="0.3" stroke="#ea580c" stroke-width="2" />
+
+        <!-- Male (Blue) Element: step. Male values generally higher around 20-30s -->
+        <path d="M 0 250 L 0 170 L 25 170 L 25 190 L 50 190 L 50 150 L 75 150 L 75 50 L 100 50 L 100 20 L 125 20 L 125 80 L 150 80 L 150 110 L 175 110 L 175 160 L 200 160 L 200 190 L 225 190 L 225 210 L 250 210 L 250 220 L 275 220 L 275 230 L 300 230 L 300 240 L 325 240 L 325 245 L 350 245 L 350 250 Z" fill="#93c5fd" fill-opacity="0.3" stroke="#2563eb" stroke-width="2" />
+
+        <text x="0" y="275" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="100" y="275" fill="#64748b" font-size="12" text-anchor="middle">20</text>
+        <text x="200" y="275" fill="#64748b" font-size="12" text-anchor="middle">40</text>
+        <text x="300" y="275" fill="#64748b" font-size="12" text-anchor="middle">60</text>
+        <text x="400" y="275" fill="#64748b" font-size="12" text-anchor="middle">80</text>
+        
+        <text x="-40" y="125" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90, -40, 125)">Count</text>
+        <text x="200" y="310" fill="#1e293b" font-size="14" font-weight="bold" text-anchor="middle">age</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(500, 70)">
+        <rect x="0" y="0" width="80" height="60" fill="white" stroke="#cbd5e1" rx="5" />
+        <text x="10" y="15" fill="#475569" font-size="10" font-weight="bold">sex</text>
+        
+        <rect x="10" y="25" width="10" height="10" fill="#fdba74" stroke="#ea580c" />
+        <text x="30" y="34" fill="#475569" font-size="12">female</text>
+
+        <rect x="10" y="40" width="10" height="10" fill="#93c5fd" stroke="#2563eb" />
+        <text x="30" y="49" fill="#475569" font-size="12">male</text>
+    </g>
+
+    <rect x="75" y="345" width="450" height="35" rx="5" fill="#f0fdfa" />
+    <text x="300" y="367" fill="#0f766e" font-size="12" font-weight="bold" text-anchor="middle">💡 element='step' 옵션은 겹치는 막대의 내부 선을 지우고 계단 모양 외곽선만 그림</text>
+</svg>

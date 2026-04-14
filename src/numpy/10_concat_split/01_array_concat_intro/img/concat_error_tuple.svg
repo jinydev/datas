@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .code { font-family: 'Courier New', Courier, monospace; font-size: 28px; font-weight: bold; fill: #333; }
+      .tuple { fill: #d63384; font-size: 34px; font-weight: bolder; }
+      .error-text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #dc3545; font-weight: bold; }
+      .good-text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #198754; font-weight: bold; }
+      .box { rx: 20px; ry: 20px; stroke-width: 3px; fill: white; }
+      
+      .blink-bad {
+        animation: blinkBad 2s infinite;
+      }
+      .blink-good {
+        animation: blinkGood 2s infinite;
+      }
+      @keyframes blinkBad {
+        0%, 45% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes blinkGood {
+        0%, 45% { opacity: 0; }
+        50%, 100% { opacity: 1; }
+      }
+      .highlight-circle {
+        fill: none; stroke: #ffc107; stroke-width: 4; stroke-dasharray: 6 4;
+        animation: rotateDash 10s linear infinite;
+      }
+      @keyframes rotateDash {
+        to { stroke-dashoffset: -100; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="250" fill="#ffeebb" rx="15" ry="15" opacity="0.3" />
+  <text x="400" y="40" class="title" text-anchor="middle">⚠️ 주의: 튜플(Tuple) 포장 잊지 않기!</text>
+
+  <!-- Scenario 1: Bad -->
+  <g transform="translate(100, 80)">
+    <rect width="280" height="120" class="box" stroke="#dc3545" />
+    <text x="140" y="30" class="error-text blink-bad" text-anchor="middle">❌ 에러 발생 (이렇게 쓰면 안됨)</text>
+    <text x="140" y="80" class="code" text-anchor="middle">
+      np.hstack(A, B)
+    </text>
+  </g>
+
+  <!-- Scenario 2: Good -->
+  <g transform="translate(420, 80)">
+    <rect width="280" height="120" class="box" stroke="#198754" />
+    <text x="140" y="30" class="good-text" text-anchor="middle">✅ 올바른 방법 (튜플로 묶어주기)</text>
+    <text x="140" y="80" class="code" text-anchor="middle">
+      np.hstack(<tspan class="tuple blink-good">(</tspan>A, B<tspan class="tuple blink-good">)</tspan>)
+    </text>
+    <!-- Highlight the parentheses -->
+    <ellipse cx="65" cy="73" rx="15" ry="25" class="highlight-circle blink-good" />
+    <ellipse cx="215" cy="73" rx="15" ry="25" class="highlight-circle blink-good" />
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .text-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; fill: #333; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">통계학의 결정체: 상자그림(Box Plot) 완벽 해부도</text>
+
+  <!-- Title Axis -->
+  <line x1="100" y1="280" x2="750" y2="280" stroke="#adb5bd" stroke-width="2" />
+  <text x="100" y="305" class="text-desc" fill="#adb5bd" text-anchor="middle">가장 작은 값</text>
+  <text x="750" y="305" class="text-desc" fill="#adb5bd" text-anchor="middle">가장 큰 값</text>
+
+  <!-- Box Plot Drawing -->
+  <g transform="translate(0, 100)">
+    <!-- Whiskers -->
+    <line x1="200" y1="75" x2="300" y2="75" stroke="#333" stroke-width="4" />
+    <line x1="200" y1="55" x2="200" y2="95" stroke="#333" stroke-width="4" />
+    
+    <line x1="550" y1="75" x2="650" y2="75" stroke="#333" stroke-width="4" />
+    <line x1="650" y1="55" x2="650" y2="95" stroke="#333" stroke-width="4" />
+
+    <!-- Outliers -->
+    <circle cx="100" cy="75" r="5" fill="#dc3545" />
+    <circle cx="120" cy="75" r="5" fill="#dc3545" />
+    <circle cx="730" cy="75" r="5" fill="#dc3545" />
+    
+    <!-- Box -->
+    <rect x="300" y="40" width="250" height="70" fill="#e3f2fd" stroke="#0056b3" stroke-width="4" />
+    <!-- Median -->
+    <line x1="425" y1="40" x2="425" y2="110" stroke="#0056b3" stroke-width="5" />
+    
+    <!-- Annotations -->
+    <!-- Median -->
+    <path d="M 425 35 L 425 -10" fill="none" stroke="#28a745" stroke-width="2" stroke-dasharray="4,2" />
+    <text x="425" y="-20" class="title" fill="#28a745" text-anchor="middle">중앙값 (Median, Q2, 50%)</text>
+    <text x="425" y="140" class="text-desc" fill="#28a745" text-anchor="middle" font-size="12">가운데 정렬된 1등!</text>
+    
+    <!-- Q1 -->
+    <path d="M 300 35 L 300 10" fill="none" stroke="#0d6efd" stroke-width="2" stroke-dasharray="4,2" />
+    <text x="300" y="0" class="title" fill="#0d6efd" text-anchor="middle">제1사분위수 (Q1, 25%)</text>
+
+    <!-- Q3 -->
+    <path d="M 550 35 L 550 10" fill="none" stroke="#0d6efd" stroke-width="2" stroke-dasharray="4,2" />
+    <text x="550" y="0" class="title" fill="#0d6efd" text-anchor="middle">제3사분위수 (Q3, 75%)</text>
+
+    <!-- IQR -->
+    <path d="M 300 125 L 300 145 L 550 145 L 550 125" fill="none" stroke="#f39c12" stroke-width="2" />
+    <text x="425" y="165" class="title" fill="#d35400" text-anchor="middle">IQR (Interquartile Range) : 데이터의 핵심 50%가 모인 상자</text>
+    
+    <!-- Whiskers End -->
+    <path d="M 200 45 L 200 -30" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="4,2" />
+    <text x="200" y="-40" class="text-desc" font-weight="bold" fill="#333" text-anchor="middle">최솟값</text>
+    
+    <path d="M 650 45 L 650 -30" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="4,2" />
+    <text x="650" y="-40" class="text-desc" font-weight="bold" fill="#333" text-anchor="middle">최댓값</text>
+    
+    <!-- Outliers Label -->
+    <text x="110" y="55" class="text-desc" fill="#dc3545" font-weight="bold" text-anchor="middle">이상치(Outliers)</text>
+    <text x="730" y="55" class="text-desc" fill="#dc3545" font-weight="bold" text-anchor="middle">이상치</text>
+  </g>
+</svg>

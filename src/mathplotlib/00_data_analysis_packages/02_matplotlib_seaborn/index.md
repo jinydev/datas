@@ -1,38 +1,57 @@
 ---
-layout: python
-title: "5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치"
+layout: mathplotlib
+title: "5.0.2 패키지 matplotlib, seaborn, pydataset 개요"
 ---
 
-## 5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치
+## 5.0.2 Matplotlib, Seaborn, pydataset의 역할과 철학
 
-간단히 `mpl`로도 부르는 패키지 `matplotlib`은 파이썬에서 2D 그래픽 그림을 생성하는 데 사용되는 데이터 시각화 라이브러리이다. `matplotlib`은 과학 및 엔지니어링 분야에서 데이터를 시각적으로 탐색하고 표현하는 데 널리 사용되며, 다양한 차트, 플롯, 히스토그램 등을 생성할 수 있다.
+파이썬의 시각화 세계에는 양대 산맥이 존재합니다. 하나는 그림의 모든 세부 사항을 밑바닥부터 100% 통제하는 전통적인 장인 **Matplotlib**이고, 다른 하나는 자주 쓰는 통계 그래프들을 알아서 예쁘게 그려주는 최신식 마법 템플릿 **Seaborn**입니다.
 
-또한, 패키지 `seaborn`은 `matplotlib`에 기반한 고수준 인터페이스를 제공하는 시각화 라이브러리이다. 주로 통계적 그래픽 기능을 갖추고 있어 데이터 분석에 유용하게 활용된다. 시본은 다음의 특징을 갖는다.
+### 두 시각화 라이브러리의 철학 차이
 
-- **간편한 사용**: 시본은 `matplotlib`와 함께 사용되며, `matplotlib`의 기능을 확장하여 간편하게 고급 시각화를 구현하며, `matplotlib`보다 간단한 코드로 다양한 그래프를 생성
-- **통계적 그래픽**: 시본은 통계적 그래픽 기능을 제공하여 히스토그램, 박스 플롯, 회귀선, 히트맵 등 다양한 통계 그래픽을 생성
-- **데이터 셋 제공**: 시본은 자체적으로 데이터 셋을 제공하여 실습과 테스트에 용이하며, 예를 들어, 타이타닉 데이터셋과 같은 유명한 데이터 셋을 포함
+**[전산학적/시각적 의미: Procedural vs Declarative]**
+- **`matplotlib` (절차적 방식)**: 빈 도화지(Figure)를 만들고, 가로축 눈금은 무엇으로 할지, 붓 색깔은 빨간색으로 할지, 점을 어느 좌표에 하나하나 찍을지 컴퓨터에게 **명령(Procedural)**하여 그림을 완성시키는 라이브러리입니다. 세밀한 조작이 가능하지만 코드가 길어집니다.
+- **`seaborn` (선언적 방식)**: `matplotlib`의 엔진을 기반으로, 그 위에 디자인 껍데기(테마)를 씌운 것입니다. 그냥 구체적인 지시 없이 "이 Pandas 데이터를 통째로 넣을 테니 막대그래프(Barplot)로 눈에 띄게 그려줘!" 라고 **선언(Declarative)**만 하면 알아서 축을 그리고 색상을 입혀줍니다.
 
-패키지 `pydataset`은 파이썬에서 사용할 수 있는 데이터셋(datasets)을 쉽게 메모리에 저장하고 활용할 수 있도록 제공되는 패키지이다. 이 패키지는 R 패키지인 `datasets`에 포함된 여러 데이터셋을 파이썬에서 바로 사용할 수 있도록 제공한다. 다양한 테스트용 데이터셋을 포함하고 있어, 데이터 분석이나 시각화 연습 등 다양한 용도로 활용될 수 있다. 이러한 데이터 셋을 장난감 데이터(toy data)라고도 부른다. `pydataset`의 주요 특징은 다음과 같다.
+![Matplotlib과 Seaborn의 시각화 철학 비교](img/mpl_vs_sns.svg)
 
-- **다양한 데이터셋 제공**: `pydataset` 패키지는 R 패키지인 `datasets`에 포함된 많은 데이터셋을 파이썬에서 사용할 수 있도록 변환한 것으로, 빠르게 샘플 데이터를 활용할 수 있음
-- **간편한 데이터 로드**: 패키지를 설치하고 메모리에 로드(load)한 후, `data()` 함수를 사용하여 데이터셋을 쉽게 사용할 수 있음
-- **표준화된 데이터 형태**: 메모리에 적재한 데이터셋은 판다스 데이터프레임 형태로 반환되어 데이터 분석 및 조작이 용이함
+수업 전반부에는 `matplotlib`의 뼈대를 배우고, 후반부에서는 `seaborn`으로 화려하고 복잡한 통계 분석 차트를 단 몇 줄로 생성하는 방법을 배우게 됩니다.
 
-다음 명령 `pip show seaborn matplotlib pydataset`으로 한번에 모든 패키지의 설치 유무를 확인하자.
+---
 
-```bash
-pip show seaborn matplotlib pydataset
+### 장난감 데이터 창고: `pydataset`
+
+그래프를 그리기 위해서는 먼저 도화지에 올릴 '물감(데이터)'이 필요합니다. 매번 인터넷에서 엑셀이나 CSV 파일을 다운로드받아서 코드로 불러오는 것은 매우 번거롭습니다.
+
+이때 구원투수로 등장하는 패키지가 바로 **`pydataset`** 입니다.
+
+- **장난감 데이터(Toy Data)**: 데이터 분석가들이 시각화나 머신러닝 알고리즘을 연습하기 위해 표준적으로 사용하는 깨끗하고 유명한 더미(Dummy) 데이터들을 말합니다.
+- `pydataset`을 설치하면 파이썬 내장 함수 1개만 호출해도 <타이타닉 승객 목록>, <붓꽃(Iris) 사이즈>, <식당 손님들의 팁(Tips)> 데이터가 Pandas의 `DataFrame` 객체 형태로 즉각 소환됩니다.
+
+---
+
+### 시각화 환경 패키지 불러오기 (Import)
+
+앞서 `pip install matplotlib seaborn pydataset`을 통해 컴퓨터(아나콘다)에 도구들을 다운로드 받았다면, 이제 파이썬 스크립트(.py 파일이나 주피터 노트북) 내부로 이 도구들을 꺼내와야 합니다. 
+
+현업 데이터 사이언티스트들이 전 세계 공통으로 사용하는 '별명(Alias)' 매핑 규칙은 다음과 같습니다.
+
+```python
+# 가장 기본이 되는 데이터 가공/수학 엔진
+import pandas as pd
+import numpy as np
+
+# 전통적인 수동 시각화 장인 도구 (가장 많이 쓰는 pyplot 하위 모듈만 꺼냅니다)
+import matplotlib.pyplot as plt
+
+# 현대적인 자동 시각화 마법 템플릿 도구
+import seaborn as sns
+
+# 샘플(Toy) 데이터 장난감 창고
+from pydataset import data
 ```
 
-![명령 프롬프트 pip show seaborn matplotlib pydataset](/Users/hojin8/docs/070.강의/c01.빅데이터분석/파이썬으로_배우는_데이터분석입문/파이썬으로_배우는_데이터분석입문2/temp_images/page_017.png)
-
-이제, 다음 명령 `pip install seaborn pydataset`으로 한 번에 패키지 `seaborn`, `matplotlib`, `pydataset`을 설치한다. 명령 `pip`에서의 설치는 필요한 패키지의 종속성에 따라 설치한다. 패키지 `seaborn`은 `matplotlib`을 필요로 하므로 `seaborn`만 설치해도 알아서 `matplotlib`을 설치한다. 그러므로 `seaborn`과 `pydataset`을 명령에 기술한 것이다. 물론 패키지 3개를 모두 기술해도 상관없다.
-
-```bash
-pip install seaborn pydataset
-# 5.0.2 또는
-pip install seaborn matplotlib pydataset
-```
-
-![명령 프롬프트 pip install seaborn pydataset](/Users/hojin8/docs/070.강의/c01.빅데이터분석/파이썬으로_배우는_데이터분석입문/파이썬으로_배우는_데이터분석입문2/temp_images/page_018.png)
+> **📌 핵심 요약**
+> - 세밀한 텍스트 폰트 조각, 도화지 분할, 파일 저장은 `plt` (Matplotlib)가 담당합니다.
+> - 복잡한 통계 분포나 색상 팔레트를 입힌 데이터 차트는 `sns` (Seaborn)가 담당합니다.
+> - 이 둘은 적대적 관계가 아니며, 항상 **같이 사용(혼용)** 됩니다!

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .label { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #e74c3c; }
+      .code { font-family: 'Consolas', monospace; font-size: 20px; fill: #0056b3; font-weight: bold; }
+      .box { rx: 10px; ry: 10px; stroke-width: 2px; }
+      .gear { fill: #6c757d; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="40" class="title" text-anchor="middle" fill="#0056b3">Step 1: The 'Seeded' Generator Engine</text>
+  
+  <text x="425" y="80" class="code" text-anchor="middle">rg = np.random.default_rng(12345)</text>
+
+  <!-- Seed Input -->
+  <g transform="translate(150, 150)">
+    <rect x="0" y="0" width="120" height="60" fill="#fff3cd" stroke="#ffc107" class="box" />
+    <text x="60" y="35" class="code" text-anchor="middle" fill="#d39e00">Seed: 12345</text>
+    <path d="M 120 30 L 190 30" stroke="#ffc107" stroke-width="4" stroke-dasharray="6 4" />
+    <polygon points="180,25 190,30 180,35" fill="#ffc107" />
+    <text x="155" y="20" font-family="Arial" font-size="12" fill="#d39e00" text-anchor="middle">고정!</text>
+  </g>
+
+  <!-- Generator Engine -->
+  <g transform="translate(340, 110)">
+    <rect x="0" y="0" width="180" height="140" fill="#f8f9fa" stroke="#6c757d" class="box" />
+    <text x="90" y="30" class="label" text-anchor="middle" fill="#495057">Generator (PCG64)</text>
+    
+    <!-- Simple gear icon -->
+    <g transform="translate(90, 80)">
+      <circle cx="0" cy="0" r="25" class="gear" />
+      <circle cx="0" cy="0" r="10" fill="#f8f9fa" />
+      <rect x="-35" y="-5" width="70" height="10" class="gear" />
+      <rect x="-5" y="-35" width="10" height="70" class="gear" />
+      <rect x="-26" y="-26" width="52" height="52" class="gear" transform="rotate(45)" />
+    </g>
+
+    <path d="M 180 70 L 250 70" stroke="#28a745" stroke-width="4" stroke-dasharray="6 4" />
+    <polygon points="240,65 250,70 240,75" fill="#28a745" />
+    <text x="215" y="60" font-family="Arial" font-size="14" fill="#28a745" text-anchor="middle">항상 똑같은</text>
+    <text x="215" y="90" font-family="Arial" font-size="14" fill="#28a745" text-anchor="middle">순서 보장</text>
+  </g>
+
+  <!-- Output sequences -->
+  <g transform="translate(590, 150)">
+    <rect x="0" y="0" width="160" height="60" fill="#e8f5e9" stroke="#28a745" class="box" />
+    <text x="80" y="35" class="code" text-anchor="middle" fill="#155724">[A, B, C, D...]</text>
+  </g>
+
+  <text x="425" y="300" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">핵심: 동일한 '시드(Seed)'를 엔진에 넣으면 전원이 꺼져도 항상 동일한 난수 순서를 뿜어냅니다.</text>
+</svg>

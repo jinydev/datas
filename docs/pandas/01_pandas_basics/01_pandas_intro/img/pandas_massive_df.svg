@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">초거대 데이터(100만 건) 초고속 생성 및 처리</text>
+
+  <!-- 파이썬 코드 입력 -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="220" height="120" fill="#263238" rx="5" filter="url(#shadow)" />
+    <rect x="0" y="0" width="220" height="25" fill="#37474F" rx="5" />
+    <circle cx="15" cy="12" r="5" fill="#FF5252" />
+    <circle cx="30" cy="12" r="5" fill="#FFCA28" />
+    <circle cx="45" cy="12" r="5" fill="#8BC34A" />
+    
+    <text x="10" y="50" font-family="monospace" font-size="12" fill="#80CBC4">pd.DataFrame(</text>
+    <text x="20" y="75" font-family="monospace" font-size="12" fill="#FFF">np.random.rand(</text>
+    <text x="30" y="95" font-family="monospace" font-size="14" fill="#FF5252" font-weight="bold">1000000</text>
+    <text x="90" y="95" font-family="monospace" font-size="12" fill="#FFF">, 3)</text>
+    <text x="10" y="110" font-family="monospace" font-size="12" fill="#80CBC4">)</text>
+  </g>
+
+  <!-- 번개 화살표 -->
+  <g transform="translate(290, 120)">
+    <path d="M 0 0 L 80 0" fill="none" stroke="#FFC107" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="75,-7 85,0 75,7" fill="#FFC107" />
+    <text x="40" y="-15" font-family="sans-serif" font-size="30" fill="#FFC107" text-anchor="middle">⚡</text>
+    <text x="40" y="20" font-family="sans-serif" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">0.01초 컷!</text>
+  </g>
+
+  <!-- 생성된 100만 행 데이터프레임 -->
+  <g transform="translate(400, 60)">
+    <rect x="0" y="0" width="240" height="200" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#CFD8DC" stroke-width="2"/>
+    
+    <rect x="0" y="0" width="240" height="30" fill="#607D8B" rx="5" />
+    <text x="50" y="20" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">A_Score</text>
+    <text x="120" y="20" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">B_Score</text>
+    <text x="190" y="20" font-family="sans-serif" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">C_Score</text>
+    
+    <rect x="-30" y="30" width="30" height="170" fill="#ECEFF1" stroke="#CFD8DC" />
+    <text x="-15" y="50" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">0</text>
+    <text x="-15" y="80" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">1</text>
+    <text x="-15" y="110" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">2</text>
+    
+    <!-- 앞단 데이터 3줄 -->
+    <text x="50" y="50" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.12345</text>
+    <text x="120" y="50" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.67890</text>
+    <text x="190" y="50" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.45678</text>
+    
+    <text x="50" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.23456</text>
+    <text x="120" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.78901</text>
+    <text x="190" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.56789</text>
+    
+    <text x="50" y="110" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.34567</text>
+    <text x="120" y="110" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.89012</text>
+    <text x="190" y="110" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.67890</text>
+    
+    <text x="120" y="145" font-family="sans-serif" font-size="20" fill="#B0BEC5" font-weight="bold" text-anchor="middle">...</text>
+    
+    <!-- 맨 마지막 데이터 -->
+    <text x="-15" y="180" font-family="sans-serif" font-size="10" fill="#78909C" font-weight="bold" text-anchor="middle">999999</text>
+    <text x="50" y="180" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.87654</text>
+    <text x="120" y="180" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.32109</text>
+    <text x="190" y="180" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">0.54321</text>
+  </g>
+
+  <!-- 하단 팁 블록 -->
+  <g transform="translate(350, 310)">
+    <rect x="-300" y="-30" width="600" height="50" fill="#E8F5E9" rx="10" stroke="#4CAF50" stroke-width="2" />
+    <text x="0" y="0" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">100만 행이 넘는 엑셀 파일을 열면 프로그램이 멈추지만, Pandas는 순식간에 처리합니다!</text>
+  </g>
+</svg>

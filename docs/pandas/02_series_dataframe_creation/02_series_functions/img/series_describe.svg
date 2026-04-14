@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.describe() 한 방에 뽑는 요약 리포트</text>
+
+  <!-- 원본 데이터 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="140" height="230" fill="#E8F5E9" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="70" y="-10" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">학급 수학 성적 Data</text>
+    
+    <rect x="15" y="15" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="70" y="35" font-family="sans-serif" font-size="14" fill="#333" text-anchor="middle">99</text>
+    
+    <rect x="15" y="55" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="70" y="75" font-family="sans-serif" font-size="14" fill="#333" text-anchor="middle">84</text>
+    
+    <rect x="15" y="95" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="70" y="115" font-family="sans-serif" font-size="14" fill="#333" text-anchor="middle">92</text>
+    
+    <rect x="15" y="135" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="70" y="155" font-family="sans-serif" font-size="14" fill="#333" text-anchor="middle">65</text>
+    
+    <rect x="15" y="175" width="110" height="30" fill="#FFF" stroke="#CCC" />
+    <text x="70" y="195" font-family="sans-serif" font-size="14" fill="#333" text-anchor="middle">78</text>
+  </g>
+
+  <!-- 변환기 -->
+  <g transform="translate(250, 150)">
+    <path d="M 0 0 L 80 0" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="75,-7 85,0 75,7" fill="#2196F3" />
+    <text x="40" y="-15" font-family="monospace" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">.describe()</text>
+  </g>
+
+  <!-- 결괏값 (리포트 형태) -->
+  <g transform="translate(380, 50)">
+    <rect x="0" y="0" width="260" height="260" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#1976D2" stroke-width="3"/>
+    
+    <!-- 헤더 -->
+    <rect x="0" y="0" width="260" height="30" fill="#E3F2FD" rx="5" />
+    <text x="130" y="20" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">요약 리포트 (Summary)</text>
+    <line x1="0" y1="30" x2="260" y2="30" stroke="#90CAF9" stroke-width="2" />
+    
+    <!-- 내용 -->
+    <text x="20" y="55" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">count</text>
+    <text x="100" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">5.0</text>
+    <text x="150" y="55" font-family="sans-serif" font-size="10" fill="#9E9E9E">(데이터 개수)</text>
+    
+    <text x="20" y="80" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">mean</text>
+    <text x="100" y="80" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">83.6</text>
+    <text x="150" y="80" font-family="sans-serif" font-size="10" fill="#9E9E9E">(평균갑)</text>
+    
+    <text x="20" y="105" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">std</text>
+    <text x="100" y="105" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">13.25</text>
+    <text x="150" y="105" font-family="sans-serif" font-size="10" fill="#9E9E9E">(표준편차)</text>
+    
+    <text x="20" y="130" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">min</text>
+    <text x="100" y="130" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">65.0</text>
+    <text x="150" y="130" font-family="sans-serif" font-size="10" fill="#9E9E9E">(최솟값)</text>
+    
+    <text x="20" y="155" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">25%</text>
+    <text x="100" y="155" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">78.0</text>
+    <text x="150" y="155" font-family="sans-serif" font-size="10" fill="#9E9E9E">(하위 25%)</text>
+    
+    <text x="20" y="180" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">50%</text>
+    <text x="100" y="180" font-family="sans-serif" font-size="12" fill="#FF9800" font-weight="bold">84.0</text>
+    <text x="150" y="180" font-family="sans-serif" font-size="10" fill="#9E9E9E">(중앙값)</text>
+    
+    <text x="20" y="205" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">75%</text>
+    <text x="100" y="205" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold">92.0</text>
+    <text x="150" y="205" font-family="sans-serif" font-size="10" fill="#9E9E9E">(상위 25%)</text>
+    
+    <text x="20" y="230" font-family="monospace" font-size="12" fill="#78909C" font-weight="bold">max</text>
+    <text x="100" y="230" font-family="sans-serif" font-size="12" fill="#4CAF50" font-weight="bold">99.0</text>
+    <text x="150" y="230" font-family="sans-serif" font-size="10" fill="#9E9E9E">(최댓값)</text>
+    
+    <line x1="10" y1="245" x2="250" y2="245" stroke="#E0E0E0" />
+    <text x="130" y="255" font-family="sans-serif" font-size="9" fill="#B0BEC5" text-anchor="middle">dtype: float64</text>
+  </g>
+
+</svg>

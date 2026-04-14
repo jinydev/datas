@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">3단계: 가로 자르고 연속해서 세로 자르기 (메소드 체이닝)</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <!-- 1차 동작 (행 자르기) -->
+    <rect x="0" y="0" width="400" height="40" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="100" y="25" font-family="monospace" font-size="16" fill="#81C784" font-weight="bold">pf.loc[ pf.index[1:4] ]</text>
+    
+    <!-- 2차 동작 (열 자르기 체이닝) -->
+    <rect x="300" y="0" width="160" height="40" fill="#37474F" rx="5" stroke="#FF9800" stroke-width="2" />
+    <text x="380" y="25" font-family="monospace" font-size="16" fill="#FFCA28" font-weight="bold" text-anchor="middle">[['기말', '과제']]</text>
+  </g>
+
+  <!-- 파이프라인 흐름도 -->
+  <!-- 1. 원본 모양 -->
+  <g transform="translate(60, 150)">
+    <rect x="0" y="0" width="80" height="60" fill="#E8F5E9" rx="3" stroke="#8BC34A" stroke-width="2" />
+    <text x="40" y="-10" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle">전체 표</text>
+    <!-- 가로 스캔 라인 -->
+    <path d="M -10 20 L 90 20" stroke="#FF5252" stroke-width="2" />
+    <path d="M -10 50 L 90 50" stroke="#FF5252" stroke-width="2" />
+  </g>
+
+  <path d="M 150 180 L 190 180" fill="none" stroke="#4CAF50" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="185,173 195,180 185,187" fill="#4CAF50" />
+  <text x="170" y="165" font-family="sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle">① 행 추출</text>
+
+  <!-- 2. 행 잘린 모양 -->
+  <g transform="translate(210, 160)">
+    <rect x="0" y="0" width="80" height="40" fill="#FFF3E0" rx="3" stroke="#FFB300" stroke-width="2" />
+    <text x="40" y="-20" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle">잘린 데이터프레임</text>
+    <!-- 세로 스캔 라인 -->
+    <path d="M 20 -10 L 20 50" stroke="#2196F3" stroke-width="2" stroke-dasharray="2,2"/>
+    <path d="M 60 -10 L 60 50" stroke="#2196F3" stroke-width="2" stroke-dasharray="2,2"/>
+  </g>
+
+  <path d="M 300 180 L 340 180" fill="none" stroke="#FF9800" stroke-width="4" stroke-dasharray="5,5" />
+  <polygon points="335,173 345,180 335,187" fill="#FF9800" />
+  <text x="320" y="165" font-family="sans-serif" font-size="10" fill="#E65100" text-anchor="middle">② 열 추출</text>
+
+  <!-- 결과 표 (최종 교집합) -->
+  <g transform="translate(370, 130)">
+    <rect x="-30" y="0" width="130" height="120" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="30" y="-10" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">최종 결과물</text>
+    
+    <rect x="30" y="0" width="70" height="30" fill="#E8F5E9" rx="3" stroke="#8BC34A" stroke-width="1"/>
+    <text x="50" y="20" font-family="sans-serif" font-size="11" fill="#1B5E20" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="85" y="20" font-family="sans-serif" font-size="11" fill="#1B5E20" font-weight="bold" text-anchor="middle">과제</text>
+
+    <!-- 인덱스 (강, 홍, 유) -->
+    <rect x="-30" y="30" width="60" height="90" fill="#FFF3E0" rx="3" stroke="#FFCA28" />
+    <text x="0" y="55" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+    <text x="0" y="85" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">홍소희</text>
+    <text x="0" y="115" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">유한빈</text>
+
+    <!-- 값 -->
+    <text x="50" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">27</text>
+    <text x="85" y="55" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    
+    <text x="50" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">17</text>
+    <text x="85" y="85" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">10</text>
+    
+    <text x="50" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">22</text>
+    <text x="85" y="115" font-family="sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">9</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-280" y="-15" width="560" height="35" fill="#E8F5E9" rx="10" stroke="#4CAF50" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold" text-anchor="middle">명령어 뒤에 대괄호를 덧붙이는 체이닝 방식으로 결과를 계속 깎아내려갈 수 있습니다.</text>
+  </g>
+
+</svg>

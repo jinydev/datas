@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.1 열 참조</title>
-  <meta name="title" content="6.3.1 열 참조" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.1 열 참조"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.1 DataFrame 열(Column) 추출의 마법</title>
+  <meta name="title" content="6.3.1 DataFrame 열(Column) 추출의 마법" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.1 DataFrame 열(Column) 추출의 마법"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/01_column_selection/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.1 열 참조"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.1 DataFrame 열(Column) 추출의 마법"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.3.1 열 참조" />
+<meta property="og:title" content="6.3.1 DataFrame 열(Column) 추출의 마법" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.3.1 열 참조" />
+<meta property="twitter:title" content="6.3.1 DataFrame 열(Column) 추출의 마법" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.1 열 참조","url":"https://datas.jiny.dev/pandas/03_data_selection/01_column_selection/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.1 DataFrame 열(Column) 추출의 마법","url":"https://datas.jiny.dev/pandas/03_data_selection/01_column_selection/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,44 +709,157 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.3.1 열 참조</li>
+        <li class="breadcrumb-item active" aria-current="page">6.3.1 DataFrame 열(Column) 추출의 마법</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="631-dataframe의-다양한-참조">6.3.1 DataFrame의 다양한 참조</h1>
+            <h2 id="631-dataframe에서-열column만-쏙-뽑아내기">6.3.1 DataFrame에서 열(Column)만 쏙 뽑아내기</h2>
 
-<h2 id="631-열-참조">6.3.1 열 참조</h2>
+<p><strong>[수학적 의미: 다차원 행렬의 열 벡터(Column Vector) 투영]</strong>
+전체 $m \times n$ 매트릭스(데이터프레임)에서 특정 차원(특징)에 해당하는 열 벡터 하나 혹은 여러 개를 부분 집합으로 투영(Projection)하여 추출하는 연산입니다.</p>
 
-<p>간단히 성적 처리를 위한 데이터프레임 <code class="language-plaintext highlighter-rouge">pf</code>를 정의하자.</p>
+<p><strong>[비유로 이해하기: 수많은 서랍장 중 원하는 서랍만 당겨보기]</strong></p>
+<ul>
+  <li>당신은 ‘중간고사’, ‘기말고사’, ‘출석’이라는 서랍이 3개 달린 거대한 책상(DataFrame)을 샀습니다.</li>
+  <li>여기서 ‘중간고사’ 서랍장 하나만 쑤욱 열어보면 그 안엔 학생들의 점수(Series)가 세로로 층층이 들어있습니다.</li>
+  <li>혹은 양손으로 ‘기말고사’와 ‘출석’ 서랍을 <strong>동시에</strong> 쑤욱 열면, 작은 2칸짜리 책상(DataFrame)이 따로 떨어져 나오는 것과 같습니다.</li>
+</ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">윤일형</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">강수희</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">홍소희</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">유한빈</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">신수빈</span><span class="sh">'</span><span class="p">],</span>
-                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">과제</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">출석</span><span class="sh">'</span><span class="p">])</span>
+<p><img src="img/column_selection.svg" alt="DataFrame 열 추출" /></p>
+
+<hr />
+
+<h3 id="준비물-성적표-데이터-생성하기">[준비물] 성적표 데이터 생성하기</h3>
+
+<p>먼저 실습을 위한 가상의 학급 성적표를 만듭니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># 학생 5명의 성적 데이터프레임
+</span><span class="n">pf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">윤일형</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">강수희</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">홍소희</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">유한빈</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">신수빈</span><span class="sh">'</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">과제</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">출석</span><span class="sh">'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 📚 원본 통합 성적표 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">pf</span><span class="p">)</span>
 </code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">pf['중간']</code>으로 열 참조가 가능하다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">[</span><span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">]</span>
-</code></pre></div></div>
-<p>열이 1개인 반환 자료형은 <code class="language-plaintext highlighter-rouge">Series</code>이다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">pf[['중간', '기말', '출석']]</code>으로 여러 열로 구성된 데이터프레임을 반환받을 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">[[</span><span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">출석</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">]]</span>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 📚 원본 통합 성적표 ---
+     중간  기말  과제  출석
+윤일형  25  35   8  18
+강수희  18  27  10  20
+홍소희  17  17  10  19
+유한빈  12  22   9  20
+신수빈  22  34   8  16
 </code></pre></div></div>
 
-<p>다음처럼 열 1개도 목록으로 입력하면 반환 값은 데이터프레임이다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">[[</span><span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">]]</span>
+<h3 id="1단계-한-과목만-쏙-단일-열-참조-series-반환">[1단계] 한 과목만 쏙! 단일 열 참조 (Series 반환)</h3>
+
+<p>가장 간단한 방법은 데이터프레임 변수에 <strong>대괄호 <code class="language-plaintext highlighter-rouge">[ ]</code></strong>를 하나 치고 열 이름표를 문자열로 적는 것입니다. (파이썬 딕셔너리에서 Key로 Value를 찾는 문법과 완벽히 동일합니다.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '중간' 고사 점수만 뽑아줘!
+</span><span class="n">midterm_scores</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[</span><span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 단일 열 추출 결과 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">midterm_scores</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">자료형 확인:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">type</span><span class="p">(</span><span class="n">midterm_scores</span><span class="p">))</span>
 </code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 단일 열 추출 결과 ---
+윤일형    25
+강수희    18
+홍소희    17
+유한빈    12
+신수빈    22
+Name: 중간, dtype: int64
+
+자료형 확인: &lt;class 'pandas.core.series.Series'&gt;
+</code></pre></div></div>
+
+<p><img src="./img/col_single.svg" alt="단일 열 추출 시 Series 반환" /></p>
+
+<blockquote>
+  <p><strong>관찰 포인트:</strong> 1개의 열만 뽑으면 2차원의 표 모양이 무너지며, <strong>1차원 선형 구조인 <code class="language-plaintext highlighter-rouge">Series</code></strong>로 신분 강등(?)이 일어납니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2단계-두-과목-이상-동시에-묶어서-뽑기-다중-열-참조">[2단계] 두 과목 이상 동시에 묶어서 뽑기 (다중 열 참조)</h3>
+
+<p>“기말고사와 출석 점수만 따로 떼서 보고싶어!” 
+이럴 때는 대괄호 안에 <strong>‘열 이름들을 리스트 형태로 묶어서’</strong> 한 번 더 씌워줍니다. (즉, <strong>대괄호가 두 겹 <code class="language-plaintext highlighter-rouge">[[ ]]</code></strong> 이 됩니다.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 리스트 형태 ['기말', '출석', '중간'] 를 대괄호 [] 안에 집어넣습니다.
+# (순서를 내 맘대로 바꿀 수도 있습니다!)
+</span><span class="n">multi_cols</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[[</span><span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">출석</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">]]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 여러 열 추출 결과 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">multi_cols</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">자료형 확인:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">type</span><span class="p">(</span><span class="n">multi_cols</span><span class="p">))</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 여러 열 추출 결과 ---
+     기말  출석  중간
+윤일형  35  18  25
+강수희  27  20  18
+홍소희  17  19  17
+유한빈  22  20  12
+신수빈  34  16  22
+
+자료형 확인: &lt;class 'pandas.core.frame.DataFrame'&gt;
+</code></pre></div></div>
+
+<p><img src="./img/col_multi.svg" alt="다중 열 추출 시 DataFrame 반환" /></p>
+
+<blockquote>
+  <p><strong>관찰 포인트:</strong> 여러 열을 뽑았으므로 여전히 가로세로를 가진 표 모양입니다. 따라서 결과물도 원래와 똑같은 <strong><code class="language-plaintext highlighter-rouge">DataFrame</code></strong> 자료형을 유지합니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="3단계-팁-하나를-뽑더라도-표-모양dataframe-살리기">[3단계] 팁: 하나를 뽑더라도 표 모양(DataFrame) 살리기</h3>
+
+<p>가끔은 1개의 열만 뽑지만 모양은 여전히 2차원 표(DataFrame)로 예쁘게 유지하고 싶을 때가 있습니다. (특히 머신러닝 모델에 데이터를 넣을 때 이런 모양을 요구합니다.)
+이때는 1개를 뽑더라도 <strong>대괄호를 두 겹 <code class="language-plaintext highlighter-rouge">[[ ]]</code></strong> 쳐주면 됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 대괄호 하나: 시리즈!
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">pf</span><span class="p">[</span><span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">]))</span>          <span class="c1"># Series 반환
+</span>
+<span class="c1"># 대괄호 두 개: 데이터프레임!
+</span><span class="n">df_single_col</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[[</span><span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">]]</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">df_single_col</span><span class="p">))</span>       <span class="c1"># DataFrame 반환
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 2차원 표로 유지된 기말고사 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_single_col</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.core.series.Series'&gt;
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+
+--- 2차원 표로 유지된 기말고사 ---
+     기말
+윤일형  35
+강수희  27
+홍소희  17
+유한빈  22
+신수빈  34
+</code></pre></div></div>
+
+<p><img src="./img/col_single_df.svg" alt="단일 열도 DataFrame 형태로 유지하여 추출하기" /></p>
 
 
             <!-- 구글 애드센스 출력 -->

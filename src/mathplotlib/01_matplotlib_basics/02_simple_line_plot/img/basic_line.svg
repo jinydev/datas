@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <!-- Title Area -->
+    <rect width="600" height="40" fill="#3b82f6" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📉 가장 단순한 자동 선 그래프</text>
+
+    <!-- Graph Area -->
+    <g transform="translate(80, 60)">
+        <path d="M 0 0 L 0 180 L 440 180" stroke="#64748b" stroke-width="2" fill="none" />
+        
+        <g stroke="#cbd5e1" stroke-dasharray="4,4" stroke-width="1">
+            <line x1="0" y1="30" x2="440" y2="30" /> <!-- 25 -->
+            <line x1="0" y1="60" x2="440" y2="60" /> <!-- 20 -->
+            <line x1="0" y1="90" x2="440" y2="90" /> <!-- 15 -->
+            <line x1="0" y1="120" x2="440" y2="120" /> <!-- 10 -->
+            <line x1="0" y1="150" x2="440" y2="150" /> <!-- 5 -->
+        </g>
+
+        <!-- Y Labels (Scale 0-30 -> max y=0 mapping to 30, y=180 mapping to 0, scale=6) -->
+        <!-- 30 * 6 = 180 height. -->
+        <text x="-10" y="5" fill="#64748b" font-size="12" text-anchor="end">30</text>
+        <text x="-10" y="65" fill="#64748b" font-size="12" text-anchor="end">20</text>
+        <text x="-10" y="125" fill="#64748b" font-size="12" text-anchor="end">10</text>
+        <text x="-10" y="185" fill="#64748b" font-size="12" text-anchor="end">0</text>
+        
+        <!-- X space per interval = 440 / 4 = 110 -->
+        <text x="0" y="200" fill="#64748b" font-size="12" text-anchor="middle">0</text>
+        <text x="110" y="200" fill="#64748b" font-size="12" text-anchor="middle">1</text>
+        <text x="220" y="200" fill="#64748b" font-size="12" text-anchor="middle">2</text>
+        <text x="330" y="200" fill="#64748b" font-size="12" text-anchor="middle">3</text>
+        <text x="440" y="200" fill="#64748b" font-size="12" text-anchor="middle">4</text>
+
+        <!-- [10, 5, 25, 30, 20] => height = 180 - (val * 6) -->
+        <!-- p0: (0, 120), p1: (110, 150), p2: (220, 30), p3: (330, 0), p4: (440, 60) -->
+        <path d="M 0 120 L 110 150 L 220 30 L 330 0 L 440 60" fill="none" stroke="#2563eb" stroke-width="3" />
+    </g>
+
+    <rect x="250" y="250" width="330" height="35" rx="5" fill="#dbeafe" />
+    <text x="415" y="272" fill="#1d4ed8" font-size="12" font-weight="bold" text-anchor="middle">💡 값을 하나만 넣으면 X축은 자동으로 0부터 생성됨!</text>
+</svg>

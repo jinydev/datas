@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">.loc [ 행 , 열 ] 십자선 교차점 투영 (Crosshair 조준!)</text>
+
+  <!-- 파이썬 문법 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="310" height="60" fill="#263238" rx="5" filter="url(#shadow)" stroke="#9C27B0" stroke-width="2"/>
+    <text x="155" y="38" font-family="monospace" font-size="26" fill="#82AAFF" font-weight="bold" text-anchor="middle">pf.loc[ <tspan fill="#FF5252">'강수희'</tspan>, <tspan fill="#FFCA28">'출석'</tspan> ]</text>
+  </g>
+
+  <!-- 파라미터 설명 -->
+  <g transform="translate(190, 130)">
+    <!-- 첫 번째 파라미터 (행: 가로줄) -->
+    <path d="M -20 0 L -50 30" fill="none" stroke="#FF5252" stroke-width="2" />
+    <rect x="-90" y="30" width="80" height="25" fill="#FFEbee" rx="3" stroke="#FFCDD2" />
+    <text x="-50" y="47" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="middle">세로타겟 (행)</text>
+    
+    <!-- 두 번째 파라미터 (열: 세로줄) -->
+    <path d="M 60 0 L 90 30" fill="none" stroke="#FFA000" stroke-width="2" />
+    <rect x="50" y="30" width="80" height="25" fill="#FFF8E1" rx="3" stroke="#FFE082" />
+    <text x="90" y="47" font-family="sans-serif" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">가로타겟 (열)</text>
+  </g>
+
+  <!-- 십자선 조준 애니메이션 묘사 -->
+  <g transform="translate(420, 80)">
+    <!-- 전체 DataFrame -->
+    <rect x="-30" y="0" width="220" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#9C27B0" stroke-width="2"/>
+    <text x="80" y="-15" font-family="monospace" font-size="14" fill="#7B1FA2" font-weight="bold" text-anchor="middle">원본 행렬 투영</text>
+    
+    <!-- 컬럼명 -->
+    <rect x="30" y="0" width="160" height="30" fill="#F3E5F5" rx="3" stroke="#CE93D8" stroke-width="1"/>
+    <text x="60" y="20" font-family="sans-serif" font-size="11" fill="#4A148C" font-weight="bold" text-anchor="middle">중간</text>
+    <text x="100" y="20" font-family="sans-serif" font-size="11" fill="#4A148C" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="140" y="20" font-family="sans-serif" font-size="11" fill="#4A148C" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="175" y="20" font-family="sans-serif" font-size="11" fill="#4A148C" font-weight="bold" text-anchor="middle">출석</text>
+
+    <!-- 인덱스 -->
+    <rect x="-30" y="30" width="60" height="120" fill="#FFF3E0" rx="3" stroke="#FFCA28" />
+    <text x="0" y="55" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">윤일형</text>
+    <text x="0" y="85" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+    <text x="0" y="115" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">홍소희</text>
+
+    <!-- 십자선: 가로 (강수희) -->
+    <rect x="-30" y="72" width="220" height="20" fill="#FFEB3B" opacity="0.4" />
+    <path d="M -40 82 L 195 82" stroke="#FF5252" stroke-width="2" stroke-dasharray="4,4" />
+
+    <!-- 십자선: 세로 (출석) -->
+    <rect x="157" y="5" width="36" height="140" fill="#00BCD4" opacity="0.3" />
+    <path d="M 175 -5 L 175 145" stroke="#00BCD4" stroke-width="2" stroke-dasharray="4,4" />
+
+    <!-- 교차점 조준 -->
+    <circle cx="175" cy="82" r="16" fill="none" stroke="#E91E63" stroke-width="3" />
+    <circle cx="175" cy="82" r="3" fill="#E91E63" />
+
+    <!-- 값 -->
+    <!-- 다른 값들 -->
+    <text x="60" y="55" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">25</text>
+    <text x="100" y="55" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">35</text>
+    <text x="140" y="55" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">8</text>
+    
+    <text x="60" y="85" font-family="sans-serif" font-size="12" fill="#B0BEC5" text-anchor="middle">18</text>
+    <text x="100" y="85" font-family="sans-serif" font-size="12" fill="#B0BEC5" text-anchor="middle">27</text>
+    <text x="140" y="85" font-family="sans-serif" font-size="12" fill="#B0BEC5" text-anchor="middle">10</text>
+    
+    <text x="60" y="115" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">17</text>
+    <text x="100" y="115" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">17</text>
+    <text x="140" y="115" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">10</text>
+
+    <!-- 추출될 교차점 셀 (강수희 - 출석) -->
+    <text x="175" y="86" font-family="sans-serif" font-size="14" fill="#C2185B" font-weight="bold" text-anchor="middle">20</text>
+    
+    <text x="175" y="55" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">18</text>
+    <text x="175" y="115" font-family="sans-serif" font-size="12" fill="#CFD8DC" text-anchor="middle">19</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-260" y="-15" width="520" height="35" fill="#F3E5F5" rx="10" stroke="#CE93D8" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#6A1B9A" font-weight="bold" text-anchor="middle">가로줄과 세로줄이 교차하는 지점의 데이터가 최종 결과로 추출됩니다.</text>
+  </g>
+
+</svg>

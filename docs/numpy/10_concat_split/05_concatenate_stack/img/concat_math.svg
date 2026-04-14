@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .math { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-style: italic; fill: #222; }
+      .math-bold { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-weight: bold; fill: #222; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .arr-1 { fill: #f8d7da; stroke: #dc3545; }
+      .arr-2 { fill: #d4edda; stroke: #28a745; }
+      .grid-line { stroke: rgba(0,0,0,0.1); stroke-width: 1px; }
+      .arrow { fill: none; stroke: #b0b0b0; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .bracket-line { fill: none; stroke: #333; stroke-width: 4; }
+      .bracket-line-large { fill: none; stroke: #0056b3; stroke-width: 6; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  
+  <text x="425" y="30" class="title" text-anchor="middle">수학적 차원 유지 결합 (2D Tensor + 2D Tensor → 2D Tensor)</text>
+
+  <!-- Left Side: Two 2x3 Matrices -->
+  <g transform="translate(60, 50)">
+    <text x="-5" y="52" class="math-bold" text-anchor="end">A =</text>
+    <!-- Bracket A Left -->
+    <path d="M 30 5 L 20 5 L 20 85 L 30 85" class="bracket-line" />
+    <rect x="40" y="5" width="150" height="80" class="box arr-1" />
+    <text x="65" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="115" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="165" y="32" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="65" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="115" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="165" y="72" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="90" y1="5" x2="90" y2="85" class="grid-line" />
+    <line x1="140" y1="5" x2="140" y2="85" class="grid-line" />
+    <line x1="40" y1="45" x2="190" y2="45" class="grid-line" />
+    <!-- Bracket A Right -->
+    <path d="M 200 5 L 210 5 L 210 85 L 200 85" class="bracket-line" />
+
+    <!-- Matrix B -->
+    <text x="-5" y="162" class="math-bold" text-anchor="end">B =</text>
+    <!-- Bracket B Left -->
+    <path d="M 30 115 L 20 115 L 20 195 L 30 195" class="bracket-line" />
+    <rect x="40" y="115" width="150" height="80" class="box arr-2" />
+    <text x="65" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="115" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="165" y="142" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="65" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="115" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="165" y="182" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="90" y1="115" x2="90" y2="195" class="grid-line" />
+    <line x1="140" y1="115" x2="140" y2="195" class="grid-line" />
+    <line x1="40" y1="155" x2="190" y2="155" class="grid-line" />
+    <!-- Bracket B Right -->
+    <path d="M 200 115 L 210 115 L 210 195 L 200 195" class="bracket-line" />
+
+    <text x="115" y="235" class="title" font-size="14" text-anchor="middle" fill="#dc3545">각각 (2 × 3) 행렬</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 330 150 L 430 150 M 420 140 L 430 150 L 420 160" class="arrow" />
+  <text x="380" y="130" class="math-bold" text-anchor="middle" font-size="18">concatenate</text>
+  <text x="380" y="180" class="math-bold" text-anchor="middle" font-size="16">(axis=0)</text>
+
+  <!-- Right Side: 4x3 Matrix -->
+  <g transform="translate(520, 50)">
+    <text x="-5" y="105" class="math-bold" text-anchor="end">C =</text>
+    
+    <!-- Bracket C Left -->
+    <path d="M 40 15 L 25 15 L 25 185 L 40 185" class="bracket-line" stroke-width="4" />
+    
+    <rect x="50" y="15" width="150" height="80" class="box arr-1" />
+    <text x="75" y="42" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="125" y="42" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="175" y="42" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="75" y="82" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="125" y="82" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="175" y="82" class="math" text-anchor="middle"><tspan>a</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="100" y1="15" x2="100" y2="95" class="grid-line" />
+    <line x1="150" y1="15" x2="150" y2="95" class="grid-line" />
+    <line x1="50" y1="55" x2="200" y2="55" class="grid-line" />
+
+    <rect x="50" y="105" width="150" height="80" class="box arr-2" />
+    <text x="75" y="132" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">11</tspan></text>
+    <text x="125" y="132" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">12</tspan></text>
+    <text x="175" y="132" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">13</tspan></text>
+    <text x="75" y="172" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">21</tspan></text>
+    <text x="125" y="172" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">22</tspan></text>
+    <text x="175" y="172" class="math" text-anchor="middle"><tspan>b</tspan><tspan dy="5" font-size="0.7em">23</tspan></text>
+    <line x1="100" y1="105" x2="100" y2="185" class="grid-line" />
+    <line x1="150" y1="105" x2="150" y2="185" class="grid-line" />
+    <line x1="50" y1="145" x2="200" y2="145" class="grid-line" />
+
+    <!-- Bracket C Right -->
+    <path d="M 210 15 L 225 15 L 225 185 L 210 185" class="bracket-line" stroke-width="4" />
+
+    <text x="125" y="235" class="title" font-size="16" text-anchor="middle" fill="#0056b3">동일한 2D 공간 유지! (4 × 3) 행렬</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <style>
+    .text { font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: bold; }
+    .boxA { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 4; }
+    .boxB { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; rx: 4; }
+    .title { font-size: 24px; font-weight: 800; fill: #2c3e50; text-anchor: middle; }
+    .crane { stroke: #607d8b; stroke-width: 4; stroke-dasharray: 4;}
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="15"/>
+  <text x="400" y="40" class="title">vstack(A, B): 같은 모양의 블록 수직 결합</text>
+  
+  <g transform="translate(200, 150)">
+    <rect x="-40" y="0" width="80" height="90" class="boxA"/>
+    <text x="0" y="50" class="text" fill="#2196f3" text-anchor="middle">A(3x2)</text>
+  </g>
+  <g transform="translate(200, 40)">
+    <animateTransform attributeName="transform" type="translate" values="200,40; 200,105; 200,40" dur="3s" repeatCount="indefinite"/>
+    <rect x="-40" y="-45" width="80" height="90" class="boxB"/>
+    <text x="0" y="0" class="text" fill="#9c27b0" text-anchor="middle">B(3x2)</text>
+  </g>
+  
+  <line x1="350" y1="150" x2="450" y2="150" stroke="#cbd5e1" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#cbd5e1"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(600, 60)">
+    <path d="M -50 -10 L 50 -10 L 50 190 L -50 190 Z" fill="#fff" stroke="#e91e63" stroke-width="2" stroke-dasharray="4"/>
+    <rect x="-40" y="0" width="80" height="90" class="boxA"/>
+    <text x="0" y="50" class="text" fill="#2196f3" text-anchor="middle">A(3x2)</text>
+    
+    <rect x="-40" y="90" width="80" height="90" class="boxB"/>
+    <text x="0" y="140" class="text" fill="#9c27b0" text-anchor="middle">B(3x2)</text>
+  </g>
+</svg>

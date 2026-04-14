@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <style>
+    .text { font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: bold; }
+    .boxA { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 4; }
+    .boxE { fill: #ffebee; stroke: #f44336; stroke-width: 2; rx: 4; }
+    .title { font-size: 24px; font-weight: 800; fill: #2c3e50; text-anchor: middle; }
+    .err { fill: #dc3545; font-size: 20px; font-weight: 900; text-anchor: middle;}
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="15"/>
+  <text x="400" y="40" class="title">주의: 1차원을 제외하고, 세로 높이(행)가 다르면 에러!</text>
+  
+  <g transform="translate(450, 100)">
+    <rect x="-80" y="0" width="80" height="90" class="boxA"/>
+    <text x="-40" y="50" class="text" fill="#2196f3" text-anchor="middle">A(3x2)</text>
+  </g>
+  <g transform="translate(540, 100)">
+    <animateTransform attributeName="transform" type="translate" values="540,100; 460,100; 540,100" dur="2s" repeatCount="indefinite"/>
+    <rect x="0" y="30" width="80" height="60" class="boxE"/>
+    <text x="40" y="65" class="text" fill="#f44336" text-anchor="middle">C(2x2)</text>
+    <path d="M -10 20 L 30 50 M -10 50 L 30 20" stroke="#f44336" stroke-width="4" fill="none" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <text x="0" y="0" class="err">높이 불일치!</text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="background-color: #f8fafc; font-family: 'Inter', sans-serif; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <rect width="600" height="40" fill="#8b5cf6" />
+    <text x="300" y="26" fill="white" font-weight="bold" font-size="16" text-anchor="middle">📏 hspace, wspace 여백 확장의 체감 원리</text>
+
+    <!-- 3x3 Grid with big gaps -->
+    <g transform="translate(150, 60)">
+        <!-- R0 -->
+        <rect x="0" y="0" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+        <rect x="100" y="0" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+        <rect x="200" y="0" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+
+        <!-- R1 -->
+        <rect x="0" y="80" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+        <rect x="100" y="80" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+        <rect x="200" y="80" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+
+        <!-- R2 -->
+        <rect x="0" y="160" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+        <rect x="100" y="160" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+        <rect x="200" y="160" width="60" height="40" fill="#f5f3ff" stroke="#a855f7" stroke-width="2" />
+
+        <!-- wspace markers -->
+        <path d="M 65 20 L 95 20" stroke="#f43f5e" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="80" y="15" fill="#f43f5e" font-size="10" font-weight="bold" text-anchor="middle">wspace</text>
+
+        <!-- hspace markers -->
+        <path d="M 30 45 L 30 75" stroke="#3b82f6" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+        <text x="45" y="65" fill="#3b82f6" font-size="10" font-weight="bold" text-anchor="middle">hspace</text>
+
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke" />
+            </marker>
+        </defs>
+    </g>
+
+    <rect x="200" y="250" width="200" height="35" rx="5" fill="#f5f3ff" />
+    <text x="300" y="272" fill="#7c3aed" font-size="12" font-weight="bold" text-anchor="middle">💡 블록 자체가 넓어지는 것이 아니라 칸의 빈틈이 벌어짐</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .code-txt { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #d63384; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .arr-x { fill: #e2e3e5; stroke: #adb5bd; }
+      .scal-1 { fill: #f8d7da; stroke: #dc3545; }
+      .scal-2 { fill: #d4edda; stroke: #28a745; }
+      .solid-arrow { fill: none; stroke: #28a745; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="30" class="title" text-anchor="middle">np.r_ 진정한 초능력: 슬라이싱, 파이썬 배열, 스칼라 등 온갖 타입을 동시 병합</text>
+
+  <!-- Command -->
+  <rect x="150" y="60" width="550" height="50" rx="5" ry="5" fill="#fcfcfc" stroke="#333" stroke-width="2" />
+  <text x="425" y="92" class="code-txt" text-anchor="middle">np.r_[  3:10:3,   [0, 0],   5,   6  ]</text>
+
+  <!-- Flow down arrows -->
+  <path d="M 260 110 L 260 140" class="solid-arrow" stroke="#adb5bd" />
+  <path d="M 430 110 L 430 140" class="solid-arrow" stroke="#ffc107" />
+  <path d="M 545 110 L 545 140" class="solid-arrow" stroke="#dc3545" />
+  <path d="M 605 110 L 605 140" class="solid-arrow" stroke="#28a745" />
+
+  <!-- Descriptions -->
+  <text x="260" y="160" class="title" font-size="14" fill="#6c757d" text-anchor="middle">1. NumPy 슬라이싱축약</text>
+  <text x="430" y="160" class="title" font-size="14" fill="#d39e00" text-anchor="middle">2. 일반 파이썬 리스트</text>
+  <text x="545" y="160" class="title" font-size="14" fill="#dc3545" text-anchor="middle">3. 단일실수</text>
+  <text x="605" y="160" class="title" font-size="14" fill="#28a745" text-anchor="middle">4. 단일실수</text>
+
+  <!-- Below the flow -->
+  <g transform="translate(140, 200)">
+    <!-- 3:10:3 -> [3, 6, 9] -->
+    <rect x="50" y="0" width="120" height="40" class="box arr-x" />
+    <path d="M 90 0 L 90 40 M 130 0 L 130 40" stroke="#adb5bd" stroke-width="2" />
+    <text x="70" y="26" class="code-txt" fill="#333">3</text>
+    <text x="110" y="26" class="code-txt" fill="#333">6</text>
+    <text x="150" y="26" class="code-txt" fill="#333">9</text>
+    
+    <!-- [0]*2 -> [0, 0] -->
+    <rect x="170" y="0" width="80" height="40" class="box" fill="#fff3cd" stroke="#ffc107" />
+    <path d="M 210 0 L 210 40" stroke="#ffc107" stroke-width="2" />
+    <text x="190" y="26" class="code-txt" fill="#000">0</text>
+    <text x="230" y="26" class="code-txt" fill="#000">0</text>
+
+    <!-- 5 -->
+    <rect x="250" y="0" width="40" height="40" class="box scal-1" />
+    <text x="270" y="26" class="code-txt" fill="#dc3545">5</text>
+
+    <!-- 6 -->
+    <rect x="290" y="0" width="40" height="40" class="box scal-2" />
+    <text x="310" y="26" class="code-txt" fill="#28a745">6</text>
+
+    <!-- Bracket wrap -->
+    <path d="M 35 -10 L 25 -10 L 25 50 L 35 50 M 345 -10 L 355 -10 L 355 50 L 345 50" fill="none" stroke="#0056b3" stroke-width="4" />
+    
+    <text x="440" y="26" class="title" fill="#0056b3">= 한 줄기 소시지로 병합!</text>
+  </g>
+</svg>

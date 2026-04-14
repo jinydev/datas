@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.8 df.iloc[첨자] 참조</title>
-  <meta name="title" content="6.3.8 df.iloc[첨자] 참조" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.8 df.iloc[첨자] 참조"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.8 df.iloc[위치] 로 번호 기반 참조</title>
+  <meta name="title" content="6.3.8 df.iloc[위치] 로 번호 기반 참조" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.8 df.iloc[위치] 로 번호 기반 참조"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/08_iloc_selection/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.8 df.iloc[첨자] 참조"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.8 df.iloc[위치] 로 번호 기반 참조"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.3.8 df.iloc[첨자] 참조" />
+<meta property="og:title" content="6.3.8 df.iloc[위치] 로 번호 기반 참조" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.3.8 df.iloc[첨자] 참조" />
+<meta property="twitter:title" content="6.3.8 df.iloc[위치] 로 번호 기반 참조" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.8 df.iloc[첨자] 참조","url":"https://datas.jiny.dev/pandas/03_data_selection/08_iloc_selection/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.8 df.iloc[위치] 로 번호 기반 참조","url":"https://datas.jiny.dev/pandas/03_data_selection/08_iloc_selection/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,113 +709,170 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.3.8 df.iloc[첨자] 참조</li>
+        <li class="breadcrumb-item active" aria-current="page">6.3.8 df.iloc[위치] 로 번호 기반 참조</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h2 id="638-dfiloc첨자-참조">6.3.8 df.iloc[첨자] 참조</h2>
+            <h2 id="638-iloc행-열-좌표-번호integer-location-기반-참조">6.3.8 <code class="language-plaintext highlighter-rouge">.iloc[행, 열]</code> 좌표 번호(Integer Location) 기반 참조</h2>
 
-<h4 id="-행-참조">① 행 참조</h4>
+<p><strong>[전산학적/수학적 의미: 다차원 배열의 메모리 오프셋 참조(Memory Offset Indexing)]</strong>
+<code class="language-plaintext highlighter-rouge">.loc</code>가 “문자열 레이블(이름표)”라는 사람 친화적인 메타데이터를 기반으로 데이터를 투영했다면, <strong><code class="language-plaintext highlighter-rouge">.iloc</code> (Integer Location)</strong> 은 내부적으로 연속 할당된 메모리의 물리적 좌표(0, 1, 2… 순서)를 사용하여 직접 접근하는 방식입니다. C언어나 기본 파이썬의 넘파이(NumPy) 2차원 배열 인덱싱과 100% 동일하게 작동합니다.</p>
 
-<p>다음처럼 <code class="language-plaintext highlighter-rouge">df.iloc[정수]</code>로 정수 인덱스의 행을 참조할 수 있다.</p>
+<p><strong>[비유로 이해하기: 극장 좌석표 예매하기]</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.loc</code>: “예매자 이름이 ‘윤일형’인 사람의 티켓 주세요!” (이름 검색)</li>
+  <li><code class="language-plaintext highlighter-rouge">.iloc</code>: “앞에서 두 번째 줄(행1), 왼쪽에서 세 번째 칸(열2) 좌석 주세요!” (좌표 검색)</li>
+  <li>컴퓨터 입장에서는 ‘이름 검색’보다 ‘좌표 검색’이 훨씬 빠릅니다.</li>
+</ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<p><img src="img/iloc_selection.svg" alt="iloc 참조 애니메이션" /></p>
+
+<hr />
+
+<h3 id="준비물-성적표-데이터">[준비물] 성적표 데이터</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">pf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span>     <span class="c1"># 0번 행
+</span>        <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>    <span class="c1"># 1번 행
+</span>        <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>     <span class="c1"># 2번 행
+</span>    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">윤일형</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">강수희</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">홍소희</span><span class="sh">'</span><span class="p">],</span>     <span class="c1"># 신경쓰지 마세요! iloc은 이름표를 무시합니다.
+</span>    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">중간</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">기말</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">과제</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">출석</span><span class="sh">'</span><span class="p">]</span> <span class="c1"># 여기도 신경쓰지 마세요!
+</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 📚 원본 성적표 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">pf</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>리스트로 처리하면 데이터프레임을 반환받을 수 있다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">]]</span>
+<h3 id="1단계-행row만-번호로-끄집어내기">[1단계] 행(Row)만 번호로 끄집어내기</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.iloc[행번호]</code> 를 입력하면 해당 위치의 줄을 뽑습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 1번 행 (두 번째 학생 '강수희') 참조
+</span><span class="n">row_idx1</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># 2. 1번과 2번 행 뭉터기로 참조 (리스트로 묶기)
+</span><span class="n">multi_rows</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [1] 인덱스 1번 행 (Series) ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">row_idx1</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- [2] 인덱스 1, 2번 행 (DataFrame) ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">multi_rows</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [1] 인덱스 1번 행 (Series) ---
+중간    18
+기말    27
+과제    10
+출석    20
+Name: 강수희, dtype: int64
+
+--- [2] 인덱스 1, 2번 행 (DataFrame) ---
+     중간  기말  과제  출석
+강수희  18  27  10  20
+홍소희  17  17  10  19
 </code></pre></div></div>
 
-<p>다음처럼 <code class="language-plaintext highlighter-rouge">df.iloc[[여러 정수 목록]]</code>으로 정수 인덱스의 행들을 참조할 수 있다.</p>
+<p><img src="./img/iloc_row.svg" alt=".iloc[] 을 이용한 단일, 다중 행 추출" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<hr />
+
+<h3 id="2단계-열column만-번호로-끄집어내기">[2단계] 열(Column)만 번호로 끄집어내기</h3>
+
+<p>행 자리를 와일드카드 콜론(<code class="language-plaintext highlighter-rouge">:</code>)으로 채우고, 콤마(<code class="language-plaintext highlighter-rouge">,</code>) 뒤 열 자리에 번호를 넣습니다. 넘파이 행렬 슬라이싱과 동일합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 모든 행(:) 가져오고, 열은 2번 인덱스('과제')만 가져오기
+</span><span class="n">col_idx2</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># 모든 행(:) 가져오고, 열은 1번('기말')부터 끝까지 슬라이싱!
+</span><span class="n">sliced_cols</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [1] 인덱스 2번 열 (과제) ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">col_idx2</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- [2] 1번 열부터 끝까지 슬라이싱 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sliced_cols</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [1] 인덱스 2번 열 (과제) ---
+윤일형     8
+강수희    10
+홍소희    10
+Name: 과제, dtype: int64
+
+--- [2] 1번 열부터 끝까지 슬라이싱 ---
+     기말  과제  출석
+윤일형  35   8  18
+강수희  27  10  20
+홍소희  17  10  19
 </code></pre></div></div>
 
-<p>다음으로 행 슬라이싱한 데이터프레임을 반환받을 수 있다.</p>
+<p><img src="./img/iloc_col.svg" alt=".iloc[] 열 슬라이싱 시 끝점 포함 여부 주의" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<blockquote>
+  <p><strong>🚨 치명적인 주의사항:</strong>
+<code class="language-plaintext highlighter-rouge">.loc['A':'C']</code> 에서는 문자열 ‘C’ 지점까지 <strong>포함</strong>되어 슬라이싱 되었습니다. 하지만 <strong><code class="language-plaintext highlighter-rouge">.iloc[1:3]</code> 은 파이썬 기본 슬라이싱이므로 마지막 번호 인덱스인 3번은 제외(미만)됩니다!!</strong> (오직 인덱스 1, 2만 반환됩니다)</p>
+</blockquote>
+
+<hr />
+
+<h3 id="3단계-십자선-교차-행과-열-번호-동시-사용">[3단계] 십자선 교차 (행과 열 번호 동시 사용)</h3>
+
+<p>가장 정교한 2차원 부분집합 추출입니다. 행렬의 $[i, j]$ 좌표를 찍는 것과 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1번 행, 1번 열의 단일 데이터 (값 1개만 나옴)
+</span><span class="n">scalar_val</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># 0번부터 2번 전(1번)까지 행 자르고,
+# 1번부터 3번 전(2번)까지 열 자르기
+</span><span class="n">sub_matrix</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [1] (1, 1) 단일 원소 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">scalar_val</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- [2] 2차원 부분 데이터프레임 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sub_matrix</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [1] (1, 1) 단일 원소 ---
+27
+
+--- [2] 2차원 부분 데이터프레임 ---
+     기말  과제
+윤일형  35   8
+강수희  27  10
 </code></pre></div></div>
 
-<h4 id="-열-참조">② 열 참조</h4>
+<p><img src="./img/iloc_cross.svg" alt="넘파이 스타일의 2차원 부분 행렬 조준" /></p>
 
-<p>앞 행 전체를 <code class="language-plaintext highlighter-rouge">:</code>로 하고 뒤에 열 첨자로 열만 참조할 수 있다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<h3 id="-심화-팁-진정한-빛의-속도-at-과-iat">🚀 [심화 팁] 진정한 빛의 속도: <code class="language-plaintext highlighter-rouge">.at[]</code> 과 <code class="language-plaintext highlighter-rouge">.iat[]</code></h3>
+
+<p>빅데이터를 분석하다 보면, 어떤 루프문을 돌면서 데이터프레임에서 오직 한 칸의 데이터(Scalar 단일값)만 수백만 번 조회해야 할 때가 있습니다.
+이때 커다란 장갑인(<code class="language-plaintext highlighter-rouge">.loc</code> 나 <code class="language-plaintext highlighter-rouge">.iloc</code>)을 쓰기보다는, 오직 핀셋 전용으로 만들어진 초고속 탐색기 <strong><code class="language-plaintext highlighter-rouge">.at</code> (이름 기반 핀셋)</strong> 과 <strong><code class="language-plaintext highlighter-rouge">.iat</code> (좌표 기반 핀셋)</strong> 을 사용하면 속도가 기하급수적으로 빨라집니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 이름으로 한 칸 찾기 (loc의 초고속 버전)
+</span><span class="n">fast_label</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">at</span><span class="p">[</span><span class="sh">'</span><span class="s">강수희</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">과제</span><span class="sh">'</span><span class="p">]</span>
+
+<span class="c1"># 번호로 한 칸 찾기 (iloc의 초고속 버전)
+</span><span class="n">fast_index</span> <span class="o">=</span> <span class="n">pf</span><span class="p">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">강수희 과제 점수 (.at) :</span><span class="sh">"</span><span class="p">,</span> <span class="n">fast_label</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1행 2열 과제 점수 (.iat) :</span><span class="sh">"</span><span class="p">,</span> <span class="n">fast_index</span><span class="p">)</span>
 </code></pre></div></div>
-
-<p>다음 <code class="language-plaintext highlighter-rouge">[]</code> 내부에 <code class="language-plaintext highlighter-rouge">[2]</code>으로 첨자 2열로 구성된 데이터프레임을 반환받는다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
-</code></pre></div></div>
-
-<p>모든 행에 대해 열을 슬라이싱한 결과이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
-</code></pre></div></div>
-
-<h4 id="-행과-열-참조">③ 행과 열 참조</h4>
-
-<p><code class="language-plaintext highlighter-rouge">pf.iloc[1, 1]</code>으로 첨자 1, 1에 해당하는 원소를 참조한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="c1"># 6.3.8 ```
-</span>
-<span class="n">다음은</span> <span class="n">행과</span> <span class="n">열을</span> <span class="n">슬라이싱한</span> <span class="n">결과이다</span><span class="p">.</span>
-
-<span class="sb">``</span><span class="err">`</span><span class="n">python</span>
-<span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
-</code></pre></div></div>
-
-<p>다음은 전체 행에 대해 첨자 1열 이후 열을 슬라이싱한 결과이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
-</code></pre></div></div>
-
-<p>다음은 행 첨자 목록과 열 첨자를 슬라이싱한 결과이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">1</span><span class="p">:]</span>
-</code></pre></div></div>
-
-<p>다음은 행 첨자 목록과 열 첨자 목록으로 부분 데이터프레임을 반환받는 코드이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
-</code></pre></div></div>
-
-<h4 id="-at행명-열명-iati-j-참조">④ at[‘행명’, ‘열명’], iat[i, j] 참조</h4>
-
-<p><code class="language-plaintext highlighter-rouge">loc[]</code>과 비슷하게 레이블 기반으로 참조하는 방식으로 단 하나의 원소를 참조한다. <code class="language-plaintext highlighter-rouge">at[]</code>과 <code class="language-plaintext highlighter-rouge">iat[]</code>은 하나의 값을 참조하므로 속도가 빠른 장점이 있다.</p>
-
-<p>```python
-pf.at[‘윤일형’, ‘과제’]</p>
-<h1 id="638-">6.3.8 ```</h1>
-
-<p>```python
-pf.at[‘유한빈’, ‘기말’]</p>
-<h1 id="638--1">6.3.8 ```</h1>
-
-<p>다음처럼 행 레이블 인덱스를 찾아 참조할 수 있다.</p>
-
-<p>```python
-pf.at[pf.index[1], ‘출석’]</p>
-<h1 id="638--2">6.3.8 ```</h1>
-
-<p>```python
-pf.at[pf.index[3], pf.columns[2]]</p>
-<h1 id="638--3">6.3.8 ```</h1>
-
-<p><code class="language-plaintext highlighter-rouge">iloc[]</code>과 비슷하게 정수 첨자 기반의 참조 방식으로 단 하나의 원소를 참조한다.</p>
-
-<p>```python
-pf.iat[1, 2]</p>
-<h1 id="638--4">6.3.8 ```</h1>
-
-<p>```python
-pf.iat[2, 3]</p>
-<h1 id="638--5">6.3.8 ```</h1>
+<blockquote>
+  <p><strong>용도 요약:</strong> 부분 행렬(표)을 전체적으로 뜯어낼 때는 <code class="language-plaintext highlighter-rouge">.loc/.iloc</code>. 무리 중에서 단 하나의 숫자만 정확하게 빼오거나 값을 바꿀 때는 <code class="language-plaintext highlighter-rouge">.at/.iat</code>를 습관화합시다.</p>
+</blockquote>
 
 
             <!-- 구글 애드센스 출력 -->

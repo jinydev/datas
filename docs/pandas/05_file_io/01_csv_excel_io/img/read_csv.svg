@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">3단계: CSV 텍스트 상자 다시 열기 - read_csv()</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="460" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#FF5722" stroke-width="2"/>
+    <text x="230" y="30" font-family="monospace" font-size="16" fill="#FFAB91" font-weight="bold" text-anchor="middle">tt_csv = pd.read_csv(<tspan fill="#FFEB3B">"titanic_processed.csv"</tspan>)</text>
+  </g>
+
+  <!-- 왼쪽: 하드디스크의 CSV 파일 -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="120" height="150" fill="#FFF3E0" rx="10" filter="url(#shadow)" stroke="#FF9800" stroke-width="3"/>
+    
+    <!-- 텍스트 문서 모양 (CSV) -->
+    <path d="M 30 20 L 70 20 L 90 40 L 90 90 L 30 90 Z" fill="#FFFFFF" stroke="#F57F17" stroke-width="2" />
+    <path d="M 70 20 L 70 40 L 90 40" fill="none" stroke="#F57F17" stroke-width="2" />
+
+    <!-- 쉼표 내용 (작게) -->
+    <text x="35" y="45" font-family="monospace" font-size="8" fill="#D84315">Name<tspan fill="#FF9800">,</tspan>Sex<tspan fill="#FF9800">,</tspan>Age</text>
+    <text x="35" y="55" font-family="monospace" font-size="8" fill="#D84315">홍길동<tspan fill="#FF9800">,</tspan>남<tspan fill="#FF9800">,</tspan>25</text>
+    <text x="35" y="65" font-family="monospace" font-size="8" fill="#D84315">이순신<tspan fill="#FF9800">,</tspan>남<tspan fill="#FF9800">,</tspan>40</text>
+
+    <text x="60" y="110" font-family="monospace" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">.csv 파일</text>
+
+    <!-- 디스크 기호 -->
+    <path d="M 10 130 C 10 145 110 145 110 130" fill="none" stroke="#E65100" stroke-width="2" />
+    <path d="M 10 120 C 10 135 110 135 110 120" fill="none" stroke="#E65100" stroke-width="2" />
+  </g>
+
+  <!-- 중앙 이동 화살표 (언패킹, Deserialization) -->
+  <g transform="translate(250, 170)">
+    <!-- 포장 풀기 연출 (점선 화살표) -->
+    <path d="M -10 40 L 160 40" fill="none" stroke="#FF5722" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="150,33 165,40 150,47" fill="#FF5722" />
+    
+    <rect x="25" y="15" width="100" height="50" fill="#FFF" rx="5" stroke="#FF5722" stroke-width="2" />
+    <text x="75" y="32" font-family="sans-serif" font-size="12" fill="#D84315" font-weight="bold" text-anchor="middle">포장 풀기 (쉼표파싱)</text>
+    <text x="75" y="50" font-family="monospace" font-size="10" fill="#BF360C" text-anchor="middle">Deserialization</text>
+
+    <!-- 쉼표 분리 돋보기 연출 -->
+    <text x="65" y="0" font-family="sans-serif" font-size="18" fill="#FF9800" font-weight="bold">,</text>
+    <path d="M 70 -5 L 80 -15" stroke="#F44336" stroke-width="2" />
+  </g>
+
+  <!-- 오른쪽: 완벽히 동일하게 복원된 메모리 위 객체 -->
+  <g transform="translate(450, 150)">
+    <rect x="0" y="0" width="160" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#4CAF50" stroke-width="2"/>
+    <text x="80" y="-15" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">파이썬 RAM (복원 성공!)</text>
+
+    <rect x="10" y="20" width="140" height="85" fill="#E8F5E9" rx="3" />
+    
+    <!-- 복원된 헤더 -->
+    <text x="35" y="35" font-family="monospace" font-size="12" fill="#1B5E20" font-weight="bold">Name</text>
+    <text x="80" y="35" font-family="monospace" font-size="12" fill="#1B5E20" font-weight="bold">Sex</text>
+    <text x="120" y="35" font-family="monospace" font-size="12" fill="#1B5E20" font-weight="bold">Age</text>
+    
+    <path d="M 10 40 L 150 40" fill="none" stroke="#4CAF50" stroke-width="1" />
+
+    <!-- 복원된 값들 -->
+    <text x="40" y="55" font-family="monospace" font-size="11" fill="#333">홍길동</text>
+    <text x="85" y="55" font-family="monospace" font-size="11" fill="#333">남</text>
+    <text x="125" y="55" font-family="monospace" font-size="11" fill="#333">25</text>
+    
+    <text x="40" y="75" font-family="monospace" font-size="11" fill="#333">이순신</text>
+    <text x="85" y="75" font-family="monospace" font-size="11" fill="#333">남</text>
+    <text x="125" y="75" font-family="monospace" font-size="11" fill="#333">40</text>
+
+    <!-- 판다스가 자동으로 인덱스를 붙여줌 -->
+    <rect x="-15" y="42" width="20" height="63" fill="#E0E0E0" rx="3" />
+    <text x="-5" y="55" font-family="monospace" font-size="10" fill="#616161" text-anchor="middle">0</text>
+    <text x="-5" y="75" font-family="monospace" font-size="10" fill="#616161" text-anchor="middle">1</text>
+
+    <!-- 복원 완료 메시지 -->
+    <text x="80" y="125" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">100% 동일한 DataFrame</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 320)">
+    <text x="0" y="0" font-family="sans-serif" font-size="14" fill="#616161" font-weight="bold" text-anchor="middle">판다스가 쉼표 포장을 뜯어내고, 내보내기 직전의 완벽한 2차원 표 형태로 알아서 도마 위에 올립니다.</text>
+  </g>
+
+</svg>

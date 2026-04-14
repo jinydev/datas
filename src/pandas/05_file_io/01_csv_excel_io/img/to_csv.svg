@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">2단계: CSV 포맷으로 내보내기/저장 - to_csv()</text>
+
+  <!-- 파이썬 명령 박스 -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="560" height="50" fill="#263238" rx="5" filter="url(#shadow)" stroke="#FF9800" stroke-width="2"/>
+    <text x="280" y="30" font-family="monospace" font-size="16" fill="#FFB74D" font-weight="bold" text-anchor="middle">df.to_csv(<tspan fill="#FFEB3B">"titanic_processed.csv"</tspan>, <tspan fill="#4FC3F7">index=False</tspan>)</text>
+  </g>
+
+  <!-- 왼쪽: 메모리 위의 변형된 데이터프레임 -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="180" height="150" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="2"/>
+    <text x="90" y="-15" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">파이썬 RAM 작업대 위 (가공 완료)</text>
+
+    <!-- 표 형태 데이터 (쉼표로 구분될 내용) -->
+    <rect x="20" y="20" width="140" height="85" fill="#E3F2FD" rx="3" />
+    
+    <text x="45" y="35" font-family="monospace" font-size="12" fill="#0D47A1" font-weight="bold">Name</text>
+    <text x="90" y="35" font-family="monospace" font-size="12" fill="#0D47A1" font-weight="bold">Sex</text>
+    <text x="130" y="35" font-family="monospace" font-size="12" fill="#0D47A1" font-weight="bold">Age</text>
+    
+    <!-- 실선 묘사 (가상) -->
+    <path d="M 20 40 L 160 40" fill="none" stroke="#2196F3" stroke-width="1" />
+
+    <text x="50" y="55" font-family="monospace" font-size="11" fill="#333">홍길동</text>
+    <text x="95" y="55" font-family="monospace" font-size="11" fill="#333">남</text>
+    <text x="135" y="55" font-family="monospace" font-size="11" fill="#333">25</text>
+    
+    <text x="50" y="75" font-family="monospace" font-size="11" fill="#333">이순신</text>
+    <text x="95" y="75" font-family="monospace" font-size="11" fill="#333">남</text>
+    <text x="135" y="75" font-family="monospace" font-size="11" fill="#333">40</text>
+
+    <text x="90" y="125" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">DataFrame 객체</text>
+    
+    <!-- index=False 강조 마크 -->
+    <rect x="-30" y="30" width="40" height="70" fill="#FFEBEE" rx="3" stroke="#F44336" stroke-dasharray="3,3" />
+    <text x="-10" y="65" font-family="sans-serif" font-size="10" fill="#D32F2F" font-weight="bold" transform="rotate(-90 -10 65)" text-anchor="middle">0, 1 인덱스 거부!</text>
+  </g>
+
+  <!-- 중앙 이동 화살표 (패킹, 직렬화) -->
+  <g transform="translate(300, 170)">
+    <!-- 포장해 넣는 연출 (점선 화살표) -->
+    <path d="M -10 40 L 160 40" fill="none" stroke="#FF9800" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="150,33 165,40 150,47" fill="#FF9800" />
+    
+    <rect x="25" y="15" width="100" height="50" fill="#FFF" rx="5" stroke="#FF9800" stroke-width="2" />
+    <text x="75" y="32" font-family="sans-serif" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">쉼표 박스 포장</text>
+    <text x="75" y="50" font-family="monospace" font-size="11" fill="#F57F17" text-anchor="middle">Serialization</text>
+
+    <!-- 날아가는 쉼표들 시각화 -->
+    <text x="40" y="10" font-family="sans-serif" font-size="20" fill="#FF9800" font-weight="bold">,</text>
+    <text x="90" y="10" font-family="sans-serif" font-size="20" fill="#FF9800" font-weight="bold">,</text>
+    <text x="140" y="10" font-family="sans-serif" font-size="20" fill="#FF9800" font-weight="bold">,</text>
+  </g>
+
+  <!-- 오른쪽: 하드디스크의 CSV 파일 -->
+  <g transform="translate(480, 150)">
+    <rect x="0" y="0" width="140" height="150" fill="#FFF3E0" rx="10" filter="url(#shadow)" stroke="#FF9800" stroke-width="3"/>
+    
+    <!-- 텍스트 문서 모양 (CSV) -->
+    <path d="M 40 20 L 80 20 L 100 40 L 100 90 L 40 90 Z" fill="#FFFFFF" stroke="#F57F17" stroke-width="2" />
+    <path d="M 80 20 L 80 40 L 100 40" fill="none" stroke="#F57F17" stroke-width="2" />
+
+    <!-- 내부 쉼표 포맷 묘사 -->
+    <text x="45" y="45" font-family="monospace" font-size="8" fill="#D84315">Name<tspan fill="#FF9800" font-weight="bold">,</tspan>Sex<tspan fill="#FF9800" font-weight="bold">,</tspan>Age</text>
+    <text x="45" y="55" font-family="monospace" font-size="8" fill="#D84315">홍길동<tspan fill="#FF9800" font-weight="bold">,</tspan>남<tspan fill="#FF9800" font-weight="bold">,</tspan>25</text>
+    <text x="45" y="65" font-family="monospace" font-size="8" fill="#D84315">이순신<tspan fill="#FF9800" font-weight="bold">,</tspan>남<tspan fill="#FF9800" font-weight="bold">,</tspan>40</text>
+
+    <!-- 디스크 기호 -->
+    <path d="M 20 130 C 20 145 120 145 120 130" fill="none" stroke="#E65100" stroke-width="2" />
+    <path d="M 20 120 C 20 135 120 135 120 120" fill="none" stroke="#E65100" stroke-width="2" />
+
+    <text x="70" y="110" font-family="monospace" font-size="12" fill="#E65100" font-weight="bold" text-anchor="middle">*.csv 파일</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 320)">
+    <text x="0" y="0" font-family="sans-serif" font-size="14" fill="#616161" font-weight="bold" text-anchor="middle">메모리 위의 데이터를 엑셀 등 다른 도구와 호환이 완벽한 '쉼표' 텍스트 파일로 납작하게 압축합니다.</text>
+  </g>
+
+</svg>

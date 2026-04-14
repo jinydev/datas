@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 250" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .math { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-style: italic; fill: #222; }
+      .math-bold { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-weight: bold; fill: #222; }
+      .box { rx: 5px; ry: 5px; fill: #f8f9fa; stroke: #ccc; stroke-width: 2px; }
+      .arr-1 { fill: #f8d7da; stroke: #dc3545; }
+      .arr-2 { fill: #d4edda; stroke: #28a745; }
+      .grid-line { stroke: rgba(0,0,0,0.1); stroke-width: 1px; }
+      .arrow { fill: none; stroke: #b0b0b0; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .bracket { font-family: 'Times New Roman', Times, serif; font-size: 110px; font-weight: lighter; fill: #333; }
+    </style>
+  </defs>
+
+  <rect width="850" height="250" fill="#fff" rx="10" ry="10" />
+  
+  <text x="425" y="30" class="title" text-anchor="middle">수학적 차원 승급 (1D Array → 2D Column Vector 적층결합)</text>
+
+  <!-- Left Side: 1D Arrays -->
+  <g transform="translate(80, 80)">
+    <text x="-20" y="30" class="math" text-anchor="end">x =</text>
+    <rect x="0" y="5" width="150" height="40" class="box arr-1" />
+    <text x="25" y="32" class="math" text-anchor="middle"><tspan>x</tspan><tspan dy="5" font-size="0.7em">1</tspan></text>
+    <text x="75" y="32" class="math" text-anchor="middle"><tspan>x</tspan><tspan dy="5" font-size="0.7em">2</tspan></text>
+    <text x="125" y="32" class="math" text-anchor="middle"><tspan>x</tspan><tspan dy="5" font-size="0.7em">3</tspan></text>
+    <line x1="50" y1="5" x2="50" y2="45" class="grid-line" />
+    <line x1="100" y1="5" x2="100" y2="45" class="grid-line" />
+
+    <text x="-20" y="90" class="math" text-anchor="end">y =</text>
+    <rect x="0" y="65" width="150" height="40" class="box arr-2" />
+    <text x="25" y="92" class="math" text-anchor="middle"><tspan>y</tspan><tspan dy="5" font-size="0.7em">1</tspan></text>
+    <text x="75" y="92" class="math" text-anchor="middle"><tspan>y</tspan><tspan dy="5" font-size="0.7em">2</tspan></text>
+    <text x="125" y="92" class="math" text-anchor="middle"><tspan>y</tspan><tspan dy="5" font-size="0.7em">3</tspan></text>
+    <line x1="50" y1="65" x2="50" y2="105" class="grid-line" />
+    <line x1="100" y1="65" x2="100" y2="105" class="grid-line" />
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 330 135 L 430 135 M 420 125 L 430 135 L 420 145" class="arrow" />
+  <text x="380" y="115" class="math-bold" text-anchor="middle" font-size="20">column_stack((x, y))</text>
+
+  <!-- Right Side: 2D Matrix Matrix -->
+  <g transform="translate(500, 70)">
+    <text x="20" y="65" class="math-bold" text-anchor="end" font-size="28">M =</text>
+    
+    <!-- Matrix Bracket Left -->
+    <text x="35" y="105" class="bracket">[</text>
+    
+    <!-- Column x -->
+    <rect x="65" y="0" width="50" height="120" class="box arr-1" />
+    <text x="90" y="27" class="math" text-anchor="middle"><tspan>x</tspan><tspan dy="5" font-size="0.7em">1</tspan></text>
+    <text x="90" y="67" class="math" text-anchor="middle"><tspan>x</tspan><tspan dy="5" font-size="0.7em">2</tspan></text>
+    <text x="90" y="107" class="math" text-anchor="middle"><tspan>x</tspan><tspan dy="5" font-size="0.7em">3</tspan></text>
+    <line x1="65" y1="40" x2="115" y2="40" class="grid-line" />
+    <line x1="65" y1="80" x2="115" y2="80" class="grid-line" />
+
+    <!-- Column y -->
+    <rect x="125" y="0" width="50" height="120" class="box arr-2" />
+    <text x="150" y="27" class="math" text-anchor="middle"><tspan>y</tspan><tspan dy="5" font-size="0.7em">1</tspan></text>
+    <text x="150" y="67" class="math" text-anchor="middle"><tspan>y</tspan><tspan dy="5" font-size="0.7em">2</tspan></text>
+    <text x="150" y="107" class="math" text-anchor="middle"><tspan>y</tspan><tspan dy="5" font-size="0.7em">3</tspan></text>
+    <line x1="125" y1="40" x2="175" y2="40" class="grid-line" />
+    <line x1="125" y1="80" x2="175" y2="80" class="grid-line" />
+
+    <!-- Matrix Bracket Right -->
+    <text x="180" y="105" class="bracket">]</text>
+
+    <!-- Subtitle -->
+    <text x="120" y="150" class="title" font-size="16" text-anchor="middle" fill="#0056b3">(3 × 2) 행렬(Matrix)</text>
+  </g>
+</svg>

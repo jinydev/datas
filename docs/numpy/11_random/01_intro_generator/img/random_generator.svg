@@ -1,0 +1,106 @@
+<svg width="500" height="260" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 구형 뽑기 기계 유리 반사광 -->
+    <radialGradient id="glassSphere" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.8)"/>
+      <stop offset="60%" stop-color="rgba(226,232,240,0.3)"/>
+      <stop offset="100%" stop-color="rgba(113,128,150,0.6)"/>
+    </radialGradient>
+    
+    <!-- 난수 공 색상들 -->
+    <radialGradient id="ballRed" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fc8181"/><stop offset="100%" stop-color="#c53030"/>
+    </radialGradient>
+    <radialGradient id="ballBlue" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#63b3ed"/><stop offset="100%" stop-color="#2b6cb0"/>
+    </radialGradient>
+    <radialGradient id="ballYellow" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fbd38d"/><stop offset="100%" stop-color="#c05621"/>
+    </radialGradient>
+    <radialGradient id="ballGreen" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#68d391"/><stop offset="100%" stop-color="#2f855a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 배경 둥근 사각형 -->
+  <rect x="0" y="0" width="500" height="260" fill="#f7fafc" rx="8"/>
+  <text x="250" y="30" font-family="'Pretendard', sans-serif" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">
+    Numpy Random: 예측 불가능한 운명의 주사위
+  </text>
+
+  <!-- 1. 제너레이터 본체 (디지털 뽑기 기계) -->
+  <g transform="translate(150, 140)">
+    <!-- 기계 스탠드 -->
+    <path d="M-40,90 L40,90 L20,30 L-20,30 Z" fill="#2d3748"/>
+    <rect x="-50" y="90" width="100" height="10" fill="#1a202c" rx="2"/>
+    
+    <!-- 기계 내부에 튀는 공들 (Random Bouncing) -->
+    <g stroke="#fff" stroke-width="1">
+      <!-- 공 1 (Yellow) -->
+      <circle cx="0" cy="0" r="10" fill="url(#ballYellow)">
+        <animateTransform attributeName="transform" type="translate" values="-20,20; 30,-30; -10,-40; 20,10; -20,20" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <!-- 공 2 (Blue) -->
+      <circle cx="0" cy="0" r="10" fill="url(#ballBlue)">
+        <animateTransform attributeName="transform" type="translate" values="30,-10; -20,-30; 10,20; -30,0; 30,-10" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+      <!-- 공 3 (Red) -->
+      <circle cx="0" cy="0" r="10" fill="url(#ballRed)">
+        <animateTransform attributeName="transform" type="translate" values="-10,-40; -30,10; 30,20; 10,-30; -10,-40" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <!-- 공 4 (Green) -->
+      <circle cx="0" cy="0" r="10" fill="url(#ballGreen)">
+        <animateTransform attributeName="transform" type="translate" values="10,20; -10,-10; 30,-20; -20,30; 10,20" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    
+    <!-- 구형 통 (반투명) -->
+    <circle cx="0" cy="-10" r="60" fill="url(#glassSphere)" stroke="#cbd5e0" stroke-width="3"/>
+    
+    <!-- 배출구 파이프 -->
+    <path d="M60,-20 L90,-20 L100,20 L60,20 Z" fill="#718096" stroke="#4a5568" stroke-width="2"/>
+  </g>
+
+  <!-- 2. 생성 및 배출되어 나열되는 난수 배열 -->
+  <g transform="translate(260, 130)">
+     <!-- 코드 라벨 -->
+     <text x="60" y="-30" font-family="monospace" font-size="14" font-weight="bold" fill="#dd6b20" text-anchor="middle">.random(3)</text>
+     
+     <!-- 배열 박스 -->
+     <rect x="0" y="0" width="130" height="40" fill="#edf2f7" stroke="#cbd5e0" stroke-width="2" rx="4"/>
+     
+     <!-- 날아와서 꽂히는 공 애니메이션 -->
+     <!-- 첫 번째 칸 슬롯 -->
+     <circle cx="20" cy="20" r="12" fill="url(#ballBlue)">
+        <!-- 무한 반복 사이클 중 특정 타이밍에만 날아오고 정착함 -->
+        <animateTransform attributeName="transform" type="translate" values="-50,-30; 0,0; 0,0; -50,-30" dur="3s" repeatCount="indefinite" keyTimes="0; 0.2; 0.9; 1"/>
+     </circle>
+     <text x="21" y="24" font-family="monospace" font-size="12" fill="white" font-weight="bold" text-anchor="middle">
+       <animate attributeName="opacity" values="0; 1; 1; 0" dur="3s" repeatCount="indefinite" keyTimes="0; 0.2; 0.9; 1"/>
+       0.1
+     </text>
+
+     <!-- 두 번째 칸 슬롯 -->
+     <circle cx="65" cy="20" r="12" fill="url(#ballRed)">
+        <animateTransform attributeName="transform" type="translate" values="-95,-30; -20,-10; 0,0; 0,0; -95,-30" dur="3s" repeatCount="indefinite" keyTimes="0; 0.2; 0.4; 0.9; 1"/>
+     </circle>
+     <text x="66" y="24" font-family="monospace" font-size="12" fill="white" font-weight="bold" text-anchor="middle">
+       <animate attributeName="opacity" values="0; 0; 1; 1; 0" dur="3s" repeatCount="indefinite" keyTimes="0; 0.2; 0.4; 0.9; 1"/>
+       0.8
+     </text>
+
+     <!-- 세 번째 칸 슬롯 -->
+     <circle cx="110" cy="20" r="12" fill="url(#ballGreen)">
+        <animateTransform attributeName="transform" type="translate" values="-140,-30; -40,-20; 0,0; 0,0; -140,-30" dur="3s" repeatCount="indefinite" keyTimes="0; 0.3; 0.6; 0.9; 1"/>
+     </circle>
+     <text x="111" y="24" font-family="monospace" font-size="12" fill="white" font-weight="bold" text-anchor="middle">
+       <animate attributeName="opacity" values="0; 0; 1; 1; 0" dur="3s" repeatCount="indefinite" keyTimes="0; 0.3; 0.6; 0.9; 1"/>
+       0.4
+     </text>
+  </g>
+
+  <!-- 하단 부연설명 -->
+  <text x="250" y="240" font-family="'Pretendard', sans-serif" font-size="12" fill="#718096" text-anchor="middle">
+    아무것도 없는 무의 공간에서, 확률을 모델링하기 위해 난수 구슬을 뽑아냅니다.
+  </text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">3단계: 여러 조건을 동시에 검사하기 (AND / OR)</text>
+
+  <!-- 파이썬 명령 박스 (조건 조립) -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="310" height="100" fill="#263238" rx="5" filter="url(#shadow)" stroke="#4FC3F7" stroke-width="2"/>
+    <text x="10" y="40" font-family="monospace" font-size="16" fill="#82AAFF" font-weight="bold">pf[ </text>
+    
+    <!-- 조건 1 -->
+    <text x="50" y="40" font-family="monospace" font-size="16" fill="#FFCA28" font-weight="bold">(pf['출석'] &gt;= 19)</text>
+    <!-- 연산자 -->
+    <text x="155" y="75" font-family="monospace" font-size="24" fill="#FF5252" font-weight="bold">&amp;</text>
+    <!-- 조건 2 -->
+    <text x="80" y="110" font-family="monospace" font-size="16" fill="#8BC34A" font-weight="bold">(pf['기말'] &gt;= 20)</text>
+    
+    <text x="270" y="110" font-family="monospace" font-size="16" fill="#82AAFF" font-weight="bold"> ]</text>
+  </g>
+
+  <!-- 조립 묘사 화살표 -->
+  <g transform="translate(370, 150)">
+    <path d="M 0 0 L 80 0" fill="none" stroke="#2196F3" stroke-width="4" stroke-dasharray="5,5" />
+    <polygon points="75,-7 85,0 75,7" fill="#2196F3" />
+    
+    <text x="40" y="-10" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">두 조건 모두</text>
+    <text x="40" y="25" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">만족해야 통과 (AND)</text>
+  </g>
+
+  <!-- 결과 표 -->
+  <g transform="translate(470, 110)">
+    <rect x="-30" y="0" width="220" height="90" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#2196F3" stroke-width="3"/>
+    
+    <rect x="30" y="0" width="160" height="30" fill="#E3F2FD" rx="3" stroke="#90CAF9" stroke-width="1"/>
+    <text x="60" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">중간</text>
+    <text x="100" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">기말</text>
+    <text x="140" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">과제</text>
+    <text x="175" y="20" font-family="sans-serif" font-size="11" fill="#0D47A1" font-weight="bold" text-anchor="middle">출석</text>
+
+    <!-- 인덱스 (강수희, 유한빈) -->
+    <rect x="-30" y="30" width="60" height="60" fill="#FFF3E0" rx="3" />
+    <text x="0" y="55" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">강수희</text>
+    <text x="0" y="80" font-family="sans-serif" font-size="10" fill="#E65100" font-weight="bold" text-anchor="middle">유한빈</text>
+
+    <!-- 데이터 -->
+    <!-- 강수희 (출석 20, 기말 27 => AND 만족) -->
+    <text x="60" y="55" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">18</text>
+    <text x="100" y="55" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">27</text>
+    <text x="140" y="55" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">10</text>
+    <text x="175" y="55" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">20</text>
+
+    <!-- 유한빈 (출석 20, 기말 22 => AND 만족) -->
+    <text x="60" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">12</text>
+    <text x="100" y="80" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">22</text>
+    <text x="140" y="80" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">9</text>
+    <text x="175" y="80" font-family="sans-serif" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">20</text>
+
+    <!-- 강조 박스들 -->
+    <rect x="85" y="38" width="30" height="50" fill="none" stroke="#8BC34A" stroke-width="2" stroke-dasharray="2,2"/>
+    <rect x="160" y="38" width="30" height="50" fill="none" stroke="#FFCA28" stroke-width="2" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#FFEB3B" rx="10" stroke="#FBC02D" stroke-width="2" opacity="0.3" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold" text-anchor="middle">🚨 괄호 ( ) 를 빼먹으면 파이썬 연산자 우선순위 때문에 에러가 납니다!</text>
+  </g>
+
+</svg>

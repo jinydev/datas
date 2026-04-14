@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="350" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">시간 축(DatetimeIndex)을 가진 시계열 장부 완성</text>
+
+  <!-- 1. 부품 조립 묘사 -->
+  <g transform="translate(40, 70)">
+    <!-- 파이썬 명령 박스 -->
+    <rect x="0" y="0" width="300" height="150" fill="#263238" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="2"/>
+    <rect x="0" y="0" width="300" height="25" fill="#37474F" rx="5" />
+    <circle cx="15" cy="12" r="5" fill="#FF5252" />
+    <circle cx="30" cy="12" r="5" fill="#FFCA28" />
+    <circle cx="45" cy="12" r="5" fill="#8BC34A" />
+
+    <text x="15" y="55" font-family="monospace" font-size="14" fill="#82AAFF" font-weight="bold">pd.DataFrame(</text>
+    
+    <!-- data -->
+    <text x="30" y="80" font-family="monospace" font-size="14" fill="#F07178">data</text>
+    <text x="75" y="80" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="90" y="80" font-family="monospace" font-size="14" fill="#C3E88D">random_data,</text>
+    <path d="M 215 75 Q 260 70 280 130" fill="none" stroke="#8BC34A" stroke-width="2" stroke-dasharray="2,2"/>
+    
+    <!-- index -->
+    <text x="30" y="105" font-family="monospace" font-size="14" fill="#F07178">index</text>
+    <text x="75" y="105" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="90" y="105" font-family="monospace" font-size="14" fill="#FFF">dates,</text>
+     <path d="M 155 100 Q 250 100 280 160" fill="none" stroke="#FFCA28" stroke-width="2" stroke-dasharray="2,2"/>
+    
+    <!-- columns -->
+    <text x="30" y="130" font-family="monospace" font-size="14" fill="#F07178">columns</text>
+    <text x="90" y="130" font-family="monospace" font-size="14" fill="#89DDFF">= </text>
+    <text x="105" y="130" font-family="monospace" font-size="14" fill="#FFCB6B">list('ABCD')</text>
+    <path d="M 205 125 Q 250 125 320 85" fill="none" stroke="#29B6F6" stroke-width="2" stroke-dasharray="2,2"/>
+    
+    <text x="15" y="155" font-family="monospace" font-size="14" fill="#82AAFF" font-weight="bold">)</text>
+  </g>
+
+  <!-- 2. 결과 시계열 표 -->
+  <g transform="translate(370, 70)">
+    <rect x="-30" y="0" width="310" height="210" fill="#FFFFFF" rx="5" filter="url(#shadow)" stroke="#00BCD4" stroke-width="3"/>
+    
+    <!-- 컬럼명 바 (columns) -->
+    <rect x="75" y="0" width="205" height="30" fill="#E1F5FE" rx="3" stroke="#29B6F6" stroke-width="2" />
+    <text x="100" y="20" font-family="sans-serif" font-size="14" fill="#0277BD" font-weight="bold" text-anchor="middle">A</text>
+    <text x="150" y="20" font-family="sans-serif" font-size="14" fill="#0277BD" font-weight="bold" text-anchor="middle">B</text>
+    <text x="200" y="20" font-family="sans-serif" font-size="14" fill="#0277BD" font-weight="bold" text-anchor="middle">C</text>
+    <text x="250" y="20" font-family="sans-serif" font-size="14" fill="#0277BD" font-weight="bold" text-anchor="middle">D</text>
+
+    <!-- 날짜 인덱스 바 (index) -->
+    <rect x="-30" y="30" width="105" height="180" fill="#FFF8E1" rx="3" stroke="#FFCA28" stroke-width="2"/>
+    <text x="22" y="55" font-family="monospace" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">2025-03-02</text>
+    <text x="22" y="85" font-family="monospace" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">2025-03-03</text>
+    <text x="22" y="115" font-family="monospace" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">2025-03-04</text>
+    <text x="22" y="145" font-family="monospace" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">2025-03-05</text>
+    <text x="22" y="175" font-family="monospace" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">2025-03-06</text>
+    <text x="22" y="205" font-family="monospace" font-size="12" fill="#F57F17" font-weight="bold" text-anchor="middle">2025-03-07</text>
+
+    <!-- 본문 데이터 영역 (data) -->
+    <rect x="75" y="30" width="205" height="180" fill="#F1F8E9" rx="3" stroke="#8BC34A" stroke-width="2"/>
+    
+    <text x="100" y="55" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">1.62</text>
+    <text x="150" y="55" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-0.61</text>
+    <text x="200" y="55" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-0.52</text>
+    <text x="250" y="55" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-1.07</text>
+
+    <text x="100" y="85" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">0.86</text>
+    <text x="150" y="85" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-2.30</text>
+    <text x="200" y="85" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">1.74</text>
+    <text x="250" y="85" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-0.76</text>
+
+    <text x="100" y="115" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">0.31</text>
+    <text x="150" y="115" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-0.24</text>
+    <text x="200" y="115" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">1.46</text>
+    <text x="250" y="115" font-family="monospace" font-size="12" fill="#555" text-anchor="middle">-2.06</text>
+    
+    <text x="175" y="155" font-family="sans-serif" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">...</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 310)">
+    <rect x="-240" y="-15" width="480" height="35" fill="#E0F7FA" rx="10" stroke="#00BCD4" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="14" fill="#00838F" font-weight="bold" text-anchor="middle">날짜 축(Index) 만으로 아주 강력한 시계열 분석 필터 기능이 살아납니다!</text>
+  </g>
+
+</svg>

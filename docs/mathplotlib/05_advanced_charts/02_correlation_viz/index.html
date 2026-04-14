@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.5.2 상관관계 시각화</title>
-  <meta name="title" content="5.5.2 상관관계 시각화" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.5.2 상관관계 시각화"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.5.2 상관관계 폭격기: Heatmap과 Pairplot</title>
+  <meta name="title" content="5.5.2 상관관계 폭격기: Heatmap과 Pairplot" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.5.2 상관관계 폭격기: Heatmap과 Pairplot"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/mathplotlib/05_advanced_charts/02_correlation_viz/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.5.2 상관관계 시각화"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.5.2 상관관계 폭격기: Heatmap과 Pairplot"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="5.5.2 상관관계 시각화" />
+<meta property="og:title" content="5.5.2 상관관계 폭격기: Heatmap과 Pairplot" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="5.5.2 상관관계 시각화" />
+<meta property="twitter:title" content="5.5.2 상관관계 폭격기: Heatmap과 Pairplot" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.5.2 상관관계 시각화","url":"https://datas.jiny.dev/mathplotlib/05_advanced_charts/02_correlation_viz/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.5.2 상관관계 폭격기: Heatmap과 Pairplot","url":"https://datas.jiny.dev/mathplotlib/05_advanced_charts/02_correlation_viz/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -367,21 +367,21 @@
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/01_pandas_visualization/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.1 패키지 판다스와 시각화 라이브러리 설치
+                                    5.0.1 판다스 내장 시각화와 한계
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치
+                                    5.0.2 시각화 생태계: Matplotlib과 Seaborn
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.3 토이 데이터와 데이터프레임 활용
+                                    5.0.3 장난감(Toy) 데이터를 활용한 실습 준비
                                 </a>
                             </li>
                             
@@ -411,35 +411,35 @@
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/01_visualization_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.1 데이터 시각화 개요
+                                    5.1.1 데이터 시각화의 목적과 본질
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/02_simple_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.2 간단한 직선 그래프 그리기
+                                    5.1.2 가장 단순한 선 그래프 (plot) 그리기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/03_figure_subplot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.3 figure와 서브플롯
+                                    5.1.3 도화지(Figure)와 액자(Ax) 구조 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃
+                                    5.1.4 비대칭 테트리스 레이아웃 (GridSpec)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/05_styling/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.5 그래프 속성과 스타일링
+                                    5.1.5 스타일링 끝판왕 (색상, 영웅, 격자)
                                 </a>
                             </li>
                             
@@ -469,28 +469,28 @@
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/01_pydataset_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.1 pydataset 소개
+                                    5.2.1 Seaborn과 장난감 데이터셋 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/02_pydataset_install/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.2 패키지 pydataset 설치
+                                    5.2.2 초기 데이터 탐색 (EDA) 기법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/03_pydataset_import/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.3 pydataset 주요 자료 가져오기
+                                    5.2.3 시각화를 결정짓는 2가지 변수 타입
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.4 seaborn으로 그래프 그리기
+                                    5.2.4 Seaborn 첫 그래프: Countplot과 Histplot
                                 </a>
                             </li>
                             
@@ -520,21 +520,21 @@
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/01_scatter_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.1 산점도
+                                    5.3.1 산점도 (Scatter Plot)와 hue의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/02_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.2 선 그리기
+                                    5.3.2 선 그래프 (Line Plot)와 시계열 데이터
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/03_bar_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.3 막대 그래프
+                                    5.3.3 막대 그래프 (Bar Plot)와 오차 막대
                                 </a>
                             </li>
                             
@@ -564,21 +564,21 @@
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/01_box_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.1 상자그림
+                                    5.4.1 상자그림 (Box Plot) 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/02_histogram/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.2 히스토그램
+                                    5.4.2 히스토그램 (Histogram)과 데이터 통(Bins)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/03_pie_chart/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.3 파이 차트
+                                    5.4.3 파이 차트 (Pie Chart)와 시각화의 함정
                                 </a>
                             </li>
                             
@@ -608,14 +608,14 @@
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/01_violin_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.1 바이올린 플롯
+                                    5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/02_correlation_viz/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    5.5.2 상관관계 시각화
+                                    5.5.2 상관관계 폭격기: Heatmap과 Pairplot
                                 </a>
                             </li>
                             
@@ -662,187 +662,96 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">5.5.2 상관관계 시각화</li>
+        <li class="breadcrumb-item active" aria-current="page">5.5.2 상관관계 폭격기: Heatmap과 Pairplot</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h2 id="552-상관관계-시각화">5.5.2 상관관계 시각화</h2>
+            <h2 id="552-상관관계-시각화-끝판왕">5.5.2 상관관계 시각화 끝판왕</h2>
 
-<h4 id="-패키지-seaborn의-함수-snspairplot">① 패키지 seaborn의 함수 sns.pairplot()</h4>
+<p>데이터 분석에서 가장 짜릿한 순간은 “A가 오르면 B도 오르더라!” 같은 숨겨진 데이터 간의 연관성(상관관계)을 밝혀내는 순간입니다. 열(피처)이 десятки 개가 넘어가는 실무 데이터셋에서 이를 일일이 산점도로 그리는 것은 불가능하므로, 우리에겐 <code class="language-plaintext highlighter-rouge">Heatmap</code>과 <code class="language-plaintext highlighter-rouge">Pairplot</code>이라는 궁극의 무기가 필요합니다.</p>
 
-<p>패키지 <code class="language-plaintext highlighter-rouge">seaborn</code>의 상관관계 시각화 함수 <code class="language-plaintext highlighter-rouge">sns.pairplot()</code>는 두 개 이상의 변수 n개에 대해 모든 가능한 두 변수 간의 관계를 n x n 테이블 형태로 그리는 관계 행렬의 그림을 그려준다.</p>
+<h3 id="-상관계수와-히트맵-heatmap의-마법">① 상관계수와 히트맵 (Heatmap)의 마법</h3>
 
-<p>내장 데이터 <code class="language-plaintext highlighter-rouge">mtcars</code>에서 앞 부분 4개의 변수만 추출해 상관관계 그래프를 그려보도록 한다. 이를 위해 먼저 4개의 변수인 연비(mpg), 실린더(cyl), 배기량(disp) 및 마력(hp)으로 구성된 데이터프레임 <code class="language-plaintext highlighter-rouge">mincars</code>를 생성한다.</p>
+<p>두 데이터가 얼마나 끈끈하게 연결되어 있는지를 나타내는 수치를 <strong>상관계수(-1 ~ +1)</strong>라고 합니다.</p>
+<ul>
+  <li><strong>+1에 가까울수록</strong>: 강력한 비례 (수학 점수와 과학 점수)</li>
+  <li><strong>-1에 가까울수록</strong>: 강력한 반비례 (놀이공원 방문객 수와 비 오는 날씨)</li>
+  <li><strong>0에 가까울수록</strong>: 아무 상관 없음 (고양이의 몸무게와 다음 날 주식 가격)</li>
+</ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pydataset</span> <span class="kn">import</span> <span class="n">data</span>
-<span class="n">mtc</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">mtcars</span><span class="sh">'</span><span class="p">)</span>
+<p><img src="../img/heatmap_correlation.svg" alt="상관관계와 히트맵 색상의 원리" /></p>
 
-<span class="n">mincars</span> <span class="o">=</span> <span class="n">mtc</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">mincars</span><span class="p">.</span><span class="nf">head</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>다음으로 <code class="language-plaintext highlighter-rouge">mtc</code> 전체 열 중에서 <code class="language-plaintext highlighter-rouge">mtc.columns[:4]</code>는 앞 부분 4개 열 이름만을 추출할 수 있다. 코드 <code class="language-plaintext highlighter-rouge">mtc.columns[:4].to_list()</code>는 앞 부분 4개 열 이름으로 구성된 리스트를 반환한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">mtc</span><span class="p">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mtc</span><span class="p">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">].</span><span class="nf">to_list</span><span class="p">())</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['mpg', 'cyl', 'disp', 'hp'], dtype='object')
-['mpg', 'cyl', 'disp', 'hp']
-</code></pre></div></div>
-
-<p>그러므로 다음 코드는 앞 부분 4개 열만으로 구성된 데이터프레임을 만들 수도 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mincars</span> <span class="o">=</span> <span class="n">mtc</span><span class="p">[</span><span class="n">mtc</span><span class="p">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">].</span><span class="nf">to_list</span><span class="p">()]</span>
-<span class="n">mincars</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>준비된 데이터프레임 <code class="language-plaintext highlighter-rouge">mincars</code>를 인자로 <code class="language-plaintext highlighter-rouge">seaborn</code>의 <code class="language-plaintext highlighter-rouge">pairplot(mincars)</code>을 호출하면 간단히 16개의 그림을 그릴 수 있다. 결과는 4 x 4 행렬 형태로 그려진다. 데이터의 4개의 변수가 x축과 y축의 값이 된다. 행렬의 대각선에는 4개 변수의 도수분포표가 표시된다. 또한, 대각선을 중심으로 우측상단과 좌측하단은 x축과 y축이 서로 동일한 산점도가 배치된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
-<span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">mincars</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>인자 <code class="language-plaintext highlighter-rouge">kind='reg'</code>를 사용하면 두 변수의 관계를 가장 잘 나타내는 직선(추세선 또는 회귀선)이 포함된 산점도가 그려진다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">mincars</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="sh">'</span><span class="s">reg</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>인자 <code class="language-plaintext highlighter-rouge">diag_kind='kde'</code>는 대각선에 그려지는 도수분포표(hist)를 밀도 그래프인 밀도 그림(kde)으로 바꿀 수 있다. 또한, 인자 <code class="language-plaintext highlighter-rouge">corner=True</code>를 사용하면 대칭인 부분에서 왼쪽 하단 부분만 그려진다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">mincars</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="sh">'</span><span class="s">kde</span><span class="sh">'</span><span class="p">,</span> <span class="n">corner</span><span class="o">=</span><span class="bp">True</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>인자 <code class="language-plaintext highlighter-rouge">hue='cyl'</code>을 지정하면 지정된 열인 실린더 수 <code class="language-plaintext highlighter-rouge">cyl</code>은 행과 열에서 제외되고 각각의 그림에서 색상으로 실린더 수가 구분되어 그려진다. 또한, 대각선 그림이 밀도 그림으로 그려진다. 대각선의 밀도 그림을 통해 실린더 수(cyl)가 많아지면 연비(mpg)가 낮아지고, 배기량(disp)과 마력(hp)은 커지는 것을 좀 더 명확히 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">mincars</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">cyl</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h4 id="-상관관계-계수와-함수-snsheatmap-활용">② 상관관계 계수와 함수 sns.heatmap() 활용</h4>
-
-<p><strong>[실전 꿀팁]: 상관관계의 핵심, 히트맵(Heatmap)</strong>
-숫자로만 된 <code class="language-plaintext highlighter-rouge">corr()</code> 결과를 표로 보면 한눈에 파악하기 힘듭니다. <strong>히트맵(Heatmap)</strong>을 그리면 두 변수가 얼마나 서로 관련이 있는지(-1 ~ 1 사이의 값)를 색상의 진하기로 즉시 파악할 수 있어, 데이터 간의 “숨겨진 관계”를 찾을 때 가장 유용합니다.</p>
-
-<p>유명한 붓꽃 데이터 <code class="language-plaintext highlighter-rouge">iris</code>를 <code class="language-plaintext highlighter-rouge">seaborn</code>에서 가져오자.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 5.5.2 iris 데이터셋 로드
-</span><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">"</span><span class="s">iris</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">iris</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>붓꽃의 품종 <code class="language-plaintext highlighter-rouge">species</code>는 <code class="language-plaintext highlighter-rouge">virginica</code>, <code class="language-plaintext highlighter-rouge">setosa</code>, <code class="language-plaintext highlighter-rouge">versicolor</code> 3개이며, <code class="language-plaintext highlighter-rouge">sepal_length</code>, <code class="language-plaintext highlighter-rouge">sepal_width</code>, <code class="language-plaintext highlighter-rouge">petal_length</code>, <code class="language-plaintext highlighter-rouge">petal_width</code> 등 4개의 실수 열이 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">.</span><span class="nf">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>상관계수(correlation coefficient)는 상관관계 분석에서 두 변수 간에 선형 관계의 정도를 수량화한 값이다. 상관계수 r은 -1에서 1까지의 실수 값으로 선형관계를 나타낸다.</p>
-
-<p>데이터프레임 <code class="language-plaintext highlighter-rouge">iris</code>의 메소드 <code class="language-plaintext highlighter-rouge">corr()</code>으로 열의 값이 수인 변수 간의 상관관계의 데이터프레임을 얻을 수 있다. 다음 상관관계 계수 결과로 대각선은 1이며 대각선을 기준으로 대칭인 것을 알 수 있다. 꽃잎 너비인 <code class="language-plaintext highlighter-rouge">petal_width</code>와 꽃잎 길이인 <code class="language-plaintext highlighter-rouge">petal_length</code>의 상관관계는 0.963으로 매우 관계가 높다는 것을 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 5.5.2 상관관계 계수 계산
-</span><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="n">pd</span><span class="p">.</span><span class="nf">set_option</span><span class="p">(</span><span class="sh">'</span><span class="s">display.precision</span><span class="sh">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="n">corr_iris</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="n">iris</span><span class="p">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">to_list</span><span class="p">()].</span><span class="nf">corr</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">corr_iris</span><span class="p">)</span>
-</code></pre></div></div>
-<p><strong>출력:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              sepal_length  sepal_width  petal_length  petal_width
-sepal_length         1.000       -0.118         0.872        0.818
-sepal_width         -0.118        1.000        -0.428       -0.366
-petal_length         0.872       -0.428         1.000        0.963
-petal_width          0.818       -0.366         0.963        1.000
-</code></pre></div></div>
-
-<p>여러 개의 변수로 만들어진 상관관계 계수를 색깔로 표현하면 변수들의 관계를 쉽게 파악할 수 있다. 값에 따라 색깔이 변하는 행렬 그림이 히트맵(heatmap)이다. 함수 <code class="language-plaintext highlighter-rouge">sns.heatmap(corr_iris)</code>를 이용하면 상관관계 계수를 히트맵을 쉽게 만들 수 있다. 그림 오른쪽 색상 막대(color bar)에서 보듯이 상관계수가 1에 가까우면 밝아지고 -1에 가까우면 어두워진다. 그러므로 상관계수가 1인 대각선이 가장 밝다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">heatmap</span><span class="p">(</span><span class="n">corr_iris</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>위 히트맵을 보기 좋게 좌측 하단의 삼각 행렬만 남도록 수정해 보자. 이를 위해 먼저 필요한 마스크(mask)를 만들자. 다음 코드는 <code class="language-plaintext highlighter-rouge">corr_iris</code>와 같은 모양인 4 x 4가 모두 0으로 채워진 2차원 행렬 <code class="language-plaintext highlighter-rouge">mask</code>를 생성한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 5.5.2 mask 만들기
-</span><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros_like</span><span class="p">(</span><span class="n">corr_iris</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음 함수 배열의 오른쪽 위 인덱스(index)를 반환하는 <code class="language-plaintext highlighter-rouge">np.triu_indices_from()</code>를 활용해 <code class="language-plaintext highlighter-rouge">mask</code>의 오른쪽 위 대각 행렬을 모두 1로 수정한 <code class="language-plaintext highlighter-rouge">mask</code>를 생성한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 5.5.2 오른쪽 위 대각 행렬을 1로 바꾸기
-</span><span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="nf">triu_indices_from</span><span class="p">(</span><span class="n">mask</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>상관계수로 그린 히트맵에서 대각선은 상관계수가 항상 1이 되며 오른쪽 위는 왼쪽 아래와 값이 같다. 그러므로 이 부분을 모두 제거하려면 마스크와 상관행렬의 첫 번째 행과 마지막 열을 제거해야 한다. 이를 위해 <code class="language-plaintext highlighter-rouge">mask[1:, :-1]</code>로 행과 열에 슬라이싱을 사용하여 배열 <code class="language-plaintext highlighter-rouge">mask</code>의 일부를 선택한다. 다음 코드로 3행 3열로 줄어든 새로운 마스크 <code class="language-plaintext highlighter-rouge">mask_new</code>를 만들자.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mask_new</span> <span class="o">=</span> <span class="n">mask</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># mask 첫 번째 행, 마지막 열 제거
-</span><span class="nf">print</span><span class="p">(</span><span class="n">mask_new</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>마찬가지로, 다음 코드로 상관관계 계수 데이터프레임의 첫 번째 행과 마지막 열을 제거한 새로운 데이터프레임 <code class="language-plaintext highlighter-rouge">corr_iris_new</code>를 만들자.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 5.5.2 상관관계 계수 dataframe 첫 번째 행, 마지막 열 제거
-</span><span class="n">corr_iris_new</span> <span class="o">=</span> <span class="n">corr_iris</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">corr_iris_new</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>이제, 인자 <code class="language-plaintext highlighter-rouge">mask=mask_new</code>를 사용하고 인자 <code class="language-plaintext highlighter-rouge">cmap='coolwarm'</code>과 <code class="language-plaintext highlighter-rouge">cbar_kws={'shrink': .4}</code> 등 몇 가지를 추가해 히트맵을 보기 좋게 수정하자. 결과 히트맵을 보면 3개의 서로 다른 변수 간의 상관관계 계수를 쉽게 파악할 수 있다. 인자 <code class="language-plaintext highlighter-rouge">cmap='coolwarm'</code>을 지정해 양의 상관관계는 붉은 색으로 음의 상관관계는 파란 색으로 표시할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">heatmap</span><span class="p">(</span><span class="n">corr_iris_new</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">coolwarm</span><span class="sh">'</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_new</span><span class="p">,</span>
-            <span class="n">annot_kws</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">size</span><span class="sh">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-            <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">shrink</span><span class="sh">'</span><span class="p">:</span> <span class="p">.</span><span class="mi">4</span><span class="p">},</span> <span class="c1"># 범례 크기 줄이기
-</span>            <span class="n">linewidths</span><span class="o">=</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>          <span class="c1"># 경계 선 추가
-</span></code></pre></div></div>
-
-<p>다음 함수 <code class="language-plaintext highlighter-rouge">sns.pairplot(iris, hue='species')</code> 코드는 붓꽃 품종 <code class="language-plaintext highlighter-rouge">species</code>에 따른 4개 변수에 대한 상관관계 산점도를 시각화할 수 있다. 대각선에는 붓꽃 품종 3개의 밀도 함수를 그려준다. 꽃잎 너비인 <code class="language-plaintext highlighter-rouge">petal_width</code>와 꽃잎 길이인 <code class="language-plaintext highlighter-rouge">petal_length</code>의 밀도 함수를 살펴보면 붓꽃의 품종 3개가 잘 구분되는 것을 알 수 있다. 이를 통해 꽃잎 너비와 꽃잎 길이로 붓꽃 품종을 어느 정도 구분할 수 있다는 것을 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">species</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>다음은 인자 <code class="language-plaintext highlighter-rouge">palette="husl"</code>, <code class="language-plaintext highlighter-rouge">markers=["o", "s", "D"]</code>를 사용해 품종에 따라 색상과 마커를 수정한 결과이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">"</span><span class="s">species</span><span class="sh">"</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="sh">"</span><span class="s">husl</span><span class="sh">"</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">s</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">D</span><span class="sh">"</span><span class="p">]);</span>
-</code></pre></div></div>
-
-<p>상관관계 그림을 좀 더 수정하려면 함수 <code class="language-plaintext highlighter-rouge">sns.pairplot()</code>의 반환 객체인 <code class="language-plaintext highlighter-rouge">PairGrid</code>를 사용한다. 반환 객체인 <code class="language-plaintext highlighter-rouge">PairGrid</code> 객체 <code class="language-plaintext highlighter-rouge">g</code>를 사용한 다음 <code class="language-plaintext highlighter-rouge">g.map_lower(sns.kdeplot, ...)</code> 호출로 좌측 하단을 산점도에 밀도 추정 그림도 추가할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">"</span><span class="s">species</span><span class="sh">"</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="sh">"</span><span class="s">husl</span><span class="sh">"</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-                 <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">s</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">D</span><span class="sh">"</span><span class="p">]);</span>
-
-<span class="n">g</span><span class="p">.</span><span class="nf">map_lower</span><span class="p">(</span><span class="n">sns</span><span class="p">.</span><span class="n">kdeplot</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">.2</span><span class="sh">"</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h4 id="-시각화-종합-실습-toothgrowth-데이터">③ 시각화 종합 실습 (ToothGrowth 데이터)</h4>
-
-<p>기니피그의 치아 성장 데이터(<code class="language-plaintext highlighter-rouge">ToothGrowth</code>)를 사용하여 다양한 그래프와 상관관계를 직접 분석해 볼 수 있습니다. <code class="language-plaintext highlighter-rouge">supp</code>는 보충제 종류(VC: 비타민C, OJ: 오렌지주스), <code class="language-plaintext highlighter-rouge">dose</code>는 투여량, <code class="language-plaintext highlighter-rouge">len</code>은 치아 성장을 의미합니다. 변수 간의 관계 수치를 히트맵으로 증명할 수 있습니다.</p>
+<p>판다스의 <code class="language-plaintext highlighter-rouge">corr()</code> 함수로 구한 거대한 숫자 행렬을, Seaborn의 <code class="language-plaintext highlighter-rouge">heatmap</code>에 집어넣는 순간 지루한 숫자들이 <strong>아름다운 온도 지도</strong>로 탈바꿈합니다! 차가운 파란색, 뜨거운 빨간색으로 그 관계를 한눈에 볼 수 있습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
 <span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="n">pydataset</span> <span class="kn">import</span> <span class="n">data</span>
 
-<span class="c1"># 5.5.2 데이터 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">ToothGrowth</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># 붓꽃(iris) 데이터 로딩
+</span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">"</span><span class="s">iris</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="c1"># 5.5.2 문자열(Category) 컬럼은 제외하고 숫자형 데이터만 추출
-</span><span class="n">numeric_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">len</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">dose</span><span class="sh">'</span><span class="p">]]</span>
+<span class="c1"># 1. 꽃받침(sepal)과 꽃잎(petal)의 길이/너비 상관계수 계산
+</span><span class="n">corr_iris</span> <span class="o">=</span> <span class="n">iris</span><span class="p">.</span><span class="nf">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="c1"># 5.5.2 상관계수 계산
-</span><span class="n">corr</span> <span class="o">=</span> <span class="n">numeric_df</span><span class="p">.</span><span class="nf">corr</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1"># 2. 히트맵 그리기 (annot=True는 네모 칸 안에 실제 숫자를 써줌)
+# cmap='coolwarm' (차가운 파란색부터 뜨거운 빨간색까지)
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">heatmap</span><span class="p">(</span><span class="n">corr_iris</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">coolwarm</span><span class="sh">'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># 5.5.2 히트맵 그리기
-</span><span class="n">sns</span><span class="p">.</span><span class="nf">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">coolwarm</span><span class="sh">'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">비타민 잔류량과 치아성장의 상관관계</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">붓꽃 부위별 크기 상관관계 히트맵</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
-<blockquote>
-  <p><strong>해석</strong>: <code class="language-plaintext highlighter-rouge">dose</code>와 <code class="language-plaintext highlighter-rouge">len</code>의 상관계수가 높게 나온다면, 투여량이 많을수록(강한 양의 상관관계) 치아 길이가 길어진다는 뜻입니다. 시각화 전체 프로세스에서 데이터의 분포 파악(histplot), 산점도 관계(scatterplot), 범주 간의 차이 비교(boxplot), 관계 검증(heatmap)의 일련의 데이터 확인 탬플릿을 숙지하세요.</p>
-</blockquote>
+
+<p><img src="img/iris_heatmap.svg" alt="붓꽃 부위별 크기 상관관계 히트맵" /></p>
+
+<p><strong>[출력 원리 해석]</strong>
+대각선 영역은 무조건 자기 자신과의 비교이므로 뜨거운 빨간색(1.0)이 나옵니다. 
+우리가 주목해야 할 곳은 다른 변수들이 교차하는 지점입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">petal_length</code>(꽃잎 길이)와 <code class="language-plaintext highlighter-rouge">petal_width</code>(꽃잎 너비)가 교차하는 칸의 수치가 <strong>+0.96</strong>으로 매우 붉게 타오르고 있다면, “꽃잎이 긴 붓꽃은 무조건 너비도 넓다”라는 강력한 생물학적 규칙을 컴퓨터가 수식 없이 알아낸 것입니다.</p>
+
+<hr />
+
+<h3 id="-융단-폭격-산점도-행렬-snspairplot">② 융단 폭격: 산점도 행렬 <code class="language-plaintext highlighter-rouge">sns.pairplot()</code></h3>
+
+<p>히트맵이 색깔로 직관적인 느낌을 준다면, <code class="language-plaintext highlighter-rouge">pairplot</code>은 그냥 데이터 안에 있는 모든 수치형 열 조합을 다 가져와서 싹 다 산점도로 그려버리는 “무차별 융단 폭격” 그래프입니다. 데이터 탐색 초기(EDA) 단계에서 가장 많이 사용되는 필살기입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 붓꽃 품종(species)별로 색깔을 다르게(hue) 칠해서 모든 조합 그리기!
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">species</span><span class="sh">'</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="sh">'</span><span class="s">husl</span><span class="sh">'</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">s</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">D</span><span class="sh">"</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="img/iris_pairplot.svg" alt="품종별 다차원 산점도 행렬 16종 세트" /></p>
+
+<p><strong>[출력 원리 해석]</strong>
+코드는 단 한 줄이지만, 화면에는 무려 16장(4x4)의 화려한 차트가 생성됩니다.</p>
+<ul>
+  <li><strong>대각선</strong>: 자기 자신과의 공간이므로 산점도 대신 5.4.2장에서 배운 <strong>분포 곡선(KDE)</strong>이 그려집니다. 품종별(종류별)로 봉우리가 3개 떨어져 나온 것을 볼 수 있습니다.</li>
+  <li><strong>나머지 공간</strong>: 두 열 사이의 관계를 나타내는 <strong>산점도</strong>가 그려집니다. 특정 산점도에서 특정 색깔(품종)의 점들이 저 멀리 혼자 동떨어져 있다면, 바로 그 두 개의 열이 해당 품종을 분류하는 핵심 키(Key) 변수라는 뜻입니다!</li>
+</ul>
+
+<hr />
+
+<h3 id="-피날레-데이터-분석가의-실전-마인드셋">🎓 피날레: 데이터 분석가의 실전 마인드셋</h3>
+
+<p>축하합니다! 당신은 지금까지 약 15종류의 시각화 무기를 손에 넣었습니다.</p>
+
+<ol>
+  <li>데이터를 받으면 <code class="language-plaintext highlighter-rouge">df.info()</code>, <code class="language-plaintext highlighter-rouge">df.describe()</code>로 <strong>엑스레이</strong>를 찍고 결측치를 확인한다.</li>
+  <li>수많은 열을 보며 <strong>“범주형 데이터”</strong>인지 <strong>“수치형 숫자 데이터”</strong>인지 두뇌로 먼저 분별한다.</li>
+  <li>무조건 <code class="language-plaintext highlighter-rouge">pairplot()</code>과 <code class="language-plaintext highlighter-rouge">heatmap()</code>을 냅다 던져서, 어떤 변수들끼리 연관성이 높은지 1차 융단 폭격을 가한다.</li>
+  <li>연관성이 짙어 보이는 주요 변수들을 핀셋으로 뽑은 뒤,
+    <ul>
+      <li>갯수 차이가 핵심이면 <strong>Countplot / Barplot</strong></li>
+      <li>시간에 따른 추세가 핵심이면 <strong>Lineplot</strong></li>
+      <li>상/하위 점수 차이와 이상값(Outlier)이 핵심이면 <strong>Boxplot</strong>과 <strong>Violin Plot</strong>을 우아하게 그려낸다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>이것이 실리콘밸리 데이터 엔지니어부터 전 세계 AI 연구원들이 사용하는 불변의 진리이자 프로세스입니다. 이제 여러분의 데이터를 직접 시각화해 볼 시간입니다!</p>
 
 
             <!-- 구글 애드센스 출력 -->

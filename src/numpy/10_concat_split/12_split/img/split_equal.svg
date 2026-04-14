@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .code-txt { font-family: 'Consolas', monospace; font-size: 18px; font-weight: bold; fill: #d63384; }
+      .box { rx: 5px; ry: 5px; fill: #fcfcfc; stroke: #ccc; stroke-width: 2px; }
+      .arr-x { fill: #e2e3e5; stroke: #adb5bd; }
+      .solid-arrow { fill: none; stroke: #28a745; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .knife { stroke: #dc3545; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <rect width="850" height="300" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="30" class="title" text-anchor="middle">np.split(배열, 3) : 크기를 맞춰 똑같이 n등분 병렬 분할</text>
+
+  <!-- Array 0~8 -->
+  <g transform="translate(150, 80)">
+    <rect x="0" y="0" width="540" height="50" class="box arr-x" />
+    <path d="M 60 0 L 60 50 M 120 0 L 120 50 M 180 0 L 180 50 M 240 0 L 240 50 M 300 0 L 300 50 M 360 0 L 360 50 M 420 0 L 420 50 M 480 0 L 480 50" stroke="#adb5bd" stroke-width="2" />
+    
+    <text x="30" y="32" class="code-txt" fill="#333">0</text>
+    <text x="90" y="32" class="code-txt" fill="#333">1</text>
+    <text x="150" y="32" class="code-txt" fill="#333">2</text>
+    
+    <text x="210" y="32" class="code-txt" fill="#333">3</text>
+    <text x="270" y="32" class="code-txt" fill="#333">4</text>
+    <text x="330" y="32" class="code-txt" fill="#333">5</text>
+    
+    <text x="390" y="32" class="code-txt" fill="#333">6</text>
+    <text x="450" y="32" class="code-txt" fill="#333">7</text>
+    <text x="510" y="32" class="code-txt" fill="#333">8</text>
+    
+    <!-- Knife marks at 3rd and 6th -->
+    <path d="M 180 -20 L 180 70" class="knife" />
+    <polygon points="175,70 185,70 180,80" fill="#dc3545" />
+    
+    <path d="M 360 -20 L 360 70" class="knife" />
+    <polygon points="355,70 365,70 360,80" fill="#dc3545" />
+  </g>
+
+  <!-- Result flow -->
+  <path d="M 420 160 L 420 190" class="solid-arrow" stroke="#28a745" />
+
+  <!-- Splitted Array Result -->
+  <g transform="translate(120, 210)">
+    <rect x="0" y="0" width="150" height="50" class="box arr-x" />
+    <path d="M 50 0 L 50 50 M 100 0 L 100 50" stroke="#adb5bd" stroke-width="2" />
+    <text x="25" y="32" class="code-txt" fill="#333">0</text>
+    <text x="75" y="32" class="code-txt" fill="#333">1</text>
+    <text x="125" y="32" class="code-txt" fill="#333">2</text>
+
+    <text x="195" y="32" class="code-txt" fill="#28a745">,</text>
+
+    <rect x="230" y="0" width="150" height="50" class="box arr-x" />
+    <path d="M 280 0 L 280 50 M 330 0 L 330 50" stroke="#adb5bd" stroke-width="2" />
+    <text x="255" y="32" class="code-txt" fill="#333">3</text>
+    <text x="305" y="32" class="code-txt" fill="#333">4</text>
+    <text x="355" y="32" class="code-txt" fill="#333">5</text>
+    
+    <text x="425" y="32" class="code-txt" fill="#28a745">,</text>
+    
+    <rect x="460" y="0" width="150" height="50" class="box arr-x" />
+    <path d="M 510 0 L 510 50 M 560 0 L 560 50" stroke="#adb5bd" stroke-width="2" />
+    <text x="485" y="32" class="code-txt" fill="#333">6</text>
+    <text x="535" y="32" class="code-txt" fill="#333">7</text>
+    <text x="585" y="32" class="code-txt" fill="#333">8</text>
+
+    <text x="-30" y="35" class="title" fill="#28a745" font-size="30">[</text>
+    <text x="640" y="35" class="title" fill="#28a745" font-size="30">]</text>
+    <text x="305" y="-10" class="title" fill="#28a745" font-size="14">※ 리스트(List) 형태로 3등분 묶음 반환!</text>
+  </g>
+</svg>

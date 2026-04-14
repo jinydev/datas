@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.5.1 csv와 엑셀 파일 활용</title>
-  <meta name="title" content="6.5.1 csv와 엑셀 파일 활용" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.5.1 csv와 엑셀 파일 활용"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.5.1 CSV와 Excel 파일 입출력</title>
+  <meta name="title" content="6.5.1 CSV와 Excel 파일 입출력" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.5.1 CSV와 Excel 파일 입출력"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.5.1 csv와 엑셀 파일 활용"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.5.1 CSV와 Excel 파일 입출력"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.5.1 csv와 엑셀 파일 활용" />
+<meta property="og:title" content="6.5.1 CSV와 Excel 파일 입출력" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.5.1 csv와 엑셀 파일 활용" />
+<meta property="twitter:title" content="6.5.1 CSV와 Excel 파일 입출력" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.1 csv와 엑셀 파일 활용","url":"https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.1 CSV와 Excel 파일 입출력","url":"https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -374,14 +374,14 @@
                             <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 시리즈 개요
+                                    6.1.2 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 데이터프레임 개요
+                                    6.1.3 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -411,77 +411,77 @@
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/01_series_creation/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.1 Series 생성과 활용
+                                    6.2.1 Series(시리즈) 생성과 데이터 추출
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/02_series_functions/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.2 Series 활용 함수
+                                    6.2.2 Series(시리즈) 필수 함수와 통계 요약
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/03_dataframe_constructor/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.3 클래스 DataFrame 생성자 개요
+                                    6.2.3 DataFrame 생성자(Constructor) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/04_df_from_matrix/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.4 2차원 행렬의 테이블 데이터 사용
+                                    6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/05_df_from_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.5 딕셔너리의 테이블 데이터 사용
+                                    6.2.5 딕셔너리(Dict)를 이용한 데이터프레임 구조화
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/06_df_from_series/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.6 여러 Series로 DataFrame 생성
+                                    6.2.6 여러 개의 Series(시리즈)를 조립해 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/07_df_from_dict_list/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.7 여러 딕셔너리의 목록 데이터 사용
+                                    6.2.7 리스트 속 딕셔너리(List of Dicts)로 DataFrame 만들기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/08_df_from_series_dict/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.8 dict의 값으로 Series 사용
+                                    6.2.8 딕셔너리의 값(Value)으로 Series(시리즈) 사용하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/09_df_dtypes/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.9 열과 전체 자료형 속성 dtypes
+                                    6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/10_date_range/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.10 여러 날짜 생성을 위한 함수 date_range()
+                                    6.2.10 시계열 데이터의 꽃: date_range()로 자동 날짜 생성하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/02_series_dataframe_creation/11_df_with_dates/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.2.11 날짜를 포함한 데이터프레임
+                                    6.2.11 완전체 시계열 데이터프레임 만들기
                                 </a>
                             </li>
                             
@@ -511,56 +511,56 @@
                             <li>
                                 <a href="/pandas/03_data_selection/01_column_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.1 열 참조
+                                    6.3.1 DataFrame 열(Column) 추출의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/02_conditional_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.2 조건 참조
+                                    6.3.2 데이터프레임 논리식 검색 (Conditional Selection)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/03_row_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.3 loc[index]로 행 참조
+                                    6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/04_row_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.4 loc[index[i]]로 행 참조
+                                    6.3.4 loc[index[i]]를 활용한 우회적 행 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/05_col_selection_loc/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.5 열 참조
+                                    6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/06_col_selection_loc_i/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.6 loc[:, columns[i]]로 열 참조
+                                    6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/07_row_col_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.7 행과 열 참조
+                                    6.3.7 loc[행, 열] 십자선 동시 참조
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/03_data_selection/08_iloc_selection/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.3.8 df.iloc[첨자] 참조
+                                    6.3.8 df.iloc[위치] 로 번호 기반 참조
                                 </a>
                             </li>
                             
@@ -590,42 +590,42 @@
                             <li>
                                 <a href="/pandas/04_data_modification/01_df_info_modify/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.1 데이터프레임 정보와 수정
+                                    6.4.1 데이터프레임 종합 건강검진
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/02_df_extract_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.2 데이터프레임 정보 추출과 대입
+                                    6.4.2 축(Axis) 기준 데이터 압축 연산
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/03_df_modify_assign/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.3 데이터프레임 수정 대입
+                                    6.4.3 파생 열(Column)과 요약 행(Row) 추가하기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/04_df_conditional_search/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.4 데이터프레임 조건 검색
+                                    6.4.4 데이터프레임 고급 조건 검색 (isin, contains)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/05_df_sorting/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.5 데이터프레임 정렬
+                                    6.4.5 데이터프레임 쌍끌이 정렬
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/04_data_modification/06_df_various_modifications/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.4.6 데이터프레임의 다양한 수정
+                                    6.4.6 데이터프레임 전처리 공방
                                 </a>
                             </li>
                             
@@ -655,14 +655,14 @@
                             <li>
                                 <a href="/pandas/05_file_io/01_csv_excel_io/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.5.1 csv와 엑셀 파일 활용
+                                    6.5.1 CSV와 Excel 파일 입출력
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/05_file_io/02_internet_data/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.5.2 인터넷 자료 활용
+                                    6.5.2 실전! 지저분한 공공데이터 정제하기
                                 </a>
                             </li>
                             
@@ -709,75 +709,128 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.5.1 csv와 엑셀 파일 활용</li>
+        <li class="breadcrumb-item active" aria-current="page">6.5.1 CSV와 Excel 파일 입출력</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h1 id="651-외부-파일-활용">6.5.1 외부 파일 활용</h1>
+            <h2 id="651-외부-데이터-파일-불러오기와-내보내기-io">6.5.1 외부 데이터 파일 불러오기와 내보내기 (I/O)</h2>
 
-<h2 id="651-csv와-엑셀-파일-활용">6.5.1 csv와 엑셀 파일 활용</h2>
+<p><strong>[전산학적/수학적 의미: 직렬화와 역직렬화 (Serialization &amp; Deserialization)]</strong>
+판다스의 <code class="language-plaintext highlighter-rouge">DataFrame</code> 객체는 컴퓨터의 휘발성 주 메모리(RAM) 위에서만 존재하는 2차원 자료 구조입니다. 이 데이터를 영구적인 보조 기억 장치(하드디스크)에 텍스트나 바이너리 형태로 포맷팅하여 저장하는 것을 내보내기(Serialization, Write)라 하고, 반대로 포맷팅된 파일을 읽어와 메모리상의 2차원 객체로 복원하는 것을 불러오기(Deserialization, Read)라 합니다.</p>
 
-<h3 id="-다양한-파일-읽기">① 다양한 파일 읽기</h3>
+<p><strong>[비유로 이해하기: 작업대(메모리)와 창고(하드디스크)]</strong></p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">read_</code> 시리즈</strong>: 창고에 예쁘게 포장되어 있는 상자(CSV, Excel 파일)를 꺼내서, 연구원의 책상(메모리) 위에 쫙 펼쳐놓는 작업입니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">to_</code> 시리즈</strong>: 책상 위에서 온갖 수학 연산과 정제 작업이 끝난 데이터 표를 잃어버리지 않게 예쁜 상자에 담아서 창고에 다시 영구 보관하는 작업입니다.</li>
+</ul>
 
-<p>판다스는 다양한 데이터 파일(csv, excel, sql, json, parquet 등)을 읽어오고 쓰는 방식을 제공한다. 각 파일 형식에 맞는 접미사가 붙는 함수 <code class="language-plaintext highlighter-rouge">read_*()</code>와 <code class="language-plaintext highlighter-rouge">to_*()</code>를 제공한다. 즉, 함수 <code class="language-plaintext highlighter-rouge">pd.read_excel()</code>과 <code class="language-plaintext highlighter-rouge">pd.to_excel()</code> 등으로 간편히 엑셀 파일의 입출력이 가능하다.</p>
+<p><img src="img/file_io.svg" alt="파일 입출력 다이어그램" /></p>
 
-<p><img src="img/page_016.jpg" alt="다양한 형식 입출력 함수" /></p>
+<hr />
 
-<h3 id="-유명한-타이타닉-파일-읽기와-쓰기">② 유명한 타이타닉 파일 읽기와 쓰기</h3>
+<h3 id="1단계-엑셀xlsx-파일-불러오기-read_excel">[1단계] 엑셀(.xlsx) 파일 불러오기: <code class="language-plaintext highlighter-rouge">read_excel()</code></h3>
 
-<p>판다스는 excel 파일로 저장된 데이터를 판다스의 데이터프레임으로 읽어오는 <code class="language-plaintext highlighter-rouge">read_excel()</code>을 제공한다.</p>
-
-<p>다음은 타이타닉 파일 <code class="language-plaintext highlighter-rouge">titanic.xlsx</code>을 읽어오는 코드이다. 내용의 처음과 마지막을 생략하고 있다.</p>
+<p>현업에서 가장 친숙한 엑셀 파일을 그대로 파이썬 작업대로 불러옵니다. <code class="language-plaintext highlighter-rouge">read_</code>로 시작하는 다양한 함수가 있으며, <code class="language-plaintext highlighter-rouge">data/</code> 폴더에 위치한 유명한 <strong>타이타닉 탑승객 데이터</strong>를 가져와 보겠습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<span class="n">titanic</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_excel</span><span class="p">(</span><span class="sh">"</span><span class="s">data/titanic.xlsx</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">titanic</span><span class="p">)</span>
+<span class="c1"># 창고(data/ 경로)에서 엑셀 파일을 읽어와 df_excel 변수에 저장(할당)합니다.
+</span><span class="n">df_excel</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_excel</span><span class="p">(</span><span class="sh">"</span><span class="s">data/titanic.xlsx</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># head() 함수로 앞의 5줄만 제대로 가져왔는지 검수합니다.
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 🚢 타이타닉 엑셀 데이터 불러오기 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df_excel</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 🚢 타이타닉 엑셀 데이터 불러오기 ---
+   pclass  survived                                             name     sex  ...
+0       1         1                    Allen, Miss. Elisabeth Walton  female  ...
+1       1         1                   Allison, Master. Hudson Trevor    male  ...
+2       1         0                     Allison, Miss. Helen Loraine  female  ...
+3       1         0             Allison, Mr. Hudson Joshua Creighton    male  ...
+4       1         0  Allison, Mrs. Hudson J C (Bessie Waldo Daniels)  female  ...
 </code></pre></div></div>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">head()</code>로 처음 5행을 표시한다.</p>
+<p><img src="./img/read_excel.svg" alt="read_excel로 하드디스크의 엑셀 파일을 작업대로 올리기" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">titanic</span><span class="p">.</span><span class="nf">head</span><span class="p">()</span>
+<p>데이터를 처음 올려놓고 나면, 앞선 <code class="language-plaintext highlighter-rouge">6.4.1</code> 장에서 배운 기초 건강검진(<code class="language-plaintext highlighter-rouge">info()</code>)을 바로 수행해 구조를 파악하는 것이 좋습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 🩺 데이터프레임 정보 스캔 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">df_excel</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 🩺 데이터프레임 정보 스캔 ---
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1309 entries, 0 to 1308
+Data columns (total 14 columns):
+...
+dtypes: float64(2), int64(4), object(8)
+memory usage: 143.3+ KB
+</code></pre></div></div>
+<blockquote>
+  <p>출력 결과를 통해 1309명의 승객 정보와 14개의 다양한 특성(Name, Age, Survived 등)을 지닌 대규모 데이터인 것을 파악할 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2단계-csv-파일로-저장하기-to_csv">[2단계] CSV 파일로 저장하기: <code class="language-plaintext highlighter-rouge">to_csv()</code></h3>
+
+<p><strong>CSV (Comma Separated Values)</strong> 형식은 데이터가 쉼표(<code class="language-plaintext highlighter-rouge">,</code>)로 구분된 매우 단순하고 가벼운 텍스트 파일입니다. 엑셀의 복잡한 서식(색상, 테두리 등)이 없기 때문에 수천만 건의 데이터를 다룰 때 사실상의 표준 프레임워크로 사용됩니다.</p>
+
+<p>책상 위에 있던 데이터를 분석하기 용이한 CSV 포맷으로 하드디스크에 저장해 봅니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 현재 메모리에 있는 표 형식을 CSV 파일 상자로 포장해서 창고에 넣습니다.
+# (index=False 를 주지 않으면 불필요한 번호 0, 1, 2... 열이 하나 더 추가되어 저장되니 주의하세요!)
+</span><span class="n">df_excel</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">data/titanic_processed.csv</span><span class="sh">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 💾 CSV 저장 완료 (</span><span class="sh">'</span><span class="s">data/titanic_processed.csv</span><span class="sh">'</span><span class="s">) ---</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 💾 CSV 저장 완료 ('data/titanic_processed.csv') ---
 </code></pre></div></div>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">tail()</code>로는 마지막 5행을 표시할 수 있다.</p>
+<p><img src="./img/to_csv.svg" alt="to_csv를 이용하여 DataFrame을 CSV로 압축하여 영구 저장" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">titanic</span><span class="p">.</span><span class="nf">tail</span><span class="p">()</span>
+<hr />
+
+<h3 id="3단계-저장된-csv-파일을-다시-불러오기-read_csv">[3단계] 저장된 CSV 파일을 다시 불러오기: <code class="language-plaintext highlighter-rouge">read_csv()</code></h3>
+
+<p>방금 저장했던 가벼운 CSV 파일을 다시 파이썬 메모리로 불러올 수 있습니다. 엑셀 함수 대신 <code class="language-plaintext highlighter-rouge">read_csv</code>를 사용합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 방금 저장한 따끈따끈한 csv 파일을 다시 불러옵니다.
+</span><span class="n">tt_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">data/titanic_processed.csv</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 엑셀에서 불러온 것과 완벽히 동일한 구조인지 처음 8줄을 확인합니다.
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 📦 새로 저장한 CSV 데이터 불러오기 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">tt_csv</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+</code></pre></div></div>
+<p><strong>[출력 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 📦 새로 저장한 CSV 데이터 불러오기 ---
+   pclass  survived                                             name     sex  ...
+0       1         1                    Allen, Miss. Elisabeth Walton  female  ...
+1       1         1                   Allison, Master. Hudson Trevor    male  ...
+2       1         0                     Allison, Miss. Helen Loraine  female  ...
+3       1         0             Allison, Mr. Hudson Joshua Creighton    male  ...
+4       1         0  Allison, Mrs. Hudson J C (Bessie Waldo Daniels)  female  ...
+5       1         1                                Anderson, Mr. Harry    male  ...
+6       1         1                  Andrews, Miss. Kornelia Theodosia  female  ...
+7       1         0                                Andrews, Mr. Thomas    male  ...
 </code></pre></div></div>
 
-<p>속성 <code class="language-plaintext highlighter-rouge">dtypes</code>는 각 열에 대한 자료형을 알 수 있다. 정수는 <code class="language-plaintext highlighter-rouge">int64</code>, 실수는 <code class="language-plaintext highlighter-rouge">float64</code>, 문자열은 <code class="language-plaintext highlighter-rouge">object</code>로 표시된다.</p>
+<p><img src="./img/read_csv.svg" alt="read_csv로 저장된 CSV 파일을 다시 메모리 객체로 완전 복원" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">titanic</span><span class="p">.</span><span class="n">dtypes</span>
-</code></pre></div></div>
-
-<p>다음 함수 <code class="language-plaintext highlighter-rouge">info()</code>로 14개의 열과 1309개의 행이 있음을 확인할 수 있다. 또한, non-null 값의 수와 자료형을 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">titanic</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h3 id="-csv-파일로-쓰기와-읽기">③ csv 파일로 쓰기와 읽기</h3>
-
-<p><strong>[비유로 이해하기: CSV는 데이터 분석의 표준 포맷]</strong>
-<strong>CSV (Comma Separated Values)</strong>는 데이터가 쉼표(,)로 구분된 단순한 텍스트 파일입니다. 엑셀 파일보다 가볍고 호환성이 뛰어나 수천만 건의 데이터를 주고받을 때 사실상의 <strong>표준(Standard)</strong>으로 쓰입니다. 파일로 내보낼 때 <code class="language-plaintext highlighter-rouge">index=False</code> 옵션을 주면, 의미 없는 숫자 인덱스(0, 1, 2…)가 저장되는 것을 막을 수 있습니다.</p>
-
-<p>다음 <code class="language-plaintext highlighter-rouge">to_csv()</code> 함수로 작업하던 데이터프레임을 콤마로 자료를 구분하는 파일 <code class="language-plaintext highlighter-rouge">titanic.csv</code>에 저장할 수 있다. 다음은 타이타닉 데이터프레임을 다시 CSV 파일로 저장하는 코드이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">titanic</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">data/titanic.csv</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>저장된 파일 <code class="language-plaintext highlighter-rouge">titanic.csv</code>를 다시 <code class="language-plaintext highlighter-rouge">read_csv()</code> 함수로 읽어와 데이터프레임 <code class="language-plaintext highlighter-rouge">tt</code>에 저장해 보자. 다음 코드 <code class="language-plaintext highlighter-rouge">tt.head(8)</code>로 데이터프레임에서 위 8개의 행을 출력하자.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tt</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">data/titanic.csv</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">tt</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음으로 데이터프레임의 전체 행과 열 정보를 파악할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tt</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-</code></pre></div></div>
+<blockquote>
+  <p><strong>📌 핵심 팁 요약</strong></p>
+  <ul>
+    <li>데이터를 파이썬 안으로 가져오고 싶을 때: <strong><code class="language-plaintext highlighter-rouge">pd.read_형식("경로")</code></strong></li>
+    <li>파이썬에서 다 끝난 데이터를 밖으로 빼내 저장할 때: <strong><code class="language-plaintext highlighter-rouge">df.to_형식("경로")</code></strong></li>
+    <li>판다스는 이밖에도 JSON (<code class="language-plaintext highlighter-rouge">.read_json</code>), SQL DB (<code class="language-plaintext highlighter-rouge">.read_sql</code>), Parquet 시스템과도 호환되는 강력한 입출력 엔진을 지원합니다.</li>
+  </ul>
+</blockquote>
 
 
             <!-- 구글 애드센스 출력 -->

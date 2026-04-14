@@ -1,87 +1,82 @@
 ---
 layout: mathplotlib
-title: "5.4.3 파이 차트"
+title: "5.4.3 파이 차트 (Pie Chart)와 시각화의 함정"
 ---
 
-## 5.4.3 파이 차트
+## 5.4.3 파이 차트 (Pie Chart) 한계탈출
 
-#### ① 함수 pie()로 활용한 파이 차트
+파이 차트는 전체 데이터(100%) 중에서 특정 범주(그룹)가 차지하는 **비율(상대적 크기)**을 동그란 피자 조각처럼 나누어 보여주는 그래프입니다. 선거 득표율이나 시장 점유율을 나타낼 때 뉴스에서 아주 흔하게 봅니다.
 
-파이 차트는 원형의 파이 조각을 나눈 것처럼 데이터의 상대 비율을 그리는 원형 그래프이다. 파이 차트는 함수 `pie()`를 사용해 그린다.
+### ① Matplotlib으로 파이 차트 그리기
 
-다음 함수 `pie([10, 20, 30, 40], labels=fruits)`는 데이터 `[10, 20, 30, 40]`를 각각의 레이블 `fruits`를 붙여 파이 차트를 그린다.
-
-```python
-fruits = ["Oranges", "Apples", "Bananas", "Cherries"]
-plt.pie([10, 20, 30, 40], labels=fruits);
-```
-
-데이터 `mtc`의 변수 `cyl`의 값을 실린더 수에 따라 오름차순으로 정렬해 빈도수를 알아보자.
+타이타닉 요금 등 연속된 숫자는 파이 차트로 그릴 수 없습니다. "1등급 몇 명, 2등급 몇 명"처럼 딱 떨어지는 범주형 빈도수 데이터가 필요합니다.
 
 ```python
-mtc.cyl.value_counts().sort_index()
-# 5.4.3 11
-# 5.4.3 7
-# 5.4.3 14
-# 5.4.3 Name: cyl, dtype: int64
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 1. 빙점(빈도) 데이터 구하기
+df = sns.load_dataset('titanic')
+class_counts = df['pclass'].value_counts()
+print(class_counts)
+# 3등급: 491명, 1등급: 216명, 2등급: 184명
 ```
 
-다음으로 변수 `cyl`의 명목 값인 4, 6, 8의 값을 확인할 수 있다.
+직접 세어낸 `class_counts` 데이터를 `plt.pie()`에 집어넣습니다.
 
 ```python
-mtc.cyl.value_counts().sort_index().index
-# 5.4.3 Int64Index([4, 6, 8], dtype='int64')
+plt.figure(figsize=(5, 5))
+
+# labels: 조각 옆에 붙을 이름, autopct: 조각 안에 그릴 백분율(%) 계산 포맷
+plt.pie(class_counts, 
+        labels=['3rd Class', '1st Class', '2nd Class'], 
+        autopct='%.1f%%', 
+        colors=['#FFCCBC', '#C5CAE9', '#C8E6C9'],
+        startangle=90, # 12시 방향부터 시작
+        wedgeprops={'edgecolor': 'white', 'linewidth': 2}) # 조각 사이 흰색 선
+
+plt.title("타이타닉 승객 등급 비율")
+plt.show()
 ```
 
-다음으로 변수 `cyl`의 명목 값인 4, 6, 8에 문자열 ' 기통'을 붙여 리스트를 만든 후, 변수 `txt`에 저장한다.
+![타이타닉 탑승객 등급 비율 파이 차트](img/titanic_pclass_pie.svg)
+
+---
+
+### ② 치명적 단점: "우리 뇌는 각도를 구별하지 못한다"
+
+파이 차트는 예뻐 보이지만, 현대 데이터 과학자와 시각화 전문가들이 입을 모아 **"가능하면 쓰지 말라"**고 경고하는 그래프 1순위이기도 합니다.
+
+![파이 차트의 한계와 막대그래프의 위력](../img/piechart_warning.svg)
+
+> **🚨 왜 파이 차트를 피해야 할까요?**
+> 인간의 눈과 뇌는 '길이'나 '높이'의 차이는 기가 막히게 잘 잡아내지만(막대그래프), 원에서 잘라낸 조각의 **'각도' 나 '면적'의 미세한 차이를 비교하는 데는 아주 둔감**합니다.
+> - A(31%)와 B(33%) 조각이 나란히 있으면, 누가 더 큰지 육안으로 구별하기 힘듭니다.
+> - 조각의 개수가 5개를 넘어가면 그래프가 지저분해져서 쓰레기와 다름없어집니다.
+
+---
+
+### ③ 대안: 도넛 차트 (Donut Chart)
+
+그래도 예쁜 디자인 때문에 꼭 원형 비율 그래프를 써야 한다면, 가운데 구멍을 뚫어 덜 답답해 보이는 **도넛 차트**를 쓰는 것이 최근의 UI/UX 디자인 트렌드입니다.
+
+파이 차트를 그리고, 그 한가운데에 배경색과 똑같은 작은 원을 하나 그려 덧씌우는 꼼수로 도넛을 만듭니다.
 
 ```python
-txt = [str(i) + ' 기통' for i in mtc.cyl.value_counts().sort_index().index]
-print(txt)
-# 5.4.3 ['4 기통', '6 기통', '8 기통']
+plt.figure(figsize=(5, 5))
+
+# 1. 파이 차트 먼저 그리기
+plt.pie(class_counts, labels=['3rd', '1st', '2nd'], autopct='%.1f%%', colors=['#FFCCBC', '#C5CAE9', '#C8E6C9'])
+
+# 2. 하얀색 원(도넛 구멍)을 만들어 도화지 한가운데 좌표(0,0)에 올리기
+centre_circle = plt.Circle((0,0), 0.60, fc='white')
+fig = plt.gcf() # 현재 도화지 가져오기
+fig.gca().add_artist(centre_circle) # 도화지에 구멍 원 그리기
+
+plt.title("모던한 도넛 차트 (Donut Chart)")
+plt.show()
 ```
 
-다음으로 파이 차트의 제목을 지정하고 색상과 함께 위에서 만든 `txt`를 인자 `labels`에 지정해 파이 차트를 그려보자. 인자 `autopct='%.1f%%'`로 백분율로 비율을 표시한다.
+![모던한 도넛 차트 비교](img/titanic_pclass_donut.svg)
 
-```python
-plt.pie(mtc.cyl.value_counts().sort_index(), colors=["violet", "pink", "aqua"],
-        autopct='%.1f%%', labels=txt)
-plt.title("기통 수에 따른 자동차 비율");
-```
-
-#### ② 파이 차트의 다양한 패러미터
-
-내장 데이터 `mtcars`의 변수 `gear`의 빈도 수를 알기 위해 함수 `mtc.gear.value_counts().sort_index()`를 사용한다.
-
-```python
-mtc.gear.value_counts().sort_index()
-# 5.4.3 15
-# 5.4.3 12
-# 5.4.3 5
-# 5.4.3 Name: gear, dtype: int64
-```
-
-다음으로 파이 차트의 레이블로 사용하기 위한 문자 리스트를 만든다. 리스트 컴프리헨션을 사용하여 변수 `i`는 명목 이름인 3, 4, 5를 반환하며 이를 ' 기어'와 연결해 리스트를 생성한다.
-
-```python
-labels = [str(i) + ' 기어' for i in mtc.gear.value_counts().sort_index().index]
-print(labels)
-# 5.4.3 ['3 기어', '4 기어', '5 기어']
-```
-
-색상 3개를 자동으로 만들기 위해 팔레트 `'Accent'`에서 3개의 색상을 `colors`에 저장한다.
-
-```python
-# 5.4.3 라벨의 개수만큼 색상 리스트 생성
-colors = sns.color_palette('Accent', len(labels))
-print(colors)
-```
-
-각각의 파이를 떨어뜨리는 효과인 `explode=[0, .1, 0]`, 라벨을 붙이는 `labels`, 색상을 설정하는 `colors`, 숫자 값을 라벨로 표시하는 `autopct`, 그리고 그림자 효과를 추가하는 `shadow`, 시작 파이의 위치를 돌리는 `startangle` 등의 인자를 사용해 다양한 그림을 그릴 수 있다.
-
-```python
-colors = sns.color_palette('Accent', len(txt)) # 라벨의 개수 만큼 색상 리스트 생성
-plt.pie(mtc.gear.value_counts().sort_index(), colors=colors, explode=[0, .1, 0],
-        shadow=True, startangle=90, autopct='%.1f%%', labels=labels)
-plt.title("기어 수에 따른 자동차 비율");
-```
+비율 시각화까지 마쳤다면, 방대한 데이터를 단 한 장의 컬러 지도로 압축해서 보여주는 피날레, **상관관계 폭격기 히트맵(Heatmap)**의 세계로 떠나봅시다!

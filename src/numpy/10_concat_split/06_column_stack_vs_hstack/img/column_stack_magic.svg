@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250">
+  <style>
+    .text { font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: bold; }
+    .boxA { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 4; }
+    .boxC { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; rx: 4; }
+    .title { font-size: 24px; font-weight: 800; fill: #2c3e50; text-anchor: middle; }
+    .arrow { stroke: #e91e63; stroke-width: 4; stroke-dasharray: 5; marker-end: url(#arrowhead); }
+    .magic-text { font-size: 20px; fill: #e91e63; font-weight: 900; text-anchor: middle;}
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e91e63"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="15"/>
+  <text x="400" y="40" class="title">해결법 2: column_stack() 하나면 변환 없이 깔끔하게 결합 완성!</text>
+
+  <g transform="translate(200, 100)">
+    <rect x="0" y="0" width="80" height="80" class="boxA"/>
+    <text x="40" y="45" class="text" fill="#2196f3" text-anchor="middle">a (3x4)</text>
+    
+    <rect x="120" y="30" width="60" height="20" class="boxC"/>
+    <text x="150" y="45" class="text" fill="#ff9800" text-anchor="middle">c (3, )</text>
+  </g>
+  
+  <g transform="translate(420, 140)">
+    <path d="M 0 0 C 10 -40, 50 -40, 60 0" class="arrow" fill="none"/>
+    <text x="30" y="-30" class="magic-text">마법 결합!</text>
+  </g>
+
+  <g transform="translate(560, 100)">
+    <path d="M -10 -10 L 110 -10 L 110 90 L -10 90 Z" fill="#fff" stroke="#e91e63" stroke-width="2" stroke-dasharray="4"/>
+    <rect x="0" y="0" width="80" height="80" class="boxA"/>
+    <text x="40" y="45" class="text" fill="#2196f3" text-anchor="middle">a</text>
+    
+    <rect x="80" y="0" width="20" height="80" class="boxC"/>
+    <text x="90" y="45" class="text" fill="#ff9800" text-anchor="middle">c</text>
+  </g>
+</svg>

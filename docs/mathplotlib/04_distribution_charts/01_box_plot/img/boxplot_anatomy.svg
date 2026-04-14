@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="400" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">초보자 단골 질문: "상자그림(Box Plot)을 대체 어떻게 읽나요?"</text>
+
+  <!-- 가로형 상자 그림 -->
+  <g transform="translate(100, 150)">
+    
+    <!-- X축 -->
+    <path d="M 0 100 L 500 100" fill="none" stroke="#B0BEC5" stroke-width="2" />
+    <text x="0" y="120" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle">0점</text>
+    <text x="250" y="120" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle">50점</text>
+    <text x="500" y="120" font-family="sans-serif" font-size="12" fill="#555" text-anchor="middle">100점</text>
+    <text x="250" y="145" font-family="sans-serif" font-size="14" fill="#37474F" font-weight="bold" text-anchor="middle">수학 시험 점수 분포</text>
+
+    <!-- 수염 (Whiskers 최소 10, 최대 90) -->
+    <path d="M 50 30 L 50 70" fill="none" stroke="#263238" stroke-width="3" /> <!-- 최소값 선 -->
+    <path d="M 450 30 L 450 70" fill="none" stroke="#263238" stroke-width="3" /> <!-- 최대값 선 -->
+    <path d="M 50 50 L 150 50" fill="none" stroke="#607D8B" stroke-width="3" stroke-dasharray="6,4" /> <!-- 왼쪽 수염 -->
+    <path d="M 350 50 L 450 50" fill="none" stroke="#607D8B" stroke-width="3" stroke-dasharray="6,4" /> <!-- 오른쪽 수염 -->
+
+    <!-- 상자 (Box) Q1=150(30점), Q3=350(70점) -->
+    <rect x="150" y="15" width="200" height="70" fill="#BBDEFB" opacity="0.8" stroke="#1565C0" stroke-width="3" />
+
+    <!-- 중앙값 (Median, Q2=250(50점)) -->
+    <path d="M 270 15 L 270 85" fill="none" stroke="#D32F2F" stroke-width="4" />
+
+    <!-- 이상치 (Outliers) 480(~96점), 490(~98점) -->
+    <circle cx="480" cy="50" r="5" fill="#FFFFFF" stroke="#F44336" stroke-width="2" />
+    <circle cx="493" cy="50" r="5" fill="#FFFFFF" stroke="#F44336" stroke-width="2" />
+
+    <!-- 주석 그룹 -->
+    <!-- 1. Q1 주석 -->
+    <path d="M 150 15 L 120 -30 L 100 -30" fill="none" stroke="#1565C0" stroke-width="1.5" />
+    <text x="95" y="-25" font-family="monospace" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="end">Q1 (하위 25%)</text>
+
+    <!-- 2. Q3 주석 -->
+    <path d="M 350 15 L 380 -30 L 400 -30" fill="none" stroke="#1565C0" stroke-width="1.5" />
+    <text x="405" y="-25" font-family="monospace" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="start">Q3 (상위 25%)</text>
+
+    <!-- 3. 평균이 아님 주석 -->
+    <path d="M 270 85 L 270 110 L 320 110" fill="none" stroke="#D32F2F" stroke-width="1.5" />
+    <text x="325" y="113" font-family="sans-serif" font-size="12" fill="#D32F2F" font-weight="bold" text-anchor="start">평균(Mean)이 아니라 정중앙 줄세우기(Median)!</text>
+
+    <!-- 4. 이상치 주석 -->
+    <path d="M 485 40 L 485 0 L 510 0" fill="none" stroke="#F44336" stroke-width="1.5" />
+    <text x="515" y="5" font-family="sans-serif" font-size="12" fill="#F44336" font-weight="bold" text-anchor="start">이상치 (Outlier)</text>
+
+    <!-- 5. 박스 크기 주석 -->
+    <path d="M 150 -10 L 150 -15 L 350 -15 L 350 -10" fill="none" stroke="#1565C0" stroke-width="1.5" />
+    <text x="250" y="-20" font-family="sans-serif" font-size="12" fill="#1565C0" font-weight="bold" text-anchor="middle">박스 안배에 "절반(50%)"의 학생이 옹기종기 모여있음</text>
+
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 360)">
+    <rect x="-310" y="-15" width="620" height="35" fill="#E3F2FD" rx="8" stroke="#1976D2" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#0D47A1" font-weight="bold" text-anchor="middle">결론: 상자그림 하나면 (분위수, 최빈 구간, 중앙값, 튀는 놈) 4가지를 한 방에 알 수 있습니다!</text>
+  </g>
+
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" width="100%" height="auto">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .label { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .desc { font-family: 'Arial', sans-serif; font-size: 14px; fill: #6c757d; font-weight: bold; }
+      .code { font-family: 'Consolas', monospace; font-size: 20px; fill: #d63384; font-weight: bold; }
+      .cube { fill: #f8f9fa; stroke: #adb5bd; stroke-width: 2; }
+      .slice-v { stroke: #0056b3; stroke-width: 4; stroke-dasharray: 6 4; }
+      .slice-h { stroke: #198754; stroke-width: 4; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <rect width="850" height="350" fill="#fff" rx="10" ry="10" />
+  <text x="425" y="30" class="title" text-anchor="middle" fill="#9b59b6">3D Array Splitting: V-Split vs H-Split</text>
+
+  <!-- Left: Original 3D array Representation (4 blocks) -->
+  <g transform="translate(50, 170)">
+    <text x="80" y="-80" class="code" fill="#333" text-anchor="middle">Shape (4, 4, 2)</text>
+    <text x="80" y="-60" class="desc" text-anchor="middle">4 덩어리 x 4 행 x 2 열</text>
+    
+    <!-- Draw 4 stacked 2D blocks -->
+    <g transform="translate(45, 20)">
+      <rect x="0" y="0" width="80" height="120" class="cube" />
+      <rect x="25" y="-15" width="80" height="120" class="cube" />
+      <rect x="50" y="-30" width="80" height="120" class="cube" />
+      <rect x="75" y="-45" width="80" height="120" class="cube" />
+
+      <!-- draw some internal lines to signify rows -->
+      <line x1="75" y1="15" x2="155" y2="15" stroke="#adb5bd" />
+      <line x1="75" y1="45" x2="155" y2="45" stroke="#adb5bd" />
+      <line x1="75" y1="75" x2="155" y2="75" stroke="#adb5bd" />
+    </g>
+  </g>
+
+  <!-- Middle: vsplit (axis=0) -->
+  <g transform="translate(280, 170)">
+    <line x1="-30" y1="40" x2="0" y2="40" stroke="#adb5bd" stroke-width="3" />
+    <polygon points="-5,35 5,40 -5,45" fill="#adb5bd" />
+    
+    <text x="120" y="-80" class="code" fill="#0056b3" text-anchor="middle">np.vsplit(x, 2)</text>
+    <text x="120" y="-60" class="desc" text-anchor="middle">포장 블록(Depth)을 반으로 가르기</text>
+    
+    <g transform="translate(60, 20)">
+      <!-- Left 2 blocks -->
+      <g transform="translate(-40, 0)">
+        <rect x="0" y="0" width="60" height="90" class="cube" stroke="#0056b3" fill="#e3f2fd" />
+        <rect x="20" y="-15" width="60" height="90" class="cube" stroke="#0056b3" fill="#e3f2fd" />
+      </g>
+      <!-- Cut mark -->
+      <path d="M 60 -50 L 60 120" class="slice-v" />
+      <!-- Right 2 blocks -->
+      <g transform="translate(45, -30)">
+        <rect x="0" y="0" width="60" height="90" class="cube" stroke="#0056b3" fill="#e3f2fd" />
+        <rect x="20" y="-15" width="60" height="90" class="cube" stroke="#0056b3" fill="#e3f2fd" />
+      </g>
+    </g>
+
+    <text x="120" y="160" class="desc" fill="#0056b3" text-anchor="middle">결과 형태: (2, 4, 2)</text>
+  </g>
+
+  <!-- Right: hsplit (axis=1) -->
+  <g transform="translate(560, 170)">
+    <line x1="-30" y1="40" x2="0" y2="40" stroke="#adb5bd" stroke-width="3" />
+    <polygon points="-5,35 5,40 -5,45" fill="#adb5bd" />
+    
+    <text x="130" y="-80" class="code" fill="#198754" text-anchor="middle">np.hsplit(x, 2)</text>
+    <text x="130" y="-60" class="desc" text-anchor="middle">포장 안쪽의 행(Row) 자르기</text>
+    
+    <g transform="translate(80, 20)">
+      <!-- Top Half across 4 blocks -->
+      <g transform="translate(0, -30)">
+        <rect x="0" y="0" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+        <rect x="20" y="-10" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+        <rect x="40" y="-20" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+        <rect x="60" y="-30" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+      </g>
+      
+      <!-- Cut mark -->
+      <path d="M -20 35 L 160 -5" class="slice-h" />
+
+      <!-- Bottom Half across 4 blocks -->
+      <g transform="translate(0, 40)">
+        <rect x="0" y="0" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+        <rect x="20" y="-10" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+        <rect x="40" y="-20" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+        <rect x="60" y="-30" width="80" height="50" class="cube" stroke="#198754" fill="#e8f5e9" />
+      </g>
+    </g>
+
+    <text x="130" y="160" class="desc" fill="#198754" text-anchor="middle">결과 형태: (4, 2, 2)</text>
+  </g>
+</svg>

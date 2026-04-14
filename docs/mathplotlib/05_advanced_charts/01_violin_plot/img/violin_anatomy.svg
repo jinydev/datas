@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="400" fill="#FAFAFA" rx="10" />
+
+  <text x="350" y="30" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">바이올린 플롯(Violin Plot)의 탄생 비밀: Boxplot + KDE</text>
+
+  <!-- 왼쪽: 일반 Boxplot -->
+  <g transform="translate(60, 70)">
+    <rect x="0" y="0" width="150" height="250" fill="#E3F2FD" rx="10" filter="url(#shadow)" stroke="#42A5F5" stroke-width="2"/>
+    <text x="75" y="30" font-family="sans-serif" font-size="14" fill="#1565C0" font-weight="bold" text-anchor="middle">상자그림 (Box Plot)</text>
+    
+    <!-- Y축 선 -->
+    <path d="M 30 60 L 30 220" fill="none" stroke="#90A4AE" stroke-width="2" />
+    
+    <!-- 박스플롯 그림 -->
+    <path d="M 75 70 L 75 210" fill="none" stroke="#263238" stroke-width="2" /> <!-- 수염 -->
+    <rect x="55" y="110" width="40" height="60" fill="#90CAF9" stroke="#1565C0" stroke-width="2" /> <!-- 박스 -->
+    <path d="M 55 140 L 95 140" fill="none" stroke="#D32F2F" stroke-width="3" /> <!-- 중앙값 -->
+    
+    <text x="75" y="240" font-family="sans-serif" font-size="11" fill="#555" text-anchor="middle">분포 범위만 알 수 있음</text>
+  </g>
+
+  <!-- 플러스 기호 -->
+  <text x="235" y="195" font-family="sans-serif" font-size="30" fill="#90A4AE" font-weight="bold" text-anchor="middle">+</text>
+
+  <!-- 중간: KDE 밀도 곡선 (세로) -->
+  <g transform="translate(260, 70)">
+    <rect x="0" y="0" width="150" height="250" fill="#F3E5F5" rx="10" filter="url(#shadow)" stroke="#AB47BC" stroke-width="2"/>
+    <text x="75" y="30" font-family="sans-serif" font-size="14" fill="#6A1B9A" font-weight="bold" text-anchor="middle">KDE 곡선 (히스토그램)</text>
+
+    <!-- 세로 축 KDE (오른쪽으로 볼록) -->
+    <path d="M 30 210 Q 50 180 80 160 T 120 140 T 80 120 T 50 100 Q 35 85 30 70" fill="#CE93D8" opacity="0.6" stroke="#8E24AA" stroke-width="2" />
+    <path d="M 30 60 L 30 220" fill="none" stroke="#90A4AE" stroke-width="2" />
+
+    <text x="75" y="240" font-family="sans-serif" font-size="11" fill="#555" text-anchor="middle">어디에 몰려있는지 알 수 있음</text>
+  </g>
+
+  <!-- 화살표 -->
+  <text x="440" y="195" font-family="sans-serif" font-size="30" fill="#EF5350" font-weight="bold" text-anchor="middle">=</text>
+
+  <!-- 오른쪽: 바이올린 플롯 (대칭) -->
+  <g transform="translate(470, 70)">
+    <rect x="0" y="0" width="180" height="250" fill="#FFF3E0" rx="10" filter="url(#shadow)" stroke="#FF7043" stroke-width="3"/>
+    <text x="90" y="30" font-family="sans-serif" font-size="14" fill="#D84315" font-weight="bold" text-anchor="middle">바이올린 플롯 (Violin)</text>
+
+    <path d="M 40 60 L 40 220" fill="none" stroke="#90A4AE" stroke-width="2" />
+
+    <!-- 바이올린 대칭 도형 (KDE 데칼코마니) -->
+    <!-- 오른쪽 -->
+    <path d="M 90 210 Q 110 180 140 160 T 180 140 T 140 120 T 110 100 Q 95 85 90 70" fill="#FFAB91" opacity="0.8" stroke="none" />
+    <!-- 왼쪽 -->
+    <path d="M 90 210 Q 70 180 40 160 T 0 140 T 40 120 T 70 100 Q 85 85 90 70" fill="#FFAB91" opacity="0.8" stroke="none" />
+    <path d="M 90 210 Q 110 180 140 160 T 180 140 T 140 120 T 110 100 Q 95 85 90 70 Z M 90 210 Q 70 180 40 160 T 0 140 T 40 120 T 70 100 Q 85 85 90 70" fill="none" stroke="#D84315" stroke-width="2" />
+
+    <!-- 가운데 숨겨진 작은 박스플롯 (내부 구조) -->
+    <path d="M 90 70 L 90 210" fill="none" stroke="#333" stroke-width="2" />
+    <rect x="85" y="110" width="10" height="60" fill="#333" />
+    <circle cx="90" cy="140" r="3" fill="#FFFFFF" /> <!-- 중앙값 하얀 점 -->
+
+    <text x="90" y="240" font-family="sans-serif" font-size="11" fill="#D84315" font-weight="bold" text-anchor="middle">내부에 상자그림이 들어있음!</text>
+  </g>
+
+  <!-- 하단 부연 설명 -->
+  <g transform="translate(350, 350)">
+    <rect x="-330" y="-15" width="660" height="35" fill="#FFF8E1" rx="8" stroke="#FFB300" stroke-width="2" />
+    <text x="0" y="7" font-family="sans-serif" font-size="13" fill="#F57F17" font-weight="bold" text-anchor="middle">밀도(KDE) 곡선을 반으로 데칼코마니처럼 접어, 그 한가운데에 미니 박스플롯을 끼워 넣은 것이 바이올린입니다.</text>
+  </g>
+
+</svg>

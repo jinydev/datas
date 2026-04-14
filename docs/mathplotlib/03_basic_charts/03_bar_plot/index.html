@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.3.3 막대 그래프</title>
-  <meta name="title" content="5.3.3 막대 그래프" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.3.3 막대 그래프"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.3.3 막대 그래프 (Bar Plot)와 오차 막대</title>
+  <meta name="title" content="5.3.3 막대 그래프 (Bar Plot)와 오차 막대" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.3.3 막대 그래프 (Bar Plot)와 오차 막대"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
   <meta property="og:url" content="https://datas.jiny.dev/mathplotlib/03_basic_charts/03_bar_plot/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.3.3 막대 그래프"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.3.3 막대 그래프 (Bar Plot)와 오차 막대"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="5.3.3 막대 그래프" />
+<meta property="og:title" content="5.3.3 막대 그래프 (Bar Plot)와 오차 막대" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
@@ -22,9 +22,9 @@
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="5.3.3 막대 그래프" />
+<meta property="twitter:title" content="5.3.3 막대 그래프 (Bar Plot)와 오차 막대" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.3.3 막대 그래프","url":"https://datas.jiny.dev/mathplotlib/03_basic_charts/03_bar_plot/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.3.3 막대 그래프 (Bar Plot)와 오차 막대","url":"https://datas.jiny.dev/mathplotlib/03_basic_charts/03_bar_plot/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -367,21 +367,21 @@
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/01_pandas_visualization/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.1 패키지 판다스와 시각화 라이브러리 설치
+                                    5.0.1 판다스 내장 시각화와 한계
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.2 패키지 matplotlib, seaborn, pydataset 개요와 설치
+                                    5.0.2 시각화 생태계: Matplotlib과 Seaborn
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.0.3 토이 데이터와 데이터프레임 활용
+                                    5.0.3 장난감(Toy) 데이터를 활용한 실습 준비
                                 </a>
                             </li>
                             
@@ -411,35 +411,35 @@
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/01_visualization_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.1 데이터 시각화 개요
+                                    5.1.1 데이터 시각화의 목적과 본질
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/02_simple_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.2 간단한 직선 그래프 그리기
+                                    5.1.2 가장 단순한 선 그래프 (plot) 그리기
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/03_figure_subplot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.3 figure와 서브플롯
+                                    5.1.3 도화지(Figure)와 액자(Ax) 구조 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.4 GridSpec을 사용한 맞춤형 figure 레이아웃
+                                    5.1.4 비대칭 테트리스 레이아웃 (GridSpec)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/01_matplotlib_basics/05_styling/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.5 그래프 속성과 스타일링
+                                    5.1.5 스타일링 끝판왕 (색상, 영웅, 격자)
                                 </a>
                             </li>
                             
@@ -469,28 +469,28 @@
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/01_pydataset_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.1 pydataset 소개
+                                    5.2.1 Seaborn과 장난감 데이터셋 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/02_pydataset_install/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.2 패키지 pydataset 설치
+                                    5.2.2 초기 데이터 탐색 (EDA) 기법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/03_pydataset_import/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.3 pydataset 주요 자료 가져오기
+                                    5.2.3 시각화를 결정짓는 2가지 변수 타입
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.4 seaborn으로 그래프 그리기
+                                    5.2.4 Seaborn 첫 그래프: Countplot과 Histplot
                                 </a>
                             </li>
                             
@@ -520,21 +520,21 @@
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/01_scatter_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.1 산점도
+                                    5.3.1 산점도 (Scatter Plot)와 hue의 마법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/02_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.2 선 그리기
+                                    5.3.2 선 그래프 (Line Plot)와 시계열 데이터
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/03_basic_charts/03_bar_plot/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    5.3.3 막대 그래프
+                                    5.3.3 막대 그래프 (Bar Plot)와 오차 막대
                                 </a>
                             </li>
                             
@@ -564,21 +564,21 @@
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/01_box_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.1 상자그림
+                                    5.4.1 상자그림 (Box Plot) 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/02_histogram/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.2 히스토그램
+                                    5.4.2 히스토그램 (Histogram)과 데이터 통(Bins)
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/04_distribution_charts/03_pie_chart/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.3 파이 차트
+                                    5.4.3 파이 차트 (Pie Chart)와 시각화의 함정
                                 </a>
                             </li>
                             
@@ -608,14 +608,14 @@
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/01_violin_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.1 바이올린 플롯
+                                    5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/05_advanced_charts/02_correlation_viz/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.5.2 상관관계 시각화
+                                    5.5.2 상관관계 폭격기: Heatmap과 Pairplot
                                 </a>
                             </li>
                             
@@ -662,147 +662,100 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">5.3.3 막대 그래프</li>
+        <li class="breadcrumb-item active" aria-current="page">5.3.3 막대 그래프 (Bar Plot)와 오차 막대</li>
         
         
         
     </ol>
 </nav>
+
         <div class="bd-content ps-lg-4">
-            <h2 id="533-막대-그래프">5.3.3 막대 그래프</h2>
+            <h2 id="533-막대-그래프-bar-plot의-원리">5.3.3 막대 그래프 (Bar Plot)의 원리</h2>
 
-<h4 id="-막대-그래프-함수-bar와-barh">① 막대 그래프 함수 bar()와 barh()</h4>
+<p>막대 그래프는 여러 <strong>그룹(범주형 변수)</strong>들의 크기, 판매량, 혹은 평균 수치 등을 비교할 때 가장 전 세계적으로 흔하게 사용하는 그래프입니다.</p>
 
-<p>막대 그래프는 이산형 자료의 값을 직사각형 막대를 사용하여 데이터를 시각화하는 방법이다. 함수 <code class="language-plaintext highlighter-rouge">bar()</code>를 사용하여 막대 그래프를 그려보자.</p>
+<h3 id="-matplotlib의-기본-막대그래프-pltbar">① Matplotlib의 기본 막대그래프: <code class="language-plaintext highlighter-rouge">plt.bar()</code></h3>
 
-<p>다음 코드에서 점수를 나타내는 막대의 세로 높이를 <code class="language-plaintext highlighter-rouge">point</code>에, 대응되는 학생의 해당 학생 이름을 <code class="language-plaintext highlighter-rouge">name</code>에 저장한다. 함수 <code class="language-plaintext highlighter-rouge">bar(name, ...)</code>의 첫 인자는 x축에 표시되는 학생 이름인 <code class="language-plaintext highlighter-rouge">name</code>이다. 인자 <code class="language-plaintext highlighter-rouge">color</code>로 막대의 색상을 지정할 수 있다. 다음 결과에서 보듯이 함수 <code class="language-plaintext highlighter-rouge">bar</code>는 세로 막대 방향으로 그려진다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
-<span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">영희</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">철수</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">동수</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">미현</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">현수</span><span class="sh">"</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">bar</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">chartreuse</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">purple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">grey</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">orange</span><span class="sh">"</span><span class="p">])</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">데이터분석 점수</span><span class="sh">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>함수 <code class="language-plaintext highlighter-rouge">barh()</code>로 막대 그래프를 가로로 그려보자. 인자 <code class="language-plaintext highlighter-rouge">height</code>로 막대의 너비를 조절할 수 있다.</p>
+<p>Matplotlib으로 직접 그릴 때는 X축 명찰 리스트와, Y축에 해당하는 정확한 값 리스트를 내가 직접 하나하나 입력해줘야 합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
+<span class="c1"># 데이터 직접 준비
+</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">영희</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">철수</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">동수</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">미현</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">현수</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
-<span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">영희</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">철수</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">동수</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">미현</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">현수</span><span class="sh">"</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="p">.</span><span class="nf">barh</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="p">.</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">chartreuse</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">purple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">grey</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">orange</span><span class="sh">"</span><span class="p">])</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">데이터분석 점수</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">'</span><span class="s">점수</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">이름</span><span class="sh">'</span><span class="p">);</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># X에는 이름, Y(높이)에는 점수를 직접 지정합니다.
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">bar</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">green</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">purple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">grey</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">orange</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">데이터분석 기말고사 점수</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">점수</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>수직 막대그래프는 범주별 랭킹을 직관적으로 보여주며, 가로형(<code class="language-plaintext highlighter-rouge">barh</code>) 막대그래프는 항목 이름이 길거나 순위를 강조하여 텍스트 겹침을 방지하고 싶을 때 매우 유용합니다. <code class="language-plaintext highlighter-rouge">barh</code>를 쓸 때는 X축과 Y축의 라벨 의미가 서로 직교로 바뀌게 됨에 주의해야 합니다.</p>
+<p><img src="img/bar_matplotlib_basic.svg" alt="Matplotlib 수작업 막대그래프" /></p>
 
-<h4 id="-내장-데이터-lifecyclesavings의-막대-그래프">② 내장 데이터 LifeCycleSavings의 막대 그래프</h4>
+<p>만약 항목 이름이 매우 길면 가로 막대 그래프인 <code class="language-plaintext highlighter-rouge">plt.barh()</code>를 사용하면 글자가 겹치지 않아 좋습니다. 하지만 이런 방식은 원시 데이터(Raw Data)가 이미 말끔하게 집계되어 있을 때나 가능합니다. 타이타닉 호 탑승객처럼 891명의 날것의 데이터가 있을 때는 어떻게 그려야 할까요?</p>
 
-<p>내장 데이터 <code class="language-plaintext highlighter-rouge">LifeCycleSavings</code>는 “국가별 생애주기 저축 데이터”이다. 5개의 변수와 50개의 관측 값이 있다.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pydataset</span> <span class="kn">import</span> <span class="n">data</span>
+<h3 id="-seaborn-막대-그래표의-마법-snsbarplot">② Seaborn 막대 그래표의 마법: <code class="language-plaintext highlighter-rouge">sns.barplot()</code></h3>
 
-<span class="n">lcs</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">LifeCycleSavings</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">lcs</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-<span class="n">lcs</span><span class="p">.</span><span class="nf">describe</span><span class="p">()</span>
-</code></pre></div></div>
+<p>앞서 5.2.4장에서 빈도수(인원수)를 세어 주는 <code class="language-plaintext highlighter-rouge">countplot</code>을 배웠습니다. 그렇다면 인원수가 아니라 그룹별 <strong>평균값</strong>을 구하고 싶을 때는 무엇을 쓸까요?</p>
 
-<p>내장 데이터 <code class="language-plaintext highlighter-rouge">LifeCycleSavings</code>의 첫 5개의 관측 값은 다음과 같다.</p>
+<blockquote>
+  <p><strong>용도</strong>: “1등급 탑승객들의 <strong>평균</strong> 요금 달러 값과, 3등급 탑승객들의 <strong>평균</strong> 요금 달러 값을 막대그래프로 비교해줘!”</p>
+</blockquote>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lcs</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">barplot</code>은 그룹별(범주형)로 여러 개의 숫자(수치형)들이 뭉쳐 있을 때, <strong>내부적으로 알아서 그룹별 평균을 구해서</strong> 그 높이만큼 막대를 자동으로 세워줍니다.</p>
 
-<p>데이터 <code class="language-plaintext highlighter-rouge">LifeCycleSavings</code>의 상위 5행과 두 번째 열 <code class="language-plaintext highlighter-rouge">pop15</code>로 구성된 데이터프레임을 객체 <code class="language-plaintext highlighter-rouge">df</code>에 저장한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">lcs</span><span class="p">[:</span><span class="mi">5</span><span class="p">][[</span><span class="sh">'</span><span class="s">pop15</span><span class="sh">'</span><span class="p">]]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음은 “15세 미만의 인구비율”을 나타내는 열 <code class="language-plaintext highlighter-rouge">pop15</code> 값을 <code class="language-plaintext highlighter-rouge">plt.bar()</code>로 그린 결과이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">bar</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="p">.</span><span class="n">pop15</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">국가별 15세미만 인구비율</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">국가</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">15세미만 인구비율(%)</span><span class="sh">"</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h4 id="-메소드-value_counts를-활용한-막대-그래프">③ 메소드 value_counts()를 활용한 막대 그래프</h4>
-
-<p>다음은 이미 살펴본 내장 데이터 <code class="language-plaintext highlighter-rouge">mtcars</code> 정보이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pydataset</span> <span class="kn">import</span> <span class="n">data</span>
-
-<span class="n">mtc</span> <span class="o">=</span> <span class="nf">data</span><span class="p">(</span><span class="sh">'</span><span class="s">mtcars</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">mtc</span><span class="p">.</span><span class="nf">info</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>두 번째 열 <code class="language-plaintext highlighter-rouge">cyl</code>은 자동차의 실린더(기통) 수이다. 자료 <code class="language-plaintext highlighter-rouge">mtcars</code>에서 실린더 수 빈도를 알기 위해 <code class="language-plaintext highlighter-rouge">mtc.cyl.value_counts()</code>를 사용한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mtc_cyl</span> <span class="o">=</span> <span class="n">mtc</span><span class="p">.</span><span class="n">cyl</span><span class="p">.</span><span class="nf">value_counts</span><span class="p">()</span>
-<span class="c1"># 5.3.3 14
-# 5.3.3 11
-# 5.3.3 7
-# 5.3.3 Name: cyl, dtype: int64
-</span></code></pre></div></div>
-<p>이는 8기통이 14대, 4기통이 11대, 6기통이 7대임을 나타낸다. 기본적으로 빈도 수가 많은 것이 먼저 표시된다.</p>
-
-<p>이 분포를 사용해 간단히 다음 막대 그래프를 그릴 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="nf">bar</span><span class="p">(</span><span class="n">mtc_cyl</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">mtc_cyl</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">자동차 실린더(기통) 분포</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">실린더 수</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">자동차 수</span><span class="sh">"</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h4 id="-패키지-seaborn의-함수-snscountplot으로-그리는-막대-그래프">④ 패키지 seaborn의 함수 sns.countplot()으로 그리는 막대 그래프</h4>
-
-<p><strong>[실전 꿀팁]: 막대 그래프 2대장 (barplot vs countplot)</strong></p>
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">countplot</code></strong>: 분류 항복별 <strong>데이터 개수(빈도)</strong>를 셉니다. (예: “기어가 4개인 자동차는 총 몇 대지?”)</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">barplot</code></strong>: 구분에 따른 특정 데이터의 <strong>평균값</strong>을 막대 높이로 표시합니다. (다양한 집단 간의 대표값을 보여줄 때 매우 강력합니다.)</li>
-</ul>
-
-<p>이번에는 데이터 시각화 패키지 <code class="language-plaintext highlighter-rouge">seaborn</code>을 사용해 보자. <code class="language-plaintext highlighter-rouge">seaborn</code>은 내부적으로 <code class="language-plaintext highlighter-rouge">matplotlib</code>을 사용하며 보다 간단하고 다양한 데이터를 시각화 할 수 있는 라이브러리이다.</p>
-
-<p>패키지 <code class="language-plaintext highlighter-rouge">seaborn</code>의 함수 <code class="language-plaintext highlighter-rouge">sns.countplot(data, x='gear', ...)</code>는 데이터프레임 <code class="language-plaintext highlighter-rouge">mtc</code>의 변수 <code class="language-plaintext highlighter-rouge">gear</code>의 빈도 수를 나타내는 막대 그래프를 그려준다.</p>
-
-<p>다음으로 데이터프레임 <code class="language-plaintext highlighter-rouge">mtc</code>의 변수 <code class="language-plaintext highlighter-rouge">gear</code>의 빈도 수의 막대 그래프를 그린다.</p>
+<p><img src="../img/barplot_mean_error.svg" alt="Seaborn Barplot의 평균과 오차 막대 원리" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
-<span class="n">sns</span><span class="p">.</span><span class="nf">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mtc</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">gear</span><span class="sh">'</span><span class="p">);</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">titanic</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># X에는 범주형(객실 등급), Y에는 수치형(운임 요금)을 넣습니다.
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">pclass</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">fare</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">타이타닉 객실 등급별 평균 운임 요금</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">객실 등급 (Pclass)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">평균 요금 (Fare)</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>함수 <code class="language-plaintext highlighter-rouge">sns.countplot()</code>의 반환 객체는 <code class="language-plaintext highlighter-rouge">Axes</code>라는 객체이며 이를 활용하면 빈도 수를 알 수 있고, 이 값을 막대 그래프에 표시할 수 있다. 이 빈도 수를 막대 그래프에 직접 표시해 보자.</p>
+<p><img src="img/titanic_barplot.svg" alt="Seaborn 평균 막대그래프와 오차막대" /></p>
 
-<p>다음 코드와 같이 반환 받은 <code class="language-plaintext highlighter-rouge">Axes</code>를 변수 <code class="language-plaintext highlighter-rouge">ax</code>에 <code class="language-plaintext highlighter-rouge">ax.patches</code>로 그래프의 각 막대(patch)에 대해 반복문을 실행한다. 반복문에서 <code class="language-plaintext highlighter-rouge">p.get_height()</code>로 현재 막대의 높이, 즉 빈도 수를 가져오고 <code class="language-plaintext highlighter-rouge">ax.text(x, y, s=int(height), ...)</code>로 빈도수 값(height)을 막대 위 위치 (x, y)에 표시한다. 다음 막대 그래프의 결과로 변수 <code class="language-plaintext highlighter-rouge">gear</code>는 자동차의 기어 수는 3, 4, 5가 있으며 각각 15대, 12대, 5대의 빈도임을 알 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mtc</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">gear</span><span class="sh">'</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">mtc</span><span class="p">.</span><span class="n">gear</span><span class="p">.</span><span class="nf">value_counts</span><span class="p">().</span><span class="n">index</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">.</span><span class="n">patches</span><span class="p">:</span>
-    <span class="n">height</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">get_height</span><span class="p">()</span> <span class="c1"># 빈도 수
-</span>    <span class="n">ax</span><span class="p">.</span><span class="nf">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="p">.</span><span class="nf">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">+</span> <span class="p">.</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">s</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="n">ha</span> <span class="o">=</span> <span class="sh">'</span><span class="s">center</span><span class="sh">'</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="sh">'</span><span class="s">blue</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span> <span class="c1"># y축의 범위를 0부터 17까지로 설정
-</span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>객체 Axes의 메소드 <code class="language-plaintext highlighter-rouge">text(x, y, s, ...)</code>는 위치 (x, y)에 글자 s를 표시하는 메소드이다.</p>
-
+<p><strong>[출력 원리 해석]</strong></p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">x = (p.get_x() + p.get_width() / 2.)</code>: 텍스트를 막대의 중앙에 위치</li>
-  <li><code class="language-plaintext highlighter-rouge">y = (height + .2)</code>: 텍스트를 막대의 바로 위에 위치</li>
-  <li><code class="language-plaintext highlighter-rouge">s = int(height)</code>: 텍스트 내용은 막대의 높이 (빈도 수)로 설정</li>
-  <li><code class="language-plaintext highlighter-rouge">ha = 'center'</code>: 텍스트를 중앙 정렬</li>
-  <li><code class="language-plaintext highlighter-rouge">size = 12</code>: 텍스트 크기를 12로 설정</li>
-  <li><code class="language-plaintext highlighter-rouge">color = 'blue'</code>: 텍스트 색상을 파란색으로 설정</li>
+  <li><strong>막대의 높이 (평균)</strong>: 1등급 요금 막대는 높이가 압도적으로 $80 위치에 솟아오르고, 3등급 요금 막대는 $13 부근에 짧게 그려집니다. 우리가 직접 평균값을 계산하지 않았는데도 Seaborn이 알아서 대신 구해 그려줍니다.</li>
+  <li><strong>오차 막대 (Error Bar, 검은색 침)</strong>: 막대 꼭대기에 꽂힌 까만색 바늘을 볼 수 있습니다. 이 검은 선은 <strong>데이터의 오차(편차/신뢰구간)</strong>를 보여줍니다. 1등급 막대에 꽂힌 침이 유독 상하로 길다는 뜻은, “1등급 승객들 내부에서도 요금을 10달러 낸 사람과 500달러 낸 사람 등 요금 차이(불평등)가 엄청 심하다!”라는 것을 시각적으로 알려주는 핵심 단서입니다.</li>
 </ul>
+
+<hr />
+
+<h3 id="-최후의-요약-countplot-vs-barplot">🚨 최후의 요약: <code class="language-plaintext highlighter-rouge">countplot</code> VS <code class="language-plaintext highlighter-rouge">barplot</code></h3>
+
+<p>마지막으로 초보자들이 가장 자주 헷갈리는 두 막대그래프를 확실히 구분합시다.</p>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">countplot(x=범주형)</code></strong>
+    <ul>
+      <li>역할: “<strong>몇 명(몇 번)</strong>이야?” 빈도수를 구합니다.</li>
+      <li>Y값 입력 여부: <strong>X값 하나만 입력</strong>하면 Y축(Count)은 기계가 알아서 세어줍니다.</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">barplot(x=범주형, y=수치형)</code></strong>
+    <ul>
+      <li>역할: “그래서 그룹별로 <strong>평균 점수(요금등)</strong>가 몇 점인데?”</li>
+      <li>Y값 입력 여부: <strong>반드시 X와 Y 변수를 둘 다 입력</strong>해야 합니다. 그러면 기계가 Y값들의 평균을 구해 그려줍니다.</li>
+    </ul>
+  </li>
+</ol>
 
 
             <!-- 구글 애드센스 출력 -->
