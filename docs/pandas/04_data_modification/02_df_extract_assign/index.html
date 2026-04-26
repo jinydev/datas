@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.2 축(Axis) 기준 데이터 압축 연산</title>
   <meta name="title" content="6.4.2 축(Axis) 기준 데이터 압축 연산" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.2 축(Axis) 기준 데이터 압축 연산"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/02_df_extract_assign/">
+  <meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/02_df_extract_assign/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.2 축(Axis) 기준 데이터 압축 연산"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/pandas/04_data_modification/02_df_extract_assign/" />
-<meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/02_df_extract_assign/" />
+<link rel="canonical" href="http://localhost:4001/pandas/04_data_modification/02_df_extract_assign/" />
+<meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/02_df_extract_assign/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.4.2 축(Axis) 기준 데이터 압축 연산" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.2 축(Axis) 기준 데이터 압축 연산","url":"https://datas.jiny.dev/pandas/04_data_modification/02_df_extract_assign/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.2 축(Axis) 기준 데이터 압축 연산","url":"http://localhost:4001/pandas/04_data_modification/02_df_extract_assign/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -372,16 +372,23 @@
                             </li>
                             
                             <li>
+                                <a href="/pandas/01_pandas_basics/02_pandas_practice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    6.1.2 판다스 설치 및 기초 실습
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 Series(시리즈) 개요
+                                    6.1.3 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 DataFrame(데이터프레임) 개요
+                                    6.1.4 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -719,21 +726,33 @@
         <div class="bd-content ps-lg-4">
             <h2 id="642-axis-축을-활용한-행렬-연산과-통계-추출">6.4.2 <code class="language-plaintext highlighter-rouge">axis</code> 축을 활용한 행렬 연산과 통계 추출</h2>
 
-<p><strong>[수학적 의미: 다차원 텐서(Tensor)의 축소(Reduction) 연산]</strong>
-행렬(데이터프레임) 단위로 통계 함수(<code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">max</code> 등)를 적용할 때, 어느 차원(Dimension/Axis)을 기준으로 연산을 진행할지 결정해야 합니다. <code class="language-plaintext highlighter-rouge">axis=0</code>은 행 차원을 압축하여 열만 남기고, <code class="language-plaintext highlighter-rouge">axis=1</code>은 열 차원을 압축하여 행만 남기는 <strong>차원 축소(Dimensionality Reduction) 연산</strong>입니다. 연산이 완료되면 2차원 DataFrame은 1차원 Series로 찌그러집니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./df_extract_assign_practice.ipynb">📥 df_extract_assign_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><strong>[비유로 이해하기: 엑셀에서 가로 합계 낼래? 세로 합계 낼래?]</strong></p>
+<h2 id="-수학적전산학적-의미-다차원-텐서tensor의-차원-축소reduction-연산">🧮 수학적/전산학적 의미: 다차원 텐서(Tensor)의 차원 축소(Reduction) 연산</h2>
+
+<p>행렬(데이터프레임) 단위로 통계 함수(<code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">max</code> 등)를 적용할 때, 어느 차원(Dimension/Axis)을 기준으로 연산을 진행할지 결정해야 합니다. <code class="language-plaintext highlighter-rouge">axis=0</code>은 행 차원을 압축하여 열만 남기고, <code class="language-plaintext highlighter-rouge">axis=1</code>은 열 차원을 압축하여 행만 남기는 <strong>차원 축소(Dimensionality Reduction) 연산</strong>입니다. 연산이 완료되면 2차원 DataFrame은 1차원 Series로 찌그러집니다.</p>
+
+<p><img src="./img/axis_reduce_math.svg" alt="차원 축소 연산 수학적 도식" /></p>
+
+<h2 id="️-비유로-이해하기-엑셀에서-가로-합계-낼래-세로-합계-낼래">🏷️ 비유로 이해하기: 엑셀에서 가로 합계 낼래? 세로 합계 낼래?</h2>
+
 <ul>
   <li>학생 성적표가 있습니다.</li>
   <li><code class="language-plaintext highlighter-rouge">axis=0</code> (수직 압축기): 위에서 아래로 꽉 눌러 찌그러트립니다. 그러면 과목별(<code class="language-plaintext highlighter-rouge">열</code>) 총점만 달랑 하나 남습니다. (예: 반 전체 국어 평균은?)</li>
   <li><code class="language-plaintext highlighter-rouge">axis=1</code> (수평 압축기): 왼쪽에서 오른쪽으로 꽉 눌러 찌그러트립니다. 그러면 각 학생별(<code class="language-plaintext highlighter-rouge">행</code>) 총점만 달랑 하나 남습니다. (예: 홍길동 학생의 전 과목 총점은?)</li>
 </ul>
 
-<p><img src="img/axis_calculation.svg" alt="axis 축 연산 다이어그램" /></p>
+<p><img src="./img/axis_reduce_analogy.svg" alt="가로 세로 압축 비유 도식" /></p>
 
 <hr />
 
-<h3 id="준비물-서울시-교통사고-데이터">[준비물] 서울시 교통사고 데이터</h3>
+<h2 id="-실습-0-준비물-서울시-교통사고-데이터">🪄 [실습 0] 준비물: 서울시 교통사고 데이터</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
@@ -754,7 +773,7 @@
 
 <hr />
 
-<h3 id="1단계-위에서-아래로-누르기-axis0">[1단계] 위에서 아래로 누르기! (<code class="language-plaintext highlighter-rouge">axis=0</code>)</h3>
+<h2 id="-실습-1-위에서-아래로-누르기-axis0">🪄 [실습 1] 위에서 아래로 누르기! (<code class="language-plaintext highlighter-rouge">axis=0</code>)</h2>
 
 <p>가장 기본이 되는 축 연산입니다. 세로 방향으로 누르기 때문에 결과적으로 각 <strong>“항목(열, Column)별 합계”</strong> 가 나옵니다. 파이썬과 넘파이(NumPy) 철학에 따라, 옵션을 아예 생략하면 기본값으로 무조건 <code class="language-plaintext highlighter-rouge">axis=0</code>이 작동합니다.</p>
 
@@ -780,7 +799,7 @@ dtype: int64
 
 <hr />
 
-<h3 id="2단계-왼쪽에서-오른쪽으로-누르기-axis1">[2단계] 왼쪽에서 오른쪽으로 누르기! (<code class="language-plaintext highlighter-rouge">axis=1</code>)</h3>
+<h2 id="-실습-2-왼쪽에서-오른쪽으로-누르기-axis1">🪄 [실습 2] 왼쪽에서 오른쪽으로 누르기! (<code class="language-plaintext highlighter-rouge">axis=1</code>)</h2>
 
 <p>행 별(월 별) 합계를 구하고 싶을 때 씁니다. 오른쪽 방향으로 쫘악 밀어서 눌러버리기 때문에 결과적으로 각 <strong>“월별(행, Row) 합계”</strong> 가 나옵니다.</p>
 
@@ -807,7 +826,7 @@ dtype: int64
 
 <hr />
 
-<h3 id="3단계-다양한-통계-함수들-찍어-먹기-mean-max-min">[3단계] 다양한 통계 함수들 찍어 먹기 (<code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">min</code>)</h3>
+<h2 id="-실습-3-다양한-통계-함수들-찍어-먹기-mean-max-min">🪄 [실습 3] 다양한 통계 함수들 찍어 먹기 (<code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">min</code>)</h2>
 
 <p>합계(<code class="language-plaintext highlighter-rouge">sum</code>) 외에도 평균, 최대, 최소 등 다양한 통계 기능을 똑같은 축(<code class="language-plaintext highlighter-rouge">axis</code>) 방식으로 뽑아낼 수 있습니다.</p>
 

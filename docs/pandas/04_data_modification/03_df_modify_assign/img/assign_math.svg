@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">벡터 공간(Vector Space)의 선형 결합 및 차원 확장</text>
+
+  <!-- Left: Original Matrix & Extracted Vectors -->
+  <g transform="translate(60, 60)">
+    <!-- Base Matrix Structure -->
+    <rect x="0" y="0" width="120" height="130" fill="#fff" stroke="#90a4ae" stroke-width="2" rx="4"/>
+    
+    <!-- Column Vectors -->
+    <rect x="5" y="5" width="30" height="120" fill="#eceff1" rx="2"/>
+    <text x="20" y="20" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">v1</text>
+    
+    <!-- Vector v2 and v3 being pulled -->
+    <rect x="45" y="5" width="30" height="120" fill="#bbdefb" stroke="#1e88e5" rx="2"/>
+    <text x="60" y="20" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#0d47a1" text-anchor="middle">v2</text>
+    
+    <rect x="85" y="5" width="30" height="120" fill="#c8e6c9" stroke="#43a047" rx="2"/>
+    <text x="100" y="20" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">v3</text>
+
+    <text x="60" y="150" font-family="Arial" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">M (m x n)</text>
+  </g>
+
+  <!-- Middle: Linear Combination / Function -->
+  <g transform="translate(220, 100)">
+    <g stroke="#1e88e5" stroke-width="2" fill="none" marker-end="url(#arrow-blue)">
+      <path d="M -20 15 L 10 15" />
+    </g>
+    <g stroke="#43a047" stroke-width="2" fill="none" marker-end="url(#arrow-green)">
+      <path d="M -20 35 L 10 35" />
+    </g>
+
+    <rect x="15" y="0" width="100" height="50" fill="#fff3e0" stroke="#ffb74d" stroke-width="2" rx="25"/>
+    <text x="65" y="30" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">v2 + v3</text>
+
+    <!-- Resultant Arrow -->
+    <g stroke="#ff9800" stroke-width="3" fill="none" marker-end="url(#arrow-orange)">
+      <path d="M 120 25 L 160 25" />
+    </g>
+    <text x="140" y="15" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#d84315" text-anchor="middle">v_new</text>
+  </g>
+
+  <!-- Right: Expanded Matrix -->
+  <g transform="translate(430, 60)">
+    <rect x="0" y="0" width="160" height="130" fill="#fff" stroke="#90a4ae" stroke-width="2" rx="4" filter="drop-shadow(2px 2px 4px rgba(0,0,0,0.15))"/>
+    
+    <!-- Old Vectors -->
+    <rect x="5" y="5" width="30" height="120" fill="#eceff1" rx="2"/>
+    <text x="20" y="20" font-family="Courier New, monospace" font-size="12" fill="#999" text-anchor="middle">v1</text>
+    
+    <rect x="45" y="5" width="30" height="120" fill="#eceff1" rx="2"/>
+    <text x="60" y="20" font-family="Courier New, monospace" font-size="12" fill="#999" text-anchor="middle">v2</text>
+    
+    <rect x="85" y="5" width="30" height="120" fill="#eceff1" rx="2"/>
+    <text x="100" y="20" font-family="Courier New, monospace" font-size="12" fill="#999" text-anchor="middle">v3</text>
+
+    <!-- The New Vector Appended -->
+    <rect x="125" y="5" width="30" height="120" fill="#ffe0b2" stroke="#ff9800" stroke-width="2" stroke-dasharray="2,2" rx="2"/>
+    <text x="140" y="20" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">v'</text>
+
+    <text x="80" y="150" font-family="Arial" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">M' (m x (n+1))</text>
+
+    <!-- Code Callout -->
+    <rect x="40" y="-30" width="120" height="25" fill="#f5f5f5" stroke="#ccc" rx="3"/>
+    <text x="100" y="-13" font-family="Courier New, monospace" font-size="11" font-weight="bold" fill="#d32f2f" text-anchor="middle">df['new'] = ...</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e88e5" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#43a047" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9800" />
+    </marker>
+  </defs>
+</svg>

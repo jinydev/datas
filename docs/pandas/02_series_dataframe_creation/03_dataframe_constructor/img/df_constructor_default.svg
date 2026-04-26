@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="600" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">[A] 옵션 없이 기본값으로 알아서 만들기</text>
+
+  <!-- Input Data -->
+  <text x="130" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Input: raw_materials (Numpy Array)</text>
+  <rect x="50" y="90" width="160" height="110" rx="5" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  
+  <text x="130" y="120" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">[[10, 20],</text>
+  <text x="130" y="145" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#333" text-anchor="middle"> [30, 40],</text>
+  <text x="130" y="170" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#333" text-anchor="middle"> [50, 60]]</text>
+
+  <!-- Arrow -->
+  <g stroke="#2196f3" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M 220 145 L 320 145" />
+  </g>
+  <text x="270" y="135" font-family="Arial" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">pd.DataFrame()</text>
+
+  <!-- Output DataFrame -->
+  <text x="440" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Output DataFrame</text>
+  
+  <!-- Structure -->
+  <rect x="360" y="90" width="160" height="110" fill="#fff" stroke="#333" stroke-width="2" rx="5"/>
+  
+  <!-- Columns -->
+  <rect x="390" y="90" width="130" height="25" fill="#e8f5e9" rx="3"/>
+  <text x="425" y="108" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">0</text>
+  <text x="485" y="108" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">1</text>
+  
+  <!-- Index -->
+  <rect x="360" y="115" width="30" height="85" fill="#fff3e0" rx="3"/>
+  <text x="375" y="135" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">0</text>
+  <text x="375" y="160" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">1</text>
+  <text x="375" y="185" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">2</text>
+
+  <!-- Data -->
+  <text x="425" y="135" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">10</text>
+  <text x="485" y="135" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">20</text>
+  <text x="425" y="160" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">30</text>
+  <text x="485" y="160" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">40</text>
+  <text x="425" y="185" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">50</text>
+  <text x="485" y="185" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">60</text>
+
+  <!-- Annotations -->
+  <path d="M 455 70 L 455 85" stroke="#4caf50" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="455" y="60" font-family="Arial" font-size="12" fill="#4caf50" text-anchor="middle">자동 할당 (0, 1)</text>
+
+  <path d="M 330 157 L 350 157" stroke="#ff9800" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+  <text x="330" y="150" font-family="Arial" font-size="12" fill="#ff9800" text-anchor="end">자동 할당 (0, 1, 2)</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2196f3" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4caf50" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9800" />
+    </marker>
+  </defs>
+</svg>

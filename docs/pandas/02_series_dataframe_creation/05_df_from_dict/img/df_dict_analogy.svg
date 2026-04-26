@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="600" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">비유: 부서별 서류 묶음(리스트) 끼워 넣기</text>
+
+  <!-- Left: Folders (Dict) -->
+  <!-- Folder 1 -->
+  <path d="M 80 80 L 130 80 L 140 95 L 180 95 L 180 200 L 80 200 Z" fill="#ffe082" stroke="#ffca28" stroke-width="2"/>
+  <rect x="90" y="110" width="80" height="80" fill="#fff" stroke="#ccc"/>
+  <line x1="100" y1="130" x2="160" y2="130" stroke="#eee" stroke-width="2"/>
+  <line x1="100" y1="150" x2="160" y2="150" stroke="#eee" stroke-width="2"/>
+  <line x1="100" y1="170" x2="160" y2="170" stroke="#eee" stroke-width="2"/>
+  <text x="130" y="105" font-family="Arial" font-size="14" font-weight="bold" fill="#f57f17" text-anchor="middle">서류철(Key)</text>
+  <rect x="95" y="125" width="70" height="60" fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="2,2"/>
+  <text x="130" y="215" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">이름 (Name)</text>
+
+  <!-- Folder 2 -->
+  <path d="M 220 80 L 270 80 L 280 95 L 320 95 L 320 200 L 220 200 Z" fill="#c5e1a5" stroke="#aed581" stroke-width="2"/>
+  <rect x="230" y="110" width="80" height="80" fill="#fff" stroke="#ccc"/>
+  <line x1="240" y1="130" x2="300" y2="130" stroke="#eee" stroke-width="2"/>
+  <line x1="240" y1="150" x2="300" y2="150" stroke="#eee" stroke-width="2"/>
+  <line x1="240" y1="170" x2="300" y2="170" stroke="#eee" stroke-width="2"/>
+  <text x="270" y="105" font-family="Arial" font-size="14" font-weight="bold" fill="#33691e" text-anchor="middle">서류철(Key)</text>
+  <rect x="235" y="125" width="70" height="60" fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="2,2"/>
+  <text x="270" y="215" font-family="Arial" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">나이 (Age)</text>
+
+  <!-- Arrow -->
+  <g stroke="#9e9e9e" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M 340 140 L 380 140" />
+  </g>
+  <text x="360" y="130" font-family="Arial" font-size="12" fill="#757575" text-anchor="middle">끼워넣기</text>
+
+  <!-- Right: Excel Table -->
+  <rect x="400" y="90" width="160" height="110" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  <line x1="400" y1="120" x2="560" y2="120" stroke="#ccc" stroke-width="2"/>
+  <line x1="480" y1="90" x2="480" y2="200" stroke="#ccc" stroke-width="2"/>
+  <line x1="400" y1="145" x2="560" y2="145" stroke="#eee" stroke-width="1"/>
+  <line x1="400" y1="170" x2="560" y2="170" stroke="#eee" stroke-width="1"/>
+
+  <rect x="400" y="90" width="80" height="30" fill="#fff3e0"/>
+  <text x="440" y="110" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">이름</text>
+
+  <rect x="480" y="90" width="80" height="30" fill="#f1f8e9"/>
+  <text x="520" y="110" font-family="Arial" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">나이</text>
+
+  <text x="440" y="138" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">문서1</text>
+  <text x="520" y="138" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">문서1</text>
+
+  <text x="440" y="163" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">문서2</text>
+  <text x="520" y="163" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">문서2</text>
+
+  <text x="440" y="188" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">문서3</text>
+  <text x="520" y="188" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">문서3</text>
+
+  <text x="480" y="225" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">엑셀 테이블(DataFrame)</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9e9e9e" />
+    </marker>
+  </defs>
+</svg>

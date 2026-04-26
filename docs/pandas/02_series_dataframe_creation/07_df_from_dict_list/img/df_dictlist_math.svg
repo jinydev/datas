@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">가변 스키마 객체의 테이블 매핑 (Union of Keys)</text>
+
+  <!-- Left: List of Dictionaries -->
+  <text x="140" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">List of Dictionaries (JSON)</text>
+  
+  <rect x="30" y="80" width="220" height="150" fill="#fff" stroke="#ccc" stroke-width="2" rx="5"/>
+  <text x="40" y="105" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#333" text-anchor="start">[</text>
+  
+  <!-- Dict 0 -->
+  <text x="60" y="125" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="start">{<tspan fill="#e65100">'A'</tspan>:10, <tspan fill="#2e7d32">'B'</tspan>:20, <tspan fill="#0d47a1">'C'</tspan>:30},</text>
+  
+  <!-- Dict 1 -->
+  <text x="60" y="155" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="start">{<tspan fill="#e65100">'A'</tspan>:40, <tspan fill="#0d47a1">'C'</tspan>:50},</text>
+  <text x="140" y="155" font-family="Arial" font-size="12" fill="#d32f2f" font-weight="bold" text-anchor="middle">(B 누락)</text>
+
+  <!-- Dict 2 -->
+  <text x="60" y="185" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="start">{<tspan fill="#2e7d32">'B'</tspan>:60, <tspan fill="#0d47a1">'C'</tspan>:70}</text>
+  <text x="65" y="185" font-family="Arial" font-size="12" fill="#d32f2f" font-weight="bold" text-anchor="middle">(A 누락)</text>
+  
+  <text x="40" y="215" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#333" text-anchor="start">]</text>
+
+  <!-- Arrow -->
+  <g stroke="#9c27b0" stroke-width="3" fill="none" marker-end="url(#arrow-purple)">
+    <path d="M 260 150 L 330 150" />
+  </g>
+  <text x="295" y="140" font-family="Arial" font-size="12" font-weight="bold" fill="#7b1fa2" text-anchor="middle">Union Keys</text>
+
+  <!-- Right: DataFrame -->
+  <text x="480" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">DataFrame (Relation)</text>
+  
+  <rect x="370" y="90" width="220" height="130" fill="#f3e5f5" stroke="#ab47bc" stroke-width="2" rx="5"/>
+  
+  <!-- Columns -->
+  <rect x="410" y="90" width="180" height="30" fill="#e1bee7" rx="2"/>
+  <text x="440" y="110" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">A</text>
+  <text x="500" y="110" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">B</text>
+  <text x="560" y="110" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">C</text>
+
+  <!-- Index -->
+  <rect x="370" y="120" width="40" height="100" fill="#fff3e0" rx="2"/>
+  <text x="390" y="145" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ff9800" text-anchor="middle">0</text>
+  <text x="390" y="175" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ff9800" text-anchor="middle">1</text>
+  <text x="390" y="205" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ff9800" text-anchor="middle">2</text>
+
+  <!-- Data Grid -->
+  <!-- Row 0 -->
+  <text x="440" y="145" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">10.0</text>
+  <text x="500" y="145" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">20.0</text>
+  <text x="560" y="145" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">30.0</text>
+  
+  <!-- Row 1 -->
+  <text x="440" y="175" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">40.0</text>
+  <rect x="480" y="158" width="40" height="22" fill="#ffebee" rx="3"/>
+  <text x="500" y="175" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#d32f2f" text-anchor="middle">NaN</text>
+  <text x="560" y="175" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">50.0</text>
+
+  <!-- Row 2 -->
+  <rect x="420" y="188" width="40" height="22" fill="#ffebee" rx="3"/>
+  <text x="440" y="205" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#d32f2f" text-anchor="middle">NaN</text>
+  <text x="500" y="205" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">60.0</text>
+  <text x="560" y="205" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">70.0</text>
+
+  <!-- Grid lines -->
+  <line x1="410" y1="120" x2="590" y2="120" stroke="#ce93d8" stroke-width="1"/>
+  <line x1="470" y1="90" x2="470" y2="220" stroke="#ce93d8" stroke-width="1"/>
+  <line x1="530" y1="90" x2="530" y2="220" stroke="#ce93d8" stroke-width="1"/>
+
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9c27b0" />
+    </marker>
+  </defs>
+</svg>

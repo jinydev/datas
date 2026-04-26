@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="700" height="350" fill="#f8f9fa" rx="10" />
+  
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">연속된 값을 구간(bin)으로 쪼개어 빈도수 측정하기</text>
+
+  <!-- Input Data Stream -->
+  <text x="350" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">데이터의 흐름 (Data Stream)</text>
+  <rect x="150" y="90" width="400" height="40" rx="5" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  
+  <!-- Data points -->
+  <circle cx="180" cy="110" r="15" fill="#bbdefb"/> <text x="180" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">3</text>
+  <circle cx="230" cy="110" r="15" fill="#bbdefb"/> <text x="230" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">1</text>
+  <circle cx="280" cy="110" r="15" fill="#bbdefb"/> <text x="280" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">1</text>
+  <circle cx="330" cy="110" r="15" fill="#bbdefb"/> <text x="330" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">2</text>
+  <circle cx="380" cy="110" r="15" fill="#bbdefb"/> <text x="380" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">4</text>
+  <circle cx="430" cy="110" r="15" fill="#bbdefb"/> <text x="430" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">6</text>
+  <circle cx="480" cy="110" r="15" fill="#bbdefb"/> <text x="480" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">6</text>
+
+  <!-- Arrows flowing down to bins -->
+  <g stroke="#9e9e9e" stroke-width="2" fill="none" stroke-dasharray="4,4">
+    <!-- Bin 1 arrows (1, 1, 2) -->
+    <path d="M 230 130 C 230 180, 180 160, 180 200" />
+    <path d="M 280 130 C 280 170, 180 160, 180 200" />
+    <path d="M 330 130 C 330 180, 180 160, 180 200" />
+    <!-- Bin 2 arrows (3) -->
+    <path d="M 180 130 C 180 180, 300 160, 300 200" />
+    <!-- Bin 3 arrows (4) -->
+    <path d="M 380 130 C 380 180, 420 160, 420 200" />
+    <!-- Bin 4 arrows (6, 6) -->
+    <path d="M 430 130 C 430 180, 540 160, 540 200" />
+    <path d="M 480 130 C 480 180, 540 160, 540 200" />
+  </g>
+
+  <!-- Bins (Buckets) -->
+  <text x="350" y="170" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">4개의 구간(bins)으로 분류</text>
+
+  <!-- Bin 1 -->
+  <rect x="120" y="200" width="120" height="60" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="180" y="225" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">(0.99, 2.25]</text>
+  <text x="180" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">Count: 3</text>
+
+  <!-- Bin 2 -->
+  <rect x="250" y="200" width="100" height="60" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="300" y="225" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">(2.25, 3.5]</text>
+  <text x="300" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">Count: 1</text>
+
+  <!-- Bin 3 -->
+  <rect x="360" y="200" width="100" height="60" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="410" y="225" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">(3.5, 4.75]</text>
+  <text x="410" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">Count: 1</text>
+
+  <!-- Bin 4 -->
+  <rect x="470" y="200" width="120" height="60" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="530" y="225" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">(4.75, 6.0]</text>
+  <text x="530" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">Count: 2</text>
+  
+  <text x="350" y="290" font-family="Arial" font-size="14" fill="#757575" text-anchor="middle">히스토그램 막대기를 그리기 위한 사전 집계 과정입니다.</text>
+</svg>

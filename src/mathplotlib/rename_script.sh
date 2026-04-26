@@ -1,0 +1,26 @@
+#!/bin/bash
+cd /Users/hojin9/jinysite/datas/src/mathplotlib
+
+# 기존 폴더명 변경
+mv 00_data_analysis_packages 00_visualization_basics
+mv 01_matplotlib_basics 03_advanced_styling
+mv 03_basic_charts 01_core_charts
+mv 04_distribution_charts 04_advanced_statistics
+
+# 내부 파일 이동 및 재배치
+mv 03_advanced_styling/01_visualization_intro 00_visualization_basics/04_visualization_intro
+mv 01_core_charts/01_scatter_plot 01_core_charts/02_scatter_plot
+mv 03_advanced_styling/02_simple_line_plot 01_core_charts/01_line_plot
+
+mv 04_advanced_statistics/02_histogram 01_core_charts/04_histogram
+mv 04_advanced_statistics/03_pie_chart 01_core_charts/05_pie_chart
+
+mv 05_advanced_charts/01_violin_plot 04_advanced_statistics/02_violin_plot
+mv 05_advanced_charts/02_correlation_viz 04_advanced_statistics/03_correlation_viz
+rm -rf 05_advanced_charts
+
+mv 03_advanced_styling/03_figure_subplot 03_advanced_styling/01_figure_subplot
+mv 03_advanced_styling/04_gridspec_layout 03_advanced_styling/02_gridspec_layout
+mv 03_advanced_styling/05_styling 03_advanced_styling/03_styling
+
+echo "디렉토리 이동이 성공적으로 완료되었습니다!"

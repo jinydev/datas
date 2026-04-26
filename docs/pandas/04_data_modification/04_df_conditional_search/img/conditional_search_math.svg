@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">집합 귀속 여부(Set Membership)와 패턴 매칭(Pattern Matching)</text>
+
+  <!-- Left: Set Membership (.isin) -->
+  <g transform="translate(40, 60)">
+    <rect x="0" y="0" width="260" height="150" fill="#fff" stroke="#90caf9" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="260" height="30" fill="#e3f2fd" rx="2"/>
+    <text x="130" y="20" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0277bd" text-anchor="middle">.isin([5, 7, 13])</text>
+
+    <!-- Formula -->
+    <text x="130" y="55" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Mask_i = (X_i ∈ {5, 7, 13})</text>
+
+    <!-- Vector processing -->
+    <g transform="translate(20, 80)">
+      <rect x="0" y="0" width="30" height="20" fill="#eceff1" rx="2"/>
+      <rect x="0" y="25" width="30" height="20" fill="#eceff1" rx="2"/>
+      <rect x="0" y="50" width="30" height="20" fill="#eceff1" rx="2"/>
+
+      <text x="15" y="14" font-family="Courier New" font-size="12" fill="#333" text-anchor="middle">5</text>
+      <text x="15" y="39" font-family="Courier New" font-size="12" fill="#333" text-anchor="middle">6</text>
+      <text x="15" y="64" font-family="Courier New" font-size="12" fill="#333" text-anchor="middle">13</text>
+    </g>
+
+    <g stroke="#90caf9" stroke-width="2" stroke-dasharray="2,2" fill="none">
+      <path d="M 60 90 L 120 90" />
+      <path d="M 60 115 L 120 115" />
+      <path d="M 60 140 L 120 140" />
+    </g>
+
+    <!-- Result Boolean Mask -->
+    <g transform="translate(130, 80)">
+      <rect x="0" y="0" width="40" height="20" fill="#c8e6c9" rx="2"/>
+      <rect x="0" y="25" width="40" height="20" fill="#ffcdd2" rx="2"/>
+      <rect x="0" y="50" width="40" height="20" fill="#c8e6c9" rx="2"/>
+
+      <text x="20" y="14" font-family="Courier New" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="middle">True</text>
+      <text x="20" y="39" font-family="Courier New" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">False</text>
+      <text x="20" y="64" font-family="Courier New" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="middle">True</text>
+    </g>
+  </g>
+
+  <!-- Right: Pattern Matching (.str.contains) -->
+  <g transform="translate(340, 60)">
+    <rect x="0" y="0" width="260" height="150" fill="#fff" stroke="#ffb74d" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="260" height="30" fill="#fff3e0" rx="2"/>
+    <text x="130" y="20" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">.str.contains('3')</text>
+
+    <!-- Formula -->
+    <text x="130" y="55" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Mask_i = (Regex(/.*3.*/) == Match)</text>
+
+    <!-- Vector processing -->
+    <g transform="translate(10, 80)">
+      <rect x="0" y="0" width="50" height="20" fill="#eceff1" rx="2"/>
+      <rect x="0" y="25" width="50" height="20" fill="#eceff1" rx="2"/>
+      <rect x="0" y="50" width="50" height="20" fill="#eceff1" rx="2"/>
+
+      <text x="25" y="14" font-family="Courier New" font-size="12" fill="#333" text-anchor="middle">"1월"</text>
+      <text x="25" y="39" font-family="Courier New" font-size="12" fill="#333" text-anchor="middle">"2월"</text>
+      <text x="25" y="64" font-family="Courier New" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">"3월"</text>
+    </g>
+
+    <g stroke="#ffb74d" stroke-width="2" stroke-dasharray="2,2" fill="none">
+      <path d="M 70 90 L 120 90" />
+      <path d="M 70 115 L 120 115" />
+      <path d="M 70 140 L 120 140" />
+    </g>
+
+    <!-- Result Boolean Mask -->
+    <g transform="translate(130, 80)">
+      <rect x="0" y="0" width="40" height="20" fill="#ffcdd2" rx="2"/>
+      <rect x="0" y="25" width="40" height="20" fill="#ffcdd2" rx="2"/>
+      <rect x="0" y="50" width="40" height="20" fill="#c8e6c9" rx="2"/>
+
+      <text x="20" y="14" font-family="Courier New" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">False</text>
+      <text x="20" y="39" font-family="Courier New" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">False</text>
+      <text x="20" y="64" font-family="Courier New" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="middle">True</text>
+    </g>
+  </g>
+
+</svg>

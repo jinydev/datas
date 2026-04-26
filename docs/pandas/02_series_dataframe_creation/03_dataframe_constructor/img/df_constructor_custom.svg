@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 280" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="280" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">[B] 상세 주문서가 적용된 표 (Custom DataFrame)</text>
+
+  <!-- Input Params -->
+  <text x="140" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Input Parameters</text>
+  <rect x="40" y="90" width="200" height="130" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="2"/>
+  
+  <text x="50" y="115" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="start">data=raw_materials</text>
+  <text x="50" y="145" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="start">index=['1일차',...]</text>
+  <text x="50" y="175" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="start">columns=['오전...',...]</text>
+  <text x="50" y="205" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#9c27b0" text-anchor="start">dtype=float</text>
+
+  <!-- Arrow -->
+  <g stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M 250 155 L 350 155" />
+  </g>
+  <text x="300" y="145" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">pd.DataFrame()</text>
+
+  <!-- Output DataFrame -->
+  <text x="490" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Output DataFrame</text>
+  
+  <!-- Structure -->
+  <rect x="380" y="90" width="220" height="110" fill="#fff" stroke="#333" stroke-width="2" rx="5"/>
+  
+  <!-- Columns -->
+  <rect x="440" y="90" width="160" height="25" fill="#e8f5e9" rx="3"/>
+  <text x="480" y="108" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">오전매출</text>
+  <text x="560" y="108" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">오후매출</text>
+  
+  <!-- Index -->
+  <rect x="380" y="115" width="60" height="85" fill="#fff3e0" rx="3"/>
+  <text x="410" y="135" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">1일차</text>
+  <text x="410" y="160" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">2일차</text>
+  <text x="410" y="185" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">3일차</text>
+
+  <!-- Data -->
+  <text x="480" y="135" font-family="Courier New, monospace" font-size="14" fill="#1565c0" text-anchor="middle">10<tspan fill="#9c27b0" font-weight="bold">.0</tspan></text>
+  <text x="560" y="135" font-family="Courier New, monospace" font-size="14" fill="#1565c0" text-anchor="middle">20<tspan fill="#9c27b0" font-weight="bold">.0</tspan></text>
+  <text x="480" y="160" font-family="Courier New, monospace" font-size="14" fill="#1565c0" text-anchor="middle">30<tspan fill="#9c27b0" font-weight="bold">.0</tspan></text>
+  <text x="560" y="160" font-family="Courier New, monospace" font-size="14" fill="#1565c0" text-anchor="middle">40<tspan fill="#9c27b0" font-weight="bold">.0</tspan></text>
+  <text x="480" y="185" font-family="Courier New, monospace" font-size="14" fill="#1565c0" text-anchor="middle">50<tspan fill="#9c27b0" font-weight="bold">.0</tspan></text>
+  <text x="560" y="185" font-family="Courier New, monospace" font-size="14" fill="#1565c0" text-anchor="middle">60<tspan fill="#9c27b0" font-weight="bold">.0</tspan></text>
+
+  <!-- Annotations linking options to outputs -->
+  <path d="M 230 140 C 350 100, 440 70, 480 85" stroke="#2e7d32" stroke-width="2" fill="none" stroke-dasharray="4,4" marker-end="url(#arrow-green)"/>
+  <path d="M 230 170 C 320 200, 350 200, 375 160" stroke="#e65100" stroke-width="2" fill="none" stroke-dasharray="4,4" marker-end="url(#arrow-orange)"/>
+  <path d="M 180 210 C 300 250, 420 250, 520 205" stroke="#9c27b0" stroke-width="2" fill="none" stroke-dasharray="4,4" marker-end="url(#arrow-purple)"/>
+  <text x="520" y="225" font-family="Arial" font-size="12" fill="#9c27b0" text-anchor="middle">.0 추가됨</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9c27b0" />
+    </marker>
+  </defs>
+</svg>

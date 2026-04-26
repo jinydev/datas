@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">비유: 엑셀에서 수식으로 계산한 뒤 가장 우측 빈 셀에 이름표 붙여 넣기</text>
+
+  <!-- Left: Spreadsheet -->
+  <g transform="translate(100, 60)">
+    <rect x="0" y="0" width="220" height="150" fill="#fff" stroke="#90caf9" stroke-width="2" rx="4"/>
+    
+    <!-- Column Headers -->
+    <rect x="0" y="0" width="220" height="25" fill="#e3f2fd" rx="2"/>
+    <line x1="50" y1="0" x2="50" y2="150" stroke="#bbdefb" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="150" stroke="#bbdefb" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="150" stroke="#bbdefb" stroke-width="1"/>
+
+    <text x="25" y="17" font-family="Arial" font-size="12" fill="#555" text-anchor="middle">이름</text>
+    <text x="75" y="17" font-family="Arial" font-size="12" fill="#555" text-anchor="middle">사고</text>
+    <text x="125" y="17" font-family="Arial" font-size="12" font-weight="bold" fill="#0277bd" text-anchor="middle">사망</text>
+    <text x="185" y="17" font-family="Arial" font-size="12" font-weight="bold" fill="#0277bd" text-anchor="middle">부상</text>
+
+    <!-- Rows -->
+    <line x1="0" y1="50" x2="220" y2="50" stroke="#bbdefb" stroke-width="1"/>
+    <line x1="0" y1="80" x2="220" y2="80" stroke="#bbdefb" stroke-width="1"/>
+    <line x1="0" y1="110" x2="220" y2="110" stroke="#bbdefb" stroke-width="1"/>
+
+    <text x="25" y="40" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">1월</text>
+    <text x="75" y="40" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">192</text>
+    <text x="125" y="40" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">5</text>
+    <text x="185" y="40" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">387</text>
+
+    <text x="25" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">2월</text>
+    <text x="75" y="70" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">174</text>
+    <text x="125" y="70" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">6</text>
+    <text x="185" y="70" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">328</text>
+
+    <!-- Selection Highlight -->
+    <rect x="100" y="25" width="120" height="125" fill="#81d4fa" opacity="0.3" stroke="#0288d1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Arrow -->
+  <g stroke="#f57f17" stroke-width="3" stroke-dasharray="3,3" fill="none" marker-end="url(#arrow-yellow)">
+    <path d="M 330 135 L 360 135" />
+  </g>
+  <rect x="335" y="110" width="20" height="20" fill="#fff9c4" stroke="#fbc02d" rx="10"/>
+  <text x="345" y="125" font-family="Arial" font-size="14" font-weight="bold" fill="#f57f17" text-anchor="middle">+</text>
+
+  <!-- Right: New Column Appended -->
+  <g transform="translate(380, 60)">
+    <!-- Base Matrix Context (Grayed out) -->
+    <rect x="-20" y="0" width="20" height="150" fill="#f5f5f5" stroke="#e0e0e0" rx="2"/>
+    <text x="-10" y="80" font-family="Arial" font-size="12" fill="#ccc" text-anchor="middle">...</text>
+
+    <!-- The New Total Column -->
+    <rect x="10" y="0" width="70" height="150" fill="#fff" stroke="#f57f17" stroke-width="3" rx="4" filter="drop-shadow(3px 3px 5px rgba(0,0,0,0.15))"/>
+    
+    <rect x="10" y="0" width="70" height="25" fill="#ffe0b2" rx="2"/>
+    <text x="45" y="17" font-family="Arial" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">재해자수</text>
+
+    <line x1="10" y1="50" x2="80" y2="50" stroke="#ffe0b2" stroke-width="1"/>
+    <line x1="10" y1="80" x2="80" y2="80" stroke="#ffe0b2" stroke-width="1"/>
+    <line x1="10" y1="110" x2="80" y2="110" stroke="#ffe0b2" stroke-width="1"/>
+
+    <text x="45" y="40" font-family="Arial" font-size="14" font-weight="bold" fill="#d84315" text-anchor="middle">392</text>
+    <text x="45" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#d84315" text-anchor="middle">334</text>
+    <text x="45" y="100" font-family="Arial" font-size="14" font-weight="bold" fill="#d84315" text-anchor="middle">442</text>
+  </g>
+
+  <!-- Top Right Explanation -->
+  <path d="M 460 80 L 490 60 L 490 100 Z" fill="#e8f5e9"/>
+  <rect x="490" y="40" width="130" height="70" fill="#e8f5e9" stroke="#81c784" rx="10"/>
+  <text x="555" y="60" font-family="Arial" font-size="12" fill="#2e7d32" text-anchor="middle">"합계를 구한 다음,</text>
+  <text x="555" y="75" font-family="Arial" font-size="12" fill="#2e7d32" text-anchor="middle">오른쪽 빈칸을 뚫고</text>
+  <text x="555" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#1b5e20" text-anchor="middle">쏙 집어넣어요!"</text>
+
+  <defs>
+    <marker id="arrow-yellow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f57f17" />
+    </marker>
+  </defs>
+</svg>

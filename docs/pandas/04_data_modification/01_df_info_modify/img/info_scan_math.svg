@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">메타데이터 추출 및 기술 통계량(Descriptive Statistics) 연산</text>
+
+  <!-- Center: Original Matrix -->
+  <g transform="translate(40, 75)">
+    <rect x="0" y="0" width="140" height="100" fill="#fff" stroke="#90a4ae" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="140" height="25" fill="#eceff1" rx="2"/>
+    <text x="70" y="17" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#455a64" text-anchor="middle">Data Matrix (X)</text>
+    
+    <!-- Matrix Data Grid -->
+    <line x1="46" y1="25" x2="46" y2="100" stroke="#eceff1" stroke-width="1"/>
+    <line x1="93" y1="25" x2="93" y2="100" stroke="#eceff1" stroke-width="1"/>
+    
+    <text x="23" y="45" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">v11</text>
+    <text x="70" y="45" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">v12</text>
+    <text x="116" y="45" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">v13</text>
+
+    <text x="23" y="65" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">v21</text>
+    <text x="70" y="65" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">v22</text>
+    <text x="116" y="65" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">v23</text>
+
+    <text x="70" y="85" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">...</text>
+  </g>
+
+  <!-- Top Path: .info() Metadata Extraction -->
+  <g stroke="#29b6f6" stroke-width="2" fill="none" marker-end="url(#arrow-blue)">
+    <path d="M 180 120 C 220 70, 260 70, 300 70" />
+  </g>
+  <rect x="200" y="45" width="80" height="25" fill="#e1f5fe" stroke="#0288d1" rx="12"/>
+  <text x="240" y="62" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#0277bd" text-anchor="middle">.info()</text>
+
+  <g transform="translate(310, 45)">
+    <rect x="0" y="0" width="300" height="70" fill="#fff" stroke="#81d4fa" stroke-width="2" rx="4" filter="drop-shadow(2px 2px 3px rgba(0,0,0,0.1))"/>
+    <rect x="0" y="0" width="300" height="20" fill="#b3e5fc" rx="2"/>
+    <text x="150" y="14" font-family="Arial" font-size="12" font-weight="bold" fill="#01579b" text-anchor="middle">구조적 메타데이터 (Structural Metadata)</text>
+    
+    <text x="150" y="35" font-family="Courier New, monospace" font-size="11" fill="#333" text-anchor="middle">- Dimensions: m x n (Shape)</text>
+    <text x="150" y="50" font-family="Courier New, monospace" font-size="11" fill="#333" text-anchor="middle">- Data Types: int64, float64</text>
+    <text x="150" y="65" font-family="Courier New, monospace" font-size="11" fill="#d32f2f" text-anchor="middle">- Missing Values: 0 Nulls (Integrity Check)</text>
+  </g>
+
+  <!-- Bottom Path: .describe() Statistical 연산 -->
+  <g stroke="#66bb6a" stroke-width="2" fill="none" marker-end="url(#arrow-green)">
+    <path d="M 180 130 C 220 180, 260 180, 300 180" />
+  </g>
+  <rect x="200" y="180" width="80" height="25" fill="#e8f5e9" stroke="#388e3c" rx="12"/>
+  <text x="240" y="197" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">.describe()</text>
+
+  <g transform="translate(310, 135)">
+    <rect x="0" y="0" width="300" height="90" fill="#fff" stroke="#a5d6a7" stroke-width="2" rx="4" filter="drop-shadow(2px 2px 3px rgba(0,0,0,0.1))"/>
+    <rect x="0" y="0" width="300" height="20" fill="#c8e6c9" rx="2"/>
+    <text x="150" y="14" font-family="Arial" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">1차 기술 통계량 (Descriptive Statistics)</text>
+
+    <!-- Stat formulas -->
+    <text x="80" y="45" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Mean: μ = (Σx)/N</text>
+    <text x="80" y="75" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Std: σ = √(Σ(x-μ)²/N)</text>
+    
+    <text x="220" y="45" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Min: min(X)</text>
+    <text x="220" y="60" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Median: Q2</text>
+    <text x="220" y="75" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Max: max(X)</text>
+    
+    <line x1="150" y1="25" x2="150" y2="85" stroke="#e0e0e0" stroke-width="1"/>
+  </g>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#29b6f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66bb6a" />
+    </marker>
+  </defs>
+</svg>

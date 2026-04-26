@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="500" height="300" fill="#f8f9fa" rx="10" />
+  
+  <text x="250" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">이름표가 달린 포스트잇 비유</text>
+
+  <!-- Post it 1 -->
+  <rect x="230" y="80" width="150" height="50" fill="#fff9c4" stroke="#fbc02d" stroke-width="2" filter="drop-shadow(2px 4px 6px rgba(0,0,0,0.1))"/>
+  <rect x="150" y="85" width="90" height="40" fill="#ffcc80" stroke="#ef6c00" stroke-width="2" rx="5"/>
+  <text x="195" y="110" font-family="Arial" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">철수</text>
+  <text x="305" y="112" font-family="Arial" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">80점</text>
+
+  <!-- Post it 2 -->
+  <rect x="230" y="150" width="150" height="50" fill="#fff9c4" stroke="#fbc02d" stroke-width="2" filter="drop-shadow(2px 4px 6px rgba(0,0,0,0.1))"/>
+  <rect x="150" y="155" width="90" height="40" fill="#ce93d8" stroke="#8e24aa" stroke-width="2" rx="5"/>
+  <text x="195" y="180" font-family="Arial" font-size="16" font-weight="bold" fill="#4a148c" text-anchor="middle">영희</text>
+  <text x="305" y="182" font-family="Arial" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">95점</text>
+
+  <!-- Post it 3 -->
+  <rect x="230" y="220" width="150" height="50" fill="#fff9c4" stroke="#fbc02d" stroke-width="2" filter="drop-shadow(2px 4px 6px rgba(0,0,0,0.1))"/>
+  <rect x="150" y="225" width="90" height="40" fill="#81d4fa" stroke="#0288d1" stroke-width="2" rx="5"/>
+  <text x="195" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#01579b" text-anchor="middle">민수</text>
+  <text x="305" y="252" font-family="Arial" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">100점</text>
+  
+  <!-- Labels -->
+  <text x="195" y="290" font-family="Arial" font-size="16" font-weight="bold" fill="#666" text-anchor="middle">이름표 (Index)</text>
+  <text x="305" y="290" font-family="Arial" font-size="16" font-weight="bold" fill="#666" text-anchor="middle">데이터 (Values)</text>
+</svg>

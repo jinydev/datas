@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기</title>
   <meta name="title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/">
+  <meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/04_df_from_matrix/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/" />
-<meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/" />
+<link rel="canonical" href="http://localhost:4001/pandas/02_series_dataframe_creation/04_df_from_matrix/" />
+<meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/04_df_from_matrix/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/04_df_from_matrix/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기","url":"http://localhost:4001/pandas/02_series_dataframe_creation/04_df_from_matrix/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -372,16 +372,23 @@
                             </li>
                             
                             <li>
+                                <a href="/pandas/01_pandas_basics/02_pandas_practice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    6.1.2 판다스 설치 및 기초 실습
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 Series(시리즈) 개요
+                                    6.1.3 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 DataFrame(데이터프레임) 개요
+                                    6.1.4 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -719,18 +726,32 @@
         <div class="bd-content ps-lg-4">
             <h2 id="624-2차원-행렬matrix로-데이터프레임-만들기">6.2.4 2차원 행렬(Matrix)로 데이터프레임 만들기</h2>
 
-<p><strong>[수학적/전산학적 의미: 다차원 배열의 관계형 매핑]</strong>
-수학의 $m \times n$ 크기의 2차원 구형 행렬(Rectangular Matrix) 데이터를 판다스의 DataFrame으로 캐스팅(Casting)하는 과정입니다. 이때 단순한 좌표(0, 1, 2…)로 구성된 공간을 문자열 레이블로 참조 가능한 연관 배열(Associative Array) 구조체로 확장 매핑합니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./df_from_matrix_practice.ipynb">📥 df_from_matrix_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><strong>[비유로 이해하기: 아무 이름 없는 엑셀 표에 머리글 씌우기]</strong></p>
+<h2 id="-수학적전산학적-의미-다차원-배열의-관계형-매핑">🧮 수학적/전산학적 의미: 다차원 배열의 관계형 매핑</h2>
+
+<p>수학의 $m \times n$ 크기의 2차원 구형 행렬(Rectangular Matrix) 데이터를 판다스의 DataFrame으로 캐스팅(Casting)하는 과정입니다. 이때 단순한 좌표(0, 1, 2…)로 구성된 공간을 문자열 레이블로 참조 가능한 연관 배열(Associative Array) 구조체로 확장 매핑합니다.</p>
+
+<p><img src="./img/df_matrix_math.svg" alt="다차원 배열의 관계형 맵핑 구조" /></p>
+
+<h2 id="️-비유로-이해하기-아무-이름-없는-엑셀-표에-머리글-씌우기">🏷️ 비유로 이해하기: 아무 이름 없는 엑셀 표에 머리글 씌우기</h2>
+
 <ul>
   <li>친구가 엑셀 파일에 숫자만 잔뜩 입력해놓고, 첫 번째 줄에 열 이름(A, B, C…)을 안 적어둔 상황을 떠올려 보세요.</li>
   <li><strong>2차원 행렬</strong>은 그저 “숫자 덩어리”입니다. 여기에 판다스를 통해 <code class="language-plaintext highlighter-rouge">index</code>와 <code class="language-plaintext highlighter-rouge">columns</code>라는 <strong>“이름표 테이프”</strong>를 붙여주어 제대로 된 표로 둔갑시키는 작업입니다.</li>
 </ul>
 
+<p><img src="./img/df_matrix_analogy.svg" alt="머리글 테이프를 붙이는 비유" /></p>
+
 <hr />
 
-<h3 id="1단계-1차원-리스트로-만들면-열이-하나인-표가-됩니다">[1단계] 1차원 리스트로 만들면 열이 하나인 표가 됩니다</h3>
+<h2 id="-실습-1-1차원-리스트로-만들면-열이-하나인-표가-됩니다">🪄 [실습 1] 1차원 리스트로 만들면 열이 하나인 표가 됩니다</h2>
 
 <p>데이터프레임은 본질적으로 2차원 구조이지만, 1차원 리스트를 강제로 집어넣으면 “세로로 긴 1개의 열(Column)”을 가진 표로 취급합니다. 이때 이름표를 생략하면 행과 열 모두 0부터 시작하는 숫자가 자동으로 붙습니다.</p>
 
@@ -756,7 +777,7 @@
 
 <hr />
 
-<h3 id="2단계-2차원-리스트list-of-lists로-온전한-표-만들기">[2단계] 2차원 리스트(List of Lists)로 온전한 표 만들기</h3>
+<h2 id="-실습-2-2차원-리스트list-of-lists로-온전한-표-만들기">🪄 [실습 2] 2차원 리스트(List of Lists)로 온전한 표 만들기</h2>
 
 <p>이번엔 여러 개의 리스트를 품고 있는 ‘리스트 속의 리스트(2차원)’를 넣어보겠습니다. 행(Index) 이름표도 함께 부여해 봅니다.</p>
 
@@ -785,7 +806,7 @@ c  100  200  300
 
 <hr />
 
-<h3 id="3단계-열-이름표columns까지-완벽하게-붙이기">[3단계] 열 이름표(Columns)까지 완벽하게 붙이기</h3>
+<h2 id="-실습-3-열-이름표columns까지-완벽하게-붙이기">🪄 [실습 3] 열 이름표(Columns)까지 완벽하게 붙이기</h2>
 
 <p>데이터에 <code class="language-plaintext highlighter-rouge">index</code>(행 이름)와 <code class="language-plaintext highlighter-rouge">columns</code>(열 이름)를 모두 직접 지정하면 완벽한 테이블 구조가 완성됩니다.</p>
 
@@ -819,7 +840,7 @@ c  100  200  300
 
 <hr />
 
-<h3 id="4단계-최강-조합-numpy-배열을-dataframe으로-바꾸기">[4단계] 최강 조합: NumPy 배열을 DataFrame으로 바꾸기</h3>
+<h2 id="-실습-4-최강-조합-numpy-배열을-dataframe으로-바꾸기">🪄 [실습 4] 최강 조합: NumPy 배열을 DataFrame으로 바꾸기</h2>
 
 <p>실제 머신러닝이나 데이터 전처리 작업에서는 NumPy로 초고속 계산을 수행한 뒤, 최종 결과를 보기 좋게 포장하기 위해 DataFrame으로 변환하는 경우가 매우 많습니다.</p>
 

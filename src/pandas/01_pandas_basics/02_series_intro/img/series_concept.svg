@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333" text-anchor="middle">1차원 벡터(Vector) vs 판다스 시리즈(Series)</text>
+
+  <!-- Left: 1D Vector -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="220" height="280" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="5"/>
+    <text x="110" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057" text-anchor="middle">1차원 벡터 (NumPy)</text>
+    <text x="110" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">순서(숫자) 기반의 나열</text>
+    
+    <!-- Vector elements -->
+    <g transform="translate(60, 80)">
+      <!-- Index -->
+      <text x="-25" y="20" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">0</text>
+      <text x="-25" y="60" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">1</text>
+      <text x="-25" y="100" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">2</text>
+      <text x="-25" y="140" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">3</text>
+      
+      <!-- Values -->
+      <rect x="0" y="0" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <text x="50" y="20" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">1500</text>
+      
+      <rect x="0" y="40" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <text x="50" y="60" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">3000</text>
+      
+      <rect x="0" y="80" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <text x="50" y="100" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">2000</text>
+      
+      <rect x="0" y="120" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <text x="50" y="140" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">500</text>
+    </g>
+    
+    <text x="110" y="255" font-family="Arial, sans-serif" font-size="13" fill="#dc3545" text-anchor="middle">"1번 위치의 값이 뭐지?"</text>
+  </g>
+
+  <!-- Center Arrow -->
+  <g transform="translate(320, 200)">
+    <path d="M 0 0 L 60 0" fill="none" stroke="#adb5bd" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="30" y="-15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e83e8c" text-anchor="middle">+ 라벨 결합</text>
+  </g>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+  </defs>
+
+  <!-- Right: Pandas Series (Drawer metaphor) -->
+  <g transform="translate(410, 80)">
+    <rect x="0" y="0" width="310" height="280" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="5"/>
+    <text x="155" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057" text-anchor="middle">판다스 시리즈 (Series)</text>
+    <text x="155" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">이름표가 붙은 1열 서랍장</text>
+
+    <!-- Name plate -->
+    <g transform="translate(105, 75)">
+      <rect x="0" y="0" width="100" height="25" fill="#fff3cd" stroke="#ffc107" rx="3"/>
+      <text x="50" y="17" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#856404" text-anchor="middle">Name: 과일 단가표</text>
+    </g>
+
+    <!-- Drawer elements -->
+    <g transform="translate(60, 110)">
+      <!-- Label (Index) -->
+      <rect x="-40" y="0" width="60" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-10" y="20" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">Apple</text>
+      
+      <!-- Value -->
+      <rect x="30" y="0" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <circle cx="130" cy="15" r="3" fill="#0d6efd"/>
+      <text x="80" y="20" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">1500</text>
+
+      <!-- Label (Index) -->
+      <rect x="-40" y="40" width="60" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-10" y="60" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">Banana</text>
+      
+      <!-- Value -->
+      <rect x="30" y="40" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <circle cx="130" cy="55" r="3" fill="#0d6efd"/>
+      <text x="80" y="60" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">3000</text>
+
+      <!-- Label (Index) -->
+      <rect x="-40" y="80" width="60" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-10" y="100" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">Orange</text>
+      
+      <!-- Value -->
+      <rect x="30" y="80" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <circle cx="130" cy="95" r="3" fill="#0d6efd"/>
+      <text x="80" y="100" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">2000</text>
+
+      <!-- Label (Index) -->
+      <rect x="-40" y="120" width="60" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-10" y="140" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">Kiwi</text>
+      
+      <!-- Value -->
+      <rect x="30" y="120" width="100" height="30" fill="#e3f2fd" stroke="#0d6efd" stroke-width="1"/>
+      <circle cx="130" cy="135" r="3" fill="#0d6efd"/>
+      <text x="80" y="140" font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">500</text>
+    </g>
+
+    <text x="155" y="270" font-family="Arial, sans-serif" font-size="13" fill="#198754" text-anchor="middle">"Banana의 값이 뭐지?"</text>
+  </g>
+</svg>

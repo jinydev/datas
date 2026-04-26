@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.5.2 실전! 지저분한 공공데이터 정제하기</title>
   <meta name="title" content="6.5.2 실전! 지저분한 공공데이터 정제하기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/pandas/05_file_io/02_internet_data/">
+  <meta property="og:url" content="http://localhost:4001/pandas/05_file_io/02_internet_data/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/pandas/05_file_io/02_internet_data/" />
-<meta property="og:url" content="https://datas.jiny.dev/pandas/05_file_io/02_internet_data/" />
+<link rel="canonical" href="http://localhost:4001/pandas/05_file_io/02_internet_data/" />
+<meta property="og:url" content="http://localhost:4001/pandas/05_file_io/02_internet_data/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.2 실전! 지저분한 공공데이터 정제하기","url":"https://datas.jiny.dev/pandas/05_file_io/02_internet_data/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.2 실전! 지저분한 공공데이터 정제하기","url":"http://localhost:4001/pandas/05_file_io/02_internet_data/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -372,16 +372,23 @@
                             </li>
                             
                             <li>
+                                <a href="/pandas/01_pandas_basics/02_pandas_practice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    6.1.2 판다스 설치 및 기초 실습
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 Series(시리즈) 개요
+                                    6.1.3 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 DataFrame(데이터프레임) 개요
+                                    6.1.4 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -719,21 +726,33 @@
         <div class="bd-content ps-lg-4">
             <h2 id="652-실전-공공데이터-파싱parsing과-타입-캐스팅">6.5.2 실전 공공데이터 파싱(Parsing)과 타입 캐스팅</h2>
 
-<p><strong>[전산학적/수학적 의미: 파서 옵션 제어 및 동적 타입 형변환(Type Casting)]</strong>
-인터넷 웹페이지나 공공 구청에서 제공하는 CSV 파일들은 컴퓨터 친화적이기보다는 사람 눈에 보기 좋게 타이틀 제목을 넣거나 숫자 3자리마다 콤마(<code class="language-plaintext highlighter-rouge">,</code>)를 찍어두는 경우가 많습니다. 판다스 엔진이 이러한 문자열(String) 형태의 숫자를 산술 연산 체계(Integer/Float)로 정상적으로 해독(Parsing)할 수 있도록, 불필요한 줄을 건너뛰고(<code class="language-plaintext highlighter-rouge">skiprows</code>) 천 단위 구분 기호를 제거하여 파이썬 원시 타입으로 강제 형변환(Type Casting)하는 기술을 배웁니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./internet_data_practice.ipynb">📥 internet_data_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><strong>[비유로 이해하기: 번역기와 찌꺼기 필터링]</strong></p>
+<h2 id="-전산학적수학적-의미-파서-옵션-제어-및-동적-타입-형변환type-casting">🧮 전산학적/수학적 의미: 파서 옵션 제어 및 동적 타입 형변환(Type Casting)</h2>
+
+<p>인터넷 웹페이지나 공공 구청에서 제공하는 CSV 파일들은 컴퓨터 친화적이기보다는 사람 눈에 보기 좋게 타이틀 제목을 넣거나 숫자 3자리마다 콤마(<code class="language-plaintext highlighter-rouge">,</code>)를 찍어두는 경우가 많습니다. 판다스 엔진이 이러한 문자열(String) 형태의 숫자를 산술 연산 체계(Integer/Float)로 정상적으로 해독(Parsing)할 수 있도록, 불필요한 줄을 건너뛰고(<code class="language-plaintext highlighter-rouge">skiprows</code>) 천 단위 구분 기호를 제거하여 파이썬 원시 타입으로 강제 형변환(Type Casting)하는 기술을 배웁니다.</p>
+
+<p><img src="./img/parsing_math.svg" alt="파싱 옵션과 형변환의 전산학적 도식" /></p>
+
+<h2 id="️-비유로-이해하기-번역기와-찌꺼기-필터링">🏷️ 비유로 이해하기: 번역기와 찌꺼기 필터링</h2>
+
 <ul>
   <li><strong>글자 깨짐 방지</strong>: 중국어나 암호처럼 글자가 깨지면 <code class="language-plaintext highlighter-rouge">encoding='cp949'</code> 라는 한글 전용 해독 안경을 씌워줍니다.</li>
   <li><strong>불필요한 인사말 제거</strong>: 표 맨 위에 있는 “2022년도 총괄표~” 같은 쓸데없는 제목 1줄을 잘라내고 핵심 표부터 읽어오도록 지시합니다(<code class="language-plaintext highlighter-rouge">skiprows=1</code>).</li>
   <li><strong>숫자 변장 벗기기</strong>: <code class="language-plaintext highlighter-rouge">"1,234"</code> 처럼 콤마가 붙어있으면 컴퓨터는 이를 글자로 인식해 덧셈을 못합니다. “야, 저 쉼표(,)는 진짜 글자가 아니라 천 단위 구분 기호야!” 라고 알려줘서 진짜 숫자 <code class="language-plaintext highlighter-rouge">1234</code>로 둔갑시킵니다(<code class="language-plaintext highlighter-rouge">thousands=','</code>).</li>
 </ul>
 
-<p><img src="img/real_world_data.svg" alt="공공데이터 파싱 다이어그램" /></p>
+<p><img src="./img/parsing_analogy.svg" alt="안경, 가위, 핀셋을 이용한 파싱 비유 도식" /></p>
 
 <hr />
 
-<h3 id="1단계-한글-깨짐과-불필요한-행-제거-encoding-skiprows">[1단계] 한글 깨짐과 불필요한 행 제거 (<code class="language-plaintext highlighter-rouge">encoding</code>, <code class="language-plaintext highlighter-rouge">skiprows</code>)</h3>
+<h2 id="-실습-1-한글-깨짐과-불필요한-행-제거-encoding-skiprows">🪄 [실습 1] 한글 깨짐과 불필요한 행 제거 (<code class="language-plaintext highlighter-rouge">encoding</code>, <code class="language-plaintext highlighter-rouge">skiprows</code>)</h2>
 
 <p>공공데이터포털에서 가져온 대한민국 교통사고 데이터를 그대로 열어보면 여러 문제가 터집니다.</p>
 
@@ -760,15 +779,13 @@ Data columns (total 3 columns):
 dtypes: int64(1), object(2)
 </code></pre></div></div>
 
-<p><img src="./img/parsing_issues.svg" alt="옵션 설정 누락으로 인한 CSV 파싱 대참사" /></p>
-
 <blockquote>
   <p><strong>🚨 의사의 진단 소견:</strong> 사망자수는 백 단위라 숫자로 잘 들어왔는데, 사고건수와 부상자수는 천 단위 콤마(<code class="language-plaintext highlighter-rouge">,</code>)가 찍혀 있어서 파이썬이 <strong>문자열(<code class="language-plaintext highlighter-rouge">object</code>)</strong>로 착각하고 있습니다. 이 상태로는 <code class="language-plaintext highlighter-rouge">.sum()</code> 같은 덧셈이 불가능합니다!</p>
 </blockquote>
 
 <hr />
 
-<h3 id="2단계-진짜-숫자로-변환하기-thousands">[2단계] 진짜 숫자로 변환하기 (<code class="language-plaintext highlighter-rouge">thousands</code>)</h3>
+<h2 id="-실습-2-진짜-숫자로-변환하기-thousands">🪄 [실습 2] 진짜 숫자로 변환하기 (<code class="language-plaintext highlighter-rouge">thousands</code>)</h2>
 
 <p><code class="language-plaintext highlighter-rouge">.read_csv()</code> 함수 안에 옵션 하나만 틱 추가해주면 판다스가 알아서 안경을 고쳐 쓰고 숫자로 완벽하게 변환해 줍니다.</p>
 
@@ -789,13 +806,11 @@ Data columns (total 3 columns):
  2   부상자수  17 non-null     int64   &lt;-- ✅ 완벽한 숫자로 변신!
 </code></pre></div></div>
 
-<p><img src="./img/thousands.svg" alt="thousands 옵션으로 문자열을 파이썬 숫자로 강제 형변환" /></p>
-
 <p>이제 숫자로 완벽히 들어왔으므로 <code class="language-plaintext highlighter-rouge">traffic.describe()</code>를 통해 평균 수치 등을 구하거나, 덧셈을 수행할 수 있습니다.</p>
 
 <hr />
 
-<h3 id="3단계-덤-숫자-데이터를-바탕으로-막대그래프-그리기">[3단계] 덤: 숫자 데이터를 바탕으로 막대그래프 그리기</h3>
+<h2 id="-실습-3-덤-숫자-데이터를-바탕으로-막대그래프-그리기">🪄 [실습 3] 덤: 숫자 데이터를 바탕으로 막대그래프 그리기</h2>
 
 <p>데이터의 클렌징(정제)이 숫자 형태로 완벽하게 끝났다면, 파이썬의 강력한 시각화 라이브러리인 <strong>Seaborn</strong> 을 이용해 이 예쁘장한 데이터프레임을 통째로 던져주어 그래프를 그릴 수 있습니다.</p>
 
@@ -820,8 +835,6 @@ Data columns (total 3 columns):
 <span class="c1"># ④ 그래프 창 띄우기
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
-
-<p><img src="./img/seaborn_plot.svg" alt="정제된 데이터의 Seaborn 막대그래프 시각화 원리" /></p>
 
 <p>이 코드를 실행하시면 팝업창에 각 지역별 교통사고 사망자 수가 막대그래프로 예쁘게 솟아오른 것을 감상하실 수 있습니다. (데이터 클렌징의 진정한 묘미입니다!)</p>
 

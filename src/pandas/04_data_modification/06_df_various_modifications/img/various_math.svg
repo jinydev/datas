@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 350" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="350" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">데이터 정제 및 메타데이터 변이 연산 (Metamorphic Operations)</text>
+
+  <!-- 2x2 Grid Lines -->
+  <line x1="325" y1="50" x2="325" y2="330" stroke="#e0e0e0" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="20" y1="190" x2="630" y2="190" stroke="#e0e0e0" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Top-Left: Overwrite -->
+  <g transform="translate(30, 60)">
+    <text x="130" y="15" font-family="Arial" font-size="14" font-weight="bold" fill="#0288d1" text-anchor="middle">1. Overwrite (.loc / .iloc)</text>
+    
+    <rect x="20" y="30" width="80" height="80" fill="#fff" stroke="#90caf9" rx="2"/>
+    <text x="60" y="75" font-family="Courier New" font-size="14" fill="#666" text-anchor="middle">x_ij</text>
+    
+    <path d="M 110 70 L 140 70" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow-blue)" fill="none"/>
+    
+    <rect x="150" y="30" width="80" height="80" fill="#fff" stroke="#0288d1" stroke-width="2" rx="2"/>
+    <rect x="150" y="30" width="40" height="40" fill="#e1f5fe"/>
+    <text x="170" y="55" font-family="Courier New" font-size="14" font-weight="bold" fill="#01579b" text-anchor="middle">v'</text>
+    <text x="210" y="95" font-family="Courier New" font-size="14" fill="#666" text-anchor="middle">x_ij</text>
+  </g>
+
+  <!-- Top-Right: isNaN -->
+  <g transform="translate(350, 60)">
+    <text x="130" y="15" font-family="Arial" font-size="14" font-weight="bold" fill="#d32f2f" text-anchor="middle">2. Missing Value Detection (.isna)</text>
+    
+    <rect x="20" y="30" width="80" height="80" fill="#fff" stroke="#ef9a9a" rx="2"/>
+    <rect x="60" y="30" width="40" height="40" fill="#ffebee"/>
+    <text x="80" y="55" font-family="Courier New" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">NaN</text>
+    <text x="40" y="95" font-family="Courier New" font-size="14" fill="#666" text-anchor="middle">v</text>
+
+    <path d="M 110 70 L 140 70" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrow-red)" fill="none"/>
+    
+    <rect x="150" y="30" width="80" height="80" fill="#fff" stroke="#d32f2f" stroke-width="2" rx="2"/>
+    <rect x="190" y="30" width="40" height="40" fill="#ffcdd2"/>
+    <text x="210" y="55" font-family="Courier New" font-size="12" font-weight="bold" fill="#b71c1c" text-anchor="middle">1</text>
+    <text x="170" y="95" font-family="Courier New" font-size="14" fill="#ccc" text-anchor="middle">0</text>
+  </g>
+
+  <!-- Bottom-Left: Drop -->
+  <g transform="translate(30, 200)">
+    <text x="130" y="15" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">3. Dimension Reduction (.drop)</text>
+    
+    <rect x="20" y="30" width="90" height="80" fill="#fff" stroke="#ffcc80" rx="2"/>
+    <!-- The column to drop -->
+    <rect x="50" y="30" width="30" height="80" fill="#ffe0b2" stroke="#ff9800" stroke-dasharray="2,2"/>
+    <line x1="55" y1="35" x2="75" y2="105" stroke="#e65100" stroke-width="2"/>
+    <line x1="75" y1="35" x2="55" y2="105" stroke="#e65100" stroke-width="2"/>
+
+    <path d="M 120 70 L 150 70" stroke="#e65100" stroke-width="2" marker-end="url(#arrow-orange)" fill="none"/>
+    
+    <!-- Reduced matrix -->
+    <rect x="160" y="30" width="60" height="80" fill="#fff" stroke="#e65100" stroke-width="2" rx="2"/>
+    <text x="190" y="125" font-family="Arial" font-size="12" fill="#d84315" text-anchor="middle">n-1 dims</text>
+  </g>
+
+  <!-- Bottom-Right: Rename -->
+  <g transform="translate(350, 200)">
+    <text x="130" y="15" font-family="Arial" font-size="14" font-weight="bold" fill="#388e3c" text-anchor="middle">4. Label Mapping (.rename)</text>
+    
+    <rect x="20" y="30" width="80" height="80" fill="#fff" stroke="#a5d6a7" rx="2"/>
+    <rect x="20" y="30" width="80" height="20" fill="#c8e6c9"/>
+    <text x="60" y="44" font-family="Courier New" font-size="12" fill="#2e7d32" text-anchor="middle">L_old</text>
+
+    <text x="130" y="60" font-family="Courier New" font-size="14" fill="#388e3c" text-anchor="middle">f: L → L'</text>
+    <path d="M 110 70 L 140 70" stroke="#388e3c" stroke-width="2" marker-end="url(#arrow-green)" fill="none"/>
+    
+    <rect x="150" y="30" width="80" height="80" fill="#fff" stroke="#388e3c" stroke-width="2" rx="2"/>
+    <rect x="150" y="30" width="80" height="20" fill="#81c784"/>
+    <text x="190" y="44" font-family="Courier New" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">L_new</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0288d1" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d32f2f" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#388e3c" />
+    </marker>
+  </defs>
+</svg>

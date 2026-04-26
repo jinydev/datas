@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">비유: 이름표(Index)를 기준으로 퍼즐 조각 맞춰 끼우기</text>
+
+  <!-- Left: Two Files (Series) -->
+  <!-- File 1: Korean -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="100" height="130" fill="#fff" stroke="#ccc" stroke-width="2" rx="3"/>
+    <rect x="0" y="0" width="100" height="25" fill="#ffe0b2" rx="3"/>
+    <text x="50" y="18" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">국어 성적</text>
+    
+    <text x="10" y="45" font-family="Arial" font-size="12" font-weight="bold" fill="#333">유비: 90</text>
+    <text x="10" y="70" font-family="Arial" font-size="12" font-weight="bold" fill="#333">관우: 80</text>
+    <!-- 장비 누락 -->
+    <text x="10" y="95" font-family="Arial" font-size="10" fill="#999" font-style="italic">(장비 없음)</text>
+    <text x="10" y="120" font-family="Arial" font-size="12" font-weight="bold" fill="#333">조자룡: 85</text>
+  </g>
+
+  <!-- File 2: English -->
+  <g transform="translate(180, 80)">
+    <rect x="0" y="0" width="100" height="130" fill="#fff" stroke="#ccc" stroke-width="2" rx="3"/>
+    <rect x="0" y="0" width="100" height="25" fill="#bbdefb" rx="3"/>
+    <text x="50" y="18" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">영어 성적</text>
+    
+    <!-- 관우 누락 -->
+    <text x="10" y="45" font-family="Arial" font-size="12" font-weight="bold" fill="#333">유비: 45</text>
+    <text x="10" y="70" font-family="Arial" font-size="10" fill="#999" font-style="italic">(관우 없음)</text>
+    <text x="10" y="95" font-family="Arial" font-size="12" font-weight="bold" fill="#333">장비: 95</text>
+    <text x="10" y="120" font-family="Arial" font-size="12" font-weight="bold" fill="#333">조자룡: 88</text>
+  </g>
+
+  <!-- Arrow -->
+  <g stroke="#9e9e9e" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M 300 130 C 330 110, 360 110, 390 130" />
+  </g>
+  <text x="345" y="110" font-family="Arial" font-size="12" font-weight="bold" fill="#757575" text-anchor="middle">이름표 매칭</text>
+
+  <!-- Right: Combined Table (DataFrame) -->
+  <rect x="420" y="60" width="180" height="160" fill="#fff" stroke="#37474f" stroke-width="2" rx="5"/>
+  <rect x="420" y="60" width="180" height="25" fill="#eceff1" rx="5"/>
+  
+  <text x="505" y="78" font-family="Arial" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">국어</text>
+  <text x="565" y="78" font-family="Arial" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">영어</text>
+
+  <line x1="420" y1="85" x2="600" y2="85" stroke="#ccc" stroke-width="1"/>
+  <line x1="470" y1="60" x2="470" y2="220" stroke="#ccc" stroke-width="1"/>
+  <line x1="540" y1="60" x2="540" y2="220" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Index -->
+  <rect x="420" y="85" width="50" height="135" fill="#fafafa" rx="5"/>
+  <text x="445" y="105" font-family="Arial" font-size="12" font-weight="bold" fill="#666" text-anchor="middle">유비</text>
+  <text x="445" y="135" font-family="Arial" font-size="12" font-weight="bold" fill="#666" text-anchor="middle">관우</text>
+  <text x="445" y="165" font-family="Arial" font-size="12" font-weight="bold" fill="#666" text-anchor="middle">장비</text>
+  <text x="445" y="195" font-family="Arial" font-size="12" font-weight="bold" fill="#666" text-anchor="middle">조자룡</text>
+
+  <!-- Data -->
+  <!-- 유비 -->
+  <text x="505" y="105" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">90</text>
+  <text x="565" y="105" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">45</text>
+
+  <!-- 관우 -->
+  <text x="505" y="135" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">80</text>
+  <rect x="550" y="122" width="30" height="18" fill="#ffebee" rx="3"/>
+  <text x="565" y="135" font-family="Arial" font-size="10" font-weight="bold" fill="#e53935" text-anchor="middle">NaN</text>
+
+  <!-- 장비 -->
+  <rect x="490" y="152" width="30" height="18" fill="#ffebee" rx="3"/>
+  <text x="505" y="165" font-family="Arial" font-size="10" font-weight="bold" fill="#e53935" text-anchor="middle">NaN</text>
+  <text x="565" y="165" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">95</text>
+
+  <!-- 조자룡 -->
+  <text x="505" y="195" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">85</text>
+  <text x="565" y="195" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">88</text>
+
+  <!-- Grid lines -->
+  <line x1="420" y1="115" x2="600" y2="115" stroke="#eee" stroke-width="1"/>
+  <line x1="420" y1="145" x2="600" y2="145" stroke="#eee" stroke-width="1"/>
+  <line x1="420" y1="175" x2="600" y2="175" stroke="#eee" stroke-width="1"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9e9e9e" />
+    </marker>
+  </defs>
+</svg>

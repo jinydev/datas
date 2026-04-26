@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>5.2.4 Seaborn 첫 그래프: Countplot과 Histplot</title>
   <meta name="title" content="5.2.4 Seaborn 첫 그래프: Countplot과 Histplot" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="5.2.4 Seaborn 첫 그래프: Countplot과 Histplot"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/mathplotlib/02_seaborn_dataset/04_seaborn_graph/">
+  <meta property="og:url" content="http://localhost:4001/mathplotlib/02_seaborn_dataset/04_seaborn_graph/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="5.2.4 Seaborn 첫 그래프: Countplot과 Histplot"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/mathplotlib/02_seaborn_dataset/04_seaborn_graph/" />
-<meta property="og:url" content="https://datas.jiny.dev/mathplotlib/02_seaborn_dataset/04_seaborn_graph/" />
+<link rel="canonical" href="http://localhost:4001/mathplotlib/02_seaborn_dataset/04_seaborn_graph/" />
+<meta property="og:url" content="http://localhost:4001/mathplotlib/02_seaborn_dataset/04_seaborn_graph/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="5.2.4 Seaborn 첫 그래프: Countplot과 Histplot" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.2.4 Seaborn 첫 그래프: Countplot과 Histplot","url":"https://datas.jiny.dev/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"5.2.4 Seaborn 첫 그래프: Countplot과 Histplot","url":"http://localhost:4001/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -354,7 +354,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-1"
                         aria-expanded="false">
-                        5.0 데이터 분석 패키지 시작하기
+                        5.0 시각화 개념과 기초
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -365,23 +365,30 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/mathplotlib/00_data_analysis_packages/01_pandas_visualization/"
+                                <a href="/mathplotlib/00_visualization_basics/01_pandas_visualization/"
                                     class="bd-links-link d-inline-block rounded ">
                                     5.0.1 판다스 내장 시각화와 한계
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/00_data_analysis_packages/02_matplotlib_seaborn/"
+                                <a href="/mathplotlib/00_visualization_basics/02_matplotlib_seaborn/"
                                     class="bd-links-link d-inline-block rounded ">
                                     5.0.2 시각화 생태계: Matplotlib과 Seaborn
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/00_data_analysis_packages/03_toy_data_dataframe/"
+                                <a href="/mathplotlib/00_visualization_basics/03_toy_data_dataframe/"
                                     class="bd-links-link d-inline-block rounded ">
                                     5.0.3 장난감(Toy) 데이터를 활용한 실습 준비
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/00_visualization_basics/04_visualization_intro/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.0.4 데이터 시각화의 목적과 본질
                                 </a>
                             </li>
                             
@@ -398,7 +405,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-2"
                         aria-expanded="false">
-                        5.1 Matplotlib 기초
+                        5.1 5대 기본 차트와 원리
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -409,37 +416,44 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/mathplotlib/01_matplotlib_basics/01_visualization_intro/"
+                                <a href="/mathplotlib/01_core_charts/01_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.1 데이터 시각화의 목적과 본질
+                                    5.1.1 선 그래프 (Line Plot) 기초와 실습
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/01_matplotlib_basics/02_simple_line_plot/"
+                                <a href="/mathplotlib/01_core_charts/02_line_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.2 가장 단순한 선 그래프 (plot) 그리기
+                                    5.1.2 Seaborn 시계열 데이터
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/01_matplotlib_basics/03_figure_subplot/"
+                                <a href="/mathplotlib/01_core_charts/03_scatter_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.3 도화지(Figure)와 액자(Ax) 구조 완벽 해부
+                                    5.1.3 산점도 (Scatter Plot)와 데이터 분포
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/01_matplotlib_basics/04_gridspec_layout/"
+                                <a href="/mathplotlib/01_core_charts/04_bar_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.4 비대칭 테트리스 레이아웃 (GridSpec)
+                                    5.1.4 막대 그래프 (Bar Plot)와 비교 분석
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/01_matplotlib_basics/05_styling/"
+                                <a href="/mathplotlib/01_core_charts/05_histogram/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.1.5 스타일링 끝판왕 (색상, 영웅, 격자)
+                                    5.1.5 히스토그램 (Histogram)과 구간 빈도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/mathplotlib/01_core_charts/06_pie_chart/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    5.1.6 파이 차트 (Pie Chart)와 비율 분석
                                 </a>
                             </li>
                             
@@ -469,28 +483,28 @@
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/01_pydataset_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.1 Seaborn과 장난감 데이터셋 개요
+                                    5.2.1 Seaborn과 데이터셋
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/02_pydataset_install/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.2 초기 데이터 탐색 (EDA) 기법
+                                    5.2.2 데이터 탐색 (EDA) 기법
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/03_pydataset_import/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.2.3 시각화를 결정짓는 2가지 변수 타입
+                                    5.2.3 시각화를 결정짓는 변수 타입
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/mathplotlib/02_seaborn_dataset/04_seaborn_graph/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    5.2.4 Seaborn 첫 그래프: Countplot과 Histplot
+                                    5.2.4 Seaborn 그래프
                                 </a>
                             </li>
                             
@@ -507,7 +521,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-4"
                         aria-expanded="false">
-                        5.3 기본 그래프 (점, 선, 막대)
+                        5.3 시각화 고급 꾸미기
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -518,23 +532,23 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/mathplotlib/03_basic_charts/01_scatter_plot/"
+                                <a href="/mathplotlib/03_advanced_styling/01_figure_subplot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.1 산점도 (Scatter Plot)와 hue의 마법
+                                    5.3.1 도화지(Figure)와 액자(Ax) 구조 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/03_basic_charts/02_line_plot/"
+                                <a href="/mathplotlib/03_advanced_styling/02_gridspec_layout/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.2 선 그래프 (Line Plot)와 시계열 데이터
+                                    5.3.2 비대칭 테트리스 레이아웃 (GridSpec)
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/03_basic_charts/03_bar_plot/"
+                                <a href="/mathplotlib/03_advanced_styling/03_styling/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.3.3 막대 그래프 (Bar Plot)와 오차 막대
+                                    5.3.3 스타일링 끝판왕 (색상, 속성, 격자)
                                 </a>
                             </li>
                             
@@ -551,7 +565,7 @@
                         class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
                         data-bs-toggle="collapse" data-bs-target="#collapse-5"
                         aria-expanded="false">
-                        5.4 분포와 비율 차트
+                        5.4 분포 및 통계 차트 심화
                         <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -562,60 +576,23 @@
                         <ul class="list-unstyled fw-normal pb-1 small ms-3">
                             
                             <li>
-                                <a href="/mathplotlib/04_distribution_charts/01_box_plot/"
+                                <a href="/mathplotlib/04_advanced_statistics/01_box_plot/"
                                     class="bd-links-link d-inline-block rounded ">
                                     5.4.1 상자그림 (Box Plot) 완벽 해부
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/04_distribution_charts/02_histogram/"
+                                <a href="/mathplotlib/04_advanced_statistics/02_violin_plot/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.2 히스토그램 (Histogram)과 데이터 통(Bins)
+                                    5.4.2 바이올린 플롯 (Violin Plot)과 데이터 대칭
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="/mathplotlib/04_distribution_charts/03_pie_chart/"
+                                <a href="/mathplotlib/04_advanced_statistics/03_correlation_viz/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    5.4.3 파이 차트 (Pie Chart)와 시각화의 함정
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    
-                </li>
-                
-                <li>
-                    
-                    
-                    
-                    <button
-                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                        data-bs-toggle="collapse" data-bs-target="#collapse-6"
-                        aria-expanded="false">
-                        5.5 고급 통계 시각화
-                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </button>
-                    <div class="collapse " id="collapse-6">
-                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
-                            
-                            <li>
-                                <a href="/mathplotlib/05_advanced_charts/01_violin_plot/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    5.5.1 바이올린 플롯 (Violin Plot)과 데이터 대칭
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="/mathplotlib/05_advanced_charts/02_correlation_viz/"
-                                    class="bd-links-link d-inline-block rounded ">
-                                    5.5.2 상관관계 폭격기: Heatmap과 Pairplot
+                                    5.4.3 상관관계 폭격기: Heatmap과 Pairplot
                                 </a>
                             </li>
                             
@@ -670,15 +647,26 @@
 </nav>
 
         <div class="bd-content ps-lg-4">
-            <h2 id="524-seaborn-첫-그래프-기초-빈도와-분포">5.2.4 Seaborn 첫 그래프 기초 (빈도와 분포)</h2>
+            <h1 id="524-seaborn-첫-그래프-기초">5.2.4 Seaborn 첫 그래프 기초</h1>
 
-<p>변수의 타입을 완벽하게 이해했다면, 본격적으로 Seaborn 마법사에게 그래프를 주문할 차례입니다. 초보자들이 가장 많이 헷갈리는 두 가지 그래프인 <strong>Countplot(카운트플롯)</strong>과 <strong>Histplot(히스토그램)</strong>을 타이타닉 데이터에 적용해 보겠습니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./seaborn_graph_practice.ipynb">📥 seaborn_graph_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><img src="../img/countplot_vs_histplot.svg" alt="Countplot과 Histplot 차이점 완벽 정리" /></p>
+<p>변수의 타입을 완벽하게 이해했다면, 본격적으로 Seaborn 마법사에게 그래프를 주문할 차례입니다.</p>
+
+<h2 id="빈도와-분포">빈도와 분포</h2>
+<p>초보자들이 가장 많이 헷갈리는 두 가지 그래프인 <strong>Countplot(카운트플롯)</strong>과 <strong>Histplot(히스토그램)</strong>을 타이타닉 데이터에 적용해 보겠습니다.</p>
+
+<p><img src="img/countplot_vs_histplot.svg" alt="Countplot과 Histplot 차이점 완벽 정리" /></p>
 
 <hr />
 
-<h3 id="-범주형-데이터-전용-snscountplot">① 범주형 데이터 전용: <code class="language-plaintext highlighter-rouge">sns.countplot()</code></h3>
+<h2 id="실습-1-범주형-데이터-전용-snscountplot">[실습 1] 범주형 데이터 전용: <code class="language-plaintext highlighter-rouge">sns.countplot()</code></h2>
 
 <blockquote>
   <p><strong>용도</strong>: “1등급, 2등급, 3등급칸에 탄 사람이 각각 <strong>몇 명</strong>이야?”</p>
@@ -708,7 +696,7 @@
 
 <hr />
 
-<h3 id="-수치형-데이터-전용-snshistplot">② 수치형 데이터 전용: <code class="language-plaintext highlighter-rouge">sns.histplot()</code></h3>
+<h2 id="실습-2-수치형-데이터-전용-snshistplot">[실습 2] 수치형 데이터 전용: <code class="language-plaintext highlighter-rouge">sns.histplot()</code></h2>
 
 <blockquote>
   <p><strong>용도</strong>: “탑승객들의 <strong>나이 분포</strong>가 대충 어떻게 되는데? 20대가 많아, 60대가 많아?”</p>
@@ -732,7 +720,7 @@
 
 <hr />
 
-<h3 id="-결론-초보자-절대-주의사항">🚨 결론: 초보자 절대 주의사항!</h3>
+<h2 id="-결론-초보자-절대-주의사항">🚨 결론: 초보자 절대 주의사항!</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">sns.histplot(x='pclass')</code> (X) : 좌석 등급은 숫자로 적혀 있지만 의미상 범주형이므로 막대가 이상하게 그려집니다. <code class="language-plaintext highlighter-rouge">countplot</code>을 쓰세요!</li>

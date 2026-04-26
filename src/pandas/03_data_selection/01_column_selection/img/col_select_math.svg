@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">다차원 행렬(Matrix)의 열 벡터(Column Vector) 투영</text>
+
+  <!-- Left: Original Matrix -->
+  <text x="140" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">원본 행렬 (DataFrame)</text>
+
+  <rect x="40" y="90" width="200" height="130" fill="#fff" stroke="#546e7a" stroke-width="2" rx="4"/>
+  
+  <!-- Col 1 -->
+  <rect x="50" y="100" width="50" height="110" fill="#eceff1" rx="2"/>
+  <rect x="50" y="100" width="50" height="25" fill="#cfd8dc" rx="2"/>
+  <text x="75" y="117" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">Col1</text>
+  <text x="75" y="145" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">1.2</text>
+  <text x="75" y="170" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">3.4</text>
+  <text x="75" y="195" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">5.6</text>
+
+  <!-- Col 2 (Target) -->
+  <rect x="115" y="100" width="50" height="110" fill="#fff3e0" stroke="#ff9800" stroke-width="2" stroke-dasharray="4,4" rx="2"/>
+  <rect x="115" y="100" width="50" height="25" fill="#ffe0b2" rx="2"/>
+  <text x="140" y="117" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">Col2</text>
+  <text x="140" y="145" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">10</text>
+  <text x="140" y="170" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">20</text>
+  <text x="140" y="195" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">30</text>
+
+  <!-- Col 3 -->
+  <rect x="180" y="100" width="50" height="110" fill="#eceff1" rx="2"/>
+  <rect x="180" y="100" width="50" height="25" fill="#cfd8dc" rx="2"/>
+  <text x="205" y="117" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">Col3</text>
+  <text x="205" y="145" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">7.8</text>
+  <text x="205" y="170" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">9.0</text>
+  <text x="205" y="195" font-family="Courier New, monospace" font-size="12" fill="#546e7a" text-anchor="middle">1.1</text>
+
+  <!-- Arrow & Math Symbol -->
+  <g stroke="#9c27b0" stroke-width="3" fill="none" marker-end="url(#arrow-purple)">
+    <path d="M 260 155 C 310 155, 360 155, 410 155" />
+  </g>
+  <text x="335" y="135" font-family="Arial" font-size="14" font-weight="bold" fill="#7b1fa2" text-anchor="middle">투영 (Projection)</text>
+  <text x="335" y="175" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#7b1fa2" text-anchor="middle">
+    π<tspan baseline-shift="sub" font-size="12">Col2</tspan> (DF)
+  </text>
+
+  <!-- Right: Extracted Column Vector -->
+  <text x="510" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">추출된 열 벡터 (Series)</text>
+
+  <g transform="translate(480, 90)">
+    <rect x="0" y="0" width="60" height="130" fill="#fff3e0" stroke="#ff9800" stroke-width="3" rx="4" filter="drop-shadow(3px 3px 5px rgba(0,0,0,0.2))"/>
+    <rect x="0" y="0" width="60" height="30" fill="#ffe0b2" rx="3"/>
+    
+    <text x="30" y="20" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">Col2</text>
+    
+    <line x1="0" y1="30" x2="60" y2="30" stroke="#ff9800" stroke-width="2"/>
+    
+    <text x="30" y="60" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">10</text>
+    <line x1="10" y1="75" x2="50" y2="75" stroke="#ffcc80" stroke-width="1"/>
+    
+    <text x="30" y="95" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">20</text>
+    <line x1="10" y1="110" x2="50" y2="110" stroke="#ffcc80" stroke-width="1"/>
+    
+    <text x="30" y="125" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">30</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9c27b0" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">비유: 부서별 창고의 알맞은 보관함(규격) 세팅하기</text>
+
+  <!-- Warehouse Ground -->
+  <rect x="50" y="210" width="550" height="10" fill="#e0e0e0" rx="3"/>
+
+  <!-- Box 1: Small Box (int8) -->
+  <g transform="translate(100, 160)">
+    <rect x="0" y="0" width="50" height="50" fill="#ffe0b2" stroke="#fb8c00" stroke-width="2" rx="3"/>
+    <line x1="0" y1="15" x2="50" y2="15" stroke="#fb8c00" stroke-width="2"/>
+    <text x="25" y="35" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">25</text>
+  </g>
+  <text x="125" y="100" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">'나이' 열</text>
+  <rect x="90" y="110" width="70" height="25" fill="#fff" stroke="#e65100" rx="12"/>
+  <text x="125" y="127" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">int8</text>
+  <text x="125" y="150" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">(소형상자)</text>
+
+  <!-- Box 2: Huge Box (int64) -->
+  <g transform="translate(250, 110)">
+    <rect x="0" y="0" width="100" height="100" fill="#bbdefb" stroke="#1e88e5" stroke-width="2" rx="5"/>
+    <line x1="0" y1="30" x2="100" y2="30" stroke="#1e88e5" stroke-width="2"/>
+    <text x="50" y="70" font-family="Arial" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">5,000,000</text>
+  </g>
+  <text x="300" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">'소득' 열</text>
+  <rect x="260" y="60" width="80" height="25" fill="#fff" stroke="#0d47a1" rx="12"/>
+  <text x="300" y="77" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#0d47a1" text-anchor="middle">int64</text>
+  <text x="300" y="100" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">(초대형상자)</text>
+
+  <!-- Box 3: Filing Cabinet (object) -->
+  <g transform="translate(430, 90)">
+    <rect x="0" y="0" width="70" height="120" fill="#c8e6c9" stroke="#43a047" stroke-width="2" rx="2"/>
+    <!-- Drawer 1 -->
+    <rect x="5" y="10" width="60" height="30" fill="#a5d6a7" stroke="#388e3c"/>
+    <rect x="30" y="15" width="10" height="5" fill="#fff"/>
+    <text x="35" y="32" font-family="Arial" font-size="10" fill="#1b5e20" text-anchor="middle">Alice</text>
+    <!-- Drawer 2 -->
+    <rect x="5" y="45" width="60" height="30" fill="#a5d6a7" stroke="#388e3c"/>
+    <rect x="30" y="50" width="10" height="5" fill="#fff"/>
+    <text x="35" y="67" font-family="Arial" font-size="10" fill="#1b5e20" text-anchor="middle">Bob</text>
+    <!-- Drawer 3 -->
+    <rect x="5" y="80" width="60" height="30" fill="#a5d6a7" stroke="#388e3c"/>
+    <rect x="30" y="85" width="10" height="5" fill="#fff"/>
+  </g>
+  <text x="465" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#1b5e20" text-anchor="middle">'이름' 열</text>
+  <rect x="425" y="60" width="80" height="25" fill="#fff" stroke="#1b5e20" rx="12"/>
+  <text x="465" y="77" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">object</text>
+  
+</svg>

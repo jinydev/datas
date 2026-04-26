@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.5.1 CSV와 Excel 파일 입출력</title>
   <meta name="title" content="6.5.1 CSV와 Excel 파일 입출력" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.5.1 CSV와 Excel 파일 입출력"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/">
+  <meta property="og:url" content="http://localhost:4001/pandas/05_file_io/01_csv_excel_io/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.5.1 CSV와 Excel 파일 입출력"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/" />
-<meta property="og:url" content="https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/" />
+<link rel="canonical" href="http://localhost:4001/pandas/05_file_io/01_csv_excel_io/" />
+<meta property="og:url" content="http://localhost:4001/pandas/05_file_io/01_csv_excel_io/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.5.1 CSV와 Excel 파일 입출력" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.1 CSV와 Excel 파일 입출력","url":"https://datas.jiny.dev/pandas/05_file_io/01_csv_excel_io/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.1 CSV와 Excel 파일 입출력","url":"http://localhost:4001/pandas/05_file_io/01_csv_excel_io/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -372,16 +372,23 @@
                             </li>
                             
                             <li>
+                                <a href="/pandas/01_pandas_basics/02_pandas_practice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    6.1.2 판다스 설치 및 기초 실습
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 Series(시리즈) 개요
+                                    6.1.3 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 DataFrame(데이터프레임) 개요
+                                    6.1.4 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -719,20 +726,32 @@
         <div class="bd-content ps-lg-4">
             <h2 id="651-외부-데이터-파일-불러오기와-내보내기-io">6.5.1 외부 데이터 파일 불러오기와 내보내기 (I/O)</h2>
 
-<p><strong>[전산학적/수학적 의미: 직렬화와 역직렬화 (Serialization &amp; Deserialization)]</strong>
-판다스의 <code class="language-plaintext highlighter-rouge">DataFrame</code> 객체는 컴퓨터의 휘발성 주 메모리(RAM) 위에서만 존재하는 2차원 자료 구조입니다. 이 데이터를 영구적인 보조 기억 장치(하드디스크)에 텍스트나 바이너리 형태로 포맷팅하여 저장하는 것을 내보내기(Serialization, Write)라 하고, 반대로 포맷팅된 파일을 읽어와 메모리상의 2차원 객체로 복원하는 것을 불러오기(Deserialization, Read)라 합니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./csv_excel_io_practice.ipynb">📥 csv_excel_io_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><strong>[비유로 이해하기: 작업대(메모리)와 창고(하드디스크)]</strong></p>
+<h2 id="-전산학적수학적-의미-직렬화와-역직렬화-serialization--deserialization">🧮 전산학적/수학적 의미: 직렬화와 역직렬화 (Serialization &amp; Deserialization)</h2>
+
+<p>판다스의 <code class="language-plaintext highlighter-rouge">DataFrame</code> 객체는 컴퓨터의 휘발성 주 메모리(RAM) 위에서만 존재하는 2차원 자료 구조입니다. 이 데이터를 영구적인 보조 기억 장치(하드디스크)에 텍스트나 바이너리 형태로 포맷팅하여 저장하는 것을 내보내기(Serialization, Write)라 하고, 반대로 포맷팅된 파일을 읽어와 메모리상의 2차원 객체로 복원하는 것을 불러오기(Deserialization, Read)라 합니다.</p>
+
+<p><img src="./img/file_io_math.svg" alt="데이터 직렬화/역직렬화 전산학적 도식" /></p>
+
+<h2 id="️-비유로-이해하기-작업대메모리와-창고하드디스크">🏷️ 비유로 이해하기: 작업대(메모리)와 창고(하드디스크)</h2>
+
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">read_</code> 시리즈</strong>: 창고에 예쁘게 포장되어 있는 상자(CSV, Excel 파일)를 꺼내서, 연구원의 책상(메모리) 위에 쫙 펼쳐놓는 작업입니다.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">to_</code> 시리즈</strong>: 책상 위에서 온갖 수학 연산과 정제 작업이 끝난 데이터 표를 잃어버리지 않게 예쁜 상자에 담아서 창고에 다시 영구 보관하는 작업입니다.</li>
 </ul>
 
-<p><img src="img/file_io.svg" alt="파일 입출력 다이어그램" /></p>
+<p><img src="./img/file_io_analogy.svg" alt="연구원의 작업대와 창고 비유 도식" /></p>
 
 <hr />
 
-<h3 id="1단계-엑셀xlsx-파일-불러오기-read_excel">[1단계] 엑셀(.xlsx) 파일 불러오기: <code class="language-plaintext highlighter-rouge">read_excel()</code></h3>
+<h2 id="-실습-1-엑셀xlsx-파일-불러오기-read_excel">🪄 [실습 1] 엑셀(.xlsx) 파일 불러오기: <code class="language-plaintext highlighter-rouge">read_excel()</code></h2>
 
 <p>현업에서 가장 친숙한 엑셀 파일을 그대로 파이썬 작업대로 불러옵니다. <code class="language-plaintext highlighter-rouge">read_</code>로 시작하는 다양한 함수가 있으며, <code class="language-plaintext highlighter-rouge">data/</code> 폴더에 위치한 유명한 <strong>타이타닉 탑승객 데이터</strong>를 가져와 보겠습니다.</p>
 
@@ -755,8 +774,6 @@
 4       1         0  Allison, Mrs. Hudson J C (Bessie Waldo Daniels)  female  ...
 </code></pre></div></div>
 
-<p><img src="./img/read_excel.svg" alt="read_excel로 하드디스크의 엑셀 파일을 작업대로 올리기" /></p>
-
 <p>데이터를 처음 올려놓고 나면, 앞선 <code class="language-plaintext highlighter-rouge">6.4.1</code> 장에서 배운 기초 건강검진(<code class="language-plaintext highlighter-rouge">info()</code>)을 바로 수행해 구조를 파악하는 것이 좋습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 🩺 데이터프레임 정보 스캔 ---</span><span class="sh">"</span><span class="p">)</span>
@@ -777,7 +794,7 @@ memory usage: 143.3+ KB
 
 <hr />
 
-<h3 id="2단계-csv-파일로-저장하기-to_csv">[2단계] CSV 파일로 저장하기: <code class="language-plaintext highlighter-rouge">to_csv()</code></h3>
+<h2 id="-실습-2-csv-파일로-저장하기-to_csv">🪄 [실습 2] CSV 파일로 저장하기: <code class="language-plaintext highlighter-rouge">to_csv()</code></h2>
 
 <p><strong>CSV (Comma Separated Values)</strong> 형식은 데이터가 쉼표(<code class="language-plaintext highlighter-rouge">,</code>)로 구분된 매우 단순하고 가벼운 텍스트 파일입니다. 엑셀의 복잡한 서식(색상, 테두리 등)이 없기 때문에 수천만 건의 데이터를 다룰 때 사실상의 표준 프레임워크로 사용됩니다.</p>
 
@@ -793,11 +810,9 @@ memory usage: 143.3+ KB
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 💾 CSV 저장 완료 ('data/titanic_processed.csv') ---
 </code></pre></div></div>
 
-<p><img src="./img/to_csv.svg" alt="to_csv를 이용하여 DataFrame을 CSV로 압축하여 영구 저장" /></p>
-
 <hr />
 
-<h3 id="3단계-저장된-csv-파일을-다시-불러오기-read_csv">[3단계] 저장된 CSV 파일을 다시 불러오기: <code class="language-plaintext highlighter-rouge">read_csv()</code></h3>
+<h2 id="-실습-3-저장된-csv-파일을-다시-불러오기-read_csv">🪄 [실습 3] 저장된 CSV 파일을 다시 불러오기: <code class="language-plaintext highlighter-rouge">read_csv()</code></h2>
 
 <p>방금 저장했던 가벼운 CSV 파일을 다시 파이썬 메모리로 불러올 수 있습니다. 엑셀 함수 대신 <code class="language-plaintext highlighter-rouge">read_csv</code>를 사용합니다.</p>
 
@@ -820,8 +835,6 @@ memory usage: 143.3+ KB
 6       1         1                  Andrews, Miss. Kornelia Theodosia  female  ...
 7       1         0                                Andrews, Mr. Thomas    male  ...
 </code></pre></div></div>
-
-<p><img src="./img/read_csv.svg" alt="read_csv로 저장된 CSV 파일을 다시 메모리 객체로 완전 복원" /></p>
 
 <blockquote>
   <p><strong>📌 핵심 팁 요약</strong></p>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400" width="100%" height="auto">
+  <rect width="850" height="400" fill="#f8f9fa" rx="10"/>
+  
+  <text x="425" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333" text-anchor="middle">2차원 행렬(Matrix) vs 판다스 데이터프레임(DataFrame)</text>
+
+  <!-- Left: 2D Matrix -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="300" height="280" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="5"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057" text-anchor="middle">2차원 행렬 (NumPy)</text>
+    <text x="150" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">동일한 타입(숫자) + 숫자 인덱스</text>
+    
+    <g transform="translate(60, 100)">
+      <!-- Col index -->
+      <text x="30" y="-15" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold" text-anchor="middle">0</text>
+      <text x="90" y="-15" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold" text-anchor="middle">1</text>
+      <text x="150" y="-15" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold" text-anchor="middle">2</text>
+      
+      <!-- Row index -->
+      <text x="-25" y="20" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">0</text>
+      <text x="-25" y="60" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">1</text>
+      <text x="-25" y="100" font-family="monospace" font-size="14" fill="#6c757d" font-weight="bold">2</text>
+      
+      <!-- Values -->
+      <g stroke="#0d6efd" stroke-width="1" fill="#e3f2fd">
+        <rect x="0" y="0" width="60" height="30"/> <rect x="60" y="0" width="60" height="30"/> <rect x="120" y="0" width="60" height="30"/>
+        <rect x="0" y="40" width="60" height="30"/> <rect x="60" y="40" width="60" height="30"/> <rect x="120" y="40" width="60" height="30"/>
+        <rect x="0" y="80" width="60" height="30"/> <rect x="60" y="80" width="60" height="30"/> <rect x="120" y="80" width="60" height="30"/>
+      </g>
+      <g font-family="monospace" font-size="16" fill="#212529" text-anchor="middle">
+        <text x="30" y="20">1.5</text> <text x="90" y="20">2.0</text> <text x="150" y="20">3.5</text>
+        <text x="30" y="60">4.1</text> <text x="90" y="60">5.5</text> <text x="150" y="60">6.2</text>
+        <text x="30" y="100">7.8</text> <text x="90" y="100">8.9</text> <text x="150" y="100">9.0</text>
+      </g>
+    </g>
+    <text x="150" y="255" font-family="Arial, sans-serif" font-size="13" fill="#dc3545" text-anchor="middle">오직 동일한 데이터 타입만 허용!</text>
+  </g>
+
+  <!-- Center Arrow -->
+  <g transform="translate(370, 200)">
+    <path d="M 0 0 L 50 0" fill="none" stroke="#adb5bd" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="25" y="-15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e83e8c" text-anchor="middle">이종 결합</text>
+  </g>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+  </defs>
+
+  <!-- Right: DataFrame -->
+  <g transform="translate(440, 80)">
+    <rect x="0" y="0" width="380" height="280" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="5"/>
+    <text x="190" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057" text-anchor="middle">데이터프레임 (DataFrame)</text>
+    <text x="190" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">열마다 다른 데이터 타입 허용 + 라벨 인덱싱</text>
+    
+    <g transform="translate(60, 100)">
+      <!-- Columns (Names) -->
+      <rect x="0" y="-30" width="80" height="25" fill="#fef08a" stroke="#eab308" rx="3"/>
+      <text x="40" y="-12" font-family="Arial, sans-serif" font-size="14" fill="#854d0e" font-weight="bold" text-anchor="middle">이름 (문자)</text>
+      
+      <rect x="90" y="-30" width="80" height="25" fill="#fef08a" stroke="#eab308" rx="3"/>
+      <text x="130" y="-12" font-family="Arial, sans-serif" font-size="14" fill="#854d0e" font-weight="bold" text-anchor="middle">나이 (숫자)</text>
+      
+      <rect x="180" y="-30" width="100" height="25" fill="#fef08a" stroke="#eab308" rx="3"/>
+      <text x="230" y="-12" font-family="Arial, sans-serif" font-size="14" fill="#854d0e" font-weight="bold" text-anchor="middle">생일 (날짜)</text>
+
+      <!-- Row Index -->
+      <rect x="-40" y="0" width="30" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-25" y="20" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">a</text>
+      
+      <rect x="-40" y="40" width="30" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-25" y="60" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">b</text>
+
+      <rect x="-40" y="80" width="30" height="30" fill="#d1e7dd" stroke="#198754" rx="3"/>
+      <text x="-25" y="100" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" font-weight="bold" text-anchor="middle">c</text>
+
+      <!-- Values -->
+      <g stroke="#0d6efd" stroke-width="1" fill="#e3f2fd">
+        <rect x="0" y="0" width="80" height="30"/> <rect x="90" y="0" width="80" height="30"/> <rect x="180" y="0" width="100" height="30"/>
+        <rect x="0" y="40" width="80" height="30"/> <rect x="90" y="40" width="80" height="30"/> <rect x="180" y="40" width="100" height="30"/>
+        <rect x="0" y="80" width="80" height="30"/> <rect x="90" y="80" width="80" height="30"/> <rect x="180" y="80" width="100" height="30"/>
+      </g>
+      <g font-family="monospace" font-size="14" fill="#212529" text-anchor="middle">
+        <text x="40" y="20">"Alice"</text> <text x="130" y="20">25</text> <text x="230" y="20">1999-01-10</text>
+        <text x="40" y="60">"Bob"</text> <text x="130" y="60">30</text> <text x="230" y="60">1994-05-21</text>
+        <text x="40" y="100">"Charlie"</text> <text x="130" y="100">35</text> <text x="230" y="100">1989-11-05</text>
+      </g>
+    </g>
+    <text x="190" y="255" font-family="Arial, sans-serif" font-size="13" fill="#198754" text-anchor="middle">마치 엑셀이나 데이터베이스 테이블처럼 완벽히 동작!</text>
+  </g>
+</svg>

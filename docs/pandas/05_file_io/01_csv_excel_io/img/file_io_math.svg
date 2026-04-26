@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">데이터의 직렬화(Serialization)와 역직렬화(Deserialization)</text>
+
+  <!-- Left: RAM (Volatile Memory) -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="180" height="150" fill="#fff" stroke="#90caf9" stroke-width="2" rx="4" filter="drop-shadow(2px 2px 4px rgba(0,0,0,0.1))"/>
+    <rect x="0" y="0" width="180" height="30" fill="#bbdefb" rx="2"/>
+    <text x="90" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">RAM (Volatile)</text>
+
+    <!-- Matrix Object -->
+    <rect x="30" y="50" width="120" height="80" fill="#e3f2fd" stroke="#1e88e5" stroke-dasharray="2,2" rx="2"/>
+    <line x1="70" y1="50" x2="70" y2="130" stroke="#90caf9"/>
+    <line x1="110" y1="50" x2="110" y2="130" stroke="#90caf9"/>
+    <line x1="30" y1="76" x2="150" y2="76" stroke="#90caf9"/>
+    <line x1="30" y1="102" x2="150" y2="102" stroke="#90caf9"/>
+
+    <text x="90" y="94" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">DataFrame</text>
+  </g>
+
+  <!-- Middle: Serialization/Deserialization Process -->
+  <g transform="translate(250, 110)">
+    <!-- Top Arrow: to_csv (Serialize) -->
+    <g stroke="#ff9800" stroke-width="3" fill="none" marker-end="url(#arrow-orange)">
+      <path d="M 0 0 L 140 0" />
+    </g>
+    <rect x="25" y="-15" width="90" height="20" fill="#fff3e0" stroke="#ffb74d" rx="10"/>
+    <text x="70" y="-1" font-family="Courier New" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">to_csv()</text>
+    <text x="70" y="-20" font-family="Arial" font-size="10" fill="#e65100" text-anchor="middle">Serialization</text>
+
+    <!-- Bottom Arrow: read_csv (Deserialize) -->
+    <g stroke="#43a047" stroke-width="3" fill="none" marker-end="url(#arrow-green)">
+      <path d="M 140 40 L 0 40" />
+    </g>
+    <rect x="25" y="30" width="90" height="20" fill="#e8f5e9" stroke="#81c784" rx="10"/>
+    <text x="70" y="44" font-family="Courier New" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">read_csv()</text>
+    <text x="70" y="65" font-family="Arial" font-size="10" fill="#1b5e20" text-anchor="middle">Deserialization</text>
+  </g>
+
+  <!-- Right: Hard Disk (Persistent Storage) -->
+  <g transform="translate(410, 60)">
+    <rect x="0" y="0" width="180" height="150" fill="#fff" stroke="#b0bec5" stroke-width="2" rx="4" filter="drop-shadow(2px 2px 4px rgba(0,0,0,0.1))"/>
+    <rect x="0" y="0" width="180" height="30" fill="#cfd8dc" rx="2"/>
+    <text x="90" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#37474f" text-anchor="middle">Disk (Persistent)</text>
+
+    <!-- Byte Stream / CSV File -->
+    <rect x="40" y="50" width="100" height="80" fill="#fafafa" stroke="#90a4ae" rx="2"/>
+    <path d="M 40 65 L 140 65 M 40 85 L 140 85 M 40 105 L 140 105" stroke="#eceff1" stroke-width="2"/>
+    <text x="90" y="80" font-family="Courier New" font-size="11" fill="#546e7a" text-anchor="middle">1,A,24\n2,B,31\n...</text>
+    <text x="90" y="115" font-family="Courier New" font-size="12" font-weight="bold" fill="#455a64" text-anchor="middle">.csv File</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9800" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#43a047" />
+    </marker>
+  </defs>
+</svg>

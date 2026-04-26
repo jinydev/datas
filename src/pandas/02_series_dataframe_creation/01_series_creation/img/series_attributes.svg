@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="700" height="350" fill="#f8f9fa" rx="10" />
+  
+  <text x="350" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Series 객체의 주요 속성 (Attributes) 해부도</text>
+
+  <!-- Series Object Body -->
+  <rect x="250" y="100" width="200" height="150" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="3"/>
+  <rect x="260" y="110" width="50" height="130" fill="#bbdefb" rx="5"/>
+  <text x="285" y="130" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">a</text>
+  <text x="285" y="155" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">b</text>
+  <text x="285" y="180" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">c</text>
+  <text x="285" y="205" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">d</text>
+  <text x="285" y="230" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">...</text>
+
+  <rect x="320" y="110" width="120" height="130" fill="#e8eaf6" rx="5"/>
+  <text x="380" y="130" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">1.0</text>
+  <text x="380" y="155" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">3.0</text>
+  <text x="380" y="180" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">5.0</text>
+  <text x="380" y="205" font-family="Courier New, monospace" font-size="16" fill="#f44336" text-anchor="middle">NaN</text>
+  <text x="380" y="230" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">...</text>
+
+  <!-- Annotations -->
+  
+  <!-- .index -->
+  <path d="M 285 110 L 285 80 L 150 80" stroke="#f57c00" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+  <text x="140" y="85" font-family="Arial" font-size="16" font-weight="bold" fill="#e65100" text-anchor="end">.index</text>
+  <text x="140" y="105" font-family="Arial" font-size="12" fill="#757575" text-anchor="end">이름표 묶음</text>
+
+  <!-- .values -->
+  <path d="M 380 110 L 380 80 L 550 80" stroke="#f57c00" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+  <text x="560" y="85" font-family="Arial" font-size="16" font-weight="bold" fill="#e65100" text-anchor="start">.values</text>
+  <text x="560" y="105" font-family="Arial" font-size="12" fill="#757575" text-anchor="start">순수 데이터(NumPy 배열)</text>
+
+  <!-- .name -->
+  <rect x="300" y="265" width="100" height="25" fill="#ffecb3" rx="5" stroke="#ffca28"/>
+  <text x="350" y="282" font-family="Arial" font-size="14" font-weight="bold" fill="#f57f17" text-anchor="middle">Name: first</text>
+  <path d="M 350 265 L 350 250" stroke="#f57c00" stroke-width="2" fill="none"/>
+  <text x="350" y="310" font-family="Arial" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">.name</text>
+  
+  <!-- .shape & .size -->
+  <path d="M 450 175 L 520 175" stroke="#f57c00" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+  <text x="530" y="165" font-family="Arial" font-size="16" font-weight="bold" fill="#e65100" text-anchor="start">.shape -> (6,)</text>
+  <text x="530" y="195" font-family="Arial" font-size="16" font-weight="bold" fill="#e65100" text-anchor="start">.size  -> 6</text>
+
+  <defs>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f57c00" />
+    </marker>
+  </defs>
+</svg>

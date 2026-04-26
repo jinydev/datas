@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="600" height="300" fill="#f8f9fa" rx="10" />
+  
+  <text x="300" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">집합의 대푯값 계산 및 기수 정렬 (Mathematical Functions)</text>
+
+  <!-- Left: Aggregation / Representative Value -->
+  <rect x="50" y="80" width="220" height="180" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="160" y="110" font-family="Arial" font-size="16" font-weight="bold" fill="#1565c0" text-anchor="middle">대푯값 (Aggregation)</text>
+  
+  <rect x="80" y="130" width="160" height="30" rx="5" fill="#bbdefb" stroke="#64b5f6" stroke-width="1"/>
+  <text x="160" y="150" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">X = {99, 84, 92, 65, 78}</text>
+  
+  <g stroke="#1976d2" stroke-width="2" fill="none" marker-end="url(#arrow-blue)">
+    <path d="M 160 170 L 160 200" />
+  </g>
+  
+  <text x="160" y="225" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">Mean(X) = 83.6</text>
+  <text x="160" y="245" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">Max(X) = 99</text>
+
+  <!-- Divider -->
+  <line x1="300" y1="80" x2="300" y2="280" stroke="#ddd" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Right: Sorting -->
+  <rect x="330" y="80" width="220" height="180" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="440" y="110" font-family="Arial" font-size="16" font-weight="bold" fill="#2e7d32" text-anchor="middle">기수 정렬 (Sorting)</text>
+
+  <rect x="360" y="130" width="160" height="30" rx="5" fill="#c8e6c9" stroke="#81c784" stroke-width="1"/>
+  <text x="440" y="150" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#1b5e20" text-anchor="middle">X = {99, 84, 92, 65, 78}</text>
+  
+  <g stroke="#388e3c" stroke-width="2" fill="none" marker-end="url(#arrow-green)">
+    <path d="M 440 170 L 440 200" />
+  </g>
+  
+  <rect x="360" y="215" width="160" height="30" rx="5" fill="#a5d6a7" stroke="#4caf50" stroke-width="1"/>
+  <text x="440" y="235" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#1b5e20" text-anchor="middle">X' = {65, 78, 84, 92, 99}</text>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1976d2" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#388e3c" />
+    </marker>
+  </defs>
+</svg>

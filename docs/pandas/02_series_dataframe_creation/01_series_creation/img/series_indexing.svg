@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="600" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">단일 인덱싱: 위치(Position) 기반 vs 이름표(Label) 기반</text>
+
+  <!-- Series Object -->
+  <rect x="250" y="70" width="100" height="140" rx="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <rect x="255" y="75" width="30" height="130" fill="#bbdefb" rx="3"/>
+  <text x="270" y="95" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">'a'</text>
+  <text x="270" y="125" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">'b'</text>
+  <text x="270" y="155" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">'c'</text>
+  <text x="270" y="185" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">'d'</text>
+  
+  <text x="320" y="95" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">1.0</text>
+  <text x="320" y="125" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">3.0</text>
+  <text x="320" y="155" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">5.0</text>
+  <text x="320" y="185" font-family="Courier New, monospace" font-size="14" fill="#f44336" text-anchor="middle">NaN</text>
+
+  <!-- Highlight box -->
+  <rect x="255" y="110" width="90" height="20" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Left: Position Based -->
+  <text x="120" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#9c27b0" text-anchor="middle">위치 기반 인덱싱</text>
+  <rect x="70" y="105" width="100" height="30" rx="5" fill="#f3e5f5" stroke="#ab47bc" stroke-width="2"/>
+  <text x="120" y="125" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#6a1b9a" text-anchor="middle">s[1]</text>
+  
+  <path d="M 170 120 L 250 120" stroke="#ab47bc" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+  <text x="200" y="110" font-family="Arial" font-size="12" fill="#ab47bc" text-anchor="middle">(2번째 원소)</text>
+
+  <!-- Right: Label Based -->
+  <text x="480" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">이름표 기반 인덱싱</text>
+  <rect x="430" y="105" width="100" height="30" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="480" y="125" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">s['b']</text>
+
+  <path d="M 430 120 L 350 120" stroke="#ff9800" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+  <text x="390" y="110" font-family="Arial" font-size="12" fill="#ff9800" text-anchor="middle">('b' 라벨 탐색)</text>
+
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ab47bc" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9800" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto">
+  <rect width="800" height="500" fill="#f8f9fa" rx="10"/>
+
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333" text-anchor="middle">데이터프레임 = 시리즈(1열 서랍장)들이 하나로 뭉쳐진 대형 수납장</text>
+
+  <!-- Series 1 (Drawer Cabinet 1) -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="120" height="280" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+    <g transform="translate(10, -30)">
+      <rect x="0" y="0" width="100" height="25" fill="#fef08a" stroke="#eab308" rx="3"/>
+      <text x="50" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">Name: 이름</text>
+    </g>
+    
+    <rect x="10" y="10" width="100" height="50" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <rect x="40" y="15" width="40" height="5" fill="#cbd5e1" rx="2"/>
+    <text x="60" y="40" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" text-anchor="middle">"Alice"</text>
+    
+    <rect x="10" y="75" width="100" height="50" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <rect x="40" y="80" width="40" height="5" fill="#cbd5e1" rx="2"/>
+    <text x="60" y="105" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" text-anchor="middle">"Bob"</text>
+
+    <rect x="10" y="140" width="100" height="50" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <rect x="40" y="145" width="40" height="5" fill="#cbd5e1" rx="2"/>
+    <text x="60" y="170" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" text-anchor="middle">"Charlie"</text>
+  </g>
+
+  <!-- Add symbol -->
+  <text x="240" y="300" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#64748b" text-anchor="middle">+</text>
+
+  <!-- Series 2 (Drawer Cabinet 2) -->
+  <g transform="translate(260, 150)">
+    <rect x="0" y="0" width="120" height="280" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+    <g transform="translate(10, -30)">
+      <rect x="0" y="0" width="100" height="25" fill="#fef08a" stroke="#eab308" rx="3"/>
+      <text x="50" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">Name: 나이</text>
+    </g>
+    
+    <rect x="10" y="10" width="100" height="50" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <rect x="40" y="15" width="40" height="5" fill="#cbd5e1" rx="2"/>
+    <text x="60" y="40" font-family="monospace" font-size="16" fill="#0284c7" text-anchor="middle">25</text>
+    
+    <rect x="10" y="75" width="100" height="50" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <rect x="40" y="80" width="40" height="5" fill="#cbd5e1" rx="2"/>
+    <text x="60" y="105" font-family="monospace" font-size="16" fill="#0284c7" text-anchor="middle">30</text>
+
+    <rect x="10" y="140" width="100" height="50" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <rect x="40" y="145" width="40" height="5" fill="#cbd5e1" rx="2"/>
+    <text x="60" y="170" font-family="monospace" font-size="16" fill="#0284c7" text-anchor="middle">35</text>
+  </g>
+
+  <!-- Equal sign -->
+  <text x="420" y="300" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#64748b" text-anchor="middle">=</text>
+
+  <!-- DataFrame (Merged Closet) -->
+  <g transform="translate(460, 150)">
+    <rect x="0" y="0" width="260" height="280" fill="#cbd5e1" stroke="#64748b" stroke-width="4" rx="5"/>
+    <rect x="10" y="10" width="240" height="260" fill="#e2e8f0" rx="3"/>
+    
+    <!-- Top Labels (Columns) -->
+    <g transform="translate(20, -30)">
+      <rect x="0" y="0" width="100" height="25" fill="#fef08a" stroke="#eab308" stroke-width="2" rx="3"/>
+      <text x="50" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">이름</text>
+      
+      <rect x="120" y="0" width="100" height="25" fill="#fef08a" stroke="#eab308" stroke-width="2" rx="3"/>
+      <text x="170" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">나이</text>
+    </g>
+
+    <!-- Side Labels (Index) -->
+    <g transform="translate(-40, 30)">
+      <rect x="0" y="-10" width="30" height="30" fill="#bbf7d0" stroke="#22c55e" rx="3"/>
+      <text x="15" y="10" font-family="Arial, sans-serif" font-size="14" fill="#166534" font-weight="bold" text-anchor="middle">a</text>
+      
+      <rect x="0" y="55" width="30" height="30" fill="#bbf7d0" stroke="#22c55e" rx="3"/>
+      <text x="15" y="75" font-family="Arial, sans-serif" font-size="14" fill="#166534" font-weight="bold" text-anchor="middle">b</text>
+
+      <rect x="0" y="120" width="30" height="30" fill="#bbf7d0" stroke="#22c55e" rx="3"/>
+      <text x="15" y="140" font-family="Arial, sans-serif" font-size="14" fill="#166534" font-weight="bold" text-anchor="middle">c</text>
+    </g>
+
+    <!-- Row 1 -->
+    <rect x="20" y="15" width="220" height="40" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <text x="70" y="40" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" text-anchor="middle">"Alice"</text>
+    <text x="190" y="40" font-family="monospace" font-size="16" fill="#0284c7" text-anchor="middle">25</text>
+    <line x1="130" y1="15" x2="130" y2="55" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Row 2 -->
+    <rect x="20" y="80" width="220" height="40" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <text x="70" y="105" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" text-anchor="middle">"Bob"</text>
+    <text x="190" y="105" font-family="monospace" font-size="16" fill="#0284c7" text-anchor="middle">30</text>
+    <line x1="130" y1="80" x2="130" y2="120" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Row 3 -->
+    <rect x="20" y="145" width="220" height="40" fill="#ffffff" stroke="#94a3b8" rx="3"/>
+    <text x="70" y="170" font-family="Arial, sans-serif" font-size="14" fill="#0f5132" text-anchor="middle">"Charlie"</text>
+    <text x="190" y="170" font-family="monospace" font-size="16" fill="#0284c7" text-anchor="middle">35</text>
+    <line x1="130" y1="145" x2="130" y2="185" stroke="#cbd5e1" stroke-width="2"/>
+  </g>
+</svg>

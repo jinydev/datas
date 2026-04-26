@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">데이터 파싱 파이프라인 (Decoding, Row Filtering, Type Casting)</text>
+
+  <!-- 1. Decoding (cp949) -->
+  <g transform="translate(40, 50)">
+    <rect x="0" y="0" width="170" height="150" fill="#fff" stroke="#90caf9" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="170" height="25" fill="#e3f2fd" rx="2"/>
+    <text x="85" y="17" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#0288d1" text-anchor="middle">1. encoding='cp949'</text>
+    
+    <text x="30" y="60" font-family="Courier New" font-size="12" fill="#d32f2f">0xA1 0xB2 (EUC-KR)</text>
+    
+    <g stroke="#0288d1" stroke-width="2" fill="none" marker-end="url(#arrow-blue)">
+      <path d="M 85 75 L 85 105" />
+    </g>
+    <rect x="55" y="75" width="60" height="20" fill="#bbdefb" rx="2"/>
+    <text x="85" y="89" font-family="Courier New" font-size="10" fill="#0d47a1" text-anchor="middle">Decoder</text>
+
+    <text x="85" y="130" font-family="Arial" font-size="16" font-weight="bold" fill="#388e3c" text-anchor="middle">"서울"</text>
+  </g>
+
+  <!-- 2. Skiprows -->
+  <g transform="translate(240, 50)">
+    <rect x="0" y="0" width="170" height="150" fill="#fff" stroke="#ffb74d" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="170" height="25" fill="#fff3e0" rx="2"/>
+    <text x="85" y="17" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">2. skiprows=1</text>
+    
+    <!-- Original Matrix with bad header -->
+    <rect x="35" y="45" width="100" height="80" fill="#f5f5f5" stroke="#ccc" rx="2"/>
+    <rect x="35" y="45" width="100" height="20" fill="#ffcdd2"/>
+    <text x="85" y="58" font-family="Arial" font-size="10" fill="#c62828" text-anchor="middle">Trash Title Row</text>
+
+    <!-- Cutting Line -->
+    <line x1="20" y1="65" x2="150" y2="65" stroke="#e65100" stroke-dasharray="4,4" stroke-width="2"/>
+    
+    <text x="85" y="85" font-family="Courier New" font-size="10" fill="#666" text-anchor="middle">Data Row 1</text>
+    <text x="85" y="105" font-family="Courier New" font-size="10" fill="#666" text-anchor="middle">Data Row 2</text>
+
+    <text x="85" y="140" font-family="Arial" font-size="12" font-weight="bold" fill="#d84315" text-anchor="middle">Row Dimension: -1</text>
+  </g>
+
+  <!-- 3. Thousands (Type Casting) -->
+  <g transform="translate(440, 50)">
+    <rect x="0" y="0" width="170" height="150" fill="#fff" stroke="#81c784" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="170" height="25" fill="#e8f5e9" rx="2"/>
+    <text x="85" y="17" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#1b5e20" text-anchor="middle">3. thousands=','</text>
+    
+    <text x="85" y="55" font-family="Courier New" font-size="16" fill="#555" text-anchor="middle">"1,234"</text>
+    <text x="85" y="70" font-family="Courier New" font-size="10" fill="#c62828" text-anchor="middle">Type: object (String)</text>
+    
+    <g stroke="#388e3c" stroke-width="2" fill="none" marker-end="url(#arrow-green)">
+      <path d="M 85 80 L 85 110" />
+    </g>
+
+    <text x="85" y="130" font-family="Courier New" font-size="18" font-weight="bold" fill="#1565c0" text-anchor="middle">1234</text>
+    <text x="85" y="145" font-family="Courier New" font-size="10" font-weight="bold" fill="#388e3c" text-anchor="middle">Type: int64 (Integer)</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0288d1" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#388e3c" />
+    </marker>
+  </defs>
+</svg>

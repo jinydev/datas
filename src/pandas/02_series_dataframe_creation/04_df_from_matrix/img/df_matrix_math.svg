@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="600" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">다차원 배열의 관계형 매핑 (Associative Array Mapping)</text>
+
+  <!-- Left: Pure 2D Matrix -->
+  <text x="140" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">순수 2차원 배열 (Matrix)</text>
+  <rect x="50" y="90" width="180" height="110" rx="5" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  
+  <!-- Number Grid -->
+  <text x="90" y="125" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">10</text>
+  <text x="140" y="125" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">20</text>
+  <text x="190" y="125" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">30</text>
+  
+  <text x="90" y="155" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">40</text>
+  <text x="140" y="155" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">50</text>
+  <text x="190" y="155" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">60</text>
+  
+  <text x="90" y="185" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">70</text>
+  <text x="140" y="185" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">80</text>
+  <text x="190" y="185" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">90</text>
+
+  <text x="140" y="220" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">(단순한 (x,y) 좌표 구조)</text>
+
+  <!-- Arrow -->
+  <g stroke="#2196f3" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M 245 145 L 315 145" />
+  </g>
+  <text x="280" y="135" font-family="Arial" font-size="12" font-weight="bold" fill="#1565c0" text-anchor="middle">매핑(Mapping)</text>
+
+  <!-- Right: Associative Array (DataFrame) -->
+  <text x="440" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">관계형 구조 (DataFrame)</text>
+  <rect x="350" y="90" width="200" height="110" rx="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  
+  <!-- Columns -->
+  <rect x="390" y="90" width="160" height="25" fill="#bbdefb" rx="2"/>
+  <text x="415" y="108" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">Col1</text>
+  <text x="465" y="108" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">Col2</text>
+  <text x="515" y="108" font-family="Arial" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">Col3</text>
+  
+  <!-- Index -->
+  <rect x="350" y="115" width="40" height="85" fill="#c8e6c9" rx="2"/>
+  <text x="370" y="135" font-family="Arial" font-size="14" font-weight="bold" fill="#1b5e20" text-anchor="middle">Row1</text>
+  <text x="370" y="165" font-family="Arial" font-size="14" font-weight="bold" fill="#1b5e20" text-anchor="middle">Row2</text>
+  <text x="370" y="195" font-family="Arial" font-size="14" font-weight="bold" fill="#1b5e20" text-anchor="middle">Row3</text>
+
+  <!-- Data -->
+  <text x="415" y="135" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">10</text>
+  <text x="465" y="135" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">20</text>
+  <text x="515" y="135" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">30</text>
+  
+  <text x="415" y="165" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">40</text>
+  <text x="465" y="165" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">50</text>
+  <text x="515" y="165" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">60</text>
+  
+  <text x="415" y="195" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">70</text>
+  <text x="465" y="195" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">80</text>
+  <text x="515" y="195" font-family="Courier New, monospace" font-size="16" fill="#333" text-anchor="middle">90</text>
+
+  <text x="440" y="220" font-family="Arial" font-size="12" fill="#1565c0" font-weight="bold" text-anchor="middle">(레이블 문자로 접근 가능한 구조)</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2196f3" />
+    </marker>
+  </defs>
+</svg>

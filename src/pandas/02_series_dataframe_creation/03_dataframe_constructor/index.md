@@ -5,14 +5,24 @@ title: "6.2.3 DataFrame 생성자(Constructor) 개요"
 
 ## 6.2.3 DataFrame 클래스 생성자 분석
 
-**[수학적 의미: 이기종 행렬(Heterogeneous Matrix) 공간 선언]**
+> 💾 **[실습 파일 다운로드]**
+> 본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.
+> - [📥 dataframe_constructor_practice.ipynb 파일 다운로드](./dataframe_constructor_practice.ipynb) (클릭 또는 마우스 우클릭 후 '다른 이름으로 링크 저장')
+
+## 🧮 수학적 의미: 이기종 행렬(Heterogeneous Matrix) 공간 선언
+
 수학에서 특정 차원과 형태를 가진 행렬을 정의($A_{m \times n}$)하듯, 판다스에서 DataFrame 클래스 생성자는 $m$개의 행(Index)과 $n$개의 열(Columns)을 가지는 데이터를 메모리 공간에 어떻게 적재할지 규칙을 선언하는 초기화(Initialization) 함수입니다.
 
-**[비유로 이해하기: 건물 뼈대(Framework)를 세우는 주문서]**
+![이기종 행렬 구조 시각화](./img/df_constructor_math.svg)
+
+## 🏷️ 비유로 이해하기: 건물 뼈대(Framework)를 세우는 주문서
+
 - `data`: 건물을 채울 벽돌과 가구들입니다. (리스트, 딕셔너리, 넘파이 배열 등)
 - `index`: 각 층의 이름표입니다. (1층, 2층, 3층... 또는 2020년, 2021년...)
 - `columns`: 각 층에 들어갈 방의 용도입니다. (거실, 안방, 주방... 또는 이름, 나이, 직업...)
 - 즉, **"이 재료(`data`)를 가져다가, 행 이름표(`index`)와 열 이름표(`columns`)를 붙여서 엑셀 표를 하나 만들어줘!"**라는 주문서입니다.
+
+![건물 뼈대를 세우는 주문서 비유](./img/df_constructor_analogy.svg)
 
 ---
 
@@ -33,7 +43,7 @@ class pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=Non
 
 ---
 
-### [2단계] 파라미터 조작해보기 (코드 실습)
+## 🪄 [실습 2] 파라미터 조작해보기 (코드 실습)
 
 아무 옵션도 주지 않았을 때와, 우리가 직접 `index`와 `columns`를 지정했을 때의 차이를 비교해 봅니다.
 
@@ -74,6 +84,9 @@ print(df_custom)
 1  30  40
 2  50  60
 ^-- 행 이름표를 생략했더니 0, 1, 2로 생김
+```
+
+![알아서 만들어진 기본 표 생성 원리](./img/df_constructor_default.svg)
 
 --- [B] 상세 주문서가 적용된 표 ---
        오전매출  오후매출
@@ -82,6 +95,6 @@ print(df_custom)
 3일차    50.0    60.0
 ```
 
-![DataFrame 생성자 주문 조립 과정](./img/dataframe_constructor.svg)
+![상세 주문서가 적용된 표 조립 원리](./img/df_constructor_custom.svg)
 
 > **요약:** DataFrame 생성자에게 엑셀 시트의 헤더(Columns)와 좌측 주소(Index)를 직접 알려주면 데이터가 훨씬 읽기 편한 구조로 재탄생합니다. 다음 장부터는 이 생성자를 활용하는 다양한 실전 기법들을 다룹니다.

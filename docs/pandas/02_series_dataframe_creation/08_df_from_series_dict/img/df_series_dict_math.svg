@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">인덱스 정렬(Index Alignment)과 합집합(Union) 연산</text>
+
+  <!-- Left: Two Series -->
+  <text x="140" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">입력 Series 객체들</text>
+  
+  <!-- Series A -->
+  <rect x="50" y="90" width="80" height="110" fill="#fff" stroke="#ff9800" stroke-width="2" rx="3"/>
+  <rect x="50" y="90" width="80" height="25" fill="#ffe0b2" rx="3"/>
+  <text x="90" y="108" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">S1</text>
+  
+  <text x="65" y="135" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ff9800" text-anchor="middle">idx0</text>
+  <text x="105" y="135" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">10</text>
+  <text x="65" y="165" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ff9800" text-anchor="middle">idx1</text>
+  <text x="105" y="165" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">20</text>
+  <text x="65" y="195" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ff9800" text-anchor="middle">idx2</text>
+  <text x="105" y="195" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">30</text>
+
+  <!-- Series B -->
+  <rect x="150" y="90" width="80" height="110" fill="#fff" stroke="#2196f3" stroke-width="2" rx="3"/>
+  <rect x="150" y="90" width="80" height="25" fill="#bbdefb" rx="3"/>
+  <text x="190" y="108" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">S2</text>
+
+  <text x="165" y="135" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2196f3" text-anchor="middle">idx1</text>
+  <text x="205" y="135" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">40</text>
+  <text x="165" y="165" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2196f3" text-anchor="middle">idx2</text>
+  <text x="205" y="165" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">50</text>
+  <text x="165" y="195" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#2196f3" text-anchor="middle">idx3</text>
+  <text x="205" y="195" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">60</text>
+
+  <!-- Union Operation -->
+  <path d="M 245 145 C 280 120, 310 120, 345 145" stroke="#9c27b0" stroke-width="2" fill="none" stroke-dasharray="4,4" marker-end="url(#arrow-purple)"/>
+  <text x="295" y="125" font-family="Arial" font-size="12" font-weight="bold" fill="#7b1fa2" text-anchor="middle">Union (∪)</text>
+  <text x="295" y="165" font-family="Courier New, monospace" font-size="12" fill="#7b1fa2" text-anchor="middle">idx0, idx1</text>
+  <text x="295" y="180" font-family="Courier New, monospace" font-size="12" fill="#7b1fa2" text-anchor="middle">idx2, idx3</text>
+
+  <!-- Right: DataFrame -->
+  <text x="470" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Index Aligned DataFrame</text>
+  
+  <rect x="370" y="90" width="200" height="145" fill="#f3e5f5" stroke="#ab47bc" stroke-width="2" rx="5"/>
+  
+  <rect x="420" y="90" width="150" height="30" fill="#e1bee7" rx="2"/>
+  <text x="455" y="110" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">S1</text>
+  <text x="530" y="110" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#0d47a1" text-anchor="middle">S2</text>
+
+  <!-- Index Union -->
+  <rect x="370" y="120" width="50" height="115" fill="#fff3e0" rx="2"/>
+  <text x="395" y="145" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#9c27b0" text-anchor="middle">idx0</text>
+  <text x="395" y="170" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#9c27b0" text-anchor="middle">idx1</text>
+  <text x="395" y="195" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#9c27b0" text-anchor="middle">idx2</text>
+  <text x="395" y="220" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#9c27b0" text-anchor="middle">idx3</text>
+
+  <!-- Grid lines -->
+  <line x1="420" y1="120" x2="570" y2="120" stroke="#ce93d8" stroke-width="1"/>
+  <line x1="495" y1="90" x2="495" y2="235" stroke="#ce93d8" stroke-width="1"/>
+
+  <!-- Data -->
+  <!-- idx0 -->
+  <text x="455" y="145" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">10.0</text>
+  <rect x="510" y="132" width="40" height="18" fill="#ffebee" rx="3"/>
+  <text x="530" y="145" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#d32f2f" text-anchor="middle">NaN</text>
+
+  <!-- idx1 -->
+  <text x="455" y="170" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">20.0</text>
+  <text x="530" y="170" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">40.0</text>
+
+  <!-- idx2 -->
+  <text x="455" y="195" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">30.0</text>
+  <text x="530" y="195" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">50.0</text>
+
+  <!-- idx3 -->
+  <rect x="435" y="207" width="40" height="18" fill="#ffebee" rx="3"/>
+  <text x="455" y="220" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#d32f2f" text-anchor="middle">NaN</text>
+  <text x="530" y="220" font-family="Courier New, monospace" font-size="14" fill="#333" text-anchor="middle">60.0</text>
+
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9c27b0" />
+    </marker>
+  </defs>
+</svg>

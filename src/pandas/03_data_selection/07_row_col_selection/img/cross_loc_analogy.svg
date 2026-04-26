@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="650" height="250" fill="#f8f9fa" rx="10" />
+  
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">비유: 십자선(Crosshair)으로 표의 정확한 단일 칸 조준하기</text>
+
+  <!-- Left: Target Table -->
+  <g transform="translate(150, 60)">
+    <rect x="0" y="0" width="200" height="150" fill="#fff" stroke="#ccc" stroke-width="2" rx="4" filter="drop-shadow(2px 2px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Grid -->
+    <line x1="50" y1="0" x2="50" y2="150" stroke="#eee" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="150" stroke="#eee" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="150" stroke="#eee" stroke-width="1"/>
+    
+    <line x1="0" y1="30" x2="200" y2="30" stroke="#ccc" stroke-width="2"/>
+    <line x1="0" y1="70" x2="200" y2="70" stroke="#eee" stroke-width="1"/>
+    <line x1="0" y1="110" x2="200" y2="110" stroke="#eee" stroke-width="1"/>
+
+    <!-- Headers -->
+    <text x="25" y="20" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">이름</text>
+    <text x="75" y="20" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">중간</text>
+    <text x="125" y="20" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">기말</text>
+    <text x="175" y="20" font-family="Arial" font-size="12" font-weight="bold" fill="#f44336" text-anchor="middle">출석</text>
+
+    <!-- Data -->
+    <text x="25" y="55" font-family="Arial" font-size="12" font-weight="bold" fill="#f44336" text-anchor="middle">윤일형</text>
+    <text x="75" y="55" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">25</text>
+    <text x="125" y="55" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">35</text>
+    <text x="175" y="55" font-family="Arial" font-size="14" font-weight="bold" fill="#d32f2f" text-anchor="middle">18</text>
+
+    <text x="25" y="95" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">강수희</text>
+    <text x="75" y="95" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">18</text>
+    <text x="125" y="95" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">27</text>
+    <text x="175" y="95" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">20</text>
+
+    <text x="25" y="135" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">홍소희</text>
+    <text x="75" y="135" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">17</text>
+    <text x="125" y="135" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">17</text>
+    <text x="175" y="135" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">19</text>
+
+    <!-- The Crosshair overlay -->
+    <!-- Vertical line matching '출석' -->
+    <line x1="175" y1="-20" x2="175" y2="170" stroke="#f44336" stroke-width="2" stroke-dasharray="5,5"/>
+    <rect x="155" y="-30" width="40" height="20" fill="#ffebee" rx="3" stroke="#f44336"/>
+    <text x="175" y="-16" font-family="Arial" font-size="10" font-weight="bold" fill="#c62828" text-anchor="middle">열: 출석</text>
+    
+    <!-- Horizontal line matching '윤일형' -->
+    <line x1="-20" y1="50" x2="220" y2="50" stroke="#f44336" stroke-width="2" stroke-dasharray="5,5"/>
+    <rect x="-70" y="40" width="60" height="20" fill="#ffebee" rx="3" stroke="#f44336"/>
+    <text x="-40" y="54" font-family="Arial" font-size="10" font-weight="bold" fill="#c62828" text-anchor="middle">행: 윤일형</text>
+
+    <!-- Crosshair Target -->
+    <circle cx="175" cy="50" r="15" fill="none" stroke="#f44336" stroke-width="3"/>
+    <circle cx="175" cy="50" r="2" fill="#d32f2f"/>
+    <rect x="155" y="30" width="40" height="40" fill="#ffcdd2" opacity="0.4"/>
+  </g>
+
+  <!-- Right: Code Callout -->
+  <g transform="translate(420, 100)">
+    <path d="M 0 10 C -20 10, -30 20, -50 10" stroke="#ccc" stroke-width="2" fill="none" marker-end="url(#arrow-gray)"/>
+    <rect x="0" y="0" width="160" height="40" fill="#fff" stroke="#f44336" stroke-width="2" rx="5"/>
+    <text x="80" y="25" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#d32f2f" text-anchor="middle">.loc['윤일형', '출석']</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ccc" />
+    </marker>
+  </defs>
+</svg>

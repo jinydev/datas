@@ -3,15 +3,22 @@ layout: mathplotlib
 title: "5.2.4 Seaborn 첫 그래프: Countplot과 Histplot"
 ---
 
-## 5.2.4 Seaborn 첫 그래프 기초 (빈도와 분포)
+# 5.2.4 Seaborn 첫 그래프 기초
 
-변수의 타입을 완벽하게 이해했다면, 본격적으로 Seaborn 마법사에게 그래프를 주문할 차례입니다. 초보자들이 가장 많이 헷갈리는 두 가지 그래프인 **Countplot(카운트플롯)**과 **Histplot(히스토그램)**을 타이타닉 데이터에 적용해 보겠습니다.
+> 💾 **[실습 파일 다운로드]**
+> 본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.
+> - [📥 seaborn_graph_practice.ipynb 파일 다운로드](./seaborn_graph_practice.ipynb) (클릭 또는 마우스 우클릭 후 '다른 이름으로 링크 저장')
 
-![Countplot과 Histplot 차이점 완벽 정리](../img/countplot_vs_histplot.svg)
+변수의 타입을 완벽하게 이해했다면, 본격적으로 Seaborn 마법사에게 그래프를 주문할 차례입니다. 
+
+## 빈도와 분포
+초보자들이 가장 많이 헷갈리는 두 가지 그래프인 **Countplot(카운트플롯)**과 **Histplot(히스토그램)**을 타이타닉 데이터에 적용해 보겠습니다.
+
+![Countplot과 Histplot 차이점 완벽 정리](img/countplot_vs_histplot.svg)
 
 ---
 
-### ① 범주형 데이터 전용: `sns.countplot()`
+## [실습 1] 범주형 데이터 전용: `sns.countplot()`
 
 > **용도**: "1등급, 2등급, 3등급칸에 탄 사람이 각각 **몇 명**이야?"
 
@@ -40,7 +47,7 @@ plt.show()
 
 ---
 
-### ② 수치형 데이터 전용: `sns.histplot()`
+## [실습 2] 수치형 데이터 전용: `sns.histplot()`
 
 > **용도**: "탑승객들의 **나이 분포**가 대충 어떻게 되는데? 20대가 많아, 60대가 많아?"
 
@@ -63,7 +70,7 @@ plt.show()
 
 ---
 
-### 🚨 결론: 초보자 절대 주의사항!
+## 🚨 결론: 초보자 절대 주의사항!
 
 - `sns.histplot(x='pclass')` (X) : 좌석 등급은 숫자로 적혀 있지만 의미상 범주형이므로 막대가 이상하게 그려집니다. `countplot`을 쓰세요!
 - `sns.countplot(x='age')` (X) : 나이는 12.5세, 13세 등 끝없이 다양하므로 카운트플롯을 그리면 바늘처럼 수백 개의 얇은 막대가 그려져 컴퓨터가 버벅거립니다. `histplot`을 쓰세요!

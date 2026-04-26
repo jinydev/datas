@@ -5,26 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.1.2 Series(시리즈) 개요</title>
-  <meta name="title" content="6.1.2 Series(시리즈) 개요" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.1.2 Series(시리즈) 개요"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.1.3 Series(시리즈) 개요</title>
+  <meta name="title" content="6.1.3 Series(시리즈) 개요" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.1.3 Series(시리즈) 개요"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/pandas/01_pandas_basics/02_series_intro/">
+  <meta property="og:url" content="http://localhost:4001/pandas/01_pandas_basics/02_series_intro/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.1.2 Series(시리즈) 개요"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.1.3 Series(시리즈) 개요"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="6.1.2 Series(시리즈) 개요" />
+<meta property="og:title" content="6.1.3 Series(시리즈) 개요" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/pandas/01_pandas_basics/02_series_intro/" />
-<meta property="og:url" content="https://datas.jiny.dev/pandas/01_pandas_basics/02_series_intro/" />
+<link rel="canonical" href="http://localhost:4001/pandas/01_pandas_basics/02_series_intro/" />
+<meta property="og:url" content="http://localhost:4001/pandas/01_pandas_basics/02_series_intro/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.1.2 Series(시리즈) 개요" />
+<meta property="twitter:title" content="6.1.3 Series(시리즈) 개요" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.1.2 Series(시리즈) 개요","url":"https://datas.jiny.dev/pandas/01_pandas_basics/02_series_intro/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.1.3 Series(시리즈) 개요","url":"http://localhost:4001/pandas/01_pandas_basics/02_series_intro/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -372,16 +372,23 @@
                             </li>
                             
                             <li>
+                                <a href="/pandas/01_pandas_basics/02_pandas_practice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    6.1.2 판다스 설치 및 기초 실습
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded active">
-                                    6.1.2 Series(시리즈) 개요
+                                    6.1.3 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 DataFrame(데이터프레임) 개요
+                                    6.1.4 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -709,7 +716,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">6.1.2 Series(시리즈) 개요</li>
+        <li class="breadcrumb-item active" aria-current="page">6.1.3 Series(시리즈) 개요</li>
         
         
         
@@ -717,17 +724,43 @@
 </nav>
 
         <div class="bd-content ps-lg-4">
-            <h1 id="612-series-시리즈-개요">6.1.2 Series (시리즈) 개요</h1>
+            <h1 id="613-series-시리즈-개요">6.1.3 Series (시리즈) 개요</h1>
 
-<p><strong>[수학적 의미: 인덱스를 가진 1차원 벡터(Vector)]</strong>
-수학에서 방향과 크기를 가진 1차원 배열(Vector) 개념에, 각 원소의 고유한 <strong>주소 값(Index Label)</strong>을 라벨링(Labeling)하여 매핑시킨 자료 구조입니다. 일반적인 배열이 <code class="language-plaintext highlighter-rouge">0, 1, 2...</code> 형태의 정수 위치로만 접근 가능하다면, 시리즈는 해시(Hash)맵처럼 문자로 된 이름표를 통해서도 데이터에 접근할 수 있습니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./series_intro_practice.ipynb">📥 series_intro_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><strong>[비유로 이해하기: 번호표가 붙어 있는 1열 서랍장]</strong></p>
+<h2 id="수학적-의미-인덱스를-가진-1차원-벡터vector">수학적 의미: 인덱스를 가진 1차원 벡터(Vector)</h2>
+
+<p>수학이나 컴퓨터 공학에서 말하는 1차원 배열(Vector)은 데이터가 일렬로 나열된 형태를 말합니다.</p>
+
+<p><img src="./img/series_concept.svg" alt="1차원 벡터와 판다스 시리즈의 개념적 차이" /></p>
+
+<p>순수 배열은 오직 <code class="language-plaintext highlighter-rouge">0번 칸</code>, <code class="language-plaintext highlighter-rouge">1번 칸</code>과 같은 <strong>숫자 위치(Position)</strong>로만 데이터에 접근할 수 있다는 치명적인 한계가 있습니다.</p>
+
+<p>판다스의 <code class="language-plaintext highlighter-rouge">Series(시리즈)</code>는 이 1차원 벡터의 각 원소에 <strong>고유한 주소 값(Index Label)</strong>을 단단히 결합(Mapping)시킨 확장된 자료 구조입니다.</p>
 <ul>
-  <li>서랍장 한 칸 한 칸에 데이터(<code class="language-plaintext highlighter-rouge">Values</code>)가 들어 있고, 서랍장 겉면에는 네임펜으로 적어둔 이름표(<code class="language-plaintext highlighter-rouge">Index</code>)가 붙어 있습니다.</li>
-  <li>시리즈 상단에는 이 서랍장의 전체 용도를 알려주는 명패(<code class="language-plaintext highlighter-rouge">Name</code>)가 달려 있습니다.</li>
-  <li>표의 관점에서는 <strong>엑셀 시트에서 세로로 길게 한 줄(Column)만 추출한 형태</strong>와 동일합니다.</li>
+  <li>내부적으로는 초고속 연산을 위한 C언어 기반의 NumPy 배열을 사용하면서도,</li>
+  <li>외부적으로는 파이썬의 딕셔너리(해시맵)처럼 <code class="language-plaintext highlighter-rouge">Apple</code>, <code class="language-plaintext highlighter-rouge">Banana</code>와 같은 직관적인 문자열 이름표를 통해 데이터에 즉각적으로 접근할 수 있게 해줍니다.</li>
 </ul>
+
+<h2 id="비유로-이해하기-이름표가-붙어-있는-1열-서랍장">비유로 이해하기: 이름표가 붙어 있는 1열 서랍장</h2>
+
+<p><img src="./img/series_drawer_metaphor.svg" alt="서랍장 비유로 이해하는 판다스 시리즈" /></p>
+
+<p>데이터의 나열을 눈에 보이는 사물로 상상해 본다면, 시리즈는 <strong>위아래로 길게 쌓여 있는 1열짜리 서랍장</strong>과 같습니다.</p>
+
+<ol>
+  <li><strong>서랍장 내부의 물건 (<code class="language-plaintext highlighter-rouge">Values</code>)</strong>: 각 서랍장 칸마다 들어있는 실제 데이터 값입니다. (예: <code class="language-plaintext highlighter-rouge">1500</code>, <code class="language-plaintext highlighter-rouge">3000</code>)</li>
+  <li><strong>서랍장 겉면에 붙은 포스트잇 (<code class="language-plaintext highlighter-rouge">Index</code>)</strong>: 우리가 특정 서랍을 쉽게 찾기 위해 겉면에 네임펜으로 적어 붙인 이름표입니다. (예: <code class="language-plaintext highlighter-rouge">Apple</code>, <code class="language-plaintext highlighter-rouge">Banana</code>). 이 이름표 덕분에 “위에서 두 번째 서랍 열어봐!” 대신 <strong>“Banana 서랍 열어봐!”</strong>라고 직관적인 명령을 내릴 수 있습니다.</li>
+  <li><strong>서랍장 꼭대기의 명패 (<code class="language-plaintext highlighter-rouge">Name</code>)</strong>: 이 1열 서랍장 전체가 어떤 물건들을 모아둔 것인지 알려주는 대표 간판입니다. (예: <code class="language-plaintext highlighter-rouge">과일 단가표</code>)</li>
+</ol>
+
+<p>표(Table)의 관점에서 본다면, <strong>엑셀 시트에서 세로로 길게 한 줄(Column)만 똑 떼어내어 가져온 형태</strong>와 정확히 일치합니다.</p>
 
 <hr />
 
@@ -744,7 +777,7 @@
 
 <hr />
 
-<h3 id="2단계-series-생성-맛보기">[2단계] Series 생성 맛보기</h3>
+<h2 id="-실습-1-series-생성-맛보기">🪄 [실습 1] Series 생성 맛보기</h2>
 
 <p>파이썬 리스트(List)를 기반으로 직접 인덱스와 이름을 지정하여 시리즈를 조립해 봅시다.</p>
 

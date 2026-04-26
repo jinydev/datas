@@ -8,7 +8,7 @@
   <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.4 loc[index[i]]를 활용한 우회적 행 참조</title>
   <meta name="title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
   <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/">
+  <meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
 <meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/" />
-<meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/" />
+<link rel="canonical" href="http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/" />
+<meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.4 loc[index[i]]를 활용한 우회적 행 참조","url":"https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.4 loc[index[i]]를 활용한 우회적 행 참조","url":"http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -372,16 +372,23 @@
                             </li>
                             
                             <li>
+                                <a href="/pandas/01_pandas_basics/02_pandas_practice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    6.1.2 판다스 설치 및 기초 실습
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="/pandas/01_pandas_basics/02_series_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.2 Series(시리즈) 개요
+                                    6.1.3 Series(시리즈) 개요
                                 </a>
                             </li>
                             
                             <li>
                                 <a href="/pandas/01_pandas_basics/03_dataframe_intro/"
                                     class="bd-links-link d-inline-block rounded ">
-                                    6.1.3 DataFrame(데이터프레임) 개요
+                                    6.1.4 DataFrame(데이터프레임) 개요
                                 </a>
                             </li>
                             
@@ -719,21 +726,33 @@
         <div class="bd-content ps-lg-4">
             <h2 id="634-loc-와-index-콤보로-순번i-기반-행-참조하기">6.3.4 <code class="language-plaintext highlighter-rouge">.loc</code> 와 <code class="language-plaintext highlighter-rouge">.index</code> 콤보로 순번(i) 기반 행 참조하기</h2>
 
-<p><strong>[전산학적 의미: 인덱스 배열(Index Array)의 간접 참조]</strong>
-<code class="language-plaintext highlighter-rouge">.loc</code>은 근본적으로 ‘이름표(Label)’ 기반 검색기입니다. 따라서 숫자로 된 ‘순번(Position)’을 직접 넣으면 에러가 날 수 있습니다. 하지만 데이터프레임의 인덱스 배열 구조체인 <code class="language-plaintext highlighter-rouge">df.index</code> 자체를 배열처럼 슬라이싱(<code class="language-plaintext highlighter-rouge">df.index[i]</code>)한 뒤, 그 결과를 다시 <code class="language-plaintext highlighter-rouge">.loc</code>에게 전달하는 방식의 <strong>간접 메모리 오프셋 참조(Indirect Offset Referencing)</strong>를 구현할 수 있습니다.</p>
+<blockquote>
+  <p>💾 <strong>[실습 파일 다운로드]</strong>
+본 강의의 전체 실습 코드를 직접 실행해 볼 수 있는 주피터 노트북 파일입니다. 아래 링크를 클릭하여 다운로드 후 VS Code에서 열어보세요.</p>
+  <ul>
+    <li><a href="./row_selection_loc_i_practice.ipynb">📥 row_selection_loc_i_practice.ipynb 파일 다운로드</a> (클릭 또는 마우스 우클릭 후 ‘다른 이름으로 링크 저장’)</li>
+  </ul>
+</blockquote>
 
-<p><strong>[비유로 이해하기: 출석부 번호로 이름 알아내서 부르기]</strong></p>
+<h2 id="-전산학적-의미-인덱스-배열index-array의-간접-참조">🧮 전산학적 의미: 인덱스 배열(Index Array)의 간접 참조</h2>
+
+<p><code class="language-plaintext highlighter-rouge">.loc</code>은 근본적으로 ‘이름표(Label)’ 기반 검색기입니다. 따라서 숫자로 된 ‘순번(Position)’을 직접 넣으면 에러가 날 수 있습니다. 하지만 데이터프레임의 인덱스 배열 구조체인 <code class="language-plaintext highlighter-rouge">df.index</code> 자체를 배열처럼 슬라이싱(<code class="language-plaintext highlighter-rouge">df.index[i]</code>)한 뒤, 그 결과를 다시 <code class="language-plaintext highlighter-rouge">.loc</code>에게 전달하는 방식의 <strong>간접 메모리 오프셋 참조(Indirect Offset Referencing)</strong>를 구현할 수 있습니다.</p>
+
+<p><img src="./img/loc_i_math.svg" alt="인덱스 배열의 간접 참조 수학적 시각화" /></p>
+
+<h2 id="️-비유로-이해하기-출석부-번호로-이름-알아내서-부르기">🏷️ 비유로 이해하기: 출석부 번호로 이름 알아내서 부르기</h2>
+
 <ul>
   <li>선생님(loc)은 무조건 ‘이름(Label)’으로만 학생을 부릅니다.</li>
   <li>조교에게 “출석부(<code class="language-plaintext highlighter-rouge">pf.index</code>)에서 첫 번째 줄에 있는 애 이름 좀 알려줘” 라고 물어봅니다. 조교가 “윤일형입니다!”(<code class="language-plaintext highlighter-rouge">pf.index[0]</code>) 라고답합니다.</li>
   <li>선생님은 비로소 “윤일형 일어섯!”(<code class="language-plaintext highlighter-rouge">.loc['윤일형']</code>) 이라고 외칠 수 있게 됩니다. 이를 한 줄로 합친 것이 <code class="language-plaintext highlighter-rouge">.loc[ pf.index[0] ]</code> 입니다.</li>
 </ul>
 
-<p><img src="img/loc_index_i.svg" alt="loc 와 index 결합 애니메이션" /></p>
+<p><img src="./img/loc_i_analogy.svg" alt="번호로 이름 알아내기 비유 도식" /></p>
 
 <hr />
 
-<h3 id="준비물-성적표-데이터">[준비물] 성적표 데이터</h3>
+<h2 id="-실습-0-준비물-성적표-데이터">🪄 [실습 0] 준비물: 성적표 데이터</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
@@ -752,7 +771,7 @@
 
 <hr />
 
-<h3 id="1단계-첫-번째-행-검색하기-단일-우회-참조">[1단계] 첫 번째 행 검색하기 (단일 우회 참조)</h3>
+<h2 id="-실습-1-첫-번째-행-검색하기-단일-우회-참조">🪄 [실습 1] 첫 번째 행 검색하기 (단일 우회 참조)</h2>
 
 <p>이름을 모르지만 무조건 “첫 번째 행”을 뽑아야 한다고 가정합시다. <code class="language-plaintext highlighter-rouge">pf.index[0]</code>을 사용하여 첫 번째 행의 진짜 이름표를 낚아채서 <code class="language-plaintext highlighter-rouge">.loc</code>에 던져줍니다.</p>
 
@@ -785,7 +804,7 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h3 id="2단계-범위로-쪼개기-index-슬라이싱">[2단계] 범위로 쪼개기 (Index 슬라이싱)</h3>
+<h2 id="-실습-2-범위로-쪼개기-index-슬라이싱">🪄 [실습 2] 범위로 쪼개기 (Index 슬라이싱)</h2>
 
 <p>‘두 번째부터 네 번째까지’ 같은 범위(슬라이싱)도 똑같은 원리로 작동합니다. 조교에게 “출석부 1번부터 3번까지 명단 좀 가져와”라고 시키는 것과 같습니다. (파이썬 기본 리스트 슬라이싱이므로 마지막 번호는 제외됩니다!)</p>
 
@@ -813,7 +832,7 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h3 id="3단계-행-뽑은-뒤-원하는-과목열만-추가로-뽑기-체인링">[3단계] 행 뽑은 뒤, 원하는 과목(열)만 추가로 뽑기 (체인링)</h3>
+<h2 id="-실습-3-행-뽑은-뒤-원하는-과목열만-추가로-뽑기-체인링">🪄 [실습 3] 행 뽑은 뒤, 원하는 과목(열)만 추가로 뽑기 (체인링)</h2>
 
 <p>2단계에서 행(학생 명단)을 뽑아서 작은 데이터프레임을 만들었습니다. 데이터 분석 시, 이 작아진 데이터프레임의 뒤에 <strong>연달아 <code class="language-plaintext highlighter-rouge">[['기말', '과제']]</code> 대괄호를 붙여서 특정 열만 추가로 걸러내는 것</strong>이 가능합니다! 이를 메소드 체이닝(Method Chaining) 기법이라고도 부릅니다.</p>
 
