@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.5 concatenate()와 stack()"
+description: "지금까지 배운 hstack이나 vstack은 내부적으로 모두 concatenate()나 stack()이라는 강력한 만능 도구를 쉽게 포장해 놓은 단축키(Alias)와 같습니다. 이번에는 방향(축, axis)을 자유자재로 설정할 수 있는 이 두 가지 본원적 함수 사용법을 알..."
 ---
 
 # 4.10.5 만능 결합기: concatenate()와 stack()

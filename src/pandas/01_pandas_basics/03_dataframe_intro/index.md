@@ -1,6 +1,7 @@
 ---
 layout: pandas
 title: "6.1.4 DataFrame(데이터프레임) 개요"
+description: "수학의 2차원 행렬(Matrix)은 행과 열을 가지는 강력한 도구이지만, 오직 동일한 타입의 데이터(예: 숫자)만 담을 수 있다는 제약이 있습니다."
 ---
 
 # 6.1.4 DataFrame (데이터프레임) 개요

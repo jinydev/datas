@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.5.2 배열과 배열의 연산"
+description: "앞서 단일 실수값이 배열 안의 전체 요소에 적용되는 브로드캐스팅(Broadcasting)을 배웠습니다."
 ---
 
 # 4.5.2 배열과 배열의 요소별 연산 (Element-wise Operations)

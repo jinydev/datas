@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.1 파이썬 언어 기초 (Python Basics)"
+description: "건물을 올리기 위해 가장 먼저 튼튼한 지반을 다지는 기초 공사 단계입니다. 수학의 $x$, $y$와 같은 데이터 보관함인 변수(Variable), 상자에 담기는 내용물의 종류를 규정하는 자료형(Data Type), 그리고 이 데이터들을 지지고 볶아 새로운 결과를 낳는 연산..."
 ---
 
 # 3.1 파이썬 언어 기초 (Python Basics)

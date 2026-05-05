@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.6.1 브로드캐스팅 개요"
+description: "NumPy의 브로드캐스팅(Broadcasting)은 데이터 분석에서 가장 강력하면서도 편리한 특허급 연산 규칙입니다."
 ---
 
 # 4.6.1 브로드캐스팅(Broadcasting) 개요

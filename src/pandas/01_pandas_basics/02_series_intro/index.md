@@ -1,6 +1,7 @@
 ---
 layout: pandas
 title: "6.1.3 Series(시리즈) 개요"
+description: "수학이나 컴퓨터 공학에서 말하는 1차원 배열(Vector)은 데이터가 일렬로 나열된 형태를 말합니다."
 ---
 
 # 6.1.3 Series (시리즈) 개요

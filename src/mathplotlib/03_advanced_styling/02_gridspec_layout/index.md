@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.3.2 자유자재 화면 쪼개기: GridSpec 레이아웃"
+description: "앞서 배운 plt.subplots(2, 2)는 화면을 2행 2열로 아주 바를 정(正)자로 공평하게 쪼갭니다."
 ---
 
 # 5.3.2 자유자재 화면 쪼개기: GridSpec 레이아웃

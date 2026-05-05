@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기</title>
-  <meta name="title" content="6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/05_col_selection_loc/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/03_data_selection/05_col_selection_loc/" />
-<meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/05_col_selection_loc/" />
+<meta name="description" content="앞선 6.3.1 장에서는 데이터프레임에 바로 df[‘컬럼명’] 형태의 대괄호를 써서 열(Column)을 뽑아보았습니다. 하지만 판다스의 정석적인 행렬 참조 문법인 .loc[행, 열] 구조에서는, 앞쪽 ‘행(Row)’ 자리에 모든 것을 의미하는 콜론(:) 와일드카드를 배치함…" />
+<meta property="og:description" content="앞선 6.3.1 장에서는 데이터프레임에 바로 df[‘컬럼명’] 형태의 대괄호를 써서 열(Column)을 뽑아보았습니다. 하지만 판다스의 정석적인 행렬 참조 문법인 .loc[행, 열] 구조에서는, 앞쪽 ‘행(Row)’ 자리에 모든 것을 의미하는 콜론(:) 와일드카드를 배치함…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/05_col_selection_loc/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/05_col_selection_loc/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기","url":"http://localhost:4001/pandas/03_data_selection/05_col_selection_loc/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"앞선 6.3.1 장에서는 데이터프레임에 바로 df[‘컬럼명’] 형태의 대괄호를 써서 열(Column)을 뽑아보았습니다. 하지만 판다스의 정석적인 행렬 참조 문법인 .loc[행, 열] 구조에서는, 앞쪽 ‘행(Row)’ 자리에 모든 것을 의미하는 콜론(:) 와일드카드를 배치함…","headline":"6.3.5 loc[ : , 열이름] 으로 열(Column) 참조하기","url":"https://datas.jiny.dev/pandas/03_data_selection/05_col_selection_loc/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -752,8 +748,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-성적표-데이터">🪄 [실습 0] 준비물: 성적표 데이터</h2>
+<h2 id="-실습-1-준비물-성적표-데이터">🪄 [실습 1] 준비물: 성적표 데이터</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-가상의-학급-성적표-생성">1단계: 가상의 학급 성적표 생성</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
 <span class="n">pf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
@@ -771,8 +770,11 @@
 
 <hr />
 
-<h2 id="-실습-1-한-과목만-쏙-단일-열-참조">🪄 [실습 1] 한 과목만 쏙! (단일 열 참조)</h2>
+<h2 id="-실습-2-한-과목만-쏙-단일-열-참조">🪄 [실습 2] 한 과목만 쏙! (단일 열 참조)</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-단일-열-추출">1단계: 단일 열 추출</h3>
 <p><code class="language-plaintext highlighter-rouge">.loc[행, 열]</code> 형태에서 <strong>콤마(<code class="language-plaintext highlighter-rouge">,</code>)</strong> 앞의 자리는 행을 뜻합니다. 여기에 묻고 따지지 말고 싹 다 가져오라는 뜻의 <strong><code class="language-plaintext highlighter-rouge">:</code></strong> (콜론)만 달랑 하나 적어줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 행은 "전부 다(:)", 열은 "'과제'" 만!
@@ -797,8 +799,11 @@ Name: 과제, dtype: int64
 
 <hr />
 
-<h2 id="-실습-2-여기서부터-저기까지-다-가져와-열-슬라이싱">🪄 [실습 2] 여기서부터 저기까지 다 가져와! (열 슬라이싱)</h2>
+<h2 id="-실습-3-여기서부터-저기까지-다-가져와-열-슬라이싱">🪄 [실습 3] 여기서부터 저기까지 다 가져와! (열 슬라이싱)</h2>
 
+<p>계속해서 동일한 파일에 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-열-슬라이싱">1단계: 열 슬라이싱</h3>
 <p><code class="language-plaintext highlighter-rouge">.loc</code>의 가장 강력한 장점입니다. 행을 슬라이싱(<code class="language-plaintext highlighter-rouge">'강수희':'홍소희'</code>)했던 것처럼, 열 이름도 문자열인 채로 범위 슬라이싱이 가능합니다!</p>
 
 <blockquote>
@@ -823,8 +828,11 @@ Name: 과제, dtype: int64
 
 <hr />
 
-<h2 id="-실습-3-콕-콕-찝어서-가져오기-리스트-참조">🪄 [실습 3] 콕, 콕 찝어서 가져오기 (리스트 참조)</h2>
+<h2 id="-실습-4-콕-콕-찝어서-가져오기-리스트-참조">🪄 [실습 4] 콕, 콕 찝어서 가져오기 (리스트 참조)</h2>
 
+<p>마지막으로 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-리스트를-이용한-다중-열-추출">1단계: 리스트를 이용한 다중 열 추출</h3>
 <p>중간에 있는 과목들은 건너뛰고, 오직 ‘기말’과 ‘출석’ 두 개의 열만 골라서 보고 싶을 때는 대괄호 <code class="language-plaintext highlighter-rouge">[ ]</code> 리스트로 묶어서 두 번째 인자로 넘깁니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 행은 "전부 다(:)", 열은 "['기말', '출석'] 만 핀셋으로 집어서!"

@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.1 Series(시리즈) 생성과 데이터 추출</title>
-  <meta name="title" content="6.2.1 Series(시리즈) 생성과 데이터 추출" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.1 Series(시리즈) 생성과 데이터 추출"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/01_series_creation/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.1 Series(시리즈) 생성과 데이터 추출"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.2.1 Series(시리즈) 생성과 데이터 추출 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.2.1 Series(시리즈) 생성과 데이터 추출" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/02_series_dataframe_creation/01_series_creation/" />
-<meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/01_series_creation/" />
+<meta name="description" content="기본적인 1차원 배열(Array)이 x[0], x[1]처럼 순차적인 숫자 위치(Position)로만 데이터에 접근하는 선형적 구조라면, Pandas의 시리즈(Series)는 이보다 한 차원 더 진화한 형태입니다." />
+<meta property="og:description" content="기본적인 1차원 배열(Array)이 x[0], x[1]처럼 순차적인 숫자 위치(Position)로만 데이터에 접근하는 선형적 구조라면, Pandas의 시리즈(Series)는 이보다 한 차원 더 진화한 형태입니다." />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/02_series_dataframe_creation/01_series_creation/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/01_series_creation/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.2.1 Series(시리즈) 생성과 데이터 추출" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.1 Series(시리즈) 생성과 데이터 추출","url":"http://localhost:4001/pandas/02_series_dataframe_creation/01_series_creation/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"기본적인 1차원 배열(Array)이 x[0], x[1]처럼 순차적인 숫자 위치(Position)로만 데이터에 접근하는 선형적 구조라면, Pandas의 시리즈(Series)는 이보다 한 차원 더 진화한 형태입니다.","headline":"6.2.1 Series(시리즈) 생성과 데이터 추출","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/01_series_creation/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -756,9 +752,9 @@
 
 <h2 id="-실습-1-series-생성-다양한-재료로-만들기">🪄 [실습 1] Series 생성: 다양한 재료로 만들기</h2>
 
-<p>시리즈는 파이썬의 리스트(List), 딕셔너리(Dict), 넘파이 배열(ndarray) 등 다양한 재료로 만들 수 있습니다.</p>
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 코드를 작성해 봅니다. 시리즈는 파이썬의 리스트(List), 딕셔너리(Dict), 넘파이 배열(ndarray) 등 다양한 재료로 만들 수 있습니다.</p>
 
-<h4 id="1-리스트를-사용한-가장-기본적인-생성">1. 리스트를 사용한 가장 기본적인 생성</h4>
+<h3 id="1단계-리스트를-사용한-가장-기본적인-생성">1단계: 리스트를 사용한 가장 기본적인 생성</h3>
 <p>리스트를 넣으면, 판다스가 알아서 <code class="language-plaintext highlighter-rouge">0, 1, 2...</code> 형태의 기본 이름표(Index)를 붙여줍니다. <code class="language-plaintext highlighter-rouge">name</code> 속성으로 데이터의 주제를 정할 수 있습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -780,8 +776,8 @@ Name: first, dtype: float64
 
 <p><img src="./img/series_create_list.svg" alt="리스트를 이용한 시리즈 생성 시각화" /></p>
 
-<h4 id="2-직접-이름표index-달기">2. 직접 이름표(Index) 달기</h4>
-<p>데이터와 이름표의 개수만 같다면, 언제든지 원하는 문자나 날짜로 인덱스를 부여할 수 있습니다. 이미 만들어진 시리즈의 <code class="language-plaintext highlighter-rouge">index</code> 속성에 새 리스트를 덮어씌워도 됩니다.</p>
+<h3 id="2단계-직접-이름표index-달기">2단계: 직접 이름표(Index) 달기</h3>
+<p>데이터와 이름표의 개수만 같다면, 언제든지 원하는 문자나 날짜로 인덱스를 부여할 수 있습니다. 이미 만들어진 시리즈의 <code class="language-plaintext highlighter-rouge">index</code> 속성에 새 리스트를 덮어씌워도 됩니다. 앞서 작성한 코드 아래에 다음을 추가해 보세요.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 기존의 시리즈 s에 알파벳 인덱스 부여!
 </span><span class="n">s</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">)</span>
@@ -802,8 +798,8 @@ Name: first, dtype: float64
 
 <p><img src="./img/series_create_index.svg" alt="시리즈 인덱스 덮어쓰기 시각화" /></p>
 
-<h4 id="3-딕셔너리dict를-사용하여-한-방에-만들기">3. 딕셔너리(Dict)를 사용하여 한 방에 만들기</h4>
-<p>딕셔너리의 <code class="language-plaintext highlighter-rouge">Key</code>가 이름표(Index)가 되고, <code class="language-plaintext highlighter-rouge">Value</code>가 데이터가 되는 아주 편리한 방법입니다.</p>
+<h3 id="3단계-딕셔너리dict를-사용하여-한-방에-만들기">3단계: 딕셔너리(Dict)를 사용하여 한 방에 만들기</h3>
+<p>딕셔너리의 <code class="language-plaintext highlighter-rouge">Key</code>가 이름표(Index)가 되고, <code class="language-plaintext highlighter-rouge">Value</code>가 데이터가 되는 아주 편리한 방법입니다. 동일한 파일에 추가로 작성해 봅니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 친구들의 나이 데이터
 </span><span class="n">age_dict</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">철수</span><span class="sh">'</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="sh">'</span><span class="s">영희</span><span class="sh">'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="sh">'</span><span class="s">민수</span><span class="sh">'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="sh">'</span><span class="s">수진</span><span class="sh">'</span><span class="p">:</span> <span class="mi">15</span><span class="p">}</span>
@@ -824,7 +820,22 @@ Name: 친구 나이, dtype: int64
 
 <h2 id="-실습-2-series-해부하기-주요-속성">🪄 [실습 2] Series 해부하기 (주요 속성)</h2>
 
-<p>시리즈 객체가 가진 고유한 핵심 변수들을 알아봅니다. 데이터 분석 시 수시로 꺼내 보게 됩니다.</p>
+<p>이번에는 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 생성하고 시리즈 객체가 가진 고유한 핵심 변수들을 알아봅니다.</p>
+
+<h3 id="1단계-기초-데이터-준비">1단계: 기초 데이터 준비</h3>
+
+<p>앞선 실습과 동일하게 시리즈를 하나 생성합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">first</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">s</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2단계-시리즈의-주요-속성-확인하기">2단계: 시리즈의 주요 속성 확인하기</h3>
+
+<p>생성된 시리즈 객체의 속성값들을 출력해 봅니다. 아래 코드를 추가하세요.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">1) 이름(name):</span><span class="sh">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
 <span class="c1"># 출력: first
@@ -848,10 +859,19 @@ Name: 친구 나이, dtype: int64
 
 <h2 id="-실습-3-원하는-데이터-추출하기-인덱싱-및-슬라이싱">🪄 [실습 3] 원하는 데이터 추출하기 (인덱싱 및 슬라이싱)</h2>
 
-<p>이름표가 생겼으니 엑셀에서 특정 행을 골라내듯 편하게 데이터를 뽑아낼 수 있습니다.</p>
+<p>이름표가 생겼으니 엑셀에서 특정 행을 골라내듯 편하게 데이터를 뽑아낼 수 있습니다. <code class="language-plaintext highlighter-rouge">pandas_03.py</code> 파일을 만들고 아래 단계들을 실습해 봅니다.</p>
 
-<h4 id="하나씩-뽑기-인덱싱">하나씩 뽑기 (인덱싱)</h4>
-<p>새로 만든 문자열 이름표(<code class="language-plaintext highlighter-rouge">'b'</code>, <code class="language-plaintext highlighter-rouge">'e'</code>)로도 뽑고, 원래 있던 위치 순번(<code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">4</code>번째)으로도 뽑을 수 있습니다.</p>
+<h3 id="1단계-기초-데이터-준비-1">1단계: 기초 데이터 준비</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">first</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">s</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2단계-하나씩-뽑기-인덱싱">2단계: 하나씩 뽑기 (인덱싱)</h3>
+<p>새로 만든 문자열 이름표(<code class="language-plaintext highlighter-rouge">'b'</code>, <code class="language-plaintext highlighter-rouge">'e'</code>)로도 뽑고, 원래 있던 위치 순번(<code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">4</code>번째)으로도 뽑을 수 있습니다. 코드 아래에 다음을 추가하세요.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 문자열 등 '직접 지어준 이름표(Label)'로 접근
 </span><span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">])</span>
@@ -864,8 +884,8 @@ Name: 친구 나이, dtype: int64
 
 <p><img src="./img/series_indexing.svg" alt="시리즈 단일 인덱싱 원리 시각화" /></p>
 
-<h4 id="범위를-잘라내기-슬라이싱">범위를 잘라내기 (슬라이싱)</h4>
-<p>여기가 매우 중요합니다! <strong>문자열 레이블 슬라이싱</strong>과 <strong>숫자 위치 슬라이싱</strong>의 동작 방식이 다릅니다.</p>
+<h3 id="3단계-범위를-잘라내기-슬라이싱">3단계: 범위를 잘라내기 (슬라이싱)</h3>
+<p>여기가 매우 중요합니다! <strong>문자열 레이블 슬라이싱</strong>과 <strong>숫자 위치 슬라이싱</strong>의 동작 방식이 다릅니다. 이어서 코드를 작성해 보세요.</p>
 
 <ol>
   <li><strong>문자열(Label) 슬라이싱</strong>: 끝나는 이름표까지 <strong>포함(Include)</strong>해서 가져옵니다.
@@ -908,7 +928,10 @@ Name: first, dtype: float64
 
 <h2 id="-실습-4-여러-개를-콕-집어-뽑기-고급팬시-인덱싱">🪄 [실습 4] 여러 개를 콕 집어 뽑기 (고급/팬시 인덱싱)</h2>
 
-<p>파이썬 리스트에서는 안 되는 기능입니다! 뽑고 싶은 이름표나 순번 여러 개를 리스트(<code class="language-plaintext highlighter-rouge">[]</code>)로 묶어서 넘겨주면, 그 데이터들만 쏙 뽑아서 <strong>새로운 시리즈</strong>로 만들어 줍니다.</p>
+<p>파이썬 리스트에서는 안 되는 기능입니다! <code class="language-plaintext highlighter-rouge">pandas_04.py</code> 파일을 생성해 주세요.</p>
+
+<h3 id="1단계-데이터-준비-및-위치-순번으로-뽑기">1단계: 데이터 준비 및 위치 순번으로 뽑기</h3>
+<p>뽑고 싶은 이름표나 순번 여러 개를 리스트(<code class="language-plaintext highlighter-rouge">[]</code>)로 묶어서 넘겨주면, 그 데이터들만 쏙 뽑아서 <strong>새로운 시리즈</strong>로 만들어 줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 새 सीरीज 준비
 </span><span class="n">test_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">score</span><span class="sh">'</span><span class="p">)</span>
@@ -922,6 +945,10 @@ d     95
 f    100
 Name: score, dtype: int64
 </code></pre></div></div>
+
+<h3 id="2단계-이름표label-순서-섞어서-뽑기">2단계: 이름표(Label) 순서 섞어서 뽑기</h3>
+
+<p>숫자 위치뿐만 아니라 직접 지정한 이름표로도 다중 선택이 가능합니다. 이어서 아래 코드를 추가합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2. 내 마음대로 문자열 이름표 순서 섞어서 뽑기
 </span><span class="nf">print</span><span class="p">(</span><span class="n">test_scores</span><span class="p">[[</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">f</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">]])</span>
@@ -939,12 +966,14 @@ Name: score, dtype: int64
 
 <h2 id="-실습-5-판다스의-꽃-조건부-검색-불리언-인덱싱">🪄 [실습 5] 판다스의 꽃, 조건부 검색 (불리언 인덱싱)</h2>
 
-<p>100만 건의 데이터가 있을 때 “점수가 90점 이상인 데이터만 찾아줘!” 같은 필터링을 루프(for 문) 없이 한 방에 처리합니다.</p>
+<p>100만 건의 데이터가 있을 때 “점수가 90점 이상인 데이터만 찾아줘!” 같은 필터링을 루프(for 문) 없이 한 방에 처리합니다. <code class="language-plaintext highlighter-rouge">pandas_05.py</code> 파일을 새로 만들고 진행합니다.</p>
 
-<h4 id="1-조건식-만들어보기-거름망-준비">1. 조건식 만들어보기 (거름망 준비)</h4>
+<h3 id="1단계-조건식-만들어보기-거름망-준비">1단계: 조건식 만들어보기 (거름망 준비)</h3>
 <p>데이터에 조건을 주면 <code class="language-plaintext highlighter-rouge">True</code>와 <code class="language-plaintext highlighter-rouge">False</code>로 이루어진 논리(Boolean) 시리즈가 생성됩니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">series_a</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">series_a</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">])</span>
 
 <span class="c1"># 조건: 0보다 큰가?
 </span><span class="nf">print</span><span class="p">(</span><span class="n">series_a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
@@ -962,8 +991,8 @@ dtype: bool
 
 <p><img src="./img/series_boolean_mask.svg" alt="불리언 마스크 생성 시각화" /></p>
 
-<h4 id="2-조건식을-데이터에-씌우기-필터링-찌익-">2. 조건식을 데이터에 씌우기 (필터링 찌익-!)</h4>
-<p><code class="language-plaintext highlighter-rouge">[ ]</code> 대괄호 안에 방금 만든 조건식(<code class="language-plaintext highlighter-rouge">True/False</code> 시리즈)을 쏙 집어넣으면, <code class="language-plaintext highlighter-rouge">True</code>인 것만 살아남습니다.</p>
+<h3 id="2단계-조건식을-데이터에-씌우기-필터링-찌익-">2단계: 조건식을 데이터에 씌우기 (필터링 찌익-!)</h3>
+<p><code class="language-plaintext highlighter-rouge">[ ]</code> 대괄호 안에 방금 만든 조건식(<code class="language-plaintext highlighter-rouge">True/False</code> 시리즈)을 쏙 집어넣으면, <code class="language-plaintext highlighter-rouge">True</code>인 것만 살아남습니다. 앞선 코드 아래에 다음을 추가하세요.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0보다 큰 데이터만 뽑는다!
 </span><span class="n">positive_only</span> <span class="o">=</span> <span class="n">series_a</span><span class="p">[</span><span class="n">series_a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -978,8 +1007,8 @@ dtype: int64
 
 <p><img src="./img/series_boolean.svg" alt="조건 거름망을 씌우는 불리언 마스크 통과 과정" /></p>
 
-<h4 id="3-다중-조건-검색-여러-필터-겹치기">3. 다중 조건 검색 (여러 필터 겹치기)</h4>
-<p><code class="language-plaintext highlighter-rouge">&amp;</code> (그리고, AND) 나 <code class="language-plaintext highlighter-rouge">|</code> (또는, OR) 기호를 사용하여 조건을 병합할 수 있습니다. <strong>주의: 각 조건은 반드시 괄호 <code class="language-plaintext highlighter-rouge">()</code> 로 싸주어야 합니다!</strong></p>
+<h3 id="3단계-다중-조건-검색-여러-필터-겹치기">3단계: 다중 조건 검색 (여러 필터 겹치기)</h3>
+<p><code class="language-plaintext highlighter-rouge">&amp;</code> (그리고, AND) 나 <code class="language-plaintext highlighter-rouge">|</code> (또는, OR) 기호를 사용하여 조건을 병합할 수 있습니다. <strong>주의: 각 조건은 반드시 괄호 <code class="language-plaintext highlighter-rouge">()</code> 로 싸주어야 합니다!</strong> 이어서 코드를 작성해 보세요.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0보다 크면서(양수) &amp; 2로 나누어 떨어지는(짝수) 값
 </span><span class="n">even_positive</span> <span class="o">=</span> <span class="n">series_a</span><span class="p">[(</span><span class="n">series_a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">series_a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>

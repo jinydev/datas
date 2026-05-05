@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.4.9 원소가 모두 특정 값인 배열을 만드는 full()"
+description: "앞서 배운 zeros는 0으로 칠하고, ones는 1로 칠하는 전용 도구였습니다."
 ---
 
 # 4.4.9 원소가 모두 특정 값인 배열을 만드는 full()

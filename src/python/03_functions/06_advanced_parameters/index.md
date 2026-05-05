@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.3.6 함수의 다양한 매개변수 통로 (*args, **kwargs)"
+description: "본 장에서는 타 언어 대비 파이썬이 가지는 가장 강력하고 유연한 무기인 가변 인자(Variable Arguments)와 키워드 인자(Keyword Arguments) 매핑 시스템을 배웁니다. 몇 개가 들어올지 모르는 미지의 데이터를 파이썬이 어떻게 args와 kwargs라..."
 ---
 
 # 3.3.6 함수의 다양한 매개변수 통로 (\*args, \*\*kwargs)

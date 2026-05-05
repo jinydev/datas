@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.2.3 match 구문"
+description: "Python 3.10 버전부터 새롭게 도입된 match 구문은 C, Java 등 다른 언어의 switch-case 문과 같이 기본적인 값 매칭 기능을 제공할 뿐만 아니라, 데이터의 '구조(형태)'까지 분해해서 매칭할 수 있는 훨씬 강력하고 현대적인 기능입니다. 처음에는 단..."
 ---
 
 # 3.2.3 match 구문

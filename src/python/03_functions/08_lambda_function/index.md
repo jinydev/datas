@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.3.8 람다(Lambda)"
+description: "본 장에서는 초급자를 벗어나 중급자로 도약하는 산맥 중 하나인 람다(Lambda) 함수의 극강의 활용도를 해부합니다. 이름조차 붙이지 않고 쓰고 버리는 강력한 일회용 함수의 원리와, 컴퓨터 과학에 람다 대수(Lambda Calculus)를 창시한 알론조 처치(Alonzo ..."
 ---
 
 # 3.3.8 람다(Lambda) 익명 함수

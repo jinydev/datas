@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.1.3 산점도 (Scatter Plot)와 hue의 마법"
+description: "이런 단순한 궁금증을 해결하려고 할 때, 두 개의 수치형(연속된 숫자) 변수 간의 상관관계(Correlation)를 시각적으로 확인하기 위해 허공(좌표 평면)에 점을 콕콕 찍어서 그리는 그래프가 바로 산점도입니다."
 ---
 
 # 5.1.3 산점도 (Scatter Plot)와 고차원 매핑

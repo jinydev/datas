@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.3 hstack() - 수평 결합"
+description: "수학에서 두 행렬 $A$와 $B$를 좌우로 결합하려면, 두 행렬의 행(Row)의 개수가 반드시 일치해야 합니다."
 ---
 
 # 4.10.3 numpy.hstack()

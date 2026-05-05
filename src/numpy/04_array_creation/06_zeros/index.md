@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.4.6 원소가 모두 0인 배열을 생성하는 zeros()"
+description: "선형대수학에서 모든 원소가 0으로 가득 찬 행렬을 영행렬(Zero Matrix)이라고 부릅니다."
 ---
 
 # 4.4.6 내장함수 zeros()와 ones(), empty()

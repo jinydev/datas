@@ -1,6 +1,7 @@
 ---
 layout: setup
 title: "2.7 개발 끝판왕 VS Code 코딩 환경 구축"
+description: "비주얼 스튜디오 코드(Visual Studio Code, 이하 VS Code)는 마이크로소프트가 만들어서 천사처럼 전 세계에 무료로(오픈소스) 오픈한 '프로그래밍용 스마트 메모장'입니다. 2016년 정식판 발표 이후 폭발적으로 성장하여 현재 전 세계 개발자 1위의 점유율 ..."
 ---
 
 # 2.7 VS Code(Visual Studio Code)

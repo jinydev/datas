@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.6.4 상수 np.newaxis 활용해 두 배열의 브로드캐스팅"
+description: "앞서 우리는 Numpy가 모양이 맞지 않는 배열들을 브로드캐스팅(차원 확장)을 통해 자동으로 맞춰준다는 것을 배웠습니다."
 ---
 
 # 4.6.4 np.newaxis

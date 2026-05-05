@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.1.5 자료형(Data Types)의 이해"
+description: "파이썬은 다양한 데이터를 프로그래머가 손쉽게 제어할 수 있도록 강력한 분류 체계, 바로 자료형(Data Types)을 지원합니다."
 ---
 
 # 3.1.5 자료형(Data Types)의 이해 허브

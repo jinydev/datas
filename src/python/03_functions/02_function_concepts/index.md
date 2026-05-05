@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.3.2 함수 블랙박스와 매핑 시스템"
+description: "본 장에서는 코드를 단순히 나열하는 초단계를 벗어나, 수학의 '정의역(Domain)과 공역(Codomain)'이라는 철저한 입력/출력 통제 규칙을 프로그래밍의 블랙박스(Black Box) 설계 철학과 연결합니다. 입력(Input), 처리(Process), 출력(Output..."
 ---
 
 # 3.3.2 함수 블랙박스와 매핑(Mapping) 시스템

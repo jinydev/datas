@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.0.2 패키지 matplotlib, seaborn, pydataset 개요"
+description: "파이썬의 시각화 세계에는 양대 산맥이 존재합니다. 하나는 그림의 모든 세부 사항을 밑바닥부터 100% 통제하는 전통적인 장인 Matplotlib이고, 다른 하나는 자주 쓰는 통계 그래프들을 알아서 예쁘게 그려주는 최신식 마법 템플릿 Seaborn입니다."
 ---
 
 # 5.0.2 Matplotlib, Seaborn, pydataset의 역할과 철학

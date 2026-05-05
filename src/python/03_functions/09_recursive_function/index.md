@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.3.9 마법의 거울, 재귀(Recursion)"
+description: "본 장에서는 함수가 거울 속의 자신을 보듯 자기 자신을 끝없이 호출하는 마법 같은 패턴이자, 폴더 속의 폴더를 뒤지는 트리 탐색의 근간이 되는 재귀(Recursion)의 원리를 상세히 정복합니다. 콜 스택(Call Stack)의 동작 방식과 종료 조건(Base Case)의..."
 ---
 
 # 3.3.9 마법의 거울, 재귀(Recursion)

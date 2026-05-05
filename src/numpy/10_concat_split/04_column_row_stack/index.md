@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.4 column_stack()과 row_stack()"
+description: "앞서 배운 hstack()과 vstack()이 기본기라면, 이번에는 1차원 배열을 다룰 때 헷갈리지 않고 특수한 형태(기둥 모양)로 조립할 수 있게 도와주는 맞춤형 특수 결합 함수 두 가지를 알아봅니다."
 ---
 
 # 4.10.4 배열 결합 변형 기법: column_stack() & row_stack()

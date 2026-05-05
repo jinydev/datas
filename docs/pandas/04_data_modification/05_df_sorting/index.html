@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.5 데이터프레임 쌍끌이 정렬</title>
-  <meta name="title" content="6.4.5 데이터프레임 쌍끌이 정렬" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.5 데이터프레임 쌍끌이 정렬"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/05_df_sorting/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.5 데이터프레임 쌍끌이 정렬"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.4.5 데이터프레임 쌍끌이 정렬 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.4.5 데이터프레임 쌍끌이 정렬" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/04_data_modification/05_df_sorting/" />
-<meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/05_df_sorting/" />
+<meta name="description" content="데이터 매트릭스의 축(Axis) 메타데이터 또는 내부의 벡터(Vector) 값을 기준으로 레코드(행 또는 열)의 순서를 재배치하는 알고리즘입니다. 특정 속성값의 크기를 비교(&gt;, &lt;)하여 오름차순(Ascending) 또는 내림차순(Descending)으로 메모리상의 위치를…" />
+<meta property="og:description" content="데이터 매트릭스의 축(Axis) 메타데이터 또는 내부의 벡터(Vector) 값을 기준으로 레코드(행 또는 열)의 순서를 재배치하는 알고리즘입니다. 특정 속성값의 크기를 비교(&gt;, &lt;)하여 오름차순(Ascending) 또는 내림차순(Descending)으로 메모리상의 위치를…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/04_data_modification/05_df_sorting/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/05_df_sorting/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.4.5 데이터프레임 쌍끌이 정렬" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.5 데이터프레임 쌍끌이 정렬","url":"http://localhost:4001/pandas/04_data_modification/05_df_sorting/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"데이터 매트릭스의 축(Axis) 메타데이터 또는 내부의 벡터(Vector) 값을 기준으로 레코드(행 또는 열)의 순서를 재배치하는 알고리즘입니다. 특정 속성값의 크기를 비교(&gt;, &lt;)하여 오름차순(Ascending) 또는 내림차순(Descending)으로 메모리상의 위치를…","headline":"6.4.5 데이터프레임 쌍끌이 정렬","url":"https://datas.jiny.dev/pandas/04_data_modification/05_df_sorting/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -752,8 +748,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-뒤죽박죽된-서울시-교통사고-원본-데이터">🪄 [실습 0] 준비물: 뒤죽박죽된 서울시 교통사고 원본 데이터</h2>
+<h2 id="-실습-1-뒤죽박죽된-서울시-교통사고-원본-데이터-생성">🪄 [실습 1] 뒤죽박죽된 서울시 교통사고 원본 데이터 생성</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-가상의-뒤섞인-데이터-만들기">1단계: 가상의 뒤섞인 데이터 만들기</h3>
 <p>실습을 위해 고의로 시간 순서가 뒤섞인 가짜 데이터 3줄을 만들어 봅니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -783,8 +782,11 @@
 
 <hr />
 
-<h2 id="-실습-1-sort_index-껍데기이름표-기준으로-정렬하기">🪄 [실습 1] <code class="language-plaintext highlighter-rouge">sort_index()</code>: 껍데기(이름표) 기준으로 정렬하기</h2>
+<h2 id="-실습-2-sort_index-껍데기이름표-기준으로-정렬하기">🪄 [실습 2] <code class="language-plaintext highlighter-rouge">sort_index()</code>: 껍데기(이름표) 기준으로 정렬하기</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-인덱스를-활용한-순서-정렬">1단계: 인덱스를 활용한 순서 정렬</h3>
 <p>가장 왼쪽에 붙어있는 행 이름표(인덱스)를 가나다/알파벳/숫자 순서로 깔끔하게 정리합니다. 시계열 데이터(날짜 순서)를 다룰 때 필수적입니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 행 인덱스 문자열 순서('1월' -&gt; '3월' -&gt; '5월')로 오름차순 정렬
@@ -812,8 +814,11 @@
 
 <hr />
 
-<h2 id="-실습-2-sort_valuesby-알맹이실제-값-기준으로-줄-세우기">🪄 [실습 2] <code class="language-plaintext highlighter-rouge">sort_values(by=)</code>: 알맹이(실제 값) 기준으로 줄 세우기</h2>
+<h2 id="-실습-3-sort_valuesby-알맹이실제-값-기준으로-줄-세우기">🪄 [실습 3] <code class="language-plaintext highlighter-rouge">sort_values(by=)</code>: 알맹이(실제 값) 기준으로 줄 세우기</h2>
 
+<p>계속해서 동일한 파일에 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-특정-열-기준-정렬">1단계: 특정 열 기준 정렬</h3>
 <p>데이터 분석에서 가장 많이 쓰이는 함수입니다. 특정 기준 열(Column)을 지목(<code class="language-plaintext highlighter-rouge">by=</code>)하면, 그 열의 숫자 크기에 따라 전체 표의 순서가 요동칩니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '사고(건)' 의 숫자가 가장 작은 달부터 위에서 아래로 세웁니다.
@@ -837,8 +842,11 @@
 
 <hr />
 
-<h2 id="-실습-3-2차-기준-지정-동점자-처리-규정">🪄 [실습 3] 2차 기준 지정 (동점자 처리 규정)</h2>
+<h2 id="-실습-4-2차-기준-지정-동점자-처리-규정">🪄 [실습 4] 2차 기준 지정 (동점자 처리 규정)</h2>
 
+<p>마지막으로 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-다중-기준-정렬">1단계: 다중 기준 정렬</h3>
 <p>만약 1순위 기준으로 삼은 열의 숫자가 똑같다면(동점), 어떻게 순서를 판가름할까요? 그럴 때는 <code class="language-plaintext highlighter-rouge">by=</code> 파라미터에 파이썬 리스트 구조 <code class="language-plaintext highlighter-rouge">[1순위, 2순위]</code>를 넘겨줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 동점자 처리: 사망자 수로 먼저 줄을 세우되, 

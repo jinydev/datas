@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.5.3 배열 함수와 범용 함수"
+description: "통계 압축(Aggregation)과 범용 함수(Ufunc)"
 ---
 
 # 4.5.3 다차원 배열을 주무르는 마법

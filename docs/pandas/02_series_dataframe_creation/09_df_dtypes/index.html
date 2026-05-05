@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)</title>
-  <meta name="title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/09_df_dtypes/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes) | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/02_series_dataframe_creation/09_df_dtypes/" />
-<meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/09_df_dtypes/" />
+<meta name="description" content="데이터프레임의 각 열(Column)은 독립적인 벡터이므로 서로 다른 메모리 크기와 형태를 가지는 자료형(Data Type)을 수용할 수 있습니다. dtypes 속성은 각 컬럼 벡터가 C/C++ 레벨에서 어떤 바이트 크기(예: int64, float32, object)로 할…" />
+<meta property="og:description" content="데이터프레임의 각 열(Column)은 독립적인 벡터이므로 서로 다른 메모리 크기와 형태를 가지는 자료형(Data Type)을 수용할 수 있습니다. dtypes 속성은 각 컬럼 벡터가 C/C++ 레벨에서 어떤 바이트 크기(예: int64, float32, object)로 할…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/02_series_dataframe_creation/09_df_dtypes/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/09_df_dtypes/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)","url":"http://localhost:4001/pandas/02_series_dataframe_creation/09_df_dtypes/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"데이터프레임의 각 열(Column)은 독립적인 벡터이므로 서로 다른 메모리 크기와 형태를 가지는 자료형(Data Type)을 수용할 수 있습니다. dtypes 속성은 각 컬럼 벡터가 C/C++ 레벨에서 어떤 바이트 크기(예: int64, float32, object)로 할…","headline":"6.2.9 데이터프레임의 자료형 검사와 변경 (dtypes)","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/09_df_dtypes/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -755,6 +751,9 @@
 
 <h2 id="-실습-1-현재-데이터프레임의-자료형-확인하기-dtypes">🪄 [실습 1] 현재 데이터프레임의 자료형 확인하기 (<code class="language-plaintext highlighter-rouge">dtypes</code>)</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-원본-데이터프레임의-자료형dtypes-확인">1단계: 원본 데이터프레임의 자료형(dtypes) 확인</h3>
 <p>기본적으로 판다스는 우리가 넣은 데이터를 보고 “이 정도면 충분하겠지” 하고 자동으로 넉넉하게 자료형을 잡아줍니다. 정수형은 <code class="language-plaintext highlighter-rouge">int64</code>(64비트 정수), 실수형은 <code class="language-plaintext highlighter-rouge">float64</code>(64비트 실수), 문자는 <code class="language-plaintext highlighter-rouge">object</code>가 기본입니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -796,6 +795,9 @@ dtype: object
 
 <h2 id="-실습-2-메모리-다이어트-생성할-때-자료형-강제하기-dtype">🪄 [실습 2] 메모리 다이어트! 생성할 때 자료형 강제하기 (<code class="language-plaintext highlighter-rouge">dtype</code>)</h2>
 
+<p>이번에는 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 생성해 봅니다.</p>
+
+<h3 id="1단계-초소형-자료형int8을-적용한-데이터프레임-생성">1단계: 초소형 자료형(int8)을 적용한 데이터프레임 생성</h3>
 <p>엄청나게 큰 빅데이터를 다룰 때 모든 숫자를 <code class="language-plaintext highlighter-rouge">int64</code>로 잡으면 메모리(RAM)가 펑 터질 수 있습니다. “나이는 100을 넘기 힘드니 아주 작은 상자(<code class="language-plaintext highlighter-rouge">int8</code>)에 담아!” 라고 미리 강제할 수 있습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 숫자 데이터만 있는 딕셔너리
@@ -824,6 +826,9 @@ dtype: object
 
 <h2 id="-실습-3-이미-만들어진-표의-자료형-바꾸기-astype">🪄 [실습 3] 이미 만들어진 표의 자료형 바꾸기 (<code class="language-plaintext highlighter-rouge">astype</code>)</h2>
 
+<p>앞서 만든 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 코드로 돌아가, 그 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-변환-후-자료형-확인">1단계: 변환 후 자료형 확인</h3>
 <p>일단 생성된 이후에 “앗, 이 열은 숫자가 아니라 문자로 바꿔서 저장해야겠어”라고 생각이 든다면 <code class="language-plaintext highlighter-rouge">astype()</code> 함수를 사용해 트랜스포머처럼 형태를 변환시킵니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '나이' 열을 정수(int64)에서 문자열(str)로 변환해 덮어씌웁니다.

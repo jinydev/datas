@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.3 파생 열(Column)과 요약 행(Row) 추가하기</title>
-  <meta name="title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/03_df_modify_assign/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.4.3 파생 열(Column)과 요약 행(Row) 추가하기 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/04_data_modification/03_df_modify_assign/" />
-<meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/03_df_modify_assign/" />
+<meta name="description" content="기존 데이터프레임 매트릭스에 존재하는 열 벡터(Column Vectors)들을 선형 결합(Linear Combination) 등의 수식으로 연산한 뒤, 그 결과로 생성된 새로운 벡터를 매트릭스의 새로운 축(새로운 칼럼이나 새로운 행)으로 연결(Concatenate)하여 구…" />
+<meta property="og:description" content="기존 데이터프레임 매트릭스에 존재하는 열 벡터(Column Vectors)들을 선형 결합(Linear Combination) 등의 수식으로 연산한 뒤, 그 결과로 생성된 새로운 벡터를 매트릭스의 새로운 축(새로운 칼럼이나 새로운 행)으로 연결(Concatenate)하여 구…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/04_data_modification/03_df_modify_assign/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/03_df_modify_assign/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.4.3 파생 열(Column)과 요약 행(Row) 추가하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.3 파생 열(Column)과 요약 행(Row) 추가하기","url":"http://localhost:4001/pandas/04_data_modification/03_df_modify_assign/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"기존 데이터프레임 매트릭스에 존재하는 열 벡터(Column Vectors)들을 선형 결합(Linear Combination) 등의 수식으로 연산한 뒤, 그 결과로 생성된 새로운 벡터를 매트릭스의 새로운 축(새로운 칼럼이나 새로운 행)으로 연결(Concatenate)하여 구…","headline":"6.4.3 파생 열(Column)과 요약 행(Row) 추가하기","url":"https://datas.jiny.dev/pandas/04_data_modification/03_df_modify_assign/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -751,8 +747,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-서울시-교통사고-원본-데이터">🪄 [실습 0] 준비물: 서울시 교통사고 원본 데이터</h2>
+<h2 id="-실습-1-서울시-교통사고-원본-데이터-준비">🪄 [실습 1] 서울시 교통사고 원본 데이터 준비</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-원본-데이터-복사">1단계: 원본 데이터 복사</h3>
 <p>파이썬 환경설정이나 연산 중 원본 데이터가 손상되지 않도록, 데이터 변형 작업을 할 때는 <code class="language-plaintext highlighter-rouge">.copy()</code> 함수를 사용하여 복사본을 뜨는 것이 안전한 코딩 습관입니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -777,8 +776,11 @@
 
 <hr />
 
-<h2 id="-실습-1-조합-연산-결과-얻기-사망자--부상자">🪄 [실습 1] 조합 연산 결과 얻기 (사망자 + 부상자)</h2>
+<h2 id="-실습-2-조합-연산-결과-얻기-사망자--부상자">🪄 [실습 2] 조합 연산 결과 얻기 (사망자 + 부상자)</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-부분-열의-가로-압축">1단계: 부분 열의 가로 압축</h3>
 <p>단순히 전체 ‘사망자’만 더하는 것이 아니라, “특정 달의 (사망자 + 부상자)를 더한 ‘재해자 수’“를 파악하고 싶습니다. 앞서 배운 열 분리와 가로 압축(<code class="language-plaintext highlighter-rouge">axis=1</code>)을 체이닝합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1) 사망과 부상 열만 뜯어내기 -&gt; 2) 가로로 뭉개버리기 (axis=1)
@@ -804,8 +806,11 @@ dtype: int64
 
 <hr />
 
-<h2 id="-실습-2-새로운-파생-열column으로-할당대입하기">🪄 [실습 2] 새로운 파생 열(Column)으로 할당(대입)하기</h2>
+<h2 id="-실습-3-새로운-파생-열column으로-할당대입하기">🪄 [실습 3] 새로운 파생 열(Column)으로 할당(대입)하기</h2>
 
+<p>계속해서 동일한 파일에 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-파생-열-개설-및-데이터-삽입">1단계: 파생 열 개설 및 데이터 삽입</h3>
 <p>위에서 힘들게 뽑아낸 결과를 기존 <code class="language-plaintext highlighter-rouge">df2</code> 데이터프레임의 가장 우측 빈 공간에 스마일 라벨을 붙여 끼워 넣으려 합니다. 놀랍게도 새 이름을 바로 대괄호 안에 쓰고 <code class="language-plaintext highlighter-rouge">=</code> 연산자로 넣어주면 그대로 빈방이 개설되며 데이터가 들어갑니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '재해자수'라는 이름의 파생 열 새로 만들기 = 할당!
@@ -827,8 +832,11 @@ dtype: int64
 
 <hr />
 
-<h2 id="-실습-3-맨-밑바닥에-총계-행row-추가하기">🪄 [실습 3] 맨 밑바닥에 ‘총계’ 행(Row) 추가하기</h2>
+<h2 id="-실습-4-맨-밑바닥에-총계-행row-추가하기">🪄 [실습 4] 맨 밑바닥에 ‘총계’ 행(Row) 추가하기</h2>
 
+<p>마지막으로 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-새로운-행row-동시-개척-및-할당">1단계: 새로운 행(Row) 동시 개척 및 할당</h3>
 <p>행(Column)을 추가했으면, 이번엔 데이터프레임 맨 아래에 전 과목 통틀어서 1월~4월까지 합친 ‘총계’ 행(Row)을 추가해 봅시다. 
 <strong>이전 챕터에서 배운 <code class="language-plaintext highlighter-rouge">.loc</code></strong>가 이때 사용됩니다! 그냥 없는 이름을 부른 뒤 <code class="language-plaintext highlighter-rouge">=</code>로 할당해버리는 것입니다.</p>
 

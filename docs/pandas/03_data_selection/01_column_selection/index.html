@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.1 DataFrame 열(Column) 추출의 마법</title>
-  <meta name="title" content="6.3.1 DataFrame 열(Column) 추출의 마법" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.1 DataFrame 열(Column) 추출의 마법"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/01_column_selection/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.1 DataFrame 열(Column) 추출의 마법"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.3.1 DataFrame 열(Column) 추출의 마법 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.3.1 DataFrame 열(Column) 추출의 마법" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/03_data_selection/01_column_selection/" />
-<meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/01_column_selection/" />
+<meta name="description" content="전체 $m imes n$ 매트릭스(데이터프레임)에서 특정 차원(특징)에 해당하는 열 벡터 하나 혹은 여러 개를 부분 집합으로 투영(Projection)하여 추출하는 연산입니다." />
+<meta property="og:description" content="전체 $m imes n$ 매트릭스(데이터프레임)에서 특정 차원(특징)에 해당하는 열 벡터 하나 혹은 여러 개를 부분 집합으로 투영(Projection)하여 추출하는 연산입니다." />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/01_column_selection/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/01_column_selection/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.3.1 DataFrame 열(Column) 추출의 마법" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.1 DataFrame 열(Column) 추출의 마법","url":"http://localhost:4001/pandas/03_data_selection/01_column_selection/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"전체 $m imes n$ 매트릭스(데이터프레임)에서 특정 차원(특징)에 해당하는 열 벡터 하나 혹은 여러 개를 부분 집합으로 투영(Projection)하여 추출하는 연산입니다.","headline":"6.3.1 DataFrame 열(Column) 추출의 마법","url":"https://datas.jiny.dev/pandas/03_data_selection/01_column_selection/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -752,8 +748,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-성적표-데이터-생성하기">🪄 [실습 0] 준비물: 성적표 데이터 생성하기</h2>
+<h2 id="-실습-1-준비물-성적표-데이터-생성하기">🪄 [실습 1] 준비물: 성적표 데이터 생성하기</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-가상의-학급-성적표-만들기">1단계: 가상의 학급 성적표 만들기</h3>
 <p>먼저 실습을 위한 가상의 학급 성적표를 만듭니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -786,8 +785,11 @@
 
 <hr />
 
-<h2 id="-실습-1-한-과목만-쏙-단일-열-참조-series-반환">🪄 [실습 1] 한 과목만 쏙! 단일 열 참조 (Series 반환)</h2>
+<h2 id="-실습-2-한-과목만-쏙-단일-열-참조-series-반환">🪄 [실습 2] 한 과목만 쏙! 단일 열 참조 (Series 반환)</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-단일-열-추출-및-자료형-확인">1단계: 단일 열 추출 및 자료형 확인</h3>
 <p>가장 간단한 방법은 데이터프레임 변수에 <strong>대괄호 <code class="language-plaintext highlighter-rouge">[ ]</code></strong>를 하나 치고 열 이름표를 문자열로 적는 것입니다. (파이썬 딕셔너리에서 Key로 Value를 찾는 문법과 완벽히 동일합니다.)</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '중간' 고사 점수만 뽑아줘!
@@ -817,8 +819,11 @@ Name: 중간, dtype: int64
 
 <hr />
 
-<h2 id="-실습-2-두-과목-이상-동시에-묶어서-뽑기-다중-열-참조">🪄 [실습 2] 두 과목 이상 동시에 묶어서 뽑기 (다중 열 참조)</h2>
+<h2 id="-실습-3-두-과목-이상-동시에-묶어서-뽑기-다중-열-참조">🪄 [실습 3] 두 과목 이상 동시에 묶어서 뽑기 (다중 열 참조)</h2>
 
+<p>계속해서 동일한 파일에 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-리스트-형태를-활용한-다중-열-추출">1단계: 리스트 형태를 활용한 다중 열 추출</h3>
 <p>“기말고사와 출석 점수만 따로 떼서 보고싶어!” 
 이럴 때는 대괄호 안에 <strong>‘열 이름들을 리스트 형태로 묶어서’</strong> 한 번 더 씌워줍니다. (즉, <strong>대괄호가 두 겹 <code class="language-plaintext highlighter-rouge">[[ ]]</code></strong> 이 됩니다.)</p>
 
@@ -850,8 +855,9 @@ Name: 중간, dtype: int64
 
 <hr />
 
-<h2 id="-실습-3-하나를-뽑더라도-표-모양dataframe-살리기">🪄 [실습 3] 하나를 뽑더라도 표 모양(DataFrame) 살리기</h2>
+<h2 id="-실습-4-하나를-뽑더라도-표-모양dataframe-살리기">🪄 [실습 4] 하나를 뽑더라도 표 모양(DataFrame) 살리기</h2>
 
+<h3 id="1단계-대괄호-두-겹을-이용한-2차원-표-유지">1단계: 대괄호 두 겹을 이용한 2차원 표 유지</h3>
 <p>가끔은 1개의 열만 뽑지만 모양은 여전히 2차원 표(DataFrame)로 예쁘게 유지하고 싶을 때가 있습니다. (특히 머신러닝 모델에 데이터를 넣을 때 이런 모양을 요구합니다.)
 이때는 1개를 뽑더라도 <strong>대괄호를 두 겹 <code class="language-plaintext highlighter-rouge">[[ ]]</code></strong> 쳐주면 됩니다.</p>
 

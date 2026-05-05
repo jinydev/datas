@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.2 데이터프레임 논리식 검색 (Conditional Selection)</title>
-  <meta name="title" content="6.3.2 데이터프레임 논리식 검색 (Conditional Selection)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.2 데이터프레임 논리식 검색 (Conditional Selection)"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/02_conditional_selection/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.2 데이터프레임 논리식 검색 (Conditional Selection)"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.3.2 데이터프레임 논리식 검색 (Conditional Selection) | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.3.2 데이터프레임 논리식 검색 (Conditional Selection)" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/03_data_selection/02_conditional_selection/" />
-<meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/02_conditional_selection/" />
+<meta name="description" content="전체 데이터 튜플(Tuple) 집합에서, 특정 속(Attribute) 값이 주어진 논리 조건식($P(x) = True$)을 만족하는 튜플들만 골라내어 새로운 부분 집합(Subset)을 반환하는 관계 대수학의 선택(Selection, $\sigma$) 연산입니다." />
+<meta property="og:description" content="전체 데이터 튜플(Tuple) 집합에서, 특정 속(Attribute) 값이 주어진 논리 조건식($P(x) = True$)을 만족하는 튜플들만 골라내어 새로운 부분 집합(Subset)을 반환하는 관계 대수학의 선택(Selection, $\sigma$) 연산입니다." />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/02_conditional_selection/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/02_conditional_selection/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.3.2 데이터프레임 논리식 검색 (Conditional Selection)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.2 데이터프레임 논리식 검색 (Conditional Selection)","url":"http://localhost:4001/pandas/03_data_selection/02_conditional_selection/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"전체 데이터 튜플(Tuple) 집합에서, 특정 속(Attribute) 값이 주어진 논리 조건식($P(x) = True$)을 만족하는 튜플들만 골라내어 새로운 부분 집합(Subset)을 반환하는 관계 대수학의 선택(Selection, $\\sigma$) 연산입니다.","headline":"6.3.2 데이터프레임 논리식 검색 (Conditional Selection)","url":"https://datas.jiny.dev/pandas/03_data_selection/02_conditional_selection/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -752,7 +748,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-성적표-데이터">🪄 [실습 0] 준비물: 성적표 데이터</h2>
+<h2 id="-실습-1-준비물-성적표-데이터">🪄 [실습 1] 준비물: 성적표 데이터</h2>
+
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 실습을 진행합니다.</p>
+
+<h3 id="1단계-가상의-학급-성적표-만들기">1단계: 가상의 학급 성적표 만들기</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
@@ -782,8 +782,11 @@
 
 <hr />
 
-<h2 id="-실습-1-참새와-독수리-분리하기-논리-배열boolean-series-생성">🪄 [실습 1] 참새와 독수리 분리하기: 논리 배열(Boolean Series) 생성</h2>
+<h2 id="-실습-2-참새와-독수리-분리하기-논리-배열boolean-series-생성">🪄 [실습 2] 참새와 독수리 분리하기: 논리 배열(Boolean Series) 생성</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-조건식을-통한-truefalse-판별">1단계: 조건식을 통한 True/False 판별</h3>
 <p>먼저 조건을 작성하여 각 행이 조건에 맞는지 판별합니다.
 <code class="language-plaintext highlighter-rouge">pf['중간'] &gt; 20</code> 이라는 수식을 적으면, 학생 5명 전원에게 이 질문을 던져 <code class="language-plaintext highlighter-rouge">True/False</code> 답안지(Series)를 만듭니다.</p>
 
@@ -806,8 +809,11 @@ Name: 중간, dtype: bool
 
 <hr />
 
-<h2 id="-실습-2-답안지를-적용해-진짜-데이터-뽑아내기">🪄 [실습 2] 답안지를 적용해 진짜 데이터 뽑아내기</h2>
+<h2 id="-실습-3-답안지를-적용해-진짜-데이터-뽑아내기">🪄 [실습 3] 답안지를 적용해 진짜 데이터 뽑아내기</h2>
 
+<p>계속해서 동일한 파일에 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-불리언-인덱싱-적용">1단계: 불리언 인덱싱 적용</h3>
 <p>위에서 구한 <code class="language-plaintext highlighter-rouge">True/False</code> 답안지(<code class="language-plaintext highlighter-rouge">condition</code>)를 <strong>데이터프레임의 대괄호 <code class="language-plaintext highlighter-rouge">[ ]</code></strong> 안에 쏙 집어넣으면, <code class="language-plaintext highlighter-rouge">True</code>인 학생의 행(Row)만 살아남은 새 표가 나옵니다. 실무에서는 보통 1단계와 합쳐서 <strong>한 줄로</strong> 적습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># "중간 &gt; 20" 인 학생만 남겨라!
@@ -826,8 +832,11 @@ Name: 중간, dtype: bool
 
 <hr />
 
-<h2 id="-실습-3-여러-개의-필터-동시에-씌우기-and--or">🪄 [실습 3] 여러 개의 필터 동시에 씌우기 (AND / OR)</h2>
+<h2 id="-실습-4-여러-개의-필터-동시에-씌우기-and--or">🪄 [실습 4] 여러 개의 필터 동시에 씌우기 (AND / OR)</h2>
 
+<p>이번에는 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 생성해 봅니다. 앞서 만든 성적표 데이터(<code class="language-plaintext highlighter-rouge">pf</code>) 생성 코드를 파일 상단에 먼저 복사해 넣은 뒤 진행합니다.</p>
+
+<h3 id="1단계-다중-조건andor-필터링">1단계: 다중 조건(AND/OR) 필터링</h3>
 <p>“출석은 19 이상 <strong>그리고(AND)</strong> 기말은 20 이상인 사람”을 찾고 싶을 때는 <code class="language-plaintext highlighter-rouge">&amp;</code> (그리고) 기호와 <code class="language-plaintext highlighter-rouge">|</code> (또는) 기호를 합쳐서 넣습니다.</p>
 <blockquote>
   <p><strong>🚨 절대 주의!</strong> 여러 조건을 묶을 때는 반드시 <strong>각 조건을 괄호 <code class="language-plaintext highlighter-rouge">( )</code>로 감싸야</strong> 에러가 나지 않습니다!!</p>
@@ -849,8 +858,11 @@ Name: 중간, dtype: bool
 
 <hr />
 
-<h2 id="-실습-4-꿀팁-데이터베이스처럼-우아하게-검색하기-query">🪄 [실습 4] 꿀팁: 데이터베이스처럼 우아하게 검색하기 (query)</h2>
+<h2 id="-실습-5-꿀팁-데이터베이스처럼-우아하게-검색하기-query">🪄 [실습 5] 꿀팁: 데이터베이스처럼 우아하게 검색하기 (query)</h2>
 
+<p>앞서 만든 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 코드 아래에 다음 내용을 추가합니다.</p>
+
+<h3 id="1단계-query-함수를-이용한-문자열-검색">1단계: query() 함수를 이용한 문자열 검색</h3>
 <p><code class="language-plaintext highlighter-rouge">pf[pf['중간'] &gt; 20]</code> 방식은 코드가 길어지면 괄호가 너무 많아서 눈이 아픕니다. 데이터 분석가들은 SQL 같은 문자열 검색 기능인 <code class="language-plaintext highlighter-rouge">.query()</code>를 애용합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1) 문자열로 깔끔하게 검색

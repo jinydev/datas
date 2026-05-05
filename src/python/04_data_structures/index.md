@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.4 자료 구조 (Data Structures)"
+description: "숫자 하나나 문자열 하나가 아닌, 수많은 데이터를 한 번에 담고 효율적으로 관리하기 위한 파이썬의 강력한 내장 자료구조(컬렉션)들을 학습합니다."
 ---
 
 # 3.4 자료 구조 (Data Structures)

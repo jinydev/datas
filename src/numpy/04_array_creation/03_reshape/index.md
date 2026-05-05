@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.4.3 배열의 모양을 바꾸는 reshape()"
+description: "보통 1줄짜리 긴 배열(arange 등)을, 마트의 계란판처럼 행과 열이 있는 형태로 접어 바꿀 때 사용합니다."
 ---
 
 # 4.4.3 배열의 모양을 바꾸는 reshape()

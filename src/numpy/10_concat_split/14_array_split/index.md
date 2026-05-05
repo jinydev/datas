@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.14 유연한 사탕 쪼개기: array_split()과 dsplit()"
+description: "이번 장에서는 배열 분할 파트의 마지막 두 가지 유용한 강력한 함수를 소개합니다. 하나는 에러 없는 유연함의 끝판왕인 array_split()이고, 다른 하나는 3차원에 특화된 전용 분할기 dsplit()입니다."
 ---
 
 # 4.10.14 유연한 쪼개기: array_split()과 dsplit()

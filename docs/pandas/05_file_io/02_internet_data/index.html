@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.5.2 실전! 지저분한 공공데이터 정제하기</title>
-  <meta name="title" content="6.5.2 실전! 지저분한 공공데이터 정제하기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/05_file_io/02_internet_data/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.5.2 실전! 지저분한 공공데이터 정제하기 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/05_file_io/02_internet_data/" />
-<meta property="og:url" content="http://localhost:4001/pandas/05_file_io/02_internet_data/" />
+<meta name="description" content="인터넷 웹페이지나 공공 구청에서 제공하는 CSV 파일들은 컴퓨터 친화적이기보다는 사람 눈에 보기 좋게 타이틀 제목을 넣거나 숫자 3자리마다 콤마(,)를 찍어두는 경우가 많습니다. 판다스 엔진이 이러한 문자열(String) 형태의 숫자를 산술 연산 체계(Integer/Flo…" />
+<meta property="og:description" content="인터넷 웹페이지나 공공 구청에서 제공하는 CSV 파일들은 컴퓨터 친화적이기보다는 사람 눈에 보기 좋게 타이틀 제목을 넣거나 숫자 3자리마다 콤마(,)를 찍어두는 경우가 많습니다. 판다스 엔진이 이러한 문자열(String) 형태의 숫자를 산술 연산 체계(Integer/Flo…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/05_file_io/02_internet_data/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/05_file_io/02_internet_data/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.5.2 실전! 지저분한 공공데이터 정제하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.5.2 실전! 지저분한 공공데이터 정제하기","url":"http://localhost:4001/pandas/05_file_io/02_internet_data/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"인터넷 웹페이지나 공공 구청에서 제공하는 CSV 파일들은 컴퓨터 친화적이기보다는 사람 눈에 보기 좋게 타이틀 제목을 넣거나 숫자 3자리마다 콤마(,)를 찍어두는 경우가 많습니다. 판다스 엔진이 이러한 문자열(String) 형태의 숫자를 산술 연산 체계(Integer/Flo…","headline":"6.5.2 실전! 지저분한 공공데이터 정제하기","url":"https://datas.jiny.dev/pandas/05_file_io/02_internet_data/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -754,6 +750,9 @@
 
 <h2 id="-실습-1-한글-깨짐과-불필요한-행-제거-encoding-skiprows">🪄 [실습 1] 한글 깨짐과 불필요한 행 제거 (<code class="language-plaintext highlighter-rouge">encoding</code>, <code class="language-plaintext highlighter-rouge">skiprows</code>)</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-파싱-전-오류-탐색">1단계: 파싱 전 오류 탐색</h3>
 <p>공공데이터포털에서 가져온 대한민국 교통사고 데이터를 그대로 열어보면 여러 문제가 터집니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -787,6 +786,9 @@ dtypes: int64(1), object(2)
 
 <h2 id="-실습-2-진짜-숫자로-변환하기-thousands">🪄 [실습 2] 진짜 숫자로 변환하기 (<code class="language-plaintext highlighter-rouge">thousands</code>)</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-thousands-옵션을-이용한-파싱-및-형변환">1단계: thousands 옵션을 이용한 파싱 및 형변환</h3>
 <p><code class="language-plaintext highlighter-rouge">.read_csv()</code> 함수 안에 옵션 하나만 틱 추가해주면 판다스가 알아서 안경을 고쳐 쓰고 숫자로 완벽하게 변환해 줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># thousands=',' 옵션을 투입하여 콤마를 제거하며 숫자로 빨아들입니다!
@@ -812,6 +814,9 @@ Data columns (total 3 columns):
 
 <h2 id="-실습-3-덤-숫자-데이터를-바탕으로-막대그래프-그리기">🪄 [실습 3] 덤: 숫자 데이터를 바탕으로 막대그래프 그리기</h2>
 
+<p>새로운 실습을 위해 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 생성합니다. 데이터 파싱 코드를 상단에 복사한 뒤 실습을 진행합니다.</p>
+
+<h3 id="1단계-seaborn을-이용한-시각화-연계">1단계: Seaborn을 이용한 시각화 연계</h3>
 <p>데이터의 클렌징(정제)이 숫자 형태로 완벽하게 끝났다면, 파이썬의 강력한 시각화 라이브러리인 <strong>Seaborn</strong> 을 이용해 이 예쁘장한 데이터프레임을 통째로 던져주어 그래프를 그릴 수 있습니다.</p>
 
 <blockquote>

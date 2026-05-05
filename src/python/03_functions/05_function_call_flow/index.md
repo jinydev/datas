@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.3.5 함수 호출과 제어 흐름의 도약 (Jump & Return)"
+description: "본 장에서는 초보자들이 파이썬 함수를 배울 때 가장 크게 당황하는 '제어 흐름의 널뛰기(Control Flow Jump)' 현상을 파헤칩니다. 함수가 호출(Call)될 때 메인 프로그램의 메모리 흐름이 어떻게 잠시 정지(Pause)하고 완전히 다른 성벽(Scope) 안으로..."
 ---
 
 # 3.3.5 함수 호출과 제어 흐름의 도약 (Jump & Return)

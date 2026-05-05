@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.2.3 DataFrame 생성자(Constructor) 개요</title>
-  <meta name="title" content="6.2.3 DataFrame 생성자(Constructor) 개요" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.2.3 DataFrame 생성자(Constructor) 개요"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/03_dataframe_constructor/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.2.3 DataFrame 생성자(Constructor) 개요"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.2.3 DataFrame 생성자(Constructor) 개요 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.2.3 DataFrame 생성자(Constructor) 개요" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/02_series_dataframe_creation/03_dataframe_constructor/" />
-<meta property="og:url" content="http://localhost:4001/pandas/02_series_dataframe_creation/03_dataframe_constructor/" />
+<meta name="description" content="수학에서 특정 차원과 형태를 가진 행렬을 정의($A_{m imes n}$)하듯, 판다스에서 DataFrame 클래스 생성자는 $m$개의 행(Index)과 $n$개의 열(Columns)을 가지는 데이터를 메모리 공간에 어떻게 적재할지 규칙을 선언하는 초기화(Initial…" />
+<meta property="og:description" content="수학에서 특정 차원과 형태를 가진 행렬을 정의($A_{m imes n}$)하듯, 판다스에서 DataFrame 클래스 생성자는 $m$개의 행(Index)과 $n$개의 열(Columns)을 가지는 데이터를 메모리 공간에 어떻게 적재할지 규칙을 선언하는 초기화(Initial…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/02_series_dataframe_creation/03_dataframe_constructor/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/02_series_dataframe_creation/03_dataframe_constructor/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.2.3 DataFrame 생성자(Constructor) 개요" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.2.3 DataFrame 생성자(Constructor) 개요","url":"http://localhost:4001/pandas/02_series_dataframe_creation/03_dataframe_constructor/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"수학에서 특정 차원과 형태를 가진 행렬을 정의($A_{m imes n}$)하듯, 판다스에서 DataFrame 클래스 생성자는 $m$개의 행(Index)과 $n$개의 열(Columns)을 가지는 데이터를 메모리 공간에 어떻게 적재할지 규칙을 선언하는 초기화(Initial…","headline":"6.2.3 DataFrame 생성자(Constructor) 개요","url":"https://datas.jiny.dev/pandas/02_series_dataframe_creation/03_dataframe_constructor/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -771,10 +767,12 @@
 
 <hr />
 
-<h2 id="-실습-2-파라미터-조작해보기-코드-실습">🪄 [실습 2] 파라미터 조작해보기 (코드 실습)</h2>
+<h2 id="-실습-1-파라미터-조작해보기-코드-실습">🪄 [실습 1] 파라미터 조작해보기 (코드 실습)</h2>
 
-<p>아무 옵션도 주지 않았을 때와, 우리가 직접 <code class="language-plaintext highlighter-rouge">index</code>와 <code class="language-plaintext highlighter-rouge">columns</code>를 지정했을 때의 차이를 비교해 봅니다.</p>
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다. 아무 옵션도 주지 않았을 때와, 우리가 직접 <code class="language-plaintext highlighter-rouge">index</code>와 <code class="language-plaintext highlighter-rouge">columns</code>를 지정했을 때의 차이를 비교해 봅니다.</p>
 
+<h3 id="1단계-원시-데이터-및-기본-옵션-생성">1단계: 원시 데이터 및 기본 옵션 생성</h3>
+<p>아무 옵션 없이 기본값으로 데이터프레임을 생성해 봅니다.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
@@ -788,8 +786,23 @@
 
 <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- [A] 알아서 만들어진 표 (기본값) ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df_default</span><span class="p">)</span>
+</code></pre></div></div>
 
-<span class="c1"># ----------------------------------------
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [A] 알아서 만들어진 표 (기본값) ---
+    0   1    &lt;-- 열 이름표를 생략했더니 0, 1로 생김
+0  10  20
+1  30  40
+2  50  60
+^-- 행 이름표를 생략했더니 0, 1, 2로 생김
+</code></pre></div></div>
+
+<p><img src="./img/df_constructor_default.svg" alt="알아서 만들어진 기본 표 생성 원리" /></p>
+
+<h3 id="2단계-상세-옵션index-columns-dtype-지정하기">2단계: 상세 옵션(index, columns, dtype) 지정하기</h3>
+<p>이번에는 직접 상세 주문서를 작성하여 표를 다듬어 봅니다. 앞선 코드 아래에 다음 코드를 추가하세요.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ----------------------------------------
 # 케이스 B: 주문서에 상세 옵션 적기
 # ----------------------------------------
 </span><span class="n">df_custom</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
@@ -804,22 +817,12 @@
 </code></pre></div></div>
 
 <p><strong>[실행 결과]</strong></p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [A] 알아서 만들어진 표 (기본값) ---
-    0   1    &lt;-- 열 이름표를 생략했더니 0, 1로 생김
-0  10  20
-1  30  40
-2  50  60
-^-- 행 이름표를 생략했더니 0, 1, 2로 생김
-</code></pre></div></div>
-
-<p><img src="./img/df_constructor_default.svg" alt="알아서 만들어진 기본 표 생성 원리" /></p>
-
-<p>— [B] 상세 주문서가 적용된 표 —
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- [B] 상세 주문서가 적용된 표 ---
        오전매출  오후매출
-1일차    10.0    20.0   &lt;– dtype=float 덕분에 .0 이 붙음
+1일차    10.0    20.0   &lt;-- dtype=float 덕분에 .0 이 붙음
 2일차    30.0    40.0
 3일차    50.0    60.0
-```</p>
+</code></pre></div></div>
 
 <p><img src="./img/df_constructor_custom.svg" alt="상세 주문서가 적용된 표 조립 원리" /></p>
 

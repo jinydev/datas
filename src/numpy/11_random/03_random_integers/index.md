@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.11.3 정수형 주사위 굴리기"
+description: "기계(rg)의 integers(low, high, size) 버튼은 윷놀이나 보드게임처럼 딱딱 떨어지는 정수만 필요할 때 사용합니다. low부터 high - 1 까지만 나옵니다. (파이썬의 인덱스 규칙과 동일합니다!)"
 ---
 
 # 4.11.3 integers(): 정수형 주사위 굴리기

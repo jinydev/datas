@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.7.2 첫 GUI: Hello World와 Mainloop"
+description: "Tkinter 라이브러리를 임포트(Import)하여, 수초 만에 내 컴퓨터 모니터 정중앙에 나만의 윈도우 그래픽 창(Window)을 띄우는 역사적인 \"Hello World\" 스크립트를 작성합니다. 특히 코드가 종료되지 않고 백그라운드에서 영원히 불침번을 서며 마우스 클릭 ..."
 ---
 
 # 3.7.2 첫 GUI: Hello World와 Mainloop

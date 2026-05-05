@@ -1,6 +1,7 @@
 ---
 layout: setup
 title: "2.8 데이터 시각화 맛보기 (Matplotlib Teaser)"
+description: "파이썬 시각화 라이브러리인 Matplotlib의 기초를 익히고, Vibe Coding(AI 협업)을 통해 다양한 그래프를 손쉽게 그려봅니다."
 ---
 
 # 2.8 데이터 시각화 맛보기 (Matplotlib Teaser)

@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.1.2 판다스 설치 및 기초 실습</title>
-  <meta name="title" content="6.1.2 판다스 설치 및 기초 실습" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.1.2 판다스 설치 및 기초 실습"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/01_pandas_basics/02_pandas_practice/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.1.2 판다스 설치 및 기초 실습"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.1.2 판다스 설치 및 기초 실습 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.1.2 판다스 설치 및 기초 실습" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/01_pandas_basics/02_pandas_practice/" />
-<meta property="og:url" content="http://localhost:4001/pandas/01_pandas_basics/02_pandas_practice/" />
+<meta name="description" content="다음은 Pandas를 사용하여 데이터를 생성하고, 조건에 맞게 필터링(조건 검색)하는 간단한 예제입니다." />
+<meta property="og:description" content="다음은 Pandas를 사용하여 데이터를 생성하고, 조건에 맞게 필터링(조건 검색)하는 간단한 예제입니다." />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/01_pandas_basics/02_pandas_practice/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/01_pandas_basics/02_pandas_practice/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.1.2 판다스 설치 및 기초 실습" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.1.2 판다스 설치 및 기초 실습","url":"http://localhost:4001/pandas/01_pandas_basics/02_pandas_practice/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"다음은 Pandas를 사용하여 데이터를 생성하고, 조건에 맞게 필터링(조건 검색)하는 간단한 예제입니다.","headline":"6.1.2 판다스 설치 및 기초 실습","url":"https://datas.jiny.dev/pandas/01_pandas_basics/02_pandas_practice/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -734,30 +730,64 @@
   </ul>
 </blockquote>
 
-<h2 id="-실습-1-파이썬-예제-코드와-필터링-동작-원리">🪄 [실습 1] 파이썬 예제 코드와 필터링 동작 원리</h2>
+<h2 id="-실습-1-데이터-생성과-필터링-동작-원리">🪄 [실습 1] 데이터 생성과 필터링 동작 원리</h2>
 
-<p>다음은 Pandas를 사용하여 데이터를 생성하고, 조건에 맞게 필터링(조건 검색)하는 간단한 예제입니다.</p>
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">practice_01.py</code> (또는 <code class="language-plaintext highlighter-rouge">practice_01.ipynb</code>) 파일을 생성하여 단계별로 코드를 작성해 봅니다.</p>
+
+<h3 id="1단계-데이터-준비하기">1단계: 데이터 준비하기</h3>
+
+<p>먼저 판다스 라이브러리를 불러오고, 파이썬의 기본 자료구조인 딕셔너리(<code class="language-plaintext highlighter-rouge">dict</code>)를 이용하여 가상의 학생 데이터를 준비합니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<span class="c1"># 1. 딕셔너리를 활용하여 데이터프레임(DataFrame) 생성
+<span class="c1"># 1. 딕셔너리를 활용하여 데이터 준비
 </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="sh">'</span><span class="s">Name</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">Alice</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Bob</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Charlie</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Diana</span><span class="sh">'</span><span class="p">],</span>
     <span class="sh">'</span><span class="s">Age</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span>
     <span class="sh">'</span><span class="s">Score</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
 <span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
 
-<span class="c1"># 2. DataFrame 출력 (원본 데이터 확인)
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 원본 데이터 ---</span><span class="sh">"</span><span class="p">)</span>
+<p>이 코드는 아직 데이터를 정의하기만 했을 뿐, 판다스의 강력한 기능이 적용된 상태는 아닙니다.</p>
+
+<h3 id="2단계-데이터프레임dataframe으로-변환하기">2단계: 데이터프레임(DataFrame)으로 변환하기</h3>
+
+<p>준비된 딕셔너리를 판다스의 표 형태 구조인 <code class="language-plaintext highlighter-rouge">DataFrame</code>으로 변환하여 출력해 봅니다. 이전에 작성한 코드 아래에 다음 코드를 추가하세요.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2. DataFrame으로 변환 및 출력
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 원본 데이터 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
 
-<span class="c1"># 3. 데이터 필터링: Score가 90을 초과하는 우수 학생만 추출
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 원본 데이터 ---
+      Name  Age  Score
+0    Alice   25     85
+1      Bob   30     92
+2  Charlie   35     78
+3    Diana   28     95
+</code></pre></div></div>
+
+<p>딕셔너리가 행과 열을 가진 2차원 표 형태로 깔끔하게 변환된 것을 확인할 수 있습니다.</p>
+
+<h3 id="3단계-조건-필터링-90점-초과-학생-찾기">3단계: 조건 필터링 (90점 초과 학생 찾기)</h3>
+
+<p>이제 판다스의 강력한 필터링 기능을 활용하여 <code class="language-plaintext highlighter-rouge">Score</code>가 90점을 초과하는 우수 학생만 추출해 보겠습니다. 코드의 맨 아래에 다음을 추가하여 실행해 보세요.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 3. 데이터 필터링: Score가 90을 초과하는 우수 학생만 추출
 </span><span class="n">excellent_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">Score</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">]</span>
 
-<span class="c1"># 4. 필터링된 결과 확인
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 90점 초과 우수 학생 ---</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- 90점 초과 우수 학생 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">excellent_students</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>[실행 결과]</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 90점 초과 우수 학생 ---
+    Name  Age  Score
+1    Bob   30     92
+3  Diana   28     95
 </code></pre></div></div>
 
 <p>아래 데이터 변환 애니메이션은 위 파이썬 코드에서 <code class="language-plaintext highlighter-rouge">df[df['Score'] &gt; 90]</code> 구문이 어떻게 동작하여 원본 데이터프레임(왼쪽)에서 조건을 만족하는 행들만 필터링한 후 새로운 결과 데이터프레임(오른쪽)을 만들어내는지를 직관적으로 보여줍니다.</p>
@@ -766,19 +796,29 @@
 
 <hr />
 
-<h2 id="실습-2-왜-판다스를-써야-할까요">[실습 2] 왜 판다스를 써야 할까요?</h2>
+<h2 id="실습-2-왜-판다스를-써야-할까요-초대용량-데이터-처리">[실습 2] 왜 판다스를 써야 할까요? (초대용량 데이터 처리)</h2>
 
-<p>수백만 건의 데이터를 엑셀로 열면 프로그램이 멈출 수 있지만, 판다스는 Python, Cython, C로 최적화되어 있어 엄청난 양의 데이터를 초고속으로 읽어 들이고 조작할 수 있습니다.</p>
+<p>이번에는 <code class="language-plaintext highlighter-rouge">practice_02.py</code> 파일을 새로 만들고, 판다스가 얼마나 빠르고 강력한지 체감해 보는 실습을 진행합니다.</p>
 
-<p>현재 판다스는 <strong>파이썬 데이터 분석 1위의 표준 도구</strong>로 쓰이고 있습니다.</p>
+<h3 id="1단계-100만-건의-거대-데이터-생성하기">1단계: 100만 건의 거대 데이터 생성하기</h3>
+
+<p>Numpy의 난수 생성 기능을 활용하여 100만 행짜리 초거대 데이터프레임을 순식간에 만들어 보겠습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<span class="c1"># Pandas는 대량의 데이터도 무심하게 처리해줍니다
+<span class="c1"># 100만 개의 행과 3개의 열을 가진 무작위 데이터 생성
 </span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">A_Score</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B_Score</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">C_Score</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
 
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">100만 건 데이터 맛보기:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<p>수백만 건의 데이터를 엑셀로 열면 프로그램이 멈추거나 굉장히 느려지지만, 판다스는 Python, Cython, C로 최적화되어 있어 엄청난 양의 데이터를 메모리에 초고속으로 로드합니다.</p>
+
+<h3 id="2단계-데이터-살짝-엿보기-head">2단계: 데이터 살짝 엿보기 (head)</h3>
+
+<p>100만 건을 모두 화면에 출력할 수는 없으니, <code class="language-plaintext highlighter-rouge">head()</code> 함수를 이용해 상위 3개의 데이터만 살짝 엿보겠습니다. 앞서 작성한 코드 아래에 다음을 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 상위 3개 행만 출력하여 데이터 확인
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">100만 건 데이터 맛보기:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p><strong>[실행 결과]</strong></p>
@@ -788,6 +828,8 @@
 1   0.23456   0.78901   0.56789
 2   0.34567   0.89012   0.67890
 </code></pre></div></div>
+
+<p>이처럼 대용량 데이터를 아주 간단한 코드 몇 줄만으로 빠르고 쉽게 조작할 수 있다는 점 때문에 현재 판다스는 <strong>파이썬 데이터 분석 1위의 표준 도구</strong>로 쓰이고 있습니다.</p>
 
 <p><img src="./img/pandas_massive_df.svg" alt="초거대 데이터프레임 초고속 생성 퍼포먼스" /></p>
 

@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.8 np.c_[]와 np.column_stack()"
+description: "실무에서 데이터 분석가들의 코드를 보면 column_stack 대신 정체불명의 np.c_ 라는 문법이 자주 등장합니다."
 ---
 
 # 4.10.8 초고수의 단축키: np.c_[]와 np.column_stack()

@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.4.11 내장함수 zeros_like()와 ones_like(), full_like()"
+description: "프로그래밍을 하다 보면 외부에서 크기를 알 수 없는 미지의 배열 데이터 A를 넘겨받는 경우가 많습니다."
 ---
 
 # 4.4.11 형태를 훔치는 복제 마법 _like() 형제들

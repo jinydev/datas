@@ -2,6 +2,7 @@
 layout: pandas
 title: "Pandas/Seaborn 기본 제공 데이터 셋"
 permalink: /pandas/datasets/
+description: "데이터 분석 및 시각화를 학습할 때 가장 먼저 마주하는 것이 바로 \"어떤 데이터로 연습할 것인가?\" 입니다. 매번 공공데이터포털 등에서 CSV 파일을 다운로드 받는 것은 매우 번거로운 일입니다."
 ---
 
 # Pandas / Seaborn 실습용 기본 데이터 셋 개요

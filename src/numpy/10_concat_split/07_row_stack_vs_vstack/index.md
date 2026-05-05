@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.7 row_stack()과 vstack()의 결론"
+description: "앞선 챕터에서 우리는 1차원 특성 데이터를 무턱대고 수평 결합하려다 hstack이 차원 불일치 에러를 뿜어내어 column_stack을 구세주처럼 사용해야 했던 과정을 살펴보았습니다."
 ---
 
 # 4.10.7 결론: row_stack() vs vstack()

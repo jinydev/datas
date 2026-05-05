@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.6.1 파일 입출력의 개념과 필요성"
+description: "코딩 초보자들이 흔히 간과하는 램(RAM)의 휘발성 문제를 자각하고, 데이터가 영구히 저장되는 하드디스크(SSD/HDD) 공간에서 파이썬 프로그램 안으로 데이터를 밀어넣고(Input) 빼내는(Output) 스트림(Stream)의 원리를 이해합니다."
 ---
 
 # 3.6.1 파일 입출력의 개념과 필요성 (File I/O Concepts)

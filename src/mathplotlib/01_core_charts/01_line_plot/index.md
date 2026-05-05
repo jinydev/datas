@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.1.1 가장 단순한 선 그래프 (plot)"
+description: "데이터 시각화의 첫걸음은 가장 단순하고 직관적인 선 그래프(Line Plot)를 그려보는 것입니다."
 ---
 
 # 5.1.1 가장 단순한 선 그래프 (Line Plot)

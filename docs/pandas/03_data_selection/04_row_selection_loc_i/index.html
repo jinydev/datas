@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.4 loc[index[i]]를 활용한 우회적 행 참조</title>
-  <meta name="title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.3.4 loc[index[i]]를 활용한 우회적 행 참조 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/" />
-<meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/" />
+<meta name="description" content=".loc은 근본적으로 ‘이름표(Label)’ 기반 검색기입니다. 따라서 숫자로 된 ‘순번(Position)’을 직접 넣으면 에러가 날 수 있습니다. 하지만 데이터프레임의 인덱스 배열 구조체인 df.index 자체를 배열처럼 슬라이싱(df.index[i])한 뒤, 그 결과를…" />
+<meta property="og:description" content=".loc은 근본적으로 ‘이름표(Label)’ 기반 검색기입니다. 따라서 숫자로 된 ‘순번(Position)’을 직접 넣으면 에러가 날 수 있습니다. 하지만 데이터프레임의 인덱스 배열 구조체인 df.index 자체를 배열처럼 슬라이싱(df.index[i])한 뒤, 그 결과를…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.3.4 loc[index[i]]를 활용한 우회적 행 참조" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.4 loc[index[i]]를 활용한 우회적 행 참조","url":"http://localhost:4001/pandas/03_data_selection/04_row_selection_loc_i/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":".loc은 근본적으로 ‘이름표(Label)’ 기반 검색기입니다. 따라서 숫자로 된 ‘순번(Position)’을 직접 넣으면 에러가 날 수 있습니다. 하지만 데이터프레임의 인덱스 배열 구조체인 df.index 자체를 배열처럼 슬라이싱(df.index[i])한 뒤, 그 결과를…","headline":"6.3.4 loc[index[i]]를 활용한 우회적 행 참조","url":"https://datas.jiny.dev/pandas/03_data_selection/04_row_selection_loc_i/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -752,8 +748,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-성적표-데이터">🪄 [실습 0] 준비물: 성적표 데이터</h2>
+<h2 id="-실습-1-준비물-성적표-데이터">🪄 [실습 1] 준비물: 성적표 데이터</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-가상의-학급-성적표-생성">1단계: 가상의 학급 성적표 생성</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
 <span class="n">pf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
@@ -771,8 +770,11 @@
 
 <hr />
 
-<h2 id="-실습-1-첫-번째-행-검색하기-단일-우회-참조">🪄 [실습 1] 첫 번째 행 검색하기 (단일 우회 참조)</h2>
+<h2 id="-실습-2-첫-번째-행-검색하기-단일-우회-참조">🪄 [실습 2] 첫 번째 행 검색하기 (단일 우회 참조)</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-인덱스-번호를-통한-단일-행-우회-참조">1단계: 인덱스 번호를 통한 단일 행 우회 참조</h3>
 <p>이름을 모르지만 무조건 “첫 번째 행”을 뽑아야 한다고 가정합시다. <code class="language-plaintext highlighter-rouge">pf.index[0]</code>을 사용하여 첫 번째 행의 진짜 이름표를 낚아채서 <code class="language-plaintext highlighter-rouge">.loc</code>에 던져줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pf.index[0] 은 '윤일형' 이라는 문자열을 반환합니다.
@@ -804,8 +806,11 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h2 id="-실습-2-범위로-쪼개기-index-슬라이싱">🪄 [실습 2] 범위로 쪼개기 (Index 슬라이싱)</h2>
+<h2 id="-실습-3-범위로-쪼개기-index-슬라이싱">🪄 [실습 3] 범위로 쪼개기 (Index 슬라이싱)</h2>
 
+<p>계속해서 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-인덱스-슬라이싱을-이용한-다중-행-추출">1단계: 인덱스 슬라이싱을 이용한 다중 행 추출</h3>
 <p>‘두 번째부터 네 번째까지’ 같은 범위(슬라이싱)도 똑같은 원리로 작동합니다. 조교에게 “출석부 1번부터 3번까지 명단 좀 가져와”라고 시키는 것과 같습니다. (파이썬 기본 리스트 슬라이싱이므로 마지막 번호는 제외됩니다!)</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1번 인덱스('강수희') 부터 4번 인덱스('신수빈') "전"까지의 명단을 가져옵니다.
@@ -832,8 +837,11 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h2 id="-실습-3-행-뽑은-뒤-원하는-과목열만-추가로-뽑기-체인링">🪄 [실습 3] 행 뽑은 뒤, 원하는 과목(열)만 추가로 뽑기 (체인링)</h2>
+<h2 id="-실습-4-행-뽑은-뒤-원하는-과목열만-추가로-뽑기-체인링">🪄 [실습 4] 행 뽑은 뒤, 원하는 과목(열)만 추가로 뽑기 (체인링)</h2>
 
+<p><code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 새로 생성하여 실습합니다. 성적표 데이터(<code class="language-plaintext highlighter-rouge">pf</code>) 코드를 상단에 복사한 뒤 다음 실습을 진행합니다.</p>
+
+<h3 id="1단계-체이닝chaining-기법-활용">1단계: 체이닝(Chaining) 기법 활용</h3>
 <p>2단계에서 행(학생 명단)을 뽑아서 작은 데이터프레임을 만들었습니다. 데이터 분석 시, 이 작아진 데이터프레임의 뒤에 <strong>연달아 <code class="language-plaintext highlighter-rouge">[['기말', '과제']]</code> 대괄호를 붙여서 특정 열만 추가로 걸러내는 것</strong>이 가능합니다! 이를 메소드 체이닝(Method Chaining) 기법이라고도 부릅니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. pf.loc[pf.index[1:4]] 로 학생 3명을 뽑고,

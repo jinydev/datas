@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.5 객체지향 프로그래밍 (OOP)"
+description: "현대 프로그래밍의 가장 중요한 패러다임인 객체지향 프로그래밍(Object-Oriented Programming)을 파이썬으로 구현하는 방법을 배웁니다."
 ---
 
 # 3.5 객체지향 프로그래밍 (OOP)

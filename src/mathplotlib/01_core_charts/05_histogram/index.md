@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.1.5 히스토그램 (Histogram)과 데이터 통(Bins)"
+description: "상자그림(Box Plot)이 데이터를 위에서 내려다보며 사분위수를 잘라서 보여준다면, 히스토그램(Histogram)은 데이터들이 어느 점수대에 가장 많이 몰려있는지 산봉우리 모양으로 보여주는 그래프입니다."
 ---
 
 # 5.1.5 히스토그램 (Histogram) 완벽 해부

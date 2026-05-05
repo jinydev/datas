@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.2.4 Seaborn 첫 그래프: Countplot과 Histplot"
+description: "변수의 타입을 완벽하게 이해했다면, 본격적으로 Seaborn 마법사에게 그래프를 주문할 차례입니다."
 ---
 
 # 5.2.4 Seaborn 첫 그래프 기초

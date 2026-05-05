@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.8.2 2차원 배열 색인 (Fancy Indexing)"
+description: "행렬 구조인 2차원 배열부터는 행(Row)과 열(Column)이라는 2개의 축이 존재합니다."
 ---
 
 # 4.8.2 2차원 배열 색인 (Fancy Indexing)

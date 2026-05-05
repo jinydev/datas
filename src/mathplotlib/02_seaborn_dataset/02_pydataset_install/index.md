@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.2.2 초기 데이터 탐색 (EDA) 기법"
+description: "가장 유명한 해난 사고인 titanic(타이타닉) 데이터셋을 메모리로 불러오겠습니다. 데이터를 처음 받으면 절대로 무작정 그래프부터 그리지 않습니다. 데이터가 어떻게 생겼는지 파악하는 탐색(EDA) 과정이 선행되어야 합니다."
 ---
 
 # 5.2.2 초기 데이터 탐색 (EDA: Exploratory Data Analysis)

@@ -1,6 +1,7 @@
 ---
 layout: setup
 title: "2.4 아나콘다(Anaconda)와 주피터 노트북 환경 설정"
+description: "1. 공식 홈페이지에 접속합니다: https://www.anaconda.com/download"
 ---
 
 # 2.4 아나콘다(Anaconda)와 주피터 노트북

@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.13 직관적인 분할 함수: hsplit()과 vsplit()"
+description: "앞서 배운 split(axis=...) 처럼 axis 숫자 번호를 외우지 않아도 되도록, 아주 직관적인 방향(수평, 수직) 이름을 가진 짝꿍 쪼개기 함수들이 있습니다. 바로 배열을 수평 방향으로 자르는 hsplit과 수직 방향으로 자르는 vsplit입니다."
 ---
 
 # 4.10.13 직관적인 분할 함수: hsplit()과 vsplit()

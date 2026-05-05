@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.1.2 주석과 상수"
+description: "이제 기초적인 파이썬 언어에 대해서 알아 보겠습니다."
 ---
 
 

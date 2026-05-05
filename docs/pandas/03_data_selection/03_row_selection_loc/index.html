@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기</title>
-  <meta name="title" content="6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/03_row_selection_loc/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/03_data_selection/03_row_selection_loc/" />
-<meta property="og:url" content="http://localhost:4001/pandas/03_data_selection/03_row_selection_loc/" />
+<meta name="description" content="데이터프레임(Matrix) 공간에서, 인덱스 축(Axis 0)에 부여된 사람이 읽을 수 있는 명시적 레이블(Label, 문자열 등)을 키형태로 사용하여 특정 행 벡터(Row Vector)들의 집합을 추출하는 과정입니다." />
+<meta property="og:description" content="데이터프레임(Matrix) 공간에서, 인덱스 축(Axis 0)에 부여된 사람이 읽을 수 있는 명시적 레이블(Label, 문자열 등)을 키형태로 사용하여 특정 행 벡터(Row Vector)들의 집합을 추출하는 과정입니다." />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/03_row_selection_loc/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/03_row_selection_loc/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기","url":"http://localhost:4001/pandas/03_data_selection/03_row_selection_loc/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"데이터프레임(Matrix) 공간에서, 인덱스 축(Axis 0)에 부여된 사람이 읽을 수 있는 명시적 레이블(Label, 문자열 등)을 키형태로 사용하여 특정 행 벡터(Row Vector)들의 집합을 추출하는 과정입니다.","headline":"6.3.3 loc[이름] 속성으로 행(Row) 참조 구하기","url":"https://datas.jiny.dev/pandas/03_data_selection/03_row_selection_loc/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -751,8 +747,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-성적표-데이터">🪄 [실습 0] 준비물: 성적표 데이터</h2>
+<h2 id="-실습-1-준비물-성적표-데이터">🪄 [실습 1] 준비물: 성적표 데이터</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-가상의-학급-성적표-생성">1단계: 가상의 학급 성적표 생성</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
 <span class="n">pf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
@@ -773,8 +772,11 @@
 
 <hr />
 
-<h2 id="-실습-1-한-명의-데이터만-콕-집어-뽑기-단일-행">🪄 [실습 1] 한 명의 데이터만 콕 집어 뽑기 (단일 행)</h2>
+<h2 id="-실습-2-한-명의-데이터만-콕-집어-뽑기-단일-행">🪄 [실습 2] 한 명의 데이터만 콕 집어 뽑기 (단일 행)</h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-단일-행-추출-loc">1단계: 단일 행 추출 (.loc)</h3>
 <p><code class="language-plaintext highlighter-rouge">.loc['이름표']</code> 를 사용합니다. 단일 열을 뽑을 때처럼 표(DataFrame) 모양이 무너지며 <strong>시리즈(Series)</strong> 형태로 세로로 길게 반환됩니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '윤일형' 학생의 모든 성적 정보를 가져와 줘!
@@ -800,8 +802,11 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h2 id="-실습-2-여러-명의-데이터를-동시에-뽑기-명단-넘기기">🪄 [실습 2] 여러 명의 데이터를 동시에 뽑기 (명단 넘기기)</h2>
+<h2 id="-실습-3-여러-명의-데이터를-동시에-뽑기-명단-넘기기">🪄 [실습 3] 여러 명의 데이터를 동시에 뽑기 (명단 넘기기)</h2>
 
+<p>계속해서 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-명단을-이용한-여러-행-동시-추출">1단계: 명단을 이용한 여러 행 동시 추출</h3>
 <p>뽑고 싶은 사람들의 이름표를 파이썬 리스트 <code class="language-plaintext highlighter-rouge">[ ]</code>로 묶어서 넘겨줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># '홍소희'와 '윤일형' 학생을 콕 집어서 뽑기 (순서도 마음대로 바꿀 수 있습니다!)
@@ -820,8 +825,9 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h2 id="-실습-3-여기부터-여기까지-다-나와-슬라이싱">🪄 [실습 3] “여기부터 여기까지 다 나와!” (슬라이싱)</h2>
+<h2 id="-실습-4-여기부터-여기까지-다-나와-슬라이싱">🪄 [실습 4] “여기부터 여기까지 다 나와!” (슬라이싱)</h2>
 
+<h3 id="1단계-범위-지정-슬라이싱">1단계: 범위 지정 슬라이싱</h3>
 <p>이름표를 기준으로 <strong>콜론(<code class="language-plaintext highlighter-rouge">:</code>)</strong>을 사용해 범위를 지정할 수 있습니다.</p>
 
 <blockquote>
@@ -847,8 +853,11 @@ Name: 윤일형, dtype: int64
 
 <hr />
 
-<h2 id="-실습-4-loc-안에-조건식boolean-넣기">🪄 [실습 4] loc 안에 조건식(Boolean) 넣기</h2>
+<h2 id="-실습-5-loc-안에-조건식boolean-넣기">🪄 [실습 5] loc 안에 조건식(Boolean) 넣기</h2>
 
+<p>이번에는 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 생성해 봅니다. 앞서 만든 성적표 데이터(<code class="language-plaintext highlighter-rouge">pf</code>) 코드를 상단에 복사한 뒤 다음 실습을 진행합니다.</p>
+
+<h3 id="1단계-조건식을-이용한-추출">1단계: 조건식을 이용한 추출</h3>
 <p>이전 장에서 배운 “조건부 참조” 문법은 사실 이 <code class="language-plaintext highlighter-rouge">.loc</code> 돋보기 안에도 똑같이 들어갈 수 있습니다. 판다스 내부 규칙상 <code class="language-plaintext highlighter-rouge">.loc[ 조건식 ]</code> 처럼 쓰는 것이 더 실수가 적은 정석적인 문법입니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1) 중간고사가 20점을 넘는 학생들

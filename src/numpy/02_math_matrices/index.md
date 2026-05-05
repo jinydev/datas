@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "02. 데이터 블록과 시공간 왜곡 (행렬 사전학습)"
+description: "attributeName=\"transform\""
 ---
 
 # 2. 고대 암호판에서 GPU 텐서 파괴신으로: 행렬 이야기

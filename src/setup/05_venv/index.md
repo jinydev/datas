@@ -1,6 +1,7 @@
 ---
 layout: setup
 title: "2.5 파이썬 가상환경(Virtual Environment) 완벽 이해"
+description: "\"가상환경은 파이썬 버전을 여러 개 설치할 때 유용한 것 아닌가요? 요즘은 버전 충돌 문제가 덜하지 않나요?\" 라고 질문할 수 있습니다. 반은 맞고 반은 틀립니다!"
 ---
 
 # 2.5 파이썬 가상환경(Virtual Environment)

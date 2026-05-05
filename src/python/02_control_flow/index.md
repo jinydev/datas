@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.2 제어 흐름 (Control Flow)"
+description: "파이썬의 가장 강력한 제어문을 학습하는 단원입니다."
 ---
 
 # 3.2 제어 흐름 (Control Flow)

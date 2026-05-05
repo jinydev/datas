@@ -1,6 +1,7 @@
 ---
 layout: setup
 title: "2.6 구글 코랩(Google Colab) 환경 설정 및 사용법"
+description: "구글 코랩(Google Colab)은 구글이 제공하는 클라우드 기반의 주피터 노트북(Jupyter Notebook) 환경입니다."
 ---
 
 # 2.6 구글 코랩(Google Colab) 환경 설정 및 사용법

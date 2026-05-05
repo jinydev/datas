@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.6.3 데이터 분석 실습 (Matplotlib 맛보기)"
+description: "앞서 배운 파이썬의 핵심 3대장 (제어문, 리스트, 그리고 파일 open())을 총동원하여 미니 데이터 분석을 수행합니다. 내 하드디스크에 저장된 sales.csv 매출 데이터를 가져와 파이썬 리스트로 정제한 뒤, 데이터 시각화의 꽃인 Matplotlib 차트로 띄워보는 ..."
 ---
 
 # 3.6.3 데이터 분석 실습 (Matplotlib 맛보기)

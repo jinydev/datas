@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.4.1 내장함수 array()로 ndarray 생성"
+description: "선형대수학에서는 어떤 연산을 시작하기 전, 스케치북에 \"나는 가로 3칸, 세로 3칸짜리 2차원 공간을 쓰겠다\"고 차원(Dimension)을 선언합니다."
 ---
 
 # 4.4.1 내장함수 array()로 ndarray 생성

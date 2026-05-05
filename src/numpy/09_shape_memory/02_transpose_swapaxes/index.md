@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.9.2 전치와 축 교환 (T, swapaxes)"
+description: "선형대수학에서 행렬의 왼쪽 위에서 오른쪽 아래로 떨어지는 대각선(\\)을 거울축으로 삼아 종이를 데칼코마니처럼 접습니다."
 ---
 
 # 4.9.2 대칭 반전과 축 교환 (Transpose & Swapaxes)

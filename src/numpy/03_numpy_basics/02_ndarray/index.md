@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.3.2 다차원 배열 자료형 ndarray"
+description: "numpy에서 가장 많이 다루는 대표적인 자료형은 ndarray입니다. 용어의 n은 다차원(n-dimensional)을 의미하며, array는 배열을 뜻합니다."
 ---
 
 # 4.3.2 다차원 배열 자료형 ndarray

@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.3.11.3 기하학 및 삼각함수 (math)"
+description: "math 모듈이 지원하는 수학적 상수(pi, e)들과 파동(Wave)을 그려내는 삼각함수(sin, cos)의 사용 규칙과 라디안 변환 원리를 이해합니다."
 ---
 
 # 3.3.11.3 기하학 및 삼각함수 (math)

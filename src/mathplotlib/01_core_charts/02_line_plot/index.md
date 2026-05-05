@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.1.2 Seaborn 선 그래프 (시계열 데이터)"
+description: "앞서 배운 5.1.1장에서는 단순히 점 5개를 잇는 기본적인 plt.plot()을 배웠습니다."
 ---
 
 # 5.1.2 Seaborn 선 그래프와 신뢰 구간의 마법

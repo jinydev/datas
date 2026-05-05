@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.8.1 1차원 배열 색인 (Fancy Indexing)"
+description: "연속된 범위(:)를 잘라내는 기본 슬라이싱과 달리,"
 ---
 
 # 4.8.1 배열 색인 (Fancy Indexing)

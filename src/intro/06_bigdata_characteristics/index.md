@@ -1,6 +1,7 @@
 ---
 layout: intro
 title: "1.6 빅데이터의 3V 특성"
+description: "본 장에서는 일반적인 엑셀이나 개인용 PC로는 감당할 수 없을 만큼 거대하고 복잡한 '빅데이터(Big Data)'의 3대 본질(Volume, Velocity, Variety)을 명확히 이해합니다. 또한 이 압도적인 데이터를 지휘하기 위한 시각화(Visualization) ..."
 ---
 
 # 1.6 빅데이터의 3V 특성

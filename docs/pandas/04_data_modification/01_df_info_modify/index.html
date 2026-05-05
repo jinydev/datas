@@ -5,26 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>6.4.1 데이터프레임 종합 건강검진</title>
-  <meta name="title" content="6.4.1 데이터프레임 종합 건강검진" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="6.4.1 데이터프레임 종합 건강검진"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="linux">
-  <meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/01_df_info_modify/">
-
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="6.4.1 데이터프레임 종합 건강검진"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>6.4.1 데이터프레임 종합 건강검진 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.4.1 데이터프레임 종합 건강검진" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
-<link rel="canonical" href="http://localhost:4001/pandas/04_data_modification/01_df_info_modify/" />
-<meta property="og:url" content="http://localhost:4001/pandas/04_data_modification/01_df_info_modify/" />
+<meta name="description" content="대규모 행렬(데이터프레임)을 메모리에 적재한 직후 분석의 방향을 설정하기 위해 필수적으로 수행하는 단계입니다. 데이터의 구조적 메타데이터(차원수, 데이터 타입, 결측치 여부)를 파악하고, 각 열(Vector)에 대한 1차 기술 통계(Descriptive Statistics…" />
+<meta property="og:description" content="대규모 행렬(데이터프레임)을 메모리에 적재한 직후 분석의 방향을 설정하기 위해 필수적으로 수행하는 단계입니다. 데이터의 구조적 메타데이터(차원수, 데이터 타입, 결측치 여부)를 파악하고, 각 열(Vector)에 대한 1차 기술 통계(Descriptive Statistics…" />
+<link rel="canonical" href="https://datas.jiny.dev/pandas/04_data_modification/01_df_info_modify/" />
+<meta property="og:url" content="https://datas.jiny.dev/pandas/04_data_modification/01_df_info_modify/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="6.4.1 데이터프레임 종합 건강검진" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"6.4.1 데이터프레임 종합 건강검진","url":"http://localhost:4001/pandas/04_data_modification/01_df_info_modify/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"대규모 행렬(데이터프레임)을 메모리에 적재한 직후 분석의 방향을 설정하기 위해 필수적으로 수행하는 단계입니다. 데이터의 구조적 메타데이터(차원수, 데이터 타입, 결측치 여부)를 파악하고, 각 열(Vector)에 대한 1차 기술 통계(Descriptive Statistics…","headline":"6.4.1 데이터프레임 종합 건강검진","url":"https://datas.jiny.dev/pandas/04_data_modification/01_df_info_modify/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -752,8 +748,11 @@
 
 <hr />
 
-<h2 id="-실습-0-준비물-외부-서울시-교통사고-데이터-불러오기">🪄 [실습 0] 준비물: 외부 서울시 교통사고 데이터 불러오기</h2>
+<h2 id="-실습-1-외부-서울시-교통사고-데이터-불러오기">🪄 [실습 1] 외부 서울시 교통사고 데이터 불러오기</h2>
 
+<p>VS Code나 주피터 노트북을 열고 <code class="language-plaintext highlighter-rouge">pandas_01.py</code> 파일을 생성하여 단계별로 실습을 진행합니다.</p>
+
+<h3 id="1단계-csv-파일-읽기-및-데이터-확인">1단계: CSV 파일 읽기 및 데이터 확인</h3>
 <p>실전 분석을 위해 서울시 월별 교통사고 현황이 담긴 외부 CSV 파일을 불러옵니다. <code class="language-plaintext highlighter-rouge">index_col=0</code> 옵션을 주어 0번째 열(A열, ‘연월’)을 좌측 시간 인덱스로 곧바로 사용하도록 지시합니다. (파일 입출력의 자세한 원리는 이어지는 6.5장에서 다룹니다.)</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -778,8 +777,11 @@
 
 <hr />
 
-<h2 id="-실습-1-가장-중요한-엑스레이-촬영-info">🪄 [실습 1] 가장 중요한 엑스레이 촬영: <code class="language-plaintext highlighter-rouge">.info()</code></h2>
+<h2 id="-실습-2-가장-중요한-엑스레이-촬영-info">🪄 [실습 2] 가장 중요한 엑스레이 촬영: <code class="language-plaintext highlighter-rouge">.info()</code></h2>
 
+<p>작성한 코드 아래에 다음 코드를 추가합니다.</p>
+
+<h3 id="1단계-데이터-구조-엑스레이-촬영">1단계: 데이터 구조 엑스레이 촬영</h3>
 <p>데이터를 불러온 즉시 가장 먼저 실행해야 하는 핵심 메서드입니다. 데이터 프레임의 크기, 컬럼명, 변수 타입, 그리고 <strong>결측치(빈 공간)의 유무</strong>를 단번에 알려줍니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 🩺 데이터 구조 엑스레이 촬영 ---</span><span class="sh">"</span><span class="p">)</span>
@@ -814,8 +816,11 @@ memory usage: 384.0+ bytes
 
 <hr />
 
-<h2 id="-실습-2-데이터의-대략적인-크기와-수치-요약-describe">🪄 [실습 2] 데이터의 대략적인 크기와 수치 요약: <code class="language-plaintext highlighter-rouge">.describe()</code></h2>
+<h2 id="-실습-3-데이터의-대략적인-크기와-수치-요약-describe">🪄 [실습 3] 데이터의 대략적인 크기와 수치 요약: <code class="language-plaintext highlighter-rouge">.describe()</code></h2>
 
+<p>계속해서 아래 코드를 추가합니다.</p>
+
+<h3 id="1단계-기초-통계량-요약-리포트-확인">1단계: 기초 통계량 요약 리포트 확인</h3>
 <p>데이터가 전부 숫자(정수나 실수)인 것을 확인했다면, <code class="language-plaintext highlighter-rouge">.describe()</code>를 호출해 기초 통계량을 뽑습니다. 데이터의 분포를 대략적으로 짐작할 수 있습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 📊 기초 통계량 요약 리포트 ---</span><span class="sh">"</span><span class="p">)</span>
@@ -847,8 +852,11 @@ max    239.000000  13.000000  522.000000
 
 <hr />
 
-<h2 id="-실습-3-꿀팁-행과-열-거꾸로-돌려보기-transpose">🪄 [실습 3] 꿀팁: 행과 열 거꾸로 돌려보기 (Transpose)</h2>
+<h2 id="-실습-4-꿀팁-행과-열-거꾸로-돌려보기-transpose">🪄 [실습 4] 꿀팁: 행과 열 거꾸로 돌려보기 (Transpose)</h2>
 
+<p>새로운 실습을 위해 <code class="language-plaintext highlighter-rouge">pandas_02.py</code> 파일을 생성합니다. 앞서 작성한 데이터 불러오기 코드를 파일 상단에 복사한 뒤 실습을 진행합니다.</p>
+
+<h3 id="1단계-행과-열-피벗-스윙">1단계: 행과 열 피벗 스윙</h3>
 <p>칼럼이 너무 많을 경우 <code class="language-plaintext highlighter-rouge">.describe()</code> 등 통계표를 출력하면 옆이 다 잘려서 나오거나 보기가 어렵습니다. 이때는 속성 <strong><code class="language-plaintext highlighter-rouge">.T</code></strong> (Transpose)를 호출하여 <strong>행과 열을 뒤집어서(전치)</strong> 조회하면 구조가 훨씬 한눈에 들어옵니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 🔄 피벗 스윙! 행과 열 뒤집기 ---</span><span class="sh">"</span><span class="p">)</span>

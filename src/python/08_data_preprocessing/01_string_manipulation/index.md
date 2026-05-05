@@ -1,6 +1,7 @@
 ---
 layout: python
 title: "3.8.1 문자열 정제와 데이터 클렌징"
+description: "실무 데이터 분석의 80%는 지저분한 텍스트를 청소하는 '데이터 클렌징(Data Cleansing)' 작업입니다. 본 장에서는 파이썬이 제공하는 강력하고 다채로운 내장 문자열 메서드(split, join, strip, replace)를 마스터하여, 웹 스크래핑이나 엑셀에서..."
 ---
 
 # 3.8.1 문자열 정제와 데이터 클렌징 (String Manipulation)

@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.9.1 배열 평탄화 (ravel)"
+description: "데이터 수집이 끝나면, 기계학습 모델이 요구하는 입력 형태로 데이터를 구부리고 펴야 합니다."
 ---
 
 # 4.9.1 배열 자르고 펴기 (Reshape & Ravel)

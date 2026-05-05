@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.10.6 column_stack()과 hstack() 실전 비교"
+description: "선형대수학의 텐서 결합 연산 시, 대상 텐서들의 차원 수(Number of dimensions, ndim)가 완벽히 동일해야만 결합을 허용하는 엄격한 성질을 지닙니다."
 ---
 
 # 4.10.6 실전 비교: column_stack() vs hstack()

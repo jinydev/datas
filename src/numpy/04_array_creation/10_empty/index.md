@@ -1,6 +1,7 @@
 ---
 layout: numpy
 title: "4.4.10 초기화되지 않은 배열을 생성하는 empty()"
+description: "지금까지 배운 zeros(), ones(), full()은 배열을 만들고 나서, 그 칸마다 0, 1, 7 같은 숫자를 예쁘게 새로 칠해 넣는 '초기화(Initialization)' 작업을 거칩니다."
 ---
 
 # 4.4.10 초기화되지 않은 쓰레기값 배열을 생성하는 empty()

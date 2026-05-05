@@ -1,6 +1,7 @@
 ---
 layout: mathplotlib
 title: "5.2.1 Seaborn과 장난감 데이터셋 개요"
+description: "앞서 5.1장에서 도화지(Matplotlib)의 기초적인 사용법을 배웠습니다. 이번 장부터는 강력하고 화려한 통계 시각화 템플릿인 Seaborn을 본격적으로 다룹니다."
 ---
 
 # 5.2.1 Seaborn과 장난감 데이터셋 (Toy Dataset)
