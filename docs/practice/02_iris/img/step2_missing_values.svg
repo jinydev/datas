@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 데이터 무결성 검증 (Data Integrity Check)</text>
+
+  <!-- Clean Dataset Concept -->
+  <g transform="translate(150, 100)">
+    <rect width="200" height="200" fill="#fff" stroke="#2ecc71" stroke-width="2" rx="5"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">완벽하게 정제된 데이터셋</text>
+    
+    <!-- Info output mock -->
+    <rect x="10" y="50" width="180" height="140" fill="#2c3e50" rx="5"/>
+    <text x="20" y="70" font-family="Courier" font-size="12" fill="#ecf0f1"># df.info()</text>
+    <text x="20" y="100" font-family="Courier" font-size="11" fill="#ecf0f1">150 entries, 0 to 149</text>
+    <text x="20" y="120" font-family="Courier" font-size="11" fill="#ecf0f1">Data columns (total 5):</text>
+    <text x="20" y="140" font-family="Courier" font-size="11" fill="#2ecc71">0 sepal_length 150 non-null</text>
+    <text x="20" y="160" font-family="Courier" font-size="11" fill="#2ecc71">1 sepal_width  150 non-null</text>
+    <text x="20" y="180" font-family="Courier" font-size="11" fill="#2ecc71">...</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M380,200 L430,200 L420,190 M430,200 L420,210" fill="none" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- Validation -->
+  <g transform="translate(460, 100)">
+    <rect width="250" height="200" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+    <text x="125" y="30" font-family="Arial" font-size="16" fill="#2980b9" font-weight="bold" text-anchor="middle">결측치(NaN) 없음 (0%)</text>
+    
+    <circle cx="125" cy="100" r="40" fill="#eaf2f8" stroke="#3498db" stroke-width="4"/>
+    <path d="M105,100 L120,115 L150,85" fill="none" stroke="#2ecc71" stroke-width="6"/>
+
+    <text x="125" y="170" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">"결측치 처리(Imputation) 생략"</text>
+    <text x="125" y="190" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">즉시 분석 및 시각화 단계로 직행 가능!</text>
+  </g>
+
+</svg>

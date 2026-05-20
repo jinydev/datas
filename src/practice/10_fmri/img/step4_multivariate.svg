@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 다차원 데이터 비교 (hue와 style의 콤비네이션)</text>
+
+  <!-- Multi-lineplot construction -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="50" y1="250" x2="450" y2="250" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="250" x2="50" y2="40" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="180" x2="450" y2="180" stroke="#bdc3c7" stroke-width="1" stroke-dasharray="2,2"/> <!-- Zero line -->
+
+    <!-- Event 1: Stim (Strong response) - Solid Line -->
+    <!-- Region 1: Parietal (Blue) -->
+    <path d="M50,180 Q100,160 150,70 T250,220 T350,170 T450,180" fill="none" stroke="#2980b9" stroke-width="3"/>
+    
+    <!-- Region 2: Frontal (Red) -->
+    <path d="M50,180 Q100,170 150,110 T250,200 T350,175 T450,180" fill="none" stroke="#e74c3c" stroke-width="3"/>
+
+    <!-- Event 2: Cue (Weak response) - Dashed Line -->
+    <!-- Region 1: Parietal (Blue) -->
+    <path d="M50,180 Q100,175 150,150 T250,190 T350,178 T450,180" fill="none" stroke="#2980b9" stroke-width="3" stroke-dasharray="6,6"/>
+    
+    <!-- Region 2: Frontal (Red) -->
+    <path d="M50,180 Q100,178 150,165 T250,185 T350,179 T450,180" fill="none" stroke="#e74c3c" stroke-width="3" stroke-dasharray="6,6"/>
+
+    <!-- Legend Box -->
+    <rect x="310" y="50" width="130" height="110" fill="#fff" stroke="#95a5a6" stroke-width="1"/>
+    <text x="320" y="70" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold">event (자극종류)</text>
+    <line x1="320" y1="85" x2="350" y2="85" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="360" y="90" font-family="Arial" font-size="11" fill="#7f8c8d">stim (강함)</text>
+    <line x1="320" y1="105" x2="350" y2="105" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="360" y="110" font-family="Arial" font-size="11" fill="#7f8c8d">cue (약함)</text>
+
+    <text x="320" y="130" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold">region (뇌 부위)</text>
+    <rect x="320" y="140" width="10" height="10" fill="#2980b9"/>
+    <text x="340" y="150" font-family="Arial" font-size="11" fill="#2980b9">parietal</text>
+    <rect x="390" y="140" width="10" height="10" fill="#e74c3c"/>
+    <text x="410" y="150" font-family="Arial" font-size="11" fill="#e74c3c">frontal</text>
+
+    <!-- Callout -->
+    <text x="150" y="50" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">stim 자극 + Parietal 뇌 영역이</text>
+    <text x="150" y="65" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">가장 격렬하게 반응한다!</text>
+
+  </g>
+</svg>

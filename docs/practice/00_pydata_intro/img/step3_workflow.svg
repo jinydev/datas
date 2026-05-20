@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 우리의 파이데이터 실습 4단계 워크플로우</text>
+
+  <!-- Workflow Pipeline -->
+  <!-- Step 1 -->
+  <g transform="translate(60, 100)">
+    <rect width="140" height="180" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="140" height="40" fill="#3498db" rx="10"/>
+    <!-- Overlap to make top part rounded only -->
+    <rect x="0" y="20" width="140" height="20" fill="#3498db"/>
+    
+    <text x="70" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">1. Overview</text>
+    
+    <text x="70" y="70" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">데이터 살펴보기</text>
+    <text x="70" y="100" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">df.head()</text>
+    <text x="70" y="120" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">df.info()</text>
+    <text x="70" y="140" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">df.describe()</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M210,190 L230,190 L225,185 M230,190 L225,195" fill="none" stroke="#95a5a6" stroke-width="3"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(240, 100)">
+    <rect width="140" height="180" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="140" height="40" fill="#e67e22" rx="10"/>
+    <rect x="0" y="20" width="140" height="20" fill="#e67e22"/>
+    
+    <text x="70" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">2. Preprocess</text>
+    
+    <text x="70" y="70" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">전처리 및 정제</text>
+    <text x="70" y="100" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">결측치 제거</text>
+    <text x="70" y="120" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">Feature 추가</text>
+    <text x="70" y="140" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">데이터 필터링</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M390,190 L410,190 L405,185 M410,190 L405,195" fill="none" stroke="#95a5a6" stroke-width="3"/>
+
+  <!-- Step 3 -->
+  <g transform="translate(420, 100)">
+    <rect width="140" height="180" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="140" height="40" fill="#2ecc71" rx="10"/>
+    <rect x="0" y="20" width="140" height="20" fill="#2ecc71"/>
+    
+    <text x="70" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">3. Univariate</text>
+    
+    <text x="70" y="70" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">단일 변수 시각화</text>
+    <text x="70" y="100" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">히스토그램</text>
+    <text x="70" y="120" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">Countplot</text>
+    <text x="70" y="140" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">데이터 분포 파악</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M570,190 L590,190 L585,185 M590,190 L585,195" fill="none" stroke="#95a5a6" stroke-width="3"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(600, 100)">
+    <rect width="140" height="180" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="140" height="40" fill="#9b59b6" rx="10"/>
+    <rect x="0" y="20" width="140" height="20" fill="#9b59b6"/>
+    
+    <text x="70" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">4. Multivariate</text>
+    
+    <text x="70" y="70" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">다변수 상관관계</text>
+    <text x="70" y="100" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">산점도 (Scatter)</text>
+    <text x="70" y="120" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">Boxplot + Hue</text>
+    <text x="70" y="140" font-family="Courier" font-size="12" fill="#7f8c8d" text-anchor="middle">상관관계 &amp; 통찰</text>
+  </g>
+
+  <text x="400" y="330" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">이 4단계 프레임워크를 통해 모든 데이터셋(1~30번)을 일관성 있게 정복합니다!</text>
+
+</svg>

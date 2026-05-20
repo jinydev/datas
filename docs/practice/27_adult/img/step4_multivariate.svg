@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 학력별 고소득 달성 비율 (Countplot + Hue)</text>
+
+  <!-- Countplot with Hue Concept -->
+  <g transform="translate(100, 60)">
+    <rect width="600" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="50" y1="250" x2="550" y2="250" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="250" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="300" y="280" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Education (최종 학력)</text>
+    <text x="20" y="150" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,150)">사람 수 (명)</text>
+
+    <!-- Legend -->
+    <rect x="420" y="40" width="150" height="50" fill="#f8f9fa" stroke="#bdc3c7" rx="5"/>
+    <rect x="430" y="50" width="10" height="10" fill="#3498db"/>
+    <text x="450" y="59" font-family="Courier" font-size="12" fill="#2980b9">&lt;=50K (저소득)</text>
+    <rect x="430" y="70" width="10" height="10" fill="#e74c3c"/>
+    <text x="450" y="79" font-family="Courier" font-size="12" fill="#c0392b">&gt;50K (고소득)</text>
+
+    <!-- X-axis labels -->
+    <text x="120" y="265" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">HS-grad</text>
+    <text x="220" y="265" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">Some-college</text>
+    <text x="320" y="265" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">Bachelors</text>
+    <text x="420" y="265" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">Masters</text>
+    <text x="520" y="265" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">Prof-school</text>
+
+    <!-- HS-grad -->
+    <rect x="105" y="80" width="15" height="170" fill="#3498db"/> <!-- Blue tall -->
+    <rect x="120" y="220" width="15" height="30" fill="#e74c3c"/> <!-- Red short -->
+    
+    <!-- Some-college -->
+    <rect x="205" y="100" width="15" height="150" fill="#3498db"/> <!-- Blue slightly shorter -->
+    <rect x="220" y="200" width="15" height="50" fill="#e74c3c"/> <!-- Red slightly taller -->
+
+    <!-- Bachelors -->
+    <rect x="305" y="150" width="15" height="100" fill="#3498db"/> <!-- Blue medium -->
+    <rect x="320" y="160" width="15" height="90" fill="#e74c3c"/> <!-- Red catching up -->
+    
+    <!-- Masters -->
+    <rect x="405" y="190" width="15" height="60" fill="#3498db"/> <!-- Blue low -->
+    <rect x="420" y="170" width="15" height="80" fill="#e74c3c"/> <!-- RED OVERTAKES BLUE -->
+
+    <!-- Prof-school -->
+    <rect x="505" y="220" width="15" height="30" fill="#3498db"/> <!-- Blue very low -->
+    <rect x="520" y="150" width="15" height="100" fill="#e74c3c"/> <!-- Red very tall -->
+
+    <!-- Trend Annotation -->
+    <path d="M127,215 Q320,130 527,145" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="5,5"/>
+    <polygon points="527,145 517,140 520,150" fill="#c0392b"/>
+    <rect x="250" y="100" width="200" height="30" fill="#fdedec" rx="5"/>
+    <text x="350" y="120" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">학력이 높아질수록 고소득 비율 급증!</text>
+
+  </g>
+</svg>

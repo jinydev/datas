@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 결측치(NaN) 처리 전략 - 버리거나, 채우거나</text>
+
+  <!-- Original Data -->
+  <g transform="translate(50, 100)">
+    <rect width="200" height="220" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">원본 데이터의 문제점</text>
+    
+    <text x="20" y="70" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">age (나이)</text>
+    <rect x="20" y="80" width="160" height="20" fill="#ecf0f1"/>
+    <rect x="20" y="80" width="120" height="20" fill="#3498db"/>
+    <text x="100" y="95" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">80% 존재</text>
+    <text x="160" y="95" font-family="Arial" font-size="12" fill="#e74c3c" text-anchor="middle">NaN</text>
+
+    <text x="20" y="140" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">deck (갑판 번호)</text>
+    <rect x="20" y="150" width="160" height="20" fill="#ecf0f1"/>
+    <rect x="20" y="150" width="30" height="20" fill="#3498db"/>
+    <text x="35" y="165" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">20%</text>
+    <text x="100" y="165" font-family="Arial" font-size="12" fill="#e74c3c" font-weight="bold" text-anchor="middle">NaN (80% 결측)</text>
+  </g>
+
+  <!-- Decision Process -->
+  <path d="M260,140 L300,140" fill="none" stroke="#2c3e50" stroke-width="3" stroke-dasharray="4,4"/>
+  <path d="M260,210 L300,210" fill="none" stroke="#2c3e50" stroke-width="3" stroke-dasharray="4,4"/>
+
+  <!-- Strategy 1 -->
+  <g transform="translate(320, 80)">
+    <rect width="180" height="100" fill="#eaf2f8" stroke="#3498db" stroke-width="2" rx="5"/>
+    <text x="90" y="25" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">전략 1: 대치 (Imputation)</text>
+    <text x="90" y="50" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">결측치가 적을 때</text>
+    <text x="90" y="75" font-family="Courier" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="middle">fillna(median)</text>
+    <text x="90" y="90" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">나이의 '중앙값'으로 채움</text>
+  </g>
+
+  <!-- Strategy 2 -->
+  <g transform="translate(320, 190)">
+    <rect width="180" height="100" fill="#fdedec" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <text x="90" y="25" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">전략 2: 삭제 (Drop)</text>
+    <text x="90" y="50" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">결측치가 너무 많을 때</text>
+    <text x="90" y="75" font-family="Courier" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="middle">drop('deck')</text>
+    <text x="90" y="90" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">컬럼 자체를 날려버림</text>
+  </g>
+
+  <!-- Result -->
+  <path d="M510,180 L550,180" fill="none" stroke="#2c3e50" stroke-width="3"/>
+
+  <g transform="translate(570, 100)">
+    <rect width="180" height="220" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="90" y="30" font-family="Arial" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">정제된 데이터</text>
+    
+    <text x="20" y="70" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">age (나이)</text>
+    <rect x="20" y="80" width="140" height="20" fill="#3498db"/>
+    <rect x="120" y="80" width="40" height="20" fill="#f39c12"/>
+    <text x="70" y="95" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">기존 80%</text>
+    <text x="140" y="95" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle">중앙값</text>
+
+    <text x="20" y="140" font-family="Courier" font-size="14" fill="#bdc3c7" font-weight="bold" text-decoration="line-through">deck (갑판)</text>
+    <text x="20" y="160" font-family="Arial" font-size="12" fill="#e74c3c" font-weight="bold">완전 삭제됨</text>
+
+    <text x="90" y="200" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">머신러닝 준비 완료!</text>
+  </g>
+</svg>

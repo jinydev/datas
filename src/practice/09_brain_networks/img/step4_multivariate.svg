@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 클러스터맵(Clustermap)을 통한 끼리끼리 군집화</text>
+
+  <!-- Clustermap Concept -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Top Dendrogram (Tree) -->
+    <g transform="translate(150, 30)">
+      <line x1="25" y1="40" x2="25" y2="20" stroke="#2c3e50" stroke-width="2"/> <!-- Node 1 -->
+      <line x1="125" y1="40" x2="125" y2="20" stroke="#2c3e50" stroke-width="2"/> <!-- Node 3 -->
+      <line x1="25" y1="20" x2="125" y2="20" stroke="#2c3e50" stroke-width="2"/> <!-- Connect 1,3 -->
+      <line x1="75" y1="20" x2="75" y2="-10" stroke="#2c3e50" stroke-width="2"/> <!-- Stem 1,3 -->
+
+      <line x1="75" y1="40" x2="75" y2="-10" stroke="#e74c3c" stroke-width="2"/> <!-- Node 2 moved -->
+      <line x1="175" y1="40" x2="175" y2="10" stroke="#2c3e50" stroke-width="2"/> <!-- Node 4 -->
+      
+      <line x1="75" y1="-10" x2="125" y2="-10" stroke="#2c3e50" stroke-width="2"/>
+    </g>
+
+    <!-- Left Dendrogram -->
+    <g transform="translate(110, 70)">
+      <line x1="40" y1="25" x2="20" y2="25" stroke="#2c3e50" stroke-width="2"/> 
+      <line x1="40" y1="125" x2="20" y2="125" stroke="#2c3e50" stroke-width="2"/> 
+      <line x1="20" y1="25" x2="20" y2="125" stroke="#2c3e50" stroke-width="2"/> 
+    </g>
+
+    <!-- Main Matrix Reordered -->
+    <g transform="translate(150, 70)">
+      <!-- Similar blocks clustered together -->
+      <rect x="0" y="0" width="50" height="50" fill="#c0392b"/> 
+      <rect x="50" y="0" width="50" height="50" fill="#e74c3c"/> <!-- Node 1 &amp; 3 highly correlated -->
+      <rect x="100" y="0" width="50" height="50" fill="#ecf0f1"/> 
+      <rect x="150" y="0" width="50" height="50" fill="#2980b9"/> 
+      
+      <rect x="0" y="50" width="50" height="50" fill="#e74c3c"/>
+      <rect x="50" y="50" width="50" height="50" fill="#c0392b"/> 
+      <rect x="100" y="50" width="50" height="50" fill="#f1948a"/> 
+      <rect x="150" y="50" width="50" height="50" fill="#5dade2"/> 
+
+      <!-- Outline the cluster block -->
+      <rect x="0" y="0" width="100" height="100" fill="none" stroke="#f1c40f" stroke-width="4"/>
+
+      <!-- Reordered Labels -->
+      <text x="25" y="-10" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">N1</text>
+      <text x="75" y="-10" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">N3</text> <!-- Swapped -->
+      <text x="125" y="-10" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">N2</text>
+      <text x="175" y="-10" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">N4</text>
+    </g>
+
+    <text x="250" y="275" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">인공지능이 유사한 노드끼리 알아서 순서를 바꾸어 뭉쳐준다!</text>
+    <text x="250" y="290" font-family="Arial" font-size="12" fill="#f39c12" font-weight="bold" text-anchor="middle">(계층적 군집화, Hierarchical Clustering)</text>
+  </g>
+</svg>

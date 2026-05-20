@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 히트맵(Heatmap)으로 AI 성적표 시각화</text>
+
+  <!-- Heatmap Concept -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Tasks (Columns) -->
+    <text x="180" y="40" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold">CoLA</text>
+    <text x="280" y="40" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold">SST-2</text>
+    <text x="380" y="40" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold">MNLI</text>
+    <text x="480" y="40" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold">RTE</text>
+
+    <!-- Models (Rows) -->
+    <text x="100" y="85" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold" text-anchor="end">BiLSTM</text>
+    <text x="100" y="145" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold" text-anchor="end">BERT</text>
+    <text x="100" y="205" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold" text-anchor="end">RoBERTa</text>
+    <text x="100" y="265" font-family="Courier" font-size="14" fill="#34495e" font-weight="bold" text-anchor="end">ERNIE</text>
+
+    <!-- Grid Cells (Color coded by score) -->
+    <!-- Row 1: BiLSTM (Low scores - light colors) -->
+    <rect x="140" y="60" width="80" height="50" fill="#fcf3cf"/>
+    <text x="180" y="90" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">32.1</text>
+    <rect x="240" y="60" width="80" height="50" fill="#f8c471"/>
+    <text x="280" y="90" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">50.5</text>
+    <rect x="340" y="60" width="80" height="50" fill="#fcf3cf"/>
+    <text x="380" y="90" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">45.0</text>
+    <rect x="440" y="60" width="80" height="50" fill="#fad7a1"/>
+    <text x="480" y="90" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">42.1</text>
+
+    <!-- Row 2: BERT (Medium scores) -->
+    <rect x="140" y="120" width="80" height="50" fill="#f5b041"/>
+    <text x="180" y="150" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">60.5</text>
+    <rect x="240" y="120" width="80" height="50" fill="#e67e22"/>
+    <text x="280" y="150" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">92.7</text>
+    <rect x="340" y="120" width="80" height="50" fill="#eb984e"/>
+    <text x="380" y="150" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">84.4</text>
+    <rect x="440" y="120" width="80" height="50" fill="#f5b041"/>
+    <text x="480" y="150" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">66.4</text>
+
+    <!-- Row 3 &amp; 4: RoBERTa / ERNIE (High scores - dark colors) -->
+    <rect x="140" y="180" width="80" height="50" fill="#d35400"/>
+    <text x="180" y="210" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">67.8</text>
+    <rect x="240" y="180" width="80" height="50" fill="#ba4a00"/>
+    <text x="280" y="210" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">94.8</text>
+    <rect x="340" y="180" width="80" height="50" fill="#d35400"/>
+    <text x="380" y="210" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">90.2</text>
+    <rect x="440" y="180" width="80" height="50" fill="#e67e22"/>
+    <text x="480" y="210" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">86.6</text>
+
+    <rect x="140" y="240" width="80" height="50" fill="#a04000"/>
+    <text x="180" y="270" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">75.5</text>
+    <rect x="240" y="240" width="80" height="50" fill="#873600"/>
+    <text x="280" y="270" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">95.6</text>
+    <rect x="340" y="240" width="80" height="50" fill="#a04000"/>
+    <text x="380" y="270" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">92.3</text>
+    <rect x="440" y="240" width="80" height="50" fill="#ba4a00"/>
+    <text x="480" y="270" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">88.2</text>
+
+  </g>
+
+  <!-- Legend Note -->
+  <rect x="15" y="180" width="120" height="50" fill="#fdedec" rx="5"/>
+  <text x="75" y="200" font-family="Arial" font-size="11" fill="#c0392b" font-weight="bold" text-anchor="middle">진할수록 점수가 높다.</text>
+  <text x="75" y="215" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">밑으로 갈수록 발전함</text>
+
+</svg>

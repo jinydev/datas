@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 산점도와 범주형 변수의 결합 (Carat vs Price by Cut)</text>
+
+  <!-- Scatterplot + Regression -->
+  <g transform="translate(150, 80)">
+    <rect width="500" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">무게(Carat)가 가격(Price)을 결정하는 절대적 기준일까?</text>
+    
+    <line x1="50" y1="230" x2="450" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="265" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Carat (무게)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">Price ($)</text>
+
+    <!-- General Upward Trend Background -->
+    <path d="M50,230 Q300,230 400,60" fill="none" stroke="#bdc3c7" stroke-width="30" opacity="0.3"/>
+
+    <!-- Ideal Cut (High Price for same Carat) - Blue -->
+    <circle cx="100" cy="180" r="3" fill="#3498db"/>
+    <circle cx="150" cy="140" r="3" fill="#3498db"/>
+    <circle cx="200" cy="100" r="3" fill="#3498db"/>
+    <circle cx="250" cy="70" r="3" fill="#3498db"/>
+    <circle cx="280" cy="60" r="3" fill="#3498db"/>
+    
+    <!-- Fair Cut (Low Price for same Carat) - Red -->
+    <circle cx="150" cy="210" r="3" fill="#e74c3c"/>
+    <circle cx="200" cy="180" r="3" fill="#e74c3c"/>
+    <circle cx="250" cy="150" r="3" fill="#e74c3c"/>
+    <circle cx="300" cy="130" r="3" fill="#e74c3c"/>
+    <circle cx="350" cy="110" r="3" fill="#e74c3c"/>
+
+    <!-- Comparison vertical line -->
+    <line x1="200" y1="80" x2="200" y2="190" stroke="#2c3e50" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="200" y="245" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">동일한 무게(1.5 Carat)</text>
+
+    <path d="M190,100 L170,100" stroke="#3498db" stroke-width="2"/>
+    <text x="160" y="105" font-family="Arial" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="end">Ideal Cut (비쌈)</text>
+
+    <path d="M210,180 L230,180" stroke="#e74c3c" stroke-width="2"/>
+    <text x="240" y="185" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="start">Fair Cut (저렴함)</text>
+
+    <text x="250" y="45" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">"단순히 크다고 비싼 게 아니라, 세공(Cut) 수준이 가격을 가른다"</text>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 상한값(Ceiling Cap) 이상치 식별 및 제거</text>
+
+  <!-- Histplot Problem -->
+  <g transform="translate(100, 100)">
+    <rect width="280" height="220" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="140" y="25" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">집값 분포 (Histplot)</text>
+    
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="250" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="30" y1="180" x2="30" y2="40" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="140" y="210" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">House Value ($)</text>
+    
+    <text x="30" y="195" font-family="Courier" font-size="10" fill="#7f8c8d" text-anchor="middle">0</text>
+    <text x="230" y="195" font-family="Courier" font-size="10" fill="#e74c3c" font-weight="bold" text-anchor="middle">500,000</text>
+
+    <!-- Normal Distribution Bars -->
+    <rect x="40" y="160" width="15" height="20" fill="#3498db"/>
+    <rect x="60" y="140" width="15" height="40" fill="#3498db"/>
+    <rect x="80" y="100" width="15" height="80" fill="#3498db"/>
+    <rect x="100" y="80" width="15" height="100" fill="#3498db"/>
+    <rect x="120" y="90" width="15" height="90" fill="#3498db"/>
+    <rect x="140" y="120" width="15" height="60" fill="#3498db"/>
+    <rect x="160" y="140" width="15" height="40" fill="#3498db"/>
+    <rect x="180" y="150" width="15" height="30" fill="#3498db"/>
+    <rect x="200" y="160" width="15" height="20" fill="#3498db"/>
+    
+    <!-- The Ceiling Cap Anomaly -->
+    <rect x="220" y="50" width="15" height="130" fill="#e74c3c"/>
+    <path d="M227,45 L227,25 M222,30 L227,25 L232,30" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  </g>
+
+  <!-- Explanation -->
+  <g transform="translate(420, 100)">
+    <rect width="300" height="220" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <rect x="0" y="0" width="300" height="30" fill="#e74c3c" rx="5"/>
+    <rect x="0" y="15" width="300" height="15" fill="#e74c3c"/>
+    <text x="150" y="20" font-family="Arial" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">비정상적인 막대의 정체는?</text>
+    
+    <!-- Concept -->
+    <rect x="20" y="50" width="260" height="80" fill="#fdedec" rx="5"/>
+    <text x="150" y="70" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">시스템 측정 한계 (Ceiling Cap)</text>
+    <text x="150" y="90" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">50만 달러가 넘는 초고가 저택($700k, $1M)</text>
+    <text x="150" y="110" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">데이터를 전부 500,000으로 "퉁쳐서" 기록함</text>
+
+    <!-- Solution -->
+    <rect x="20" y="150" width="260" height="50" fill="#d5f5e3" rx="5"/>
+    <text x="150" y="170" font-family="Courier" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">df = df[df['value'] &lt; 500000]</text>
+    <text x="150" y="185" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">이상치를 과감히 잘라내야 AI가 제대로 학습함</text>
+  </g>
+
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 데이터 시각화의 궁극적인 존재 이유 (Why We Plot)</text>
+
+  <!-- Metaphor: Blind to Spreadsheet vs Seeing the Chart -->
+  
+  <!-- Left Side: Spreadsheets -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="220" height="220" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+    <text x="110" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">숫자만 보는 분석가</text>
+    
+    <!-- Excel Grid fake -->
+    <rect x="20" y="50" width="180" height="120" fill="#fff" stroke="#95a5a6"/>
+    <line x1="20" y1="70" x2="200" y2="70" stroke="#95a5a6"/>
+    <line x1="20" y1="90" x2="200" y2="90" stroke="#95a5a6"/>
+    <line x1="20" y1="110" x2="200" y2="110" stroke="#95a5a6"/>
+    <line x1="80" y1="50" x2="80" y2="170" stroke="#95a5a6"/>
+    <line x1="140" y1="50" x2="140" y2="170" stroke="#95a5a6"/>
+    
+    <text x="50" y="65" font-family="Courier" font-size="10" fill="#7f8c8d">9.14</text>
+    <text x="110" y="65" font-family="Courier" font-size="10" fill="#7f8c8d">8.14</text>
+    <text x="170" y="65" font-family="Courier" font-size="10" fill="#7f8c8d">8.74</text>
+    <text x="50" y="85" font-family="Courier" font-size="10" fill="#7f8c8d">8.77</text>
+
+    <!-- Confused Face -->
+    <circle cx="110" cy="130" r="20" fill="#f1c40f"/>
+    <line x1="100" y1="125" x2="105" y2="125" stroke="#34495e" stroke-width="2"/>
+    <line x1="115" y1="125" x2="120" y2="125" stroke="#34495e" stroke-width="2"/>
+    <path d="M100,140 Q110,135 120,140" fill="none" stroke="#34495e" stroke-width="2"/>
+    <text x="150" y="110" font-family="Arial" font-size="20" fill="#e74c3c" font-weight="bold">?</text>
+    
+    <text x="110" y="200" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">"전부 똑같은 데이터군!" (오판)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M350,200 L450,200 L430,180 M450,200 L430,220" fill="none" stroke="#2c3e50" stroke-width="5"/>
+
+  <!-- Right Side: Visualization -->
+  <g transform="translate(480, 100)">
+    <rect x="0" y="0" width="220" height="220" fill="#eafaf1" stroke="#2ecc71" stroke-width="2" rx="10"/>
+    <text x="110" y="30" font-family="Arial" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">그래프를 그리는 분석가</text>
+
+    <!-- Chart -->
+    <rect x="20" y="50" width="180" height="100" fill="#fff" stroke="#27ae60"/>
+    <path d="M30,130 Q110,50 180,130" fill="none" stroke="#2980b9" stroke-width="3"/>
+    <circle cx="110" cy="90" r="5" fill="#e74c3c"/>
+    <line x1="30" y1="130" x2="180" y2="50" stroke="#95a5a6" stroke-width="2" stroke-dasharray="2,2"/>
+
+    <!-- Happy Face -->
+    <circle cx="110" cy="180" r="20" fill="#f1c40f"/>
+    <path d="M100,175 Q105,170 110,175" fill="none" stroke="#34495e" stroke-width="2"/>
+    <path d="M110,175 Q115,170 120,175" fill="none" stroke="#34495e" stroke-width="2"/>
+    <path d="M100,185 Q110,195 120,185" fill="none" stroke="#34495e" stroke-width="2"/>
+    <text x="150" y="160" font-family="Arial" font-size="20" fill="#27ae60" font-weight="bold">!</text>
+    
+    <text x="110" y="215" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">"아하! 패턴이 완전히 다르잖아!"</text>
+  </g>
+
+  <text x="400" y="360" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">"평균과 분산 같은 단순한 요약 통계량(Summary)을 맹신하지 말고,"</text>
+  <text x="400" y="385" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">"반드시 눈으로 직접 쳐다보라(Visualize)!"</text>
+</svg>

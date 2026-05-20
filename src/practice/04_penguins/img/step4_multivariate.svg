@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 다변수 상관관계와 심슨의 역설 (Simpson's Paradox)</text>
+
+  <!-- Left: General Trend -->
+  <g transform="translate(60, 90)">
+    <rect width="320" height="260" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="160" y="30" font-family="Arial" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="middle">1. 전체를 하나로 뭉쳐서 볼 때</text>
+    <text x="160" y="50" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">(부리가 길수록 얕아진다? ❌)</text>
+    
+    <line x1="40" y1="220" x2="280" y2="220" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="40" y1="220" x2="40" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="160" y="250" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">Bill Length (길이)</text>
+    <text x="15" y="140" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle" transform="rotate(-90 15,140)">Bill Depth (두께)</text>
+
+    <!-- Fake Data points -->
+    <ellipse cx="160" cy="140" rx="60" ry="40" fill="#bdc3c7" opacity="0.5" transform="rotate(-30 160,140)"/>
+    <line x1="100" y1="100" x2="220" y2="180" stroke="#c0392b" stroke-width="3"/>
+    <text x="240" y="190" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold">(-)</text>
+  </g>
+
+  <!-- Right: Grouped Trend -->
+  <g transform="translate(420, 90)">
+    <rect width="320" height="260" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="160" y="30" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">2. 품종별(Hue)로 쪼개어 볼 때</text>
+    <text x="160" y="50" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">(각 품종 안에서는 길수록 두껍다! ⭕)</text>
+    
+    <line x1="40" y1="220" x2="280" y2="220" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="40" y1="220" x2="40" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="160" y="250" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">Bill Length (길이)</text>
+
+    <!-- Adelie (Short, Thick) -->
+    <ellipse cx="100" cy="100" rx="30" ry="15" fill="#e67e22" opacity="0.6" transform="rotate(20 100,100)"/>
+    <line x1="80" y1="110" x2="120" y2="90" stroke="#d35400" stroke-width="2"/>
+    <text x="100" y="70" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">Adelie (+)</text>
+
+    <!-- Chinstrap (Medium, Medium) -->
+    <ellipse cx="180" cy="140" rx="30" ry="15" fill="#9b59b6" opacity="0.6" transform="rotate(20 180,140)"/>
+    <line x1="160" y1="150" x2="200" y2="130" stroke="#8e44ad" stroke-width="2"/>
+    <text x="180" y="110" font-family="Arial" font-size="12" fill="#8e44ad" font-weight="bold" text-anchor="middle">Chinstrap (+)</text>
+
+    <!-- Gentoo (Long, Thin) -->
+    <ellipse cx="220" cy="190" rx="30" ry="15" fill="#27ae60" opacity="0.6" transform="rotate(20 220,190)"/>
+    <line x1="200" y1="200" x2="240" y2="180" stroke="#2ecc71" stroke-width="2"/>
+    <text x="220" y="160" font-family="Arial" font-size="12" fill="#2ecc71" font-weight="bold" text-anchor="middle">Gentoo (+)</text>
+
+    <!-- Overall fake line for context -->
+    <line x1="100" y1="100" x2="220" y2="190" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+</svg>

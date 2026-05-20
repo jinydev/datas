@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#0b1021" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f1c40f" text-anchor="middle">Step 3: 연도별 발견 개수와 기술의 혁명 (Countplot)</text>
+
+  <!-- Countplot construction -->
+  <g transform="translate(100, 80)">
+    <rect width="600" height="280" fill="#1c2833" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="50" y1="230" x2="550" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="300" y="270" font-family="Arial" font-size="14" fill="#ecf0f1" text-anchor="middle">발견 연도 (Year)</text>
+    <text x="20" y="140" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,140)">발견 개수 (Count)</text>
+    
+    <text x="60" y="245" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">1990</text>
+    <text x="250" y="245" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">2000</text>
+    <text x="450" y="245" font-family="Arial" font-size="10" fill="#ecf0f1" font-weight="bold" text-anchor="middle">2010</text>
+
+    <!-- Small bars (1990 - 2008) -->
+    <rect x="70" y="225" width="10" height="5" fill="#3498db"/>
+    <rect x="120" y="220" width="10" height="10" fill="#3498db"/>
+    <rect x="180" y="210" width="10" height="20" fill="#3498db"/>
+    <rect x="250" y="190" width="10" height="40" fill="#3498db"/>
+    <rect x="300" y="180" width="10" height="50" fill="#3498db"/>
+    <rect x="360" y="150" width="10" height="80" fill="#3498db"/>
+    <rect x="400" y="160" width="10" height="70" fill="#3498db"/>
+
+    <!-- Massive explosion (2009 - Kepler launch) -->
+    <rect x="430" y="120" width="10" height="110" fill="#e74c3c"/>
+    <rect x="460" y="80" width="10" height="150" fill="#e74c3c"/>
+    <rect x="490" y="40" width="10" height="190" fill="#e74c3c"/>
+    <rect x="520" y="60" width="10" height="170" fill="#e74c3c"/>
+
+    <!-- Annotations -->
+    <line x1="415" y1="230" x2="415" y2="40" stroke="#f1c40f" stroke-width="2" stroke-dasharray="4,4"/>
+    <polygon points="415,40 410,50 420,50" fill="#f1c40f"/>
+    <text x="415" y="30" font-family="Arial" font-size="12" fill="#f1c40f" font-weight="bold" text-anchor="middle">2009년</text>
+
+    <rect x="100" y="60" width="220" height="50" fill="#2c3e50" stroke="#f1c40f" rx="5"/>
+    <text x="210" y="80" font-family="Arial" font-size="14" fill="#f1c40f" font-weight="bold" text-anchor="middle">케플러 우주 망원경 발사!</text>
+    <text x="210" y="95" font-family="Arial" font-size="11" fill="#ecf0f1" text-anchor="middle">관측 기술의 패러다임 변화가 데이터로 증명됨</text>
+
+    <!-- Arrow from box to line -->
+    <path d="M320,85 L400,85" fill="none" stroke="#f1c40f" stroke-width="2"/>
+
+  </g>
+</svg>

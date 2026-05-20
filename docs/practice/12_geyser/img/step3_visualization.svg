@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: Jointplot을 통한 2차원 산점도와 히스토그램 융합</text>
+
+  <!-- Jointplot Concept -->
+  <g transform="translate(150, 70)">
+    
+    <!-- Top Marginal Histogram (duration) -->
+    <rect x="80" y="10" width="300" height="60" fill="#fff" stroke="#bdc3c7"/>
+    <!-- Peak 1 -->
+    <rect x="100" y="40" width="20" height="30" fill="#2980b9" opacity="0.6"/>
+    <rect x="120" y="20" width="20" height="50" fill="#2980b9" opacity="0.6"/>
+    <rect x="140" y="30" width="20" height="40" fill="#2980b9" opacity="0.6"/>
+    <!-- Peak 2 -->
+    <rect x="240" y="50" width="20" height="20" fill="#2980b9" opacity="0.6"/>
+    <rect x="260" y="20" width="20" height="50" fill="#2980b9" opacity="0.6"/>
+    <rect x="280" y="10" width="20" height="60" fill="#2980b9" opacity="0.6"/>
+    <rect x="300" y="30" width="20" height="40" fill="#2980b9" opacity="0.6"/>
+    
+    <text x="230" y="35" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">duration 분포</text>
+
+    <!-- Right Marginal Histogram (waiting) -->
+    <rect x="390" y="80" width="60" height="240" fill="#fff" stroke="#bdc3c7"/>
+    <!-- Peak 1 -->
+    <rect x="390" y="240" width="30" height="20" fill="#2ecc71" opacity="0.6"/>
+    <rect x="390" y="260" width="50" height="20" fill="#2ecc71" opacity="0.6"/>
+    <rect x="390" y="280" width="40" height="20" fill="#2ecc71" opacity="0.6"/>
+    <!-- Peak 2 -->
+    <rect x="390" y="100" width="40" height="20" fill="#2ecc71" opacity="0.6"/>
+    <rect x="390" y="120" width="60" height="20" fill="#2ecc71" opacity="0.6"/>
+    <rect x="390" y="140" width="50" height="20" fill="#2ecc71" opacity="0.6"/>
+
+    <!-- Central Scatter Plot -->
+    <rect x="80" y="80" width="300" height="240" fill="#fff" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="80" y1="320" x2="380" y2="320" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="80" y1="320" x2="80" y2="80" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="230" y="340" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">duration (분출 시간)</text>
+    <text x="50" y="200" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle" transform="rotate(-90 50,200)">waiting (대기 시간)</text>
+
+    <!-- Scatter dots Cluster 1 (Short duration, short wait) -->
+    <circle cx="120" cy="270" r="3" fill="#e74c3c"/>
+    <circle cx="130" cy="260" r="3" fill="#e74c3c"/>
+    <circle cx="110" cy="280" r="3" fill="#e74c3c"/>
+    <circle cx="125" cy="285" r="3" fill="#e74c3c"/>
+    <circle cx="140" cy="250" r="3" fill="#e74c3c"/>
+    <circle cx="135" cy="275" r="3" fill="#e74c3c"/>
+    <!-- Scatter dots Cluster 2 (Long duration, long wait) -->
+    <circle cx="280" cy="130" r="3" fill="#e74c3c"/>
+    <circle cx="270" cy="140" r="3" fill="#e74c3c"/>
+    <circle cx="290" cy="120" r="3" fill="#e74c3c"/>
+    <circle cx="310" cy="110" r="3" fill="#e74c3c"/>
+    <circle cx="260" cy="150" r="3" fill="#e74c3c"/>
+    <circle cx="295" cy="135" r="3" fill="#e74c3c"/>
+    <circle cx="300" cy="115" r="3" fill="#e74c3c"/>
+
+    <!-- Interpretations -->
+    <rect x="470" y="100" width="160" height="60" fill="#fdedec" rx="5"/>
+    <text x="550" y="125" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">Cluster 2</text>
+    <text x="550" y="145" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">길게 뿜고, 오래 쉰다</text>
+    
+    <path d="M470,120 L320,120" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4,4"/>
+
+    <rect x="470" y="240" width="160" height="60" fill="#fdedec" rx="5"/>
+    <text x="550" y="265" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">Cluster 1</text>
+    <text x="550" y="285" font-family="Arial" font-size="11" fill="#34495e" text-anchor="middle">짧게 뿜고, 짧게 쉰다</text>
+
+    <path d="M470,260 L150,260" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4,4"/>
+
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 신뢰구간(Confidence Interval)과 오차 밴드의 마법</text>
+
+  <!-- Lineplot construction -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="50" y1="230" x2="450" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="40" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <line x1="50" y1="180" x2="450" y2="180" stroke="#bdc3c7" stroke-width="1" stroke-dasharray="2,2"/> <!-- Zero line -->
+    
+    <text x="250" y="270" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Timepoint (시간 흐름)</text>
+    <text x="20" y="130" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,130)">Signal (뇌파 강도)</text>
+
+    <!-- Individual faint lines (Subject data) -->
+    <path d="M50,180 Q100,160 150,80 T250,200 T350,170 T450,180" fill="none" stroke="#bdc3c7" stroke-width="1" opacity="0.5"/>
+    <path d="M50,185 Q100,170 150,50 T250,220 T350,160 T450,175" fill="none" stroke="#bdc3c7" stroke-width="1" opacity="0.5"/>
+    <path d="M50,175 Q100,150 150,110 T250,180 T350,190 T450,185" fill="none" stroke="#bdc3c7" stroke-width="1" opacity="0.5"/>
+    <path d="M50,190 Q100,180 150,70 T250,190 T350,180 T450,190" fill="none" stroke="#bdc3c7" stroke-width="1" opacity="0.5"/>
+
+    <!-- Confidence Interval Band (95%) -->
+    <path d="M50,175 Q100,150 150,50 T250,180 T350,160 T450,175 L450,190 T350,190 T250,220 T150,110 Q100,180 50,190 Z" fill="#3498db" opacity="0.3"/>
+
+    <!-- Mean Line -->
+    <path d="M50,182 Q100,165 150,77 T250,197 T350,175 T450,182" fill="none" stroke="#2980b9" stroke-width="4"/>
+
+    <!-- Annotations -->
+    <line x1="280" y1="120" x2="310" y2="70" stroke="#c0392b" stroke-width="2"/>
+    <rect x="260" y="40" width="180" height="30" fill="#e74c3c" rx="5"/>
+    <text x="350" y="60" font-family="Arial" font-size="12" fill="#fff" font-weight="bold" text-anchor="middle">그림자(Band) = 95% 신뢰구간</text>
+
+    <line x1="180" y1="120" x2="210" y2="100" stroke="#2c3e50" stroke-width="2"/>
+    <rect x="215" y="85" width="120" height="30" fill="#f1c40f" rx="5"/>
+    <text x="275" y="105" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">굵은 선 = 전체 평균</text>
+
+  </g>
+</svg>

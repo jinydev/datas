@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 도메인 지식을 활용한 논리적 이상치(Outlier) 제거</text>
+
+  <!-- Problem -->
+  <g transform="translate(80, 100)">
+    <rect width="250" height="200" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <text x="125" y="30" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">숨겨진 에러 데이터</text>
+    
+    <text x="20" y="70" font-family="Courier" font-size="12" fill="#2c3e50"># df.describe()</text>
+    <text x="20" y="90" font-family="Courier" font-size="11" fill="#7f8c8d">       x       y       z</text>
+    <text x="20" y="110" font-family="Courier" font-size="11" fill="#7f8c8d">min  <tspan fill="#e74c3c" font-weight="bold">0.00    0.00    0.00</tspan></text>
+    <text x="20" y="130" font-family="Courier" font-size="11" fill="#7f8c8d">max 10.74   58.90   31.80</text>
+    
+    <!-- Illustration of x=0 -->
+    <line x1="50" y1="160" x2="200" y2="160" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="125" y="185" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">부피(크기)가 0인 보석이 존재할 수 있나?</text>
+  </g>
+
+  <!-- Transformation -->
+  <g transform="translate(350, 170)">
+    <path d="M0,0 L50,0 L40,-10 M50,0 L40,10" fill="none" stroke="#2c3e50" stroke-width="4"/>
+    <text x="25" y="-20" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">조건부 필터링</text>
+  </g>
+
+  <!-- Solution -->
+  <g transform="translate(450, 100)">
+    <rect width="280" height="200" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="140" y="30" font-family="Arial" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">정상 데이터만 필터링 (Drop)</text>
+    
+    <!-- Code logic -->
+    <rect x="15" y="50" width="250" height="80" fill="#2c3e50" rx="5"/>
+    <text x="25" y="70" font-family="Courier" font-size="12" fill="#ecf0f1">df = df[ (df['x'] > 0) &amp;</text>
+    <text x="25" y="90" font-family="Courier" font-size="12" fill="#ecf0f1">         (df['y'] > 0) &amp;</text>
+    <text x="25" y="110" font-family="Courier" font-size="12" fill="#ecf0f1">         (df['z'] > 0) ]</text>
+    
+    <circle cx="140" cy="160" r="15" fill="#eaf2f8" stroke="#3498db" stroke-width="2"/>
+    <path d="M133,160 L138,165 L148,155" fill="none" stroke="#2ecc71" stroke-width="3"/>
+
+    <text x="140" y="190" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">현실 세계의 물리 법칙에 위배되는</text>
+    <text x="140" y="205" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">데이터(20건)를 논리적으로 제거</text>
+  </g>
+
+</svg>

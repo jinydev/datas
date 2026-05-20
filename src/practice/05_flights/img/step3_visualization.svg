@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 시계열 꺾은선 차트 (Lineplot) - 추세와 계절성 파악</text>
+
+  <!-- Lineplot Anatomy -->
+  <g transform="translate(100, 90)">
+    <rect width="600" height="260" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="300" y="30" font-family="Arial" font-size="16" fill="#e67e22" font-weight="bold" text-anchor="middle">연도별/월별 항공기 탑승객 수 (1949 ~ 1960)</text>
+    
+    <line x1="50" y1="200" x2="550" y2="200" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="200" x2="50" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="300" y="235" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Year (연도)</text>
+    <text x="20" y="130" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,130)">Passengers</text>
+
+    <!-- Trend Line (Upward) -->
+    <path d="M50,180 L550,80" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="400" y="100" font-family="Arial" font-size="14" fill="#7f8c8d" font-weight="bold" transform="rotate(-11 400,100)">1. 장기 추세 (Trend) : 우상향</text>
+
+    <!-- Seasonality Line (Sawtooth) -->
+    <path d="M60,180 L70,160 L80,185 M90,175 L100,150 L110,180 M120,170 L130,140 L140,175 M150,165 L160,130 L170,170 M180,160 L190,120 L200,165 M210,155 L220,110 L230,160 M240,150 L250,100 L260,155 M270,145 L280,90 L290,150 M300,140 L310,80 L320,145 M330,135 L340,70 L350,140 M360,130 L370,60 L380,135 M390,125 L400,50 L410,130 M420,120 L430,40 L440,125 M450,115 L460,30 L470,120 M480,110 L490,20 L500,115" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    
+    <!-- Annotations -->
+    <circle cx="490" cy="20" r="4" fill="#c0392b"/>
+    <text x="490" y="10" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">여름 휴가철 (Peak)</text>
+
+    <text x="250" y="70" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">2. 계절성 (Seasonality) : 톱니바퀴 패턴</text>
+    <text x="250" y="85" font-family="Arial" font-size="12" fill="#7f8c8d">매년 여름에 가장 높고 겨울에 가장 낮음</text>
+
+  </g>
+
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 통제된 실험 데이터의 구조 파악</text>
+
+  <!-- Data Structure -->
+  <g transform="translate(100, 100)">
+    <rect width="600" height="240" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <rect x="0" y="0" width="600" height="40" fill="#34495e" rx="5"/>
+    <rect x="0" y="20" width="600" height="20" fill="#34495e"/>
+    
+    <text x="30" y="25" font-family="Courier" font-size="14" fill="#ecf0f1" font-weight="bold">index</text>
+    <text x="150" y="25" font-family="Courier" font-size="14" fill="#ecf0f1" font-weight="bold">subject</text>
+    <text x="270" y="25" font-family="Courier" font-size="14" fill="#f1c40f" font-weight="bold">attention</text>
+    <text x="410" y="25" font-family="Courier" font-size="14" fill="#ecf0f1" font-weight="bold">solutions</text>
+    <text x="530" y="25" font-family="Courier" font-size="14" fill="#e74c3c" font-weight="bold">score</text>
+
+    <line x1="0" y1="40" x2="600" y2="40" stroke="#2c3e50" stroke-width="2"/>
+
+    <!-- Row 1 -->
+    <text x="30" y="70" font-family="Courier" font-size="14" fill="#7f8c8d">0</text>
+    <text x="150" y="70" font-family="Courier" font-size="14" fill="#34495e">1</text>
+    <text x="270" y="70" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold">divided</text>
+    <text x="410" y="70" font-family="Courier" font-size="14" fill="#34495e">1</text>
+    <text x="530" y="70" font-family="Courier" font-size="14" fill="#c0392b" font-weight="bold">2.0</text>
+    
+    <line x1="10" y1="85" x2="590" y2="85" stroke="#bdc3c7" stroke-dasharray="2,2"/>
+
+    <!-- Row 2 -->
+    <text x="30" y="115" font-family="Courier" font-size="14" fill="#7f8c8d">1</text>
+    <text x="150" y="115" font-family="Courier" font-size="14" fill="#34495e">2</text>
+    <text x="270" y="115" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold">divided</text>
+    <text x="410" y="115" font-family="Courier" font-size="14" fill="#34495e">1</text>
+    <text x="530" y="115" font-family="Courier" font-size="14" fill="#c0392b" font-weight="bold">3.0</text>
+    
+    <line x1="10" y1="130" x2="590" y2="130" stroke="#bdc3c7" stroke-dasharray="2,2"/>
+
+    <text x="300" y="160" font-family="Courier" font-size="14" fill="#bdc3c7" font-weight="bold" text-anchor="middle">... (총 60번의 실험 세션) ...</text>
+
+    <!-- Annotations -->
+    <rect x="230" y="180" width="150" height="40" fill="#eaf2f8" rx="5"/>
+    <text x="305" y="195" font-family="Arial" font-size="10" fill="#2980b9" font-weight="bold" text-anchor="middle">독립 변수 (조작함)</text>
+    <text x="305" y="210" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">집중 vs 멀티태스킹 유도</text>
+
+    <path d="M305,180 L305,150 L305,100 L290,100" fill="none" stroke="#2980b9" stroke-width="2"/>
+    <polygon points="290,100 295,95 285,100 295,105" fill="#2980b9"/>
+
+    <rect x="490" y="180" width="100" height="40" fill="#fdedec" rx="5"/>
+    <text x="540" y="195" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">종속 변수 (결과)</text>
+    <text x="540" y="210" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">문제 해결 점수</text>
+
+    <path d="M540,180 L540,100 L530,100" fill="none" stroke="#c0392b" stroke-width="2"/>
+    <polygon points="530,100 535,95 525,100 535,105" fill="#c0392b"/>
+
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 바이올린 플롯 (Violinplot) - 분포와 박스플롯을 한 번에</text>
+
+  <!-- Violinplot Anatomy -->
+  <g transform="translate(100, 90)">
+    <rect width="600" height="260" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="300" y="30" font-family="Arial" font-size="16" fill="#8e44ad" font-weight="bold" text-anchor="middle">품종(Species)에 따른 몸무게(Body Mass) 분포 비교</text>
+    
+    <line x1="50" y1="200" x2="550" y2="200" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="200" x2="50" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="300" y="235" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Species (품종)</text>
+    <text x="20" y="130" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,130)">Body Mass (g)</text>
+
+    <!-- Adelie -->
+    <path d="M120,200 C150,200 150,80 120,80 C90,80 90,200 120,200 Z" fill="#e67e22" opacity="0.6"/>
+    <rect x="117" y="120" width="6" height="40" fill="#2c3e50"/> <!-- Inner Box -->
+    <circle cx="120" cy="140" r="2" fill="#fff"/> <!-- Median -->
+    <text x="120" y="220" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Adelie</text>
+
+    <!-- Chinstrap -->
+    <path d="M280,200 C310,200 310,90 280,90 C250,90 250,200 280,200 Z" fill="#9b59b6" opacity="0.6"/>
+    <rect x="277" y="130" width="6" height="30" fill="#2c3e50"/>
+    <circle cx="280" cy="145" r="2" fill="#fff"/>
+    <text x="280" y="220" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Chinstrap</text>
+
+    <!-- Gentoo -->
+    <path d="M440,160 C480,160 480,40 440,40 C400,40 400,160 440,160 Z" fill="#27ae60" opacity="0.6"/>
+    <rect x="437" y="70" width="6" height="50" fill="#2c3e50"/>
+    <circle cx="440" cy="95" r="2" fill="#fff"/>
+    <text x="440" y="220" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Gentoo</text>
+
+    <!-- Annotations -->
+    <text x="440" y="20" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">독보적인 헤비급!</text>
+    
+    <path d="M200,60 L230,90" fill="none" stroke="#2c3e50" stroke-width="2"/>
+    <text x="190" y="55" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold">KDE 곡선 (분포)</text>
+
+    <path d="M330,120 L300,140" fill="none" stroke="#2c3e50" stroke-width="2"/>
+    <text x="350" y="115" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold">내부 미니 Boxplot</text>
+
+  </g>
+
+</svg>

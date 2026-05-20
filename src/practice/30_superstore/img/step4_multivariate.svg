@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 카테고리별 최종 수익 비교 막대그래프 (Barplot)</text>
+
+  <!-- Barplot Concept -->
+  <g transform="translate(150, 60)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">상품 카테고리(Category)별 총 순이익(Total Profit)</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="260" x2="450" y2="260" stroke="#7f8c8d" stroke-width="2"/> <!-- X axis -->
+    <line x1="50" y1="260" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/> <!-- Y axis -->
+    
+    <text x="250" y="290" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Category (카테고리)</text>
+    <text x="20" y="150" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,150)">Total Profit (총 수익, $)</text>
+
+    <!-- The Critical Y=0 Break-even Line -->
+    <line x1="50" y1="180" x2="450" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <text x="35" y="185" font-family="Courier" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">$0</text>
+    <rect x="460" y="170" width="40" height="20" fill="#fdedec" rx="3"/>
+    <text x="480" y="184" font-family="Arial" font-size="10" fill="#c0392b" text-anchor="middle">적자 기준선</text>
+
+    <!-- Categories on X-axis -->
+    <text x="130" y="275" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">Furniture</text>
+    <text x="250" y="275" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">Office Supplies</text>
+    <text x="370" y="275" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">Technology</text>
+
+    <!-- Bar 1: Furniture (Negative) -->
+    <!-- Hangs below the y=0 line (y=180) -->
+    <rect x="100" y="180" width="60" height="40" fill="#e74c3c" stroke="#c0392b"/>
+    <text x="130" y="235" font-family="Courier" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">-$17K</text>
+    
+    <!-- Annotation for Furniture -->
+    <path d="M100,210 L60,210" fill="none" stroke="#c0392b" stroke-width="2"/>
+    <text x="30" y="215" font-family="Arial" font-size="11" fill="#c0392b" font-weight="bold" text-anchor="middle">회사의 돈을</text>
+    <text x="30" y="230" font-family="Arial" font-size="11" fill="#c0392b" font-weight="bold" text-anchor="middle">태우는 주범</text>
+
+    <!-- Bar 2: Office Supplies (Positive, medium) -->
+    <rect x="220" y="100" width="60" height="80" fill="#3498db" stroke="#2980b9"/>
+    <text x="250" y="90" font-family="Courier" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">+$122K</text>
+
+    <!-- Bar 3: Technology (Positive, High) -->
+    <rect x="340" y="70" width="60" height="110" fill="#2ecc71" stroke="#27ae60"/>
+    <text x="370" y="60" font-family="Courier" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">+$145K</text>
+
+    <!-- Annotation for Technology -->
+    <path d="M400,90 L430,90 L430,110" fill="none" stroke="#27ae60" stroke-width="2"/>
+    <rect x="400" y="110" width="80" height="30" fill="#e9f7ef" rx="3"/>
+    <text x="440" y="130" font-family="Arial" font-size="11" fill="#27ae60" font-weight="bold" text-anchor="middle">캐시카우 (효자)</text>
+
+  </g>
+</svg>

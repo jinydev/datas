@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 수확 체감의 법칙 (Diminishing Returns)과 미국의 비효율</text>
+
+  <!-- Scatterplot construction -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">의료비를 쏟아부은 미국은 가장 오래 사는 나라가 되었을까?</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="250" x2="450" y2="250" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="250" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="285" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Spending_USD (의료비 지출)</text>
+    <text x="20" y="150" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,150)">Life_Expectancy (기대 수명)</text>
+
+    <!-- Normal Logarithmic Curve (Diminishing Returns) -->
+    <path d="M50,200 Q150,100 450,60" fill="none" stroke="#2980b9" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="220" y="90" font-family="Arial" font-size="12" fill="#2980b9" font-weight="bold">정상적인 궤도 (돈을 쓸수록 수명은 늘지만 한계가 옴)</text>
+
+    <!-- Scatter points (Other Countries) -->
+    <circle cx="80" cy="180" r="4" fill="#2980b9"/>
+    <circle cx="100" cy="150" r="4" fill="#2980b9"/>
+    <circle cx="130" cy="130" r="4" fill="#2980b9"/>
+    <circle cx="170" cy="110" r="4" fill="#2980b9"/>
+    <circle cx="210" cy="95" r="4" fill="#2980b9"/>
+    <circle cx="260" cy="85" r="4" fill="#2980b9"/>
+    <circle cx="310" cy="80" r="4" fill="#2980b9"/>
+    <circle cx="370" cy="70" r="4" fill="#2980b9"/>
+    <circle cx="420" cy="65" r="4" fill="#2980b9"/>
+
+    <!-- Japan (Low spending, High life exp) -->
+    <circle cx="280" cy="50" r="6" fill="#27ae60" stroke="#fff"/>
+    <text x="280" y="40" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">Japan (가성비 최고)</text>
+
+    <!-- USA (High spending, Low life exp) -->
+    <!-- The US line drifts right but stays low -->
+    <circle cx="100" cy="160" r="4" fill="#e74c3c"/>
+    <circle cx="150" cy="140" r="4" fill="#e74c3c"/>
+    <circle cx="200" cy="135" r="4" fill="#e74c3c"/>
+    <circle cx="250" cy="130" r="4" fill="#e74c3c"/>
+    <circle cx="310" cy="132" r="4" fill="#e74c3c"/>
+    <circle cx="380" cy="135" r="4" fill="#e74c3c"/>
+    <circle cx="440" cy="140" r="7" fill="#c0392b" stroke="#fff"/>
+    
+    <text x="420" y="125" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">USA (비효율)</text>
+
+    <!-- Arrow emphasizing the gap -->
+    <path d="M420,75 L420,110 L415,100 M420,110 L425,100" fill="none" stroke="#e67e22" stroke-width="3"/>
+    <text x="470" y="95" font-family="Arial" font-size="11" fill="#d35400" text-anchor="middle">돈은 2배 쓰는데</text>
+    <text x="470" y="110" font-family="Arial" font-size="11" fill="#d35400" text-anchor="middle">수명은 더 짧음!</text>
+
+  </g>
+</svg>

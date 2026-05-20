@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 등고선(KDE) 차트로 보는 밀도와 머신러닝의 기초</text>
+
+  <!-- KDE Plot construction -->
+  <g transform="translate(150, 80)">
+    <rect width="500" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">데이터의 밀집도를 지형도처럼 그리다 (KDE contour)</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="450" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="270" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">duration (분출 시간)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">waiting (대기 시간)</text>
+
+    <!-- Cluster 1 KDE (Short, Short) - Red Hue -->
+    <ellipse cx="120" cy="200" rx="30" ry="20" fill="#fadbd8" stroke="#f5b7b1" stroke-width="2" transform="rotate(-30 120,200)"/>
+    <ellipse cx="120" cy="200" rx="20" ry="13" fill="#f1948a" stroke="#e74c3c" stroke-width="2" transform="rotate(-30 120,200)"/>
+    <ellipse cx="120" cy="200" rx="10" ry="6" fill="#c0392b" stroke="#922b21" stroke-width="2" transform="rotate(-30 120,200)"/>
+    <circle cx="120" cy="200" r="2" fill="#fff"/>
+
+    <!-- Cluster 2 KDE (Long, Long) - Blue Hue -->
+    <ellipse cx="320" cy="100" rx="40" ry="25" fill="#d6eaf8" stroke="#aed6f1" stroke-width="2" transform="rotate(-40 320,100)"/>
+    <ellipse cx="320" cy="100" rx="25" ry="15" fill="#85c1e9" stroke="#3498db" stroke-width="2" transform="rotate(-40 320,100)"/>
+    <ellipse cx="320" cy="100" rx="12" ry="7" fill="#2980b9" stroke="#1a5276" stroke-width="2" transform="rotate(-40 320,100)"/>
+    <circle cx="320" cy="100" r="2" fill="#fff"/>
+
+    <!-- Interpretations -->
+    <rect x="250" y="180" width="220" height="50" fill="#fcf3cf" rx="5"/>
+    <text x="360" y="200" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">밀도(Density)가 높은 곳일수록</text>
+    <text x="360" y="215" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">산봉우리처럼 색이 짙어지는 등고선</text>
+
+    <!-- Arrow from text to peak 1 -->
+    <path d="M250,200 Q200,200 140,200" fill="none" stroke="#d35400" stroke-width="2"/>
+    <!-- Arrow from text to peak 2 -->
+    <path d="M360,180 Q360,130 330,110" fill="none" stroke="#d35400" stroke-width="2"/>
+
+  </g>
+</svg>

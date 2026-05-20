@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 거시적 트렌드(Trend) - 지구 온난화의 끔찍한 증명</text>
+
+  <!-- Lineplot construction -->
+  <g transform="translate(150, 80)">
+    <rect width="500" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">연도별(Year) 북극 해빙 면적 변화 (장기 추세)</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="450" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="270" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Year (연도)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">Extent (얼음 면적)</text>
+    
+    <!-- Ticks -->
+    <text x="50" y="255" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">1980</text>
+    <text x="150" y="255" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">1990</text>
+    <text x="250" y="255" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">2000</text>
+    <text x="350" y="255" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">2010</text>
+    <text x="450" y="255" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">2020</text>
+
+    <!-- Raw Data (Jagged line slowly going down) -->
+    <path d="M50,80 L70,100 L90,90 L110,120 L130,110 L150,130 L170,120 L190,150 L210,130 L230,160 L250,140 L270,180 L290,160 L310,210 L330,170 L350,220 L370,210 L390,200 L410,230 L430,210 L450,220" fill="none" stroke="#3498db" stroke-width="2" opacity="0.6"/>
+
+    <!-- Regression Line (Trend) -->
+    <path d="M50,90 L450,210" fill="none" stroke="#e74c3c" stroke-width="4"/>
+    
+    <!-- Annotations -->
+    <rect x="70" y="160" width="140" height="40" fill="#fdedec" rx="5"/>
+    <text x="140" y="175" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">명백한 하향 곡선</text>
+    <text x="140" y="190" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">40년간 단 한 번도 회복되지 못함</text>
+
+    <line x1="310" y1="210" x2="310" y2="120" stroke="#f39c12" stroke-width="2" stroke-dasharray="4,4"/>
+    <circle cx="310" cy="210" r="5" fill="#f39c12"/>
+    <rect x="260" y="90" width="100" height="30" fill="#fcf3cf" rx="3"/>
+    <text x="310" y="105" font-family="Arial" font-size="10" fill="#d35400" font-weight="bold" text-anchor="middle">2007년 기록적 폭락</text>
+
+    <circle cx="350" cy="220" r="5" fill="#e74c3c"/>
+    <rect x="330" y="240" width="100" height="20" fill="#fff" stroke="#e74c3c" rx="3"/>
+    <text x="380" y="253" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">2012년 역대 최저치</text>
+    
+  </g>
+</svg>

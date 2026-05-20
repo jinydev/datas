@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 새로운 인사이트 창출 - 피처 엔지니어링 (Feature Engineering)</text>
+
+  <!-- Problem -->
+  <g transform="translate(100, 100)">
+    <rect width="200" height="200" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">단순 금액 비교의 한계</text>
+    
+    <!-- Table A -->
+    <text x="20" y="70" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">Table A</text>
+    <text x="20" y="90" font-family="Courier" font-size="12" fill="#7f8c8d">Total Bill: $100</text>
+    <text x="20" y="110" font-family="Courier" font-size="12" fill="#7f8c8d">Tip Given : $10</text>
+    
+    <!-- Table B -->
+    <text x="20" y="150" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">Table B</text>
+    <text x="20" y="170" font-family="Courier" font-size="12" fill="#7f8c8d">Total Bill: $10</text>
+    <text x="20" y="190" font-family="Courier" font-size="12" fill="#7f8c8d">Tip Given : $3</text>
+
+    <!-- Arrow -->
+    <path d="M140,80 L180,80" stroke="#e74c3c" stroke-width="2" stroke-dasharray="2,2"/>
+    <path d="M140,160 L180,160" stroke="#2ecc71" stroke-width="2" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- Transformation -->
+  <g transform="translate(350, 170)">
+    <path d="M0,0 L40,0 L30,-10 M40,0 L30,10" fill="none" stroke="#2c3e50" stroke-width="4"/>
+    <text x="20" y="-20" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">tip / total_bill</text>
+  </g>
+
+  <!-- Solution -->
+  <g transform="translate(450, 100)">
+    <rect width="250" height="200" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="125" y="30" font-family="Arial" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">파생 변수: 팁 비율 (tip_rate)</text>
+    
+    <!-- Table A -->
+    <text x="20" y="70" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">Table A</text>
+    <text x="20" y="90" font-family="Courier" font-size="14" fill="#e74c3c" font-weight="bold">10 / 100 = 10%</text>
+    <text x="20" y="110" font-family="Arial" font-size="12" fill="#7f8c8d">팁 금액은 컸지만, 사실 짠돌이!</text>
+    
+    <!-- Table B -->
+    <text x="20" y="150" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold">Table B</text>
+    <text x="20" y="170" font-family="Courier" font-size="14" fill="#27ae60" font-weight="bold">3 / 10 = 30%</text>
+    <text x="20" y="190" font-family="Arial" font-size="12" fill="#7f8c8d">절대 금액은 적어도 진정한 큰손!</text>
+  </g>
+
+  <text x="400" y="350" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">분석의 정확도를 높이기 위해 '결제 금액 대비 팁(tip_rate)'이라는 진짜 지표를 창조합니다.</text>
+
+</svg>

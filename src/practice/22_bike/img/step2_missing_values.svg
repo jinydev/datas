@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 피처 엔지니어링 (파생 변수 창조)</text>
+
+  <!-- Original Data -->
+  <g transform="translate(50, 120)">
+    <rect width="220" height="120" fill="#fff" stroke="#7f8c8d" stroke-width="2" rx="5"/>
+    <rect x="0" y="0" width="220" height="30" fill="#7f8c8d" rx="5"/>
+    <rect x="0" y="15" width="220" height="15" fill="#7f8c8d"/>
+    
+    <text x="110" y="20" font-family="Arial" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">원본 데이터 (문자열)</text>
+    
+    <text x="110" y="60" font-family="Courier" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">date</text>
+    <text x="110" y="90" font-family="Courier" font-size="14" fill="#34495e" text-anchor="middle">"2011-01-01"</text>
+    <text x="110" y="110" font-family="Courier" font-size="14" fill="#34495e" text-anchor="middle">"2011-01-03"</text>
+  </g>
+
+  <!-- Transformation Magic -->
+  <g transform="translate(300, 160)">
+    <path d="M0,0 L60,0 M50,-10 L60,0 L50,10" fill="none" stroke="#2980b9" stroke-width="4"/>
+    <text x="30" y="-30" font-family="Courier" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">pd.to_datetime()</text>
+    <text x="30" y="-15" font-family="Courier" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">.dt.dayofweek</text>
+  </g>
+
+  <!-- Extracted Features -->
+  <g transform="translate(390, 80)">
+    <rect width="360" height="200" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+    
+    <!-- Day of Week -->
+    <g transform="translate(40, 30)">
+      <text x="40" y="0" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">day_of_week</text>
+      <text x="40" y="40" font-family="Courier" font-size="14" fill="#34495e" text-anchor="middle">5 (토요일)</text>
+      <text x="40" y="70" font-family="Courier" font-size="14" fill="#34495e" text-anchor="middle">0 (월요일)</text>
+      <text x="40" y="110" font-family="Arial" font-size="12" fill="#2980b9" text-anchor="middle">(0:월 ~ 6:일)</text>
+    </g>
+
+    <line x1="180" y1="20" x2="180" y2="180" stroke="#bdc3c7" stroke-dasharray="4,4"/>
+
+    <!-- is_weekend -->
+    <g transform="translate(220, 30)">
+      <text x="50" y="0" font-family="Courier" font-size="14" fill="#e67e22" font-weight="bold" text-anchor="middle">is_weekend</text>
+      <text x="50" y="40" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">"주말"</text>
+      <text x="50" y="70" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">"평일"</text>
+      
+      <rect x="0" y="95" width="100" height="25" fill="#fcf3cf" rx="3"/>
+      <text x="50" y="112" font-family="Arial" font-size="10" fill="#d35400" text-anchor="middle">5 이상이면 주말</text>
+    </g>
+
+    <text x="180" y="180" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">숨겨진 패턴(패밀리용 vs 출퇴근용) 발견 가능!</text>
+  </g>
+
+</svg>

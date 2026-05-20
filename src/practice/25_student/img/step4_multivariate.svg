@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 오버레이 플롯 (Boxplot 전체 분포 + Pointplot 평균 추세)</text>
+
+  <!-- Overlay Concept -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">낙제 횟수(Failures)별 기말 성적 추락 추이</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="450" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="280" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Failures (낙제 횟수: 0번 ~ 3번)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">G3 (기말 성적)</text>
+    
+    <!-- X-axis labels -->
+    <text x="100" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">0</text>
+    <text x="200" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">1</text>
+    <text x="300" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">2</text>
+    <text x="400" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">3</text>
+
+    <!-- Boxplots (Background, low opacity) -->
+    <!-- 0 failures -->
+    <rect x="80" y="80" width="40" height="60" fill="#aed6f1" stroke="#2980b9"/>
+    <line x1="80" y1="110" x2="120" y2="110" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="100" y1="80" x2="100" y2="50" stroke="#2980b9" stroke-width="2"/>
+    <line x1="100" y1="140" x2="100" y2="180" stroke="#2980b9" stroke-width="2"/>
+
+    <!-- 1 failure -->
+    <rect x="180" y="130" width="40" height="50" fill="#f9e79f" stroke="#f1c40f"/>
+    <line x1="180" y1="150" x2="220" y2="150" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="200" y1="130" x2="200" y2="100" stroke="#f1c40f" stroke-width="2"/>
+    <line x1="200" y1="180" x2="200" y2="210" stroke="#f1c40f" stroke-width="2"/>
+
+    <!-- 2 failures -->
+    <rect x="280" y="160" width="40" height="40" fill="#f5cba7" stroke="#e67e22"/>
+    <line x1="280" y1="180" x2="320" y2="180" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="300" y1="160" x2="300" y2="140" stroke="#e67e22" stroke-width="2"/>
+    <line x1="300" y1="200" x2="300" y2="220" stroke="#e67e22" stroke-width="2"/>
+
+    <!-- 3 failures -->
+    <rect x="380" y="190" width="40" height="30" fill="#f5b7b1" stroke="#e74c3c"/>
+    <line x1="380" y1="205" x2="420" y2="205" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="400" y1="190" x2="400" y2="170" stroke="#e74c3c" stroke-width="2"/>
+    <line x1="400" y1="220" x2="400" y2="230" stroke="#e74c3c" stroke-width="2"/>
+
+    <!-- Pointplot Overlay (Mean trend) -->
+    <path d="M100,105 L200,155 L300,185 L400,210" fill="none" stroke="#c0392b" stroke-width="4"/>
+    <polygon points="100,98 93,105 100,112 107,105" fill="#c0392b"/> <!-- Diamond marker -->
+    <polygon points="200,148 193,155 200,162 207,155" fill="#c0392b"/>
+    <polygon points="300,178 293,185 300,192 307,185" fill="#c0392b"/>
+    <polygon points="400,203 393,210 400,217 407,210" fill="#c0392b"/>
+
+    <!-- Legend/Callout -->
+    <rect x="250" y="50" width="200" height="60" fill="#f8f9fa" stroke="#bdc3c7" rx="5"/>
+    <text x="350" y="70" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">Boxplot + Pointplot의 마법</text>
+    <text x="350" y="85" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">박스는 전체 학생들의 흩어진 범위를,</text>
+    <text x="350" y="100" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">빨간 선은 평균 점수의 추락을 시각화함</text>
+
+  </g>
+</svg>

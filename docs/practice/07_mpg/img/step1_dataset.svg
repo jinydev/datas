@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 자동차 제원(MPG) 데이터의 구조 파악</text>
+
+  <!-- Car Metaphor -->
+  <g transform="translate(100, 100)">
+    <!-- Car Body -->
+    <path d="M40,140 Q20,140 20,120 L20,80 Q20,60 40,60 L80,60 L120,20 L220,20 L260,60 L320,60 Q340,60 340,80 L340,120 Q340,140 320,140 Z" fill="#e74c3c"/>
+    <path d="M85,60 L125,25 L215,25 L255,60 Z" fill="#ecf0f1"/> <!-- Windows -->
+    <line x1="170" y1="25" x2="170" y2="60" stroke="#bdc3c7" stroke-width="4"/>
+    
+    <!-- Wheels -->
+    <circle cx="80" cy="140" r="25" fill="#34495e"/>
+    <circle cx="80" cy="140" r="15" fill="#95a5a6"/>
+    <circle cx="280" cy="140" r="25" fill="#34495e"/>
+    <circle cx="280" cy="140" r="15" fill="#95a5a6"/>
+
+    <!-- Measurements -->
+    <line x1="280" y1="180" x2="340" y2="180" stroke="#e67e22" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="310" y="200" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">acceleration (가속도)</text>
+    
+    <text x="80" y="195" font-family="Arial" font-size="14" fill="#8e44ad" font-weight="bold" text-anchor="middle">weight (차량 무게)</text>
+
+    <!-- Engine Area -->
+    <path d="M30,100 L70,100" stroke="#f1c40f" stroke-width="3" stroke-dasharray="2,2"/>
+    <text x="50" y="120" font-family="Arial" font-size="12" fill="#f39c12" font-weight="bold" text-anchor="middle">horsepower / cylinders</text>
+  </g>
+
+  <!-- Explanation Box -->
+  <g transform="translate(480, 80)">
+    <rect width="300" height="260" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="300" height="40" fill="#c0392b" rx="10"/>
+    <rect x="0" y="20" width="300" height="20" fill="#c0392b"/>
+    <text x="150" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">피처(Features)와 타겟(Target)</text>
+
+    <!-- Features -->
+    <rect x="20" y="60" width="260" height="130" fill="#fdedec" rx="5"/>
+    <text x="130" y="80" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">X (독립 변수 : 차량 스펙)</text>
+    
+    <text x="30" y="110" font-family="Courier" font-size="12" fill="#2c3e50">• cylinders    (실린더 개수)</text>
+    <text x="30" y="130" font-family="Courier" font-size="12" fill="#2c3e50">• horsepower   (마력)</text>
+    <text x="30" y="150" font-family="Courier" font-size="12" fill="#2c3e50">• weight       (무게)</text>
+    <text x="30" y="170" font-family="Courier" font-size="12" fill="#2c3e50">• origin       (생산 국가)</text>
+
+    <!-- Target -->
+    <rect x="20" y="200" width="260" height="45" fill="#eaf2f8" rx="5"/>
+    <text x="130" y="220" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">y (종속 변수 : 타겟)</text>
+    <text x="130" y="240" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">mpg (Miles Per Gallon, 연비)</text>
+  </g>
+
+  <text x="400" y="370" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">"무겁고 마력이 센 차일수록 과연 연비(mpg)는 떨어질까?"</text>
+
+</svg>

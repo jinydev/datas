@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 회귀선(Regression Line)을 통한 추세 분석 (lmplot)</text>
+
+  <!-- Scatterplot + Regression -->
+  <g transform="translate(150, 80)">
+    <rect width="500" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">결제 금액(Total Bill)과 팁(Tip)의 강한 양(+)의 상관관계</text>
+    
+    <line x1="50" y1="230" x2="450" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="265" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Total Bill ($)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">Tip ($)</text>
+
+    <!-- Data Points -->
+    <circle cx="100" cy="190" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="120" cy="180" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="140" cy="200" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="160" cy="170" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="180" cy="150" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="200" cy="160" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="220" cy="140" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="240" cy="130" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="260" cy="110" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="280" cy="120" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="300" cy="90" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="350" cy="80" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="380" cy="70" r="4" fill="#3498db" opacity="0.7"/>
+
+    <!-- Outliers (High bill, low tip / Low bill, high tip) -->
+    <circle cx="300" cy="200" r="5" fill="#e74c3c" stroke="#c0392b"/> <!-- High bill, low tip -->
+    <text x="300" y="220" font-family="Arial" font-size="10" fill="#c0392b" text-anchor="middle">비싼데 팁 안 줌</text>
+
+    <circle cx="100" cy="100" r="5" fill="#2ecc71" stroke="#27ae60"/> <!-- Low bill, high tip -->
+    <text x="100" y="90" font-family="Arial" font-size="10" fill="#27ae60" text-anchor="middle">싸게 먹고 팁 많이 줌</text>
+
+    <!-- Regression Line -->
+    <path d="M70,210 L400,60" fill="none" stroke="#e67e22" stroke-width="4"/>
+    <text x="420" y="55" font-family="Arial" font-size="14" fill="#d35400" font-weight="bold">회귀선</text>
+    <text x="420" y="70" font-family="Arial" font-size="10" fill="#7f8c8d">(y = ax + b)</text>
+
+    <text x="250" y="180" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle" transform="rotate(-23 250,180)">결제 금액이 커질수록 팁도 비례해서 커진다</text>
+  </g>
+</svg>

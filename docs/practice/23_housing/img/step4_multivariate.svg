@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 지리적 데이터 시각화 (위도/경도로 그리는 캘리포니아 맵)</text>
+
+  <!-- Geographic Scatterplot Construction -->
+  <g transform="translate(150, 60)">
+    <rect width="500" height="320" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="50" y1="280" x2="350" y2="280" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="280" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="200" y="310" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">Longitude (경도)</text>
+    <text x="20" y="165" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,165)">Latitude (위도)</text>
+    
+    <!-- Map Dots (Forming California shape roughly) -->
+    <!-- SF Bay Area (Upper Left) -->
+    <circle cx="100" cy="100" r="12" fill="#c0392b" opacity="0.7"/> <!-- High Value, High Pop -->
+    <circle cx="95" cy="115" r="8" fill="#e74c3c" opacity="0.7"/>
+    <circle cx="115" cy="90" r="6" fill="#e67e22" opacity="0.7"/>
+    <circle cx="120" cy="110" r="10" fill="#c0392b" opacity="0.7"/>
+    
+    <!-- Central Valley (Middle) -->
+    <circle cx="160" cy="160" r="4" fill="#3498db" opacity="0.7"/> <!-- Low Value, Low Pop -->
+    <circle cx="180" cy="180" r="5" fill="#3498db" opacity="0.7"/>
+    <circle cx="150" cy="140" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="190" cy="170" r="4" fill="#3498db" opacity="0.7"/>
+
+    <!-- LA / SoCal Area (Bottom Right) -->
+    <circle cx="260" cy="230" r="15" fill="#c0392b" opacity="0.7"/> <!-- Very High Value, Very High Pop -->
+    <circle cx="240" cy="220" r="10" fill="#e74c3c" opacity="0.7"/>
+    <circle cx="280" cy="240" r="12" fill="#c0392b" opacity="0.7"/>
+    <circle cx="250" cy="250" r="8" fill="#e67e22" opacity="0.7"/>
+    <circle cx="270" cy="220" r="9" fill="#e74c3c" opacity="0.7"/>
+
+    <!-- Coastline indication -->
+    <path d="M70,80 Q100,150 220,270" fill="none" stroke="#2980b9" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="120" y="240" font-family="Arial" font-size="14" fill="#2980b9" font-style="italic">Pacific Ocean</text>
+    
+    <!-- Legend Box -->
+    <rect x="370" y="50" width="120" height="200" fill="#f8f9fa" stroke="#bdc3c7" rx="5"/>
+    <text x="430" y="70" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">다차원 맵핑</text>
+    <line x1="380" y1="80" x2="480" y2="80" stroke="#bdc3c7"/>
+    
+    <!-- X/Y -->
+    <text x="380" y="100" font-family="Courier" font-size="10" fill="#34495e">X,Y = 위치</text>
+    
+    <!-- Hue -->
+    <text x="380" y="130" font-family="Courier" font-size="10" fill="#c0392b">Hue = 가격</text>
+    <circle cx="450" cy="127" r="4" fill="#c0392b"/>
+    <text x="460" y="130" font-family="Arial" font-size="8" fill="#c0392b">비쌈</text>
+    <circle cx="450" cy="140" r="4" fill="#3498db"/>
+    <text x="460" y="143" font-family="Arial" font-size="8" fill="#3498db">저렴</text>
+
+    <!-- Size -->
+    <text x="380" y="170" font-family="Courier" font-size="10" fill="#27ae60">Size = 인구</text>
+    <circle cx="450" cy="170" r="6" fill="#7f8c8d" opacity="0.5"/>
+    <text x="465" y="173" font-family="Arial" font-size="8" fill="#7f8c8d">많음</text>
+    <circle cx="450" cy="185" r="2" fill="#7f8c8d" opacity="0.5"/>
+    <text x="465" y="188" font-family="Arial" font-size="8" fill="#7f8c8d">적음</text>
+
+    <!-- Conclusion -->
+    <rect x="70" y="30" width="300" height="25" fill="#fdedec" rx="5"/>
+    <text x="220" y="47" font-family="Arial" font-size="11" fill="#c0392b" font-weight="bold" text-anchor="middle">"해변가(SF, LA)일수록 사람이 몰리고 집값이 비싸다!"</text>
+  </g>
+
+</svg>

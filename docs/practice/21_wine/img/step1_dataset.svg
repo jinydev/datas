@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 레드 와인 품질(Wine Quality) 데이터의 이해</text>
+
+  <!-- Wine &amp; Chemistry Metaphor -->
+  <g transform="translate(100, 90)">
+    
+    <!-- Input Features (Chemicals) -->
+    <rect x="0" y="0" width="220" height="240" fill="#fff" stroke="#3498db" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="220" height="40" fill="#3498db" rx="10"/>
+    <rect x="0" y="20" width="220" height="20" fill="#3498db"/>
+    <text x="110" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">화학적 성분 (Features)</text>
+
+    <!-- Beaker Icon -->
+    <path d="M90,70 L90,110 L70,140 L150,140 L130,110 L130,70 Z" fill="#eaf2f8" stroke="#2980b9" stroke-width="2"/>
+    <path d="M75,130 L145,130 L135,115 L85,115 Z" fill="#3498db" opacity="0.6"/>
+    
+    <!-- Text features -->
+    <text x="110" y="170" font-family="Courier" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">alcohol (알코올)</text>
+    <text x="110" y="190" font-family="Courier" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">volatile_acidity (휘발성 산도)</text>
+    <text x="110" y="210" font-family="Courier" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">citric_acid (구연산) 등</text>
+
+  </g>
+
+  <!-- Arrow -->
+  <path d="M340,190 L440,190 M420,180 L440,190 L420,200" fill="none" stroke="#2c3e50" stroke-width="4"/>
+  <text x="390" y="175" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">결정</text>
+
+  <!-- Target Variable (Quality) -->
+  <g transform="translate(480, 90)">
+    
+    <rect x="0" y="0" width="220" height="240" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="220" height="40" fill="#e74c3c" rx="10"/>
+    <rect x="0" y="20" width="220" height="20" fill="#e74c3c"/>
+    <text x="110" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">와인의 맛 (Target)</text>
+
+    <!-- Wine Glass Icon -->
+    <path d="M80,70 Q110,140 140,70" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+    <path d="M80,70 L140,70" stroke="#c0392b" stroke-width="2"/>
+    <!-- Wine Liquid -->
+    <path d="M85,85 Q110,140 135,85 Z" fill="#e74c3c" opacity="0.8"/>
+    <!-- Stem and Base -->
+    <line x1="110" y1="110" x2="110" y2="150" stroke="#c0392b" stroke-width="2"/>
+    <line x1="90" y1="150" x2="130" y2="150" stroke="#c0392b" stroke-width="2"/>
+    
+    <!-- Stars for quality -->
+    <polygon points="110,165 113,172 120,172 114,177 116,184 110,180 104,184 106,177 100,172 107,172" fill="#f1c40f"/>
+    <polygon points="90,165 93,172 100,172 94,177 96,184 90,180 84,184 86,177 80,172 87,172" fill="#f1c40f"/>
+    <polygon points="130,165 133,172 140,172 134,177 136,184 130,180 124,184 126,177 120,172 127,172" fill="#f1c40f"/>
+
+    <text x="110" y="210" font-family="Courier" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">quality (3 ~ 8점)</text>
+
+  </g>
+
+  <rect x="150" y="350" width="500" height="40" fill="#eaf2f8" rx="5"/>
+  <text x="400" y="375" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">"수많은 화학 성분 중, 무엇이 가장 와인의 맛을 결정할까?"</text>
+
+</svg>

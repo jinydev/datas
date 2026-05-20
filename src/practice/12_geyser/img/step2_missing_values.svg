@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 양극화된(Bimodal) 데이터 분포의 이해</text>
+
+  <!-- Problem statement -->
+  <g transform="translate(100, 100)">
+    <rect width="600" height="240" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <text x="300" y="30" font-family="Arial" font-size="16" fill="#c0392b" font-weight="bold" text-anchor="middle">만약 간헐천의 '평균' 분출 시간이 3.5분이라면?</text>
+    
+    <!-- Mean metaphor -->
+    <line x1="50" y1="180" x2="550" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="50" y="200" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">1분</text>
+    <text x="150" y="200" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">2분</text>
+    <text x="300" y="200" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">3.5분 (평균)</text>
+    <text x="450" y="200" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">4.5분</text>
+    <text x="550" y="200" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">6분</text>
+
+    <!-- Bimodal Curve -->
+    <path d="M50,180 Q100,180 120,100 Q150,40 180,100 Q200,170 300,175 Q380,170 420,100 Q450,20 480,100 Q500,180 550,180" fill="none" stroke="#2980b9" stroke-width="4"/>
+    
+    <!-- Fill below curves -->
+    <path d="M50,180 Q100,180 120,100 Q150,40 180,100 Q200,170 250,178 L250,180 L50,180 Z" fill="#3498db" opacity="0.3"/>
+    <path d="M350,178 Q380,170 420,100 Q450,20 480,100 Q500,180 550,180 L550,180 L350,180 Z" fill="#3498db" opacity="0.3"/>
+
+    <!-- Mean line -->
+    <line x1="300" y1="180" x2="300" y2="60" stroke="#c0392b" stroke-width="3" stroke-dasharray="6,4"/>
+    
+    <!-- Arrows and text -->
+    <rect x="230" y="60" width="140" height="40" fill="#fdedec" rx="5"/>
+    <text x="300" y="75" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">평균값(3.5분)인</text>
+    <text x="300" y="90" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">간헐천은 아예 없다!</text>
+
+    <text x="150" y="150" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">짧은 분출 (Short)</text>
+    <text x="450" y="150" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">긴 분출 (Long)</text>
+
+    <text x="300" y="230" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">"쌍봉형(Bimodal) 분포에서는 평균값이 현실을 전혀 반영하지 못한다."</text>
+  </g>
+</svg>

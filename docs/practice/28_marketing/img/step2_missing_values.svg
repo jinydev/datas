@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 텔레마케팅의 현실 (극단적 데이터 불균형)</text>
+
+  <!-- Pie Chart Representation -->
+  <g transform="translate(250, 220)">
+    
+    <!-- Large Slice (No) -->
+    <!-- Creating a pie slice from 90 degrees to ~40 degrees -->
+    <path d="M0,0 L0,-120 A120,120 0 1,1 -115,-34 Z" fill="#e74c3c" stroke="#fff" stroke-width="2"/>
+    
+    <!-- Exploded Slice (Yes) -->
+    <!-- Pulled slightly out -->
+    <path d="M-10,-10 L-125,-44 A120,120 0 0,1 -10,-130 Z" fill="#3498db" stroke="#fff" stroke-width="2"/>
+    
+    <!-- Labels inside pie -->
+    <text x="50" y="20" font-family="Arial" font-size="24" fill="#fff" font-weight="bold" text-anchor="middle">88%</text>
+    <text x="-70" y="-70" font-family="Arial" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">12%</text>
+    
+  </g>
+
+  <!-- Legend &amp; Explanation -->
+  <g transform="translate(450, 100)">
+    <rect width="250" height="180" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    
+    <!-- Legend -->
+    <rect x="20" y="30" width="20" height="20" fill="#e74c3c" rx="3"/>
+    <text x="55" y="45" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">No (거절)</text>
+    
+    <rect x="20" y="70" width="20" height="20" fill="#3498db" rx="3"/>
+    <text x="55" y="85" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold">Yes (가입 성공)</text>
+    
+    <line x1="20" y1="110" x2="230" y2="110" stroke="#bdc3c7" stroke-dasharray="2,2"/>
+    
+    <!-- Callout -->
+    <text x="125" y="135" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">Class Imbalance</text>
+    <text x="125" y="155" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">데이터가 한쪽으로 쏠린 현상.</text>
+    <text x="125" y="170" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">머신러닝 학습의 가장 큰 적이다.</text>
+  </g>
+
+  <!-- AI Confusion Concept -->
+  <rect x="150" y="320" width="500" height="50" fill="#fdedec" stroke="#e74c3c" rx="5"/>
+  <text x="400" y="342" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">AI 曰: "귀찮은데 그냥 모든 고객에게 '가입 안함(No)'이라고 대답할래.</text>
+  <text x="400" y="358" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">어차피 그래도 정답률이 88%나 나오잖아?"</text>
+
+</svg>

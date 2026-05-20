@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#0b1021" rx="10"/> <!-- Space background -->
+  
+  <!-- Stars -->
+  <circle cx="50" cy="150" r="1" fill="#fff" opacity="0.8"/>
+  <circle cx="150" cy="80" r="2" fill="#fff" opacity="0.6"/>
+  <circle cx="350" cy="50" r="1.5" fill="#fff" opacity="0.7"/>
+  <circle cx="650" cy="120" r="1" fill="#fff" opacity="0.9"/>
+  <circle cx="750" cy="300" r="2" fill="#fff" opacity="0.5"/>
+  <circle cx="450" cy="250" r="1" fill="#fff" opacity="0.8"/>
+  <circle cx="100" cy="350" r="1.5" fill="#fff" opacity="0.6"/>
+
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f1c40f" text-anchor="middle">Step 1: 외계 행성(Exoplanets) 발견 데이터 구조</text>
+
+  <!-- Metaphor: Telescopes &amp; Planets -->
+  <g transform="translate(80, 100)">
+    
+    <!-- Star -->
+    <circle cx="80" cy="100" r="40" fill="#f39c12"/>
+    <circle cx="80" cy="100" r="30" fill="#f1c40f"/>
+    <path d="M80,50 L80,30 M80,150 L80,170 M30,100 L10,100 M130,100 L150,100 M45,65 L30,50 M115,135 L130,150 M45,135 L30,150 M115,65 L130,50" stroke="#f1c40f" stroke-width="3"/>
+    
+    <!-- Planet (Orbiting) -->
+    <ellipse cx="80" cy="100" rx="80" ry="20" fill="none" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4,4" transform="rotate(-15 80,100)"/>
+    <circle cx="155" cy="80" r="12" fill="#3498db"/>
+    <circle cx="155" cy="80" r="15" fill="none" stroke="#2980b9" stroke-width="2" transform="rotate(20 155,80) scale(1, 0.3)"/>
+
+    <!-- Labels for Planet properties -->
+    <line x1="167" y1="80" x2="210" y2="60" stroke="#ecf0f1" stroke-width="1"/>
+    <text x="215" y="55" font-family="Courier" font-size="12" fill="#3498db" font-weight="bold">mass (질량)</text>
+    
+    <line x1="155" y1="92" x2="180" y2="130" stroke="#ecf0f1" stroke-width="1"/>
+    <text x="185" y="140" font-family="Courier" font-size="12" fill="#e74c3c" font-weight="bold">orbital_period (공전주기)</text>
+
+    <!-- Earth/Telescope looking at it -->
+    <g transform="translate(350, 150)">
+      <path d="M0,0 L30,-20 L35,-10 L5,10 Z" fill="#95a5a6"/>
+      <path d="M30,-20 L50,-33 L57,-22 L35,-10 Z" fill="#7f8c8d"/>
+      <rect x="50" y="-33" width="5" height="13" fill="#3498db" transform="rotate(-33 50,-33)"/>
+      <line x1="15" y1="0" x2="15" y2="30" stroke="#bdc3c7" stroke-width="3"/>
+      <line x1="15" y1="30" x2="-5" y2="50" stroke="#bdc3c7" stroke-width="3"/>
+      <line x1="15" y1="30" x2="35" y2="50" stroke="#bdc3c7" stroke-width="3"/>
+    </g>
+    
+    <line x1="350" y1="130" x2="250" y2="90" stroke="#f1c40f" stroke-width="2" stroke-dasharray="2,2"/>
+    <text x="320" y="80" font-family="Courier" font-size="12" fill="#f1c40f" font-weight="bold">distance (거리)</text>
+
+  </g>
+
+  <!-- Explanation Box -->
+  <g transform="translate(520, 80)">
+    <rect width="250" height="240" fill="#1c2833" stroke="#3498db" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="250" height="40" fill="#3498db" rx="10"/>
+    <rect x="0" y="20" width="250" height="20" fill="#3498db"/>
+    <text x="125" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">주요 컬럼 (Features)</text>
+    
+    <text x="20" y="70" font-family="Courier" font-size="14" fill="#f1c40f" font-weight="bold">• method</text>
+    <text x="30" y="90" font-family="Arial" font-size="12" fill="#bdc3c7">발견 방법 (시선속도, 천체면통과 등)</text>
+    
+    <text x="20" y="120" font-family="Courier" font-size="14" fill="#e74c3c" font-weight="bold">• orbital_period</text>
+    <text x="30" y="140" font-family="Arial" font-size="12" fill="#bdc3c7">행성의 공전 주기 (일)</text>
+    
+    <text x="20" y="170" font-family="Courier" font-size="14" fill="#3498db" font-weight="bold">• mass</text>
+    <text x="30" y="190" font-family="Arial" font-size="12" fill="#bdc3c7">행성의 질량 (목성 기준)</text>
+
+    <text x="20" y="220" font-family="Courier" font-size="14" fill="#2ecc71" font-weight="bold">• year</text>
+    <text x="30" y="240" font-family="Arial" font-size="12" fill="#bdc3c7" display="none">발견 연도</text>
+    <text x="80" y="220" font-family="Arial" font-size="12" fill="#bdc3c7">: 발견 연도</text>
+  </g>
+
+</svg>

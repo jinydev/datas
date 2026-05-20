@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 파이데이터(PyData) 생태계란?</text>
+
+  <!-- Raw Data -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="80" height="100" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <line x1="10" y1="20" x2="70" y2="20" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="10" y1="40" x2="50" y2="40" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="10" y1="60" x2="60" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="10" y1="80" x2="40" y2="80" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="40" y="-10" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">Raw Data</text>
+    <text x="40" y="130" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">(CSV, DB, API)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M200,200 L250,200 L240,190 M250,200 L240,210" fill="none" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- PyData Tools -->
+  <g transform="translate(280, 120)">
+    <rect width="240" height="160" fill="#fff" stroke="#3498db" stroke-width="2" rx="10"/>
+    <text x="120" y="30" font-family="Arial" font-size="16" fill="#2980b9" font-weight="bold" text-anchor="middle">PyData Ecosystem</text>
+    
+    <!-- Pandas -->
+    <rect x="20" y="50" width="90" height="40" fill="#150458" rx="5"/>
+    <text x="65" y="75" font-family="Arial" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">Pandas</text>
+    
+    <!-- Numpy -->
+    <rect x="130" y="50" width="90" height="40" fill="#4d77cf" rx="5"/>
+    <text x="175" y="75" font-family="Arial" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">NumPy</text>
+
+    <!-- Matplotlib &amp; Seaborn -->
+    <rect x="20" y="100" width="200" height="40" fill="#f39c12" rx="5"/>
+    <text x="120" y="125" font-family="Arial" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">Matplotlib &amp; Seaborn</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M540,200 L590,200 L580,190 M590,200 L580,210" fill="none" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- Insight -->
+  <g transform="translate(620, 150)">
+    <!-- Chart symbol -->
+    <rect x="0" y="0" width="100" height="100" fill="#fff" stroke="#2ecc71" stroke-width="2" rx="5"/>
+    <line x1="20" y1="80" x2="80" y2="80" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="20" y1="80" x2="20" y2="20" stroke="#2c3e50" stroke-width="2"/>
+    
+    <rect x="30" y="50" width="15" height="30" fill="#3498db"/>
+    <rect x="55" y="30" width="15" height="50" fill="#e74c3c"/>
+    
+    <text x="50" y="-10" font-family="Arial" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">Insight</text>
+    <text x="50" y="130" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">(분석 및 시각화)</text>
+  </g>
+
+  <text x="400" y="350" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">데이터 수집 → 정제(Pandas) → 수치 계산(NumPy) → 시각화(Seaborn)로 이어지는 흐름</text>
+
+</svg>

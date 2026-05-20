@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 최종 성적(G3)을 결정짓는 핵심 요인 랭킹</text>
+
+  <!-- Command Concept -->
+  <g transform="translate(100, 80)">
+    <rect width="600" height="50" fill="#34495e" rx="5"/>
+    <text x="300" y="30" font-family="Courier" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">df.corr()['G3'].sort_values(ascending=False)</text>
+  </g>
+
+  <!-- Ranking Board -->
+  <g transform="translate(150, 150)">
+    <rect width="500" height="220" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="500" height="40" fill="#ecf0f1" rx="5"/>
+    <text x="150" y="25" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">영향을 주는 요인 (Feature)</text>
+    <text x="400" y="25" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">상관계수 (Score)</text>
+
+    <!-- Positive Correlation (G2, G1, studytime) -->
+    <rect x="20" y="50" width="460" height="30" fill="#d5f5e3" rx="3"/>
+    <text x="50" y="70" font-family="Courier" font-size="14" fill="#27ae60" font-weight="bold">1위. G2 (2학기 성적)</text>
+    <text x="350" y="70" font-family="Courier" font-size="14" fill="#27ae60" font-weight="bold">+0.90 (거의 일치)</text>
+
+    <text x="50" y="100" font-family="Courier" font-size="14" fill="#2980b9">2위. G1 (1학기 성적)</text>
+    <text x="350" y="100" font-family="Courier" font-size="14" fill="#2980b9">+0.80</text>
+
+    <text x="50" y="130" font-family="Courier" font-size="14" fill="#34495e">3위. studytime (공부 시간)</text>
+    <text x="350" y="130" font-family="Courier" font-size="14" fill="#34495e">+0.09</text>
+
+    <line x1="20" y1="145" x2="480" y2="145" stroke="#bdc3c7" stroke-dasharray="2,2"/>
+
+    <!-- Negative Correlation (failures) -->
+    <rect x="20" y="160" width="460" height="30" fill="#fdedec" rx="3"/>
+    <text x="50" y="180" font-family="Courier" font-size="14" fill="#c0392b" font-weight="bold">꼴찌. failures (낙제 횟수)</text>
+    <text x="350" y="180" font-family="Courier" font-size="14" fill="#c0392b" font-weight="bold">-0.36 (점수 깎임)</text>
+
+  </g>
+
+  <!-- Side Note -->
+  <g transform="translate(670, 150)">
+    <path d="M-10,30 L-30,30" fill="none" stroke="#27ae60" stroke-width="2"/>
+    <rect x="0" y="20" width="110" height="60" fill="#fcf3cf" rx="5"/>
+    <text x="55" y="40" font-family="Arial" font-size="10" fill="#d35400" font-weight="bold" text-anchor="middle">데이터 누수(Leakage)</text>
+    <text x="55" y="55" font-family="Arial" font-size="9" fill="#34495e" text-anchor="middle">G2를 알면 G3를 맞추는 건</text>
+    <text x="55" y="65" font-family="Arial" font-size="9" fill="#34495e" text-anchor="middle">당연함. 실무에선 뺌.</text>
+  </g>
+
+</svg>

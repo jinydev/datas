@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 자전거 수요 예측(Bike Sharing Demand) 데이터 구조</text>
+
+  <!-- External Factors (Weather, Time) -->
+  <g transform="translate(100, 100)">
+    
+    <!-- Weather Concept -->
+    <rect x="0" y="0" width="150" height="150" fill="#eaf2f8" stroke="#3498db" stroke-width="2" rx="10"/>
+    <!-- Sun/Cloud Icon -->
+    <circle cx="75" cy="50" r="20" fill="#f1c40f"/>
+    <path d="M55,60 Q75,40 100,60 Q120,60 115,80 Q130,95 105,100 L55,100 Q30,95 45,75 Q40,55 55,60 Z" fill="#fff" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="75" y="130" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">temp (기온)</text>
+
+    <!-- Time Concept -->
+    <rect x="200" y="0" width="150" height="150" fill="#fdedec" stroke="#e74c3c" stroke-width="2" rx="10"/>
+    <!-- Calendar Icon -->
+    <rect x="240" y="40" width="70" height="60" fill="#fff" stroke="#c0392b" stroke-width="2" rx="5"/>
+    <rect x="240" y="40" width="70" height="15" fill="#e74c3c" rx="5"/>
+    <text x="275" y="80" font-family="Arial" font-size="20" fill="#2c3e50" font-weight="bold" text-anchor="middle">15</text>
+    <text x="275" y="130" font-family="Courier" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">date (날짜)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M480,175 L540,175 M520,165 L540,175 L520,185" fill="none" stroke="#2c3e50" stroke-width="4"/>
+  <text x="510" y="160" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">예측(Prediction)</text>
+
+  <!-- Target Variable (Count) -->
+  <g transform="translate(560, 100)">
+    
+    <rect x="0" y="0" width="180" height="150" fill="#e8f8f5" stroke="#1abc9c" stroke-width="2" rx="10"/>
+    <!-- Bike Icon -->
+    <circle cx="60" cy="70" r="20" fill="none" stroke="#16a085" stroke-width="3"/>
+    <circle cx="120" cy="70" r="20" fill="none" stroke="#16a085" stroke-width="3"/>
+    <path d="M60,70 L85,45 L110,45 M85,45 L105,70 M105,70 L120,70" fill="none" stroke="#16a085" stroke-width="3"/>
+    <line x1="110" y1="45" x2="110" y2="35" stroke="#16a085" stroke-width="3"/> <!-- Handle -->
+    <line x1="80" y1="40" x2="90" y2="40" stroke="#16a085" stroke-width="3"/> <!-- Seat -->
+
+    <text x="90" y="130" font-family="Courier" font-size="16" fill="#16a085" font-weight="bold" text-anchor="middle">count (총 대여량)</text>
+  </g>
+
+  <rect x="150" y="320" width="500" height="40" fill="#fff" stroke="#bdc3c7" rx="5"/>
+  <text x="400" y="345" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">"오늘 며칠이고 날씨가 어떤지 알면, 자전거가 몇 대 빌려질지 알 수 있다"</text>
+
+</svg>

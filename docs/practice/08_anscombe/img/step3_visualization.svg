@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 시각화가 밝혀낸 충격적 반전 (lmplot)</text>
+
+  <!-- 4 Plots Grid -->
+  
+  <!-- Plot I -->
+  <g transform="translate(60, 60)">
+    <rect width="300" height="130" fill="#fff" stroke="#3498db" stroke-width="2"/>
+    <text x="150" y="20" font-family="Arial" font-size="14" fill="#3498db" font-weight="bold" text-anchor="middle">I. 정상적인 선형 관계</text>
+    <line x1="20" y1="110" x2="280" y2="110" stroke="#bdc3c7"/>
+    <line x1="20" y1="110" x2="20" y2="30" stroke="#bdc3c7"/>
+    
+    <!-- Regression line -->
+    <line x1="40" y1="100" x2="260" y2="40" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+    
+    <circle cx="60" cy="80" r="4" fill="#34495e"/>
+    <circle cx="90" cy="90" r="4" fill="#34495e"/>
+    <circle cx="120" cy="70" r="4" fill="#34495e"/>
+    <circle cx="160" cy="65" r="4" fill="#34495e"/>
+    <circle cx="210" cy="45" r="4" fill="#34495e"/>
+    <circle cx="250" cy="55" r="4" fill="#34495e"/>
+  </g>
+
+  <!-- Plot II -->
+  <g transform="translate(440, 60)">
+    <rect width="300" height="130" fill="#fff" stroke="#e67e22" stroke-width="2"/>
+    <text x="150" y="20" font-family="Arial" font-size="14" fill="#e67e22" font-weight="bold" text-anchor="middle">II. 완벽한 2차 곡선 (비선형)</text>
+    <line x1="20" y1="110" x2="280" y2="110" stroke="#bdc3c7"/>
+    <line x1="20" y1="110" x2="20" y2="30" stroke="#bdc3c7"/>
+
+    <line x1="40" y1="100" x2="260" y2="40" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+    
+    <!-- Parabola -->
+    <path d="M40,90 Q150,-10 260,90" fill="none" stroke="#34495e" stroke-width="2"/>
+    <circle cx="40" cy="90" r="4" fill="#34495e"/>
+    <circle cx="90" cy="50" r="4" fill="#34495e"/>
+    <circle cx="150" cy="27" r="4" fill="#34495e"/>
+    <circle cx="210" cy="50" r="4" fill="#34495e"/>
+    <circle cx="260" cy="90" r="4" fill="#34495e"/>
+  </g>
+
+  <!-- Plot III -->
+  <g transform="translate(60, 210)">
+    <rect width="300" height="130" fill="#fff" stroke="#2ecc71" stroke-width="2"/>
+    <text x="150" y="20" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">III. 극단적 이상치 1개 존재</text>
+    <line x1="20" y1="110" x2="280" y2="110" stroke="#bdc3c7"/>
+    <line x1="20" y1="110" x2="20" y2="30" stroke="#bdc3c7"/>
+
+    <line x1="40" y1="100" x2="260" y2="40" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+
+    <line x1="40" y1="110" x2="260" y2="70" stroke="#34495e" stroke-width="1"/>
+    <circle cx="80" cy="103" r="4" fill="#34495e"/>
+    <circle cx="130" cy="94" r="4" fill="#34495e"/>
+    <circle cx="180" cy="85" r="4" fill="#34495e"/>
+    <circle cx="230" cy="76" r="4" fill="#34495e"/>
+    
+    <circle cx="180" cy="35" r="6" fill="#c0392b" stroke="#fff"/> <!-- Outlier -->
+  </g>
+
+  <!-- Plot IV -->
+  <g transform="translate(440, 210)">
+    <rect width="300" height="130" fill="#fff" stroke="#9b59b6" stroke-width="2"/>
+    <text x="150" y="20" font-family="Arial" font-size="14" fill="#8e44ad" font-weight="bold" text-anchor="middle">IV. X값이 모두 동일 (1개 예외)</text>
+    <line x1="20" y1="110" x2="280" y2="110" stroke="#bdc3c7"/>
+    <line x1="20" y1="110" x2="20" y2="30" stroke="#bdc3c7"/>
+
+    <line x1="40" y1="100" x2="260" y2="40" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+
+    <line x1="80" y1="110" x2="80" y2="40" stroke="#34495e" stroke-width="1"/>
+    <circle cx="80" cy="100" r="4" fill="#34495e"/>
+    <circle cx="80" cy="80" r="4" fill="#34495e"/>
+    <circle cx="80" cy="60" r="4" fill="#34495e"/>
+    <circle cx="80" cy="40" r="4" fill="#34495e"/>
+    
+    <circle cx="240" cy="50" r="6" fill="#c0392b" stroke="#fff"/> <!-- Outlier pulling the line -->
+  </g>
+
+  <text x="400" y="380" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">빨간색 회귀선(평균, 분산)은 동일하지만, 점들의 기하학적 분포는 완전히 다르다!</text>
+
+</svg>

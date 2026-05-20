@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 계절(Season)이 대여량에 미치는 환경적 지배력</text>
+
+  <!-- Boxplot construction -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">계절(Season)별 자전거 대여량 분포</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="450" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="280" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Season (계절)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">Count (대여량)</text>
+    
+    <!-- X-axis labels -->
+    <text x="110" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">Spring</text>
+    <text x="190" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">Summer</text>
+    <text x="270" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">Fall</text>
+    <text x="350" y="260" font-family="Courier" font-size="12" fill="#7f8c8d" font-weight="bold" text-anchor="middle">Winter</text>
+
+    <!-- Spring (Lowest, because early spring is very cold) -->
+    <rect x="90" y="180" width="40" height="40" fill="#aed6f1" stroke="#2980b9"/>
+    <line x1="90" y1="200" x2="130" y2="200" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="110" y1="180" x2="110" y2="150" stroke="#2980b9" stroke-width="2"/>
+    <line x1="110" y1="220" x2="110" y2="230" stroke="#2980b9" stroke-width="2"/>
+
+    <!-- Summer (Highest demand) -->
+    <rect x="170" y="80" width="40" height="80" fill="#f5b041" stroke="#d35400"/>
+    <line x1="170" y1="120" x2="210" y2="120" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="190" y1="80" x2="190" y2="50" stroke="#d35400" stroke-width="2"/>
+    <line x1="190" y1="160" x2="190" y2="190" stroke="#d35400" stroke-width="2"/>
+
+    <!-- Fall (High demand, nice weather) -->
+    <rect x="250" y="90" width="40" height="70" fill="#e67e22" stroke="#a04000"/>
+    <line x1="250" y1="125" x2="290" y2="125" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="270" y1="90" x2="270" y2="60" stroke="#a04000" stroke-width="2"/>
+    <line x1="270" y1="160" x2="270" y2="200" stroke="#a04000" stroke-width="2"/>
+
+    <!-- Winter (Moderate/Low) -->
+    <rect x="330" y="140" width="40" height="50" fill="#a2d9ce" stroke="#117a65"/>
+    <line x1="330" y1="165" x2="370" y2="165" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="350" y1="140" x2="350" y2="100" stroke="#117a65" stroke-width="2"/>
+    <line x1="350" y1="190" x2="350" y2="220" stroke="#117a65" stroke-width="2"/>
+
+    <!-- Annotations -->
+    <rect x="90" y="80" width="60" height="40" fill="#fdedec" rx="3"/>
+    <text x="120" y="95" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">가장 낮음!</text>
+    <text x="120" y="110" font-family="Arial" font-size="9" fill="#c0392b" text-anchor="middle">(초봄의 추위)</text>
+    <path d="M120,120 L115,145" fill="none" stroke="#c0392b" stroke-width="2"/>
+
+    <rect x="350" y="55" width="120" height="40" fill="#fcf3cf" rx="3"/>
+    <text x="410" y="70" font-family="Arial" font-size="10" fill="#d35400" font-weight="bold" text-anchor="middle">여름과 가을에 폭발</text>
+    <text x="410" y="85" font-family="Arial" font-size="9" fill="#d35400" text-anchor="middle">(자전거 타기 좋은 날씨)</text>
+
+  </g>
+</svg>

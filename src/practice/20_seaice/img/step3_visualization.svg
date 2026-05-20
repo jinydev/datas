@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 계절성(Seasonality) - 얼음이 얼고 녹는 미시적 패턴</text>
+
+  <!-- Lineplot construction -->
+  <g transform="translate(150, 80)">
+    <rect width="500" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">월별(Month) 북극 해빙 면적 변화 (1년 주기)</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="230" x2="450" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="265" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Month (월)</text>
+    <text x="20" y="140" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,140)">Extent (얼음 면적)</text>
+    
+    <!-- Ticks -->
+    <text x="50" y="245" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">1</text>
+    <text x="116" y="245" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">3</text>
+    <text x="250" y="245" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">7</text>
+    <text x="316" y="245" font-family="Arial" font-size="10" fill="#e74c3c" font-weight="bold" text-anchor="middle">9</text>
+    <text x="450" y="245" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">12</text>
+    
+    <text x="40" y="210" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="end">5.0</text>
+    <text x="40" y="70" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="end">15.0</text>
+
+    <!-- The Curve (High in March, Low in Sept) -->
+    <!-- Jan to Mar (Freeze) -->
+    <path d="M50,90 Q80,75 116,70" fill="none" stroke="#3498db" stroke-width="3"/>
+    <!-- Mar to Sept (Melt) -->
+    <path d="M116,70 Q216,110 316,210" fill="none" stroke="#3498db" stroke-width="3"/>
+    <!-- Sept to Dec (Freeze) -->
+    <path d="M316,210 Q380,180 450,110" fill="none" stroke="#3498db" stroke-width="3"/>
+    
+    <circle cx="116" cy="70" r="5" fill="#2980b9"/>
+    <text x="116" y="55" font-family="Arial" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">최대치 (3월 말)</text>
+    
+    <circle cx="316" cy="210" r="5" fill="#c0392b"/>
+    <text x="316" y="225" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">최소치 (9월 말)</text>
+
+    <!-- Ice Area Highlights -->
+    <rect x="70" y="110" width="80" height="30" fill="#eaf2f8" rx="5"/>
+    <text x="110" y="125" font-family="Arial" font-size="10" fill="#2980b9" text-anchor="middle">겨울~봄 (얼음 결빙)</text>
+    
+    <rect x="250" y="150" width="80" height="30" fill="#fdedec" rx="5"/>
+    <text x="290" y="165" font-family="Arial" font-size="10" fill="#c0392b" text-anchor="middle">여름 (얼음 융해)</text>
+
+  </g>
+</svg>

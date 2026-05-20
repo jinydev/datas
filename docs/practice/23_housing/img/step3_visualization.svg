@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 소득과 집값의 밀집도 파악 (Scatterplot + Alpha)</text>
+
+  <!-- Scatterplot Concept -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">평균 소득(Income)과 주택 가격(House Value)</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="450" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="280" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Median Income (소득)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">House Value (집값)</text>
+
+    <!-- Data Points (using alpha visualization effect) -->
+    <!-- Dense area (Low income, low house value) -->
+    <g fill="#27ae60" opacity="0.3">
+      <circle cx="100" cy="200" r="10"/>
+      <circle cx="110" cy="190" r="10"/>
+      <circle cx="90" cy="210" r="10"/>
+      <circle cx="120" cy="220" r="10"/>
+      <circle cx="130" cy="180" r="10"/>
+      <circle cx="110" cy="230" r="10"/>
+      <circle cx="140" cy="200" r="10"/>
+      <circle cx="100" cy="180" r="10"/>
+    </g>
+
+    <!-- Mid area -->
+    <g fill="#27ae60" opacity="0.3">
+      <circle cx="200" cy="150" r="8"/>
+      <circle cx="220" cy="140" r="8"/>
+      <circle cx="180" cy="160" r="8"/>
+      <circle cx="240" cy="130" r="8"/>
+      <circle cx="210" cy="170" r="8"/>
+    </g>
+
+    <!-- Sparse area (High income, high house value) -->
+    <g fill="#27ae60" opacity="0.3">
+      <circle cx="300" cy="100" r="5"/>
+      <circle cx="350" cy="80" r="5"/>
+      <circle cx="380" cy="60" r="5"/>
+      <circle cx="320" cy="90" r="5"/>
+    </g>
+
+    <!-- Annotations -->
+    <path d="M120,200 L180,90" fill="none" stroke="#e74c3c" stroke-width="3" stroke-dasharray="6,4"/>
+    <polygon points="180,90 170,95 180,105" fill="#e74c3c"/>
+
+    <rect x="200" y="60" width="220" height="30" fill="#fdedec" rx="5"/>
+    <text x="310" y="80" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">강력한 양의 상관관계 (우상향)</text>
+
+    <line x1="100" y1="210" x2="60" y2="130" stroke="#34495e" stroke-width="2"/>
+    <rect x="30" y="90" width="100" height="40" fill="#eaf2f8" rx="5"/>
+    <text x="80" y="105" font-family="Arial" font-size="10" fill="#2c3e50" font-weight="bold" text-anchor="middle">Alpha=0.3</text>
+    <text x="80" y="120" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">겹칠수록 진해짐</text>
+
+  </g>
+</svg>

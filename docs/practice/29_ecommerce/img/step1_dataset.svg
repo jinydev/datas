@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 이커머스 거래 로그(Transaction Log) 데이터 구조</text>
+
+  <!-- Shopping Cart Icon -->
+  <g transform="translate(100, 150)">
+    <path d="M0,0 L30,0 L50,80 L130,80 L150,20 L40,20" fill="none" stroke="#2980b9" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="60" cy="100" r="15" fill="#2c3e50"/>
+    <circle cx="120" cy="100" r="15" fill="#2c3e50"/>
+    <rect x="60" y="40" width="30" height="30" fill="#e74c3c" rx="3"/>
+    <rect x="100" y="50" width="30" height="20" fill="#f1c40f" rx="3"/>
+  </g>
+
+  <!-- Raw Data Table Concept -->
+  <g transform="translate(300, 80)">
+    <rect width="450" height="240" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <rect x="0" y="0" width="450" height="40" fill="#34495e" rx="5"/>
+    <text x="225" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">쇼핑몰 원시 구매 기록 (Raw Data)</text>
+
+    <!-- Table Headers -->
+    <text x="60" y="70" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">InvoiceDate</text>
+    <text x="180" y="70" font-family="Courier" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">Description</text>
+    <text x="290" y="70" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">Quantity</text>
+    <text x="390" y="70" font-family="Courier" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">UnitPrice</text>
+    
+    <line x1="10" y1="80" x2="440" y2="80" stroke="#bdc3c7" stroke-width="2"/>
+
+    <!-- Row 1 -->
+    <text x="60" y="110" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">2023-11-25</text>
+    <text x="180" y="110" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">WHITE MUG</text>
+    <rect x="270" y="95" width="40" height="20" fill="#eaf2f8" rx="3"/>
+    <text x="290" y="110" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">6</text>
+    <rect x="370" y="95" width="40" height="20" fill="#e9f7ef" rx="3"/>
+    <text x="390" y="110" font-family="Courier" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">$2.5</text>
+
+    <!-- Row 2 -->
+    <text x="60" y="150" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">2023-11-25</text>
+    <text x="180" y="150" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">RED T-SHIRT</text>
+    <rect x="270" y="135" width="40" height="20" fill="#eaf2f8" rx="3"/>
+    <text x="290" y="150" font-family="Courier" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">2</text>
+    <rect x="370" y="135" width="40" height="20" fill="#e9f7ef" rx="3"/>
+    <text x="390" y="150" font-family="Courier" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="middle">$15.0</text>
+
+    <!-- Problem Callout -->
+    <rect x="180" y="180" width="250" height="40" fill="#fdedec" stroke="#e74c3c" rx="5"/>
+    <text x="305" y="205" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">문제점: "이 사람이 총 얼마를 결제했지?"</text>
+
+  </g>
+
+</svg>

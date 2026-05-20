@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 단일 피처의 분포 비교 (히스토그램 커널밀도함수)</text>
+
+  <!-- KDE Plot Interpretation -->
+  <g transform="translate(150, 90)">
+    <rect width="500" height="260" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="250" y="30" font-family="Arial" font-size="16" fill="#8e44ad" font-weight="bold" text-anchor="middle">Petal Length (꽃잎 길이) 한 가지만으로 구분이 가능할까?</text>
+    
+    <line x1="50" y1="200" x2="450" y2="200" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="200" x2="50" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="235" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Petal Length (cm)</text>
+    <text x="20" y="130" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,130)">밀도 (Density)</text>
+
+    <!-- Setosa (Small) -->
+    <path d="M60,200 Q100,20 140,200" fill="#e74c3c" opacity="0.4"/>
+    <path d="M60,200 Q100,20 140,200" fill="none" stroke="#c0392b" stroke-width="2"/>
+    <text x="100" y="100" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">Setosa</text>
+
+    <!-- Versicolor (Medium) -->
+    <path d="M150,200 Q250,50 350,200" fill="#3498db" opacity="0.4"/>
+    <path d="M150,200 Q250,50 350,200" fill="none" stroke="#2980b9" stroke-width="2"/>
+    <text x="250" y="120" font-family="Arial" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">Versicolor</text>
+
+    <!-- Virginica (Large) -->
+    <path d="M250,200 Q350,70 440,200" fill="#2ecc71" opacity="0.4"/>
+    <path d="M250,200 Q350,70 440,200" fill="none" stroke="#27ae60" stroke-width="2"/>
+    <text x="350" y="130" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">Virginica</text>
+
+    <!-- Overlap explanation -->
+    <ellipse cx="300" cy="180" rx="30" ry="20" fill="none" stroke="#f39c12" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="300" y="150" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">겹치는 구간 (모호함)</text>
+    
+    <text x="100" y="220" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">완벽히 독립됨!</text>
+  </g>
+
+</svg>

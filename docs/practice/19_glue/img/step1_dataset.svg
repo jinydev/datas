@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 자연어 처리(NLP) 언어 모델 벤치마크 데이터</text>
+
+  <!-- NLP Metaphor -->
+  <g transform="translate(100, 100)">
+    
+    <!-- Input Text -->
+    <rect x="0" y="80" width="120" height="40" fill="#eaf2f8" stroke="#3498db" stroke-width="2" rx="5"/>
+    <text x="60" y="105" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="middle">"이 영화 최고!"</text>
+
+    <!-- AI Model (Encoder) -->
+    <path d="M140,100 L180,70 L180,130 Z" fill="#95a5a6"/>
+    
+    <rect x="180" y="40" width="140" height="120" fill="#2c3e50" rx="10"/>
+    <text x="250" y="70" font-family="Arial" font-size="16" fill="#f1c40f" font-weight="bold" text-anchor="middle">AI Model</text>
+    
+    <rect x="200" y="90" width="100" height="30" fill="#f39c12" rx="5"/>
+    <text x="250" y="110" font-family="Arial" font-size="12" fill="#fff" font-weight="bold" text-anchor="middle">Encoder: Transformer</text>
+    
+    <text x="250" y="140" font-family="Arial" font-size="10" fill="#bdc3c7" text-anchor="middle">(ex. BERT, ERNIE)</text>
+
+    <!-- Output Tasks (GLUE Benchmark) -->
+    <path d="M340,60 L380,40 M340,100 L380,100 M340,140 L380,160" fill="none" stroke="#7f8c8d" stroke-width="3"/>
+
+    <!-- Task 1: Sentiment -->
+    <rect x="380" y="20" width="150" height="40" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="455" y="45" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">Task 1: 감정 분석</text>
+
+    <!-- Task 2: Similarity -->
+    <rect x="380" y="80" width="150" height="40" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="455" y="105" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">Task 2: 문장 유사도</text>
+
+    <!-- Task 3: Inference -->
+    <rect x="380" y="140" width="150" height="40" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="455" y="165" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold" text-anchor="middle">Task 3: 논리 추론</text>
+
+    <!-- Score Evaluation -->
+    <line x1="550" y1="100" x2="600" y2="100" stroke="#e74c3c" stroke-width="3" stroke-dasharray="4,4"/>
+    <circle cx="640" cy="100" r="30" fill="#fdedec" stroke="#e74c3c" stroke-width="3"/>
+    <text x="640" y="95" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">평균</text>
+    <text x="640" y="115" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold" text-anchor="middle">Score</text>
+  </g>
+
+  <!-- Explanation -->
+  <rect x="150" y="320" width="500" height="50" fill="#fff" stroke="#bdc3c7" rx="5"/>
+  <text x="400" y="340" font-family="Arial" font-size="14" fill="#34495e" font-weight="bold" text-anchor="middle">GLUE (General Language Understanding Evaluation)</text>
+  <text x="400" y="360" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">AI가 사람의 언어를 얼마나 잘 이해하는지 테스트하는 종합 수능 시험</text>
+
+</svg>

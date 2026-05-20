@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 이동 평균선(MA) 오버레이를 통한 추세 분석</text>
+
+  <!-- Overlay construction -->
+  <g transform="translate(150, 80)">
+    <rect width="500" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="450" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <!-- Zoom in on recent 30 years -->
+    <text x="250" y="270" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Date (1990 ~ 2020)</text>
+    <text x="20" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,145)">Price (주가지수)</text>
+
+    <!-- Raw Price Data (Noisy) -->
+    <path d="M50,220 L70,200 L90,210 L110,180 L130,170 L150,190 L170,140 L190,130 L210,160 L230,120 L250,100 L270,140 L290,90 L310,80 L330,110 L350,60 L370,50 L390,90 L410,40 L430,70 L450,20" fill="none" stroke="#bdc3c7" stroke-width="2"/>
+
+    <!-- 10-Year Moving Average (Smoothed) -->
+    <!-- Deliberately shifted and smoothed out to cut through the middle -->
+    <path d="M100,205 Q150,190 200,160 T300,120 T400,70 T450,50" fill="none" stroke="#c0392b" stroke-width="4"/>
+
+    <!-- Golden Cross / Death Cross Concept -->
+    <!-- Highlight an area where raw price drops below MA -->
+    <circle cx="270" cy="140" r="5" fill="#f39c12"/>
+    <line x1="270" y1="140" x2="270" y2="180" stroke="#f39c12" stroke-width="2"/>
+    <text x="270" y="195" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">일시적 하락장</text>
+    <text x="270" y="210" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">(Price &lt; MA)</text>
+
+    <!-- Legend -->
+    <rect x="70" y="30" width="160" height="60" fill="#fff" stroke="#95a5a6" rx="5"/>
+    <line x1="80" y1="50" x2="110" y2="50" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="120" y="55" font-family="Arial" font-size="12" fill="#7f8c8d">Raw Price (원본)</text>
+    <line x1="80" y1="70" x2="110" y2="70" stroke="#c0392b" stroke-width="4"/>
+    <text x="120" y="75" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold">10-Year MA (이동평균)</text>
+
+  </g>
+</svg>

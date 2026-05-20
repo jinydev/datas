@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 시간대별(Hour) 택시 이용 패턴 분석 (Countplot)</text>
+
+  <!-- Countplot construction -->
+  <g transform="translate(100, 80)">
+    <rect width="600" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    <text x="300" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">뉴욕 사람들은 몇 시에 택시를 가장 많이 탈까?</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="230" x2="550" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="300" y="270" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">탑승 시간 (Hour, 0~23시)</text>
+    <text x="20" y="140" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,140)">이용 건수 (Count)</text>
+
+    <!-- Bars representing time of day -->
+    <!-- Morning rush -->
+    <rect x="70" y="200" width="15" height="30" fill="#95a5a6"/> <!-- 5 AM -->
+    <rect x="90" y="170" width="15" height="60" fill="#3498db"/> <!-- 6 AM -->
+    <rect x="110" y="120" width="15" height="110" fill="#3498db"/> <!-- 7 AM -->
+    <rect x="130" y="90" width="15" height="140" fill="#2980b9"/> <!-- 8 AM (Rush) -->
+    <rect x="150" y="100" width="15" height="130" fill="#3498db"/> <!-- 9 AM -->
+    
+    <!-- Midday -->
+    <rect x="170" y="150" width="15" height="80" fill="#95a5a6"/>
+    <rect x="190" y="140" width="15" height="90" fill="#95a5a6"/>
+    <rect x="210" y="145" width="15" height="85" fill="#95a5a6"/>
+    <rect x="230" y="130" width="15" height="100" fill="#95a5a6"/>
+    <rect x="250" y="135" width="15" height="95" fill="#95a5a6"/>
+    <rect x="270" y="120" width="15" height="110" fill="#95a5a6"/>
+    <rect x="290" y="115" width="15" height="115" fill="#95a5a6"/>
+    
+    <!-- Evening Rush -->
+    <rect x="310" y="100" width="15" height="130" fill="#e67e22"/> <!-- 17 (5 PM) -->
+    <rect x="330" y="70" width="15" height="160" fill="#d35400"/> <!-- 18 (6 PM) (Peak) -->
+    <rect x="350" y="60" width="15" height="170" fill="#c0392b"/> <!-- 19 (7 PM) (Peak) -->
+    <rect x="370" y="80" width="15" height="150" fill="#e67e22"/> <!-- 20 (8 PM) -->
+    <rect x="390" y="90" width="15" height="140" fill="#e67e22"/> <!-- 21 (9 PM) -->
+    <rect x="410" y="130" width="15" height="100" fill="#95a5a6"/>
+    <rect x="430" y="150" width="15" height="80" fill="#95a5a6"/>
+    
+    <!-- Night -->
+    <rect x="450" y="190" width="15" height="40" fill="#7f8c8d"/>
+    <rect x="470" y="210" width="15" height="20" fill="#7f8c8d"/>
+
+    <!-- Annotations -->
+    <line x1="137" y1="90" x2="137" y2="60" stroke="#2980b9" stroke-width="2"/>
+    <text x="137" y="55" font-family="Arial" font-size="12" fill="#2980b9" font-weight="bold" text-anchor="middle">출근 러시 아워 (8AM)</text>
+
+    <line x1="360" y1="60" x2="360" y2="40" stroke="#c0392b" stroke-width="2"/>
+    <text x="360" y="35" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">퇴근 후 저녁 시간 (6~7PM) 피크!</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 트랜스포머(Transformer) 아키텍처의 혁명</text>
+
+  <!-- Lineplot construction -->
+  <g transform="translate(150, 70)">
+    <rect width="500" height="300" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <!-- Axes -->
+    <line x1="100" y1="240" x2="400" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="100" y1="240" x2="100" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="250" y="280" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Year (연도)</text>
+    <text x="60" y="145" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 60,145)">Score (종합 평균 점수)</text>
+    
+    <text x="150" y="260" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">2018</text>
+    <text x="350" y="260" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">2019</text>
+    
+    <text x="90" y="240" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="end">40</text>
+    <text x="90" y="145" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="end">65</text>
+    <text x="90" y="55" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="end">90</text>
+
+    <!-- LSTM Line -->
+    <path d="M150,190 L350,185" fill="none" stroke="#2980b9" stroke-width="3"/>
+    <circle cx="150" cy="190" r="6" fill="#2980b9"/>
+    <circle cx="350" cy="185" r="6" fill="#2980b9"/>
+    <text x="365" y="190" font-family="Arial" font-size="12" fill="#2980b9" font-weight="bold">LSTM Encoder (성능 정체)</text>
+
+    <!-- Transformer Line -->
+    <path d="M150,130 L350,60" fill="none" stroke="#c0392b" stroke-width="4"/>
+    <circle cx="150" cy="130" r="8" fill="#c0392b"/>
+    <circle cx="350" cy="60" r="8" fill="#c0392b"/>
+    <text x="365" y="65" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold">Transformer Encoder (수직 상승!)</text>
+
+    <!-- Annotations -->
+    <line x1="350" y1="180" x2="350" y2="70" stroke="#f39c12" stroke-width="2" stroke-dasharray="4,4"/>
+    <polygon points="350,70 345,80 355,80" fill="#f39c12"/>
+    <rect x="230" y="100" width="110" height="30" fill="#fcf3cf" rx="3"/>
+    <text x="285" y="118" font-family="Arial" font-size="12" fill="#d35400" font-weight="bold" text-anchor="middle">압도적인 성능 격차</text>
+
+    <text x="150" y="115" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">BERT 등장</text>
+    <text x="350" y="45" font-family="Arial" font-size="10" fill="#34495e" text-anchor="middle">RoBERTa, ERNIE 등</text>
+
+  </g>
+</svg>

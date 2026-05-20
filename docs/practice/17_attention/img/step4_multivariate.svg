@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 여러 과제(Solutions)를 동시에 풀 때의 파국 (Violinplot)</text>
+
+  <!-- Violinplot / Boxplot concept -->
+  <g transform="translate(100, 80)">
+    <rect width="600" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+    
+    <text x="300" y="30" font-family="Arial" font-size="16" fill="#34495e" font-weight="bold" text-anchor="middle">과제의 개수(Solutions)가 늘어나면 멀티태스킹은 어떻게 될까?</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="230" x2="550" y2="230" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="50" y1="230" x2="50" y2="50" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <text x="300" y="270" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">Solutions (부여된 과제의 개수)</text>
+    <text x="20" y="140" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle" transform="rotate(-90 20,140)">Score (점수)</text>
+    
+    <text x="150" y="250" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">1개 (쉬움)</text>
+    <text x="300" y="250" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">2개 (보통)</text>
+    <text x="450" y="250" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">3개 (어려움)</text>
+
+    <!-- Legend -->
+    <rect x="450" y="50" width="120" height="50" fill="#fff" stroke="#95a5a6" rx="3"/>
+    <rect x="460" y="60" width="15" height="10" fill="#e67e22"/>
+    <text x="485" y="68" font-family="Arial" font-size="10" fill="#34495e">divided</text>
+    <rect x="460" y="80" width="15" height="10" fill="#2980b9"/>
+    <text x="485" y="88" font-family="Arial" font-size="10" fill="#34495e">focused</text>
+
+    <!-- Group 1 (1 task) -->
+    <!-- Divided -->
+    <path d="M120,200 Q110,180 120,150 Q130,180 120,200 Z" fill="#e67e22" opacity="0.8"/>
+    <!-- Focused -->
+    <path d="M180,180 Q170,150 180,120 Q190,150 180,180 Z" fill="#2980b9" opacity="0.8"/>
+    
+    <!-- Group 2 (2 tasks) -->
+    <!-- Divided -->
+    <path d="M270,220 Q250,190 270,160 Q290,190 270,220 Z" fill="#e67e22" opacity="0.8"/>
+    <!-- Focused -->
+    <path d="M330,170 Q310,130 330,100 Q350,130 330,170 Z" fill="#2980b9" opacity="0.8"/>
+
+    <!-- Group 3 (3 tasks) -->
+    <!-- Divided (CRASHES to bottom) -->
+    <path d="M420,230 Q400,210 420,180 Q440,210 420,230 Z" fill="#e67e22" opacity="0.8"/>
+    <!-- Focused (Stays high) -->
+    <path d="M480,160 Q460,110 480,80 Q500,110 480,160 Z" fill="#2980b9" opacity="0.8"/>
+
+    <!-- Callout Line -->
+    <path d="M420,175 Q400,130 360,100" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4,4"/>
+    <rect x="230" y="80" width="150" height="40" fill="#fdedec" rx="5"/>
+    <text x="305" y="95" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">과제가 3개로 늘어나자</text>
+    <text x="305" y="110" font-family="Arial" font-size="10" fill="#c0392b" font-weight="bold" text-anchor="middle">멀티태스킹 그룹의 점수 폭락!</text>
+
+  </g>
+</svg>

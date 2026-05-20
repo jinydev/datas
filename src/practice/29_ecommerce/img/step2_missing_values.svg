@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 피처 엔지니어링 (파생 변수 창조)</text>
+
+  <!-- Feature Engineering Formula Concept -->
+  
+  <!-- Quantity Box -->
+  <g transform="translate(100, 150)">
+    <rect width="120" height="80" fill="#eaf2f8" stroke="#3498db" stroke-width="2" rx="5"/>
+    <text x="60" y="30" font-family="Courier" font-size="16" fill="#2980b9" font-weight="bold" text-anchor="middle">Quantity</text>
+    <text x="60" y="60" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">(수량)</text>
+  </g>
+
+  <!-- Multiply Sign -->
+  <text x="250" y="200" font-family="Arial" font-size="40" fill="#2c3e50" font-weight="bold" text-anchor="middle">×</text>
+
+  <!-- Unit Price Box -->
+  <g transform="translate(280, 150)">
+    <rect width="120" height="80" fill="#e9f7ef" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="60" y="30" font-family="Courier" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="middle">UnitPrice</text>
+    <text x="60" y="60" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">(개당 단가)</text>
+  </g>
+
+  <!-- Equals / Arrow -->
+  <g transform="translate(430, 190)">
+    <path d="M0,0 L50,0 M40,-10 L50,0 L40,10" fill="none" stroke="#e74c3c" stroke-width="5"/>
+    <!-- Gear icon representing engineering -->
+    <circle cx="25" cy="-30" r="15" fill="none" stroke="#7f8c8d" stroke-width="4" stroke-dasharray="4,2"/>
+    <circle cx="25" cy="-30" r="5" fill="#7f8c8d"/>
+  </g>
+
+  <!-- Total Price (New Feature) -->
+  <g transform="translate(510, 130)">
+    <rect width="180" height="120" fill="#fdedec" stroke="#e74c3c" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="180" height="40" fill="#e74c3c" rx="10"/>
+    <rect x="0" y="20" width="180" height="20" fill="#e74c3c"/>
+    <text x="90" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">New Feature!</text>
+    
+    <text x="90" y="70" font-family="Courier" font-size="20" fill="#c0392b" font-weight="bold" text-anchor="middle">TotalPrice</text>
+    <text x="90" y="100" font-family="Arial" font-size="14" fill="#c0392b" text-anchor="middle">(총 결제 금액)</text>
+  </g>
+
+  <rect x="150" y="320" width="500" height="50" fill="#fff" stroke="#bdc3c7" rx="5"/>
+  <text x="400" y="342" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">"원본 데이터에 없는 정보라도, 기존 변수를 수학적으로 조합하여</text>
+  <text x="400" y="358" font-family="Arial" font-size="12" fill="#34495e" font-weight="bold" text-anchor="middle">분석에 꼭 필요한 파생 변수를 창조해 낸다."</text>
+
+</svg>

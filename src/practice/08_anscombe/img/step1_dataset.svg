@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 앤스콤 콰르텟 (Anscombe's Quartet) 데이터의 비밀</text>
+
+  <!-- 4 Data Sets Metaphor -->
+  <g transform="translate(50, 80)">
+    
+    <!-- Dataset I -->
+    <rect x="0" y="0" width="150" height="150" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+    <rect x="0" y="0" width="150" height="30" fill="#3498db" rx="5"/>
+    <text x="75" y="20" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">Dataset I</text>
+    <text x="20" y="55" font-family="Courier" font-size="12" fill="#34495e">x: 10, 8, 13, 9 ...</text>
+    <text x="20" y="75" font-family="Courier" font-size="12" fill="#34495e">y: 8.0, 6.9, 7.5 ...</text>
+
+    <!-- Dataset II -->
+    <rect x="180" y="0" width="150" height="150" fill="#fff" stroke="#e67e22" stroke-width="2" rx="5"/>
+    <rect x="180" y="0" width="150" height="30" fill="#e67e22" rx="5"/>
+    <text x="255" y="20" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">Dataset II</text>
+    <text x="200" y="55" font-family="Courier" font-size="12" fill="#34495e">x: 10, 8, 13, 9 ...</text>
+    <text x="200" y="75" font-family="Courier" font-size="12" fill="#34495e">y: 9.1, 8.1, 8.7 ...</text>
+
+    <!-- Dataset III -->
+    <rect x="360" y="0" width="150" height="150" fill="#fff" stroke="#2ecc71" stroke-width="2" rx="5"/>
+    <rect x="360" y="0" width="150" height="30" fill="#2ecc71" rx="5"/>
+    <text x="435" y="20" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">Dataset III</text>
+    <text x="380" y="55" font-family="Courier" font-size="12" fill="#34495e">x: 10, 8, 13, 9 ...</text>
+    <text x="380" y="75" font-family="Courier" font-size="12" fill="#34495e">y: 7.4, 6.7, 12.7 ...</text>
+
+    <!-- Dataset IV -->
+    <rect x="540" y="0" width="150" height="150" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="5"/>
+    <rect x="540" y="0" width="150" height="30" fill="#9b59b6" rx="5"/>
+    <text x="615" y="20" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">Dataset IV</text>
+    <text x="560" y="55" font-family="Courier" font-size="12" fill="#34495e">x: 8, 8, 8, 8, 19 ...</text>
+    <text x="560" y="75" font-family="Courier" font-size="12" fill="#34495e">y: 6.5, 5.7, 7.7 ...</text>
+    
+  </g>
+
+  <!-- Big Question -->
+  <g transform="translate(50, 260)">
+    <rect width="690" height="100" fill="#fcf3cf" stroke="#f39c12" stroke-width="2" rx="10"/>
+    <text x="345" y="45" font-family="Arial" font-size="20" fill="#d35400" font-weight="bold" text-anchor="middle">겉보기에는 x와 y의 무작위 숫자 나열일 뿐...</text>
+    <text x="345" y="75" font-family="Arial" font-size="16" fill="#e67e22" font-weight="bold" text-anchor="middle">과연 이 4개의 데이터셋은 서로 다른 데이터일까, 똑같은 데이터일까?</text>
+  </g>
+
+</svg>

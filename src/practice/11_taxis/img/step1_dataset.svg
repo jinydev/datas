@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 뉴욕 택시(Taxis) 요금 데이터 구조 분석</text>
+
+  <!-- Taxi Metaphor -->
+  <g transform="translate(50, 100)">
+    <!-- Taxi Car -->
+    <path d="M40,140 Q20,140 20,120 L20,80 Q20,60 40,60 L80,60 L120,20 L220,20 L260,60 L320,60 Q340,60 340,80 L340,120 Q340,140 320,140 Z" fill="#f1c40f"/>
+    <!-- Windows -->
+    <path d="M85,60 L125,25 L215,25 L255,60 Z" fill="#3498db" opacity="0.8"/>
+    <line x1="170" y1="25" x2="170" y2="60" stroke="#f1c40f" stroke-width="4"/>
+    
+    <!-- Taxi Sign -->
+    <rect x="140" y="10" width="60" height="10" fill="#e67e22" rx="3"/>
+    <text x="170" y="18" font-family="Arial" font-size="8" fill="#fff" font-weight="bold" text-anchor="middle">TAXI</text>
+    
+    <!-- Wheels -->
+    <circle cx="80" cy="140" r="25" fill="#34495e"/>
+    <circle cx="80" cy="140" r="15" fill="#95a5a6"/>
+    <circle cx="280" cy="140" r="25" fill="#34495e"/>
+    <circle cx="280" cy="140" r="15" fill="#95a5a6"/>
+
+    <!-- Checkered pattern -->
+    <rect x="20" y="80" width="320" height="10" fill="#2c3e50" stroke-dasharray="10,10"/>
+
+    <!-- Labels -->
+    <text x="170" y="195" font-family="Arial" font-size="14" fill="#8e44ad" font-weight="bold" text-anchor="middle">distance (주행 거리)</text>
+    <line x1="80" y1="180" x2="280" y2="180" stroke="#8e44ad" stroke-width="2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Explanation Box (Receipt) -->
+  <g transform="translate(450, 80)">
+    <rect width="300" height="280" fill="#fff" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <!-- Receipt Header -->
+    <rect x="0" y="0" width="300" height="40" fill="#34495e" rx="5"/>
+    <rect x="0" y="20" width="300" height="20" fill="#34495e"/>
+    <text x="150" y="25" font-family="Arial" font-size="16" fill="#f1c40f" font-weight="bold" text-anchor="middle">TAXI RECEIPT (Target)</text>
+
+    <!-- Receipt Details -->
+    <text x="30" y="70" font-family="Courier" font-size="14" fill="#7f8c8d">pickup: 2019-02-28 23:29:03</text>
+    <text x="30" y="90" font-family="Courier" font-size="14" fill="#7f8c8d">dropoff: 2019-02-28 23:32:35</text>
+    <line x1="20" y1="110" x2="280" y2="110" stroke="#bdc3c7" stroke-dasharray="2,2"/>
+
+    <text x="30" y="140" font-family="Courier" font-size="16" fill="#2c3e50">Fare (기본 요금) ...........</text>
+    <text x="270" y="140" font-family="Courier" font-size="16" fill="#2980b9" font-weight="bold" text-anchor="end">$ 8.00</text>
+    
+    <text x="30" y="170" font-family="Courier" font-size="16" fill="#2c3e50">Tolls (통행료) .............</text>
+    <text x="270" y="170" font-family="Courier" font-size="16" fill="#e67e22" font-weight="bold" text-anchor="end">$ 2.50</text>
+
+    <text x="30" y="200" font-family="Courier" font-size="16" fill="#2c3e50">Tip (팁) ...................</text>
+    <text x="270" y="200" font-family="Courier" font-size="16" fill="#27ae60" font-weight="bold" text-anchor="end">$ 3.15</text>
+
+    <line x1="20" y1="220" x2="280" y2="220" stroke="#2c3e50" stroke-width="2"/>
+    
+    <text x="30" y="250" font-family="Courier" font-size="18" fill="#c0392b" font-weight="bold">TOTAL (총액)</text>
+    <text x="270" y="250" font-family="Courier" font-size="18" fill="#c0392b" font-weight="bold" text-anchor="end">$ 13.65</text>
+  </g>
+
+</svg>

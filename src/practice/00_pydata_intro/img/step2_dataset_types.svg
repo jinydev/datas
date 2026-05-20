@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 학습할 데이터셋의 3가지 주요 유형</text>
+
+  <!-- 1. Classification -->
+  <g transform="translate(100, 100)">
+    <rect width="180" height="220" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+    <text x="90" y="30" font-family="Arial" font-size="16" fill="#2980b9" font-weight="bold" text-anchor="middle">1. 분류 (Classification)</text>
+    
+    <!-- Classification Graphic -->
+    <circle cx="50" cy="80" r="10" fill="#e74c3c"/>
+    <circle cx="70" cy="90" r="10" fill="#e74c3c"/>
+    <circle cx="60" cy="110" r="10" fill="#e74c3c"/>
+    
+    <rect x="110" y="70" width="20" height="20" fill="#2ecc71"/>
+    <rect x="130" y="90" width="20" height="20" fill="#2ecc71"/>
+    <rect x="115" y="110" width="20" height="20" fill="#2ecc71"/>
+    
+    <path d="M40,140 L140,60" stroke="#2c3e50" stroke-width="2" stroke-dasharray="4,4"/>
+
+    <text x="90" y="170" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">종류/집단을 나누는 문제</text>
+    <text x="90" y="190" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">ex) 생존 여부, 암 진단</text>
+  </g>
+
+  <!-- 2. Regression -->
+  <g transform="translate(310, 100)">
+    <rect width="180" height="220" fill="#fff" stroke="#e67e22" stroke-width="2" rx="5"/>
+    <text x="90" y="30" font-family="Arial" font-size="16" fill="#d35400" font-weight="bold" text-anchor="middle">2. 회귀 (Regression)</text>
+    
+    <!-- Regression Graphic -->
+    <line x1="30" y1="130" x2="150" y2="130" stroke="#7f8c8d"/>
+    <line x1="30" y1="130" x2="30" y2="50" stroke="#7f8c8d"/>
+    
+    <circle cx="50" cy="110" r="4" fill="#3498db"/>
+    <circle cx="70" cy="90" r="4" fill="#3498db"/>
+    <circle cx="90" cy="100" r="4" fill="#3498db"/>
+    <circle cx="110" cy="70" r="4" fill="#3498db"/>
+    <circle cx="130" cy="60" r="4" fill="#3498db"/>
+    
+    <path d="M40,120 L140,50" stroke="#e74c3c" stroke-width="2"/>
+
+    <text x="90" y="170" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">연속된 수치를 예측</text>
+    <text x="90" y="190" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">ex) 집값, 연비, 성적</text>
+  </g>
+
+  <!-- 3. Time Series -->
+  <g transform="translate(520, 100)">
+    <rect width="180" height="220" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="90" y="30" font-family="Arial" font-size="16" fill="#2ecc71" font-weight="bold" text-anchor="middle">3. 시계열 (Time Series)</text>
+    
+    <!-- Time Series Graphic -->
+    <line x1="30" y1="130" x2="150" y2="130" stroke="#7f8c8d"/>
+    <line x1="30" y1="130" x2="30" y2="50" stroke="#7f8c8d"/>
+    
+    <path d="M30,110 L60,120 L90,80 L120,90 L150,50" fill="none" stroke="#9b59b6" stroke-width="3"/>
+    
+    <text x="150" y="145" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="end">Time (날짜/시간)</text>
+
+    <text x="90" y="170" font-family="Arial" font-size="12" fill="#34495e" text-anchor="middle">시간에 따른 트렌드 분석</text>
+    <text x="90" y="190" font-family="Arial" font-size="12" fill="#7f8c8d" text-anchor="middle">ex) 주식, 항공객, 마트매출</text>
+  </g>
+
+</svg>
