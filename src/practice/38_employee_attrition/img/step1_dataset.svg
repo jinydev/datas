@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa" rx="15" stroke="#e9ecef" stroke-width="2"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 직원 퇴사 분석 데이터 구조</text>
+  <g transform="translate(100, 90)">
+    <rect x="0" y="0" width="220" height="240" fill="#fff" stroke="#3498db" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="220" height="40" fill="#3498db" rx="10"/>
+    <rect x="0" y="20" width="220" height="20" fill="#3498db"/>
+    <text x="110" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">Features (독립변수)</text>
+    <text x="20" y="80" font-family="Courier" font-size="12" fill="#2c3e50">• Satisfaction: 직무 만족도 (1~5)</text>
+    <text x="20" y="110" font-family="Courier" font-size="12" fill="#2c3e50">• LastEvaluation: 마지막 성과 평가</text>
+    <text x="20" y="140" font-family="Courier" font-size="12" fill="#2c3e50">• SalaryLevel: 임금 등급 (Low, High)</text>
+    <text x="20" y="170" font-family="Courier" font-size="12" fill="#2c3e50">• Tenure: 근속 연수 (1~10년)</text>
+  </g>
+  <path d="M340,190 L440,190 M420,180 L440,190 L420,200" fill="none" stroke="#2c3e50" stroke-width="4"/>
+  <text x="390" y="175" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">분석</text>
+  <g transform="translate(480, 90)">
+    <rect x="0" y="0" width="220" height="240" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="10"/>
+    <rect x="0" y="0" width="220" height="40" fill="#e74c3c" rx="10"/>
+    <rect x="0" y="20" width="220" height="20" fill="#e74c3c"/>
+    <text x="110" y="25" font-family="Arial" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">Target (종속변수)</text>
+    <text x="20" y="100" font-family="Courier" font-size="14" fill="#c0392b" font-weight="bold">• Attrition</text>
+    <text x="20" y="130" font-family="Arial" font-size="12" fill="#7f8c8d">퇴사 여부 (Yes 또는 No)</text>
+    <text x="20" y="160" font-family="Arial" font-size="12" fill="#7f8c8d">이진 분류 문제의 타겟</text>
+  </g>
+  <rect x="150" y="350" width="500" height="35" fill="#eaf2f8" rx="5"/>
+  <text x="400" y="372" font-family="Arial" font-size="13" fill="#34495e" font-weight="bold" text-anchor="middle">근무 환경 만족도와 급여 격차가 퇴사율에 미치는 인과 관계 검증</text>
+</svg>

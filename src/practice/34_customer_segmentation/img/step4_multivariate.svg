@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa" rx="15" stroke="#e9ecef" stroke-width="2"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 다변수 상관관계 및 이상치 분석</text>
+  
+  <g transform="translate(150, 100)">
+    <rect width="500" height="200" fill="#fff" stroke="#e67e22" stroke-width="2" rx="10"/>
+    <text x="250" y="40" font-family="Arial" font-size="18" fill="#e67e22" font-weight="bold" text-anchor="middle">Scatterplot 군집 분석</text>
+    <text x="250" y="80" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">소득 vs 소비 패턴의 5대 핵심 고객 군집</text>
+    <rect x="50" y="110" width="400" height="60" fill="#fdf2e9" rx="5"/>
+    <text x="250" y="145" font-family="Courier New" font-size="16" fill="#d35400" font-weight="bold" text-anchor="middle">sns.scatterplot(data=df, x='Annual Income (k$)', y='Spending Score (1-100)', hue='Segment')</text>
+  </g>
+  <rect x="150" y="330" width="500" height="40" fill="#fdfeed" rx="5"/>
+  <text x="400" y="355" font-family="Arial" font-size="13" fill="#7e5109" font-weight="bold" text-anchor="middle">타겟 마케팅을 위한 세그먼트(Segment)별 전략 수립 기초</text>
+</svg>

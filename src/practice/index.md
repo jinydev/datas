@@ -6,12 +6,12 @@ permalink: /practice/
 
 # PyData 실전 데이터 분석 커리큘럼
 
-Pandas와 Seaborn을 활용하여 30개의 인기 있는 데이터 셋을 직접 분석하고 시각화하는 실무 중심의 실습 공간입니다. 
+Pandas와 Seaborn을 활용하여 40개의 인기 있는 데이터 셋을 직접 분석하고 시각화하는 실무 중심의 실습 공간입니다. 
 데이터 사이언스 역량은 **코드(Pandas)**, **시각화(Seaborn)**, 그리고 **통계적 직관(Statistics)**이라는 3가지 축이 맞물려야 완성됩니다. 아래의 커리큘럼 맵을 통해 단계별 학습 목표를 확인하세요.
 
 ---
 
-## 🗺️ 파이데이터 30개 모듈 커리큘럼 맵
+## 🗺️ 파이데이터 40개 모듈 커리큘럼 맵
 
 | 모듈 번호 & 데이터 셋 | 데이터 분석 테마 | Pandas / 분석 스킬 | 시각화 (Seaborn) | 핵심 통계 개념 (수학적 직관) |
 | :--- | :--- | :--- | :--- | :--- |
@@ -38,6 +38,16 @@ Pandas와 Seaborn을 활용하여 30개의 인기 있는 데이터 셋을 직접
 | **28. [marketing](/practice/28_marketing/)** | **영업 전환율** | 비율 계산 (`value_counts`)| `stripplot`, `pie` | 극단적 불균형(Imbalance) 통계 |
 | **29. [ecommerce](/practice/29_ecommerce/)** | **매출 트렌드** | 피처 엔지니어링 (파생 변수)| `pivot_table`, `heatmap`| 코호트 분석 기초 |
 | **30. [superstore](/practice/30_superstore/)**| **마트 KPI** | 부서별 요약 통계 | `scatterplot`, `barplot`| 손익분기점과 미끼상품(Loss Leader) |
+| **31. [netflix](/practice/31_netflix/)** | **넷플릭스 콘텐츠** | 결측치 및 빈도 요약 | `countplot`, `histplot` | **범주 데이터와 롱테일 분포** |
+| **32. [spotify](/practice/32_spotify/)** | **음악 인기도** | 다중 컬럼 정렬 & 필터링 | `histplot`, `scatterplot` | **오디오 특성 간 피어슨 상관관계** |
+| **33. [airbnb](/practice/33_airbnb/)** | **숙소 가격** | 이상치 필터링 & `groupby` | `boxplot`, `countplot` | **중앙값과 왜도(Skewness)** |
+| **34. [customer_segmentation](/practice/34_customer_segmentation/)** | **고객 군집화** | 파생 변수 & 기술 통계 | `scatterplot`, `histplot` | **군집 내 분산과 K-Means 직관** |
+| **35. [retail_sales](/practice/35_retail_sales/)** | **매출 분석** | 시계열 변환 & `groupby` | `lineplot`, `barplot` | **매출 트렌드와 이동 평균** |
+| **36. [fifa_world_cup](/practice/36_fifa_world_cup/)** | **월드컵 역사** | 데이터 병합 & 필터링 | `barplot`, `lineplot` | **역사적 이상치와 장기 트렌드** |
+| **37. [covid19](/practice/37_covid19/)** | **코로나 트렌드** | 누적 합계 & 비율 계산 | `lineplot`, `scatterplot` | **성장률과 상관관계 분석** |
+| **38. [employee_attrition](/practice/38_employee_attrition/)** | **퇴사 원인** | 그룹별 평균 & 비율 계산 | `countplot`, `boxplot` | **오즈비(Odds Ratio)와 로지스틱 회귀** |
+| **39. [food_delivery](/practice/39_food_delivery/)** | **배달 서비스** | 시간대별 구간화 (`pd.cut`) | `histplot`, `boxplot` | **평균 배달 시간과 표준 편차** |
+| **40. [pokemon](/practice/40_pokemon/)** | **포켓몬 능력치** | 여러 컬럼의 통계 계산 | `scatterplot`, `countplot` | **다차원 분포와 상관 관계** |
 
 ---
 

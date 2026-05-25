@@ -1,0 +1,1001 @@
+TransactionID,Date,Category,Price,Quantity,Age,Payment
+50001,2023-01-01,Clothing,45,4,33,Mobile Pay
+50002,2023-01-01,Clothing,50,3,28,Credit Card
+50003,2023-01-01,Electronics,152,2,51,Mobile Pay
+50004,2023-01-02,Clothing,53,1,48,Credit Card
+50005,2023-01-02,Groceries,12,1,31,Credit Card
+50006,2023-01-02,Electronics,152,4,56,Credit Card
+50007,2023-01-03,Clothing,37,3,39,Credit Card
+50008,2023-01-03,Clothing,39,1,45,Credit Card
+50009,2023-01-03,Clothing,43,1,55,Cash
+50010,2023-01-04,Clothing,51,1,30,Mobile Pay
+50011,2023-01-04,Groceries,16,1,43,Credit Card
+50012,2023-01-05,Electronics,155,1,58,Cash
+50013,2023-01-05,Groceries,14,2,38,Credit Card
+50014,2023-01-05,Electronics,133,1,23,Mobile Pay
+50015,2023-01-06,Clothing,48,3,52,Mobile Pay
+50016,2023-01-06,Groceries,14,1,61,Credit Card
+50017,2023-01-06,Electronics,162,3,43,Credit Card
+50018,2023-01-07,Groceries,13,1,47,Credit Card
+50019,2023-01-07,Groceries,15,1,25,Mobile Pay
+50020,2023-01-07,Electronics,156,4,61,Credit Card
+50021,2023-01-08,Electronics,129,2,29,Mobile Pay
+50022,2023-01-08,Clothing,44,4,32,Mobile Pay
+50023,2023-01-09,Clothing,36,1,56,Credit Card
+50024,2023-01-09,Electronics,149,2,46,Mobile Pay
+50025,2023-01-09,Clothing,41,1,64,Mobile Pay
+50026,2023-01-10,Electronics,133,2,30,Cash
+50027,2023-01-10,Groceries,16,2,21,Mobile Pay
+50028,2023-01-10,Groceries,15,3,33,Credit Card
+50029,2023-01-11,Clothing,42,2,21,Credit Card
+50030,2023-01-11,Electronics,143,2,30,Credit Card
+50031,2023-01-11,Groceries,16,1,20,Mobile Pay
+50032,2023-01-12,Clothing,46,1,29,Credit Card
+50033,2023-01-12,Groceries,15,3,62,Mobile Pay
+50034,2023-01-13,Electronics,151,1,53,Credit Card
+50035,2023-01-13,Clothing,42,1,22,Mobile Pay
+50036,2023-01-13,Groceries,15,1,57,Credit Card
+50037,2023-01-14,Groceries,12,1,34,Mobile Pay
+50038,2023-01-14,Clothing,52,3,63,Mobile Pay
+50039,2023-01-14,Groceries,14,3,39,Mobile Pay
+50040,2023-01-15,Electronics,147,2,43,Credit Card
+50041,2023-01-15,Clothing,50,1,32,Credit Card
+50042,2023-01-15,Clothing,51,1,62,Credit Card
+50043,2023-01-16,Electronics,137,1,33,Credit Card
+50044,2023-01-16,Clothing,50,2,31,Credit Card
+50045,2023-01-17,Electronics,138,3,45,Credit Card
+50046,2023-01-17,Clothing,38,1,32,Mobile Pay
+50047,2023-01-17,Clothing,54,2,29,Credit Card
+50048,2023-01-18,Groceries,14,1,19,Mobile Pay
+50049,2023-01-18,Clothing,43,1,28,Credit Card
+50050,2023-01-18,Electronics,151,3,54,Mobile Pay
+50051,2023-01-19,Groceries,14,3,33,Credit Card
+50052,2023-01-19,Clothing,38,2,53,Cash
+50053,2023-01-19,Clothing,42,1,43,Credit Card
+50054,2023-01-20,Groceries,11,2,36,Credit Card
+50055,2023-01-20,Clothing,39,2,60,Credit Card
+50056,2023-01-21,Clothing,49,1,45,Credit Card
+50057,2023-01-21,Clothing,42,2,21,Credit Card
+50058,2023-01-21,Electronics,170,1,32,Mobile Pay
+50059,2023-01-22,Electronics,138,1,59,Credit Card
+50060,2023-01-22,Groceries,16,1,51,Mobile Pay
+50061,2023-01-22,Clothing,49,1,51,Credit Card
+50062,2023-01-23,Clothing,48,1,56,Credit Card
+50063,2023-01-23,Groceries,15,1,43,Cash
+50064,2023-01-23,Groceries,14,1,36,Credit Card
+50065,2023-01-24,Electronics,150,1,37,Credit Card
+50066,2023-01-24,Groceries,14,1,42,Credit Card
+50067,2023-01-25,Electronics,154,1,47,Mobile Pay
+50068,2023-01-25,Groceries,15,2,31,Credit Card
+50069,2023-01-25,Clothing,50,4,25,Mobile Pay
+50070,2023-01-26,Electronics,149,2,22,Cash
+50071,2023-01-26,Clothing,45,1,63,Credit Card
+50072,2023-01-26,Clothing,47,1,26,Credit Card
+50073,2023-01-27,Clothing,45,1,64,Mobile Pay
+50074,2023-01-27,Electronics,175,2,44,Credit Card
+50075,2023-01-27,Groceries,14,1,63,Cash
+50076,2023-01-28,Electronics,151,2,32,Mobile Pay
+50077,2023-01-28,Clothing,41,1,32,Credit Card
+50078,2023-01-29,Clothing,48,2,47,Mobile Pay
+50079,2023-01-29,Clothing,46,2,19,Credit Card
+50080,2023-01-29,Groceries,14,1,20,Credit Card
+50081,2023-01-30,Electronics,168,2,40,Cash
+50082,2023-01-30,Electronics,179,1,53,Credit Card
+50083,2023-01-30,Clothing,50,1,22,Credit Card
+50084,2023-01-31,Groceries,15,1,54,Credit Card
+50085,2023-01-31,Clothing,50,1,23,Credit Card
+50086,2023-01-31,Clothing,57,2,45,Mobile Pay
+50087,2023-02-01,Clothing,46,4,57,Credit Card
+50088,2023-02-01,Clothing,37,2,46,Mobile Pay
+50089,2023-02-02,Clothing,41,1,41,Credit Card
+50090,2023-02-02,Clothing,38,2,57,Credit Card
+50091,2023-02-02,Groceries,13,1,31,Credit Card
+50092,2023-02-03,Groceries,14,3,31,Mobile Pay
+50093,2023-02-03,Clothing,46,1,45,Credit Card
+50094,2023-02-03,Clothing,49,1,28,Mobile Pay
+50095,2023-02-04,Electronics,163,1,50,Credit Card
+50096,2023-02-04,Electronics,139,1,19,Credit Card
+50097,2023-02-04,Clothing,43,3,55,Mobile Pay
+50098,2023-02-05,Groceries,12,4,60,Credit Card
+50099,2023-02-05,Clothing,42,1,47,Credit Card
+50100,2023-02-06,Clothing,40,2,28,Credit Card
+50101,2023-02-06,Clothing,47,1,39,Credit Card
+50102,2023-02-06,Clothing,42,2,50,Credit Card
+50103,2023-02-07,Clothing,52,1,45,Cash
+50104,2023-02-07,Electronics,140,2,54,Credit Card
+50105,2023-02-07,Clothing,49,1,64,Credit Card
+50106,2023-02-08,Groceries,12,3,49,Credit Card
+50107,2023-02-08,Clothing,47,2,50,Mobile Pay
+50108,2023-02-08,Groceries,12,3,50,Credit Card
+50109,2023-02-09,Clothing,40,2,54,Credit Card
+50110,2023-02-09,Groceries,17,1,34,Mobile Pay
+50111,2023-02-10,Electronics,174,2,31,Credit Card
+50112,2023-02-10,Groceries,12,1,21,Credit Card
+50113,2023-02-10,Clothing,43,2,52,Cash
+50114,2023-02-11,Clothing,43,1,46,Cash
+50115,2023-02-11,Groceries,16,3,34,Credit Card
+50116,2023-02-11,Electronics,145,1,44,Credit Card
+50117,2023-02-12,Clothing,44,1,42,Credit Card
+50118,2023-02-12,Electronics,122,2,61,Mobile Pay
+50119,2023-02-12,Clothing,43,1,19,Credit Card
+50120,2023-02-13,Groceries,17,2,57,Mobile Pay
+50121,2023-02-13,Groceries,17,1,19,Cash
+50122,2023-02-14,Clothing,46,1,29,Credit Card
+50123,2023-02-14,Clothing,38,1,58,Cash
+50124,2023-02-14,Clothing,53,1,56,Mobile Pay
+50125,2023-02-15,Clothing,41,1,27,Credit Card
+50126,2023-02-15,Clothing,43,2,63,Cash
+50127,2023-02-15,Groceries,13,2,25,Credit Card
+50128,2023-02-16,Groceries,17,1,47,Credit Card
+50129,2023-02-16,Groceries,14,1,31,Credit Card
+50130,2023-02-17,Electronics,162,2,30,Credit Card
+50131,2023-02-17,Clothing,43,3,55,Credit Card
+50132,2023-02-17,Groceries,11,4,21,Credit Card
+50133,2023-02-18,Clothing,45,2,52,Mobile Pay
+50134,2023-02-18,Clothing,42,1,39,Mobile Pay
+50135,2023-02-18,Clothing,43,3,46,Credit Card
+50136,2023-02-19,Groceries,16,1,39,Mobile Pay
+50137,2023-02-19,Clothing,52,2,53,Cash
+50138,2023-02-19,Clothing,48,3,18,Credit Card
+50139,2023-02-20,Clothing,43,2,47,Cash
+50140,2023-02-20,Electronics,172,2,29,Mobile Pay
+50141,2023-02-21,Electronics,164,2,29,Cash
+50142,2023-02-21,Groceries,13,1,25,Credit Card
+50143,2023-02-21,Clothing,43,3,46,Credit Card
+50144,2023-02-22,Groceries,13,1,47,Mobile Pay
+50145,2023-02-22,Groceries,16,1,50,Credit Card
+50146,2023-02-22,Groceries,14,2,42,Credit Card
+50147,2023-02-23,Electronics,149,1,49,Credit Card
+50148,2023-02-23,Clothing,38,3,57,Mobile Pay
+50149,2023-02-23,Electronics,149,1,60,Credit Card
+50150,2023-02-24,Groceries,13,3,24,Mobile Pay
+50151,2023-02-24,Clothing,47,2,29,Credit Card
+50152,2023-02-25,Clothing,45,2,26,Credit Card
+50153,2023-02-25,Groceries,17,3,63,Credit Card
+50154,2023-02-25,Groceries,14,1,25,Mobile Pay
+50155,2023-02-26,Electronics,121,1,44,Cash
+50156,2023-02-26,Clothing,44,2,22,Cash
+50157,2023-02-26,Clothing,51,1,28,Mobile Pay
+50158,2023-02-27,Clothing,41,1,22,Mobile Pay
+50159,2023-02-27,Clothing,48,1,50,Credit Card
+50160,2023-02-27,Clothing,43,2,24,Mobile Pay
+50161,2023-02-28,Groceries,15,1,20,Mobile Pay
+50162,2023-02-28,Electronics,153,3,51,Cash
+50163,2023-03-01,Groceries,13,1,45,Cash
+50164,2023-03-01,Clothing,44,1,42,Mobile Pay
+50165,2023-03-01,Groceries,15,1,58,Mobile Pay
+50166,2023-03-02,Groceries,12,1,58,Mobile Pay
+50167,2023-03-02,Groceries,14,1,34,Mobile Pay
+50168,2023-03-02,Groceries,11,1,55,Mobile Pay
+50169,2023-03-03,Clothing,40,2,30,Credit Card
+50170,2023-03-03,Groceries,15,2,50,Mobile Pay
+50171,2023-03-03,Clothing,35,1,44,Mobile Pay
+50172,2023-03-04,Clothing,46,2,18,Mobile Pay
+50173,2023-03-04,Clothing,39,1,23,Mobile Pay
+50174,2023-03-05,Groceries,12,3,55,Credit Card
+50175,2023-03-05,Groceries,15,1,43,Cash
+50176,2023-03-05,Electronics,152,3,40,Credit Card
+50177,2023-03-06,Groceries,15,2,52,Cash
+50178,2023-03-06,Clothing,43,1,23,Credit Card
+50179,2023-03-06,Clothing,45,1,55,Credit Card
+50180,2023-03-07,Clothing,48,2,60,Credit Card
+50181,2023-03-07,Clothing,44,1,32,Mobile Pay
+50182,2023-03-07,Groceries,16,1,42,Credit Card
+50183,2023-03-08,Electronics,130,1,62,Cash
+50184,2023-03-08,Clothing,38,2,54,Credit Card
+50185,2023-03-09,Clothing,43,2,54,Mobile Pay
+50186,2023-03-09,Groceries,12,1,36,Credit Card
+50187,2023-03-09,Clothing,43,3,58,Cash
+50188,2023-03-10,Clothing,43,1,34,Credit Card
+50189,2023-03-10,Electronics,119,1,31,Cash
+50190,2023-03-10,Clothing,47,1,47,Mobile Pay
+50191,2023-03-11,Groceries,12,1,36,Credit Card
+50192,2023-03-11,Clothing,43,1,52,Cash
+50193,2023-03-11,Groceries,16,4,29,Credit Card
+50194,2023-03-12,Clothing,55,1,31,Cash
+50195,2023-03-12,Electronics,135,2,61,Credit Card
+50196,2023-03-13,Groceries,14,1,19,Mobile Pay
+50197,2023-03-13,Clothing,45,1,36,Mobile Pay
+50198,2023-03-13,Clothing,40,1,53,Credit Card
+50199,2023-03-14,Clothing,35,3,55,Cash
+50200,2023-03-14,Groceries,16,1,60,Mobile Pay
+50201,2023-03-14,Clothing,53,2,46,Credit Card
+50202,2023-03-15,Clothing,48,1,53,Mobile Pay
+50203,2023-03-15,Groceries,14,1,63,Cash
+50204,2023-03-15,Electronics,137,3,50,Credit Card
+50205,2023-03-16,Clothing,47,1,24,Cash
+50206,2023-03-16,Electronics,149,1,53,Cash
+50207,2023-03-17,Clothing,40,4,30,Credit Card
+50208,2023-03-17,Clothing,40,2,37,Credit Card
+50209,2023-03-17,Clothing,40,2,28,Credit Card
+50210,2023-03-18,Groceries,12,1,24,Cash
+50211,2023-03-18,Clothing,45,3,51,Mobile Pay
+50212,2023-03-18,Clothing,46,2,45,Credit Card
+50213,2023-03-19,Clothing,49,1,44,Credit Card
+50214,2023-03-19,Groceries,15,1,33,Mobile Pay
+50215,2023-03-19,Groceries,15,2,22,Credit Card
+50216,2023-03-20,Groceries,14,4,51,Mobile Pay
+50217,2023-03-20,Groceries,14,1,63,Credit Card
+50218,2023-03-21,Groceries,16,2,21,Credit Card
+50219,2023-03-21,Groceries,13,1,61,Mobile Pay
+50220,2023-03-21,Groceries,16,3,58,Credit Card
+50221,2023-03-22,Electronics,175,1,28,Credit Card
+50222,2023-03-22,Clothing,44,1,44,Mobile Pay
+50223,2023-03-22,Clothing,47,1,39,Credit Card
+50224,2023-03-23,Clothing,47,2,41,Cash
+50225,2023-03-23,Groceries,15,2,27,Credit Card
+50226,2023-03-23,Electronics,136,3,22,Cash
+50227,2023-03-24,Clothing,49,1,41,Mobile Pay
+50228,2023-03-24,Clothing,41,2,54,Mobile Pay
+50229,2023-03-25,Groceries,18,1,62,Credit Card
+50230,2023-03-25,Groceries,16,1,56,Credit Card
+50231,2023-03-25,Electronics,147,2,53,Cash
+50232,2023-03-26,Electronics,142,1,48,Credit Card
+50233,2023-03-26,Groceries,14,1,24,Mobile Pay
+50234,2023-03-26,Clothing,43,3,29,Credit Card
+50235,2023-03-27,Clothing,40,2,52,Cash
+50236,2023-03-27,Clothing,46,1,23,Credit Card
+50237,2023-03-27,Clothing,50,1,44,Credit Card
+50238,2023-03-28,Clothing,40,3,34,Mobile Pay
+50239,2023-03-28,Groceries,14,1,32,Mobile Pay
+50240,2023-03-29,Electronics,132,1,25,Credit Card
+50241,2023-03-29,Groceries,16,2,25,Cash
+50242,2023-03-29,Electronics,130,2,49,Cash
+50243,2023-03-30,Clothing,42,2,45,Credit Card
+50244,2023-03-30,Electronics,149,1,36,Credit Card
+50245,2023-03-30,Groceries,15,1,41,Cash
+50246,2023-03-31,Groceries,17,1,55,Credit Card
+50247,2023-03-31,Electronics,154,1,26,Mobile Pay
+50248,2023-03-31,Groceries,13,3,50,Credit Card
+50249,2023-04-01,Groceries,16,3,62,Mobile Pay
+50250,2023-04-01,Groceries,14,1,53,Credit Card
+50251,2023-04-02,Electronics,122,1,55,Credit Card
+50252,2023-04-02,Clothing,41,1,18,Credit Card
+50253,2023-04-02,Groceries,15,1,22,Credit Card
+50254,2023-04-03,Groceries,12,4,47,Mobile Pay
+50255,2023-04-03,Electronics,136,2,32,Mobile Pay
+50256,2023-04-03,Clothing,42,2,52,Mobile Pay
+50257,2023-04-04,Groceries,14,1,49,Credit Card
+50258,2023-04-04,Groceries,16,3,45,Mobile Pay
+50259,2023-04-05,Clothing,42,1,39,Mobile Pay
+50260,2023-04-05,Clothing,45,1,45,Mobile Pay
+50261,2023-04-05,Clothing,41,1,64,Mobile Pay
+50262,2023-04-06,Clothing,43,2,26,Credit Card
+50263,2023-04-06,Clothing,42,1,59,Credit Card
+50264,2023-04-06,Groceries,15,2,53,Mobile Pay
+50265,2023-04-07,Electronics,165,2,44,Credit Card
+50266,2023-04-07,Clothing,45,1,47,Credit Card
+50267,2023-04-07,Groceries,13,2,19,Credit Card
+50268,2023-04-08,Groceries,14,1,40,Credit Card
+50269,2023-04-08,Clothing,45,3,49,Credit Card
+50270,2023-04-09,Groceries,15,4,27,Credit Card
+50271,2023-04-09,Electronics,157,1,33,Credit Card
+50272,2023-04-09,Clothing,40,3,46,Credit Card
+50273,2023-04-10,Electronics,151,1,23,Credit Card
+50274,2023-04-10,Groceries,17,3,51,Cash
+50275,2023-04-10,Clothing,45,2,39,Mobile Pay
+50276,2023-04-11,Clothing,43,2,61,Credit Card
+50277,2023-04-11,Groceries,16,1,58,Mobile Pay
+50278,2023-04-11,Electronics,140,1,23,Mobile Pay
+50279,2023-04-12,Clothing,41,1,25,Credit Card
+50280,2023-04-12,Clothing,45,2,33,Credit Card
+50281,2023-04-13,Clothing,40,1,45,Mobile Pay
+50282,2023-04-13,Clothing,42,1,37,Credit Card
+50283,2023-04-13,Electronics,154,1,19,Credit Card
+50284,2023-04-14,Groceries,15,1,49,Credit Card
+50285,2023-04-14,Groceries,13,3,54,Credit Card
+50286,2023-04-14,Electronics,165,1,50,Mobile Pay
+50287,2023-04-15,Clothing,48,1,40,Credit Card
+50288,2023-04-15,Electronics,145,2,37,Credit Card
+50289,2023-04-15,Groceries,14,2,37,Mobile Pay
+50290,2023-04-16,Clothing,49,1,44,Mobile Pay
+50291,2023-04-16,Electronics,135,1,56,Credit Card
+50292,2023-04-17,Electronics,154,1,56,Credit Card
+50293,2023-04-17,Groceries,14,2,46,Credit Card
+50294,2023-04-17,Clothing,36,3,24,Mobile Pay
+50295,2023-04-18,Groceries,14,1,32,Credit Card
+50296,2023-04-18,Electronics,106,2,33,Credit Card
+50297,2023-04-18,Clothing,52,1,19,Mobile Pay
+50298,2023-04-19,Clothing,45,1,22,Mobile Pay
+50299,2023-04-19,Groceries,13,2,62,Credit Card
+50300,2023-04-19,Groceries,14,1,62,Credit Card
+50301,2023-04-20,Clothing,46,1,45,Cash
+50302,2023-04-20,Clothing,42,1,29,Credit Card
+50303,2023-04-21,Clothing,51,2,32,Cash
+50304,2023-04-21,Groceries,13,2,20,Credit Card
+50305,2023-04-21,Groceries,17,3,23,Cash
+50306,2023-04-22,Clothing,46,2,32,Mobile Pay
+50307,2023-04-22,Electronics,154,1,31,Mobile Pay
+50308,2023-04-22,Electronics,171,2,33,Mobile Pay
+50309,2023-04-23,Clothing,44,1,24,Cash
+50310,2023-04-23,Groceries,13,1,54,Cash
+50311,2023-04-23,Electronics,163,2,20,Mobile Pay
+50312,2023-04-24,Clothing,47,1,56,Mobile Pay
+50313,2023-04-24,Electronics,153,1,23,Credit Card
+50314,2023-04-25,Groceries,15,1,57,Mobile Pay
+50315,2023-04-25,Groceries,16,3,42,Cash
+50316,2023-04-25,Clothing,38,2,39,Mobile Pay
+50317,2023-04-26,Clothing,46,2,58,Cash
+50318,2023-04-26,Electronics,153,1,36,Credit Card
+50319,2023-04-26,Clothing,47,1,49,Credit Card
+50320,2023-04-27,Clothing,40,1,38,Credit Card
+50321,2023-04-27,Clothing,40,1,20,Credit Card
+50322,2023-04-27,Electronics,159,1,45,Mobile Pay
+50323,2023-04-28,Electronics,172,2,62,Credit Card
+50324,2023-04-28,Clothing,49,2,46,Credit Card
+50325,2023-04-29,Groceries,18,2,19,Mobile Pay
+50326,2023-04-29,Electronics,173,3,25,Credit Card
+50327,2023-04-29,Groceries,11,1,55,Credit Card
+50328,2023-04-30,Electronics,179,1,40,Credit Card
+50329,2023-04-30,Clothing,42,2,42,Credit Card
+50330,2023-04-30,Clothing,43,1,34,Cash
+50331,2023-05-01,Electronics,156,1,56,Mobile Pay
+50332,2023-05-01,Clothing,41,2,33,Mobile Pay
+50333,2023-05-01,Groceries,12,3,29,Credit Card
+50334,2023-05-02,Electronics,150,2,49,Credit Card
+50335,2023-05-02,Electronics,141,1,62,Credit Card
+50336,2023-05-03,Electronics,166,2,40,Mobile Pay
+50337,2023-05-03,Groceries,14,1,50,Cash
+50338,2023-05-03,Clothing,44,2,51,Credit Card
+50339,2023-05-04,Clothing,46,1,52,Credit Card
+50340,2023-05-04,Clothing,43,1,61,Credit Card
+50341,2023-05-04,Clothing,47,1,19,Mobile Pay
+50342,2023-05-05,Groceries,16,1,35,Credit Card
+50343,2023-05-05,Groceries,15,2,32,Credit Card
+50344,2023-05-05,Clothing,43,1,20,Credit Card
+50345,2023-05-06,Electronics,163,2,56,Cash
+50346,2023-05-06,Electronics,115,1,33,Mobile Pay
+50347,2023-05-07,Clothing,49,1,18,Credit Card
+50348,2023-05-07,Clothing,40,2,47,Cash
+50349,2023-05-07,Clothing,47,1,62,Credit Card
+50350,2023-05-08,Groceries,15,2,20,Credit Card
+50351,2023-05-08,Clothing,40,2,26,Credit Card
+50352,2023-05-08,Groceries,17,2,27,Credit Card
+50353,2023-05-09,Groceries,13,1,36,Cash
+50354,2023-05-09,Electronics,153,1,25,Credit Card
+50355,2023-05-09,Clothing,42,1,63,Mobile Pay
+50356,2023-05-10,Groceries,14,3,64,Cash
+50357,2023-05-10,Clothing,43,3,27,Mobile Pay
+50358,2023-05-11,Clothing,49,4,26,Mobile Pay
+50359,2023-05-11,Groceries,17,3,42,Credit Card
+50360,2023-05-11,Clothing,46,1,51,Credit Card
+50361,2023-05-12,Groceries,16,2,18,Mobile Pay
+50362,2023-05-12,Groceries,14,1,21,Cash
+50363,2023-05-12,Electronics,163,1,52,Mobile Pay
+50364,2023-05-13,Groceries,14,2,57,Credit Card
+50365,2023-05-13,Clothing,43,1,40,Credit Card
+50366,2023-05-13,Clothing,44,2,28,Credit Card
+50367,2023-05-14,Electronics,166,1,28,Credit Card
+50368,2023-05-14,Clothing,40,1,56,Cash
+50369,2023-05-15,Electronics,158,1,55,Mobile Pay
+50370,2023-05-15,Clothing,40,1,34,Credit Card
+50371,2023-05-15,Groceries,15,1,22,Credit Card
+50372,2023-05-16,Clothing,43,1,61,Credit Card
+50373,2023-05-16,Groceries,14,2,55,Mobile Pay
+50374,2023-05-16,Groceries,14,3,46,Credit Card
+50375,2023-05-17,Groceries,15,2,36,Cash
+50376,2023-05-17,Clothing,42,2,20,Credit Card
+50377,2023-05-18,Electronics,175,4,62,Credit Card
+50378,2023-05-18,Clothing,45,1,32,Mobile Pay
+50379,2023-05-18,Clothing,42,1,25,Mobile Pay
+50380,2023-05-19,Clothing,36,3,19,Cash
+50381,2023-05-19,Clothing,45,1,47,Mobile Pay
+50382,2023-05-19,Clothing,53,1,58,Cash
+50383,2023-05-20,Groceries,17,4,34,Mobile Pay
+50384,2023-05-20,Groceries,14,2,20,Cash
+50385,2023-05-20,Groceries,15,1,63,Credit Card
+50386,2023-05-21,Electronics,153,1,40,Cash
+50387,2023-05-21,Clothing,39,2,20,Credit Card
+50388,2023-05-22,Groceries,11,2,26,Credit Card
+50389,2023-05-22,Groceries,15,1,59,Credit Card
+50390,2023-05-22,Clothing,46,3,40,Credit Card
+50391,2023-05-23,Clothing,45,2,62,Credit Card
+50392,2023-05-23,Clothing,40,2,20,Credit Card
+50393,2023-05-23,Clothing,43,1,63,Credit Card
+50394,2023-05-24,Clothing,46,1,24,Cash
+50395,2023-05-24,Electronics,145,1,19,Cash
+50396,2023-05-24,Clothing,40,1,28,Credit Card
+50397,2023-05-25,Electronics,121,1,32,Credit Card
+50398,2023-05-25,Clothing,38,1,42,Credit Card
+50399,2023-05-26,Clothing,51,2,33,Mobile Pay
+50400,2023-05-26,Electronics,166,1,32,Credit Card
+50401,2023-05-26,Electronics,142,2,55,Credit Card
+50402,2023-05-27,Clothing,51,1,62,Mobile Pay
+50403,2023-05-27,Electronics,145,2,49,Credit Card
+50404,2023-05-27,Groceries,14,1,49,Credit Card
+50405,2023-05-28,Electronics,146,1,18,Credit Card
+50406,2023-05-28,Clothing,48,1,29,Credit Card
+50407,2023-05-28,Clothing,53,3,63,Credit Card
+50408,2023-05-29,Clothing,42,2,36,Credit Card
+50409,2023-05-29,Clothing,49,2,32,Mobile Pay
+50410,2023-05-30,Clothing,37,3,34,Mobile Pay
+50411,2023-05-30,Groceries,15,2,31,Cash
+50412,2023-05-30,Groceries,16,3,54,Cash
+50413,2023-05-31,Groceries,13,3,33,Credit Card
+50414,2023-05-31,Electronics,166,1,53,Mobile Pay
+50415,2023-05-31,Clothing,44,2,62,Credit Card
+50416,2023-06-01,Groceries,16,2,29,Mobile Pay
+50417,2023-06-01,Groceries,14,1,42,Cash
+50418,2023-06-01,Electronics,163,4,44,Credit Card
+50419,2023-06-02,Groceries,14,1,59,Cash
+50420,2023-06-02,Clothing,52,3,38,Credit Card
+50421,2023-06-03,Groceries,12,1,58,Credit Card
+50422,2023-06-03,Clothing,43,2,41,Credit Card
+50423,2023-06-03,Clothing,39,3,50,Credit Card
+50424,2023-06-04,Groceries,13,1,53,Mobile Pay
+50425,2023-06-04,Groceries,15,3,29,Mobile Pay
+50426,2023-06-04,Clothing,41,1,62,Credit Card
+50427,2023-06-05,Electronics,119,2,41,Credit Card
+50428,2023-06-05,Clothing,37,3,58,Credit Card
+50429,2023-06-05,Electronics,125,4,29,Mobile Pay
+50430,2023-06-06,Clothing,53,1,63,Credit Card
+50431,2023-06-06,Clothing,42,2,48,Credit Card
+50432,2023-06-07,Groceries,15,1,32,Mobile Pay
+50433,2023-06-07,Clothing,42,1,56,Mobile Pay
+50434,2023-06-07,Clothing,42,1,39,Credit Card
+50435,2023-06-08,Clothing,40,1,26,Credit Card
+50436,2023-06-08,Clothing,43,2,23,Credit Card
+50437,2023-06-08,Groceries,14,3,60,Credit Card
+50438,2023-06-09,Groceries,16,2,37,Credit Card
+50439,2023-06-09,Electronics,158,3,37,Mobile Pay
+50440,2023-06-09,Clothing,44,1,28,Cash
+50441,2023-06-10,Clothing,48,1,29,Credit Card
+50442,2023-06-10,Groceries,12,2,43,Cash
+50443,2023-06-11,Electronics,145,1,49,Cash
+50444,2023-06-11,Groceries,16,2,18,Cash
+50445,2023-06-11,Electronics,145,2,43,Mobile Pay
+50446,2023-06-12,Clothing,47,1,57,Mobile Pay
+50447,2023-06-12,Electronics,171,1,33,Credit Card
+50448,2023-06-12,Electronics,122,2,19,Credit Card
+50449,2023-06-13,Electronics,139,1,26,Credit Card
+50450,2023-06-13,Electronics,159,1,44,Mobile Pay
+50451,2023-06-13,Electronics,167,1,50,Mobile Pay
+50452,2023-06-14,Clothing,42,1,24,Credit Card
+50453,2023-06-14,Clothing,34,1,64,Credit Card
+50454,2023-06-15,Electronics,144,1,61,Mobile Pay
+50455,2023-06-15,Clothing,37,4,64,Credit Card
+50456,2023-06-15,Clothing,52,2,60,Credit Card
+50457,2023-06-16,Clothing,49,2,39,Credit Card
+50458,2023-06-16,Clothing,39,2,20,Credit Card
+50459,2023-06-16,Groceries,17,1,44,Credit Card
+50460,2023-06-17,Electronics,145,2,41,Credit Card
+50461,2023-06-17,Groceries,15,2,59,Credit Card
+50462,2023-06-17,Groceries,12,2,50,Credit Card
+50463,2023-06-18,Groceries,15,2,21,Mobile Pay
+50464,2023-06-18,Electronics,139,1,41,Credit Card
+50465,2023-06-19,Clothing,53,2,24,Credit Card
+50466,2023-06-19,Clothing,50,1,37,Credit Card
+50467,2023-06-19,Groceries,16,1,46,Credit Card
+50468,2023-06-20,Electronics,162,1,47,Credit Card
+50469,2023-06-20,Clothing,44,1,53,Cash
+50470,2023-06-20,Electronics,138,1,26,Credit Card
+50471,2023-06-21,Clothing,40,1,60,Mobile Pay
+50472,2023-06-21,Groceries,15,1,24,Credit Card
+50473,2023-06-21,Clothing,40,1,27,Credit Card
+50474,2023-06-22,Clothing,47,2,59,Credit Card
+50475,2023-06-22,Groceries,12,2,18,Mobile Pay
+50476,2023-06-23,Electronics,163,1,23,Credit Card
+50477,2023-06-23,Groceries,14,1,37,Credit Card
+50478,2023-06-23,Electronics,158,1,25,Credit Card
+50479,2023-06-24,Clothing,54,1,45,Credit Card
+50480,2023-06-24,Clothing,42,2,50,Credit Card
+50481,2023-06-24,Clothing,49,2,20,Credit Card
+50482,2023-06-25,Groceries,14,2,32,Cash
+50483,2023-06-25,Clothing,47,1,19,Credit Card
+50484,2023-06-25,Clothing,41,1,51,Cash
+50485,2023-06-26,Clothing,50,1,19,Credit Card
+50486,2023-06-26,Groceries,14,1,56,Mobile Pay
+50487,2023-06-27,Clothing,47,1,46,Mobile Pay
+50488,2023-06-27,Groceries,14,2,29,Mobile Pay
+50489,2023-06-27,Groceries,12,2,28,Mobile Pay
+50490,2023-06-28,Clothing,52,1,19,Mobile Pay
+50491,2023-06-28,Electronics,154,3,40,Cash
+50492,2023-06-28,Clothing,46,3,36,Credit Card
+50493,2023-06-29,Groceries,16,2,50,Mobile Pay
+50494,2023-06-29,Clothing,38,1,60,Mobile Pay
+50495,2023-06-29,Electronics,140,2,40,Credit Card
+50496,2023-06-30,Clothing,40,2,48,Credit Card
+50497,2023-06-30,Clothing,49,3,22,Credit Card
+50498,2023-07-01,Electronics,154,1,48,Credit Card
+50499,2023-07-01,Clothing,46,2,48,Mobile Pay
+50500,2023-07-01,Clothing,39,2,56,Credit Card
+50501,2023-07-02,Clothing,49,1,44,Cash
+50502,2023-07-02,Clothing,44,1,51,Credit Card
+50503,2023-07-02,Electronics,139,3,42,Credit Card
+50504,2023-07-03,Electronics,160,2,28,Cash
+50505,2023-07-03,Electronics,165,2,22,Mobile Pay
+50506,2023-07-04,Groceries,16,1,57,Credit Card
+50507,2023-07-04,Electronics,167,3,33,Cash
+50508,2023-07-04,Clothing,41,1,47,Mobile Pay
+50509,2023-07-05,Clothing,45,1,57,Credit Card
+50510,2023-07-05,Clothing,46,2,33,Credit Card
+50511,2023-07-05,Clothing,48,1,26,Credit Card
+50512,2023-07-06,Clothing,46,1,24,Credit Card
+50513,2023-07-06,Clothing,42,1,24,Cash
+50514,2023-07-06,Clothing,46,2,54,Cash
+50515,2023-07-07,Clothing,54,2,18,Credit Card
+50516,2023-07-07,Electronics,176,2,64,Credit Card
+50517,2023-07-08,Electronics,141,4,43,Credit Card
+50518,2023-07-08,Electronics,140,2,62,Credit Card
+50519,2023-07-08,Clothing,50,1,38,Credit Card
+50520,2023-07-09,Clothing,46,1,44,Mobile Pay
+50521,2023-07-09,Groceries,12,3,23,Cash
+50522,2023-07-09,Electronics,133,1,58,Credit Card
+50523,2023-07-10,Clothing,39,2,58,Credit Card
+50524,2023-07-10,Clothing,48,1,30,Credit Card
+50525,2023-07-10,Groceries,15,2,51,Credit Card
+50526,2023-07-11,Clothing,44,2,47,Cash
+50527,2023-07-11,Groceries,15,1,29,Credit Card
+50528,2023-07-12,Clothing,44,1,18,Credit Card
+50529,2023-07-12,Groceries,14,1,33,Mobile Pay
+50530,2023-07-12,Clothing,45,2,37,Mobile Pay
+50531,2023-07-13,Electronics,140,1,49,Mobile Pay
+50532,2023-07-13,Clothing,39,1,38,Cash
+50533,2023-07-13,Clothing,42,2,20,Mobile Pay
+50534,2023-07-14,Groceries,15,2,37,Credit Card
+50535,2023-07-14,Electronics,173,3,21,Mobile Pay
+50536,2023-07-14,Clothing,50,2,59,Mobile Pay
+50537,2023-07-15,Groceries,15,4,50,Credit Card
+50538,2023-07-15,Clothing,48,2,23,Credit Card
+50539,2023-07-16,Clothing,48,1,61,Mobile Pay
+50540,2023-07-16,Clothing,52,3,56,Mobile Pay
+50541,2023-07-16,Groceries,13,2,40,Cash
+50542,2023-07-17,Electronics,124,2,53,Cash
+50543,2023-07-17,Electronics,132,4,51,Credit Card
+50544,2023-07-17,Groceries,15,2,33,Mobile Pay
+50545,2023-07-18,Clothing,39,1,40,Mobile Pay
+50546,2023-07-18,Electronics,148,1,47,Credit Card
+50547,2023-07-18,Groceries,16,2,48,Credit Card
+50548,2023-07-19,Groceries,13,3,41,Credit Card
+50549,2023-07-19,Groceries,14,1,63,Credit Card
+50550,2023-07-20,Groceries,15,1,56,Credit Card
+50551,2023-07-20,Clothing,51,3,29,Mobile Pay
+50552,2023-07-20,Clothing,43,1,38,Mobile Pay
+50553,2023-07-21,Groceries,15,2,31,Credit Card
+50554,2023-07-21,Clothing,49,1,57,Credit Card
+50555,2023-07-21,Groceries,13,2,30,Credit Card
+50556,2023-07-22,Groceries,13,3,38,Credit Card
+50557,2023-07-22,Clothing,44,1,35,Credit Card
+50558,2023-07-22,Groceries,14,2,52,Mobile Pay
+50559,2023-07-23,Groceries,12,1,35,Credit Card
+50560,2023-07-23,Groceries,16,2,63,Mobile Pay
+50561,2023-07-24,Clothing,42,1,46,Credit Card
+50562,2023-07-24,Clothing,52,1,37,Cash
+50563,2023-07-24,Clothing,46,3,18,Credit Card
+50564,2023-07-25,Groceries,12,2,32,Mobile Pay
+50565,2023-07-25,Groceries,13,1,24,Credit Card
+50566,2023-07-25,Clothing,46,2,58,Credit Card
+50567,2023-07-26,Clothing,37,1,53,Mobile Pay
+50568,2023-07-26,Groceries,14,1,39,Cash
+50569,2023-07-26,Clothing,50,3,51,Credit Card
+50570,2023-07-27,Groceries,13,2,53,Mobile Pay
+50571,2023-07-27,Clothing,51,3,54,Mobile Pay
+50572,2023-07-28,Groceries,17,2,59,Cash
+50573,2023-07-28,Electronics,142,1,24,Mobile Pay
+50574,2023-07-28,Clothing,44,1,60,Credit Card
+50575,2023-07-29,Electronics,180,1,30,Credit Card
+50576,2023-07-29,Clothing,47,2,37,Credit Card
+50577,2023-07-29,Clothing,45,1,47,Mobile Pay
+50578,2023-07-30,Clothing,41,1,19,Credit Card
+50579,2023-07-30,Clothing,50,1,43,Credit Card
+50580,2023-07-30,Groceries,16,1,60,Mobile Pay
+50581,2023-07-31,Groceries,14,1,58,Credit Card
+50582,2023-07-31,Groceries,11,2,48,Credit Card
+50583,2023-08-01,Clothing,43,1,45,Credit Card
+50584,2023-08-01,Clothing,47,1,42,Credit Card
+50585,2023-08-01,Electronics,141,2,23,Credit Card
+50586,2023-08-02,Groceries,15,1,48,Credit Card
+50587,2023-08-02,Groceries,14,1,35,Credit Card
+50588,2023-08-02,Electronics,176,2,42,Cash
+50589,2023-08-03,Electronics,174,3,48,Credit Card
+50590,2023-08-03,Groceries,13,1,28,Credit Card
+50591,2023-08-03,Electronics,143,1,49,Mobile Pay
+50592,2023-08-04,Clothing,47,3,44,Cash
+50593,2023-08-04,Electronics,140,3,38,Credit Card
+50594,2023-08-05,Clothing,42,3,60,Mobile Pay
+50595,2023-08-05,Groceries,17,2,24,Credit Card
+50596,2023-08-05,Electronics,166,2,32,Cash
+50597,2023-08-06,Groceries,16,1,29,Mobile Pay
+50598,2023-08-06,Clothing,41,1,23,Credit Card
+50599,2023-08-06,Electronics,172,2,32,Credit Card
+50600,2023-08-07,Groceries,15,1,19,Credit Card
+50601,2023-08-07,Clothing,42,1,47,Mobile Pay
+50602,2023-08-07,Clothing,44,2,58,Mobile Pay
+50603,2023-08-08,Clothing,47,1,52,Credit Card
+50604,2023-08-08,Clothing,48,1,47,Mobile Pay
+50605,2023-08-09,Clothing,42,1,60,Cash
+50606,2023-08-09,Clothing,39,2,25,Credit Card
+50607,2023-08-09,Clothing,46,1,22,Mobile Pay
+50608,2023-08-10,Clothing,39,1,24,Mobile Pay
+50609,2023-08-10,Clothing,42,1,33,Mobile Pay
+50610,2023-08-10,Electronics,150,4,27,Credit Card
+50611,2023-08-11,Groceries,14,1,63,Mobile Pay
+50612,2023-08-11,Groceries,13,3,62,Credit Card
+50613,2023-08-11,Clothing,43,1,48,Credit Card
+50614,2023-08-12,Groceries,14,1,64,Mobile Pay
+50615,2023-08-12,Groceries,13,1,24,Mobile Pay
+50616,2023-08-13,Clothing,39,1,38,Credit Card
+50617,2023-08-13,Clothing,45,1,20,Credit Card
+50618,2023-08-13,Electronics,189,2,49,Mobile Pay
+50619,2023-08-14,Groceries,15,1,22,Mobile Pay
+50620,2023-08-14,Groceries,14,4,64,Credit Card
+50621,2023-08-14,Electronics,148,1,33,Credit Card
+50622,2023-08-15,Clothing,47,2,52,Credit Card
+50623,2023-08-15,Groceries,16,2,59,Credit Card
+50624,2023-08-15,Clothing,48,1,45,Mobile Pay
+50625,2023-08-16,Groceries,15,2,61,Cash
+50626,2023-08-16,Clothing,42,1,28,Mobile Pay
+50627,2023-08-17,Electronics,138,1,64,Mobile Pay
+50628,2023-08-17,Groceries,14,3,48,Mobile Pay
+50629,2023-08-17,Clothing,44,1,41,Credit Card
+50630,2023-08-18,Clothing,41,1,58,Credit Card
+50631,2023-08-18,Clothing,40,1,33,Mobile Pay
+50632,2023-08-18,Groceries,17,1,44,Credit Card
+50633,2023-08-19,Groceries,15,3,33,Cash
+50634,2023-08-19,Electronics,144,2,24,Cash
+50635,2023-08-20,Clothing,44,1,47,Credit Card
+50636,2023-08-20,Clothing,39,2,26,Mobile Pay
+50637,2023-08-20,Clothing,49,2,43,Credit Card
+50638,2023-08-21,Groceries,15,1,53,Cash
+50639,2023-08-21,Groceries,17,1,23,Cash
+50640,2023-08-21,Electronics,148,1,58,Credit Card
+50641,2023-08-22,Groceries,14,1,51,Credit Card
+50642,2023-08-22,Groceries,13,1,26,Credit Card
+50643,2023-08-22,Groceries,15,1,49,Credit Card
+50644,2023-08-23,Clothing,41,4,40,Credit Card
+50645,2023-08-23,Electronics,144,1,57,Credit Card
+50646,2023-08-24,Groceries,13,1,60,Credit Card
+50647,2023-08-24,Groceries,16,2,53,Credit Card
+50648,2023-08-24,Clothing,44,1,22,Credit Card
+50649,2023-08-25,Clothing,45,1,40,Mobile Pay
+50650,2023-08-25,Electronics,146,1,36,Cash
+50651,2023-08-25,Groceries,13,2,24,Mobile Pay
+50652,2023-08-26,Electronics,148,1,37,Credit Card
+50653,2023-08-26,Electronics,130,2,20,Mobile Pay
+50654,2023-08-26,Clothing,45,2,42,Credit Card
+50655,2023-08-27,Electronics,150,2,22,Credit Card
+50656,2023-08-27,Electronics,156,2,48,Credit Card
+50657,2023-08-28,Electronics,145,1,23,Credit Card
+50658,2023-08-28,Electronics,149,2,49,Mobile Pay
+50659,2023-08-28,Clothing,48,2,21,Mobile Pay
+50660,2023-08-29,Clothing,45,1,53,Mobile Pay
+50661,2023-08-29,Groceries,15,1,61,Credit Card
+50662,2023-08-29,Groceries,14,4,29,Credit Card
+50663,2023-08-30,Clothing,44,3,36,Credit Card
+50664,2023-08-30,Clothing,44,2,55,Credit Card
+50665,2023-08-30,Groceries,15,1,51,Credit Card
+50666,2023-08-31,Electronics,143,1,25,Mobile Pay
+50667,2023-08-31,Clothing,58,1,39,Credit Card
+50668,2023-09-01,Clothing,44,1,56,Credit Card
+50669,2023-09-01,Clothing,45,2,51,Cash
+50670,2023-09-01,Clothing,40,1,38,Mobile Pay
+50671,2023-09-02,Electronics,176,1,23,Credit Card
+50672,2023-09-02,Clothing,45,1,38,Mobile Pay
+50673,2023-09-02,Electronics,168,2,61,Credit Card
+50674,2023-09-03,Clothing,54,2,50,Mobile Pay
+50675,2023-09-03,Electronics,139,1,39,Credit Card
+50676,2023-09-03,Clothing,43,2,27,Credit Card
+50677,2023-09-04,Groceries,13,4,24,Cash
+50678,2023-09-04,Electronics,177,1,36,Mobile Pay
+50679,2023-09-05,Groceries,15,1,60,Cash
+50680,2023-09-05,Clothing,46,2,37,Cash
+50681,2023-09-05,Clothing,50,3,56,Credit Card
+50682,2023-09-06,Clothing,39,1,58,Credit Card
+50683,2023-09-06,Electronics,174,3,45,Cash
+50684,2023-09-06,Groceries,15,1,57,Cash
+50685,2023-09-07,Clothing,55,1,40,Credit Card
+50686,2023-09-07,Clothing,36,4,40,Mobile Pay
+50687,2023-09-07,Clothing,50,2,38,Mobile Pay
+50688,2023-09-08,Clothing,37,4,21,Credit Card
+50689,2023-09-08,Clothing,43,1,63,Credit Card
+50690,2023-09-09,Electronics,170,3,33,Credit Card
+50691,2023-09-09,Electronics,162,1,64,Credit Card
+50692,2023-09-09,Groceries,15,2,51,Cash
+50693,2023-09-10,Clothing,42,1,23,Cash
+50694,2023-09-10,Groceries,14,3,23,Mobile Pay
+50695,2023-09-10,Clothing,46,1,39,Credit Card
+50696,2023-09-11,Electronics,163,1,40,Credit Card
+50697,2023-09-11,Clothing,51,2,47,Cash
+50698,2023-09-11,Clothing,44,1,62,Cash
+50699,2023-09-12,Groceries,17,1,45,Credit Card
+50700,2023-09-12,Clothing,47,1,43,Credit Card
+50701,2023-09-13,Electronics,160,2,46,Mobile Pay
+50702,2023-09-13,Groceries,15,2,44,Cash
+50703,2023-09-13,Groceries,16,1,55,Cash
+50704,2023-09-14,Groceries,17,1,24,Credit Card
+50705,2023-09-14,Groceries,14,4,19,Credit Card
+50706,2023-09-14,Clothing,49,3,28,Mobile Pay
+50707,2023-09-15,Clothing,44,2,35,Credit Card
+50708,2023-09-15,Groceries,15,1,49,Credit Card
+50709,2023-09-15,Clothing,46,2,18,Credit Card
+50710,2023-09-16,Clothing,48,1,57,Credit Card
+50711,2023-09-16,Clothing,43,1,50,Mobile Pay
+50712,2023-09-17,Electronics,100,3,26,Credit Card
+50713,2023-09-17,Electronics,137,1,59,Credit Card
+50714,2023-09-17,Clothing,47,1,61,Mobile Pay
+50715,2023-09-18,Groceries,16,1,41,Mobile Pay
+50716,2023-09-18,Electronics,158,1,38,Mobile Pay
+50717,2023-09-18,Clothing,43,1,42,Cash
+50718,2023-09-19,Electronics,140,1,20,Credit Card
+50719,2023-09-19,Clothing,47,2,39,Credit Card
+50720,2023-09-19,Electronics,156,2,40,Cash
+50721,2023-09-20,Clothing,40,3,33,Mobile Pay
+50722,2023-09-20,Electronics,132,1,27,Credit Card
+50723,2023-09-21,Clothing,41,3,56,Mobile Pay
+50724,2023-09-21,Clothing,41,3,25,Credit Card
+50725,2023-09-21,Clothing,41,3,43,Mobile Pay
+50726,2023-09-22,Groceries,14,2,21,Mobile Pay
+50727,2023-09-22,Clothing,37,4,48,Mobile Pay
+50728,2023-09-22,Clothing,43,1,58,Credit Card
+50729,2023-09-23,Electronics,163,4,28,Cash
+50730,2023-09-23,Clothing,51,2,38,Credit Card
+50731,2023-09-23,Clothing,46,2,57,Cash
+50732,2023-09-24,Clothing,46,1,21,Mobile Pay
+50733,2023-09-24,Groceries,17,2,36,Cash
+50734,2023-09-25,Electronics,155,2,32,Mobile Pay
+50735,2023-09-25,Groceries,16,1,28,Credit Card
+50736,2023-09-25,Clothing,41,2,33,Credit Card
+50737,2023-09-26,Electronics,133,3,28,Mobile Pay
+50738,2023-09-26,Clothing,41,2,30,Credit Card
+50739,2023-09-26,Electronics,159,1,53,Credit Card
+50740,2023-09-27,Clothing,42,1,63,Credit Card
+50741,2023-09-27,Groceries,12,1,21,Mobile Pay
+50742,2023-09-27,Groceries,14,2,29,Credit Card
+50743,2023-09-28,Clothing,46,2,46,Credit Card
+50744,2023-09-28,Groceries,15,1,38,Cash
+50745,2023-09-29,Clothing,41,1,55,Credit Card
+50746,2023-09-29,Clothing,42,3,63,Credit Card
+50747,2023-09-29,Groceries,16,1,57,Credit Card
+50748,2023-09-30,Groceries,18,2,41,Credit Card
+50749,2023-09-30,Electronics,119,2,19,Credit Card
+50750,2023-09-30,Clothing,45,2,46,Cash
+50751,2023-10-01,Groceries,14,1,54,Credit Card
+50752,2023-10-01,Groceries,13,1,34,Credit Card
+50753,2023-10-02,Clothing,49,2,60,Credit Card
+50754,2023-10-02,Groceries,15,1,18,Mobile Pay
+50755,2023-10-02,Clothing,41,2,58,Credit Card
+50756,2023-10-03,Groceries,16,2,62,Credit Card
+50757,2023-10-03,Clothing,38,3,57,Credit Card
+50758,2023-10-03,Groceries,15,2,48,Mobile Pay
+50759,2023-10-04,Clothing,45,1,39,Credit Card
+50760,2023-10-04,Clothing,44,2,59,Mobile Pay
+50761,2023-10-04,Clothing,48,2,31,Mobile Pay
+50762,2023-10-05,Clothing,39,2,23,Credit Card
+50763,2023-10-05,Electronics,158,1,25,Credit Card
+50764,2023-10-06,Clothing,39,2,45,Mobile Pay
+50765,2023-10-06,Electronics,159,1,36,Credit Card
+50766,2023-10-06,Groceries,16,1,30,Cash
+50767,2023-10-07,Clothing,54,1,28,Credit Card
+50768,2023-10-07,Clothing,49,4,22,Mobile Pay
+50769,2023-10-07,Clothing,49,3,22,Credit Card
+50770,2023-10-08,Clothing,41,1,57,Credit Card
+50771,2023-10-08,Groceries,17,1,38,Mobile Pay
+50772,2023-10-08,Clothing,52,1,56,Credit Card
+50773,2023-10-09,Clothing,41,2,42,Credit Card
+50774,2023-10-09,Clothing,48,3,61,Credit Card
+50775,2023-10-10,Clothing,45,2,41,Credit Card
+50776,2023-10-10,Electronics,163,1,62,Credit Card
+50777,2023-10-10,Clothing,44,4,28,Credit Card
+50778,2023-10-11,Electronics,139,1,34,Credit Card
+50779,2023-10-11,Electronics,168,1,31,Mobile Pay
+50780,2023-10-11,Electronics,140,3,61,Credit Card
+50781,2023-10-12,Groceries,15,1,54,Mobile Pay
+50782,2023-10-12,Electronics,154,1,52,Mobile Pay
+50783,2023-10-12,Clothing,42,2,31,Mobile Pay
+50784,2023-10-13,Electronics,157,1,43,Mobile Pay
+50785,2023-10-13,Clothing,43,4,33,Mobile Pay
+50786,2023-10-14,Clothing,40,2,50,Cash
+50787,2023-10-14,Clothing,38,2,45,Mobile Pay
+50788,2023-10-14,Clothing,41,3,58,Credit Card
+50789,2023-10-15,Clothing,47,1,48,Mobile Pay
+50790,2023-10-15,Groceries,12,2,39,Mobile Pay
+50791,2023-10-15,Groceries,14,2,56,Cash
+50792,2023-10-16,Groceries,17,2,34,Credit Card
+50793,2023-10-16,Electronics,129,1,34,Credit Card
+50794,2023-10-16,Clothing,41,1,46,Credit Card
+50795,2023-10-17,Electronics,142,2,62,Mobile Pay
+50796,2023-10-17,Groceries,14,1,50,Mobile Pay
+50797,2023-10-18,Electronics,134,1,38,Credit Card
+50798,2023-10-18,Groceries,15,1,52,Credit Card
+50799,2023-10-18,Clothing,41,3,18,Mobile Pay
+50800,2023-10-19,Groceries,14,3,49,Mobile Pay
+50801,2023-10-19,Clothing,41,2,48,Credit Card
+50802,2023-10-19,Clothing,47,1,29,Credit Card
+50803,2023-10-20,Clothing,42,1,48,Cash
+50804,2023-10-20,Clothing,47,1,60,Credit Card
+50805,2023-10-20,Electronics,136,2,36,Mobile Pay
+50806,2023-10-21,Clothing,50,4,21,Credit Card
+50807,2023-10-21,Groceries,15,2,62,Credit Card
+50808,2023-10-22,Groceries,15,1,33,Credit Card
+50809,2023-10-22,Electronics,145,1,35,Mobile Pay
+50810,2023-10-22,Clothing,43,1,20,Mobile Pay
+50811,2023-10-23,Clothing,40,1,23,Credit Card
+50812,2023-10-23,Electronics,132,1,29,Credit Card
+50813,2023-10-23,Clothing,46,1,24,Cash
+50814,2023-10-24,Groceries,12,1,23,Credit Card
+50815,2023-10-24,Groceries,15,2,43,Credit Card
+50816,2023-10-24,Groceries,15,4,19,Credit Card
+50817,2023-10-25,Clothing,46,2,57,Credit Card
+50818,2023-10-25,Electronics,136,2,32,Mobile Pay
+50819,2023-10-26,Groceries,15,3,30,Cash
+50820,2023-10-26,Clothing,40,1,55,Cash
+50821,2023-10-26,Groceries,16,1,31,Credit Card
+50822,2023-10-27,Clothing,48,2,60,Credit Card
+50823,2023-10-27,Groceries,12,1,64,Mobile Pay
+50824,2023-10-27,Groceries,12,3,22,Credit Card
+50825,2023-10-28,Electronics,146,1,39,Mobile Pay
+50826,2023-10-28,Clothing,43,1,43,Cash
+50827,2023-10-28,Clothing,51,2,24,Credit Card
+50828,2023-10-29,Groceries,14,3,31,Cash
+50829,2023-10-29,Groceries,12,2,32,Credit Card
+50830,2023-10-30,Clothing,37,4,24,Mobile Pay
+50831,2023-10-30,Clothing,42,1,30,Cash
+50832,2023-10-30,Electronics,147,1,18,Cash
+50833,2023-10-31,Clothing,41,2,42,Credit Card
+50834,2023-10-31,Electronics,123,1,61,Credit Card
+50835,2023-10-31,Groceries,16,2,22,Mobile Pay
+50836,2023-11-01,Groceries,12,4,34,Credit Card
+50837,2023-11-01,Electronics,122,2,36,Credit Card
+50838,2023-11-01,Clothing,42,1,33,Credit Card
+50839,2023-11-02,Clothing,38,1,27,Credit Card
+50840,2023-11-02,Clothing,47,2,30,Credit Card
+50841,2023-11-03,Groceries,14,1,23,Credit Card
+50842,2023-11-03,Groceries,16,2,34,Mobile Pay
+50843,2023-11-03,Clothing,36,2,61,Credit Card
+50844,2023-11-04,Clothing,49,1,49,Credit Card
+50845,2023-11-04,Clothing,45,2,44,Credit Card
+50846,2023-11-04,Groceries,13,1,18,Credit Card
+50847,2023-11-05,Groceries,15,1,37,Credit Card
+50848,2023-11-05,Clothing,44,3,27,Credit Card
+50849,2023-11-05,Clothing,43,1,39,Credit Card
+50850,2023-11-06,Groceries,16,1,43,Credit Card
+50851,2023-11-06,Clothing,38,2,36,Credit Card
+50852,2023-11-07,Groceries,12,2,37,Credit Card
+50853,2023-11-07,Electronics,162,3,53,Mobile Pay
+50854,2023-11-07,Clothing,59,2,54,Credit Card
+50855,2023-11-08,Electronics,164,2,40,Cash
+50856,2023-11-08,Groceries,13,2,47,Mobile Pay
+50857,2023-11-08,Clothing,45,2,24,Credit Card
+50858,2023-11-09,Clothing,46,1,53,Credit Card
+50859,2023-11-09,Electronics,197,3,39,Mobile Pay
+50860,2023-11-09,Clothing,37,1,37,Credit Card
+50861,2023-11-10,Electronics,163,1,23,Mobile Pay
+50862,2023-11-10,Clothing,44,1,39,Mobile Pay
+50863,2023-11-11,Clothing,45,1,28,Credit Card
+50864,2023-11-11,Clothing,40,1,47,Credit Card
+50865,2023-11-11,Electronics,128,2,63,Credit Card
+50866,2023-11-12,Groceries,14,2,56,Credit Card
+50867,2023-11-12,Clothing,36,2,40,Credit Card
+50868,2023-11-12,Clothing,41,3,57,Mobile Pay
+50869,2023-11-13,Clothing,47,1,55,Credit Card
+50870,2023-11-13,Clothing,48,3,34,Credit Card
+50871,2023-11-13,Electronics,152,1,44,Credit Card
+50872,2023-11-14,Groceries,14,3,61,Credit Card
+50873,2023-11-14,Groceries,16,2,44,Mobile Pay
+50874,2023-11-15,Clothing,38,2,25,Credit Card
+50875,2023-11-15,Clothing,42,4,42,Credit Card
+50876,2023-11-15,Clothing,40,1,38,Cash
+50877,2023-11-16,Clothing,44,1,58,Credit Card
+50878,2023-11-16,Electronics,139,1,19,Cash
+50879,2023-11-16,Electronics,147,1,25,Cash
+50880,2023-11-17,Electronics,163,1,21,Credit Card
+50881,2023-11-17,Clothing,46,2,26,Mobile Pay
+50882,2023-11-18,Groceries,16,1,22,Cash
+50883,2023-11-18,Electronics,121,3,35,Credit Card
+50884,2023-11-18,Electronics,156,2,49,Mobile Pay
+50885,2023-11-19,Groceries,14,2,60,Credit Card
+50886,2023-11-19,Clothing,44,3,47,Mobile Pay
+50887,2023-11-19,Clothing,45,1,21,Cash
+50888,2023-11-20,Groceries,14,3,49,Credit Card
+50889,2023-11-20,Electronics,168,4,59,Cash
+50890,2023-11-20,Electronics,178,1,50,Credit Card
+50891,2023-11-21,Groceries,16,2,40,Cash
+50892,2023-11-21,Electronics,140,1,38,Credit Card
+50893,2023-11-22,Groceries,16,1,39,Mobile Pay
+50894,2023-11-22,Clothing,46,1,45,Credit Card
+50895,2023-11-22,Electronics,181,2,21,Mobile Pay
+50896,2023-11-23,Clothing,40,1,47,Mobile Pay
+50897,2023-11-23,Clothing,38,1,60,Credit Card
+50898,2023-11-23,Electronics,160,1,34,Cash
+50899,2023-11-24,Electronics,128,1,29,Credit Card
+50900,2023-11-24,Clothing,50,1,29,Mobile Pay
+50901,2023-11-24,Groceries,14,1,61,Cash
+50902,2023-11-25,Clothing,46,1,42,Credit Card
+50903,2023-11-25,Clothing,47,1,24,Credit Card
+50904,2023-11-26,Groceries,15,4,26,Mobile Pay
+50905,2023-11-26,Clothing,45,1,34,Credit Card
+50906,2023-11-26,Groceries,15,1,19,Cash
+50907,2023-11-27,Electronics,141,1,34,Credit Card
+50908,2023-11-27,Clothing,51,1,30,Credit Card
+50909,2023-11-27,Clothing,44,2,18,Mobile Pay
+50910,2023-11-28,Groceries,15,1,36,Mobile Pay
+50911,2023-11-28,Electronics,151,2,46,Mobile Pay
+50912,2023-11-28,Groceries,16,1,55,Credit Card
+50913,2023-11-29,Groceries,15,1,41,Mobile Pay
+50914,2023-11-29,Clothing,50,1,54,Credit Card
+50915,2023-11-30,Electronics,140,2,42,Mobile Pay
+50916,2023-11-30,Clothing,47,2,28,Credit Card
+50917,2023-11-30,Clothing,50,1,60,Mobile Pay
+50918,2023-12-01,Clothing,42,1,43,Credit Card
+50919,2023-12-01,Clothing,39,3,24,Credit Card
+50920,2023-12-01,Clothing,34,1,19,Credit Card
+50921,2023-12-02,Groceries,13,3,63,Mobile Pay
+50922,2023-12-02,Electronics,177,3,30,Credit Card
+50923,2023-12-02,Electronics,162,4,54,Credit Card
+50924,2023-12-03,Electronics,163,1,48,Credit Card
+50925,2023-12-03,Groceries,15,1,64,Credit Card
+50926,2023-12-04,Clothing,47,1,31,Mobile Pay
+50927,2023-12-04,Groceries,14,3,52,Credit Card
+50928,2023-12-04,Clothing,47,2,49,Cash
+50929,2023-12-05,Groceries,13,1,53,Mobile Pay
+50930,2023-12-05,Clothing,45,2,54,Credit Card
+50931,2023-12-05,Clothing,55,1,42,Credit Card
+50932,2023-12-06,Electronics,134,2,48,Credit Card
+50933,2023-12-06,Electronics,175,2,28,Credit Card
+50934,2023-12-06,Clothing,46,1,51,Mobile Pay
+50935,2023-12-07,Clothing,35,2,36,Mobile Pay
+50936,2023-12-07,Groceries,14,1,56,Credit Card
+50937,2023-12-08,Clothing,55,3,59,Mobile Pay
+50938,2023-12-08,Groceries,14,1,58,Credit Card
+50939,2023-12-08,Clothing,45,4,47,Mobile Pay
+50940,2023-12-09,Clothing,47,2,25,Credit Card
+50941,2023-12-09,Clothing,42,3,26,Mobile Pay
+50942,2023-12-09,Clothing,49,2,64,Mobile Pay
+50943,2023-12-10,Electronics,136,2,18,Credit Card
+50944,2023-12-10,Groceries,14,4,26,Cash
+50945,2023-12-10,Groceries,13,2,44,Credit Card
+50946,2023-12-11,Groceries,13,2,49,Mobile Pay
+50947,2023-12-11,Electronics,160,1,24,Credit Card
+50948,2023-12-12,Groceries,16,3,47,Credit Card
+50949,2023-12-12,Electronics,145,1,25,Mobile Pay
+50950,2023-12-12,Clothing,45,4,55,Mobile Pay
+50951,2023-12-13,Electronics,135,1,33,Mobile Pay
+50952,2023-12-13,Clothing,40,3,47,Cash
+50953,2023-12-13,Clothing,51,1,34,Credit Card
+50954,2023-12-14,Groceries,13,3,35,Mobile Pay
+50955,2023-12-14,Clothing,44,1,44,Cash
+50956,2023-12-14,Groceries,13,1,31,Credit Card
+50957,2023-12-15,Groceries,14,2,51,Cash
+50958,2023-12-15,Electronics,146,4,25,Credit Card
+50959,2023-12-16,Clothing,45,1,34,Credit Card
+50960,2023-12-16,Electronics,132,1,53,Mobile Pay
+50961,2023-12-16,Electronics,159,1,44,Mobile Pay
+50962,2023-12-17,Clothing,54,4,60,Mobile Pay
+50963,2023-12-17,Groceries,11,1,42,Credit Card
+50964,2023-12-17,Groceries,15,2,43,Credit Card
+50965,2023-12-18,Electronics,161,1,58,Cash
+50966,2023-12-18,Clothing,47,2,62,Mobile Pay
+50967,2023-12-18,Groceries,12,1,20,Mobile Pay
+50968,2023-12-19,Clothing,43,1,28,Cash
+50969,2023-12-19,Clothing,49,1,64,Mobile Pay
+50970,2023-12-20,Groceries,15,3,25,Credit Card
+50971,2023-12-20,Clothing,43,2,38,Mobile Pay
+50972,2023-12-20,Groceries,16,1,55,Mobile Pay
+50973,2023-12-21,Clothing,54,1,30,Mobile Pay
+50974,2023-12-21,Groceries,16,3,29,Mobile Pay
+50975,2023-12-21,Groceries,13,2,20,Credit Card
+50976,2023-12-22,Clothing,45,4,41,Credit Card
+50977,2023-12-22,Electronics,138,3,18,Mobile Pay
+50978,2023-12-22,Electronics,152,1,44,Credit Card
+50979,2023-12-23,Clothing,45,1,41,Credit Card
+50980,2023-12-23,Clothing,44,1,45,Mobile Pay
+50981,2023-12-24,Electronics,159,1,28,Credit Card
+50982,2023-12-24,Groceries,15,2,56,Mobile Pay
+50983,2023-12-24,Groceries,16,3,20,Credit Card
+50984,2023-12-25,Groceries,15,3,49,Credit Card
+50985,2023-12-25,Electronics,153,4,50,Credit Card
+50986,2023-12-25,Clothing,47,1,29,Credit Card
+50987,2023-12-26,Clothing,45,1,60,Credit Card
+50988,2023-12-26,Groceries,15,3,44,Mobile Pay
+50989,2023-12-26,Clothing,47,1,39,Credit Card
+50990,2023-12-27,Groceries,17,2,42,Mobile Pay
+50991,2023-12-27,Clothing,50,1,53,Credit Card
+50992,2023-12-28,Electronics,169,1,35,Credit Card
+50993,2023-12-28,Groceries,17,3,25,Cash
+50994,2023-12-28,Groceries,12,2,41,Credit Card
+50995,2023-12-29,Clothing,50,2,29,Credit Card
+50996,2023-12-29,Clothing,50,1,40,Cash
+50997,2023-12-29,Electronics,161,2,26,Mobile Pay
+50998,2023-12-30,Clothing,49,3,25,Mobile Pay
+50999,2023-12-30,Clothing,54,3,31,Credit Card
+51000,2023-12-31,Electronics,154,2,23,Credit Card

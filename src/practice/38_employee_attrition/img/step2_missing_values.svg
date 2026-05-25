@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa" rx="15" stroke="#e9ecef" stroke-width="2"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 결측치 확인 및 전처리</text>
+  
+  <g transform="translate(80, 100)">
+    <rect width="200" height="180" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="10"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#e74c3c" font-weight="bold" text-anchor="middle">Raw Data (누락 발생)</text>
+    <text x="20" y="80" font-family="Courier" font-size="12" fill="#2ecc71">결측치: 없음</text>
+    <text x="20" y="110" font-family="Courier" font-size="12" fill="#2c3e50">범주형 변수: SalaryLevel, Attrition</text>
+  </g>
+  
+  <path d="M310,190 L450,190 M430,180 L450,190 L430,200" fill="none" stroke="#2c3e50" stroke-width="4"/>
+  <text x="380" y="175" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="middle">전처리 필터</text>
+  
+  <g transform="translate(480, 100)">
+    <rect width="200" height="180" fill="#fff" stroke="#2ecc71" stroke-width="2" rx="10"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#2ecc71" font-weight="bold" text-anchor="middle">Clean Data (정제 완료)</text>
+    <text x="20" y="80" font-family="Courier" font-size="12" fill="#2ecc71">범주 데이터 인코딩 준비</text>
+    <text x="20" y="110" font-family="Courier" font-size="12" fill="#2ecc71">Yes/No 이진 값 수치 변환</text>
+  </g>
+  <rect x="150" y="330" width="500" height="45" fill="#fef9e7" rx="5"/>
+  <text x="400" y="358" font-family="Arial" font-size="13" fill="#7e5109" font-weight="bold" text-anchor="middle">통계 모델이나 시각화 편의를 위해 범주형 퇴사 여부를 정수 0(잔류)과 1(퇴사)로 매핑</text>
+</svg>
