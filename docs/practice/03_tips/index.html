@@ -760,6 +760,32 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+memory usage: 7.4 KB
+None
+   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">df.info()</code>를 실행하면 총 244건의 결제 내역이 출력되며, 결측치(NaN)가 하나도 없음을 알 수 있습니다.</li>
@@ -803,6 +829,17 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">total_bill</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">tip</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">tip_rate</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">tip_percent</span><span class="sh">'</span><span class="p">]].</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>total_bill   tip  tip_rate  tip_percent
+0       16.99  1.01  0.059447     5.944673
+1       10.34  1.66  0.160542    16.054159
+2       21.01  3.50  0.166587    16.658734
+3       23.68  3.31  0.139780    13.978041
+4       24.59  3.61  0.146808    14.680765
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><strong>피처 엔지니어링(Feature Engineering)</strong>: 원본 데이터에는 없지만, 분석가의 도메인 지식(레스토랑은 비율로 팁을 준다는 사실)을 결합하여 기존 컬럼들을 더하거나 나누어 새로운 인사이트용 컬럼을 창조해 내는 과정입니다.</li>
@@ -827,6 +864,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">빈도수 (Count)</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
@@ -853,6 +895,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">--</span><span class="sh">'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트">💡 코드 딥다이브 &amp; 인사이트</h3>
 <ul>

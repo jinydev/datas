@@ -7,6 +7,8 @@ permalink: /practice/23_housing/
 # 실전 데이터 분석 23: 인위적 이상치(Ceiling Cap) 제거와 4차원 지리 데이터
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 머신러닝 부동산 예측 모델의 교과서라 불리는 **캘리포니아 주택 가격(California Housing)** 데이터 셋입니다. 이 데이터에는 데이터 수집 과정의 한계로 인해 발생한 끔찍한 이상치(Outlier)가 숨어 있습니다. 이를 찾아내어 제거하고, 지리적 위경도 데이터를 활용해 캘리포니아 지도를 데이터만으로 복원해 내는 화려한 4차원 시각화를 경험해 봅니다.
 
 **학습 목표:**
@@ -40,6 +42,13 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/california_housing.csv'
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **지리적 요인:** `longitude`(경도), `latitude`(위도). (이 둘을 X, Y축에 놓으면 지도가 됩니다!)
@@ -68,6 +77,13 @@ plt.grid(True, linestyle=':', alpha=0.6)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 그래프를 보면 일반적인 종 모양(정규분포)을 띠다가, 그래프의 가장 오른쪽 끝(**$500,000 부근**)에 비정상적으로 높이 솟아오른 막대가 보입니다.
@@ -113,6 +129,13 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 시각화 차트 읽는 법
 * 예상대로 소득이 높은 동네일수록 집값도 우상향하는 강한 **양의 상관관계**를 보입니다. 
 * `alpha=0.3`으로 투명도를 주었기 때문에 점이 겹칠수록 색이 진해집니다. 시선을 진한 곳에 둬보세요.
@@ -146,6 +169,13 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df_filtered' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * 차트를 보면 신기하게도 왼쪽이 바다를 향해 비스듬하게 깎인 **캘리포니아주의 지도 모양**이 선명하게 나타납니다.

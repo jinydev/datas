@@ -757,6 +757,29 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 274 entries, 0 to 273
+Data columns (total 4 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   Year             274 non-null    int64  
+ 1   Country          274 non-null    str    
+ 2   Spending_USD     274 non-null    float64
+ 3   Life_Expectancy  274 non-null    float64
+dtypes: float64(2), int64(1), str(1)
+memory usage: 8.7 KB
+None
+   Year        Country  Spending_USD  Life_Expectancy
+0  1970        Germany       252.311             70.6
+1  1970         France       192.143             72.2
+2  1970  Great Britain       123.993             71.9
+3  1970          Japan       150.437             72.0
+4  1970            USA       326.961             70.9
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -806,6 +829,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_2.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li>1970년대에는 모든 선진국들이 사이좋게 바닥(약 $500 미만)에 모여 있었습니다.</li>
@@ -839,6 +867,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

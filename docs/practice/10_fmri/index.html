@@ -759,6 +759,31 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1064 entries, 0 to 1063
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   subject    1064 non-null   str    
+ 1   timepoint  1064 non-null   int64  
+ 2   event      1064 non-null   str    
+ 3   region     1064 non-null   str    
+ 4   signal     1064 non-null   float64
+dtypes: float64(1), int64(1), str(3)
+memory usage: 41.7 KB
+None
+  subject  timepoint event    region    signal
+0     s13         18  stim  parietal -0.017552
+1      s5         14  stim  parietal -0.080883
+2     s12         18  stim  parietal -0.081033
+3     s11         18  stim  parietal -0.046134
+4     s10         18  stim  parietal -0.037970
+</code></pre></div>  </div>
+  <p><img src="img/exec_step_1.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -794,6 +819,18 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">time_0_df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0초일 때 존재하는 총 데이터 개수: 56개
+    subject  timepoint event    region    signal
+67       s0          0  stim   frontal -0.021452
+84       s1          0  stim  parietal -0.064454
+252     s13          0  stim  parietal -0.042467
+253     s12          0  stim  parietal  0.003358
+254     s11          0  stim  parietal -0.044634
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li>일반적인 주식 데이터나 날씨 데이터라면 2024년 1월 1일의 종가는 딱 <strong>1개</strong> 존재합니다.</li>
@@ -822,6 +859,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">--</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># 0을 기준으로 기준선(Baseline) 추가
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
@@ -858,6 +900,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span> <span class="c1"># 그래프가 잘리지 않게 여백 자동 조정
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트">💡 코드 딥다이브 &amp; 인사이트</h3>
 <ul>

@@ -44,6 +44,32 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 90 entries, 0 to 89
+> Data columns (total 6 columns):
+>  #   Column      Non-Null Count  Dtype   
+> ---  ------      --------------  -----   
+>  0   Unnamed: 0  90 non-null     int64   
+>  1   id          90 non-null     int64   
+>  2   diet        90 non-null     category
+>  3   pulse       90 non-null     int64   
+>  4   time        90 non-null     category
+>  5   kind        90 non-null     category
+> dtypes: category(3), int64(3)
+> memory usage: 2.9 KB
+> None
+>    Unnamed: 0  id     diet  pulse    time  kind
+> 0           0   1  low fat     85   1 min  rest
+> 1           1   1  low fat     85  15 min  rest
+> 2           2   1  low fat     88  30 min  rest
+> 3           3   2  low fat     90   1 min  rest
+> 4           4   2  low fat     92  15 min  rest
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Target:**
@@ -90,6 +116,11 @@ plt.grid(axis='y', linestyle='--', alpha=0.6)
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_2.svg)
+
+
+
 ### 💡 시각화 차트 읽는 법
 * **포인트 플롯(Pointplot)의 장점:** 점을 이어주는 '기울기(Slope)'를 통해 변화율을 극적으로 보여줍니다. 
 * **운동별 차이:**
@@ -116,6 +147,11 @@ sns.catplot(
 plt.suptitle('식단(Diet)과 운동(Kind)이 심박수에 미치는 상호작용 효과', y=1.05, fontsize=16)
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **차트 해석:** 

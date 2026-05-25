@@ -757,6 +757,27 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 649 entries, 0 to 648
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   Date    649 non-null    datetime64[us]
+ 1   Price   649 non-null    float64       
+dtypes: datetime64[us](1), float64(1)
+memory usage: 10.3 KB
+None
+        Date  Price
+0 1914-12-01  55.00
+1 1915-01-01  56.55
+2 1915-02-01  56.00
+3 1915-03-01  58.30
+4 1915-04-01  66.45
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -786,6 +807,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_2.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li><strong>대공황 (The Great Depression):</strong> 1929년, 하늘 높은 줄 모르고 치솟던 차트가 1930년대를 맞이하며 말 그대로 ‘수직 낙하’하는 끔찍한 폭락장을 눈으로 확인할 수 있습니다.</li>
@@ -811,6 +837,27 @@
 <span class="c1"># 처음 11개의 데이터는 묶을 수 있는 과거 데이터가 모자라기 때문에 NaN(결측치)이 발생합니다.
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Date  Price      MA_12
+0  1914-12-01  55.00        NaN
+1  1915-01-01  56.55        NaN
+2  1915-02-01  56.00        NaN
+3  1915-03-01  58.30        NaN
+4  1915-04-01  66.45        NaN
+5  1915-05-01  65.95        NaN
+6  1915-06-01  68.40        NaN
+7  1915-07-01  71.85        NaN
+8  1915-08-01  79.25        NaN
+9  1915-09-01  85.50        NaN
+10 1915-10-01  92.35        NaN
+11 1915-11-01  94.35  70.829167
+12 1915-12-01  97.00  74.329167
+13 1916-01-01  94.70  77.508333
+14 1916-02-01  93.55  80.637500
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -843,6 +890,11 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

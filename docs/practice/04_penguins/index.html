@@ -755,6 +755,19 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>species     island  bill_length_mm  ...  flipper_length_mm  body_mass_g     sex
+0  Adelie  Torgersen            39.1  ...              181.0       3750.0    Male
+1  Adelie  Torgersen            39.5  ...              186.0       3800.0  Female
+2  Adelie  Torgersen            40.3  ...              195.0       3250.0  Female
+3  Adelie  Torgersen             NaN  ...                NaN          NaN     NaN
+4  Adelie  Torgersen            36.7  ...              193.0       3450.0  Female
+
+[5 rows x 7 columns]
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -795,6 +808,24 @@
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">남은 데이터 개수: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s">개</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 ---
+species               0
+island                0
+bill_length_mm        2
+bill_depth_mm         2
+flipper_length_mm     2
+body_mass_g           2
+sex                  11
+dtype: int64
+전체 데이터 개수: 344개
+
+--- 정제 후 데이터 개수 ---
+남은 데이터 개수: 333개
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">df.isnull().sum()</code>을 확인해 보면 전체 344마리 중 성별(<code class="language-plaintext highlighter-rouge">sex</code>)이 누락된 펭귄이 11마리, 부리 길이가 누락된 펭귄이 2마리 정도 있습니다.</li>
@@ -819,6 +850,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">몸무게 (g)</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
@@ -853,6 +889,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-통계적-함정-심슨의-역설-simpsons-paradox">💡 통계적 함정: 심슨의 역설 (Simpson’s Paradox)</h3>
 <ul>

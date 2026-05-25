@@ -7,6 +7,8 @@ permalink: /practice/29_ecommerce/
 # 실전 데이터 분석 29: 이커머스 매출 분석과 피벗 히트맵
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 온라인 쇼핑몰(이커머스)에서 하루에도 수만 건씩 쏟아지는 **실제 고객 결제 로그(Transaction Log)** 데이터입니다. 원시 데이터(Raw Data) 상태에서는 누가 언제 무엇을 샀다는 정보만 텍스트로 적혀 있을 뿐, 쇼핑몰의 전체적인 매출 현황을 알 수 없습니다.
 
 **학습 목표:**
@@ -40,6 +42,13 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/ecommerce.csv'
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 결제 정보 컬럼:**
 * `CustomerID`: 구매한 고객의 고유 번호 (누가 샀나?)
@@ -71,6 +80,13 @@ df['Month'] = df['InvoiceDate'].dt.month
 display(df[['Quantity', 'UnitPrice', 'TotalPrice', 'Month']].head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **Feature Engineering (피처 엔지니어링):** 원본 데이터에 없는 정보라도, 기존 변수를 수학적으로 조합하거나(곱하기) 시간 데이터에서 특정 부품만 빼내어(월 추출), 예측과 분석에 꼭 필요한 **새로운 변수를 창조해 내는 작업**을 뜻합니다. 
 * 훌륭한 AI 모델을 만드는 비결의 80%는 이 피처 엔지니어링 능력에 달려 있습니다.
@@ -98,6 +114,13 @@ plt.grid(True, axis='both', linestyle='--', alpha=0.5)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 시각화 차트 읽는 법
 * 1월부터 8월까지는 그래프가 잔잔하게 오르락내리락하며 일정한 매출 볼륨을 유지합니다.
@@ -130,6 +153,13 @@ plt.xlabel('월 (Month)')
 plt.ylabel('주문 국가 (Country)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **Pivot Table:** 긴 엑셀 줄글에 불과했던 로그 데이터가 가로(월)와 세로(국가)를 가진 바둑판 모양의 거대한 2차원 표(Matrix)로 재탄생했습니다.

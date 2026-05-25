@@ -45,6 +45,26 @@ display(df.describe())
 print(df['species'].value_counts())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> sepal_length  sepal_width  petal_length  petal_width
+> count    150.000000   150.000000    150.000000   150.000000
+> mean       5.843333     3.057333      3.758000     1.199333
+> std        0.828066     0.435866      1.765298     0.762238
+> min        4.300000     2.000000      1.000000     0.100000
+> 25%        5.100000     2.800000      1.600000     0.300000
+> 50%        5.800000     3.000000      4.350000     1.300000
+> 75%        6.400000     3.300000      5.100000     1.800000
+> max        7.900000     4.400000      6.900000     2.500000
+> species
+> setosa        50
+> versicolor    50
+> virginica     50
+> Name: count, dtype: int64
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 * `df.describe()`: 데이터 프레임 내 모든 '숫자형' 컬럼에 대한 요약 통계를 한 번에 보여주는 아주 강력한 함수입니다. 가장 짧은 꽃잎이 몇 cm인지(`min`), 평균은 얼마인지(`mean`) 한눈에 파악할 수 있습니다.
 * `df['species'].value_counts()`: 종속 변수(Target)인 품종이 각각 몇 개씩 있는지 셉니다. 출력 결과를 보면 `setosa`, `versicolor`, `virginica`가 각각 정확히 50개씩 균형(Balanced)을 이루고 있습니다. 이는 머신러닝 학습에 있어 가장 이상적인 데이터 형태입니다.
@@ -74,6 +94,33 @@ print("결측치 총합:")
 print(df.isnull().sum())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 150 entries, 0 to 149
+> Data columns (total 5 columns):
+>  #   Column        Non-Null Count  Dtype  
+> ---  ------        --------------  -----  
+>  0   sepal_length  150 non-null    float64
+>  1   sepal_width   150 non-null    float64
+>  2   petal_length  150 non-null    float64
+>  3   petal_width   150 non-null    float64
+>  4   species       150 non-null    str    
+> dtypes: float64(4), str(1)
+> memory usage: 6.0 KB
+> None
+> ------------------------
+> 결측치 총합:
+> sepal_length    0
+> sepal_width     0
+> petal_length    0
+> petal_width     0
+> species         0
+> dtype: int64
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `df.info()` 결과를 보면 총 150개의 행(entries)이 있는데, 모든 컬럼이 `150 non-null`이라고 출력됩니다. 즉, **비어있는 칸이 단 하나도 없다(결측치 0%)**는 뜻입니다.
 * 이런 교과서적으로 깨끗한 데이터를 실무에서는 'Clean Data'라고 부릅니다. 전처리 단계에서 결측치 대치(Imputation)나 이상치 제거 등의 복잡한 과정 없이, 즉각적으로 분석과 시각화 단계로 넘어갈 수 있는 매우 드물고 축복받은 상황입니다!
@@ -99,6 +146,11 @@ plt.ylabel('데이터 밀도 (Count/Density)')
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
+
 ### 💡 시각화 차트 읽는 법
 * **Setosa (빨간색 영역)**: 그래프 맨 왼쪽에 `setosa`의 꽃잎 길이가 1~2cm 부근에 완전히 독립적으로 모여 있습니다. 다른 품종과 전혀 겹치지 않습니다. 즉, **"꽃잎 길이가 2.5cm 미만이면 무조건 Setosa이다"**라는 완벽한 규칙을 단 하나의 차트만으로 찾아낸 것입니다!
 * **Versicolor vs Virginica**: 반면, 두 번째(초록색)와 세 번째(파란색) 그룹은 4.5cm~5.0cm 부근에서 겹치는(Overlap) 영역이 발생합니다. 이 구간에 속한 붓꽃은 꽃잎 길이 하나만으로는 어떤 품종인지 100% 확신하기 어렵습니다. 이를 해결하기 위해서는 변수를 하나 더 추가해야 합니다.
@@ -123,6 +175,11 @@ plt.ylabel('꽃잎 너비 (cm)')
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 차트가 말해주는 인공지능의 원리
 * 산점도를 그리면 같은 색상의 점들이 서로 무리 지어 모이는 현상을 **'군집(Clustering)'**이라고 합니다.

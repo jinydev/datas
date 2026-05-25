@@ -757,6 +757,35 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 53940 entries, 0 to 53939
+Data columns (total 10 columns):
+ #   Column   Non-Null Count  Dtype   
+---  ------   --------------  -----   
+ 0   carat    53940 non-null  float64 
+ 1   cut      53940 non-null  category
+ 2   color    53940 non-null  category
+ 3   clarity  53940 non-null  category
+ 4   depth    53940 non-null  float64 
+ 5   table    53940 non-null  float64 
+ 6   price    53940 non-null  int64   
+ 7   x        53940 non-null  float64 
+ 8   y        53940 non-null  float64 
+ 9   z        53940 non-null  float64 
+dtypes: category(3), float64(6), int64(1)
+memory usage: 3.0 MB
+None
+   carat      cut color clarity  depth  table  price     x     y     z
+0   0.23    Ideal     E     SI2   61.5   55.0    326  3.95  3.98  2.43
+1   0.21  Premium     E     SI1   59.8   61.0    326  3.89  3.84  2.31
+2   0.23     Good     E     VS1   56.9   65.0    327  4.05  4.07  2.31
+3   0.29  Premium     I     VS2   62.4   58.0    334  4.20  4.23  2.63
+4   0.31     Good     J     SI2   63.3   58.0    335  4.34  4.35  2.75
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -797,6 +826,27 @@
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">[정제 후] 안전하게 남은 정상 데이터 개수: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">clean_df</span><span class="p">)</span><span class="si">}</span><span class="s">개</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>carat         depth  ...             y             z
+count  53940.000000  53940.000000  ...  53940.000000  53940.000000
+mean       0.797940     61.749405  ...      5.734526      3.538734
+std        0.474011      1.432621  ...      1.142135      0.705699
+min        0.200000     43.000000  ...      0.000000      0.000000
+25%        0.400000     61.000000  ...      4.720000      2.910000
+50%        0.700000     61.800000  ...      5.710000      3.530000
+75%        1.040000     62.500000  ...      6.540000      4.040000
+max        5.010000     79.000000  ...     58.900000     31.800000
+
+[8 rows x 7 columns]
+
+[정제 전] 크기가 0인 다이아몬드 개수:
+20
+
+[정제 후] 안전하게 남은 정상 데이터 개수: 53920개
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">df.describe()</code> 결과를 유심히 보면, <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">y</code>, <code class="language-plaintext highlighter-rouge">z</code>(다이아몬드의 가로, 세로, 높이)의 <strong>최솟값(min)이 0</strong>으로 찍혀 있습니다.</li>
@@ -822,6 +872,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">빈도수 (Count)</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
@@ -856,6 +911,11 @@
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">'</span><span class="s">세공(Cut)</span><span class="sh">'</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="sh">'</span><span class="s">13</span><span class="sh">'</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="sh">'</span><span class="s">lower right</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트">💡 코드 딥다이브 &amp; 인사이트</h3>
 <ul>

@@ -42,6 +42,31 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 60 entries, 0 to 59
+> Data columns (total 5 columns):
+>  #   Column      Non-Null Count  Dtype  
+> ---  ------      --------------  -----  
+>  0   Unnamed: 0  60 non-null     int64  
+>  1   subject     60 non-null     int64  
+>  2   attention   60 non-null     str    
+>  3   solutions   60 non-null     int64  
+>  4   score       60 non-null     float64
+> dtypes: float64(1), int64(3), str(1)
+> memory usage: 2.5 KB
+> None
+>    Unnamed: 0  subject attention  solutions  score
+> 0           0        1   divided          1    2.0
+> 1           1        2   divided          1    3.0
+> 2           2        3   divided          1    3.0
+> 3           3        4   divided          1    5.0
+> 4           4        5   divided          1    4.0
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **독립 변수 (연구자가 조작한 원인):**
@@ -64,6 +89,15 @@ mean_scores = df.groupby('attention')['score'].mean().reset_index()
 
 display(mean_scores)
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> attention     score
+> 0   divided  5.116667
+> 1   focused  6.800000
+> ```
+
+
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 출력 결과를 보면 `focused`(집중) 그룹의 평균 점수가 `divided`(멀티태스킹) 그룹보다 더 높게 나옵니다.
@@ -88,6 +122,11 @@ plt.xlabel('주의력 조건 (Divided vs Focused)')
 plt.ylabel('평균 점수')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **파란색 막대(Focused) vs 주황색 막대(Divided):** 시각적으로 집중 그룹의 막대가 훨씬 높습니다.
@@ -119,6 +158,11 @@ plt.ylabel('점수 (Score)')
 plt.legend(title='Attention', loc='lower right')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **Split=True의 마법:** 왼쪽(파란색)은 분산 그룹, 오른쪽(주황색)은 집중 그룹입니다. 서로 등을 맞대고 있어서 직관적인 비교가 가능합니다.

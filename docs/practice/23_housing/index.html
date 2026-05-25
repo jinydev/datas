@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-23-인위적-이상치ceiling-cap-제거와-4차원-지리-데이터">실전 데이터 분석 23: 인위적 이상치(Ceiling Cap) 제거와 4차원 지리 데이터</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>머신러닝 부동산 예측 모델의 교과서라 불리는 <strong>캘리포니아 주택 가격(California Housing)</strong> 데이터 셋입니다. 이 데이터에는 데이터 수집 과정의 한계로 인해 발생한 끔찍한 이상치(Outlier)가 숨어 있습니다. 이를 찾아내어 제거하고, 지리적 위경도 데이터를 활용해 캘리포니아 지도를 데이터만으로 복원해 내는 화려한 4차원 시각화를 경험해 봅니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+머신러닝 부동산 예측 모델의 교과서라 불리는 <strong>캘리포니아 주택 가격(California Housing)</strong> 데이터 셋입니다. 이 데이터에는 데이터 수집 과정의 한계로 인해 발생한 끔찍한 이상치(Outlier)가 숨어 있습니다. 이를 찾아내어 제거하고, 지리적 위경도 데이터를 활용해 캘리포니아 지도를 데이터만으로 복원해 내는 화려한 4차원 시각화를 경험해 봅니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -755,6 +757,12 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/california_housing.csv'
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -784,6 +792,12 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -836,6 +850,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li>예상대로 소득이 높은 동네일수록 집값도 우상향하는 강한 <strong>양의 상관관계</strong>를 보입니다.</li>
@@ -870,6 +890,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df_filtered' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

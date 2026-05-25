@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-20-미시적-계절성과-거시적-기후-변화-datetime-심화">실전 데이터 분석 20: 미시적 계절성과 거시적 기후 변화 (Datetime 심화)</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>“지구 온난화는 거짓말이다. 북극의 얼음은 겨울이 되면 다시 꽁꽁 얼어붙는다.” 기후 변화 회의론자들의 이런 주장에 대해 데이터 분석가는 어떻게 반박해야 할까요? 1980년부터 2019년까지 40년간 매일 측정된 북극 해빙(Sea Ice) 면적 데이터를 통해, 그들의 주장에 숨겨진 통계적 함정을 파헤쳐 봅니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+“지구 온난화는 거짓말이다. 북극의 얼음은 겨울이 되면 다시 꽁꽁 얼어붙는다.” 기후 변화 회의론자들의 이런 주장에 대해 데이터 분석가는 어떻게 반박해야 할까요? 1980년부터 2019년까지 40년간 매일 측정된 북극 해빙(Sea Ice) 면적 데이터를 통해, 그들의 주장에 숨겨진 통계적 함정을 파헤쳐 봅니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -755,6 +757,27 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 13175 entries, 0 to 13174
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   Date    13175 non-null  datetime64[us]
+ 1   Extent  13175 non-null  float64       
+dtypes: datetime64[us](1), float64(1)
+memory usage: 206.0 KB
+None
+        Date  Extent
+0 1980-01-01  14.200
+1 1980-01-03  14.302
+2 1980-01-05  14.414
+3 1980-01-07  14.518
+4 1980-01-09  14.594
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -780,6 +803,23 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">Date</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Year</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Month</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Extent</span><span class="sh">'</span><span class="p">]].</span><span class="nf">head</span><span class="p">())</span>
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">Date</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Year</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Month</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Extent</span><span class="sh">'</span><span class="p">]].</span><span class="nf">tail</span><span class="p">())</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Date  Year  Month  Extent
+0 1980-01-01  1980      1  14.200
+1 1980-01-03  1980      1  14.302
+2 1980-01-05  1980      1  14.414
+3 1980-01-07  1980      1  14.518
+4 1980-01-09  1980      1  14.594
+            Date  Year  Month  Extent
+13170 2019-12-27  2019     12  12.721
+13171 2019-12-28  2019     12  12.712
+13172 2019-12-29  2019     12  12.780
+13173 2019-12-30  2019     12  12.858
+13174 2019-12-31  2019     12  12.889
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -809,6 +849,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li>차트가 아름다운 U자 형태를 그리고 있습니다.</li>
@@ -837,6 +882,11 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

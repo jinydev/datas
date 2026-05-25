@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-18-결측치의-진실과-로그-스케일log-scale의-구원">실전 데이터 분석 18: 결측치의 진실과 로그 스케일(Log Scale)의 구원</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>우리가 살고 있는 태양계 밖에는 얼마나 많은 외계 행성(Exoplanets)들이 있을까요? NASA에서 제공하는 1,000개가 넘는 외계 행성 발견 데이터를 통해 우주 탐사의 역사와 스케일을 분석해 봅니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+우리가 살고 있는 태양계 밖에는 얼마나 많은 외계 행성(Exoplanets)들이 있을까요? NASA에서 제공하는 1,000개가 넘는 외계 행성 발견 데이터를 통해 우주 탐사의 역사와 스케일을 분석해 봅니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -755,6 +757,31 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1035 entries, 0 to 1034
+Data columns (total 6 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   method          1035 non-null   str    
+ 1   number          1035 non-null   int64  
+ 2   orbital_period  992 non-null    float64
+ 3   mass            513 non-null    float64
+ 4   distance        808 non-null    float64
+ 5   year            1035 non-null   int64  
+dtypes: float64(3), int64(2), str(1)
+memory usage: 48.6 KB
+None
+            method  number  orbital_period   mass  distance  year
+0  Radial Velocity       1         269.300   7.10     77.40  2006
+1  Radial Velocity       1         874.774   2.21     56.95  2008
+2  Radial Velocity       1         763.000   2.60     19.84  2011
+3  Radial Velocity       1         326.030  19.40    110.62  2007
+4  Radial Velocity       1         516.220  10.50    119.47  2009
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -783,6 +810,37 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">missing_by_method</span><span class="p">)</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>method
+Radial Velocity                  553
+Transit                          397
+Imaging                           38
+Microlensing                      23
+Eclipse Timing Variations          9
+Pulsar Timing                      5
+Transit Timing Variations          4
+Orbital Brightness Modulation      3
+Astrometry                         2
+Pulsation Timing Variations        1
+Name: count, dtype: int64
+
+[질량(mass) 데이터가 비어있는 행성들의 발견 방법]
+method
+Transit                          396
+Radial Velocity                   43
+Imaging                           38
+Microlensing                      23
+Eclipse Timing Variations          7
+Pulsar Timing                      5
+Transit Timing Variations          4
+Orbital Brightness Modulation      3
+Astrometry                         2
+Pulsation Timing Variations        1
+Name: count, dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><strong>Radial Velocity (시선 속도법):</strong> 행성의 중력이 별을 미세하게 흔드는 것을 포착하는 방식입니다. 중력을 이용하므로 <strong>행성의 질량(<code class="language-plaintext highlighter-rouge">mass</code>)을 계산할 수 있습니다.</strong></li>
@@ -809,6 +867,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span> <span class="c1"># 연도 글씨가 겹치지 않게 45도 기울임
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
@@ -844,6 +907,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

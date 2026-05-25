@@ -7,6 +7,8 @@ permalink: /practice/18_planets/
 # 실전 데이터 분석 18: 결측치의 진실과 로그 스케일(Log Scale)의 구원
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 우리가 살고 있는 태양계 밖에는 얼마나 많은 외계 행성(Exoplanets)들이 있을까요? NASA에서 제공하는 1,000개가 넘는 외계 행성 발견 데이터를 통해 우주 탐사의 역사와 스케일을 분석해 봅니다.
 
 **학습 목표:**
@@ -40,6 +42,32 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1035 entries, 0 to 1034
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   method          1035 non-null   str    
+>  1   number          1035 non-null   int64  
+>  2   orbital_period  992 non-null    float64
+>  3   mass            513 non-null    float64
+>  4   distance        808 non-null    float64
+>  5   year            1035 non-null   int64  
+> dtypes: float64(3), int64(2), str(1)
+> memory usage: 48.6 KB
+> None
+>             method  number  orbital_period   mass  distance  year
+> 0  Radial Velocity       1         269.300   7.10     77.40  2006
+> 1  Radial Velocity       1         874.774   2.21     56.95  2008
+> 2  Radial Velocity       1         763.000   2.60     19.84  2011
+> 3  Radial Velocity       1         326.030  19.40    110.62  2007
+> 4  Radial Velocity       1         516.220  10.50    119.47  2009
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * `method`: 행성을 발견한 천문학적 관측 기법 (예: Radial Velocity(시선 속도법), Transit(천체면 통과법) 등)
@@ -67,6 +95,38 @@ print("\n[질량(mass) 데이터가 비어있는 행성들의 발견 방법]")
 print(missing_by_method)
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> method
+> Radial Velocity                  553
+> Transit                          397
+> Imaging                           38
+> Microlensing                      23
+> Eclipse Timing Variations          9
+> Pulsar Timing                      5
+> Transit Timing Variations          4
+> Orbital Brightness Modulation      3
+> Astrometry                         2
+> Pulsation Timing Variations        1
+> Name: count, dtype: int64
+> 
+> [질량(mass) 데이터가 비어있는 행성들의 발견 방법]
+> method
+> Transit                          396
+> Radial Velocity                   43
+> Imaging                           38
+> Microlensing                      23
+> Eclipse Timing Variations          7
+> Pulsar Timing                      5
+> Transit Timing Variations          4
+> Orbital Brightness Modulation      3
+> Astrometry                         2
+> Pulsation Timing Variations        1
+> Name: count, dtype: int64
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **Radial Velocity (시선 속도법):** 행성의 중력이 별을 미세하게 흔드는 것을 포착하는 방식입니다. 중력을 이용하므로 **행성의 질량(`mass`)을 계산할 수 있습니다.**
 * **Transit (천체면 통과법):** 행성이 별 앞을 지나갈 때 별빛이 어두워지는 그림자를 포착하는 방식입니다. 그림자의 크기를 통해 행성의 크기는 알 수 있지만, **질량(`mass`)은 알 수 없습니다.**
@@ -92,6 +152,11 @@ plt.ylabel('발견된 행성 수 (Count)')
 plt.xticks(rotation=45) # 연도 글씨가 겹치지 않게 45도 기울임
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * 1989년부터 2000년대 중반까지는 1년에 고작 몇 개, 많아야 이삼십 개의 행성을 찔끔찔끔 발견했습니다.
@@ -126,6 +191,11 @@ ax2.set_title('로그 스케일 박스 플롯 (데이터의 진짜 형태가 보
 plt.tight_layout()
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **왼쪽 차트의 참사:** 공전 주기가 무려 수십만 일(수백 년)에 달하는 극단적인 아웃라이어 행성 한두 개 때문에, Y축의 천장이 우주 끝까지 높아졌습니다. 그 결과 정작 중요한 대다수 행성(공전주기 1~1000일)의 박스 모양은 **바닥에 껌딱지처럼 납작하게 눌려** 아무런 정보도 얻을 수 없습니다.

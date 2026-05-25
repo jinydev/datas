@@ -44,6 +44,29 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 272 entries, 0 to 271
+> Data columns (total 3 columns):
+>  #   Column    Non-Null Count  Dtype  
+> ---  ------    --------------  -----  
+>  0   duration  272 non-null    float64
+>  1   waiting   272 non-null    int64  
+>  2   kind      272 non-null    str    
+> dtypes: float64(1), int64(1), str(1)
+> memory usage: 6.5 KB
+> None
+>    duration  waiting   kind
+> 0     3.600       79   long
+> 1     1.800       54  short
+> 2     3.333       74   long
+> 3     2.283       62  short
+> 4     4.533       85   long
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * `duration`: 물기둥이 뿜어져 나오는 지속 시간 (분 단위)
@@ -80,6 +103,14 @@ plt.legend()
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> 간헐천 분출 시간의 평균: 3.49분
+> ```
+> ![실행 결과 시각화](img/exec_step_2.svg)
+
+
+
 ### 💡 시각화 차트 읽는 법
 * **평균의 배신:** 파이썬으로 계산한 분출 시간의 평균은 약 **3.5분**(빨간 점선)입니다. 하지만 히스토그램을 보면 3.5분 부근의 막대는 거의 텅 비어 있습니다! 즉, "평균적으로 3.5분 뿜는다"고 말하는 것은 최악의 분석입니다. 현실에는 3.5분 뿜는 간헐천이 사실상 존재하지 않기 때문입니다.
 * **쌍봉형(Bimodal) 분포:** 데이터는 2분 부근에서 작게 한 번(`short`), 4.5분 부근에서 거대하게 한 번(`long`) 솟아오르는 쌍봉 낙타의 등 같은 모양을 하고 있습니다. 이럴 때는 데이터를 통째로 분석하지 말고 **"짧은 분출 그룹"과 "긴 분출 그룹"으로 쪼개서(Clustering)** 분석하는 것이 정석입니다.
@@ -104,6 +135,11 @@ sns.jointplot(
 plt.gcf().suptitle('분출 시간(Duration)과 대기 시간(Waiting)의 Jointplot', y=1.02)
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트
 * **외곽 히스토그램 (Marginal Plot):** 위쪽과 오른쪽에 그려진 작은 히스토그램을 보면 `duration`뿐만 아니라 `waiting`(대기 시간) 역시 쌍봉형 분포를 가진다는 것을 알 수 있습니다.
@@ -135,6 +171,11 @@ plt.xlabel('분출 시간 (Duration)')
 plt.ylabel('대기 시간 (Waiting)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * 등고선 차트는 데이터 과학에서 머신러닝, 특히 **비지도 학습(Unsupervised Learning - K-Means Clustering 등)**을 시각화할 때 매우 자주 쓰이는 기법입니다.

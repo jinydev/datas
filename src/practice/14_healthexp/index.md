@@ -42,6 +42,30 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 274 entries, 0 to 273
+> Data columns (total 4 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   Year             274 non-null    int64  
+>  1   Country          274 non-null    str    
+>  2   Spending_USD     274 non-null    float64
+>  3   Life_Expectancy  274 non-null    float64
+> dtypes: float64(2), int64(1), str(1)
+> memory usage: 8.7 KB
+> None
+>    Year        Country  Spending_USD  Life_Expectancy
+> 0  1970        Germany       252.311             70.6
+> 1  1970         France       192.143             72.2
+> 2  1970  Great Britain       123.993             71.9
+> 3  1970          Japan       150.437             72.0
+> 4  1970            USA       326.961             70.9
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * `Year`: 측정 연도 (1970 ~ 2020)
@@ -88,6 +112,11 @@ plt.tight_layout()
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_2.svg)
+
+
+
 ### 💡 시각화 차트 읽는 법
 * 1970년대에는 모든 선진국들이 사이좋게 바닥(약 $500 미만)에 모여 있었습니다.
 * 하지만 1990년대를 기점으로 빨간색 선(**USA, 미국**)이 다른 나라들과의 궤도를 이탈하여 미친 듯한 기울기로 수직 상승(Exponential growth)하기 시작합니다. 
@@ -120,6 +149,11 @@ plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **수확 체감의 법칙 (Law of Diminishing Returns):** 다른 나라(독일, 일본, 영국 등)의 점들을 보면 초반에는 돈을 쓸수록 수명이 가파르게 늘어나지만, 어느 순간(약 $4,000 부근)부터는 돈을 아무리 써도 수명이 크게 늘지 않고 완만해지는 로그 함수(Logarithmic) 형태를 그립니다. 즉, 현대 의학의 한계에 부딪히는 것입니다.

@@ -7,6 +7,8 @@ permalink: /practice/26_heart/
 # 실전 데이터 분석 26: 심장 질환 예측 (Binning과 그룹별 박스플롯)
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 의료 데이터 분석의 대표적인 사례인 **심장 질환(Heart Disease)** 예측 데이터입니다. 환자의 나이, 혈압, 콜레스테롤, 최대 심박수 등 다양한 신체 수치를 바탕으로 이 환자가 심장병 발병 고위험군인지 아닌지를 분류(Classification)하는 법을 배웁니다.
 
 **학습 목표:**
@@ -40,6 +42,13 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/heart_disease.csv'
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 신체 징후 (Features, X):**
 * `age`(나이), `sex`(성별: 1=남, 0=여), `cp`(가슴 통증 유형)
@@ -71,6 +80,13 @@ df['age_group'] = pd.cut(df['age'], bins=bins, labels=labels)
 display(df[['age', 'age_group', 'target']].sample(5))
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `pd.cut(데이터, bins=기준점, labels=이름)` 함수는 연속된 숫자를 칼로 자르듯(cut) 쪼개어 카테고리로 묶어주는 매우 강력한 함수입니다.
 * 이를 데이터 과학에서는 **비닝(Binning)** 또는 **버킷팅(Bucketing)**이라고 부릅니다. 지나치게 세밀한 데이터의 노이즈를 줄여주고, 사람이 이해하기 쉬운 거시적인 트렌드를 볼 수 있게 해 줍니다.
@@ -101,6 +117,13 @@ plt.grid(True, axis='y', linestyle=':', alpha=0.5)
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 시각화 차트 읽는 법
 * 정상인(0)이 138명, 심장병 환자(1)가 165명입니다.
 * 비율이 대략 45:55 정도로, **어느 한쪽으로 크게 치우치지 않은 아주 훌륭한 밸런스(Balanced Data)**를 유지하고 있습니다. 이 데이터를 쓴다면 AI가 '발병'과 '정상'의 특징을 공평하게 학습할 수 있습니다.
@@ -130,6 +153,13 @@ plt.grid(True, axis='y', linestyle='--', alpha=0.5)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **연령별 쇠퇴:** 그래프 전체가 40대에서 60대로 갈수록 우하향합니다. 나이가 들수록 인간의 최대 심박수는 자연스럽게 떨어지기 때문입니다.

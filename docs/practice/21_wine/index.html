@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-21-로컬-csv-데이터-로드-및-타겟-상관관계-분석">실전 데이터 분석 21: 로컬 CSV 데이터 로드 및 타겟 상관관계 분석</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>지금까지는 Seaborn에 내장된 연습용 데이터(Toy Dataset)들을 활용했습니다. 이제부터는 실무 환경과 동일하게 <strong>로컬 폴더에 저장된 실제 CSV 파일</strong>을 불러와서 분석하는 방법을 배웁니다. 
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+지금까지는 Seaborn에 내장된 연습용 데이터(Toy Dataset)들을 활용했습니다. 이제부터는 실무 환경과 동일하게 <strong>로컬 폴더에 저장된 실제 CSV 파일</strong>을 불러와서 분석하는 방법을 배웁니다. 
 머신러닝 교과서에 단골로 등장하는 ‘레드 와인 품질(Wine Quality)’ 데이터를 통해, 수십 개의 화학 성분 중 와인의 맛을 결정짓는 핵심 단서를 통계적으로 찾아냅니다.</p>
 
 <p><strong>학습 목표:</strong></p>
@@ -756,6 +758,12 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/winequality.csv'
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -781,6 +789,12 @@
 <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 와인 품질(Quality)과 가장 상관관계가 높은 성분들 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">quality_corr</span><span class="p">)</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -811,6 +825,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li>막대그래프를 보면 5점과 6점짜리 ‘평범한 와인’이 전체 데이터의 80% 이상을 차지하며, 전형적인 종 모양(정규 분포)을 그리고 있습니다.</li>
@@ -838,6 +858,12 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

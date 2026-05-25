@@ -7,6 +7,8 @@ permalink: /practice/28_marketing/
 # 실전 데이터 분석 28: 은행 마케팅 성공 예측과 Stripplot의 시각적 파워
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 포르투갈 은행 기관의 실제 **텔레마케팅 캠페인(Bank Marketing)** 데이터입니다. 고객의 직업, 나이, 결혼 여부, 대출 유무 등 프로필 데이터를 바탕으로 이 고객에게 전화를 걸었을 때 정기 예금(Term Deposit)에 가입할지 말지를 예측하는 것이 목표입니다.
 
 **학습 목표:**
@@ -39,6 +41,13 @@ df = pd.read_csv('../csv_data/bank_marketing.csv')
 print(df.info())
 display(df.head())
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/bank_marketing.csv'
+> ```
+
+
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **고객 프로필 & 마케팅 변수 (Features, X):**
@@ -76,6 +85,13 @@ plt.title('텔레마케팅 예금 가입(Deposit) 성공/실패 비율', fontsiz
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **Class Imbalance (클래스 불균형):** 실패(no)가 무려 약 88~90%에 육박하고, 성공(yes)은 10~12% 내외로 매우 희귀합니다. 
 * 이는 현실의 영업 전환율(Conversion Rate)을 뼈저리게 보여줍니다.
@@ -102,6 +118,13 @@ plt.grid(True, axis='y', linestyle=':', alpha=0.6)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **가입 거절(No) 박스:** 박스 전체가 바닥(0~200초)에 납작하게 짓눌려 있습니다. 관심 없는 고객은 전화를 받자마자 1~2분 내로 칼같이 끊어버림을 뜻합니다.
@@ -134,6 +157,13 @@ plt.text(10, 500, '마이너스 통장(빚) 경계선', color='red', fontweight=
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * 상자(Box) 안에 숨겨져 있던 수천 명의 데이터가 밤하늘의 은하수처럼 찍힙니다. 밀집된 곳은 색이 진하고, 듬성듬성한 곳은 옅습니다.

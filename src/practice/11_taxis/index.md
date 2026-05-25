@@ -42,6 +42,42 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 6433 entries, 0 to 6432
+> Data columns (total 14 columns):
+>  #   Column           Non-Null Count  Dtype         
+> ---  ------           --------------  -----         
+>  0   pickup           6433 non-null   datetime64[us]
+>  1   dropoff          6433 non-null   datetime64[us]
+>  2   passengers       6433 non-null   int64         
+>  3   distance         6433 non-null   float64       
+>  4   fare             6433 non-null   float64       
+>  5   tip              6433 non-null   float64       
+>  6   tolls            6433 non-null   float64       
+>  7   total            6433 non-null   float64       
+>  8   color            6433 non-null   str           
+>  9   payment          6389 non-null   str           
+>  10  pickup_zone      6407 non-null   str           
+>  11  dropoff_zone     6388 non-null   str           
+>  12  pickup_borough   6407 non-null   str           
+>  13  dropoff_borough  6388 non-null   str           
+> dtypes: datetime64[us](2), float64(5), int64(1), str(6)
+> memory usage: 703.7 KB
+> None
+>                pickup             dropoff  ...  pickup_borough  dropoff_borough
+> 0 2019-03-23 20:21:09 2019-03-23 20:27:24  ...       Manhattan        Manhattan
+> 1 2019-03-04 16:11:55 2019-03-04 16:19:00  ...       Manhattan        Manhattan
+> 2 2019-03-27 17:53:01 2019-03-27 18:00:25  ...       Manhattan        Manhattan
+> 3 2019-03-10 01:23:59 2019-03-10 01:49:51  ...       Manhattan        Manhattan
+> 4 2019-03-30 13:27:42 2019-03-30 13:37:14  ...       Manhattan        Manhattan
+> 
+> [5 rows x 14 columns]
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * `pickup`, `dropoff`: 승차 시간과 하차 시간
@@ -75,6 +111,18 @@ df['pickup_day'] = df['pickup'].dt.day_name() # 월~일요일 이름 반환
 display(df[['pickup', 'pickup_hour', 'pickup_day']].head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> pickup  pickup_hour pickup_day
+> 0 2019-03-23 20:21:09           20   Saturday
+> 1 2019-03-04 16:11:55           16     Monday
+> 2 2019-03-27 17:53:01           17  Wednesday
+> 3 2019-03-10 01:23:59            1     Sunday
+> 4 2019-03-30 13:27:42           13   Saturday
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `dt` 접근자(Accessor): 판다스에서 날짜 데이터 뒤에 `.dt`를 붙이면, 연/월/일/시/분/초는 물론이고 요일, 분기 등 인간이 쓰는 모든 시간 개념을 마법처럼 쏙쏙 뽑아낼 수 있습니다. 이 기법은 시계열 데이터 분석에서 **절대 모르면 안 되는 가장 중요한 스킬**입니다.
 
@@ -97,6 +145,11 @@ plt.xlabel('탑승 시간 (0시 ~ 23시)')
 plt.ylabel('탑승 건수 (Count)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **아침 러시 아워 (Morning Rush):** 새벽 5시를 기점으로 급격히 상승하여 **아침 8~9시**에 1차 피크를 찍습니다. 직장인들의 출근 시간대입니다.
@@ -122,6 +175,11 @@ plt.ylabel('팁 (달러, $)')
 plt.ylim(-1, 15) # 팁이 너무 높은 극단치(이상치)를 잘라내고 보기 좋게 확대
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **차트 해석:** 

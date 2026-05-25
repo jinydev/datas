@@ -42,6 +42,36 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 53940 entries, 0 to 53939
+> Data columns (total 10 columns):
+>  #   Column   Non-Null Count  Dtype   
+> ---  ------   --------------  -----   
+>  0   carat    53940 non-null  float64 
+>  1   cut      53940 non-null  category
+>  2   color    53940 non-null  category
+>  3   clarity  53940 non-null  category
+>  4   depth    53940 non-null  float64 
+>  5   table    53940 non-null  float64 
+>  6   price    53940 non-null  int64   
+>  7   x        53940 non-null  float64 
+>  8   y        53940 non-null  float64 
+>  9   z        53940 non-null  float64 
+> dtypes: category(3), float64(6), int64(1)
+> memory usage: 3.0 MB
+> None
+>    carat      cut color clarity  depth  table  price     x     y     z
+> 0   0.23    Ideal     E     SI2   61.5   55.0    326  3.95  3.98  2.43
+> 1   0.21  Premium     E     SI1   59.8   61.0    326  3.89  3.84  2.31
+> 2   0.23     Good     E     VS1   56.9   65.0    327  4.05  4.07  2.31
+> 3   0.29  Premium     I     VS2   62.4   58.0    334  4.20  4.23  2.63
+> 4   0.31     Good     J     SI2   63.3   58.0    335  4.34  4.35  2.75
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Target (예측해야 할 정답):**
@@ -75,6 +105,28 @@ clean_df = df[(df['x'] > 0) & (df['y'] > 0) & (df['z'] > 0)]
 print(f"\n[정제 후] 안전하게 남은 정상 데이터 개수: {len(clean_df)}개")
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> carat         depth  ...             y             z
+> count  53940.000000  53940.000000  ...  53940.000000  53940.000000
+> mean       0.797940     61.749405  ...      5.734526      3.538734
+> std        0.474011      1.432621  ...      1.142135      0.705699
+> min        0.200000     43.000000  ...      0.000000      0.000000
+> 25%        0.400000     61.000000  ...      4.720000      2.910000
+> 50%        0.700000     61.800000  ...      5.710000      3.530000
+> 75%        1.040000     62.500000  ...      6.540000      4.040000
+> max        5.010000     79.000000  ...     58.900000     31.800000
+> 
+> [8 rows x 7 columns]
+> 
+> [정제 전] 크기가 0인 다이아몬드 개수:
+> 20
+> 
+> [정제 후] 안전하게 남은 정상 데이터 개수: 53920개
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `df.describe()` 결과를 유심히 보면, `x`, `y`, `z`(다이아몬드의 가로, 세로, 높이)의 **최솟값(min)이 0**으로 찍혀 있습니다.
 * 현실 세계에서 질량(Carat)이 존재하고 가격(Price)이 매겨진 다이아몬드의 크기(mm)가 0이라는 것은 물리적으로 불가능합니다. 이는 데이터를 입력할 때 발생한 **'휴먼 에러'**이거나 기계의 측정 오류입니다.
@@ -99,6 +151,11 @@ plt.xlabel('가격 (USD)')
 plt.ylabel('빈도수 (Count)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **전형적인 부(Wealth)의 분포:** 차트를 보면 대다수의 다이아몬드는 1,000달러~2,000달러(약 100~300만 원) 구간에 빽빽하게 몰려 있습니다. 
@@ -132,6 +189,11 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(title='세공(Cut)', title_fontsize='13', loc='lower right')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트
 * **`sample(n=1000)`**: 빅데이터를 시각화할 때 산점도에 점 5만 개를 모두 찍으면 하나의 거대한 검은색 덩어리로 변해서 패턴을 읽을 수 없게 됩니다(Overplotting 문제). 이럴 땐 데이터의 통계적 특성을 유지한 채 일부만 추출하는 샘플링이 필수적입니다.

@@ -7,6 +7,8 @@ permalink: /practice/21_wine/
 # 실전 데이터 분석 21: 로컬 CSV 데이터 로드 및 타겟 상관관계 분석
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 지금까지는 Seaborn에 내장된 연습용 데이터(Toy Dataset)들을 활용했습니다. 이제부터는 실무 환경과 동일하게 **로컬 폴더에 저장된 실제 CSV 파일**을 불러와서 분석하는 방법을 배웁니다. 
 머신러닝 교과서에 단골로 등장하는 '레드 와인 품질(Wine Quality)' 데이터를 통해, 수십 개의 화학 성분 중 와인의 맛을 결정짓는 핵심 단서를 통계적으로 찾아냅니다.
 
@@ -41,6 +43,13 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/winequality.csv'
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Features (화학 성분, X):** `fixed_acidity`(고정 산도), `volatile_acidity`(휘발성 산도), `citric_acid`(구연산), `residual_sugar`(잔여 당분), `chlorides`(염화물), `alcohol`(알코올 도수) 등 11개의 수치형 변수.
@@ -65,6 +74,13 @@ quality_corr = correlation_matrix['quality'].sort_values(ascending=False)
 print("--- 와인 품질(Quality)과 가장 상관관계가 높은 성분들 ---")
 print(quality_corr)
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `df.corr()` 결과는 -1(완벽한 반비례)부터 1(완벽한 비례) 사이의 숫자로 나옵니다.
@@ -94,6 +110,13 @@ plt.grid(axis='y', linestyle='--', alpha=0.5)
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 시각화 차트 읽는 법
 * 막대그래프를 보면 5점과 6점짜리 '평범한 와인'이 전체 데이터의 80% 이상을 차지하며, 전형적인 종 모양(정규 분포)을 그리고 있습니다.
 * 반면, 3점(최악)이나 8점(최고급) 와인은 데이터가 극도로 부족합니다.
@@ -120,6 +143,13 @@ plt.grid(True, axis='y', alpha=0.3)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * 각 박스의 한가운데를 가로지르는 가로선(중앙값, Median)의 흐름을 잘 따라가 보세요.

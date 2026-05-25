@@ -42,6 +42,37 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 398 entries, 0 to 397
+> Data columns (total 9 columns):
+>  #   Column        Non-Null Count  Dtype  
+> ---  ------        --------------  -----  
+>  0   mpg           398 non-null    float64
+>  1   cylinders     398 non-null    int64  
+>  2   displacement  398 non-null    float64
+>  3   horsepower    392 non-null    float64
+>  4   weight        398 non-null    int64  
+>  5   acceleration  398 non-null    float64
+>  6   model_year    398 non-null    int64  
+>  7   origin        398 non-null    str    
+>  8   name          398 non-null    str    
+> dtypes: float64(4), int64(3), str(2)
+> memory usage: 28.1 KB
+> None
+>     mpg  cylinders  displacement  ...  model_year  origin                       name
+> 0  18.0          8         307.0  ...          70     usa  chevrolet chevelle malibu
+> 1  15.0          8         350.0  ...          70     usa          buick skylark 320
+> 2  18.0          8         318.0  ...          70     usa         plymouth satellite
+> 3  16.0          8         304.0  ...          70     usa              amc rebel sst
+> 4  17.0          8         302.0  ...          70     usa                ford torino
+> 
+> [5 rows x 9 columns]
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Target (예측해야 할 정답):**
@@ -80,6 +111,22 @@ df['horsepower'] = df['horsepower'].fillna(df.groupby('cylinders')['horsepower']
 print("\n결측치 처리 완료. 현재 결측치 수:", df['horsepower'].isnull().sum())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> --- 기통 수에 따른 평균 마력 ---
+> cylinders
+> 3     99.250000
+> 4     78.281407
+> 5     82.333333
+> 6    101.506024
+> 8    158.300971
+> Name: horsepower, dtype: float64
+> 
+> 결측치 처리 완료. 현재 결측치 수: 0
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **전체 평균의 함정:** 타이타닉호 승객의 나이처럼 전체가 비슷한 분포를 이룰 때는 전체 평균(또는 중앙값)을 써도 됩니다. 하지만 자동차는 4기통 소형차(약 78마력)와 8기통 대형차(약 158마력)의 체급 차이가 극심합니다. 만약 결측치가 난 소형차에 전체 평균인 104마력을 때려 넣으면, 졸지에 소형차가 스포츠카의 힘을 내는 심각한 데이터 왜곡이 발생합니다.
 * **Groupby Imputation:** 따라서 결측치를 채울 때는 항상 **"이 변수와 가장 연관성이 높은 다른 변수가 무엇일까?"**를 고민해야 합니다. 마력은 실린더(기통 수)와 물리적으로 완벽히 비례하므로, "같은 기통 수를 가진 차들의 평균"으로 채워 넣는 것이 가장 과학적인 접근법입니다.
@@ -103,6 +150,11 @@ plt.xlabel('제조 국가')
 plt.ylabel('연비 (Miles Per Gallon)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **미국(usa):** 상자의 위치가 가장 밑(연비 15~20 수준)에 쳐져 있습니다. 즉, 기름을 길바닥에 쏟고 다니는 수준의 최악의 연비를 보여줍니다.
@@ -130,6 +182,11 @@ plt.grid(True, linestyle='--', alpha=0.5)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트
 * **음(-)의 상관관계 (Negative Correlation):** 왼쪽 위에서 오른쪽 아래로 곤두박질치는 뚜렷한 **우하향** 추세선들이 보입니다. 차가 1,000파운드씩 무거워질 때마다 연비가 가차 없이 박살 나는 모습을 보여줍니다.

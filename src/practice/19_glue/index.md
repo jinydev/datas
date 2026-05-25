@@ -7,6 +7,8 @@ permalink: /practice/19_glue/
 # 실전 데이터 분석 19: 데이터 2차원 재배치(`pivot`)와 히트맵(Heatmap)
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 우리가 흔히 쓰는 ChatGPT 같은 인공지능은 사람의 언어를 얼마나 잘 이해할까요? 이를 평가하기 위해 고안된 종합 국어 수능 시험이 바로 **GLUE (General Language Understanding Evaluation)** 벤치마크입니다. 2018년과 2019년에 쏟아져 나온 다양한 인공지능 모델들의 성적표를 분석해 봅니다.
 
 **학습 목표:**
@@ -39,6 +41,31 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 64 entries, 0 to 63
+> Data columns (total 5 columns):
+>  #   Column   Non-Null Count  Dtype  
+> ---  ------   --------------  -----  
+>  0   Model    64 non-null     str    
+>  1   Year     64 non-null     int64  
+>  2   Encoder  64 non-null     str    
+>  3   Task     64 non-null     str    
+>  4   Score    64 non-null     float64
+> dtypes: float64(1), int64(1), str(3)
+> memory usage: 2.6 KB
+> None
+>          Model  Year      Encoder  Task  Score
+> 0        ERNIE  2019  Transformer  CoLA   75.5
+> 1           T5  2019  Transformer  CoLA   71.6
+> 2      RoBERTa  2019  Transformer  CoLA   67.8
+> 3         BERT  2018  Transformer  CoLA   60.5
+> 4  BiLSTM+ELMo  2018         LSTM  CoLA   32.1
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * `Model`: 평가를 받은 인공지능 모델의 이름 (BERT, ERNIE, RoBERTa, BiLSTM 등)
@@ -63,6 +90,22 @@ pivot_df = df.pivot(index='Model', columns='Task', values='Score')
 # 보기 좋게 모델명 알파벳 순서(또는 인덱스)로 정렬되어 출력됩니다.
 display(pivot_df)
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Task         CoLA  MNLI  MRPC  QNLI   QQP   RTE  SST-2  STS-B
+> Model                                                        
+> BERT         60.5  86.7  89.3  92.7  72.1  70.1   94.9   87.6
+> BiLSTM       11.6  65.6  81.8  74.6  62.5  57.4   82.8   70.3
+> BiLSTM+Attn  18.6  67.6  83.9  74.3  60.1  58.4   83.0   72.8
+> BiLSTM+CoVe  18.5  65.4  78.7  70.8  60.6  52.7   81.9   64.4
+> BiLSTM+ELMo  32.1  67.2  84.7  75.5  61.1  57.4   89.3   70.3
+> ERNIE        75.5  92.3  93.9  97.3  75.2  92.6   97.8   93.0
+> RoBERTa      67.8  90.8  92.3  95.4  74.3  88.2   96.7   92.2
+> T5           71.6  92.2  92.8  96.9  75.1  92.8   97.5   93.1
+> ```
+
+
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 이처럼 데이터를 2차원 격자(Grid)로 재조립하는 과정을 **피벗(Pivot)**이라고 합니다.
@@ -92,6 +135,11 @@ plt.ylabel('인공지능 모델 (Model)')
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **단 1초 만에 전체 판세를 읽을 수 있습니다.** 히트맵이 가진 가장 강력한 무기입니다.
@@ -123,6 +171,11 @@ plt.grid(axis='y', linestyle='--', alpha=0.6)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * 과거 2018년 이전, 인공지능이 언어를 배울 때는 단어를 순서대로 하나씩 외우는 **`LSTM`** 기술을 썼습니다. 파란색 선을 보면 성적이 처참합니다.

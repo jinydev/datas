@@ -760,6 +760,25 @@
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">species</span><span class="sh">'</span><span class="p">].</span><span class="nf">value_counts</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sepal_length  sepal_width  petal_length  petal_width
+count    150.000000   150.000000    150.000000   150.000000
+mean       5.843333     3.057333      3.758000     1.199333
+std        0.828066     0.435866      1.765298     0.762238
+min        4.300000     2.000000      1.000000     0.100000
+25%        5.100000     2.800000      1.600000     0.300000
+50%        5.800000     3.000000      4.350000     1.300000
+75%        6.400000     3.300000      5.100000     1.800000
+max        7.900000     4.400000      6.900000     2.500000
+species
+setosa        50
+versicolor    50
+virginica     50
+Name: count, dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">df.describe()</code>: 데이터 프레임 내 모든 ‘숫자형’ 컬럼에 대한 요약 통계를 한 번에 보여주는 아주 강력한 함수입니다. 가장 짧은 꽃잎이 몇 cm인지(<code class="language-plaintext highlighter-rouge">min</code>), 평균은 얼마인지(<code class="language-plaintext highlighter-rouge">mean</code>) 한눈에 파악할 수 있습니다.</li>
@@ -798,6 +817,32 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">isnull</span><span class="p">().</span><span class="nf">sum</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   sepal_length  150 non-null    float64
+ 1   sepal_width   150 non-null    float64
+ 2   petal_length  150 non-null    float64
+ 3   petal_width   150 non-null    float64
+ 4   species       150 non-null    str    
+dtypes: float64(4), str(1)
+memory usage: 6.0 KB
+None
+------------------------
+결측치 총합:
+sepal_length    0
+sepal_width     0
+petal_length    0
+petal_width     0
+species         0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">df.info()</code> 결과를 보면 총 150개의 행(entries)이 있는데, 모든 컬럼이 <code class="language-plaintext highlighter-rouge">150 non-null</code>이라고 출력됩니다. 즉, <strong>비어있는 칸이 단 하나도 없다(결측치 0%)</strong>는 뜻입니다.</li>
@@ -824,6 +869,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li><strong>Setosa (빨간색 영역)</strong>: 그래프 맨 왼쪽에 <code class="language-plaintext highlighter-rouge">setosa</code>의 꽃잎 길이가 1~2cm 부근에 완전히 독립적으로 모여 있습니다. 다른 품종과 전혀 겹치지 않습니다. 즉, <strong>“꽃잎 길이가 2.5cm 미만이면 무조건 Setosa이다”</strong>라는 완벽한 규칙을 단 하나의 차트만으로 찾아낸 것입니다!</li>
@@ -849,6 +899,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">--</span><span class="sh">'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-차트가-말해주는-인공지능의-원리">💡 차트가 말해주는 인공지능의 원리</h3>
 <ul>

@@ -759,6 +759,31 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 90 entries, 0 to 89
+Data columns (total 6 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   Unnamed: 0  90 non-null     int64   
+ 1   id          90 non-null     int64   
+ 2   diet        90 non-null     category
+ 3   pulse       90 non-null     int64   
+ 4   time        90 non-null     category
+ 5   kind        90 non-null     category
+dtypes: category(3), int64(3)
+memory usage: 2.9 KB
+None
+   Unnamed: 0  id     diet  pulse    time  kind
+0           0   1  low fat     85   1 min  rest
+1           1   1  low fat     85  15 min  rest
+2           2   1  low fat     88  30 min  rest
+3           3   2  low fat     90   1 min  rest
+4           4   2  low fat     92  15 min  rest
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -814,6 +839,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_2.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li><strong>포인트 플롯(Pointplot)의 장점:</strong> 점을 이어주는 ‘기울기(Slope)’를 통해 변화율을 극적으로 보여줍니다.</li>
@@ -844,6 +874,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">suptitle</span><span class="p">(</span><span class="sh">'</span><span class="s">식단(Diet)과 운동(Kind)이 심박수에 미치는 상호작용 효과</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

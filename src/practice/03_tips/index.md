@@ -45,6 +45,33 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 244 entries, 0 to 243
+> Data columns (total 7 columns):
+>  #   Column      Non-Null Count  Dtype   
+> ---  ------      --------------  -----   
+>  0   total_bill  244 non-null    float64 
+>  1   tip         244 non-null    float64 
+>  2   sex         244 non-null    category
+>  3   smoker      244 non-null    category
+>  4   day         244 non-null    category
+>  5   time        244 non-null    category
+>  6   size        244 non-null    int64   
+> dtypes: category(4), float64(2), int64(1)
+> memory usage: 7.4 KB
+> None
+>    total_bill   tip     sex smoker  day    time  size
+> 0       16.99  1.01  Female     No  Sun  Dinner     2
+> 1       10.34  1.66    Male     No  Sun  Dinner     3
+> 2       21.01  3.50    Male     No  Sun  Dinner     3
+> 3       23.68  3.31    Male     No  Sun  Dinner     2
+> 4       24.59  3.61  Female     No  Sun  Dinner     4
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 * `df.info()`를 실행하면 총 244건의 결제 내역이 출력되며, 결측치(NaN)가 하나도 없음을 알 수 있습니다.
 * 데이터의 타입(Dtype)을 유심히 보면 `float64`(실수), `int64`(정수) 외에 `category`라는 독특한 타입이 있습니다. 남성/여성, 점심/저녁처럼 정해진 몇 가지 종류(분류) 중 하나만 가질 수 있는 데이터를 메모리에 효율적으로 저장하기 위해 Pandas가 내부적으로 사용하는 데이터 타입입니다.
@@ -79,6 +106,18 @@ df['tip_percent'] = df['tip_rate'] * 100
 display(df[['total_bill', 'tip', 'tip_rate', 'tip_percent']].head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> total_bill   tip  tip_rate  tip_percent
+> 0       16.99  1.01  0.059447     5.944673
+> 1       10.34  1.66  0.160542    16.054159
+> 2       21.01  3.50  0.166587    16.658734
+> 3       23.68  3.31  0.139780    13.978041
+> 4       24.59  3.61  0.146808    14.680765
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **피처 엔지니어링(Feature Engineering)**: 원본 데이터에는 없지만, 분석가의 도메인 지식(레스토랑은 비율로 팁을 준다는 사실)을 결합하여 기존 컬럼들을 더하거나 나누어 새로운 인사이트용 컬럼을 창조해 내는 과정입니다. 
 * 머신러닝 대회나 실무에서 모델의 성능을 획기적으로 끌어올리는 가장 강력한 무기가 바로 이 피처 엔지니어링입니다. 우리는 방금 가장 기초적인 피처 엔지니어링을 수행했습니다.
@@ -102,6 +141,11 @@ plt.xlabel('총 결제 금액 ($)')
 plt.ylabel('빈도수 (Count)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **우측 꼬리 분포 (Right-Skewed Distribution):** 차트를 보면 왼쪽(10~20달러 부근)에 거대한 산봉우리가 솟아 있고, 오른쪽으로 갈수록 꼬리가 길게 늘어지는 모양새를 하고 있습니다.
@@ -127,6 +171,11 @@ plt.ylabel('지불한 팁 ($)')
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트
 * **`lmplot` (Linear Model Plot):** 산점도(Scatter)를 그린 후, 그 점들의 중심을 통과하는 최적의 직선(회귀선, y = ax + b)을 통계학적으로 계산하여 쫙 그어주는 강력한 함수입니다.

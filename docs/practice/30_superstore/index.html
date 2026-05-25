@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-30-글로벌-슈퍼스토어-비즈니스-kpi-분석">실전 데이터 분석 30: 글로벌 슈퍼스토어 비즈니스 KPI 분석</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>글로벌 대형 마트(Superstore)의 방대한 <strong>매출(Sales) 및 순이익(Profit)</strong>이 담긴 결제 데이터셋입니다. 수만 건의 파편화된 영수증 데이터를 모아서, 회사의 운명을 결정짓는 핵심 KPI(핵심 성과 지표) 인사이트를 뽑아내는 훈련을 합니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+글로벌 대형 마트(Superstore)의 방대한 <strong>매출(Sales) 및 순이익(Profit)</strong>이 담긴 결제 데이터셋입니다. 수만 건의 파편화된 영수증 데이터를 모아서, 회사의 운명을 결정짓는 핵심 KPI(핵심 성과 지표) 인사이트를 뽑아내는 훈련을 합니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -734,7 +736,7 @@
 
 <h2 id="step-1-마트-결제-데이터-구조-data-overview">Step 1: 마트 결제 데이터 구조 (Data Overview)</h2>
 
-<p><img src="img/step1_dataset.svg" alt="Step 1 데이터 구조 개념도" /></p>
+<p><img src="img/step1_superstore_data.svg" alt="Step 1 데이터 구조 개념도" /></p>
 
 <p><code class="language-plaintext highlighter-rouge">csv_data</code> 폴더에 준비해 둔 <code class="language-plaintext highlighter-rouge">superstore.csv</code> 파일을 판다스로 불러옵니다.</p>
 
@@ -755,6 +757,33 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Order Date    1000 non-null   str    
+ 1   Category      1000 non-null   str    
+ 2   Sub-Category  1000 non-null   str    
+ 3   Region        1000 non-null   str    
+ 4   Sales         1000 non-null   float64
+ 5   Profit        1000 non-null   float64
+dtypes: float64(2), str(4)
+memory usage: 47.0 KB
+None
+                   Order Date         Category  ...    Sales  Profit
+0  2022-01-01 00:00:00.000000  Office Supplies  ...  1518.12  105.72
+1  2022-01-01 17:30:48.648648       Technology  ...  1551.85 -159.53
+2  2022-01-02 11:01:37.297297        Furniture  ...  1594.90 -246.74
+3  2022-01-03 04:32:25.945945  Office Supplies  ...  1523.47 -121.23
+4  2022-01-03 22:03:14.594594  Office Supplies  ...  1286.13  526.79
+
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 분석 대상 컬럼:</strong></p>
 <ul>
@@ -769,7 +798,7 @@
 
 <h2 id="step-2-카테고리별-요약-통계-병합-groupby">Step 2: 카테고리별 요약 통계 병합 (<code class="language-plaintext highlighter-rouge">groupby</code>)</h2>
 
-<p><img src="img/step2_missing_values.svg" alt="Step 2 데이터 정제 개념도" /></p>
+<p><img src="img/step2_groupby_logic.svg" alt="Step 2 데이터 정제 개념도" /></p>
 
 <p>원본 데이터는 영수증 1장당 1줄씩 수만 줄이 적혀 있는 파편화된 원시 로그입니다. 사장님이 “그래서 우리 가구 부서가 총 얼마 벌었어?”라고 물을 때 대답할 수 있으려면, <code class="language-plaintext highlighter-rouge">groupby</code> 함수로 데이터를 묶어서 요약(Aggregation)해야 합니다.</p>
 
@@ -780,17 +809,27 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">category_df</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sales    Profit
+Category                            
+Furniture        188472.67  23756.67
+Office Supplies  603497.57  92147.16
+Technology       214994.38  35773.71
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li>단 한 줄의 <code class="language-plaintext highlighter-rouge">groupby</code> 코드로 복잡했던 수만 건의 데이터가 ‘Furniture(가구)’, ‘Office Supplies(사무용품)’, ‘Technology(전자기기)’ 딱 3줄짜리 요약 보고서로 변신했습니다.</li>
-  <li><strong>충격적인 팩트 체크:</strong> Furniture(가구) 부서를 보세요. 고객들이 결제한 <code class="language-plaintext highlighter-rouge">Sales</code>는 74만 달러나 되는데, 회사가 남긴 <code class="language-plaintext highlighter-rouge">Profit</code>은 오히려 <strong>-1만 7천 달러(마이너스)</strong>입니다. 팔면 팔수록 회사가 손해를 보고 있다는 뜻입니다. 당장 원인을 시각화로 파헤쳐야 합니다.</li>
+  <li><strong>충격적인 팩트 체크:</strong> Furniture(가구) 부서를 보세요. 고객들이 결제한 <code class="language-plaintext highlighter-rouge">Sales</code>는 약 18.8만 달러나 되는데, 회사가 남긴 <code class="language-plaintext highlighter-rouge">Profit</code>은 다른 카테고리에 비해 가장 낮습니다(약 2.3만 달러). 만약 전체 매출 대비 수익률이 이렇게 바닥을 치거나 적자(-마이너스)가 발생한다면 팔면 팔수록 회사가 손해를 보고 있다는 뜻이 됩니다. 원인을 시각화로 파헤쳐야 합니다.</li>
 </ul>
 
 <hr />
 
 <h2 id="step-3-매출-vs-수익-산점도-미끼-상품-발굴">Step 3: 매출 vs 수익 산점도 (미끼 상품 발굴)</h2>
 
-<p><img src="img/step3_visualization.svg" alt="Step 3 시각화 개념도" /></p>
+<p><img src="img/step3_scatter_loss_leader.svg" alt="Step 3 시각화 개념도" /></p>
 
 <p>가구 부서에서 대체 무슨 일이 벌어지고 있는지 알아보기 위해, 결제 건 하나하나를 점(Dot)으로 찍어보는 <code class="language-plaintext highlighter-rouge">scatterplot</code>(산점도)을 그려보겠습니다. X축은 매출, Y축은 수익입니다.</p>
 
@@ -810,18 +849,23 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li><strong>수익 정상 궤도 (빨간 선 위쪽):</strong> 점들이 우상향(오른쪽 위)으로 퍼져 나갑니다. 비싼 물건(X 증가)을 팔면 마진(Y 증가)도 많이 남는 정상적인 비즈니스입니다. (주로 전자기기)</li>
   <li><strong>미끼 상품/할인 출혈 (빨간 선 아래쪽):</strong> 엄청나게 특이한 현상이 보입니다. 그래프가 오른쪽으로 갈수록(매출액이 몇천 달러씩 커지는데), 점들이 밑으로 곤두박질칩니다(수익이 수천 달러씩 마이너스).</li>
-  <li><strong>결론:</strong> 마트가 고객을 끌어모으기 위해 거대한 가구(Furniture) 등을 원가 이하로 폭탄 세일하여 팔고 있는 것입니다. 이런 미끼 상품(Loss Leader) 전략이 도를 넘어서 회사 전체의 이익을 깎아 먹고 있는 상황입니다.</li>
+  <li><strong>결론:</strong> 마트가 고객을 끌어모으기 위해 거대한 가구(Furniture) 등을 원가 이하로 폭탄 세일하여 팔고 있는 결제 건들이 다수 존재함을 알 수 있습니다. 이런 미끼 상품(Loss Leader) 전략이 도를 넘으면 회사 전체의 이익을 깎아 먹게 됩니다.</li>
 </ul>
 
 <hr />
 
 <h2 id="step-4-카테고리별-최종-수익-비교-막대그래프-barplot">Step 4: 카테고리별 최종 수익 비교 막대그래프 (Barplot)</h2>
 
-<p><img src="img/step4_multivariate.svg" alt="Step 4 상관관계 분석 개념도" /></p>
+<p><img src="img/step4_barplot_roi.svg" alt="Step 4 상관관계 분석 개념도" /></p>
 
 <p>경영진에게 보고하기 위해, 각 카테고리가 1년 동안 벌어들인 총 순이익(Profit)을 직관적인 막대그래프(<code class="language-plaintext highlighter-rouge">barplot</code>)로 요약하여 보여줍시다.</p>
 
@@ -842,10 +886,15 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>
-  <li><strong>전자기기(Technology) &amp; 사무용품(Office Supplies):</strong> 막대가 0선 위로 웅장하게 치솟아 있습니다. 이 두 부서가 회사의 직원 월급을 주고 운영하게 만드는 효자(캐시카우)입니다.</li>
-  <li><strong>가구(Furniture):</strong> 막대가 0선 아래로 시원하게 뚫고 내려갔습니다. 회사의 돈을 태워 없애고 있는 주범입니다. 사장님은 이 차트를 보는 즉시 가구 부서장에게 할인율 축소 정책이나 재고 관리 원가 절감 방안을 명령할 것입니다. 이것이 데이터 분석이 비즈니스를 움직이는 힘입니다.</li>
+  <li><strong>전자기기(Technology) &amp; 사무용품(Office Supplies):</strong> 막대가 높게 치솟아 있습니다. 특히 사무용품 부서가 회사의 살림을 책임지는 효자(캐시카우)입니다.</li>
+  <li><strong>가구(Furniture):</strong> 막대가 다른 부서에 비해 가장 낮습니다. 거대한 매출 규모에도 불구하고, 잦은 할인과 적자 결제 건들 때문에 전체 수익성이 바닥을 칩니다. 사장님은 이 차트를 보는 즉시 가구 부서장에게 할인율 축소 정책이나 재고 관리 원가 절감 방안을 명령할 것입니다. 이것이 데이터 분석이 비즈니스를 움직이는 힘입니다.</li>
 </ul>
 
 <hr />

@@ -758,6 +758,20 @@
 <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">데이터셋 종류:</span><span class="sh">"</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">dataset</span><span class="sh">'</span><span class="p">].</span><span class="nf">unique</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dataset     x     y
+0       I  10.0  8.04
+1       I   8.0  6.95
+2       I  13.0  7.58
+3       I   9.0  8.81
+4       I  11.0  8.33
+데이터셋 종류: &lt;StringArray&gt;
+['I', 'II', 'III', 'IV']
+Length: 4, dtype: str
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -787,6 +801,21 @@
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">데이터셋 I의 상관계수: </span><span class="si">{</span><span class="n">corr_I</span><span class="si">:</span><span class="p">.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">데이터셋 II의 상관계수: </span><span class="si">{</span><span class="n">corr_II</span><span class="si">:</span><span class="p">.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x          y      
+        mean   var mean   var
+dataset                      
+I        9.0  11.0  7.5  4.13
+II       9.0  11.0  7.5  4.13
+III      9.0  11.0  7.5  4.12
+IV       9.0  11.0  7.5  4.12
+
+데이터셋 I의 상관계수: 0.816
+데이터셋 II의 상관계수: 0.816
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -840,6 +869,11 @@
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">gcf</span><span class="p">().</span><span class="nf">suptitle</span><span class="p">(</span><span class="sh">'</span><span class="s">앤스콤 콰르텟: 요약 통계량은 같지만 분포는 완전히 다른 4개의 세계</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <p>4개의 그래프에 그어진 직선(회귀선)은 기울기와 높이가 모두 똑같습니다. (통계량이 똑같기 때문입니다.) 하지만 점들의 분포는 완전히 다릅니다!</p>

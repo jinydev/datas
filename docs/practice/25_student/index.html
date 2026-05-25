@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-25-학생-성적-예측과-다중-플롯-오버레이">실전 데이터 분석 25: 학생 성적 예측과 다중 플롯 오버레이</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>교육부나 학교 현장에서 자주 다루는 <strong>학생 학업 성취도(Student Performance)</strong> 데이터 셋입니다. 포르투갈 학생들의 과거 수학 성적, 공부 시간, 결석 횟수, 심지어 부모님의 직업까지 방대한 특성(Feature)이 담겨 있습니다. 이 실무 데이터를 통해 우리는 최종 기말고사 성적에 절대적인 영향을 미치는 요인들을 수학적으로 찾아내고 눈으로 증명해 봅니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+교육부나 학교 현장에서 자주 다루는 <strong>학생 학업 성취도(Student Performance)</strong> 데이터 셋입니다. 포르투갈 학생들의 과거 수학 성적, 공부 시간, 결석 횟수, 심지어 부모님의 직업까지 방대한 특성(Feature)이 담겨 있습니다. 이 실무 데이터를 통해 우리는 최종 기말고사 성적에 절대적인 영향을 미치는 요인들을 수학적으로 찾아내고 눈으로 증명해 봅니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -755,6 +757,12 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/student_performance.csv'
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -782,6 +790,12 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">g3_corr</span><span class="p">.</span><span class="nf">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># 하위 3개
 </span></code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><strong>데이터 누수(Data Leakage)의 함정:</strong> 가장 상관계수가 높은 1, 2위는 뻔하게도 <code class="language-plaintext highlighter-rouge">G2</code>(0.90)와 <code class="language-plaintext highlighter-rouge">G1</code>(0.80)입니다. 2학기 중간고사를 잘 본 학생이 기말고사를 잘 보는 건 당연합니다. 실무 머신러닝 대회에서는 이런 ‘너무 뻔한 정답지(과거 성적)’를 변수로 주면 예측 난이도가 급락하므로 고의로 제거하고 학습시킵니다.</li>
@@ -808,6 +822,12 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
@@ -839,6 +859,12 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

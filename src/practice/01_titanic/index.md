@@ -42,6 +42,20 @@ df = sns.load_dataset('titanic')
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> survived  pclass     sex   age  ...  deck  embark_town  alive  alone
+> 0         0       3    male  22.0  ...   NaN  Southampton     no  False
+> 1         1       1  female  38.0  ...     C    Cherbourg    yes  False
+> 2         1       3  female  26.0  ...   NaN  Southampton    yes   True
+> 3         1       1  female  35.0  ...     C  Southampton    yes  False
+> 4         0       3    male  35.0  ...   NaN  Southampton     no   True
+> 
+> [5 rows x 15 columns]
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 * `sns.load_dataset('titanic')`: Seaborn 라이브러리는 교육용으로 미리 정제된 유명한 데이터셋들을 인터넷에서 바로 다운로드하여 Pandas DataFrame 형태로 반환해 주는 편리한 기능을 제공합니다.
 * `display(df.head())`: 표 형태의 데이터를 시각적으로 깔끔하게 렌더링하여 첫 5줄을 보여줍니다. 
@@ -80,6 +94,46 @@ print("\n--- 정제 후 결측치 확인 ---")
 print(df.isnull().sum())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> --- 정제 전 결측치 확인 ---
+> survived         0
+> pclass           0
+> sex              0
+> age            177
+> sibsp            0
+> parch            0
+> fare             0
+> embarked         2
+> class            0
+> who              0
+> adult_male       0
+> deck           688
+> embark_town      2
+> alive            0
+> alone            0
+> dtype: int64
+> 
+> --- 정제 후 결측치 확인 ---
+> survived       0
+> pclass         0
+> sex            0
+> age            0
+> sibsp          0
+> parch          0
+> fare           0
+> embarked       2
+> class          0
+> who            0
+> adult_male     0
+> embark_town    2
+> alive          0
+> alone          0
+> dtype: int64
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **왜 'deck'은 지우고 'age'는 살렸을까요?**
   * `deck`(갑판 번호) 컬럼은 891명의 승객 중 약 688명의 데이터가 비어 있습니다. 이를 임의의 값으로 채우면 오히려 데이터가 심각하게 왜곡되므로, 컬럼 전체를 삭제(`drop`)하는 것이 합리적입니다.
@@ -117,6 +171,11 @@ plt.tight_layout()
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
+
 ### 💡 코드 딥다이브 & 인사이트
 * `countplot`은 **절대적인 인원 수**를 셉니다. 그래프를 보면 남성 탑승객이 여성보다 훨씬 많았으나, 사망자의 대부분은 남성(빨간 막대)이 차지하고 있습니다.
 * `barplot`에 y축으로 0과 1로 이루어진 `survived` 컬럼을 주면, 파이썬은 자동으로 **평균(Mean)**을 계산합니다. 즉, 생존자(1)의 평균을 낸다는 것은 곧 **'생존율(%)'**을 구한다는 뜻입니다.
@@ -148,6 +207,11 @@ plt.grid(True, axis='y', alpha=0.3)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **박스(Box)의 크기**: 데이터의 중간 50%(하위 25% ~ 상위 75%)가 모여 있는 핵심 구간입니다. 상자 안의 굵은 선은 **중앙값(Median)**입니다.

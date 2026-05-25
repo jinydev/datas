@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-24-유방암-종양-진단-violinplot과-pairplot">실전 데이터 분석 24: 유방암 종양 진단 (Violinplot과 Pairplot)</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>의료 인공지능(Medical AI) 분야에서 가장 널리 쓰이는 표준 데이터인 <strong>유방암 진단(Breast Cancer)</strong> 데이터입니다. 세포 핵의 크기와 모양을 수치화한 데이터를 바탕으로, 이것이 단순한 혹(양성)인지 치명적인 암(악성)인지 판별하는 머신러닝 분류(Classification)의 기초를 다집니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+의료 인공지능(Medical AI) 분야에서 가장 널리 쓰이는 표준 데이터인 <strong>유방암 진단(Breast Cancer)</strong> 데이터입니다. 세포 핵의 크기와 모양을 수치화한 데이터를 바탕으로, 이것이 단순한 혹(양성)인지 치명적인 암(악성)인지 판별하는 머신러닝 분류(Classification)의 기초를 다집니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -755,6 +757,12 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/breast_cancer.csv'
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -784,6 +792,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><strong>B (양성, 정상):</strong> 초록색 바이올린을 보면 아래쪽(면적 500 부근)에 아주 뚱뚱하게 뭉쳐 있습니다. 정상 세포들은 크기가 작고 일정하게 유지됨을 의미합니다.</li>
@@ -809,6 +823,12 @@
 <span class="c1"># 스케일링 결과 확인
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">[[</span><span class="sh">'</span><span class="s">diagnosis</span><span class="sh">'</span><span class="p">]</span> <span class="o">+</span> <span class="n">features</span><span class="p">].</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>
@@ -852,6 +872,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">suptitle</span><span class="p">(</span><span class="sh">'</span><span class="s">세포 특성 조합에 따른 유방암 분류 가능성 (Pairplot)</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df_scaled' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>

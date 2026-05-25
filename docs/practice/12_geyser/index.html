@@ -759,6 +759,28 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 272 entries, 0 to 271
+Data columns (total 3 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   duration  272 non-null    float64
+ 1   waiting   272 non-null    int64  
+ 2   kind      272 non-null    str    
+dtypes: float64(1), int64(1), str(1)
+memory usage: 6.5 KB
+None
+   duration  waiting   kind
+0     3.600       79   long
+1     1.800       54  short
+2     3.333       74   long
+3     2.283       62  short
+4     4.533       85   long
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -796,6 +818,13 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>간헐천 분출 시간의 평균: 3.49분
+</code></pre></div>  </div>
+  <p><img src="img/exec_step_2.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li><strong>평균의 배신:</strong> 파이썬으로 계산한 분출 시간의 평균은 약 <strong>3.5분</strong>(빨간 점선)입니다. 하지만 히스토그램을 보면 3.5분 부근의 막대는 거의 텅 비어 있습니다! 즉, “평균적으로 3.5분 뿜는다”고 말하는 것은 최악의 분석입니다. 현실에는 3.5분 뿜는 간헐천이 사실상 존재하지 않기 때문입니다.</li>
@@ -821,6 +850,11 @@
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">gcf</span><span class="p">().</span><span class="nf">suptitle</span><span class="p">(</span><span class="sh">'</span><span class="s">분출 시간(Duration)과 대기 시간(Waiting)의 Jointplot</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트">💡 코드 딥다이브 &amp; 인사이트</h3>
 <ul>
@@ -856,6 +890,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">대기 시간 (Waiting)</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
 
 <h3 id="-시각화-차트-읽는-법-1">💡 시각화 차트 읽는 법</h3>
 <ul>

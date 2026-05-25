@@ -756,6 +756,21 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>network          1                     2  ...         17                       
+node             1                     1  ...          3                      4
+hemi            lh         rh         lh  ...         lh          rh         lh
+0        56.055744  92.031036   3.391576  ... -10.520872  120.490463 -39.686432
+1        55.547253  43.690075 -65.495987  ... -39.607521   24.764011 -36.771008
+2        60.997768  63.438793 -51.108582  ...  12.985169  -75.027451   6.434262
+3        18.514868  12.657158 -34.576603  ... -15.819172  -37.361431  -4.650954
+4        -2.527392 -63.104668 -13.814151  ...   5.453649    5.169828  87.809135
+
+[5 rows x 62 columns]
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>다중 인덱스 (MultiIndex)란?</strong></p>
 <ul>
@@ -781,6 +796,12 @@
 <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">--- 1번 네트워크의 상관계수 행렬 ---</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">display</span><span class="p">(</span><span class="n">corrmat</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: 1
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -814,6 +835,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'corrmat' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li><strong>대각선 (Diagonal):</strong> 왼쪽 위에서 오른쪽 아래로 이어지는 완벽한 빨간색 줄이 보입니다. 이는 1번 노드는 1번 노드와, 2번 노드는 2번 노드와 비교한 것이므로 상관계수가 무조건 1.0(완벽 일치)이기 때문입니다.</li>
@@ -837,6 +864,12 @@
 </span><span class="n">plt</span><span class="p">.</span><span class="nf">gcf</span><span class="p">().</span><span class="nf">suptitle</span><span class="p">(</span><span class="sh">'</span><span class="s">뇌 1번 네트워크 클러스터맵 (유사 노드 군집화)</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'corrmat' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트">💡 코드 딥다이브 &amp; 인사이트</h3>
 <ul>

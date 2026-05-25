@@ -44,6 +44,32 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1064 entries, 0 to 1063
+> Data columns (total 5 columns):
+>  #   Column     Non-Null Count  Dtype  
+> ---  ------     --------------  -----  
+>  0   subject    1064 non-null   str    
+>  1   timepoint  1064 non-null   int64  
+>  2   event      1064 non-null   str    
+>  3   region     1064 non-null   str    
+>  4   signal     1064 non-null   float64
+> dtypes: float64(1), int64(1), str(3)
+> memory usage: 41.7 KB
+> None
+>   subject  timepoint event    region    signal
+> 0     s13         18  stim  parietal -0.017552
+> 1      s5         14  stim  parietal -0.080883
+> 2     s12         18  stim  parietal -0.081033
+> 3     s11         18  stim  parietal -0.046134
+> 4     s10         18  stim  parietal -0.037970
+> ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Target (우리가 예측하거나 분석할 값):**
@@ -72,6 +98,19 @@ print(f"0초일 때 존재하는 총 데이터 개수: {len(time_0_df)}개")
 display(time_0_df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> 0초일 때 존재하는 총 데이터 개수: 56개
+>     subject  timepoint event    region    signal
+> 67       s0          0  stim   frontal -0.021452
+> 84       s1          0  stim  parietal -0.064454
+> 252     s13          0  stim  parietal -0.042467
+> 253     s12          0  stim  parietal  0.003358
+> 254     s11          0  stim  parietal -0.044634
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 일반적인 주식 데이터나 날씨 데이터라면 2024년 1월 1일의 종가는 딱 **1개** 존재합니다.
 * 하지만 이 fMRI 데이터는 0초(Timepoint=0)에 무려 **56개**의 데이터(14명 피험자 x 2개 자극 x 2개 뇌 부위)가 겹쳐 있습니다.
@@ -99,6 +138,11 @@ plt.ylabel('신호 강도 (Signal)')
 plt.axhline(0, color='gray', linestyle='--') # 0을 기준으로 기준선(Baseline) 추가
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **가운데 굵은 선 (Mean):** 해당 시간대에 측정된 14명 피험자의 뇌파 신호들을 모두 더해 평균을 낸 궤적입니다. 대략 5~6초 부근에서 뇌파가 가장 강력하게 요동치는 것을 볼 수 있습니다.
@@ -134,6 +178,11 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout() # 그래프가 잘리지 않게 여백 자동 조정
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트
 * **단 한 장의 그림에 4차원 데이터 요약:** 이 차트는 시간(X), 신호(Y), 자극 종류(색상), 뇌 부위(선 모양)라는 무려 4개의 차원을 단 한 장의 2D 평면에 완벽하게 욱여넣은 데이터 시각화의 걸작입니다.

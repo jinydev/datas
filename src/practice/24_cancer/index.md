@@ -7,6 +7,8 @@ permalink: /practice/24_cancer/
 # 실전 데이터 분석 24: 유방암 종양 진단 (Violinplot과 Pairplot)
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 의료 인공지능(Medical AI) 분야에서 가장 널리 쓰이는 표준 데이터인 **유방암 진단(Breast Cancer)** 데이터입니다. 세포 핵의 크기와 모양을 수치화한 데이터를 바탕으로, 이것이 단순한 혹(양성)인지 치명적인 암(악성)인지 판별하는 머신러닝 분류(Classification)의 기초를 다집니다.
 
 **학습 목표:**
@@ -40,6 +42,13 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/breast_cancer.csv'
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **세포 특성 (Features, X):** `radius_mean`(반지름), `texture_mean`(질감), `perimeter_mean`(둘레), `area_mean`(면적), `smoothness_mean`(매끄러움) 등 세포 핵의 기하학적 특성을 측정한 수치형 데이터들.
@@ -68,6 +77,13 @@ plt.grid(True, axis='y', linestyle='--', alpha=0.5)
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **B (양성, 정상):** 초록색 바이올린을 보면 아래쪽(면적 500 부근)에 아주 뚱뚱하게 뭉쳐 있습니다. 정상 세포들은 크기가 작고 일정하게 유지됨을 의미합니다.
 * **M (악성, 암):** 빨간색 바이올린은 평균적으로 위치가 훨씬 높으며(1000 이상), 위아래로 길쭉하게 찢어져(분산이 큼) 있습니다. 암세포는 제멋대로 커지며 통제 불능 상태임을 시각적으로 완벽하게 증명합니다.
@@ -92,6 +108,13 @@ for col in features:
 # 스케일링 결과 확인
 display(df_scaled[['diagnosis'] + features].head())
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * 결과를 보면 1,000이 넘던 면적 숫자도, 0.09이던 매끄러움 숫자도 모두 **-2.0 ~ +2.0 사이의 비슷한 잣대**로 변환되었습니다.
@@ -128,6 +151,13 @@ sns.pairplot(plot_data, hue='diagnosis', palette={'B': 'steelblue', 'M': 'crimso
 plt.suptitle('세포 특성 조합에 따른 유방암 분류 가능성 (Pairplot)', y=1.02, fontsize=16)
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df_scaled' is not defined
+> ```
+
+
 
 ### 💡 시각화 차트 읽는 법
 * 격자(Grid)의 각 칸은 두 변수가 만나는 산점도입니다.

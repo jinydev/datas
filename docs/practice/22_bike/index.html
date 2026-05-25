@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-22-시계열-피처-엔지니어링과-회귀-시각화">실전 데이터 분석 22: 시계열 피처 엔지니어링과 회귀 시각화</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>우버(Uber)나 따릉이 같은 모빌리티 서비스에서 가장 중요한 것은 무엇일까요? 바로 “내일 몇 대의 자전거가 필요할까?”를 예측하는 것입니다. 날씨, 온도, 계절, 그리고 요일 등 수많은 외부 환경 요인이 사람들의 이동 수요에 어떤 영향을 미치는지 데이터로 증명해 봅니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+우버(Uber)나 따릉이 같은 모빌리티 서비스에서 가장 중요한 것은 무엇일까요? 바로 “내일 몇 대의 자전거가 필요할까?”를 예측하는 것입니다. 날씨, 온도, 계절, 그리고 요일 등 수많은 외부 환경 요인이 사람들의 이동 수요에 어떤 영향을 미치는지 데이터로 증명해 봅니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -755,6 +757,12 @@
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/bike_sharing.csv'
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 컬럼(Columns) 해석:</strong></p>
 <ul>
@@ -782,6 +790,12 @@
 <span class="c1"># 마법이 성공했는지 샘플 확인
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">date</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">day_of_week</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">is_weekend</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">count</span><span class="sh">'</span><span class="p">]].</span><span class="nf">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
@@ -814,6 +828,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li>점들이 뭉게구름처럼 퍼져 있긴 하지만, 가운데를 관통하는 <strong>빨간색 회귀선(Regression Line)</strong>이 아주 매끄럽게 우상향하고 있습니다.</li>
@@ -843,6 +863,12 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>

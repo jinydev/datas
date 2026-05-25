@@ -7,6 +7,8 @@ permalink: /practice/27_adult/
 # 실전 데이터 분석 27: 소득 예측과 기만적 결측치(Imposter) 처리
 
 ## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
 머신러닝 교과서에 반드시 등장하는 **성인 인구조사(Adult Census Income)** 데이터입니다. 나이, 직업, 학력, 결혼 상태, 근로 시간 등의 인적 사항을 바탕으로, 이 사람의 연 소득이 미국 평균 중산층 기준인 5만 달러(약 6~7천만 원)를 넘는지 못 넘는지 분류(Classification)하는 법을 탐구합니다.
 
 **학습 목표:**
@@ -40,6 +42,13 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> Error: [Errno 2] No such file or directory: '../csv_data/adult_income.csv'
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 인적 사항 (Features, X):**
 * `age`(나이), `workclass`(고용 형태: 공무원, 사기업 등)
@@ -69,6 +78,14 @@ print("\n--- 정제 후 데이터 크기 비교 ---")
 print(f"원본 데이터: {len(df)}명 -> 정제 후: {len(df_clean)}명")
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> --- 정제 전 workclass 카테고리 구성 ---
+> Error: name 'df' is not defined
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `value_counts()`로 확인해 보니, 무려 수십~수백 명의 직업이 `?`로 기록되어 있었습니다.
 * AI에게 이 데이터를 그대로 먹이면, `?`라는 새로운 신종 직업이 있는 줄 알고 엉뚱한 패턴을 학습하게 됩니다.
@@ -95,6 +112,13 @@ plt.grid(True, axis='y', linestyle=':', alpha=0.6)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df_clean' is not defined
+> ```
+
+
 
 ### 💡 시각화 차트 읽는 법
 * 보통 사람의 특성(키, 몸무게 등)은 가운데가 볼록한 종 모양(정규 분포)을 그립니다. 
@@ -136,6 +160,13 @@ plt.grid(True, axis='y', linestyle='--', alpha=0.4)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df_clean' is not defined
+> ```
+
+
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
 * **고졸(HS-grad) 및 전문대(Some-college):** 파란색 막대(<=50K)가 압도적으로 높고, 빨간색 막대(>50K)는 바닥에 깔려 있습니다. 전체 파이는 크지만 고소득자의 비율은 매우 처참합니다.

@@ -40,6 +40,20 @@ df = sns.load_dataset('penguins')
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> species     island  bill_length_mm  ...  flipper_length_mm  body_mass_g     sex
+> 0  Adelie  Torgersen            39.1  ...              181.0       3750.0    Male
+> 1  Adelie  Torgersen            39.5  ...              186.0       3800.0  Female
+> 2  Adelie  Torgersen            40.3  ...              195.0       3250.0  Female
+> 3  Adelie  Torgersen             NaN  ...                NaN          NaN     NaN
+> 4  Adelie  Torgersen            36.7  ...              193.0       3450.0  Female
+> 
+> [5 rows x 7 columns]
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Target (예측해야 할 정답):**
@@ -73,6 +87,25 @@ print("\n--- 정제 후 데이터 개수 ---")
 print(f"남은 데이터 개수: {len(df)}개")
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> --- 정제 전 결측치 ---
+> species               0
+> island                0
+> bill_length_mm        2
+> bill_depth_mm         2
+> flipper_length_mm     2
+> body_mass_g           2
+> sex                  11
+> dtype: int64
+> 전체 데이터 개수: 344개
+> 
+> --- 정제 후 데이터 개수 ---
+> 남은 데이터 개수: 333개
+> ```
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `df.isnull().sum()`을 확인해 보면 전체 344마리 중 성별(`sex`)이 누락된 펭귄이 11마리, 부리 길이가 누락된 펭귄이 2마리 정도 있습니다.
 * 전체 데이터(344건) 대비 결측치(11건)의 비율은 겨우 **3% 남짓**입니다. 이처럼 결측치의 비율이 무시해도 될 만큼 아주 적을 때는, 평균이나 중앙값으로 억지로 대치(Imputation)하여 원본 데이터를 훼손하기보다는 **`dropna()`를 사용하여 해당 행을 깔끔하게 날려버리는 것**이 훨씬 안전하고 정석적인 방법입니다.
@@ -96,6 +129,11 @@ plt.xlabel('품종 (Species)')
 plt.ylabel('몸무게 (g)')
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 * **바이올린 플롯(Violinplot)이란?**: 상자 그림(Boxplot)은 중앙값과 사분위수를 명확히 보여주지만, 데이터가 어디에 얼마나 뭉쳐있는지(밀도)는 알 수 없습니다. 바이올린 플롯은 내부에 미니 Boxplot을 품고 있으면서, 외곽선의 두께를 통해 **데이터의 밀도(KDE 곡선)**까지 동시에 묘사해 주는 매우 세련된 차트입니다.
@@ -129,6 +167,11 @@ axes[1].set_title('2. 품종별 분리 (각 품종 내에서는 길수록 두껍
 plt.tight_layout()
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 통계적 함정: 심슨의 역설 (Simpson's Paradox)
 * **왼쪽 차트의 오류**: 전체 펭귄을 구분 없이 하나의 그룹으로 묶고 회귀선(빨간선)을 그리면, **우하향**하는 선이 그려집니다. 즉, "부리가 길어질수록 두께는 얇아진다"는 결론이 나옵니다.

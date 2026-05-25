@@ -42,6 +42,36 @@ print(df.info())
 display(df.head())
 ```
 
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 51 entries, 0 to 50
+> Data columns (total 8 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   total           51 non-null     float64
+>  1   speeding        51 non-null     float64
+>  2   alcohol         51 non-null     float64
+>  3   not_distracted  51 non-null     float64
+>  4   no_previous     51 non-null     float64
+>  5   ins_premium     51 non-null     float64
+>  6   ins_losses      51 non-null     float64
+>  7   abbrev          51 non-null     str    
+> dtypes: float64(7), str(1)
+> memory usage: 3.3 KB
+> None
+>    total  speeding  alcohol  ...  ins_premium  ins_losses  abbrev
+> 0   18.8     7.332    5.640  ...       784.55      145.08      AL
+> 1   18.1     7.421    4.525  ...      1053.48      133.93      AK
+> 2   18.6     6.510    5.208  ...       899.47      110.35      AZ
+> 3   22.4     4.032    5.824  ...       827.34      142.39      AR
+> 4   12.0     4.200    3.360  ...       878.41      165.63      CA
+> 
+> [5 rows x 8 columns]
+> ```
+
+
+
 ### 💡 코드 딥다이브 (Code Deep Dive)
 **주요 컬럼(Columns) 해석:**
 * **Target:**
@@ -81,6 +111,11 @@ plt.xticks(fontsize=8) # 글씨가 겹치지 않게 폰트 크기 조절
 plt.show()
 ```
 
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_2.svg)
+
+
+
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `sort_values(ascending=False)`라는 단 한 줄의 코드가 차트의 품질을 180도 바꿉니다.
 * **최악의 주 (왼쪽):** 사우스캐롤라이나(`SC`), 노스다코타(`ND`) 등이 사망률 1, 2위를 다투고 있습니다.
@@ -106,6 +141,11 @@ sns.pairplot(sub_df, height=2.5, plot_kws={'alpha': 0.7, 'color': 'darkcyan'})
 plt.suptitle('주요 변수 간의 다중 상관관계 (Pairplot)', y=1.02, fontsize=16)
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+
 
 ### 💡 시각화 차트 읽는 법
 페어플롯은 데이터 분석 초기에 **"어디를 파헤치면 금맥이 나올까?"**를 빠르게 스캔하는 레이더 역할을 합니다.
@@ -134,6 +174,11 @@ plt.grid(True, linestyle='--', alpha=0.5)
 
 plt.show()
 ```
+
+> **💻 [실행 결과]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+
 
 ### 💡 코드 딥다이브 & 인사이트
 * 붉은색 회귀선(Regression Line)을 감싸고 있는 투명한 그림자(신뢰구간)가 매우 얇습니다. 이는 X(음주운전) 값이 주어졌을 때 Y(사망자) 값을 오차 없이 아주 잘 예측할 수 있다는 뜻입니다.

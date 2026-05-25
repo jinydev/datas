@@ -721,7 +721,9 @@
             <h1 id="실전-데이터-분석-26-심장-질환-예측-binning과-그룹별-박스플롯">실전 데이터 분석 26: 심장 질환 예측 (Binning과 그룹별 박스플롯)</h1>
 
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
-<p>의료 데이터 분석의 대표적인 사례인 <strong>심장 질환(Heart Disease)</strong> 예측 데이터입니다. 환자의 나이, 혈압, 콜레스테롤, 최대 심박수 등 다양한 신체 수치를 바탕으로 이 환자가 심장병 발병 고위험군인지 아닌지를 분류(Classification)하는 법을 배웁니다.</p>
+
+<p><img src="img/intro_comic.png" alt="코믹 일러스트" />
+의료 데이터 분석의 대표적인 사례인 <strong>심장 질환(Heart Disease)</strong> 예측 데이터입니다. 환자의 나이, 혈압, 콜레스테롤, 최대 심박수 등 다양한 신체 수치를 바탕으로 이 환자가 심장병 발병 고위험군인지 아닌지를 분류(Classification)하는 법을 배웁니다.</p>
 
 <p><strong>학습 목표:</strong></p>
 <ul>
@@ -754,6 +756,12 @@
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/heart_disease.csv'
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브-code-deep-dive">💡 코드 딥다이브 (Code Deep Dive)</h3>
 <p><strong>주요 신체 징후 (Features, X):</strong></p>
@@ -789,6 +797,12 @@
 </span><span class="nf">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">age_group</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">target</span><span class="sh">'</span><span class="p">]].</span><span class="nf">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">pd.cut(데이터, bins=기준점, labels=이름)</code> 함수는 연속된 숫자를 칼로 자르듯(cut) 쪼개어 카테고리로 묶어주는 매우 강력한 함수입니다.</li>
@@ -820,6 +834,12 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
+
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
 <ul>
   <li>정상인(0)이 138명, 심장병 환자(1)가 165명입니다.</li>
@@ -850,6 +870,12 @@
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>
 <ul>
