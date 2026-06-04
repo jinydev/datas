@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </radialGradient>
+    
+    <!-- Box Gradients -->
+    <linearGradient id="scipy-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a86f0" />
+      <stop offset="100%" stop-color="#0056b3" />
+    </linearGradient>
+    <linearGradient id="numpy-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4eaf9a" />
+      <stop offset="100%" stop-color="#2d7d6f" />
+    </linearGradient>
+    <linearGradient id="python-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffde59" />
+      <stop offset="100%" stop-color="#ffbd59" />
+    </linearGradient>
+    <linearGradient id="high-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a370f7" />
+      <stop offset="100%" stop-color="#7928ca" />
+    </linearGradient>
+    
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="15" fill="url(#bg-grad)" />
+
+  <!-- Grid Lines (Tech Vibe) -->
+  <path d="M 0,100 L 800,100 M 0,200 L 800,200 M 0,300 L 800,300 M 0,400 L 800,400 M 100,0 L 100,500 M 200,0 L 200,500 M 300,0 L 300,500 M 400,0 L 400,500 M 500,0 L 500,500 M 600,0 L 600,500 M 700,0 L 700,500" stroke="#21262d" stroke-width="1" fill="none" opacity="0.4" />
+
+  <!-- Core Layer: Python -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="380" width="600" height="60" rx="10" fill="url(#python-grad)" />
+    <text x="400" y="418" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="bold" fill="#0d1117" text-anchor="middle">PYTHON (기초 프로그래밍 엔진)</text>
+  </g>
+
+  <!-- Array Container Layer: NumPy -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="280" width="600" height="70" rx="10" fill="url(#numpy-grad)" />
+    <text x="400" y="312" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">NUMPY (ndarray 다차원 배열 컨테이너)</text>
+    <text x="400" y="338" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" fill="#e1e4e8" text-anchor="middle">연속 메모리 적재, 고속 벡터화 연산 최적화</text>
+  </g>
+
+  <!-- Algorithm Engine Layer: SciPy (Target of this course) -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="140" width="600" height="110" rx="10" fill="url(#scipy-grad)" stroke="#ffffff" stroke-width="2" />
+    <text x="400" y="172" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">SCIPY (고성능 수치 계산 알고리즘 팩)</text>
+    
+    <!-- Submodules Tags -->
+    <g transform="translate(120, 195)">
+      <!-- tag 1 -->
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="40" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">constants</text>
+      
+      <!-- tag 2 -->
+      <rect x="90" y="0" width="70" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="125" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">sparse</text>
+      
+      <!-- tag 3 -->
+      <rect x="170" y="0" width="70" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="205" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">linalg</text>
+      
+      <!-- tag 4 -->
+      <rect x="250" y="0" width="80" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="290" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">integrate</text>
+      
+      <!-- tag 5 -->
+      <rect x="340" y="0" width="80" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="380" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">optimize</text>
+
+      <!-- tag 6 -->
+      <rect x="430" y="0" width="90" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="475" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">interpolate</text>
+      
+      <!-- tag 7 -->
+      <rect x="530" y="0" width="50" height="30" rx="5" fill="#1f6feb" opacity="0.8"/>
+      <text x="555" y="20" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">stats</text>
+    </g>
+  </g>
+
+  <!-- Application Layer: Pandas, Matplotlib, Scikit-learn -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="40" width="600" height="70" rx="10" fill="url(#high-grad)" />
+    <text x="400" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">PANDAS / MATPLOTLIB / SCIKIT-LEARN</text>
+    <text x="400" y="98" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" fill="#e1e4e8" text-anchor="middle">데이터프레임 가공, 시각화 표현, 머신러닝 모델 구축</text>
+  </g>
+
+  <!-- Connecting Arrows -->
+  <path d="M 400,380 L 400,355" stroke="#ffffff" stroke-width="3" fill="none" marker-end="url(#arrow)" opacity="0.7" />
+  <path d="M 400,280 L 400,255" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.7" />
+  <path d="M 400,140 L 400,115" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.7" />
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="100%" height="auto">
+  <!-- Background -->
+  <rect width="500" height="300" rx="10" fill="#1b263b" />
+  
+  <!-- Vault Outer Door -->
+  <circle cx="250" cy="150" r="100" fill="#415a77" stroke="#e0e1dd" stroke-width="6" />
+  <circle cx="250" cy="150" r="80" fill="#778da9" stroke="#e0e1dd" stroke-width="2" />
+  
+  <!-- Vault Handle Bars (Steampunk style spokes) -->
+  <line x1="250" y1="50" x2="250" y2="250" stroke="#e0e1dd" stroke-width="8" stroke-linecap="round" />
+  <line x1="150" y1="150" x2="350" y2="150" stroke="#e0e1dd" stroke-width="8" stroke-linecap="round" />
+  <line x1="179" y1="79" x2="321" y2="221" stroke="#e0e1dd" stroke-width="8" stroke-linecap="round" />
+  <line x1="179" y1="221" x2="321" y2="79" stroke="#e0e1dd" stroke-width="8" stroke-linecap="round" />
+  
+  <circle cx="250" cy="150" r="30" fill="#0d1b2a" stroke="#e0e1dd" stroke-width="4" />
+  
+  <!-- Hologram Display (Floating constants labels) -->
+  <!-- Left Side -->
+  <rect x="25" y="40" width="100" height="50" rx="5" fill="#0d1b2a" stroke="#00b4d8" stroke-width="1.5" opacity="0.9" />
+  <text x="75" y="62" font-family="sans-serif" font-size="12" fill="#00b4d8" font-weight="bold" text-anchor="middle">Speed of Light</text>
+  <text x="75" y="80" font-family="monospace" font-size="10" fill="#e0e1dd" text-anchor="middle">299,792,458 m/s</text>
+  
+  <rect x="25" y="210" width="100" height="50" rx="5" fill="#0d1b2a" stroke="#00b4d8" stroke-width="1.5" opacity="0.9" />
+  <text x="75" y="232" font-family="sans-serif" font-size="12" fill="#00b4d8" font-weight="bold" text-anchor="middle">Gravity (G)</text>
+  <text x="75" y="250" font-family="monospace" font-size="10" fill="#e0e1dd" text-anchor="middle">6.6743e-11</text>
+
+  <!-- Right Side -->
+  <rect x="375" y="40" width="100" height="50" rx="5" fill="#0d1b2a" stroke="#00b4d8" stroke-width="1.5" opacity="0.9" />
+  <text x="425" y="62" font-family="sans-serif" font-size="12" fill="#00b4d8" font-weight="bold" text-anchor="middle">Planck (h)</text>
+  <text x="425" y="80" font-family="monospace" font-size="10" fill="#e0e1dd" text-anchor="middle">6.62607e-34</text>
+  
+  <rect x="375" y="210" width="100" height="50" rx="5" fill="#0d1b2a" stroke="#00b4d8" stroke-width="1.5" opacity="0.9" />
+  <text x="425" y="232" font-family="sans-serif" font-size="12" fill="#00b4d8" font-weight="bold" text-anchor="middle">Golden Ratio</text>
+  <text x="425" y="250" font-family="monospace" font-size="10" fill="#e0e1dd" text-anchor="middle">1.6180339</text>
+
+  <!-- Connection Lines (Tech hologram beams) -->
+  <path d="M 125,65 Q 180,65 190,90" fill="none" stroke="#00b4d8" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M 125,235 Q 180,235 190,210" fill="none" stroke="#00b4d8" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M 375,65 Q 320,65 310,90" fill="none" stroke="#00b4d8" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M 375,235 Q 320,235 310,210" fill="none" stroke="#00b4d8" stroke-width="1" stroke-dasharray="3,3" />
+</svg>

@@ -5,20 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조 | 빅데이터 분석 (Big Data Analysis)</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조" />
 <meta name="author" content="Hojin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="6.3.4 장에서 .index 배열을 잘라 .loc에 밀어 넣었듯, 두 번째 축(Axis 1)의 레이블 배열인 .columns 속성을 활용해 열(Column) 이름을 동적으로 추출하여 .loc의 두 번째 파라미터 자리에 던져주는 간접 메모리 오프셋 참조(Indirect O…" />
-<meta property="og:description" content="6.3.4 장에서 .index 배열을 잘라 .loc에 밀어 넣었듯, 두 번째 축(Axis 1)의 레이블 배열인 .columns 속성을 활용해 열(Column) 이름을 동적으로 추출하여 .loc의 두 번째 파라미터 자리에 던져주는 간접 메모리 오프셋 참조(Indirect O…" />
+<meta name="twitter:description" property="og:description" content="6.3.4 장에서 .index 배열을 잘라 .loc에 밀어 넣었듯, 두 번째 축(Axis 1)의 레이블 배열인 .columns 속성을 활용해 열(Column) 이름을 동적으로 추출하여 .loc의 두 번째 파라미터 자리에 던져주는 간접 메모리 오프셋 참조(Indirect O…" />
 <link rel="canonical" href="https://datas.jiny.dev/pandas/03_data_selection/06_col_selection_loc_i/" />
 <meta property="og:url" content="https://datas.jiny.dev/pandas/03_data_selection/06_col_selection_loc_i/" />
 <meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조" />
+<meta name="twitter:title" content="6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"6.3.4 장에서 .index 배열을 잘라 .loc에 밀어 넣었듯, 두 번째 축(Axis 1)의 레이블 배열인 .columns 속성을 활용해 열(Column) 이름을 동적으로 추출하여 .loc의 두 번째 파라미터 자리에 던져주는 간접 메모리 오프셋 참조(Indirect O…","headline":"6.3.6 loc[:, columns[i]]를 활용한 우회적 열 참조","url":"https://datas.jiny.dev/pandas/03_data_selection/06_col_selection_loc_i/"}</script>
 <!-- End Jekyll SEO tag -->
@@ -278,6 +278,11 @@
             <li class="nav-item">
               <a class="nav-link py-2 px-0 px-lg-2 active"
                 href="/pandas/">판다스</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/scipy/">사이파이</a>
             </li>
             
             <li class="nav-item">
