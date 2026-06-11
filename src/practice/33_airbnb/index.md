@@ -45,7 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './airbnb.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   id                 1000 non-null   int64  
+>  1   name               1000 non-null   str    
+>  2   room_type          1000 non-null   str    
+>  3   price              1000 non-null   int64  
+>  4   minimum_nights     992 non-null    float64
+>  5   number_of_reviews  1000 non-null   int64  
+>  6   availability_365   1000 non-null   int64  
+> dtypes: float64(1), int64(4), str(2)
+> memory usage: 82.7 KB
+> None
+>       id           name  ... number_of_reviews  availability_365
+> 0  10001  Airbnb Room 1  ...                46               320
+> 1  10002  Airbnb Room 2  ...                49                49
+> 2  10003  Airbnb Room 3  ...                17               286
+> 3  10004  Airbnb Room 4  ...                 6               274
+> 4  10005  Airbnb Room 5  ...                18               270
+> 
+> [5 rows x 7 columns]
 > ```
 
 
@@ -106,7 +128,16 @@ print("\n상위 99% 가격 경계선 ($):", price_99_percentile)
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 ---
-> Error: name 'df' is not defined
+> id                   0
+> name                 0
+> room_type            0
+> price                0
+> minimum_nights       8
+> number_of_reviews    0
+> availability_365     0
+> dtype: int64
+> 
+> 상위 99% 가격 경계선 ($): 518.6599999999994
 > ```
 
 
@@ -147,9 +178,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -176,9 +205,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

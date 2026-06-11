@@ -45,7 +45,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './customer_segmentation.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype
+> ---  ------                  --------------  -----
+>  0   CustomerID              1000 non-null   int64
+>  1   Gender                  1000 non-null   str  
+>  2   Age                     1000 non-null   int64
+>  3   Annual Income (k$)      1000 non-null   int64
+>  4   Spending Score (1-100)  1000 non-null   int64
+>  5   Segment                 1000 non-null   str  
+> dtypes: int64(4), str(2)
+> memory usage: 72.7 KB
+> None
+>    CustomerID  Gender  ...  Spending Score (1-100)                Segment
+> 0           1    Male  ...                      23  Low-Income, Low-Spend
+> 1           2    Male  ...                      37  Low-Income, Low-Spend
+> 2           3    Male  ...                      21  Low-Income, Low-Spend
+> 3           4  Female  ...                      17  Low-Income, Low-Spend
+> 4           5  Female  ...                      26  Low-Income, Low-Spend
+> 
+> [5 rows x 6 columns]
 > ```
 
 
@@ -99,7 +120,21 @@ print(df.groupby('Gender')['Spending Score (1-100)'].mean())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> Age  Annual Income (k$)  Spending Score (1-100)
+> count  1000.000000         1000.000000             1000.000000
+> mean     44.437000           57.015000               49.392000
+> std      15.622743           30.213037               29.178378
+> min      18.000000           10.000000                1.000000
+> 25%      31.000000           26.000000               20.000000
+> 50%      45.000000           59.000000               49.500000
+> 75%      58.000000           85.000000               78.000000
+> max      70.000000          122.000000              100.000000
+> 
+> --- 성별 소비 점수 평균 ---
+> Gender
+> Female    49.461676
+> Male      49.302961
+> Name: Spending Score (1-100), dtype: float64
 > ```
 
 
@@ -144,9 +179,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -174,9 +207,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

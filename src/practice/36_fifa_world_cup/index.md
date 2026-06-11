@@ -45,7 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './fifa_world_cup.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 22 entries, 0 to 21
+> Data columns (total 7 columns):
+>  #   Column         Non-Null Count  Dtype
+> ---  ------         --------------  -----
+>  0   Year           22 non-null     int64
+>  1   HostCountry    22 non-null     str  
+>  2   Winner         22 non-null     str  
+>  3   Runners-Up     22 non-null     str  
+>  4   GoalsScored    22 non-null     int64
+>  5   MatchesPlayed  22 non-null     int64
+>  6   Attendance     22 non-null     int64
+> dtypes: int64(4), str(3)
+> memory usage: 1.8 KB
+> None
+>    Year HostCountry     Winner  ... GoalsScored  MatchesPlayed  Attendance
+> 0  1930   Host 1930      Spain  ...          54             52      330782
+> 1  1934   Host 1934    Uruguay  ...          75             32      630882
+> 2  1938   Host 1938    England  ...          71             52      755472
+> 3  1950   Host 1950  Argentina  ...         100             32      809400
+> 4  1954   Host 1954    England  ...         111             16      986324
+> 
+> [5 rows x 7 columns]
 > ```
 
 
@@ -104,7 +126,16 @@ print(df.sort_values(by='Goals_per_Match', ascending=False)[['Year', 'Goals_per_
 > **💻 [실행 결과]**
 > ```text
 > 역대 대회 개최 연도 리스트:
-> Error: name 'df' is not defined
+> [1930 1934 1938 1950 1954 1958 1962 1966 1970 1974 1978 1982 1986 1990
+>  1994 1998 2002 2006 2010 2014 2018 2022]
+> 
+> --- 경기당 평균 골수 상위 5개 대회 ---
+>     Year  Goals_per_Match
+> 19  2014          11.3750
+> 17  2006           9.9375
+> 11  1982           8.3750
+> 6   1962           7.8125
+> 4   1954           6.9375
 > ```
 
 
@@ -145,9 +176,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -175,9 +204,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

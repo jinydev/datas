@@ -45,8 +45,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './netflix.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column        Non-Null Count  Dtype
+> ---  ------        --------------  -----
+>  0   show_id       1000 non-null   str  
+>  1   type          1000 non-null   str  
+>  2   title         1000 non-null   str  
+>  3   release_year  1000 non-null   int64
+>  4   rating        985 non-null    str  
+>  5   duration_min  1000 non-null   int64
+> dtypes: int64(2), str(4)
+> memory usage: 77.2 KB
+> None
+>   show_id     type            title  release_year rating  duration_min
+> 0      s1    Movie  Netflix Title 1          2019  TV-PG           103
+> 1      s2  TV Show  Netflix Title 2          2020      R             3
+> 2      s3  TV Show  Netflix Title 3          2016      R             1
+> 3      s4  TV Show  Netflix Title 4          2018      R             1
+> 4      s5    Movie  Netflix Title 5          2012  PG-13           103
 > ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
 
 
 <class 'pandas.DataFrame'>
@@ -103,7 +123,22 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> Error: name 'df' is not defined
+> show_id          0
+> type             0
+> title            0
+> release_year     0
+> rating          15
+> duration_min     0
+> dtype: int64
+> 
+> --- 정제 후 결측치 확인 ---
+> show_id         0
+> type            0
+> title           0
+> release_year    0
+> rating          0
+> duration_min    0
+> dtype: int64
 > ```
 
 
@@ -150,9 +185,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -179,9 +212,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

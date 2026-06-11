@@ -45,7 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './spotify.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column        Non-Null Count  Dtype  
+> ---  ------        --------------  -----  
+>  0   track_name    1000 non-null   str    
+>  1   artist_name   1000 non-null   str    
+>  2   popularity    1000 non-null   int64  
+>  3   duration_ms   1000 non-null   int64  
+>  4   danceability  1000 non-null   float64
+>  5   energy        1000 non-null   float64
+>  6   tempo         1000 non-null   int64  
+> dtypes: float64(2), int64(3), str(2)
+> memory usage: 78.4 KB
+> None
+>         track_name artist_name  popularity  ...  danceability    energy  tempo
+> 0  Spotify Track 1  Bruno Mars          66  ...      0.815334  0.783272    116
+> 1  Spotify Track 2    NewJeans          52  ...      0.523627  0.698806    113
+> 2  Spotify Track 3   BLACKPINK          50  ...      0.633077  0.676681     93
+> 3  Spotify Track 4   BLACKPINK          49  ...      0.873394  0.515009    102
+> 4  Spotify Track 5    Coldplay          60  ...      0.742002  0.759413    139
+> 
+> [5 rows x 7 columns]
 > ```
 
 
@@ -101,7 +123,8 @@ df['popularity'] = df['popularity'].clip(0, 100)
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> 인기도 최소값: 12
+> 인기도 최대값: 98
 > ```
 
 
@@ -133,9 +156,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -163,9 +184,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

@@ -45,7 +45,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './covid19.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 400 entries, 0 to 399
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype
+> ---  ------                  --------------  -----
+>  0   Date                    400 non-null    str  
+>  1   Country                 400 non-null    str  
+>  2   DailyNewCases           400 non-null    int64
+>  3   CumulativeCases         400 non-null    int64
+>  4   DailyVaccinations       400 non-null    int64
+>  5   CumulativeVaccinations  400 non-null    int64
+> dtypes: int64(4), str(2)
+> memory usage: 24.2 KB
+> None
+>          Date Country  ...  DailyVaccinations  CumulativeVaccinations
+> 0  2020-01-01     USA  ...                  0                       0
+> 1  2020-01-02     USA  ...                  0                       0
+> 2  2020-01-03     USA  ...                  0                       0
+> 3  2020-01-04     USA  ...                  0                       0
+> 4  2020-01-05     USA  ...                  0                       0
+> 
+> [5 rows x 6 columns]
 > ```
 
 
@@ -102,7 +123,13 @@ vaccinated_df = df[df['DailyVaccinations'] > 0]
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> --- 국가별 최종 누적 확진자 수 ---
+> Country
+> Japan    59424
+> Korea    62276
+> UK       60562
+> USA      59093
+> Name: CumulativeCases, dtype: int64
 > ```
 
 
@@ -143,9 +170,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -172,9 +197,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

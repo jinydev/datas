@@ -45,7 +45,27 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './pokemon.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column     Non-Null Count  Dtype
+> ---  ------     --------------  -----
+>  0   Name       1000 non-null   str  
+>  1   Type_1     1000 non-null   str  
+>  2   HP         1000 non-null   int64
+>  3   Attack     1000 non-null   int64
+>  4   Defense    1000 non-null   int64
+>  5   Speed      1000 non-null   int64
+>  6   Legendary  1000 non-null   bool 
+> dtypes: bool(1), int64(4), str(2)
+> memory usage: 64.4 KB
+> None
+>         Name    Type_1   HP  Attack  Defense  Speed  Legendary
+> 0  Pokemon_1  Electric   76     129       60    110      False
+> 1  Pokemon_2    Normal   56     117      117     84      False
+> 2  Pokemon_3      Fire   82      71       69     69      False
+> 3  Pokemon_4      Fire   85      89       74     59      False
+> 4  Pokemon_5     Grass  106     132       91    133       True
 > ```
 
 
@@ -101,7 +121,21 @@ print(df.groupby('Legendary')['Attack'].mean())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> HP       Attack      Defense       Speed
+> count  1000.00000  1000.000000  1000.000000  1000.00000
+> mean     78.65800    84.654000    78.469000    84.26500
+> std      22.84204    27.877005    24.664334    24.09268
+> min      16.00000    10.000000    10.000000    16.00000
+> 25%      63.00000    66.000000    62.000000    68.00000
+> 50%      77.00000    83.500000    77.000000    83.00000
+> 75%      92.00000   102.000000    93.250000    99.00000
+> max     174.00000   183.000000   177.000000   173.00000
+> 
+> --- 등급별 평균 공격력 ---
+> Legendary
+> False     81.834409
+> True     122.114286
+> Name: Attack, dtype: float64
 > ```
 
 
@@ -146,9 +180,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -175,9 +207,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

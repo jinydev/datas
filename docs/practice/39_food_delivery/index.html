@@ -2145,7 +2145,26 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: './food_delivery.csv'
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column            Non-Null Count  Dtype
+---  ------            --------------  -----
+ 0   OrderID           1000 non-null   int64
+ 1   OrderTime         1000 non-null   str  
+ 2   FoodCategory      1000 non-null   str  
+ 3   Cost              1000 non-null   int64
+ 4   DeliveryTime_Min  1000 non-null   int64
+ 5   Rating            1000 non-null   int64
+dtypes: int64(4), str(2)
+memory usage: 59.1 KB
+None
+   OrderID OrderTime FoodCategory   Cost  DeliveryTime_Min  Rating
+0    30001     22:39       Korean  45452                58       1
+1    30002     18:05      Chicken  24354                56       3
+2    30003     11:57  Pizza/Pasta  30270                32       5
+3    30004     17:30       Korean  60000                28       5
+4    30005     12:54      Chicken  30939                38       4
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2202,7 +2221,24 @@ None
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cost  DeliveryTime_Min       Rating
+count   1000.000000       1000.000000  1000.000000
+mean   23660.538000         36.903000     3.827000
+std    13353.754499         14.000414     1.115489
+min     8000.000000         12.000000     1.000000
+25%    12861.750000         27.000000     3.000000
+50%    20850.500000         36.000000     4.000000
+75%    30516.750000         45.000000     5.000000
+max    60000.000000         85.000000     5.000000
+
+--- 카테고리별 평균 배달 소요시간 (분) ---
+FoodCategory
+Burger         36.656051
+Chicken        35.730612
+Dessert        39.757576
+Korean         36.622449
+Pizza/Pasta    37.517073
+Name: DeliveryTime_Min, dtype: float64
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2246,9 +2282,8 @@ Name: DeliveryTime_Min, dtype: float64</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-시각화-차트-읽는-법--인사이트">💡 시각화 차트 읽는 법 &amp; 인사이트</h3>
@@ -2276,9 +2311,8 @@ Name: DeliveryTime_Min, dtype: float64</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-코드-딥다이브--비즈니스-통찰-analysts-insight">💡 코드 딥다이브 &amp; 비즈니스 통찰 (Analyst’s Insight)</h3>

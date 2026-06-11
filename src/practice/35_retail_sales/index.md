@@ -45,7 +45,27 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: './retail_sales.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column         Non-Null Count  Dtype
+> ---  ------         --------------  -----
+>  0   TransactionID  1000 non-null   int64
+>  1   Date           1000 non-null   str  
+>  2   Category       1000 non-null   str  
+>  3   Price          1000 non-null   int64
+>  4   Quantity       1000 non-null   int64
+>  5   Age            1000 non-null   int64
+>  6   Payment        1000 non-null   str  
+> dtypes: int64(4), str(3)
+> memory usage: 82.8 KB
+> None
+>    TransactionID        Date     Category  Price  Quantity  Age      Payment
+> 0          50001  2023-01-01     Clothing     45         4   33   Mobile Pay
+> 1          50002  2023-01-01     Clothing     50         3   28  Credit Card
+> 2          50003  2023-01-01  Electronics    152         2   51   Mobile Pay
+> 3          50004  2023-01-02     Clothing     53         1   48  Credit Card
+> 4          50005  2023-01-02    Groceries     12         1   31  Credit Card
 > ```
 
 
@@ -105,7 +125,12 @@ print(df[['Date', 'Month', 'Total_Revenue']].head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> Date  Month  Total_Revenue
+> 0 2023-01-01      1            180
+> 1 2023-01-01      1            150
+> 2 2023-01-01      1            304
+> 3 2023-01-02      1             53
+> 4 2023-01-02      1             12
 > ```
 
 
@@ -141,9 +166,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
@@ -175,9 +198,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)

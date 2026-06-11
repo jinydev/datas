@@ -69,6 +69,7 @@ print(df.head())
 > 
 > [5 rows x 6 columns]
 > ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
