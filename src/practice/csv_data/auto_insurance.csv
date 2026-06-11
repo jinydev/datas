@@ -1,0 +1,1001 @@
+PolicyID,DriverAge,VehicleType,PolicyType,ClaimAmount,IsFraud
+70001,44,Sedan,Basic,2157.2,No
+70002,48,SUV,Basic,7454.26,No
+70003,72,Sedan,Basic,4051.97,No
+70004,56,Sedan,Premium,9937.35,No
+70005,41,SUV,Premium,6780.25,No
+70006,71,Sports Car,Premium,12905.25,No
+70007,67,SUV,Premium,3914.05,No
+70008,43,Sports Car,Premium,12846.93,Yes
+70009,31,Sedan,Premium,6850.2,No
+70010,28,Sedan,Basic,2396.96,No
+70011,24,SUV,Basic,5995.99,No
+70012,37,Sedan,Basic,4788.14,No
+70013,44,SUV,Premium,5926.41,No
+70014,30,Sedan,Premium,6070.39,No
+70015,39,Sedan,Basic,1286.22,No
+70016,54,Sedan,Premium,3020.11,No
+70017,57,Sedan,Premium,6526.63,No
+70018,45,SUV,Basic,5777.53,No
+70019,42,SUV,Basic,2572.76,No
+70020,46,Sedan,Basic,4951.47,No
+70021,28,Sports Car,Premium,9687.3,No
+70022,64,Sedan,Basic,4641.84,No
+70023,45,Sedan,Basic,5258.08,No
+70024,42,Sedan,Premium,6293.64,No
+70025,54,Sedan,Premium,3614.49,No
+70026,30,SUV,Basic,3569.38,No
+70027,25,Sedan,Premium,4162.69,No
+70028,33,Sedan,Premium,3623.92,No
+70029,31,Truck,Premium,8377.96,No
+70030,35,SUV,Basic,7283.71,No
+70031,41,Sports Car,Basic,7726.27,No
+70032,61,Sedan,Premium,11860.41,No
+70033,69,SUV,Basic,7364.8,No
+70034,66,Sedan,Basic,11057.45,No
+70035,35,Sports Car,Basic,10158.89,No
+70036,47,Sedan,Basic,8297.68,No
+70037,54,SUV,Premium,4573.15,No
+70038,40,Sedan,Basic,8579.13,No
+70039,31,Sedan,Basic,2197.94,No
+70040,51,Truck,Premium,9346.02,No
+70041,56,SUV,Premium,8043.73,No
+70042,40,Sedan,Basic,6370.68,No
+70043,24,Sedan,Basic,5253.71,No
+70044,51,Sports Car,Basic,11415.95,No
+70045,58,SUV,Basic,5215.88,No
+70046,28,Truck,Basic,7891.05,No
+70047,73,Sports Car,Basic,9261.6,No
+70048,63,Sports Car,Premium,6547.71,No
+70049,73,SUV,Premium,8648.45,No
+70050,32,Sports Car,Basic,10755.74,No
+70051,71,Sedan,Premium,4691.08,No
+70052,50,Sedan,Basic,6297.53,No
+70053,27,Sedan,Basic,3449.57,No
+70054,59,SUV,Premium,6880.28,No
+70055,32,Sports Car,Premium,7894.78,No
+70056,20,Sedan,Basic,2357.94,No
+70057,62,SUV,Premium,7360.92,No
+70058,62,Sedan,Premium,2494.86,No
+70059,48,SUV,Basic,7893.38,No
+70060,27,SUV,Basic,5428.87,No
+70061,33,Sports Car,Premium,9085.36,No
+70062,65,Truck,Basic,11232.83,No
+70063,69,Sedan,Premium,10619.28,No
+70064,67,SUV,Basic,8047.3,No
+70065,21,Sedan,Basic,4829.16,No
+70066,25,Sedan,Premium,6453.97,No
+70067,52,Sedan,Basic,3531.82,No
+70068,60,Sedan,Basic,1404.49,No
+70069,30,Sedan,Premium,5561.85,No
+70070,52,SUV,Basic,6635.69,No
+70071,42,Sedan,Basic,5048.49,No
+70072,28,Sedan,Premium,5673.06,No
+70073,25,Sports Car,Basic,8661.33,No
+70074,70,Sedan,Basic,5418.75,No
+70075,74,Sedan,Premium,,No
+70076,34,SUV,Basic,6170.67,No
+70077,54,Sedan,Basic,3041.38,No
+70078,34,Sedan,Basic,6995.78,No
+70079,37,Sedan,Basic,4453.5,No
+70080,30,Sedan,Basic,4730.52,No
+70081,39,Sports Car,Basic,11032.26,No
+70082,50,SUV,Premium,8921.25,No
+70083,59,Sports Car,Basic,14164.4,Yes
+70084,62,Sedan,Basic,9540.5,No
+70085,36,SUV,Basic,4512.38,No
+70086,48,SUV,Premium,5078.7,No
+70087,36,SUV,Basic,5953.45,No
+70088,72,Truck,Basic,13589.21,No
+70089,26,Sports Car,Basic,12427.29,No
+70090,74,Truck,Premium,6541.25,No
+70091,43,Sports Car,Basic,14896.6,No
+70092,40,SUV,Basic,5004.36,No
+70093,40,SUV,Premium,8500.92,No
+70094,55,Truck,Basic,12092.32,No
+70095,24,Sedan,Premium,7095.26,No
+70096,52,SUV,Basic,6145.0,No
+70097,53,Sedan,Premium,5406.34,No
+70098,32,Sedan,Basic,3263.93,No
+70099,29,SUV,Premium,5984.5,No
+70100,26,Sedan,Premium,5788.32,No
+70101,25,SUV,Basic,4254.08,No
+70102,51,SUV,Basic,3106.28,No
+70103,46,SUV,Basic,6857.7,No
+70104,36,Sports Car,Premium,11214.93,No
+70105,40,Sports Car,Basic,9828.79,No
+70106,51,Sedan,Basic,9458.96,No
+70107,42,Truck,Basic,8564.7,No
+70108,62,Sedan,Basic,8112.14,No
+70109,40,SUV,Basic,5764.15,No
+70110,65,Sedan,Premium,3601.29,No
+70111,23,Truck,Basic,10010.41,No
+70112,59,Sedan,Basic,3232.56,No
+70113,44,Truck,Basic,11122.05,No
+70114,58,Sedan,Basic,8670.08,No
+70115,24,Sedan,Basic,4590.45,No
+70116,23,Sports Car,Premium,11935.85,No
+70117,64,Truck,Basic,12633.86,No
+70118,46,SUV,Basic,5057.57,No
+70119,53,Sports Car,Basic,14450.36,Yes
+70120,45,Sedan,Basic,5927.48,No
+70121,39,Sedan,Basic,5290.68,No
+70122,49,SUV,Premium,3396.79,No
+70123,61,SUV,Basic,6170.79,No
+70124,31,SUV,Premium,6855.25,No
+70125,34,Sedan,Basic,4184.53,No
+70126,70,Sedan,Basic,6613.18,No
+70127,38,SUV,Premium,3606.11,No
+70128,59,SUV,Basic,9507.07,No
+70129,30,Sports Car,Premium,10629.77,No
+70130,37,Sedan,Basic,4244.42,No
+70131,24,SUV,Basic,5544.73,No
+70132,20,Sports Car,Basic,11086.81,No
+70133,44,Sports Car,Basic,9082.41,No
+70134,48,Sports Car,Basic,9770.68,No
+70135,21,Sedan,Basic,3875.49,No
+70136,45,Sedan,Basic,4537.76,No
+70137,74,Sports Car,Premium,16496.4,No
+70138,57,Sedan,Basic,6105.38,No
+70139,31,SUV,Premium,6925.47,No
+70140,28,Sedan,Premium,5650.1,No
+70141,30,Sedan,Basic,6784.4,No
+70142,49,SUV,Premium,6667.46,No
+70143,48,Sedan,Premium,5297.96,No
+70144,55,Sedan,Premium,5610.16,No
+70145,22,SUV,Premium,6852.38,No
+70146,66,SUV,Basic,9604.57,No
+70147,64,Sedan,Basic,3622.41,No
+70148,48,Sedan,Basic,5740.16,No
+70149,19,Sedan,Basic,3974.73,No
+70150,68,Sedan,Premium,4137.66,No
+70151,34,SUV,Premium,4325.82,No
+70152,70,SUV,Premium,2828.47,No
+70153,49,Sports Car,Basic,8825.69,No
+70154,70,Sedan,Basic,6470.32,No
+70155,61,Sports Car,Basic,10736.59,No
+70156,56,SUV,Basic,2656.77,No
+70157,67,SUV,Basic,8605.37,No
+70158,56,Sports Car,Basic,9182.48,No
+70159,57,Sports Car,Premium,10875.05,No
+70160,19,SUV,Premium,4297.96,No
+70161,24,Sports Car,Basic,8801.23,No
+70162,60,SUV,Premium,8214.58,No
+70163,65,SUV,Basic,7544.06,No
+70164,26,Sedan,Basic,6349.19,No
+70165,23,Sedan,Premium,5294.74,No
+70166,51,SUV,Basic,5592.18,No
+70167,22,SUV,Basic,3638.27,No
+70168,48,Sedan,Premium,5618.95,No
+70169,29,SUV,Premium,4481.33,No
+70170,50,Sedan,Basic,9826.08,No
+70171,64,SUV,Basic,9845.48,No
+70172,23,Sedan,Basic,5056.57,No
+70173,42,Sports Car,Basic,7009.92,No
+70174,51,Sedan,Basic,7027.07,No
+70175,29,SUV,Basic,6084.83,No
+70176,66,Truck,Premium,8775.82,No
+70177,59,Sedan,Basic,5088.47,No
+70178,53,Sports Car,Basic,10955.81,No
+70179,63,Sedan,Basic,9556.04,No
+70180,25,SUV,Basic,4426.41,No
+70181,30,Sedan,Premium,5406.14,No
+70182,60,SUV,Basic,6987.81,No
+70183,72,SUV,Basic,8093.06,No
+70184,38,Sedan,Basic,5967.85,No
+70185,23,SUV,Basic,4116.77,No
+70186,38,SUV,Premium,7814.02,No
+70187,71,SUV,Basic,9030.48,No
+70188,53,Sports Car,Premium,14032.29,No
+70189,21,Sedan,Basic,4815.63,No
+70190,47,SUV,Premium,9684.8,No
+70191,64,Sedan,Basic,3993.95,No
+70192,43,Sports Car,Premium,9630.05,No
+70193,44,Truck,Basic,11344.45,No
+70194,36,Sedan,Basic,5876.07,No
+70195,60,Sports Car,Premium,12189.53,Yes
+70196,47,SUV,Basic,8184.76,No
+70197,65,Sedan,Basic,11355.12,No
+70198,74,Sedan,Basic,8288.93,No
+70199,57,Sedan,Premium,7829.19,No
+70200,53,Sports Car,Premium,12254.62,Yes
+70201,71,Truck,Basic,8970.23,No
+70202,53,Truck,Basic,8884.17,No
+70203,62,Sedan,Basic,8721.92,No
+70204,43,Sedan,Basic,5164.39,No
+70205,50,SUV,Premium,5396.89,No
+70206,31,Sedan,Basic,5111.95,No
+70207,61,Sedan,Premium,10331.47,No
+70208,27,Truck,Basic,8084.22,No
+70209,74,SUV,Basic,9674.61,No
+70210,71,Sedan,Premium,1245.94,No
+70211,70,Truck,Basic,6503.61,No
+70212,53,SUV,Basic,9258.99,No
+70213,41,SUV,Basic,3839.02,No
+70214,30,SUV,Basic,4711.43,No
+70215,54,Sedan,Premium,6997.33,No
+70216,42,Sports Car,Premium,12454.29,No
+70217,39,Truck,Premium,9033.47,No
+70218,53,Sedan,Premium,4362.52,No
+70219,43,Sedan,Basic,4669.46,No
+70220,36,Sedan,Basic,5166.42,No
+70221,64,SUV,Basic,7187.86,No
+70222,67,Sports Car,Basic,6137.04,No
+70223,53,Sedan,Premium,8877.78,No
+70224,24,Truck,Basic,8941.64,No
+70225,22,SUV,Basic,7943.83,No
+70226,54,SUV,Basic,5293.48,No
+70227,70,Sports Car,Premium,15876.48,Yes
+70228,73,Sedan,Premium,7457.59,No
+70229,51,SUV,Basic,7699.46,No
+70230,51,SUV,Basic,3307.53,No
+70231,27,Sedan,Basic,4190.52,No
+70232,25,SUV,Premium,5552.72,No
+70233,23,Sedan,Basic,4105.3,No
+70234,69,Sedan,Premium,2038.93,No
+70235,37,SUV,Basic,5504.84,No
+70236,35,Sedan,Basic,3264.23,No
+70237,64,Sedan,Premium,11192.21,No
+70238,47,SUV,Basic,7598.28,No
+70239,24,SUV,Premium,4535.9,No
+70240,57,Truck,Basic,8276.84,No
+70241,60,Sedan,Basic,3373.64,No
+70242,58,SUV,Premium,9320.89,No
+70243,37,Sedan,Premium,6681.11,No
+70244,40,SUV,Basic,4740.24,No
+70245,44,Sports Car,Basic,7173.06,No
+70246,65,Sports Car,Premium,11089.52,No
+70247,65,Sedan,Basic,9007.02,No
+70248,52,SUV,Basic,5617.12,No
+70249,45,Sedan,Basic,4652.15,No
+70250,21,Truck,Premium,8245.04,No
+70251,39,Sedan,Basic,5407.09,No
+70252,74,SUV,Basic,5493.34,No
+70253,65,Sports Car,Premium,13860.35,Yes
+70254,26,Sedan,Premium,5579.42,No
+70255,47,Sedan,Basic,6019.11,No
+70256,27,SUV,Basic,5886.02,No
+70257,63,SUV,Basic,5843.79,No
+70258,62,Sedan,Premium,4318.74,No
+70259,33,Sports Car,Premium,11952.61,No
+70260,20,SUV,Basic,3397.49,No
+70261,48,Sedan,Basic,3493.57,No
+70262,60,Sedan,Basic,9930.85,No
+70263,31,SUV,Premium,4511.58,No
+70264,34,Sedan,Premium,5962.54,No
+70265,33,Sedan,Basic,4127.33,No
+70266,52,Truck,Basic,12656.27,Yes
+70267,27,SUV,Premium,5135.95,No
+70268,40,SUV,Premium,5627.82,No
+70269,38,Sedan,Basic,3455.0,No
+70270,40,SUV,Basic,4852.24,No
+70271,34,Sedan,Premium,7755.5,No
+70272,61,Sedan,Basic,8475.94,No
+70273,56,Sedan,Basic,7380.04,No
+70274,21,Sedan,Basic,5942.59,No
+70275,44,Truck,Basic,,No
+70276,43,Sedan,Basic,3834.49,No
+70277,30,Sports Car,Premium,11536.16,No
+70278,62,Sedan,Basic,8591.39,No
+70279,37,SUV,Basic,3439.2,No
+70280,19,SUV,Basic,5423.81,No
+70281,26,SUV,Basic,6144.69,No
+70282,40,Sedan,Premium,7951.45,No
+70283,53,SUV,Premium,1735.63,No
+70284,57,SUV,Basic,9592.93,No
+70285,54,Truck,Basic,8288.48,No
+70286,63,Sedan,Basic,4714.2,No
+70287,32,Sedan,Basic,4979.75,No
+70288,70,Sedan,Basic,9559.11,No
+70289,19,SUV,Basic,2980.31,No
+70290,19,Sedan,Premium,5680.86,No
+70291,49,SUV,Basic,4005.59,No
+70292,71,SUV,Basic,6322.9,No
+70293,73,Sedan,Basic,7106.17,No
+70294,48,Sports Car,Basic,11875.68,No
+70295,71,Sedan,Basic,5680.26,No
+70296,21,Sedan,Basic,6033.48,No
+70297,27,Sports Car,Basic,10152.12,No
+70298,27,SUV,Premium,7437.6,No
+70299,59,Sedan,Basic,2980.39,No
+70300,27,SUV,Premium,2977.06,No
+70301,30,Sports Car,Basic,10814.73,No
+70302,35,SUV,Basic,4206.17,No
+70303,36,Sedan,Basic,1856.84,No
+70304,65,Sports Car,Premium,12217.61,No
+70305,72,Sedan,Basic,6902.36,No
+70306,51,Sports Car,Basic,8833.04,No
+70307,31,SUV,Basic,6233.38,No
+70308,69,Sedan,Basic,8330.78,No
+70309,72,SUV,Premium,4850.76,No
+70310,35,SUV,Basic,5227.51,No
+70311,60,SUV,Basic,5016.63,No
+70312,65,Sedan,Basic,9098.58,No
+70313,73,SUV,Basic,8055.78,No
+70314,29,Sedan,Basic,3644.04,No
+70315,31,Sedan,Basic,3544.55,No
+70316,31,Sports Car,Basic,10021.2,No
+70317,40,SUV,Premium,4386.74,No
+70318,47,Sedan,Premium,7130.68,No
+70319,34,Truck,Premium,9483.1,No
+70320,56,SUV,Basic,7968.49,No
+70321,44,SUV,Basic,4248.75,No
+70322,57,Sedan,Basic,4835.44,No
+70323,57,Truck,Premium,12779.74,No
+70324,43,Sports Car,Basic,8495.95,No
+70325,64,SUV,Basic,3973.62,No
+70326,46,Sedan,Basic,6577.85,No
+70327,53,Sedan,Basic,5650.58,No
+70328,64,Sedan,Premium,10019.19,No
+70329,74,Sedan,Basic,4043.37,No
+70330,48,Sedan,Basic,5658.66,No
+70331,32,Sedan,Premium,5684.59,No
+70332,39,SUV,Basic,1737.94,No
+70333,40,SUV,Premium,4304.72,No
+70334,47,Sedan,Premium,5321.3,No
+70335,47,Truck,Basic,6648.59,No
+70336,64,SUV,Premium,8875.67,No
+70337,64,Sports Car,Basic,12226.34,No
+70338,35,Sedan,Premium,4912.07,No
+70339,58,Sports Car,Basic,11383.77,No
+70340,56,Sports Car,Premium,7399.88,No
+70341,32,SUV,Basic,2616.7,No
+70342,20,Sedan,Basic,5313.1,No
+70343,55,Sedan,Basic,4951.54,No
+70344,24,Sports Car,Premium,11034.32,No
+70345,61,SUV,Basic,4108.03,No
+70346,43,Truck,Basic,9024.12,No
+70347,24,Truck,Basic,9791.76,No
+70348,56,Sports Car,Premium,9268.19,No
+70349,74,SUV,Basic,3158.83,No
+70350,56,Sedan,Premium,9245.48,No
+70351,30,SUV,Basic,2919.63,No
+70352,49,Sedan,Basic,7748.68,No
+70353,64,Sports Car,Basic,13942.36,Yes
+70354,54,SUV,Basic,7563.32,No
+70355,38,Sedan,Premium,2899.01,No
+70356,47,Sedan,Basic,8283.11,No
+70357,43,SUV,Basic,6718.11,No
+70358,34,Sedan,Basic,6882.38,No
+70359,49,SUV,Premium,9852.72,No
+70360,55,Sedan,Basic,5512.61,No
+70361,31,SUV,Premium,7909.36,No
+70362,64,Sedan,Premium,7263.79,No
+70363,63,Sedan,Premium,5428.43,No
+70364,61,Sports Car,Premium,8643.45,No
+70365,56,Sedan,Basic,5380.64,No
+70366,48,Sports Car,Basic,9459.26,No
+70367,22,SUV,Basic,6775.35,No
+70368,22,SUV,Premium,5031.89,No
+70369,27,SUV,Premium,2659.73,No
+70370,22,Sedan,Basic,4384.86,No
+70371,71,Truck,Premium,12329.21,No
+70372,24,SUV,Basic,4333.25,No
+70373,28,SUV,Premium,,No
+70374,49,SUV,Basic,6609.93,No
+70375,45,SUV,Basic,7277.23,No
+70376,56,Sports Car,Premium,9669.6,No
+70377,40,Sports Car,Basic,9489.84,No
+70378,39,Sedan,Basic,5142.14,No
+70379,26,Sedan,Basic,4328.31,No
+70380,19,Sedan,Basic,4777.27,No
+70381,20,Sedan,Premium,3509.86,No
+70382,37,SUV,Premium,5509.65,No
+70383,46,SUV,Basic,2842.37,No
+70384,47,Sedan,Premium,3859.93,No
+70385,60,SUV,Premium,7257.54,No
+70386,71,SUV,Premium,5964.33,No
+70387,48,Sedan,Basic,6188.91,No
+70388,45,Sedan,Basic,8527.22,No
+70389,71,Sports Car,Basic,12358.77,No
+70390,52,SUV,Basic,7556.57,No
+70391,62,Sedan,Basic,6260.11,No
+70392,64,Sedan,Basic,5422.88,No
+70393,25,Sedan,Basic,4704.09,No
+70394,34,Truck,Basic,9933.84,No
+70395,30,SUV,Premium,8655.39,No
+70396,28,Sedan,Premium,6547.38,No
+70397,67,Sports Car,Basic,9127.65,No
+70398,21,Sedan,Basic,7217.34,No
+70399,73,Sedan,Premium,3305.13,No
+70400,74,Sedan,Basic,3721.32,No
+70401,48,Sedan,Basic,4908.23,No
+70402,61,SUV,Basic,7020.4,No
+70403,63,SUV,Basic,5364.48,No
+70404,52,Sedan,Premium,4232.15,No
+70405,57,SUV,Premium,4591.05,No
+70406,46,SUV,Basic,4365.39,No
+70407,57,Sedan,Basic,5637.91,No
+70408,55,Sedan,Premium,2907.63,No
+70409,21,Truck,Premium,10337.47,No
+70410,22,SUV,Basic,5487.04,No
+70411,44,Sedan,Basic,5551.84,No
+70412,41,SUV,Premium,6750.88,No
+70413,52,SUV,Basic,7016.41,No
+70414,51,SUV,Basic,,No
+70415,47,SUV,Premium,2120.81,No
+70416,53,Sedan,Basic,5904.86,No
+70417,28,Sedan,Premium,6631.04,No
+70418,29,Sedan,Premium,1899.91,No
+70419,56,SUV,Basic,2655.02,No
+70420,60,Sedan,Basic,3907.32,No
+70421,25,SUV,Basic,2368.47,No
+70422,71,Sports Car,Basic,8264.86,No
+70423,57,Sports Car,Basic,9320.38,No
+70424,49,SUV,Basic,5533.44,No
+70425,27,Sedan,Premium,5607.54,No
+70426,51,SUV,Premium,4940.78,No
+70427,35,Sedan,Premium,6121.0,No
+70428,56,SUV,Basic,5451.31,No
+70429,69,Sedan,Premium,4506.3,No
+70430,43,Sedan,Basic,5897.57,No
+70431,51,Sedan,Basic,4348.99,No
+70432,62,Sedan,Basic,6392.32,No
+70433,47,Sedan,Basic,7671.76,No
+70434,56,SUV,Basic,5828.81,No
+70435,30,Sports Car,Premium,10141.32,No
+70436,71,SUV,Basic,1849.15,No
+70437,52,SUV,Basic,9634.96,No
+70438,24,Sports Car,Premium,9006.1,No
+70439,67,Sports Car,Basic,12777.63,No
+70440,74,Sports Car,Premium,11130.07,No
+70441,46,SUV,Basic,4654.28,No
+70442,68,Truck,Premium,8737.36,No
+70443,47,SUV,Basic,8005.38,No
+70444,55,SUV,Basic,8947.36,No
+70445,58,Truck,Basic,7623.5,No
+70446,42,Sedan,Basic,7900.58,No
+70447,46,Truck,Basic,11789.1,No
+70448,57,Truck,Premium,9878.99,No
+70449,42,Sports Car,Basic,10555.03,No
+70450,50,SUV,Basic,6004.95,No
+70451,67,SUV,Premium,6525.62,No
+70452,36,Sports Car,Premium,9293.96,No
+70453,41,SUV,Basic,8593.11,No
+70454,21,Sports Car,Premium,9680.1,No
+70455,35,Sedan,Premium,7205.84,No
+70456,45,SUV,Basic,3658.93,No
+70457,67,Sedan,Basic,10814.42,No
+70458,40,Sports Car,Basic,8760.02,No
+70459,38,Sedan,Premium,6973.2,No
+70460,59,SUV,Basic,5345.85,No
+70461,26,SUV,Premium,3890.78,No
+70462,68,Sports Car,Premium,9629.86,No
+70463,61,Sedan,Basic,7409.26,No
+70464,64,Truck,Basic,8162.57,No
+70465,41,Truck,Premium,6722.49,No
+70466,38,SUV,Basic,7394.49,No
+70467,56,Sports Car,Basic,9751.84,No
+70468,71,SUV,Basic,9086.3,No
+70469,32,Sports Car,Premium,8972.36,No
+70470,41,Sedan,Basic,5097.2,No
+70471,34,Sedan,Basic,5297.06,No
+70472,39,Sedan,Basic,3573.99,No
+70473,28,SUV,Premium,5856.44,No
+70474,54,Sedan,Basic,3624.31,No
+70475,68,SUV,Premium,6516.34,No
+70476,34,SUV,Basic,5434.35,No
+70477,32,SUV,Basic,7531.48,No
+70478,24,SUV,Basic,3730.73,No
+70479,25,SUV,Basic,3533.17,No
+70480,25,Sedan,Premium,7013.49,No
+70481,37,Sports Car,Basic,10391.47,No
+70482,47,Sports Car,Basic,12464.15,Yes
+70483,37,SUV,Premium,6457.15,No
+70484,68,Sedan,Premium,9204.99,No
+70485,28,Sedan,Premium,4514.95,No
+70486,34,Truck,Basic,8200.34,No
+70487,23,Sports Car,Premium,9114.37,No
+70488,49,SUV,Premium,7988.86,No
+70489,72,Sports Car,Basic,17118.91,No
+70490,74,SUV,Premium,10145.25,No
+70491,52,SUV,Premium,,No
+70492,74,Sedan,Premium,8035.09,No
+70493,67,Sedan,Basic,5388.5,No
+70494,42,Sports Car,Basic,11428.72,No
+70495,51,Sedan,Basic,7451.33,No
+70496,37,Sports Car,Premium,9034.88,No
+70497,40,Sedan,Basic,5255.22,No
+70498,32,Truck,Basic,8141.75,No
+70499,56,Sedan,Basic,7227.75,No
+70500,53,Sedan,Premium,6210.53,No
+70501,36,SUV,Basic,5091.0,No
+70502,33,Sedan,Basic,5454.6,No
+70503,63,SUV,Basic,9688.58,No
+70504,36,Sedan,Basic,5734.79,No
+70505,63,Truck,Basic,13341.52,Yes
+70506,33,SUV,Basic,4549.96,No
+70507,62,SUV,Basic,8428.53,No
+70508,33,Truck,Basic,8971.37,No
+70509,42,Sedan,Premium,5250.75,No
+70510,33,Sedan,Premium,6702.73,No
+70511,42,SUV,Basic,5033.89,No
+70512,36,Sedan,Premium,2069.61,No
+70513,51,Sedan,Basic,2117.75,No
+70514,63,Truck,Basic,10047.84,No
+70515,61,Sedan,Basic,3947.53,No
+70516,34,SUV,Basic,3136.99,No
+70517,53,Sports Car,Basic,11904.46,No
+70518,44,SUV,Basic,6888.75,No
+70519,65,Sedan,Basic,3844.34,No
+70520,71,Sports Car,Basic,9607.12,No
+70521,70,Sports Car,Basic,9738.84,No
+70522,42,SUV,Basic,8747.65,No
+70523,23,SUV,Basic,5044.54,No
+70524,20,Sports Car,Basic,8867.74,No
+70525,63,SUV,Basic,7296.63,No
+70526,74,SUV,Basic,9299.25,No
+70527,19,Sedan,Basic,6001.45,No
+70528,62,Sedan,Premium,8450.28,No
+70529,36,Sports Car,Basic,9944.79,No
+70530,73,Sedan,Basic,10752.2,No
+70531,37,SUV,Basic,4465.66,No
+70532,38,Sedan,Premium,4682.61,No
+70533,48,Sports Car,Basic,11667.4,No
+70534,36,Sedan,Basic,6764.32,No
+70535,60,Sedan,Basic,4563.14,No
+70536,34,SUV,Basic,5647.42,No
+70537,47,Sedan,Basic,7004.81,No
+70538,63,Sedan,Premium,8818.64,No
+70539,21,SUV,Premium,3671.45,No
+70540,64,Sports Car,Premium,12741.1,No
+70541,56,SUV,Premium,4400.25,No
+70542,26,Sedan,Basic,7067.77,No
+70543,32,SUV,Basic,6094.71,No
+70544,57,Sedan,Basic,5734.03,No
+70545,57,Sports Car,Basic,10891.77,No
+70546,65,Sports Car,Basic,10358.61,No
+70547,52,Sedan,Basic,8693.43,No
+70548,30,SUV,Basic,5573.55,No
+70549,74,Sedan,Premium,2185.2,No
+70550,70,Sedan,Premium,5801.31,No
+70551,73,Sedan,Basic,6540.7,No
+70552,42,SUV,Premium,5959.37,No
+70553,60,Sedan,Basic,7509.36,No
+70554,51,Sedan,Basic,4096.71,No
+70555,39,SUV,Basic,8239.01,No
+70556,30,Sedan,Basic,5804.16,No
+70557,68,Sedan,Premium,5266.08,No
+70558,20,Sports Car,Basic,9043.83,No
+70559,67,SUV,Premium,4313.95,No
+70560,26,Sedan,Basic,4220.32,No
+70561,42,Sedan,Basic,4081.05,No
+70562,50,Sedan,Basic,5558.37,No
+70563,63,SUV,Premium,1680.91,No
+70564,40,Sedan,Basic,5013.55,No
+70565,31,Sedan,Basic,9154.09,No
+70566,43,SUV,Premium,6459.95,No
+70567,38,Sedan,Basic,3733.66,No
+70568,50,Sedan,Premium,4292.81,No
+70569,71,Sedan,Basic,2778.65,No
+70570,74,SUV,Basic,9074.79,No
+70571,59,Sedan,Basic,8761.53,No
+70572,42,SUV,Premium,6382.61,No
+70573,60,Sedan,Premium,4457.59,No
+70574,61,Sedan,Premium,6364.91,No
+70575,34,Truck,Premium,11564.97,No
+70576,42,Sedan,Basic,5625.27,No
+70577,50,Truck,Basic,7719.62,No
+70578,24,Sedan,Basic,3455.6,No
+70579,28,SUV,Basic,8447.23,No
+70580,26,Sedan,Basic,5811.39,No
+70581,68,SUV,Basic,7236.13,No
+70582,70,Truck,Basic,7710.87,No
+70583,70,SUV,Premium,9339.88,No
+70584,31,SUV,Basic,3756.62,No
+70585,21,Sedan,Premium,5057.76,No
+70586,66,Sports Car,Basic,12631.08,No
+70587,39,SUV,Basic,6146.35,No
+70588,38,SUV,Basic,3802.43,No
+70589,58,Sedan,Basic,3246.06,No
+70590,59,SUV,Basic,6073.99,No
+70591,28,Sports Car,Basic,12327.97,No
+70592,73,SUV,Basic,1748.48,No
+70593,54,Sedan,Premium,7894.94,No
+70594,58,Sports Car,Basic,9106.82,No
+70595,65,Sedan,Basic,1861.42,No
+70596,51,Sports Car,Premium,10726.21,No
+70597,26,Sports Car,Premium,8279.55,No
+70598,48,SUV,Premium,8930.69,No
+70599,63,Sports Car,Basic,10294.65,No
+70600,37,Sports Car,Basic,9474.8,No
+70601,28,Sedan,Basic,6356.44,No
+70602,43,SUV,Basic,6096.82,No
+70603,22,Sedan,Basic,4000.11,No
+70604,26,Sedan,Basic,7323.36,No
+70605,26,Sedan,Premium,5019.99,No
+70606,35,SUV,Basic,4751.53,No
+70607,51,Sedan,Basic,4790.75,No
+70608,66,SUV,Basic,7153.77,No
+70609,49,Sedan,Basic,7921.62,No
+70610,63,Sports Car,Basic,12200.44,No
+70611,67,Sedan,Basic,11096.56,No
+70612,41,Sedan,Premium,8536.28,No
+70613,57,Sedan,Basic,5317.38,No
+70614,66,Sedan,Premium,2992.97,No
+70615,24,SUV,Basic,4882.29,No
+70616,38,Sports Car,Premium,12285.43,Yes
+70617,29,SUV,Basic,7050.96,No
+70618,49,Sedan,Basic,9020.18,No
+70619,67,SUV,Basic,7002.77,No
+70620,47,Sedan,Basic,4260.91,No
+70621,46,Sedan,Basic,5140.24,No
+70622,20,Sedan,Premium,2595.11,No
+70623,67,SUV,Basic,6248.52,No
+70624,40,SUV,Basic,5133.35,No
+70625,38,Sedan,Premium,4923.86,No
+70626,29,Sedan,Premium,2209.07,No
+70627,39,Sedan,Premium,4786.94,No
+70628,71,SUV,Basic,6968.63,No
+70629,71,Sedan,Basic,3277.69,No
+70630,28,SUV,Basic,5810.22,No
+70631,73,Truck,Premium,12726.04,No
+70632,62,Sedan,Premium,2935.3,No
+70633,22,Sedan,Basic,5870.81,No
+70634,51,Sedan,Basic,6549.66,No
+70635,58,Sedan,Premium,4460.39,No
+70636,19,SUV,Basic,5785.52,No
+70637,38,Sedan,Basic,5574.65,No
+70638,72,Sports Car,Basic,12230.87,Yes
+70639,63,SUV,Basic,6992.37,No
+70640,62,Sedan,Basic,6426.91,No
+70641,39,Sedan,Basic,6293.59,No
+70642,59,SUV,Basic,6827.69,No
+70643,31,Sedan,Basic,5872.43,No
+70644,66,Sedan,Premium,7398.12,No
+70645,32,Sedan,Basic,5187.32,No
+70646,24,SUV,Basic,3468.02,No
+70647,29,Sedan,Basic,6389.8,No
+70648,41,Sedan,Basic,6623.25,No
+70649,41,Sedan,Basic,5939.63,No
+70650,44,SUV,Premium,5616.29,No
+70651,74,Sedan,Basic,6340.22,No
+70652,19,Truck,Basic,7182.16,No
+70653,58,Sedan,Premium,3717.3,No
+70654,52,Sedan,Basic,9058.25,No
+70655,46,Sports Car,Premium,9265.38,No
+70656,68,Sports Car,Basic,15705.68,Yes
+70657,49,SUV,Premium,7667.02,No
+70658,21,Sports Car,Premium,9570.19,No
+70659,49,Sedan,Basic,7275.85,No
+70660,69,Sedan,Premium,7324.9,No
+70661,64,Sedan,Premium,8714.04,No
+70662,52,SUV,Basic,3280.9,No
+70663,33,Sedan,Basic,6114.6,No
+70664,33,Sedan,Basic,6050.84,No
+70665,73,SUV,Basic,10836.71,No
+70666,52,Sedan,Basic,5935.34,No
+70667,50,Sedan,Basic,4239.52,No
+70668,45,Sports Car,Basic,9194.38,No
+70669,58,Sedan,Basic,2628.57,No
+70670,53,SUV,Basic,7066.09,No
+70671,26,Sports Car,Basic,9903.85,No
+70672,48,Sedan,Basic,7287.93,No
+70673,51,SUV,Basic,4726.04,No
+70674,72,Sports Car,Premium,15198.13,No
+70675,22,SUV,Premium,3443.7,No
+70676,23,Sedan,Premium,8085.36,No
+70677,60,Sedan,Basic,9062.13,No
+70678,55,Sedan,Basic,6453.31,No
+70679,24,Truck,Premium,10293.84,No
+70680,58,SUV,Premium,3048.53,No
+70681,21,SUV,Basic,6114.8,No
+70682,51,Sedan,Premium,3811.34,No
+70683,39,SUV,Basic,6494.14,No
+70684,37,Truck,Basic,8745.75,No
+70685,67,Truck,Basic,8655.25,No
+70686,58,Sports Car,Premium,8168.14,No
+70687,31,SUV,Premium,6612.14,No
+70688,49,Sedan,Basic,7247.56,No
+70689,46,Sports Car,Premium,11865.53,No
+70690,73,Sedan,Premium,11403.15,No
+70691,50,SUV,Basic,3067.03,No
+70692,36,SUV,Premium,4436.93,No
+70693,35,SUV,Basic,6496.53,No
+70694,31,SUV,Basic,6563.65,No
+70695,41,Truck,Basic,8170.1,No
+70696,46,Sedan,Premium,5597.37,No
+70697,28,Sedan,Premium,5894.0,No
+70698,73,Sedan,Basic,5549.05,No
+70699,46,SUV,Basic,5476.17,No
+70700,39,Sedan,Basic,5016.35,No
+70701,39,Sedan,Basic,7542.54,No
+70702,46,Sedan,Basic,7578.56,No
+70703,49,SUV,Basic,8574.53,No
+70704,28,Truck,Basic,10803.49,No
+70705,31,SUV,Basic,2402.59,No
+70706,57,Sedan,Basic,7822.6,No
+70707,25,SUV,Basic,5372.18,No
+70708,63,Sedan,Premium,4122.43,No
+70709,26,SUV,Basic,6220.64,No
+70710,36,Sedan,Basic,7630.73,No
+70711,34,SUV,Premium,6314.62,No
+70712,20,Sports Car,Basic,9921.4,No
+70713,33,Sedan,Premium,5101.86,No
+70714,57,Truck,Premium,10326.5,No
+70715,29,Sedan,Premium,7023.44,No
+70716,44,SUV,Premium,6126.27,No
+70717,71,Sedan,Basic,9400.19,No
+70718,63,Sports Car,Basic,10542.96,No
+70719,58,Sedan,Basic,3576.68,No
+70720,51,SUV,Basic,6454.55,No
+70721,69,Sedan,Basic,8100.85,No
+70722,49,Sedan,Premium,2506.95,No
+70723,54,Sedan,Premium,5855.63,No
+70724,22,Sedan,Basic,3500.25,No
+70725,66,SUV,Premium,,No
+70726,69,Sports Car,Basic,8702.91,No
+70727,69,Truck,Basic,11935.53,No
+70728,49,Sports Car,Basic,13828.91,No
+70729,70,Sedan,Basic,7258.33,No
+70730,21,Sedan,Basic,2360.43,No
+70731,70,Sedan,Basic,7645.03,No
+70732,55,Sedan,Basic,6162.08,No
+70733,55,SUV,Basic,3865.17,No
+70734,58,Sports Car,Premium,10361.78,No
+70735,60,Sedan,Basic,7715.8,No
+70736,55,SUV,Basic,6386.81,No
+70737,43,SUV,Basic,5356.63,No
+70738,24,SUV,Premium,6380.73,No
+70739,21,SUV,Basic,3137.86,No
+70740,54,SUV,Premium,4693.4,No
+70741,57,SUV,Basic,4043.57,No
+70742,51,Sports Car,Basic,9371.65,No
+70743,39,Sedan,Basic,3251.03,No
+70744,39,Sports Car,Basic,8297.96,No
+70745,67,Sedan,Premium,10939.1,No
+70746,23,SUV,Basic,5578.79,No
+70747,67,Sports Car,Basic,9250.77,No
+70748,52,Sedan,Basic,10769.37,No
+70749,43,Sedan,Basic,5103.29,No
+70750,42,Sedan,Basic,6112.3,No
+70751,70,Sports Car,Basic,10847.58,No
+70752,54,Sedan,Basic,4136.37,No
+70753,25,Sedan,Basic,6574.03,No
+70754,27,Sedan,Premium,2978.39,No
+70755,33,SUV,Basic,5756.55,No
+70756,68,Truck,Basic,11257.45,No
+70757,53,Sedan,Basic,7937.0,No
+70758,39,Sports Car,Basic,10019.57,No
+70759,73,Sedan,Premium,8681.69,No
+70760,63,SUV,Basic,5789.17,No
+70761,59,SUV,Basic,5999.63,No
+70762,28,Sedan,Premium,8009.71,No
+70763,60,Sedan,Premium,3438.66,No
+70764,23,SUV,Basic,4921.15,No
+70765,55,Truck,Basic,13305.68,Yes
+70766,25,SUV,Basic,5162.46,No
+70767,32,Sports Car,Premium,11751.56,No
+70768,65,Sedan,Basic,7400.85,No
+70769,48,Sedan,Premium,2148.35,No
+70770,28,Sedan,Premium,4410.73,No
+70771,70,Truck,Basic,11747.56,No
+70772,24,Sedan,Basic,4450.29,No
+70773,66,Sedan,Premium,8070.5,No
+70774,63,SUV,Basic,10847.92,No
+70775,43,Sedan,Basic,6153.83,No
+70776,49,Sedan,Basic,6672.42,No
+70777,51,Sports Car,Basic,9817.77,No
+70778,35,SUV,Basic,3961.52,No
+70779,58,Sedan,Basic,4105.97,No
+70780,19,Sports Car,Premium,9768.91,No
+70781,26,Sedan,Basic,5035.05,No
+70782,24,SUV,Basic,4524.14,No
+70783,41,Sedan,Basic,6626.87,No
+70784,43,SUV,Premium,4744.48,No
+70785,72,Sedan,Basic,11015.27,No
+70786,38,Sedan,Premium,7763.86,No
+70787,67,SUV,Basic,2640.07,No
+70788,33,SUV,Basic,7616.36,No
+70789,53,SUV,Basic,5274.13,No
+70790,43,Sedan,Basic,,No
+70791,70,SUV,Basic,8460.17,No
+70792,61,Truck,Basic,11219.31,No
+70793,72,Sports Car,Basic,7708.97,No
+70794,64,Sedan,Basic,6186.67,No
+70795,55,Sedan,Basic,5929.07,No
+70796,45,Sports Car,Premium,8202.35,No
+70797,19,Sports Car,Basic,10405.44,No
+70798,36,Sedan,Premium,6225.46,No
+70799,47,Sports Car,Basic,8839.91,No
+70800,21,Sedan,Premium,6320.01,No
+70801,45,Sedan,Basic,4809.62,No
+70802,51,Sedan,Basic,6798.93,No
+70803,26,Sedan,Basic,7211.88,No
+70804,29,SUV,Basic,4015.41,No
+70805,71,Sedan,Basic,7154.37,No
+70806,47,Sedan,Basic,5240.53,No
+70807,23,Sedan,Basic,6030.47,No
+70808,37,SUV,Basic,5485.87,No
+70809,29,Truck,Basic,9434.34,No
+70810,39,Sedan,Basic,6418.6,No
+70811,38,Truck,Premium,9459.95,No
+70812,57,Sedan,Premium,5422.02,No
+70813,72,Truck,Basic,11804.28,No
+70814,74,Sedan,Basic,7047.15,No
+70815,57,SUV,Basic,3958.74,No
+70816,35,SUV,Basic,4933.4,No
+70817,60,Sedan,Basic,6480.93,No
+70818,28,Sedan,Basic,3988.96,No
+70819,49,Sedan,Basic,8785.26,No
+70820,57,SUV,Premium,6513.79,No
+70821,35,Truck,Basic,6490.73,No
+70822,24,Truck,Premium,7384.14,No
+70823,40,Sedan,Premium,5955.36,No
+70824,23,Truck,Basic,6883.53,No
+70825,61,Sedan,Basic,4367.4,No
+70826,73,Sports Car,Basic,16075.28,Yes
+70827,40,Sedan,Basic,4328.04,No
+70828,39,SUV,Premium,5357.64,No
+70829,50,Sedan,Basic,2926.62,No
+70830,50,Sedan,Basic,2605.16,No
+70831,59,Sports Car,Basic,11405.79,No
+70832,61,Sedan,Basic,7945.03,No
+70833,21,Sedan,Premium,2850.64,No
+70834,31,SUV,Premium,5801.4,No
+70835,20,Sports Car,Basic,11821.36,No
+70836,70,SUV,Basic,8251.3,No
+70837,63,SUV,Basic,6005.87,No
+70838,54,Truck,Basic,10831.04,No
+70839,22,SUV,Basic,4954.02,No
+70840,68,SUV,Basic,8961.25,No
+70841,34,SUV,Basic,3336.36,No
+70842,59,Sports Car,Basic,9381.65,No
+70843,45,Sedan,Basic,7347.97,No
+70844,35,SUV,Basic,3192.52,No
+70845,21,Sports Car,Basic,11383.04,No
+70846,71,SUV,Basic,7255.32,No
+70847,68,SUV,Premium,,No
+70848,60,SUV,Basic,5799.6,No
+70849,43,SUV,Premium,5079.94,No
+70850,48,Sports Car,Premium,13401.63,No
+70851,33,Truck,Basic,8730.0,No
+70852,26,SUV,Basic,3698.29,No
+70853,34,Truck,Basic,10688.32,No
+70854,31,Sedan,Basic,5981.17,No
+70855,41,SUV,Basic,9115.51,No
+70856,47,Sedan,Basic,11019.66,No
+70857,56,Sports Car,Basic,10917.78,No
+70858,43,SUV,Premium,8334.64,No
+70859,62,Sedan,Basic,3705.02,No
+70860,46,Sports Car,Basic,10000.55,No
+70861,72,SUV,Basic,4597.56,No
+70862,63,SUV,Basic,2601.08,No
+70863,62,Sedan,Basic,5216.21,No
+70864,25,Sedan,Basic,6405.48,No
+70865,38,Sedan,Premium,3355.39,No
+70866,30,SUV,Premium,,No
+70867,71,Sedan,Premium,3975.26,No
+70868,54,Sedan,Basic,4553.98,No
+70869,24,Sedan,Basic,2721.56,No
+70870,60,SUV,Basic,4197.28,No
+70871,24,Sedan,Basic,3045.87,No
+70872,58,SUV,Premium,1371.18,No
+70873,28,SUV,Basic,5254.03,No
+70874,54,Sedan,Premium,8230.5,No
+70875,27,Sports Car,Basic,8568.75,No
+70876,53,SUV,Basic,3290.23,No
+70877,37,SUV,Basic,5547.82,No
+70878,55,SUV,Premium,,No
+70879,62,Sedan,Basic,7426.32,No
+70880,37,Sports Car,Premium,9512.24,No
+70881,35,Sedan,Basic,5652.05,No
+70882,42,Sedan,Basic,6218.02,No
+70883,20,Sedan,Basic,2913.39,No
+70884,26,SUV,Basic,4262.52,No
+70885,53,Sedan,Basic,3861.12,No
+70886,66,Sedan,Basic,6010.99,No
+70887,65,SUV,Basic,10309.76,No
+70888,51,SUV,Basic,8518.59,No
+70889,60,Sedan,Basic,5847.11,No
+70890,71,Sedan,Premium,3690.12,No
+70891,43,Sedan,Basic,6622.42,No
+70892,40,SUV,Premium,5346.64,No
+70893,60,Truck,Basic,10537.88,No
+70894,34,Sedan,Basic,5709.59,No
+70895,53,Sedan,Basic,4079.84,No
+70896,48,Sedan,Basic,4346.44,No
+70897,44,SUV,Premium,5797.71,No
+70898,32,Sedan,Premium,5062.47,No
+70899,46,Sedan,Premium,3202.29,No
+70900,48,SUV,Basic,6234.82,No
+70901,68,SUV,Basic,9176.74,No
+70902,44,SUV,Basic,5558.23,No
+70903,44,Sedan,Basic,8847.8,No
+70904,57,Sedan,Basic,7222.93,No
+70905,49,Truck,Premium,7025.33,No
+70906,72,Truck,Premium,10616.72,No
+70907,61,Sedan,Premium,8234.79,No
+70908,21,SUV,Premium,5154.05,No
+70909,30,Sedan,Basic,5948.83,No
+70910,24,SUV,Basic,5053.29,No
+70911,45,Sedan,Premium,6829.87,No
+70912,39,SUV,Basic,5800.87,No
+70913,43,Sports Car,Basic,12025.39,Yes
+70914,51,Sedan,Basic,2097.28,No
+70915,37,SUV,Premium,4883.43,No
+70916,51,Sedan,Basic,6967.39,No
+70917,65,Sedan,Basic,3050.1,No
+70918,74,Sedan,Basic,7584.81,No
+70919,40,Truck,Basic,11316.96,No
+70920,71,SUV,Basic,2496.8,No
+70921,54,Sports Car,Premium,8820.25,No
+70922,43,Sedan,Basic,5216.68,No
+70923,22,Sedan,Premium,6441.23,No
+70924,51,SUV,Basic,5831.96,No
+70925,23,Sports Car,Premium,11223.71,No
+70926,40,SUV,Premium,5832.85,No
+70927,33,Sedan,Premium,2670.28,No
+70928,38,Sedan,Premium,8254.05,No
+70929,74,Sedan,Basic,3364.94,No
+70930,66,SUV,Basic,4863.82,No
+70931,51,Sedan,Premium,5260.91,No
+70932,55,Truck,Premium,8585.49,No
+70933,19,Sedan,Basic,5833.12,No
+70934,35,SUV,Basic,7211.17,No
+70935,60,Sedan,Basic,5423.58,No
+70936,72,Sedan,Premium,8918.7,No
+70937,21,SUV,Premium,5312.31,No
+70938,55,Sedan,Basic,6525.42,No
+70939,36,Sedan,Basic,1887.18,No
+70940,37,Sedan,Basic,3017.86,No
+70941,69,Sedan,Basic,5400.86,No
+70942,22,Sedan,Premium,5662.91,No
+70943,51,Sedan,Basic,4369.63,No
+70944,62,Sedan,Premium,5418.21,No
+70945,44,Truck,Premium,12187.11,Yes
+70946,29,Sports Car,Basic,12954.14,No
+70947,28,Truck,Basic,10063.97,No
+70948,22,Sedan,Basic,3652.13,No
+70949,20,SUV,Basic,5633.4,No
+70950,44,SUV,Basic,3157.63,No
+70951,31,Truck,Basic,9083.82,No
+70952,19,Sedan,Basic,3546.7,No
+70953,19,SUV,Basic,3881.9,No
+70954,69,SUV,Basic,7002.16,No
+70955,65,SUV,Basic,6547.13,No
+70956,45,Sedan,Basic,6662.24,No
+70957,51,SUV,Premium,3835.95,No
+70958,74,Sedan,Basic,4907.79,No
+70959,74,SUV,Basic,7439.35,No
+70960,44,Truck,Basic,10079.59,No
+70961,55,Sedan,Basic,9152.27,No
+70962,55,SUV,Basic,5999.01,No
+70963,52,Sports Car,Premium,11562.82,No
+70964,67,Sports Car,Basic,8851.84,No
+70965,36,Sedan,Premium,7010.41,No
+70966,67,Truck,Premium,9684.85,No
+70967,67,Sports Car,Basic,11506.68,No
+70968,41,Sedan,Basic,3995.55,No
+70969,58,SUV,Basic,7400.43,No
+70970,42,SUV,Basic,7733.56,No
+70971,73,SUV,Basic,6679.93,No
+70972,24,Sedan,Basic,6990.13,No
+70973,67,Truck,Basic,12016.36,Yes
+70974,63,SUV,Basic,5738.26,No
+70975,43,Sedan,Basic,5605.14,No
+70976,49,Truck,Basic,10398.02,No
+70977,70,SUV,Basic,4318.48,No
+70978,51,SUV,Basic,6899.48,No
+70979,32,Truck,Basic,9072.71,No
+70980,63,Sedan,Premium,9291.45,No
+70981,71,Sedan,Basic,10081.66,No
+70982,70,Sedan,Basic,3445.38,No
+70983,40,Sports Car,Basic,12392.81,Yes
+70984,73,Sedan,Basic,7300.92,No
+70985,73,SUV,Premium,3465.51,No
+70986,38,Truck,Basic,9661.7,No
+70987,69,SUV,Premium,6977.18,No
+70988,48,SUV,Premium,5874.31,No
+70989,43,SUV,Basic,7960.8,No
+70990,58,SUV,Basic,4301.21,No
+70991,58,Sedan,Basic,5380.43,No
+70992,20,Sedan,Basic,5387.92,No
+70993,33,Sports Car,Basic,9243.45,No
+70994,68,Sedan,Basic,4607.25,No
+70995,50,SUV,Basic,6215.59,No
+70996,40,SUV,Basic,6112.56,No
+70997,54,Sports Car,Basic,10892.69,No
+70998,46,SUV,Basic,5198.67,No
+70999,41,Sedan,Basic,5113.14,No
+71000,56,SUV,Premium,3964.02,No

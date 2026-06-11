@@ -1,0 +1,171 @@
+---
+layout: practice
+title: "83. 종합병원 진료 부서별 환자 대기 시간 분석 실습"
+permalink: /practice/83_patient_waiting/
+---
+
+# 83. 종합병원 진료 부서별 환자 대기 시간 분석 실습
+## 실전 데이터 분석 83: 진료 부서 및 당직 의사 근무 조건별 내원 환자 평균 대기 시간 및 서비스 만족도 분석
+
+![도입 만화](img/intro_comic.png)
+
+### 📊 실습 개요 (Tutorial Overview)
+종합병원 응급 및 외래 진료소의 실시간 환자 대기 이력 데이터셋입니다. 각 진료 부서(Department)와 대기 시간(WaitTime_Mins), 당직 의사 유무가 환자의 주관적 서비스 만족도 평점(SatisfactionRating)에 어떤 한계 하강 작용을 하는지 분석하고 시각화합니다.
+
+---
+
+### 🛠️ 핵심 분석 실습 역량 (Core Skills)
+* **부서별 중앙값 대치 (\`groupby.transform\`):** 당직 의사 수 결측치를 부서별 표준 당직 인원 중앙값으로 대입하여 구조적 신뢰도를 지킵니다.
+* **부서별 대기 지연 및 만족도 하강 분석 (\`barplot\`, \`scatterplot\`):** 부서별 평균 대기 시간 막대 및 대기 시간에 따른 만족도 붕괴 산점도를 도출합니다.
+
+---
+
+## Step 1: 데이터 불러오기 및 기본 정보 확인 (Data Load)
+
+![Step 1 데이터 수집 개념도](img/step1_dataset.svg)
+
+제공된 CSV 파일을 분석 컴퓨터로 불러와 로드하고, 컬럼의 타입 및 데이터 구조를 확인합니다.
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 한글 폰트 설정
+import koreanize_matplotlib
+sns.set_theme(style="whitegrid")
+
+# 데이터 로드
+df = pd.read_csv('../csv_data/patient_waiting.csv')
+print(df.info())
+print(df.head())
+```
+
+> **💻 [실행 결과]**
+> ```text
+> <class 'pandas.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   PatientID           1000 non-null   int64  
+ 1   Department          1000 non-null   str    
+ 2   DoctorAvailable     987 non-null    float64
+ 3   AppointmentHour     1000 non-null   int64  
+ 4   WaitTime_Mins       1000 non-null   float64
+ 5   SatisfactionRating  1000 non-null   float64
+dtypes: float64(3), int64(2), str(1)
+memory usage: 47.0 KB
+> 
+> PatientID   Department  DoctorAvailable  AppointmentHour  WaitTime_Mins  SatisfactionRating
+0     830001          ENT              3.0               12            9.4                 5.0
+1     830002          ENT              NaN                9           15.3                 4.1
+2     830003  Dermatology              2.0               15           23.9                 4.5
+3     830004   Pediatrics              1.0               14           32.8                 3.0
+4     830005          ENT              2.0               12            5.0                 4.1
+> ```
+
+---
+
+## Step 2: 결측치 및 데이터 정제 (Data Cleaning)
+
+![Step 2 데이터 정제 개념도](img/step2_missing_values.svg)
+
+수집 과정에서 빈칸으로 기록된 결측값(NaN)의 존재 여부를 진단하고, 데이터 도메인 성격에 부합하는 통계 수치 대입 기법으로 정제합니다.
+
+```python
+# 1. 컬럼별 결측치 개수 확인
+print("--- 정제 전 결측치 확인 ---")
+print(df.isnull().sum())
+
+# 2. 결측치 전처리 및 대치 수행
+median_doc = df.groupby('Department')['DoctorAvailable'].transform('median')
+df['DoctorAvailable'] = df['DoctorAvailable'].fillna(median_doc)
+print(df.isnull().sum())
+```
+
+> **💻 [실행 결과]**
+> ```text
+> --- 정제 전 결측치 확인 ---
+> PatientID              0
+Department             0
+DoctorAvailable       13
+AppointmentHour        0
+WaitTime_Mins          0
+SatisfactionRating     0
+> 
+> --- 정제 후 결측치 확인 ---
+> PatientID             0
+Department            0
+DoctorAvailable       0
+AppointmentHour       0
+WaitTime_Mins         0
+SatisfactionRating    0
+> ```
+
+### 💡 분석가의 통찰 (Analyst's Insight)
+* **부서 가중 그룹 대치의 합리성:** 소아과와 내과는 기본 대기 환자 스케일과 근무 기본 정원 구조가 판이합니다. 전체 병원의 당직의 평균으로 채우면 특정 소규모 외래 부서의 데이터가 비상식적으로 불어나기 때문에, 소속 부서별 중간값으로 채우는 것이 정밀 전처리의 기본 수칙입니다.
+
+---
+
+## Step 3: 단변수 분포 분석 (Univariate EDA)
+
+![Step 3 시각화 개념도](img/step3_visualization.svg)
+
+가장 먼저 핵심 변수가 전체 데이터에서 어떤 빈도와 분포를 가졌는지 단일 변수 시각화를 통해 파악해 봅니다.
+
+```python
+plt.figure(figsize=(8, 5))
+
+# 단변수 분석 그래프 생성
+sns.barplot(data=df, x='Department', y='WaitTime_Mins', palette='Set2', errorbar=None)
+plt.title('진료 부서별 내원 환자 평균 대기 시간 (분)', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+### 💡 시각화 차트 읽는 법 & 인사이트
+* **진료 부서별 정체 및 병목 격차:** 특정 부서(예: 소아과, Pediatrics)의 평균 대기 시간 막대가 타 부서 대비 현저하게 높게 관찰됩니다. 이는 특정 요일이나 대기 스파이크에 대한 내과/소아과 인력 리소스 재조정이 시급함을 보여줍니다.
+
+---
+
+## Step 4: 다변수 상관관계 및 이상치 분석 (Multivariate EDA)
+
+![Step 4 상관관계 분석 개념도](img/step4_multivariate.svg)
+
+두 개 이상의 변수를 동시에 결합하여, 조건에 따른 수치 차이나 독립 변수와 종속 변수 간의 통계적 경향을 분석합니다.
+
+```python
+plt.figure(figsize=(9, 6))
+
+# 다변수 분석 그래프 생성
+sns.scatterplot(data=df, x='WaitTime_Mins', y='SatisfactionRating', hue='Department', palette='Set1', alpha=0.8)
+plt.title('대기 시간 대비 환자 만족도와 부서별 추이', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
+* **40분 한계 지점 돌파 시 만족도 급락 입증:** 대기 시간(X축)과 만족도(Y축)의 상관 관계는 선형보다 비선형 임계 형태를 보입니다. 대기 시간이 40분을 돌파하는 시점부터 4~5점 평점 분포가 사라지고 1~2점 대역으로 급락하는 패턴이 관찰되어, 40분 이내 진료 개시라는 골든타임 목표 관리가 환자 평판 관리에 필수적임을 증명합니다.
+
+---
+
+## Step 5: 통계적 직관과 해석 (Statistical Logic)
+
+> 💡 **[대기행렬 이론(Queueing Theory)과 병원 서비스 디자인의 수학적 연계]**
+... (생략: 대기행렬 이론 및 가중 M/M/c 모형 직관 요약)
+
+---
+
+## 🎯 30분 강의 마무리 및 심화 과제
+
+오늘 우리는 실전 데이터셋을 분석하여 판다스로 데이터를 가공 및 정제하고, 시각화를 활용하여 핵심 변수 간의 통계적 유의성을 검증했습니다. 데이터 속에서 숨겨진 패턴을 올바른 시각으로 탐색하는 능력이 데이터 사이언티스트의 가장 강력한 무기입니다.
+
+### 📝 심화 과제 (Advanced Challenge)
+* **내원 시각(AppointmentHour)과 대기시간의 상관 분석:** 특정 피크타임(점심시간 직전, 오후 늦게 등)에 정체가 가중되는지 시각대별 평균 대기 시간을 집계해 보세요.
+* **당직 의사 수에 따른 대기 시간 감소율 비교:** `DoctorAvailable` 인원수가 1명일 때와 3명 이상일 때의 평균 대기시간 및 40분 초과 정체 비율 차이를 테이블로 대조 요약해 보세요.

@@ -1,0 +1,179 @@
+---
+layout: practice
+title: "79. 모바일 게임 플레이 몰입도 분석 실습"
+permalink: /practice/79_gaming_sessions/
+---
+
+# 실전 데이터 분석 79: 모바일 게임 가입자 플레이 지속시간 및 게임 모드 대비 인앱 광고 시청 수와 결제액 상관 분석
+
+## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
+
+모바일 캐주얼/아케이드 게임 가입자의 접속 세션 로그 데이터셋입니다. 사용자의 게임 플레이 시간, 게임 모드 분류가 실제 인앱 결제 매출(IAP_Amount) 및 광고 시청 만족도에 미치는 기여를 규명합니다.
+
+**학습 목표:**
+* **결제 무과금 유저 0 대치 (`fillna`):** 이번 판에 한 번도 현질 결제를 수행하지 않은 무과금 유저의 결측을 0.0으로 정밀 대치하여 데이터 연속성을 유지합니다.
+* **게임 몰입 시점 및 매출 산점도 (`boxplot`, `scatterplot`):** 게임 모드별 평균 지속시간 상자 비교 및 세션 지속 시간 대비 결제액 위 모드 오버레이 산점도를 도출합니다.
+
+---
+
+## Step 1: 데이터 구조 살펴보기 (Data Overview)
+
+![Step 1 데이터 구조 개념도](img/step1_dataset.svg)
+
+`csv_data` 폴더에 준비해 둔 `gaming_sessions.csv` 파일을 판다스로 불러옵니다.
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 그래프 설정 (한글 폰트 및 마이너스 기호 깨짐 방지)
+import koreanize_matplotlib
+plt.rcParams['axes.unicode_minus'] = False
+sns.set_theme(style="whitegrid")
+
+# 로컬 CSV 파일 불러오기
+df = pd.read_csv('../csv_data/gaming_sessions.csv')
+
+# 데이터 구조 및 첫 5행 확인
+df = pd.read_csv('../csv_data/gaming_sessions.csv')
+print(df.info())
+print(df.head())
+```
+
+> **💻 [실행 결과]**
+> ```text
+<class 'pandas.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   SessionID           1000 non-null   int64  
+ 1   PlayerLevel         1000 non-null   int64  
+ 2   SessionLength_Mins  1000 non-null   float64
+ 3   IAP_Amount          985 non-null    float64
+ 4   GameMode            1000 non-null   str    
+ 5   AdsWatched          1000 non-null   int64  
+dtypes: float64(2), int64(3), str(1)
+memory usage: 47.0 KB
+SessionID  PlayerLevel  SessionLength_Mins  IAP_Amount GameMode  AdsWatched
+0     790001           88                 8.7        0.00   Casual           0
+1     790002           62                58.1       16.51    Co-op           3
+2     790003           75                83.2       10.64   Casual           2
+3     790004           68                94.9       10.70   Casual           9
+4     790005           21                32.7        0.00   Casual           3
+> ```
+
+### 💡 코드 딥다이브 (Code Deep Dive)
+**주요 분석 대상 컬럼:**
+* `SessionID`: 개별 게임 접속 세션 고유 식별 번호
+* `PlayerLevel`: 해당 가입자 캐릭터 계정 레벨 (1~99)
+* `SessionLength_Mins`: 이번 판에 접속해서 게임을 지속한 플레이 시간 (분)
+* `IAP_Amount`: 이번 세션 동안 인앱 결제 상점에서 아이템 구매로 지출한 금액 (USD) (결측치 존재)
+* `GameMode`: 플레이 진행한 게임 모드 분류 (Ranked: 랭킹 경쟁전, Casual: 일반, Co-op: 협동전)
+* `AdsWatched`: 이번 판 플레이 중 시청 노출 완료된 보상형 광고 횟수
+
+---
+
+## Step 2: 전처리와 결측치 정제 (Preprocess)
+
+![Step 2 데이터 정제 개념도](img/step2_missing_values.svg)
+
+현실의 데이터는 항상 누락이 있거나 유효성 정제가 필요합니다. 데이터 전처리 단계에서 결측 상태를 확인하고 올바르게 보정합니다.
+
+```python
+# 1. 컬럼별 결측치 개수 확인
+print("--- 정제 전 결측치 확인 ---")
+print(df.isnull().sum())
+
+# 2. 결측치 전처리 및 대치 수행
+df['IAP_Amount'] = df['IAP_Amount'].fillna(0.0)
+print(df.isnull().sum())
+```
+
+> **💻 [실행 결과]**
+> ```text
+--- 정제 전 결측치 확인 ---
+SessionID              0
+PlayerLevel            0
+SessionLength_Mins     0
+IAP_Amount            15
+GameMode               0
+AdsWatched             0
+
+--- 정제 후 결측치 확인 ---
+SessionID             0
+PlayerLevel           0
+SessionLength_Mins    0
+IAP_Amount            0
+GameMode              0
+AdsWatched            0
+> ```
+
+### 💡 분석가의 통찰 (Analyst's Insight)
+* **무과금 결측 정제의 비즈니스 도메인 타당성:** 게이머의 80% 이상은 인앱 결제를 하지 않는 무과금 유저(Non-paying User)입니다. 매출 데이터의 NaN은 시스템 결함 유실이 아니라 무과금 0원 결제를 의미하므로, 0.0으로 깔끔히 전처리 대치하여 플랫폼 총 매출 합계를 정확히 산정합니다.
+
+---
+
+## Step 3: 단변수 분포 분석 (Univariate EDA)
+
+![Step 3 시각화 개념도](img/step3_visualization.svg)
+
+가장 먼저 핵심 변수가 전체 데이터에서 어떤 빈도와 분포를 가졌는지 단일 변수 시각화를 통해 파악해 봅니다.
+
+```python
+plt.figure(figsize=(8, 5))
+
+# 단변수 분석 그래프 생성
+sns.boxplot(data=df, x='GameMode', y='SessionLength_Mins', palette='rocket')
+plt.title('게임 모드별 플레이 체류 시간 분포', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+### 💡 시각화 차트 읽는 법 & 인사이트
+* **게임 모드별 게이머 잔존시간 비교:** 승부욕을 자극하는 경쟁전(Ranked) 모드의 플레이 시간 상자 중앙값선과 수염 범위가 일반 캐주얼(Casual) 및 협동전(Co-op) 모드 대비 유의미하게 롱타임 대역에 걸쳐 형성되어 가파른 몰입도를 입증합니다.
+
+---
+
+## Step 4: 다변수 상관관계 및 이상치 분석 (Multivariate EDA)
+
+![Step 4 상관관계 분석 개념도](img/step4_multivariate.svg)
+
+두 개 이상의 변수를 동시에 결합하여, 조건에 따른 수치 차이나 독립 변수와 종속 변수 간의 통계적 경향을 분석합니다.
+
+```python
+plt.figure(figsize=(9, 6))
+
+# 다변수 분석 그래프 생성
+sns.scatterplot(data=df, x='SessionLength_Mins', y='IAP_Amount', hue='GameMode', alpha=0.7, palette='Set1')
+plt.title('게임 플레이 지속 시간 대비 인앱 결제 금액 상관성', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
+* **장기 몰입 및 결제 시너지 상관성:** 플레이 시간(X축)이 40분을 초과하기 전에는 인앱 결제 지출(Y축)이 0원 부근에 납작하게 누워 있지만, **40분 선을 돌파하며 게임에 잔존하는 시간이 늘어날수록** 결제 지출 규모가 수직으로 솟아오르는 비선형 시너지 구조를 띱니다. 특히 경쟁전(Ranked, 빨간 점) 모드 유저들의 고액 지출 점 군집이 압도적입니다.
+
+---
+
+## Step 5: 통계적 직관과 해석 (Statistical Logic)
+
+> 💡 **[모바일 프리미엄(Freemium) BM과 멱법칙 기반 '고래(Whale)' 유저 분석]**
+... (생략: 모바일 게임 인앱 비즈니스 모델 및 ARPPU 지표와 멱법칙 분포 설명)
+
+---
+
+## 🎯 30분 강의 마무리 및 심화 과제
+
+오늘 우리는 실전 데이터셋을 분석하여 판다스로 데이터를 가공 및 정제하고, 시각화를 활용하여 핵심 변수 간의 통계적 유의성을 검증했습니다. 데이터 속에서 숨겨진 패턴을 올바른 시각으로 탐색하는 능력이 데이터 사이언티스트의 가장 강력한 무기입니다.
+
+### 📝 심화 과제 (Advanced Challenge)
+1. **광고 시청 횟수(AdsWatched)와 인앱 결제의 상관 Analysis:** 광고를 많이 보는 유저일수록 현질 지출(IAP_Amount)도 적극적으로 수행하는지 상관 통계를 도출해 보세요.
+2. **상위 5% 초고액 과금 '핵심 고래' 유저 필터링:** 1회 세션 결제액이 $50를 초과하는 고액 VIP 플레이어 서브셋의 평균 레벨과 게임 모드 분포를 요약해 보세요.

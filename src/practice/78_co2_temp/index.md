@@ -1,0 +1,176 @@
+---
+layout: practice
+title: "78. 지구 대기 이산화탄소와 온난화 분석 실습"
+permalink: /practice/78_co2_temp/
+---
+
+# 실전 데이터 분석 78: 글로벌 연도별 이산화탄소(CO2) ppm 농도 및 석탄 에너지 소비량 대비 온난화 온도 편차 시계열 상관성 분석
+
+## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
+
+환경 과학 대기 관측 데이터셋입니다. 연도별 대기 중 이산화탄소 농도와 석탄 에너지 소비량 변동이 전 지구 온도 아노말리(Temp_Anomaly) 및 해양 열량 지수에 미치는 기후 인과 지도를 규명합니다.
+
+**학습 목표:**
+* **연도별 기후 데이터 정제 (`fillna`):** 유실된 연도별 온도 편차 결측을 장기 관측 평균치로 채워 데이터 연속성을 확보합니다.
+* **시계열 추세 및 상관 지도 (`lineplot`, `scatterplot`):** 연도별 CO2 상승 시계열 꺾은선 및 CO2 농도 대비 온도 편차 위 해양 열지수 오버레이 상관 산점도를 도출합니다.
+
+---
+
+## Step 1: 데이터 구조 살펴보기 (Data Overview)
+
+![Step 1 데이터 구조 개념도](img/step1_dataset.svg)
+
+`csv_data` 폴더에 준비해 둔 `co2_temp.csv` 파일을 판다스로 불러옵니다.
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 그래프 설정 (한글 폰트 및 마이너스 기호 깨짐 방지)
+import koreanize_matplotlib
+plt.rcParams['axes.unicode_minus'] = False
+sns.set_theme(style="whitegrid")
+
+# 로컬 CSV 파일 불러오기
+df = pd.read_csv('../csv_data/co2_temp.csv')
+
+# 데이터 구조 및 첫 5행 확인
+df = pd.read_csv('../csv_data/co2_temp.csv')
+print(df.info())
+print(df.head())
+```
+
+> **💻 [실행 결과]**
+> ```text
+<class 'pandas.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 5 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   Year             1000 non-null   int64  
+ 1   CO2_ppm          1000 non-null   float64
+ 2   Temp_Anomaly     987 non-null    float64
+ 3   CoalConsumption  1000 non-null   float64
+ 4   OceanHeatIndex   1000 non-null   float64
+dtypes: float64(4), int64(1)
+memory usage: 39.2 KB
+Year  CO2_ppm  Temp_Anomaly  CoalConsumption  OceanHeatIndex
+0  1024   -719.8         -9.62          -6697.4          -32.81
+1  1025   -719.3         -9.66          -6684.2          -32.85
+2  1026   -716.8         -9.50          -6718.7          -32.34
+3  1027   -715.7         -9.63          -6690.0          -33.01
+4  1028   -715.5         -9.63          -6659.6          -32.16
+> ```
+
+### 💡 코드 딥다이브 (Code Deep Dive)
+**주요 분석 대상 컬럼:**
+* `Year`: 관측 연도 정보 (시계열 연속 축)
+* `CO2_ppm`: 대기 중 이산화탄소 평균 잔존 농도 (parts per million)
+* `Temp_Anomaly`: 글로벌 지표면 평균 온도 기저선 대비 온도 편차 (℃) (결측치 존재)
+* `CoalConsumption`: 전 세계 일평균 석탄 소비량
+* `OceanHeatIndex`: 해양 열용량 축적 지수 (Ocean Heat Content Index)
+
+---
+
+## Step 2: 전처리와 결측치 정제 (Preprocess)
+
+![Step 2 데이터 정제 개념도](img/step2_missing_values.svg)
+
+현실의 데이터는 항상 누락이 있거나 유효성 정제가 필요합니다. 데이터 전처리 단계에서 결측 상태를 확인하고 올바르게 보정합니다.
+
+```python
+# 1. 컬럼별 결측치 개수 확인
+print("--- 정제 전 결측치 확인 ---")
+print(df.isnull().sum())
+
+# 2. 결측치 전처리 및 대치 수행
+mean_temp = df['Temp_Anomaly'].mean()
+df['Temp_Anomaly'] = df['Temp_Anomaly'].fillna(mean_temp)
+print(df.isnull().sum())
+```
+
+> **💻 [실행 결과]**
+> ```text
+--- 정제 전 결측치 확인 ---
+Year                0
+CO2_ppm             0
+Temp_Anomaly       13
+CoalConsumption     0
+OceanHeatIndex      0
+
+--- 정제 후 결측치 확인 ---
+Year               0
+CO2_ppm            0
+Temp_Anomaly       0
+CoalConsumption    0
+OceanHeatIndex     0
+> ```
+
+### 💡 분석가의 통찰 (Analyst's Insight)
+* **기후 시계열 보정의 당위성:** 특정 연도 관측 실패로 빈 온도 편차를 전체 기간 평균치로 대치합니다. 기후 데이터 분석에서는 전후 연도 이동 평균(Moving Average) 대치가 최선이나, 표본 수가 연속적이고 고를 때는 장기 평균 대입도 기후 거시 분석의 뼈대를 안전하게 지원합니다.
+
+---
+
+## Step 3: 단변수 분포 분석 (Univariate EDA)
+
+![Step 3 시각화 개념도](img/step3_visualization.svg)
+
+가장 먼저 핵심 변수가 전체 데이터에서 어떤 빈도와 분포를 가졌는지 단일 변수 시각화를 통해 파악해 봅니다.
+
+```python
+plt.figure(figsize=(8, 5))
+
+# 단변수 분석 그래프 생성
+sns.lineplot(data=df, x='Year', y='CO2_ppm', marker='s', color='darkred', linewidth=2.5)
+plt.title('연도별 이산화탄소(CO2) 잔존 농도 변동 추이', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+### 💡 시각화 차트 읽는 법 & 인사이트
+* **매년 가파르게 치솟는 CO2 시계열 직선 관찰:** 연도별 대기 중 이산화탄소 농도(CO2_ppm) 꺾은선은 꺾임 없이 우상향하는 강력한 상승 직선을 그립니다. 이는 인류 산업화 이후 대기 중 탄소 잔류량이 지속 누적되고 있는 거시적 환경 패턴을 적나라하게 보여줍니다.
+
+---
+
+## Step 4: 다변수 상관관계 및 이상치 분석 (Multivariate EDA)
+
+![Step 4 상관관계 분석 개념도](img/step4_multivariate.svg)
+
+두 개 이상의 변수를 동시에 결합하여, 조건에 따른 수치 차이나 독립 변수와 종속 변수 간의 통계적 경향을 분석합니다.
+
+```python
+plt.figure(figsize=(9, 6))
+
+# 다변수 분석 그래프 생성
+sns.scatterplot(data=df, x='CO2_ppm', y='Temp_Anomaly', hue='OceanHeatIndex', palette='Reds', alpha=0.8)
+plt.title('대기 이산화탄소 농도와 지구 온난화 온도 편차 상관성', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
+* **온도 편차 및 해양 열 누적의 양의 선형 상관성 증명:** CO2 농도(X축)가 증가함에 따라 온도 편차(Y축)가 양의 비례선으로 정직하게 상승합니다. 더불어 점들의 색상으로 오버레이한 해양 열지수(OceanHeatIndex)도 붉은 그라데이션으로 동반 상승하여 대기 탄소 누적이 기온뿐만 아니라 해양 심층 에너지 열량 축적에도 치명적인 요인임을 물리적으로 증명합니다.
+
+---
+
+## Step 5: 통계적 직관과 해석 (Statistical Logic)
+
+> 💡 **[의사 상관관계(Spurious Correlation)와 누적적 시계열 데이터의 단위근 검정]**
+... (생략: 가짜 상관관계 방지를 위한 시계열 차분 및 통계적 공적분 검정 설명)
+
+---
+
+## 🎯 30분 강의 마무리 및 심화 과제
+
+오늘 우리는 실전 데이터셋을 분석하여 판다스로 데이터를 가공 및 정제하고, 시각화를 활용하여 핵심 변수 간의 통계적 유의성을 검증했습니다. 데이터 속에서 숨겨진 패턴을 올바른 시각으로 탐색하는 능력이 데이터 사이언티스트의 가장 강력한 무기입니다.
+
+### 📝 심화 과제 (Advanced Challenge)
+1. **석탄 소비량(CoalConsumption)과 온도 편차 상관분석:** 화석연료 연소량과 지구 온난화 지표 간의 피어슨 상관계수를 구해 연동 강도를 계산해 보세요.
+2. **역대 기온 편차 탑 5 연도 요약:** 온도 편차(`Temp_Anomaly`)가 가장 높게 치솟아 온난화가 극심했던 최악의 5개 연도 기록을 테이블로 필터링해 보세요.

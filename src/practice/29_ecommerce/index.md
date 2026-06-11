@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
@@ -39,7 +39,7 @@ df = pd.read_csv('../csv_data/ecommerce.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -77,7 +77,7 @@ df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
 df['Month'] = df['InvoiceDate'].dt.month
 
 # 우리가 방금 땀 흘려 만든 파생 변수 3개가 잘 들어갔는지 확인!
-display(df[['Quantity', 'UnitPrice', 'TotalPrice', 'Month']].head())
+print(df[['Quantity', 'UnitPrice', 'TotalPrice', 'Month']].head())
 ```
 
 > **💻 [실행 결과]**

@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set1")
 
@@ -39,7 +39,7 @@ df = sns.load_dataset('attention')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -87,7 +87,7 @@ display(df.head())
 # attention(주의력 조건)에 따른 score(점수)의 평균 계산
 mean_scores = df.groupby('attention')['score'].mean().reset_index()
 
-display(mean_scores)
+print(mean_scores)
 ```
 
 > **💻 [실행 결과]**

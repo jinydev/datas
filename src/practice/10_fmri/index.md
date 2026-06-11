@@ -32,7 +32,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("muted")
 
@@ -41,7 +41,7 @@ df = sns.load_dataset('fmri')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -95,7 +95,7 @@ time_0_df = df[df['timepoint'] == 0]
 print(f"0초일 때 존재하는 총 데이터 개수: {len(time_0_df)}개")
 
 # 0초일 때의 데이터 5개만 샘플로 확인
-display(time_0_df.head())
+print(time_0_df.head())
 ```
 
 > **💻 [실행 결과]**

@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("muted")
 
@@ -39,7 +39,7 @@ df = pd.read_csv('../csv_data/heart_disease.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -77,7 +77,7 @@ labels = ['20-30s', '40s', '50s', '60s', '70s']
 df['age_group'] = pd.cut(df['age'], bins=bins, labels=labels)
 
 # 파생 변수가 잘 만들어졌는지 5명만 무작위 샘플링하여 확인
-display(df[['age', 'age_group', 'target']].sample(5))
+print(df[['age', 'age_group', 'target']].sample(5))
 ```
 
 > **💻 [실행 결과]**

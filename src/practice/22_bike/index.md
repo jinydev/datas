@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
@@ -39,7 +39,7 @@ df = pd.read_csv('../csv_data/bike_sharing.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -73,7 +73,7 @@ df['day_of_week'] = df['date'].dt.dayofweek
 df['is_weekend'] = df['day_of_week'].apply(lambda x: '주말' if x >= 5 else '평일')
 
 # 마법이 성공했는지 샘플 확인
-display(df[['date', 'day_of_week', 'is_weekend', 'count']].sample(5))
+print(df[['date', 'day_of_week', 'is_weekend', 'count']].sample(5))
 ```
 
 > **💻 [실행 결과]**

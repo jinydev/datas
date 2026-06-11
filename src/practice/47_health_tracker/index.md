@@ -1,0 +1,184 @@
+---
+layout: practice
+title: "47. 건강 스마트워치 데이터 분석 실습"
+permalink: /practice/47_health_tracker/
+---
+
+# 실전 데이터 분석 47: 스마트 웨어러블 로그 기반 일일 걸음 수, 활동 시간, 그리고 수면 품질 점수의 다차원 분석
+
+## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
+스마트워치 기기에서 365일간 연속 자동 수집된 일일 건강 지표 로그 데이터셋입니다. 일별 걸음 수(Steps)와 고강도 활동 시간(ActiveMinutes)의 분포를 관찰하고, 수면 시간(SleepHours)의 증가가 실제 설문으로 표기된 수면 만족도 품질(SleepQuality) 점수에 미치는 물리적 영향 관계를 추적합니다.
+
+**학습 목표:**
+* **걸음 수 밀도 곡선 (`histplot`):** 일별 신체 활동량의 쏠림 형태를 KDE 분포선과 함께 20개 빈으로 나누어 파악합니다.
+* **수면 품질 박스플롯 (`boxplot`):** 주관적인 수면 만족 점수(1~10점) 범주별로 실제 잔 수면 시간의 분포와 사분위 편차를 가로 대조합니다.
+
+---
+
+## Step 1: 데이터 구조 살펴보기 (Data Overview)
+
+![Step 1 데이터 구조 개념도](img/step1_dataset.svg)
+
+`csv_data` 폴더에 준비해 둔 `health_tracker.csv` 파일을 판다스로 불러옵니다.
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 그래프 설정 (한글 폰트 및 마이너스 기호 깨짐 방지)
+import koreanize_matplotlib
+plt.rcParams['axes.unicode_minus'] = False
+sns.set_theme(style="whitegrid")
+
+# 로컬 CSV 파일 불러오기
+df = pd.read_csv('../csv_data/health_tracker.csv')
+
+# 데이터 구조 및 첫 5행 확인
+print(df.info())
+print(df.head())
+```
+
+> **💻 [실행 결과]**
+> ```text
+<class 'pandas.DataFrame'>
+RangeIndex: 365 entries, 0 to 364
+Data columns (total 6 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Date           365 non-null    object 
+ 1   Steps          365 non-null    int64  
+ 2   ActiveMinutes  365 non-null    int64  
+ 3   HeartRate_Avg  365 non-null    int64  
+ 4   SleepHours     365 non-null    float64
+ 5   SleepQuality   365 non-null    int64  
+dtypes: float64(1), int64(4), object(1)
+memory usage: 17.2 KB
+None
+          Date  Steps  ActiveMinutes  HeartRate_Avg  SleepHours  SleepQuality
+0  2023-01-01   5817             70             68         6.6             9
+1  2023-01-02  14067            147             74         6.0             5
+2  2023-01-03   5262             62             70         6.7             7
+3  2023-01-04  16670            179             68         8.5             9
+4  2023-01-05   7490             86             65         5.6             5
+> ```
+
+### 💡 코드 딥다이브 (Code Deep Dive)
+**주요 분석 대상 컬럼:**
+* `Date`: 건강 정보 수집 일자
+* `Steps`: 일별 만보기 걸음 수
+* `ActiveMinutes`: 중강도 이상 신체 활동 시간 (분)
+* `HeartRate_Avg`: 일평균 안정 시 심박수 (BPM)
+* `SleepHours`: 스마트 센서가 측정한 실제 총 수면 시간 (Hours)
+* `SleepQuality`: 아침에 깨어나 주관적으로 입력한 피로 해소 점수 (1~10점 척도)
+
+---
+
+## Step 2: 전처리와 결측치 정제 (Preprocess)
+
+![Step 2 데이터 정제 개념도](img/step2_missing_values.svg)
+
+현실의 데이터는 항상 누락이 있거나 유효성 정제가 필요합니다. 데이터 전처리 단계에서 결측 상태를 확인하고 올바르게 보정합니다.
+
+```python
+# 1. 활동 지표와 수면 지표의 핵심 기술 통계 파악
+print(df[['Steps', 'SleepHours', 'SleepQuality']].describe())
+
+# 2. 걸음 수와 활동 분량 간의 수학적 상관관계 확인
+print("\n--- 걸음수 vs 활동시간 상관계수 ---")
+print(df[['Steps', 'ActiveMinutes']].corr())
+```
+
+> **💻 [실행 결과]**
+> ```text
+              Steps  SleepHours  SleepQuality
+count    365.000000  365.000000    365.000000
+mean    9078.939726     6.942466      7.200000
+std     3810.696618      1.007488      1.395046
+min     1821.000000      4.000000      3.000000
+25%     6249.000000      6.300000      6.000000
+50%     8659.000000      7.000000      7.000000
+75%    11224.000000      7.700000      8.000000
+max    23998.000000      9.300000     10.000000
+
+--- 걸음수 vs 활동시간 상관계수 ---
+                  Steps  ActiveMinutes
+Steps          1.000000       0.993427
+ActiveMinutes  0.993427       1.000000
+> ```
+
+### 💡 분석가의 통찰 (Analyst's Insight)
+* **활동량과 활성 시간의 완벽한 결합:** 일평균 9천보 수준을 걸으며 하루 7시간 내외의 평균 잠을 자는 균형 잡힌 헬스 리듬을 이룹니다. 특히 걸음 수(`Steps`)와 신체 활성 분(`ActiveMinutes`) 사이의 상관계수는 무려 **0.993**에 달해, 기기가 일일 걸음 수를 기준으로 활동 시간 타이머 센서를 가중 측정하고 있음을 정밀하게 입증해 줍니다.
+
+---
+
+## Step 3: 단변수 분포 분석 (Univariate EDA)
+
+![Step 3 시각화 개념도](img/step3_visualization.svg)
+
+가장 먼저 핵심 변수가 전체 데이터에서 어떤 빈도와 분포를 가졌는지 단일 변수 시각화를 통해 파악해 봅니다.
+
+```python
+plt.figure(figsize=(8, 5))
+
+# 일일 총 걸음수의 밀도 빈도를 20개 구간으로 시각화
+sns.histplot(data=df, x='Steps', bins=20, kde=True, color='forestgreen')
+
+plt.title('웨어러블 기기 측정 일일 걸음 수(Steps) 분포', fontsize=14, fontweight='bold')
+plt.xlabel('일일 걸음 수 (보)')
+plt.ylabel('일수 (일)')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+### 💡 시각화 차트 읽는 법 & 인사이트
+* **고른 대칭성을 띤 유산소 분포 형태:** 일일 걸음 수 분포는 8,000~10,000보 근방을 중앙값으로 하여 완만하게 퍼진 정규분포에 가까운 비중을 띱니다. 하루에 최소 2,000보 이하로 걷는 아주 비활동적인 날이나, 2만보 이상 격렬하게 야외 등산을 한 고강도 날은 전체 365일 중 극히 일부로 잡혀 기기의 장기 데이터 안정성을 가리킵니다.
+
+---
+
+## Step 4: 다변수 상관관계 및 이상치 분석 (Multivariate EDA)
+
+![Step 4 상관관계 분석 개념도](img/step4_multivariate.svg)
+
+두 개 이상의 변수를 동시에 결합하여, 조건에 따른 수치 차이나 독립 변수와 종속 변수 간의 통계적 경향을 분석합니다.
+
+```python
+plt.figure(figsize=(9, 5))
+
+# 주관적 수면만족 점수에 따른 실제 잔 수면 시간의 편차 대조
+sns.boxplot(data=df, x='SleepQuality', y='SleepHours', palette='Greens')
+
+plt.title('수면 만족도 평점(SleepQuality)별 수면 시간(SleepHours) 비교', fontsize=14, fontweight='bold')
+plt.xlabel('수면 품질 점수 (1~10점)')
+plt.ylabel('실제 수면 시간 (시간)')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
+* **수면 시간 and 만족 품질의 양의 선형 격차:** 수면 만족도 점수(X축)가 높아질수록 박스플롯 상자의 전체 위치와 중앙 수면 시간(Y축)이 정직하게 계단식으로 우상향하여 배치됩니다. 특히 품질 점수 8점 이상을 기록한 최고의 피로 해소 날들은 최소 7시간 반 이상 충분한 잠을 잔 날들에 집중되어 있어, 물리적인 수면 확보량이 정신적 회복을 결정하는 직접적인 열쇠임을 통계 상자로 증명해 줍니다.
+
+---
+
+## Step 5: 통계적 직관과 해석 (Statistical Logic)
+
+> 💡 **[피어슨 상관관계 vs 스피어먼 순위 상관관계의 직관]**
+> 주관적인 수면 품질 점수(1~10점)는 수치가 정밀하지 않고 순서만을 뜻하는 **서열(Ordinal) 변수** 성격을 지닙니다. 반면 수면 시간(Hours)은 소수점 이하로 무한히 정밀한 **연속형(Continuous) 변수**입니다.
+> * 두 축의 선형 관계를 평가할 때, 데이터가 정규분포를 따르지 않거나 서열 척도가 섞여 있으면 일반 피어슨 상관계수 대신 순위를 매겨 등간 격차를 계산하는 **스피어먼 순위 상관계수(Spearman Rank Correlation)** 혹은 **켄달 타우(Kendall's Tau)**를 사용하는 것이 훨씬 정확합니다.
+> * 이는 점수 간의 간격이 비균일하더라도 등락의 일관된 방향성(단조 증가성)을 정밀하게 측정해주어, 비즈니스 설문 점수 피드백 데이터를 처리할 때 분석 왜곡을 영리하게 극복하는 강력한 무기입니다.
+
+---
+
+## 🎯 30분 강의 마무리 및 심화 과제
+
+오늘 우리는 실전 데이터셋을 분석하여 판다스로 데이터를 가공 및 정제하고, 시각화를 활용하여 핵심 변수 간의 통계적 유의성을 검증했습니다. 데이터 속에서 숨겨진 패턴을 올바른 시각으로 탐색하는 능력이 데이터 사이언티스트의 가장 강력한 무기입니다.
+
+### 📝 심화 과제 (Advanced Challenge)
+1. **평균 심박수와 활동량의 역상관성 확인:** 평일 심박수(`HeartRate_Avg`)와 걸음수(`Steps`)를 `sns.scatterplot`으로 대조하고, 운동을 많이 한 날에 일평균 심박수가 오히려 낮아지는 생체 안정성 경향이 잡히는지 분석해 보세요.
+2. **충분 수면 여부 이진 파생변수 생성:** 수면 시간이 7.0시간 이상인지 여부를 알려주는 `is_sufficient_sleep` (True/False) 컬럼을 만들고, 이 여부에 따른 평균 걸음수 격차를 집계해 보세요.

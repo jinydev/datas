@@ -1,0 +1,1001 @@
+CustomerID,Contract,MonthlyCharges,Tenure_Months,InternetService,Churn
+80001,Month-to-month,81,49,Fiber optic,No
+80002,Two year,70,12,Fiber optic,No
+80003,One year,95,34,Fiber optic,No
+80004,Month-to-month,53,5,Fiber optic,Yes
+80005,Two year,55,71,No,No
+80006,Month-to-month,77,71,No,No
+80007,One year,102,23,No,No
+80008,Two year,73,6,DSL,Yes
+80009,Month-to-month,64,3,DSL,Yes
+80010,One year,95,72,Fiber optic,No
+80011,Two year,103,69,Fiber optic,No
+80012,Month-to-month,73,36,No,No
+80013,Two year,113,27,No,Yes
+80014,Month-to-month,70,7,DSL,Yes
+80015,Month-to-month,64,21,Fiber optic,Yes
+80016,Month-to-month,54,44,DSL,No
+80017,Two year,96,32,DSL,No
+80018,Month-to-month,51,50,DSL,No
+80019,Month-to-month,63,42,DSL,No
+80020,Two year,123,65,No,No
+80021,Month-to-month,50,7,DSL,Yes
+80022,Two year,68,20,DSL,No
+80023,One year,64,3,DSL,No
+80024,Two year,109,31,Fiber optic,No
+80025,Month-to-month,56,36,No,Yes
+80026,Month-to-month,66,27,Fiber optic,Yes
+80027,One year,101,61,Fiber optic,No
+80028,One year,77,67,No,No
+80029,Month-to-month,90,68,DSL,No
+80030,One year,102,3,DSL,Yes
+80031,Month-to-month,67,11,DSL,Yes
+80032,Month-to-month,69,52,Fiber optic,No
+80033,One year,82,1,Fiber optic,No
+80034,Month-to-month,69,1,Fiber optic,Yes
+80035,One year,106,12,Fiber optic,No
+80036,Two year,99,31,No,No
+80037,One year,97,27,DSL,No
+80038,Two year,112,72,No,No
+80039,One year,87,52,Fiber optic,No
+80040,Two year,106,29,Fiber optic,No
+80041,One year,95,25,Fiber optic,No
+80042,Month-to-month,51,47,Fiber optic,Yes
+80043,Two year,99,63,DSL,No
+80044,Month-to-month,85,14,Fiber optic,No
+80045,One year,115,72,No,No
+80046,Month-to-month,66,37,Fiber optic,No
+80047,Month-to-month,55,1,Fiber optic,No
+80048,One year,86,59,DSL,No
+80049,Month-to-month,72,44,Fiber optic,No
+80050,One year,100,65,No,No
+80051,Month-to-month,40,20,Fiber optic,No
+80052,One year,77,59,DSL,No
+80053,One year,90,46,DSL,No
+80054,One year,101,2,Fiber optic,No
+80055,One year,84,62,Fiber optic,No
+80056,Month-to-month,82,10,No,Yes
+80057,Month-to-month,71,30,DSL,Yes
+80058,Two year,79,53,Fiber optic,No
+80059,One year,55,44,DSL,No
+80060,Two year,72,33,DSL,No
+80061,Month-to-month,61,20,Fiber optic,No
+80062,Month-to-month,45,48,Fiber optic,No
+80063,Month-to-month,79,70,DSL,No
+80064,Month-to-month,105,7,No,Yes
+80065,One year,59,66,DSL,No
+80066,Month-to-month,52,37,Fiber optic,Yes
+80067,Two year,102,37,No,No
+80068,One year,109,45,Fiber optic,Yes
+80069,One year,65,54,DSL,No
+80070,Month-to-month,95,5,DSL,Yes
+80071,Month-to-month,47,44,Fiber optic,Yes
+80072,Month-to-month,95,20,No,Yes
+80073,Two year,83,38,No,No
+80074,Month-to-month,83,31,No,Yes
+80075,One year,91,63,DSL,No
+80076,Month-to-month,58,45,DSL,No
+80077,One year,80,44,DSL,Yes
+80078,Two year,70,36,No,No
+80079,Two year,66,28,DSL,No
+80080,Two year,100,51,Fiber optic,No
+80081,Two year,111,59,Fiber optic,No
+80082,One year,61,29,DSL,No
+80083,Two year,68,32,No,No
+80084,One year,78,16,Fiber optic,No
+80085,Two year,104,6,DSL,Yes
+80086,One year,59,53,No,No
+80087,Month-to-month,43,56,DSL,No
+80088,One year,106,57,Fiber optic,No
+80089,Month-to-month,60,48,No,No
+80090,Month-to-month,66,69,DSL,Yes
+80091,Month-to-month,65,5,Fiber optic,Yes
+80092,Month-to-month,47,19,Fiber optic,Yes
+80093,Month-to-month,108,43,DSL,Yes
+80094,Month-to-month,107,18,Fiber optic,Yes
+80095,Month-to-month,69,47,Fiber optic,Yes
+80096,Month-to-month,98,12,No,Yes
+80097,Month-to-month,43,28,No,No
+80098,Two year,55,28,DSL,Yes
+80099,Month-to-month,85,60,No,No
+80100,Month-to-month,64,8,Fiber optic,Yes
+80101,Month-to-month,47,42,DSL,No
+80102,One year,71,66,Fiber optic,No
+80103,Month-to-month,98,54,Fiber optic,No
+80104,Two year,94,36,No,No
+80105,Month-to-month,75,4,No,Yes
+80106,One year,59,22,Fiber optic,No
+80107,Month-to-month,60,43,DSL,No
+80108,One year,84,68,DSL,No
+80109,One year,90,71,No,No
+80110,One year,80,57,Fiber optic,No
+80111,One year,120,23,No,Yes
+80112,Two year,89,1,DSL,Yes
+80113,One year,59,57,DSL,No
+80114,Month-to-month,105,31,No,Yes
+80115,Month-to-month,75,34,DSL,No
+80116,One year,99,15,Fiber optic,No
+80117,Month-to-month,106,23,No,No
+80118,Month-to-month,83,47,Fiber optic,No
+80119,Month-to-month,84,7,DSL,Yes
+80120,Two year,72,63,Fiber optic,No
+80121,Month-to-month,74,31,DSL,Yes
+80122,Two year,122,37,Fiber optic,No
+80123,Month-to-month,79,58,Fiber optic,No
+80124,Month-to-month,97,10,DSL,Yes
+80125,Month-to-month,104,60,DSL,Yes
+80126,One year,79,65,Fiber optic,No
+80127,Month-to-month,64,59,DSL,Yes
+80128,One year,93,56,Fiber optic,No
+80129,Month-to-month,97,27,Fiber optic,No
+80130,Month-to-month,71,5,Fiber optic,No
+80131,Month-to-month,43,44,Fiber optic,No
+80132,One year,78,66,Fiber optic,No
+80133,Two year,104,38,DSL,No
+80134,Two year,80,14,DSL,Yes
+80135,Month-to-month,86,36,Fiber optic,Yes
+80136,One year,73,15,DSL,No
+80137,Month-to-month,64,57,Fiber optic,No
+80138,Month-to-month,67,3,No,No
+80139,Month-to-month,99,23,DSL,Yes
+80140,Month-to-month,41,65,Fiber optic,No
+80141,Month-to-month,87,53,DSL,No
+80142,Month-to-month,45,27,No,Yes
+80143,Month-to-month,97,46,No,No
+80144,Month-to-month,96,69,DSL,No
+80145,Two year,118,62,Fiber optic,No
+80146,One year,110,56,Fiber optic,No
+80147,Two year,79,23,No,No
+80148,Two year,66,69,No,No
+80149,Month-to-month,92,20,DSL,No
+80150,One year,68,49,Fiber optic,No
+80151,Month-to-month,54,4,DSL,Yes
+80152,One year,71,29,Fiber optic,No
+80153,Month-to-month,92,60,Fiber optic,No
+80154,Month-to-month,108,5,Fiber optic,Yes
+80155,Month-to-month,99,42,DSL,Yes
+80156,Two year,61,28,Fiber optic,No
+80157,Two year,115,55,DSL,No
+80158,Two year,87,72,No,No
+80159,Two year,120,22,Fiber optic,Yes
+80160,Month-to-month,99,52,DSL,No
+80161,One year,68,22,Fiber optic,No
+80162,Two year,104,42,Fiber optic,No
+80163,Month-to-month,70,36,DSL,No
+80164,Two year,71,7,Fiber optic,Yes
+80165,One year,108,60,Fiber optic,No
+80166,Month-to-month,54,63,DSL,No
+80167,Month-to-month,52,13,DSL,Yes
+80168,Month-to-month,80,43,Fiber optic,No
+80169,Two year,124,1,No,No
+80170,One year,109,46,Fiber optic,No
+80171,Month-to-month,79,65,No,No
+80172,One year,103,43,Fiber optic,Yes
+80173,Month-to-month,76,45,Fiber optic,Yes
+80174,One year,80,5,Fiber optic,No
+80175,Two year,96,41,No,No
+80176,Month-to-month,59,43,DSL,No
+80177,Two year,86,72,Fiber optic,No
+80178,One year,90,61,Fiber optic,No
+80179,Month-to-month,87,37,Fiber optic,No
+80180,One year,81,53,No,No
+80181,Two year,58,56,DSL,No
+80182,Month-to-month,47,27,DSL,No
+80183,Two year,75,56,Fiber optic,No
+80184,Two year,118,46,Fiber optic,No
+80185,Month-to-month,103,41,Fiber optic,Yes
+80186,Month-to-month,99,60,Fiber optic,No
+80187,Month-to-month,62,24,Fiber optic,Yes
+80188,One year,91,48,No,No
+80189,Month-to-month,43,39,DSL,Yes
+80190,One year,71,56,DSL,No
+80191,Month-to-month,86,68,No,No
+80192,Two year,95,58,Fiber optic,No
+80193,Two year,60,63,DSL,No
+80194,Two year,62,70,Fiber optic,No
+80195,Month-to-month,59,51,No,No
+80196,One year,58,2,No,Yes
+80197,Month-to-month,83,48,Fiber optic,No
+80198,Month-to-month,66,36,DSL,Yes
+80199,Month-to-month,56,4,DSL,Yes
+80200,One year,91,65,DSL,No
+80201,Month-to-month,89,47,DSL,Yes
+80202,Two year,107,13,No,Yes
+80203,One year,79,54,Fiber optic,No
+80204,One year,102,22,DSL,Yes
+80205,Month-to-month,93,20,Fiber optic,No
+80206,One year,116,46,DSL,No
+80207,One year,95,34,DSL,No
+80208,One year,60,55,Fiber optic,Yes
+80209,Month-to-month,106,51,No,Yes
+80210,Month-to-month,57,44,DSL,No
+80211,One year,96,33,Fiber optic,No
+80212,Month-to-month,81,69,Fiber optic,Yes
+80213,Month-to-month,104,51,DSL,Yes
+80214,One year,68,60,DSL,No
+80215,Month-to-month,64,42,Fiber optic,No
+80216,Month-to-month,93,64,DSL,No
+80217,Month-to-month,85,32,No,Yes
+80218,One year,63,23,Fiber optic,No
+80219,One year,80,67,Fiber optic,No
+80220,One year,61,6,No,No
+80221,Month-to-month,93,66,DSL,Yes
+80222,One year,87,34,Fiber optic,Yes
+80223,Two year,107,11,Fiber optic,Yes
+80224,Month-to-month,76,55,DSL,No
+80225,Month-to-month,45,15,Fiber optic,Yes
+80226,One year,79,58,Fiber optic,No
+80227,Month-to-month,65,34,No,Yes
+80228,Two year,92,42,No,No
+80229,Month-to-month,65,57,No,No
+80230,Month-to-month,86,20,DSL,Yes
+80231,Month-to-month,47,37,Fiber optic,No
+80232,One year,67,6,DSL,No
+80233,Month-to-month,82,1,Fiber optic,Yes
+80234,Month-to-month,98,40,Fiber optic,No
+80235,One year,55,40,Fiber optic,Yes
+80236,Month-to-month,58,57,Fiber optic,No
+80237,Month-to-month,104,28,DSL,No
+80238,One year,66,50,Fiber optic,Yes
+80239,Month-to-month,84,25,DSL,Yes
+80240,Two year,71,67,Fiber optic,No
+80241,Two year,61,11,DSL,Yes
+80242,Month-to-month,86,10,Fiber optic,Yes
+80243,One year,99,7,DSL,Yes
+80244,Two year,121,59,Fiber optic,No
+80245,Month-to-month,94,53,Fiber optic,No
+80246,Month-to-month,75,19,Fiber optic,No
+80247,Month-to-month,58,52,DSL,No
+80248,One year,76,38,DSL,No
+80249,Month-to-month,41,11,Fiber optic,Yes
+80250,Two year,95,38,Fiber optic,No
+80251,Two year,65,16,Fiber optic,No
+80252,Month-to-month,53,14,Fiber optic,Yes
+80253,Two year,116,8,Fiber optic,No
+80254,Month-to-month,77,65,No,No
+80255,Month-to-month,94,44,Fiber optic,No
+80256,Month-to-month,51,49,Fiber optic,No
+80257,Month-to-month,57,11,No,Yes
+80258,Two year,116,57,Fiber optic,No
+80259,Month-to-month,40,72,Fiber optic,No
+80260,Month-to-month,67,52,Fiber optic,No
+80261,Month-to-month,67,26,Fiber optic,Yes
+80262,Month-to-month,99,55,DSL,No
+80263,Month-to-month,47,46,DSL,No
+80264,Month-to-month,52,16,No,Yes
+80265,One year,56,1,No,Yes
+80266,Month-to-month,53,46,Fiber optic,No
+80267,Two year,118,1,DSL,No
+80268,Month-to-month,91,58,DSL,No
+80269,One year,84,33,No,Yes
+80270,Month-to-month,66,37,Fiber optic,No
+80271,One year,107,34,Fiber optic,No
+80272,One year,70,5,No,No
+80273,Month-to-month,85,27,DSL,No
+80274,One year,69,15,No,Yes
+80275,Month-to-month,69,5,Fiber optic,Yes
+80276,Month-to-month,106,42,No,Yes
+80277,Two year,121,54,No,No
+80278,Month-to-month,60,14,No,Yes
+80279,Month-to-month,44,25,Fiber optic,No
+80280,Month-to-month,99,51,Fiber optic,No
+80281,Two year,122,51,Fiber optic,No
+80282,Month-to-month,74,28,DSL,Yes
+80283,Month-to-month,50,70,Fiber optic,No
+80284,One year,104,60,No,No
+80285,Month-to-month,63,72,Fiber optic,No
+80286,Month-to-month,102,62,DSL,No
+80287,Month-to-month,105,9,Fiber optic,Yes
+80288,Month-to-month,70,44,Fiber optic,No
+80289,One year,119,5,Fiber optic,Yes
+80290,Month-to-month,46,45,Fiber optic,No
+80291,Month-to-month,80,51,Fiber optic,No
+80292,Month-to-month,81,70,No,No
+80293,Month-to-month,54,54,Fiber optic,No
+80294,Month-to-month,96,17,No,No
+80295,Month-to-month,101,66,DSL,No
+80296,Two year,95,56,Fiber optic,No
+80297,Month-to-month,62,36,Fiber optic,No
+80298,Month-to-month,72,52,DSL,No
+80299,Month-to-month,84,4,DSL,Yes
+80300,Two year,115,11,Fiber optic,Yes
+80301,Month-to-month,99,33,DSL,Yes
+80302,Month-to-month,104,19,Fiber optic,Yes
+80303,Month-to-month,40,10,DSL,No
+80304,Two year,123,42,DSL,No
+80305,One year,118,71,DSL,No
+80306,One year,119,47,DSL,No
+80307,Month-to-month,92,54,Fiber optic,No
+80308,One year,78,22,Fiber optic,Yes
+80309,Month-to-month,57,22,No,No
+80310,One year,99,66,DSL,No
+80311,Two year,96,29,DSL,No
+80312,Two year,100,7,DSL,Yes
+80313,Month-to-month,47,56,Fiber optic,No
+80314,Month-to-month,53,48,Fiber optic,Yes
+80315,Two year,84,60,No,Yes
+80316,Two year,88,31,Fiber optic,No
+80317,Two year,84,64,No,No
+80318,Two year,107,59,No,No
+80319,Two year,69,26,Fiber optic,No
+80320,Two year,113,1,Fiber optic,Yes
+80321,One year,74,28,DSL,Yes
+80322,One year,84,36,DSL,Yes
+80323,One year,93,34,Fiber optic,No
+80324,Month-to-month,58,28,Fiber optic,No
+80325,Month-to-month,93,48,No,Yes
+80326,One year,108,44,DSL,No
+80327,Month-to-month,83,3,DSL,No
+80328,One year,94,36,Fiber optic,No
+80329,One year,117,70,DSL,No
+80330,Month-to-month,92,58,Fiber optic,No
+80331,One year,124,67,Fiber optic,No
+80332,Month-to-month,83,2,No,Yes
+80333,Month-to-month,58,8,DSL,Yes
+80334,One year,62,37,DSL,No
+80335,Month-to-month,103,36,No,No
+80336,Month-to-month,102,32,No,No
+80337,Month-to-month,101,57,Fiber optic,No
+80338,One year,94,55,No,No
+80339,Two year,67,38,Fiber optic,No
+80340,Two year,111,21,Fiber optic,No
+80341,Month-to-month,77,44,DSL,Yes
+80342,Month-to-month,59,14,Fiber optic,Yes
+80343,Month-to-month,70,54,Fiber optic,No
+80344,Month-to-month,89,52,DSL,No
+80345,Month-to-month,87,64,Fiber optic,No
+80346,Month-to-month,86,1,Fiber optic,Yes
+80347,Month-to-month,82,58,DSL,No
+80348,One year,84,58,DSL,No
+80349,Month-to-month,67,13,DSL,No
+80350,Two year,70,29,DSL,No
+80351,Two year,120,54,DSL,No
+80352,Two year,75,63,DSL,No
+80353,Month-to-month,86,65,Fiber optic,No
+80354,Two year,73,71,Fiber optic,No
+80355,Month-to-month,63,66,Fiber optic,No
+80356,Month-to-month,46,63,Fiber optic,No
+80357,Month-to-month,76,21,Fiber optic,Yes
+80358,Month-to-month,92,33,DSL,Yes
+80359,Month-to-month,97,37,No,No
+80360,Month-to-month,89,46,DSL,No
+80361,One year,112,4,Fiber optic,Yes
+80362,One year,121,46,Fiber optic,No
+80363,Two year,116,26,Fiber optic,No
+80364,Month-to-month,55,53,Fiber optic,No
+80365,Month-to-month,71,50,Fiber optic,Yes
+80366,One year,99,5,No,Yes
+80367,One year,76,62,DSL,No
+80368,Two year,122,39,Fiber optic,No
+80369,One year,59,63,DSL,No
+80370,One year,103,36,Fiber optic,Yes
+80371,Month-to-month,87,30,Fiber optic,Yes
+80372,Month-to-month,105,57,No,Yes
+80373,Month-to-month,62,14,DSL,Yes
+80374,One year,55,40,No,No
+80375,One year,123,60,DSL,No
+80376,One year,76,47,No,No
+80377,Month-to-month,106,50,Fiber optic,No
+80378,Month-to-month,43,51,Fiber optic,No
+80379,Two year,110,13,Fiber optic,Yes
+80380,Two year,109,17,Fiber optic,Yes
+80381,One year,99,23,Fiber optic,No
+80382,Month-to-month,61,63,Fiber optic,No
+80383,Month-to-month,93,25,DSL,No
+80384,Month-to-month,105,4,Fiber optic,Yes
+80385,Month-to-month,63,20,DSL,No
+80386,Month-to-month,60,1,DSL,Yes
+80387,One year,63,7,Fiber optic,No
+80388,One year,121,71,DSL,No
+80389,Two year,106,4,No,Yes
+80390,Month-to-month,102,7,DSL,No
+80391,Month-to-month,102,12,DSL,Yes
+80392,Month-to-month,93,52,Fiber optic,No
+80393,Month-to-month,48,2,DSL,Yes
+80394,Two year,77,71,Fiber optic,No
+80395,Month-to-month,102,69,DSL,No
+80396,Month-to-month,79,35,Fiber optic,No
+80397,One year,123,16,No,No
+80398,Month-to-month,72,47,DSL,No
+80399,One year,98,65,Fiber optic,No
+80400,Month-to-month,70,65,No,No
+80401,Two year,69,45,Fiber optic,Yes
+80402,One year,59,9,DSL,No
+80403,One year,85,39,DSL,No
+80404,Month-to-month,103,49,DSL,Yes
+80405,One year,59,29,No,No
+80406,Two year,106,51,DSL,No
+80407,Two year,77,49,Fiber optic,No
+80408,Month-to-month,81,55,Fiber optic,No
+80409,Month-to-month,48,11,Fiber optic,Yes
+80410,One year,109,34,Fiber optic,No
+80411,Month-to-month,100,60,DSL,No
+80412,One year,75,71,No,No
+80413,One year,72,58,No,No
+80414,Two year,63,14,Fiber optic,No
+80415,Two year,88,58,DSL,No
+80416,Two year,85,19,No,No
+80417,Month-to-month,92,13,DSL,Yes
+80418,Month-to-month,74,6,No,Yes
+80419,Two year,80,52,No,No
+80420,Two year,98,70,Fiber optic,No
+80421,Month-to-month,66,34,Fiber optic,Yes
+80422,Month-to-month,59,67,Fiber optic,No
+80423,One year,96,49,Fiber optic,No
+80424,Month-to-month,46,43,No,No
+80425,Month-to-month,94,43,DSL,No
+80426,Month-to-month,109,37,No,Yes
+80427,Two year,106,57,No,No
+80428,One year,98,66,DSL,No
+80429,One year,122,1,Fiber optic,Yes
+80430,Month-to-month,83,20,Fiber optic,No
+80431,Month-to-month,43,61,DSL,No
+80432,Month-to-month,104,67,Fiber optic,No
+80433,One year,93,4,Fiber optic,Yes
+80434,Month-to-month,95,47,DSL,No
+80435,One year,77,2,Fiber optic,Yes
+80436,Month-to-month,86,27,Fiber optic,Yes
+80437,Month-to-month,65,34,Fiber optic,No
+80438,Two year,72,52,Fiber optic,No
+80439,Month-to-month,75,26,DSL,No
+80440,Two year,113,68,DSL,No
+80441,Month-to-month,79,31,No,Yes
+80442,Month-to-month,100,8,DSL,Yes
+80443,Month-to-month,57,47,DSL,No
+80444,One year,69,48,DSL,No
+80445,Month-to-month,46,23,DSL,No
+80446,One year,122,14,DSL,Yes
+80447,One year,120,6,Fiber optic,Yes
+80448,One year,64,36,Fiber optic,No
+80449,One year,65,6,Fiber optic,No
+80450,One year,78,71,DSL,No
+80451,Month-to-month,99,21,DSL,Yes
+80452,Month-to-month,60,10,Fiber optic,Yes
+80453,Month-to-month,54,54,DSL,Yes
+80454,Month-to-month,91,55,DSL,Yes
+80455,Month-to-month,46,15,Fiber optic,No
+80456,One year,118,45,No,No
+80457,Two year,124,40,No,No
+80458,Month-to-month,72,44,Fiber optic,No
+80459,Month-to-month,105,71,Fiber optic,No
+80460,One year,58,21,No,No
+80461,Month-to-month,42,41,DSL,No
+80462,One year,96,2,Fiber optic,Yes
+80463,Month-to-month,91,56,DSL,No
+80464,Month-to-month,83,17,DSL,Yes
+80465,Month-to-month,57,23,Fiber optic,Yes
+80466,Month-to-month,41,7,Fiber optic,No
+80467,Month-to-month,53,27,Fiber optic,No
+80468,Two year,100,66,No,No
+80469,Two year,65,22,Fiber optic,Yes
+80470,Month-to-month,89,29,Fiber optic,Yes
+80471,Month-to-month,76,59,Fiber optic,No
+80472,Month-to-month,91,49,Fiber optic,No
+80473,One year,121,42,DSL,No
+80474,Two year,122,42,Fiber optic,No
+80475,Month-to-month,63,21,Fiber optic,No
+80476,Month-to-month,86,18,DSL,No
+80477,Month-to-month,102,69,Fiber optic,No
+80478,One year,118,39,Fiber optic,Yes
+80479,Month-to-month,99,64,DSL,No
+80480,Month-to-month,65,25,No,Yes
+80481,Two year,95,62,DSL,No
+80482,Month-to-month,53,6,DSL,Yes
+80483,Two year,79,36,No,Yes
+80484,Month-to-month,42,7,DSL,Yes
+80485,Month-to-month,51,48,Fiber optic,No
+80486,Month-to-month,102,25,DSL,No
+80487,Two year,105,62,Fiber optic,No
+80488,Two year,68,24,Fiber optic,No
+80489,One year,123,16,DSL,No
+80490,Month-to-month,84,18,No,No
+80491,Two year,96,5,Fiber optic,Yes
+80492,Two year,113,32,Fiber optic,No
+80493,Month-to-month,100,52,Fiber optic,No
+80494,Month-to-month,80,39,DSL,No
+80495,Month-to-month,76,10,Fiber optic,No
+80496,Month-to-month,90,34,DSL,Yes
+80497,Month-to-month,91,12,DSL,Yes
+80498,Two year,100,41,DSL,No
+80499,One year,97,55,Fiber optic,No
+80500,Month-to-month,79,14,DSL,Yes
+80501,Two year,93,13,No,No
+80502,Two year,99,55,Fiber optic,No
+80503,Month-to-month,63,47,Fiber optic,No
+80504,Month-to-month,98,53,DSL,No
+80505,Month-to-month,52,27,Fiber optic,Yes
+80506,Two year,81,26,DSL,No
+80507,Month-to-month,49,68,DSL,No
+80508,Two year,69,24,DSL,No
+80509,Month-to-month,83,42,Fiber optic,No
+80510,Month-to-month,84,32,Fiber optic,No
+80511,Month-to-month,66,68,Fiber optic,No
+80512,One year,69,41,Fiber optic,Yes
+80513,Two year,88,42,No,No
+80514,Two year,89,70,Fiber optic,No
+80515,Two year,74,68,DSL,No
+80516,One year,110,43,No,No
+80517,One year,122,40,No,Yes
+80518,Month-to-month,89,56,No,Yes
+80519,Month-to-month,79,40,Fiber optic,Yes
+80520,Month-to-month,44,45,No,No
+80521,Month-to-month,56,41,DSL,No
+80522,Month-to-month,106,46,Fiber optic,No
+80523,Two year,62,20,No,No
+80524,Month-to-month,101,26,Fiber optic,No
+80525,Two year,110,14,DSL,Yes
+80526,One year,55,20,Fiber optic,No
+80527,One year,99,47,DSL,Yes
+80528,Month-to-month,82,35,No,Yes
+80529,Month-to-month,76,30,DSL,No
+80530,Two year,92,40,DSL,Yes
+80531,Two year,107,64,DSL,No
+80532,Month-to-month,102,67,No,Yes
+80533,One year,108,62,DSL,No
+80534,Month-to-month,72,4,DSL,Yes
+80535,One year,86,51,DSL,Yes
+80536,Month-to-month,100,7,DSL,Yes
+80537,Month-to-month,40,24,Fiber optic,Yes
+80538,Month-to-month,100,4,No,Yes
+80539,Month-to-month,56,37,No,Yes
+80540,One year,78,59,Fiber optic,No
+80541,Month-to-month,87,18,DSL,Yes
+80542,Month-to-month,80,66,Fiber optic,No
+80543,Month-to-month,80,45,No,No
+80544,Month-to-month,61,41,Fiber optic,No
+80545,Month-to-month,86,68,DSL,No
+80546,Month-to-month,71,22,Fiber optic,Yes
+80547,One year,83,16,No,No
+80548,Two year,108,38,Fiber optic,No
+80549,Two year,78,18,DSL,No
+80550,One year,106,65,Fiber optic,No
+80551,Month-to-month,69,62,DSL,No
+80552,Month-to-month,85,4,No,No
+80553,One year,120,21,No,No
+80554,Month-to-month,74,53,No,No
+80555,Two year,78,44,Fiber optic,No
+80556,Month-to-month,88,28,Fiber optic,Yes
+80557,Two year,75,58,Fiber optic,No
+80558,Two year,115,71,No,No
+80559,Two year,82,40,Fiber optic,No
+80560,One year,124,32,DSL,No
+80561,Two year,74,8,DSL,Yes
+80562,Two year,100,37,DSL,No
+80563,Month-to-month,101,7,Fiber optic,Yes
+80564,One year,119,25,Fiber optic,Yes
+80565,One year,93,38,DSL,No
+80566,Two year,82,9,No,No
+80567,Two year,64,45,DSL,No
+80568,One year,62,18,Fiber optic,Yes
+80569,Month-to-month,71,44,DSL,Yes
+80570,Two year,108,30,Fiber optic,No
+80571,Month-to-month,90,57,Fiber optic,No
+80572,Month-to-month,66,36,DSL,No
+80573,Month-to-month,55,6,DSL,Yes
+80574,Month-to-month,86,62,DSL,No
+80575,One year,119,65,No,No
+80576,Month-to-month,106,2,DSL,No
+80577,Month-to-month,106,38,DSL,No
+80578,Month-to-month,91,40,Fiber optic,No
+80579,Two year,77,32,Fiber optic,No
+80580,One year,109,53,No,No
+80581,Month-to-month,63,43,Fiber optic,No
+80582,One year,76,20,No,Yes
+80583,Month-to-month,105,4,No,Yes
+80584,Month-to-month,85,60,DSL,No
+80585,Two year,72,33,Fiber optic,No
+80586,Month-to-month,62,12,Fiber optic,Yes
+80587,Month-to-month,100,15,Fiber optic,Yes
+80588,One year,94,24,DSL,No
+80589,Two year,100,59,DSL,No
+80590,One year,113,42,Fiber optic,No
+80591,Two year,99,40,DSL,No
+80592,Month-to-month,41,45,DSL,Yes
+80593,Month-to-month,55,53,No,No
+80594,Month-to-month,49,2,Fiber optic,Yes
+80595,Month-to-month,41,16,DSL,Yes
+80596,Two year,97,70,No,No
+80597,Month-to-month,80,16,Fiber optic,Yes
+80598,Month-to-month,50,37,Fiber optic,Yes
+80599,Month-to-month,92,19,No,Yes
+80600,Two year,58,35,DSL,No
+80601,Month-to-month,63,12,DSL,No
+80602,Month-to-month,77,28,DSL,Yes
+80603,Month-to-month,66,32,DSL,No
+80604,Month-to-month,101,3,Fiber optic,Yes
+80605,Two year,92,1,DSL,No
+80606,One year,106,40,DSL,No
+80607,Two year,56,38,Fiber optic,No
+80608,One year,91,34,Fiber optic,No
+80609,One year,78,55,Fiber optic,No
+80610,One year,63,66,Fiber optic,No
+80611,One year,92,64,DSL,No
+80612,Month-to-month,95,2,DSL,Yes
+80613,Two year,61,39,Fiber optic,No
+80614,Month-to-month,79,40,No,No
+80615,Month-to-month,97,40,DSL,No
+80616,One year,110,42,Fiber optic,No
+80617,Two year,95,36,Fiber optic,No
+80618,Month-to-month,71,32,DSL,No
+80619,Month-to-month,83,42,Fiber optic,No
+80620,Month-to-month,82,64,DSL,No
+80621,One year,84,9,DSL,No
+80622,Month-to-month,67,22,DSL,No
+80623,One year,61,40,DSL,No
+80624,Month-to-month,54,43,No,No
+80625,Month-to-month,51,27,DSL,Yes
+80626,Month-to-month,63,27,DSL,No
+80627,One year,122,63,Fiber optic,No
+80628,One year,84,65,Fiber optic,No
+80629,Month-to-month,61,61,Fiber optic,No
+80630,Month-to-month,66,52,Fiber optic,No
+80631,One year,105,37,DSL,No
+80632,Month-to-month,46,59,Fiber optic,No
+80633,Month-to-month,52,57,DSL,No
+80634,One year,101,26,Fiber optic,No
+80635,Month-to-month,57,14,Fiber optic,No
+80636,Month-to-month,100,57,DSL,No
+80637,Month-to-month,80,58,DSL,No
+80638,Month-to-month,54,58,No,No
+80639,Two year,58,15,No,No
+80640,Month-to-month,107,60,DSL,Yes
+80641,One year,68,27,No,No
+80642,One year,60,37,DSL,Yes
+80643,Month-to-month,58,10,No,Yes
+80644,Month-to-month,82,58,DSL,No
+80645,Two year,78,19,No,No
+80646,One year,89,58,Fiber optic,No
+80647,One year,74,69,DSL,No
+80648,Two year,97,65,DSL,No
+80649,One year,89,70,Fiber optic,No
+80650,Month-to-month,48,48,No,Yes
+80651,Month-to-month,42,6,DSL,Yes
+80652,Month-to-month,96,40,DSL,No
+80653,Month-to-month,99,44,Fiber optic,Yes
+80654,Month-to-month,65,24,DSL,No
+80655,Month-to-month,52,68,DSL,No
+80656,Two year,82,66,DSL,No
+80657,Month-to-month,44,8,No,Yes
+80658,Two year,70,4,Fiber optic,Yes
+80659,Two year,65,55,Fiber optic,No
+80660,Two year,74,44,No,Yes
+80661,One year,113,24,DSL,Yes
+80662,Two year,120,19,DSL,No
+80663,One year,63,6,DSL,Yes
+80664,Month-to-month,56,16,Fiber optic,Yes
+80665,Two year,109,72,DSL,No
+80666,Two year,58,44,No,Yes
+80667,One year,63,31,Fiber optic,No
+80668,Month-to-month,58,72,No,No
+80669,Month-to-month,83,35,Fiber optic,Yes
+80670,Two year,68,31,Fiber optic,No
+80671,Month-to-month,98,43,Fiber optic,Yes
+80672,Two year,70,32,DSL,No
+80673,Two year,95,28,Fiber optic,No
+80674,Month-to-month,44,30,No,No
+80675,One year,79,45,Fiber optic,No
+80676,Month-to-month,97,39,Fiber optic,No
+80677,Two year,107,71,DSL,No
+80678,One year,71,38,No,No
+80679,Month-to-month,104,27,No,No
+80680,Month-to-month,92,25,Fiber optic,No
+80681,Month-to-month,79,44,Fiber optic,No
+80682,Month-to-month,52,18,DSL,No
+80683,Two year,91,54,Fiber optic,Yes
+80684,One year,97,48,Fiber optic,No
+80685,Two year,118,33,DSL,No
+80686,One year,78,24,DSL,No
+80687,One year,72,64,DSL,No
+80688,Month-to-month,80,69,No,No
+80689,One year,75,63,DSL,No
+80690,Month-to-month,105,52,DSL,No
+80691,Two year,70,50,Fiber optic,No
+80692,One year,68,2,No,No
+80693,One year,95,4,DSL,No
+80694,One year,94,35,No,Yes
+80695,Two year,121,47,Fiber optic,No
+80696,Month-to-month,60,16,DSL,Yes
+80697,One year,106,61,Fiber optic,No
+80698,Month-to-month,47,34,DSL,No
+80699,Month-to-month,48,43,Fiber optic,No
+80700,Month-to-month,103,43,Fiber optic,No
+80701,Two year,80,70,DSL,No
+80702,Month-to-month,48,60,DSL,No
+80703,One year,111,68,No,No
+80704,One year,65,22,Fiber optic,No
+80705,Two year,101,48,Fiber optic,No
+80706,Month-to-month,56,72,DSL,No
+80707,Two year,81,46,No,No
+80708,Two year,115,61,No,No
+80709,One year,109,67,No,No
+80710,Month-to-month,89,50,DSL,No
+80711,Month-to-month,59,38,DSL,No
+80712,Month-to-month,56,69,Fiber optic,No
+80713,Month-to-month,96,65,No,No
+80714,Month-to-month,107,19,Fiber optic,Yes
+80715,Month-to-month,86,65,No,No
+80716,Month-to-month,62,62,Fiber optic,No
+80717,Two year,72,17,DSL,Yes
+80718,Two year,56,9,Fiber optic,Yes
+80719,Two year,57,12,Fiber optic,Yes
+80720,Two year,111,33,DSL,No
+80721,Month-to-month,103,60,No,No
+80722,Month-to-month,103,42,Fiber optic,No
+80723,Two year,80,59,Fiber optic,No
+80724,Two year,94,67,Fiber optic,No
+80725,Two year,69,33,DSL,No
+80726,Month-to-month,74,63,No,Yes
+80727,Month-to-month,104,23,No,Yes
+80728,One year,55,58,Fiber optic,No
+80729,Month-to-month,69,43,Fiber optic,No
+80730,Two year,105,62,Fiber optic,No
+80731,Two year,83,71,Fiber optic,No
+80732,Two year,103,9,No,Yes
+80733,One year,123,32,DSL,No
+80734,Two year,89,68,Fiber optic,No
+80735,One year,101,19,No,Yes
+80736,One year,120,51,Fiber optic,Yes
+80737,Month-to-month,99,66,DSL,No
+80738,Month-to-month,59,28,Fiber optic,No
+80739,Month-to-month,77,6,Fiber optic,No
+80740,Two year,72,63,DSL,No
+80741,Month-to-month,51,17,Fiber optic,Yes
+80742,One year,85,18,Fiber optic,No
+80743,Month-to-month,107,39,Fiber optic,No
+80744,Two year,118,22,DSL,Yes
+80745,Month-to-month,62,64,DSL,No
+80746,Two year,104,49,Fiber optic,No
+80747,Two year,74,61,Fiber optic,No
+80748,Month-to-month,94,19,Fiber optic,Yes
+80749,Month-to-month,68,16,No,No
+80750,Month-to-month,103,22,Fiber optic,No
+80751,Month-to-month,59,47,Fiber optic,No
+80752,Month-to-month,42,67,DSL,No
+80753,Two year,74,53,DSL,No
+80754,Month-to-month,76,62,DSL,No
+80755,Month-to-month,100,11,DSL,No
+80756,Two year,112,49,DSL,No
+80757,One year,108,25,No,Yes
+80758,One year,124,51,DSL,No
+80759,Month-to-month,96,26,DSL,Yes
+80760,Month-to-month,45,44,No,No
+80761,One year,57,60,Fiber optic,No
+80762,Month-to-month,81,48,DSL,No
+80763,Month-to-month,62,25,DSL,Yes
+80764,Two year,116,3,Fiber optic,Yes
+80765,Two year,56,68,Fiber optic,No
+80766,Month-to-month,93,28,Fiber optic,No
+80767,Month-to-month,103,66,DSL,No
+80768,Two year,85,22,Fiber optic,Yes
+80769,One year,65,47,DSL,No
+80770,Month-to-month,50,35,Fiber optic,No
+80771,Two year,64,52,Fiber optic,No
+80772,Month-to-month,78,58,No,No
+80773,One year,101,35,DSL,No
+80774,Month-to-month,62,1,No,Yes
+80775,Month-to-month,102,25,Fiber optic,Yes
+80776,One year,108,65,DSL,No
+80777,Two year,124,6,DSL,No
+80778,Month-to-month,95,32,Fiber optic,Yes
+80779,Month-to-month,41,21,No,No
+80780,Month-to-month,109,56,Fiber optic,No
+80781,Month-to-month,92,47,Fiber optic,No
+80782,Month-to-month,99,57,Fiber optic,Yes
+80783,One year,84,21,DSL,No
+80784,One year,59,25,DSL,No
+80785,Two year,105,17,Fiber optic,Yes
+80786,Month-to-month,58,8,Fiber optic,Yes
+80787,One year,80,53,No,No
+80788,Month-to-month,109,41,No,Yes
+80789,One year,92,30,No,No
+80790,One year,107,56,Fiber optic,No
+80791,Month-to-month,61,65,Fiber optic,No
+80792,Month-to-month,80,38,Fiber optic,Yes
+80793,Month-to-month,70,30,DSL,No
+80794,Month-to-month,81,59,Fiber optic,No
+80795,Month-to-month,109,69,Fiber optic,No
+80796,Two year,79,41,DSL,No
+80797,Month-to-month,62,47,DSL,No
+80798,One year,72,34,DSL,No
+80799,One year,56,27,DSL,No
+80800,Month-to-month,74,10,DSL,Yes
+80801,Month-to-month,89,34,DSL,Yes
+80802,One year,90,70,Fiber optic,No
+80803,One year,75,43,DSL,No
+80804,One year,71,60,No,No
+80805,Month-to-month,41,29,Fiber optic,No
+80806,Month-to-month,68,68,Fiber optic,No
+80807,Two year,72,35,DSL,No
+80808,Month-to-month,102,44,DSL,No
+80809,One year,56,24,Fiber optic,No
+80810,Two year,122,45,Fiber optic,Yes
+80811,Month-to-month,69,20,Fiber optic,Yes
+80812,Month-to-month,64,51,DSL,No
+80813,One year,90,45,Fiber optic,No
+80814,Two year,102,16,Fiber optic,Yes
+80815,One year,114,66,Fiber optic,No
+80816,One year,98,51,No,No
+80817,Month-to-month,63,1,DSL,Yes
+80818,One year,77,2,No,No
+80819,One year,102,47,Fiber optic,No
+80820,Month-to-month,93,49,Fiber optic,No
+80821,Month-to-month,65,70,DSL,No
+80822,Two year,85,62,DSL,No
+80823,Two year,90,70,Fiber optic,No
+80824,Two year,101,8,DSL,No
+80825,Month-to-month,89,34,No,Yes
+80826,Month-to-month,51,71,DSL,No
+80827,Two year,71,45,DSL,No
+80828,Month-to-month,92,64,DSL,No
+80829,Month-to-month,47,3,DSL,Yes
+80830,Month-to-month,101,18,Fiber optic,Yes
+80831,Month-to-month,42,37,Fiber optic,No
+80832,Month-to-month,58,7,No,Yes
+80833,Month-to-month,51,31,DSL,Yes
+80834,Two year,90,63,No,No
+80835,Month-to-month,79,63,No,Yes
+80836,Month-to-month,59,70,Fiber optic,No
+80837,Two year,93,46,Fiber optic,Yes
+80838,One year,60,67,Fiber optic,No
+80839,One year,92,20,DSL,No
+80840,Month-to-month,99,51,DSL,No
+80841,Month-to-month,63,37,Fiber optic,No
+80842,Month-to-month,47,62,DSL,No
+80843,One year,104,30,Fiber optic,No
+80844,One year,109,66,Fiber optic,No
+80845,Month-to-month,96,15,DSL,Yes
+80846,One year,88,55,Fiber optic,No
+80847,Two year,92,19,Fiber optic,Yes
+80848,Month-to-month,89,3,DSL,Yes
+80849,Month-to-month,93,68,DSL,No
+80850,One year,101,3,DSL,No
+80851,Month-to-month,76,45,DSL,No
+80852,Month-to-month,59,8,DSL,No
+80853,Month-to-month,66,46,Fiber optic,No
+80854,Month-to-month,108,71,No,No
+80855,Month-to-month,85,25,Fiber optic,Yes
+80856,Month-to-month,63,13,Fiber optic,Yes
+80857,One year,88,30,Fiber optic,No
+80858,Month-to-month,90,42,Fiber optic,No
+80859,Month-to-month,99,44,Fiber optic,No
+80860,Month-to-month,90,18,Fiber optic,No
+80861,One year,79,36,No,No
+80862,Month-to-month,63,44,Fiber optic,No
+80863,One year,123,62,No,No
+80864,Month-to-month,61,4,DSL,No
+80865,Month-to-month,42,71,DSL,No
+80866,Two year,101,44,No,Yes
+80867,Month-to-month,89,44,Fiber optic,No
+80868,Month-to-month,49,45,No,Yes
+80869,One year,117,39,Fiber optic,No
+80870,Month-to-month,68,9,DSL,Yes
+80871,Month-to-month,103,18,Fiber optic,No
+80872,One year,89,67,Fiber optic,No
+80873,One year,58,42,Fiber optic,No
+80874,Two year,89,3,DSL,No
+80875,Month-to-month,49,22,DSL,No
+80876,One year,86,35,Fiber optic,No
+80877,Two year,57,71,Fiber optic,No
+80878,One year,109,3,Fiber optic,Yes
+80879,Two year,100,67,Fiber optic,No
+80880,Month-to-month,48,24,DSL,Yes
+80881,Month-to-month,93,30,DSL,No
+80882,Month-to-month,94,16,No,No
+80883,Month-to-month,48,45,DSL,No
+80884,Two year,112,32,Fiber optic,Yes
+80885,Month-to-month,60,12,DSL,Yes
+80886,Two year,68,51,DSL,No
+80887,One year,65,35,Fiber optic,No
+80888,One year,62,45,No,No
+80889,Month-to-month,46,67,Fiber optic,No
+80890,Month-to-month,54,17,DSL,Yes
+80891,Two year,100,12,No,No
+80892,One year,84,68,No,No
+80893,Two year,58,2,DSL,Yes
+80894,One year,112,61,DSL,No
+80895,Month-to-month,93,62,Fiber optic,No
+80896,Two year,119,47,DSL,No
+80897,Month-to-month,100,49,DSL,No
+80898,One year,79,62,DSL,No
+80899,Two year,103,34,DSL,No
+80900,One year,115,6,Fiber optic,Yes
+80901,Two year,77,24,DSL,Yes
+80902,Month-to-month,73,71,Fiber optic,No
+80903,Two year,122,54,Fiber optic,No
+80904,One year,91,53,No,No
+80905,One year,86,64,Fiber optic,No
+80906,Month-to-month,59,18,Fiber optic,No
+80907,One year,104,42,DSL,No
+80908,Month-to-month,68,48,DSL,No
+80909,Two year,59,23,DSL,No
+80910,Two year,84,37,No,No
+80911,Month-to-month,47,70,DSL,No
+80912,One year,61,15,Fiber optic,No
+80913,Two year,102,20,DSL,No
+80914,Two year,102,25,No,No
+80915,One year,62,23,Fiber optic,Yes
+80916,Two year,68,9,Fiber optic,No
+80917,Month-to-month,67,36,DSL,No
+80918,Two year,70,10,DSL,No
+80919,One year,62,26,DSL,No
+80920,One year,110,46,DSL,No
+80921,One year,117,41,DSL,No
+80922,Month-to-month,53,21,Fiber optic,No
+80923,Month-to-month,71,38,DSL,No
+80924,Two year,98,25,DSL,No
+80925,One year,123,15,DSL,No
+80926,Month-to-month,105,27,Fiber optic,No
+80927,Two year,84,8,DSL,No
+80928,Month-to-month,48,52,Fiber optic,No
+80929,Month-to-month,60,8,No,No
+80930,Month-to-month,79,71,Fiber optic,No
+80931,Month-to-month,85,37,No,No
+80932,Month-to-month,47,40,Fiber optic,Yes
+80933,Month-to-month,71,5,Fiber optic,No
+80934,Month-to-month,43,14,Fiber optic,Yes
+80935,Month-to-month,40,14,No,No
+80936,Month-to-month,63,34,Fiber optic,No
+80937,One year,73,31,Fiber optic,No
+80938,One year,114,46,DSL,No
+80939,Month-to-month,49,12,Fiber optic,Yes
+80940,Month-to-month,87,35,DSL,No
+80941,Two year,60,66,Fiber optic,No
+80942,Two year,104,65,Fiber optic,No
+80943,One year,96,42,DSL,No
+80944,One year,98,53,DSL,No
+80945,Month-to-month,61,63,Fiber optic,No
+80946,Month-to-month,85,23,No,Yes
+80947,Month-to-month,105,46,Fiber optic,No
+80948,Month-to-month,108,28,Fiber optic,No
+80949,One year,93,19,Fiber optic,No
+80950,One year,62,39,Fiber optic,No
+80951,One year,60,43,DSL,No
+80952,Month-to-month,63,48,Fiber optic,Yes
+80953,Month-to-month,84,70,Fiber optic,No
+80954,Two year,96,27,Fiber optic,No
+80955,Month-to-month,99,32,Fiber optic,No
+80956,Two year,106,4,DSL,No
+80957,One year,70,31,DSL,No
+80958,One year,122,4,DSL,Yes
+80959,One year,80,62,Fiber optic,No
+80960,One year,98,40,DSL,No
+80961,Month-to-month,73,29,Fiber optic,No
+80962,Month-to-month,60,3,Fiber optic,Yes
+80963,One year,71,40,DSL,Yes
+80964,One year,114,6,DSL,Yes
+80965,One year,118,49,No,No
+80966,Two year,68,14,DSL,No
+80967,Month-to-month,78,63,DSL,No
+80968,Month-to-month,44,5,Fiber optic,Yes
+80969,Month-to-month,72,16,Fiber optic,Yes
+80970,One year,123,39,No,No
+80971,Month-to-month,69,65,Fiber optic,No
+80972,Month-to-month,68,69,No,No
+80973,One year,89,8,DSL,Yes
+80974,One year,66,58,Fiber optic,No
+80975,One year,83,54,DSL,No
+80976,One year,123,3,Fiber optic,Yes
+80977,Month-to-month,99,52,DSL,Yes
+80978,Month-to-month,60,14,No,No
+80979,Two year,107,48,DSL,No
+80980,Month-to-month,43,45,Fiber optic,Yes
+80981,Month-to-month,101,51,Fiber optic,No
+80982,Month-to-month,65,25,Fiber optic,Yes
+80983,Two year,62,56,DSL,No
+80984,Month-to-month,92,32,DSL,Yes
+80985,Month-to-month,46,9,No,Yes
+80986,One year,89,43,Fiber optic,No
+80987,Month-to-month,60,63,DSL,No
+80988,Month-to-month,104,27,DSL,No
+80989,Month-to-month,65,24,DSL,No
+80990,Two year,71,13,No,No
+80991,Month-to-month,106,49,Fiber optic,No
+80992,Two year,97,5,DSL,No
+80993,Month-to-month,101,66,Fiber optic,No
+80994,Month-to-month,84,17,No,Yes
+80995,Month-to-month,85,33,DSL,No
+80996,One year,92,46,Fiber optic,No
+80997,Two year,104,4,DSL,Yes
+80998,Month-to-month,78,11,DSL,Yes
+80999,One year,57,71,DSL,No
+81000,Two year,121,37,Fiber optic,No

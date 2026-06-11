@@ -31,7 +31,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="ticks")
 
@@ -39,7 +39,7 @@ sns.set_theme(style="ticks")
 df = sns.load_dataset('anscombe')
 
 # 첫 5행 확인 및 어떤 데이터셋이 있는지 종류 확인
-display(df.head())
+print(df.head())
 print("데이터셋 종류:", df['dataset'].unique())
 ```
 
@@ -77,7 +77,7 @@ print("데이터셋 종류:", df['dataset'].unique())
 ```python
 # dataset(I~IV) 별로 그룹을 지어 평균과 분산을 소수점 둘째 자리까지 출력
 stats = df.groupby('dataset').agg(['mean', 'var']).round(2)
-display(stats)
+print(stats)
 
 # I번 그룹과 II번 그룹의 x, y 상관계수(Correlation) 비교
 corr_I = df[df['dataset'] == 'I'][['x', 'y']].corr().iloc[0, 1]

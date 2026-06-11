@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set1")
 
@@ -39,7 +39,7 @@ df = sns.load_dataset('dowjones')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -119,7 +119,7 @@ df = df.sort_values('Date')
 df['MA_12'] = df['Price'].rolling(window=12).mean()
 
 # 처음 11개의 데이터는 묶을 수 있는 과거 데이터가 모자라기 때문에 NaN(결측치)이 발생합니다.
-display(df.head(15))
+print(df.head(15))
 ```
 
 > **💻 [실행 결과]**

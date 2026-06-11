@@ -1,0 +1,1001 @@
+JobID,ExpYears,EducationLevel,RoleCategory,IsRemote,Salary
+770001,23,Bachelors,Software,No,131916.3
+770002,20,Masters,Software,Yes,110837.75
+770003,20,Bachelors,Data Science,Yes,101925.51
+770004,11,Bachelors,Marketing,Yes,88528.23
+770005,5,Bachelors,Data Science,Yes,74206.9
+770006,24,Masters,Software,No,140088.65
+770007,0,Bachelors,Software,Yes,51233.17
+770008,7,Bachelors,Software,Yes,82592.0
+770009,21,Bachelors,Software,Yes,117248.52
+770010,12,Bachelors,HR,Yes,75257.93
+770011,19,Bachelors,HR,No,106561.27
+770012,0,Masters,Software,No,64623.23
+770013,22,Bachelors,Data Science,Yes,118794.58
+770014,4,Bachelors,HR,No,52171.76
+770015,22,Bachelors,Software,Yes,111364.46
+770016,4,Bachelors,Marketing,Yes,62332.99
+770017,21,Masters,Software,Yes,124098.22
+770018,15,Bachelors,Marketing,Yes,87639.39
+770019,14,Bachelors,Data Science,No,110385.02
+770020,15,Masters,Marketing,No,101690.82
+770021,10,Bachelors,Software,No,84300.24
+770022,7,Bachelors,Software,Yes,81343.64
+770023,3,PhD,Data Science,No,89666.41
+770024,1,Bachelors,Marketing,Yes,44653.63
+770025,11,Bachelors,Software,Yes,91982.46
+770026,17,Bachelors,Software,No,106297.92
+770027,6,Bachelors,HR,No,60652.48
+770028,20,Masters,Data Science,No,135110.12
+770029,5,Masters,Marketing,No,66545.54
+770030,24,Bachelors,Software,Yes,117561.99
+770031,1,Bachelors,Software,Yes,50232.23
+770032,8,PhD,HR,No,99892.06
+770033,1,Bachelors,Software,No,50485.36
+770034,10,Masters,Software,Yes,93410.75
+770035,22,Masters,Data Science,No,150152.96
+770036,19,Bachelors,Data Science,No,127209.48
+770037,4,Bachelors,Software,Yes,75632.0
+770038,19,Masters,Software,No,129167.39
+770039,9,Bachelors,Data Science,Yes,82731.65
+770040,0,Bachelors,Marketing,Yes,43043.34
+770041,8,Bachelors,HR,No,65850.42
+770042,5,Masters,Marketing,No,66026.49
+770043,11,Bachelors,Software,No,88993.66
+770044,3,Bachelors,Marketing,No,52384.92
+770045,18,Masters,Data Science,Yes,116379.76
+770046,20,Masters,HR,Yes,109960.49
+770047,4,Masters,HR,No,73492.89
+770048,21,Bachelors,Software,No,127275.11
+770049,22,Bachelors,Marketing,No,115307.68
+770050,13,Bachelors,Software,No,101472.88
+770051,14,Bachelors,HR,Yes,80493.12
+770052,12,Bachelors,Software,No,93324.78
+770053,5,Bachelors,Software,Yes,70422.22
+770054,17,Bachelors,Software,No,121848.35
+770055,2,Masters,Marketing,Yes,55730.32
+770056,4,Bachelors,Software,Yes,64867.81
+770057,12,Bachelors,Data Science,No,96042.89
+770058,3,Bachelors,HR,Yes,55789.53
+770059,9,Masters,HR,No,88494.69
+770060,24,Bachelors,Marketing,No,120706.51
+770061,18,Bachelors,Data Science,Yes,119695.78
+770062,14,Bachelors,Software,No,97933.43
+770063,0,Bachelors,Data Science,No,56486.83
+770064,24,Bachelors,Marketing,No,119576.49
+770065,7,Bachelors,Marketing,No,73900.13
+770066,23,Bachelors,Software,Yes,130119.54
+770067,21,Bachelors,Software,Yes,116088.14
+770068,19,Bachelors,Software,No,123749.55
+770069,20,Bachelors,Software,Yes,118687.76
+770070,11,Bachelors,Marketing,Yes,81450.2
+770071,2,Bachelors,Software,No,64984.4
+770072,6,Bachelors,Data Science,Yes,73022.81
+770073,14,Bachelors,Marketing,No,94356.21
+770074,7,Masters,HR,No,78613.07
+770075,6,Bachelors,Data Science,Yes,84608.34
+770076,2,Bachelors,Marketing,Yes,39291.56
+770077,13,Bachelors,Software,Yes,99573.6
+770078,15,Bachelors,Software,Yes,99057.6
+770079,11,Bachelors,HR,No,85897.98
+770080,2,Bachelors,Software,No,61725.93
+770081,23,Bachelors,Software,Yes,125467.85
+770082,21,Masters,Data Science,No,132450.83
+770083,24,Bachelors,HR,No,124027.2
+770084,1,Masters,Software,No,74953.87
+770085,1,Bachelors,HR,No,47810.65
+770086,2,Bachelors,Marketing,No,48190.21
+770087,15,Bachelors,Software,No,102137.15
+770088,6,Masters,Software,No,87129.08
+770089,21,Bachelors,Data Science,No,130363.23
+770090,20,Bachelors,Data Science,Yes,113836.45
+770091,12,Bachelors,Software,No,104179.36
+770092,13,Bachelors,HR,No,85308.29
+770093,11,Bachelors,Software,No,96061.4
+770094,24,Bachelors,Data Science,No,149948.94
+770095,0,Masters,HR,Yes,56773.97
+770096,2,Bachelors,Data Science,No,58959.83
+770097,6,Masters,Software,No,92714.28
+770098,22,Bachelors,Marketing,No,112701.6
+770099,19,Bachelors,Data Science,Yes,121167.43
+770100,20,Bachelors,Marketing,No,95811.81
+770101,4,Masters,Software,Yes,73384.43
+770102,7,Bachelors,Data Science,No,81220.86
+770103,15,Bachelors,Marketing,No,85802.97
+770104,6,PhD,Software,No,94790.02
+770105,6,Bachelors,Data Science,No,72320.66
+770106,6,Bachelors,Software,No,72570.1
+770107,11,Masters,Data Science,No,98391.64
+770108,8,Masters,Data Science,No,92969.86
+770109,10,Bachelors,HR,No,80750.56
+770110,4,Bachelors,Marketing,No,59644.64
+770111,18,Bachelors,Software,Yes,109459.08
+770112,16,Masters,Data Science,No,127565.82
+770113,7,Bachelors,Data Science,No,86471.43
+770114,20,Masters,Data Science,No,131253.13
+770115,23,Bachelors,HR,Yes,112863.66
+770116,23,Bachelors,Data Science,Yes,125655.58
+770117,4,Masters,HR,Yes,62519.83
+770118,0,PhD,Marketing,No,66607.67
+770119,9,Bachelors,Software,No,83361.63
+770120,15,Bachelors,Software,Yes,94960.9
+770121,1,Bachelors,Software,No,57722.78
+770122,19,Bachelors,Marketing,No,113649.29
+770123,19,Bachelors,Marketing,Yes,98307.17
+770124,7,Masters,Data Science,Yes,85308.21
+770125,20,Masters,Software,Yes,128969.64
+770126,8,Bachelors,HR,Yes,70154.56
+770127,4,Masters,Data Science,Yes,80560.54
+770128,2,Bachelors,HR,Yes,45344.7
+770129,17,Bachelors,Data Science,No,108988.07
+770130,18,PhD,Software,Yes,128181.07
+770131,0,Masters,Software,No,67046.95
+770132,12,Bachelors,Data Science,No,107144.6
+770133,2,Masters,Software,Yes,67378.61
+770134,7,Bachelors,Data Science,No,
+770135,4,Bachelors,Software,Yes,70181.6
+770136,0,Bachelors,Software,Yes,56996.77
+770137,7,Masters,Marketing,Yes,75549.77
+770138,17,Bachelors,Software,Yes,111187.27
+770139,18,Bachelors,HR,Yes,93916.59
+770140,6,Bachelors,Software,No,77882.89
+770141,20,Bachelors,Data Science,No,132882.71
+770142,10,Bachelors,Software,No,76492.64
+770143,1,Bachelors,Software,Yes,57417.66
+770144,6,PhD,Software,Yes,95975.06
+770145,17,Bachelors,HR,No,98619.02
+770146,15,Bachelors,HR,No,80094.62
+770147,1,Bachelors,Software,No,42947.85
+770148,12,Bachelors,Data Science,No,96541.25
+770149,17,Masters,Software,No,
+770150,4,Masters,Data Science,No,84595.49
+770151,14,Bachelors,HR,Yes,86265.12
+770152,24,Masters,Data Science,Yes,138074.22
+770153,3,Bachelors,Data Science,Yes,72810.91
+770154,11,Bachelors,Software,No,
+770155,3,Masters,Software,No,78076.08
+770156,10,Masters,Software,Yes,95714.22
+770157,0,Bachelors,Marketing,No,42947.67
+770158,24,Bachelors,HR,Yes,122563.82
+770159,7,Bachelors,Software,No,81752.22
+770160,10,Bachelors,Software,No,81222.53
+770161,12,Bachelors,HR,No,85972.26
+770162,2,Bachelors,Marketing,No,46233.97
+770163,18,PhD,Data Science,No,145843.75
+770164,15,Bachelors,Marketing,Yes,95507.94
+770165,0,Bachelors,Software,Yes,57885.96
+770166,11,Bachelors,Software,Yes,93919.18
+770167,24,Masters,Data Science,Yes,138828.9
+770168,9,Bachelors,HR,Yes,74732.52
+770169,6,Bachelors,Marketing,No,61261.16
+770170,21,Bachelors,Marketing,Yes,116001.81
+770171,5,PhD,HR,No,84669.52
+770172,0,Masters,Data Science,Yes,72852.46
+770173,20,Masters,Marketing,Yes,114672.13
+770174,2,Bachelors,Software,Yes,56056.43
+770175,19,Bachelors,HR,No,111979.58
+770176,21,Bachelors,Software,Yes,117405.33
+770177,3,Bachelors,Marketing,No,50507.35
+770178,22,Bachelors,Software,No,126868.36
+770179,3,Bachelors,HR,Yes,47676.86
+770180,6,Bachelors,HR,No,72181.31
+770181,10,Bachelors,Data Science,Yes,96668.33
+770182,9,Bachelors,Marketing,No,72552.48
+770183,2,Bachelors,Marketing,No,51818.45
+770184,4,Bachelors,Software,No,82056.7
+770185,1,Bachelors,Data Science,No,61397.03
+770186,14,Masters,Data Science,No,123433.57
+770187,12,PhD,Marketing,No,99658.17
+770188,15,Bachelors,Software,Yes,96214.83
+770189,6,Bachelors,Data Science,Yes,74152.91
+770190,1,Bachelors,Data Science,Yes,57854.78
+770191,12,Masters,Software,No,99446.6
+770192,9,Bachelors,Software,No,84470.24
+770193,8,Masters,Marketing,No,81060.25
+770194,23,Bachelors,HR,Yes,126444.7
+770195,15,Bachelors,Data Science,No,105562.48
+770196,6,Masters,Software,Yes,78906.15
+770197,9,Bachelors,Software,Yes,83600.34
+770198,8,Masters,Software,Yes,96017.2
+770199,14,Bachelors,HR,No,92883.13
+770200,8,Bachelors,Marketing,Yes,60118.57
+770201,2,Bachelors,Software,Yes,67296.62
+770202,0,Bachelors,Data Science,Yes,
+770203,9,Bachelors,HR,Yes,77617.43
+770204,15,Bachelors,Software,No,109764.1
+770205,10,Masters,HR,No,88870.27
+770206,7,Masters,Software,No,89417.29
+770207,11,PhD,HR,No,98919.28
+770208,0,Masters,Software,No,60136.59
+770209,2,Bachelors,Software,No,58159.96
+770210,22,Masters,HR,No,126637.59
+770211,14,Bachelors,Software,No,98610.49
+770212,12,Bachelors,Marketing,Yes,82344.93
+770213,10,Bachelors,Software,Yes,77865.7
+770214,17,Bachelors,HR,No,97983.09
+770215,16,Bachelors,Software,No,104972.88
+770216,11,Masters,Software,No,98824.04
+770217,18,Bachelors,HR,Yes,103084.82
+770218,10,Masters,Software,Yes,90854.99
+770219,20,Masters,HR,No,124521.48
+770220,16,Masters,Data Science,Yes,118436.49
+770221,24,Bachelors,HR,No,120587.73
+770222,9,Bachelors,Marketing,No,78208.53
+770223,1,PhD,Software,Yes,79207.09
+770224,10,Masters,Software,Yes,95913.88
+770225,3,Bachelors,HR,No,63134.28
+770226,3,Bachelors,HR,Yes,56243.32
+770227,19,Bachelors,Data Science,No,122429.84
+770228,21,Bachelors,Software,No,127156.24
+770229,10,Bachelors,Software,No,89551.36
+770230,10,PhD,Marketing,Yes,98959.56
+770231,18,Bachelors,Marketing,Yes,94183.69
+770232,9,Bachelors,Data Science,No,87975.45
+770233,1,Bachelors,HR,No,45502.41
+770234,14,Bachelors,Software,Yes,96418.91
+770235,7,Masters,Software,Yes,78355.94
+770236,19,Bachelors,Software,No,114321.57
+770237,9,Masters,Data Science,Yes,91708.96
+770238,24,Bachelors,HR,Yes,123250.31
+770239,7,Masters,Software,Yes,83559.6
+770240,18,Bachelors,Software,No,102207.59
+770241,16,Masters,Software,Yes,119685.04
+770242,10,Masters,Data Science,No,105023.47
+770243,18,Bachelors,Marketing,Yes,99164.05
+770244,24,Bachelors,Software,Yes,124860.22
+770245,17,Bachelors,Software,Yes,111512.21
+770246,7,Bachelors,Marketing,No,70975.23
+770247,11,Bachelors,Data Science,Yes,95447.77
+770248,24,Bachelors,Software,Yes,124647.34
+770249,1,Masters,Data Science,No,78977.67
+770250,15,Masters,Software,No,115833.79
+770251,18,Bachelors,Marketing,No,96912.06
+770252,19,Masters,Data Science,Yes,118657.01
+770253,16,Bachelors,Marketing,Yes,86784.9
+770254,3,Bachelors,HR,No,48906.9
+770255,17,Bachelors,Marketing,Yes,94871.56
+770256,22,Masters,Software,Yes,128871.32
+770257,6,Bachelors,Data Science,Yes,80176.59
+770258,8,Bachelors,Data Science,No,95263.35
+770259,3,Bachelors,Data Science,No,74567.46
+770260,7,Masters,Data Science,Yes,84636.26
+770261,5,Bachelors,Software,Yes,60697.37
+770262,13,Masters,Marketing,Yes,93920.88
+770263,7,Bachelors,Software,Yes,69983.35
+770264,22,Bachelors,Marketing,No,102946.77
+770265,5,Masters,HR,No,76704.63
+770266,1,Bachelors,Data Science,Yes,50777.16
+770267,22,Masters,Data Science,Yes,134948.0
+770268,15,Bachelors,HR,No,91922.37
+770269,6,Masters,Software,No,82811.47
+770270,24,Bachelors,Software,Yes,135087.63
+770271,22,Masters,Software,No,125774.13
+770272,2,Bachelors,Data Science,No,62645.04
+770273,2,Bachelors,Data Science,No,65111.39
+770274,19,Bachelors,Data Science,No,120049.75
+770275,11,Masters,Data Science,No,110938.64
+770276,8,Masters,Marketing,Yes,76550.67
+770277,17,Masters,Marketing,No,110999.78
+770278,8,PhD,Marketing,Yes,82358.3
+770279,17,Bachelors,Software,Yes,100750.43
+770280,19,Bachelors,HR,No,108291.5
+770281,16,Masters,Marketing,Yes,100619.26
+770282,21,Bachelors,HR,No,114922.39
+770283,1,Bachelors,Data Science,No,50070.83
+770284,6,Masters,Software,No,83408.97
+770285,4,Bachelors,Software,No,75804.02
+770286,4,Bachelors,Data Science,No,73208.83
+770287,12,Bachelors,Data Science,No,97948.19
+770288,14,Bachelors,Software,No,91594.85
+770289,22,PhD,Data Science,No,156397.88
+770290,15,Bachelors,Data Science,Yes,99311.48
+770291,21,Bachelors,Software,Yes,100972.54
+770292,11,Bachelors,Software,No,91500.82
+770293,6,Masters,Software,No,85495.42
+770294,23,Masters,Marketing,No,123340.69
+770295,24,Masters,Software,No,148557.88
+770296,24,Bachelors,Software,Yes,119308.45
+770297,18,Bachelors,Marketing,No,110029.84
+770298,6,Bachelors,HR,No,64572.94
+770299,2,Bachelors,Software,Yes,52212.57
+770300,6,Masters,Data Science,No,95160.85
+770301,24,Masters,HR,No,126648.92
+770302,14,Bachelors,Software,Yes,94194.51
+770303,5,Bachelors,Data Science,No,84394.92
+770304,19,Bachelors,Marketing,Yes,94516.93
+770305,4,Masters,Software,Yes,75383.67
+770306,12,Masters,Software,No,112038.37
+770307,4,Masters,Marketing,Yes,51570.49
+770308,5,Bachelors,Data Science,Yes,72089.37
+770309,6,Bachelors,HR,No,66004.91
+770310,18,Masters,Marketing,No,112102.56
+770311,15,Masters,Marketing,Yes,93993.31
+770312,3,Bachelors,Software,No,
+770313,2,Masters,HR,No,56998.96
+770314,23,Bachelors,Software,No,126106.92
+770315,11,Bachelors,Marketing,Yes,71995.81
+770316,14,Bachelors,Marketing,No,86696.4
+770317,2,Bachelors,HR,Yes,52371.63
+770318,5,Bachelors,Marketing,Yes,57297.1
+770319,7,Masters,Data Science,Yes,98463.22
+770320,9,Masters,HR,No,80489.39
+770321,7,Bachelors,Software,No,77312.07
+770322,0,Bachelors,Software,No,53084.13
+770323,9,Masters,Data Science,No,104098.86
+770324,16,Bachelors,Data Science,No,104855.0
+770325,6,Bachelors,Software,No,73943.34
+770326,13,Bachelors,HR,No,81800.95
+770327,0,Masters,Software,No,66328.29
+770328,12,Masters,Software,No,103577.95
+770329,21,Bachelors,Data Science,No,124925.03
+770330,23,PhD,Data Science,No,157658.48
+770331,18,Masters,Software,No,118723.87
+770332,23,Bachelors,Marketing,No,121245.05
+770333,21,Masters,HR,No,125043.53
+770334,11,Bachelors,Data Science,No,99695.58
+770335,15,Bachelors,HR,No,100989.48
+770336,14,Bachelors,HR,Yes,82167.43
+770337,15,Masters,Software,No,117073.21
+770338,22,Bachelors,Data Science,No,133167.18
+770339,12,Masters,Data Science,No,111746.31
+770340,3,Bachelors,Software,Yes,68132.61
+770341,12,Bachelors,HR,Yes,83006.17
+770342,16,Bachelors,Data Science,Yes,109525.74
+770343,20,Bachelors,Software,No,116209.89
+770344,0,Bachelors,HR,No,51748.79
+770345,4,Masters,Software,No,84907.71
+770346,7,Bachelors,HR,Yes,66948.15
+770347,1,Bachelors,Data Science,No,55081.88
+770348,20,Masters,HR,No,124702.86
+770349,11,Bachelors,Software,Yes,92053.19
+770350,20,Masters,Software,Yes,122247.22
+770351,22,Bachelors,Marketing,Yes,114222.22
+770352,19,Masters,Marketing,No,109830.75
+770353,6,Bachelors,HR,No,69692.03
+770354,1,Masters,Software,Yes,58045.63
+770355,11,Bachelors,Data Science,No,104296.89
+770356,12,Masters,Software,Yes,94787.41
+770357,1,Bachelors,Software,Yes,60776.97
+770358,21,Masters,Marketing,No,126322.67
+770359,19,Bachelors,Software,Yes,108986.22
+770360,19,Masters,Marketing,No,121443.33
+770361,5,Bachelors,Data Science,Yes,74491.98
+770362,21,Bachelors,HR,No,104751.77
+770363,5,PhD,Data Science,Yes,99867.46
+770364,5,Bachelors,Software,Yes,67148.56
+770365,1,PhD,HR,Yes,70402.6
+770366,1,Bachelors,Software,No,52575.7
+770367,16,Bachelors,Data Science,No,111941.65
+770368,16,Bachelors,Software,No,110918.95
+770369,13,PhD,Software,No,125716.84
+770370,1,Bachelors,HR,Yes,44825.09
+770371,17,Bachelors,Software,No,112556.05
+770372,1,Bachelors,Marketing,No,55129.58
+770373,2,Bachelors,Data Science,Yes,60100.7
+770374,14,Bachelors,Data Science,Yes,104716.99
+770375,5,Masters,Marketing,No,61276.46
+770376,17,Bachelors,HR,Yes,93200.24
+770377,18,Bachelors,Data Science,Yes,106265.89
+770378,2,Bachelors,HR,Yes,47361.92
+770379,11,Bachelors,Software,Yes,85132.02
+770380,9,Bachelors,Software,Yes,85910.28
+770381,17,Bachelors,Data Science,Yes,101734.8
+770382,8,Bachelors,Software,No,81267.87
+770383,15,Masters,Software,No,107213.94
+770384,0,Masters,Data Science,Yes,67468.66
+770385,1,Masters,Software,No,61484.6
+770386,1,PhD,Marketing,Yes,66039.61
+770387,16,Bachelors,Marketing,No,99595.52
+770388,20,Bachelors,Software,No,119806.65
+770389,6,Masters,Marketing,No,79376.51
+770390,10,Bachelors,Software,No,93978.51
+770391,9,Bachelors,Software,No,86029.39
+770392,8,Bachelors,Data Science,Yes,77049.52
+770393,18,PhD,Software,No,133176.05
+770394,1,Bachelors,Software,Yes,55035.4
+770395,19,Bachelors,HR,Yes,102849.41
+770396,21,Masters,Data Science,Yes,137413.54
+770397,5,Bachelors,HR,Yes,56287.0
+770398,23,Bachelors,Software,Yes,124593.18
+770399,12,Masters,Marketing,No,87621.34
+770400,21,Masters,Marketing,Yes,117587.5
+770401,14,PhD,Software,Yes,116369.67
+770402,3,Bachelors,Software,No,70651.08
+770403,11,Bachelors,Software,No,103681.13
+770404,14,Bachelors,HR,Yes,88280.5
+770405,20,Bachelors,Software,Yes,118486.66
+770406,17,Bachelors,HR,Yes,94133.29
+770407,20,Bachelors,Marketing,No,110648.28
+770408,6,Masters,Marketing,No,70662.77
+770409,21,Masters,Software,No,137033.55
+770410,7,Bachelors,Software,Yes,86484.24
+770411,2,Bachelors,Marketing,Yes,44728.08
+770412,5,Bachelors,Software,No,77741.34
+770413,13,Bachelors,HR,No,93364.67
+770414,12,Bachelors,HR,Yes,85574.34
+770415,18,Bachelors,Software,No,115803.37
+770416,13,Masters,HR,No,99222.43
+770417,0,PhD,HR,No,68657.97
+770418,18,PhD,Software,Yes,136879.71
+770419,10,Bachelors,Marketing,No,70842.62
+770420,2,Bachelors,Software,Yes,63494.7
+770421,8,Bachelors,Software,Yes,66838.74
+770422,1,Masters,Marketing,Yes,56144.91
+770423,12,Bachelors,Software,Yes,90303.59
+770424,24,Bachelors,Software,No,136566.76
+770425,7,Bachelors,Data Science,Yes,77111.94
+770426,7,Bachelors,Software,Yes,73799.07
+770427,3,Bachelors,HR,Yes,52521.15
+770428,11,Masters,Software,Yes,91477.11
+770429,1,Bachelors,HR,No,42347.69
+770430,22,Masters,Data Science,Yes,142227.62
+770431,5,Bachelors,Software,No,77031.55
+770432,10,Bachelors,Software,Yes,83628.27
+770433,19,Bachelors,HR,Yes,99533.82
+770434,1,Bachelors,HR,No,48645.46
+770435,0,Bachelors,Software,No,59828.71
+770436,5,PhD,Data Science,No,101341.27
+770437,23,Bachelors,Software,Yes,124364.43
+770438,18,Bachelors,Software,No,122675.51
+770439,7,Bachelors,Marketing,No,73560.71
+770440,9,Masters,HR,No,88628.68
+770441,15,Bachelors,Data Science,No,108377.74
+770442,7,Masters,Data Science,No,90418.9
+770443,15,Bachelors,Marketing,No,87809.39
+770444,1,Bachelors,Data Science,No,65669.98
+770445,19,PhD,Marketing,No,132204.62
+770446,21,Masters,Data Science,No,130323.65
+770447,6,Bachelors,Marketing,No,63376.09
+770448,18,Bachelors,Software,No,112443.22
+770449,22,Bachelors,HR,No,106671.52
+770450,4,Bachelors,Data Science,No,69349.83
+770451,13,Masters,HR,No,104397.77
+770452,18,Masters,Data Science,Yes,118120.5
+770453,1,Bachelors,Software,No,65272.08
+770454,24,Masters,HR,Yes,128376.78
+770455,11,Masters,Data Science,No,103377.96
+770456,4,Bachelors,Software,Yes,56983.04
+770457,21,Bachelors,Marketing,Yes,102413.53
+770458,22,Bachelors,Marketing,No,119262.2
+770459,19,Masters,Marketing,Yes,107086.54
+770460,10,Masters,HR,No,97088.14
+770461,21,Masters,Data Science,Yes,127637.33
+770462,9,Bachelors,Marketing,No,72715.49
+770463,16,Masters,Software,Yes,109085.91
+770464,4,Bachelors,Marketing,Yes,51634.4
+770465,22,Bachelors,Software,No,124101.62
+770466,22,Bachelors,Data Science,No,131462.53
+770467,19,Masters,Software,No,123130.59
+770468,10,Bachelors,Data Science,Yes,88424.82
+770469,23,Bachelors,Software,Yes,124012.89
+770470,4,Bachelors,Software,No,71214.35
+770471,3,Bachelors,Data Science,No,72292.02
+770472,0,Bachelors,HR,Yes,52457.64
+770473,4,Masters,Data Science,Yes,79124.9
+770474,11,Masters,HR,No,97824.96
+770475,19,Masters,Marketing,No,114257.87
+770476,10,Bachelors,Software,Yes,92188.87
+770477,6,Bachelors,Data Science,Yes,63539.59
+770478,19,PhD,Software,No,135752.26
+770479,5,Bachelors,Marketing,No,65172.66
+770480,9,Bachelors,Data Science,No,88788.68
+770481,12,Masters,Data Science,No,107415.75
+770482,18,Bachelors,HR,No,105858.34
+770483,24,Bachelors,Software,Yes,130049.03
+770484,24,Bachelors,Data Science,No,136550.92
+770485,17,PhD,Marketing,Yes,109094.89
+770486,22,Bachelors,Software,Yes,118883.51
+770487,9,Masters,Software,No,101770.37
+770488,2,Bachelors,HR,Yes,54470.28
+770489,8,Masters,Marketing,No,72902.34
+770490,15,Bachelors,Data Science,No,109365.9
+770491,5,Bachelors,Marketing,No,58659.57
+770492,14,Masters,Data Science,No,108609.58
+770493,22,Masters,Data Science,Yes,142478.53
+770494,16,Bachelors,Marketing,Yes,97227.68
+770495,15,Bachelors,HR,No,92247.79
+770496,21,Bachelors,HR,No,
+770497,4,Masters,Data Science,Yes,75559.15
+770498,15,Masters,Marketing,Yes,97557.12
+770499,6,Bachelors,Data Science,No,86170.88
+770500,17,Masters,HR,No,116722.59
+770501,11,Masters,Software,No,107195.33
+770502,10,Bachelors,Software,Yes,89359.58
+770503,18,Bachelors,Data Science,No,115004.5
+770504,21,Masters,Data Science,No,133315.75
+770505,23,Bachelors,HR,No,122168.84
+770506,22,Masters,Data Science,Yes,129483.56
+770507,24,Bachelors,Data Science,Yes,122153.25
+770508,17,Bachelors,HR,No,95838.55
+770509,14,Bachelors,Software,No,107394.68
+770510,2,Bachelors,Marketing,No,39693.58
+770511,18,Bachelors,Software,No,111464.28
+770512,14,Bachelors,HR,Yes,87020.39
+770513,12,Bachelors,Software,No,96808.77
+770514,11,Bachelors,Software,No,90981.75
+770515,21,Bachelors,Software,Yes,121991.06
+770516,12,Bachelors,HR,Yes,
+770517,13,Bachelors,HR,No,90523.61
+770518,0,Bachelors,Marketing,No,41696.93
+770519,22,Bachelors,Software,Yes,113941.57
+770520,15,Masters,Marketing,Yes,97424.7
+770521,23,Bachelors,Data Science,No,131832.86
+770522,15,Bachelors,Software,No,107042.85
+770523,22,Bachelors,HR,No,111301.99
+770524,1,Masters,Software,Yes,72119.23
+770525,11,Bachelors,Software,No,87448.09
+770526,9,Bachelors,Software,No,79247.2
+770527,14,PhD,HR,No,102885.85
+770528,22,Bachelors,Marketing,No,114379.18
+770529,0,Bachelors,Marketing,No,42609.92
+770530,20,Bachelors,HR,No,102844.59
+770531,22,Bachelors,Data Science,Yes,127168.23
+770532,20,Masters,Software,No,138689.07
+770533,11,Masters,Data Science,Yes,106528.7
+770534,15,Bachelors,Marketing,Yes,83790.22
+770535,15,Bachelors,Marketing,Yes,89874.17
+770536,9,PhD,Marketing,Yes,86980.28
+770537,10,Bachelors,Data Science,No,93887.93
+770538,0,Masters,Software,Yes,62376.44
+770539,13,Masters,Data Science,Yes,105395.04
+770540,21,Bachelors,Software,No,121946.03
+770541,21,PhD,HR,No,131044.89
+770542,18,Bachelors,Data Science,Yes,106925.5
+770543,21,Masters,Marketing,Yes,110992.16
+770544,3,Bachelors,Software,Yes,66219.48
+770545,22,Bachelors,Software,No,129949.51
+770546,16,Bachelors,Marketing,No,96049.02
+770547,13,Masters,Marketing,Yes,89740.96
+770548,8,Bachelors,Marketing,No,65098.3
+770549,2,PhD,Software,No,86089.62
+770550,5,Bachelors,Software,Yes,75651.1
+770551,9,Masters,Software,Yes,88702.41
+770552,7,Bachelors,Software,No,75790.01
+770553,3,Bachelors,HR,No,54533.23
+770554,14,Bachelors,Data Science,No,105846.47
+770555,7,Masters,Software,No,82792.13
+770556,20,PhD,Marketing,Yes,117382.52
+770557,5,Masters,Data Science,Yes,82827.2
+770558,6,Bachelors,Marketing,Yes,59238.91
+770559,14,Bachelors,Data Science,No,99962.06
+770560,15,Bachelors,HR,No,93762.58
+770561,5,Bachelors,Software,No,75083.05
+770562,24,PhD,Data Science,No,158390.61
+770563,4,Bachelors,Data Science,No,70798.95
+770564,15,Masters,Data Science,Yes,110491.85
+770565,7,Bachelors,Software,No,66875.99
+770566,12,Masters,Software,No,102039.82
+770567,21,Bachelors,Software,No,122183.71
+770568,0,PhD,Marketing,No,63967.63
+770569,18,Bachelors,HR,No,102917.97
+770570,11,Bachelors,Software,Yes,85081.88
+770571,1,Bachelors,HR,No,44292.2
+770572,3,Bachelors,Software,No,61414.27
+770573,23,Bachelors,HR,No,116381.23
+770574,22,PhD,Marketing,Yes,129568.37
+770575,9,Bachelors,Marketing,No,70507.66
+770576,0,Bachelors,Marketing,No,44915.14
+770577,9,Masters,Software,No,92148.54
+770578,18,Bachelors,Marketing,No,100284.89
+770579,16,Masters,Software,No,118444.76
+770580,16,Bachelors,Software,No,103898.22
+770581,6,Masters,Marketing,Yes,71278.22
+770582,3,Masters,Data Science,Yes,71765.06
+770583,7,Bachelors,Marketing,No,67906.77
+770584,5,Bachelors,Software,No,83084.01
+770585,24,Bachelors,Software,No,131967.17
+770586,4,Bachelors,Software,Yes,58707.01
+770587,8,PhD,Marketing,Yes,86353.08
+770588,18,Masters,Marketing,No,116593.07
+770589,3,Bachelors,Marketing,Yes,61853.42
+770590,20,Masters,HR,No,113861.55
+770591,5,Bachelors,Data Science,Yes,73577.14
+770592,13,Masters,Software,No,108528.63
+770593,21,Masters,Marketing,Yes,113754.4
+770594,22,Bachelors,Software,No,133338.53
+770595,22,Bachelors,Data Science,No,127232.66
+770596,5,Bachelors,Data Science,Yes,78664.09
+770597,10,Bachelors,Marketing,Yes,74667.46
+770598,2,Bachelors,Data Science,No,72881.31
+770599,18,Bachelors,Marketing,No,107216.61
+770600,22,Bachelors,HR,No,122910.34
+770601,3,PhD,Software,Yes,87839.52
+770602,10,Bachelors,Data Science,No,85595.99
+770603,3,Bachelors,Data Science,Yes,70851.85
+770604,2,Bachelors,Data Science,No,68271.26
+770605,16,Bachelors,Software,No,109976.59
+770606,18,Masters,HR,No,110725.19
+770607,15,Bachelors,Data Science,Yes,100173.5
+770608,23,Bachelors,Marketing,No,114714.07
+770609,11,Masters,Data Science,No,101162.76
+770610,7,Bachelors,Software,Yes,77254.67
+770611,16,Masters,Marketing,No,109386.51
+770612,15,Bachelors,Software,Yes,99462.55
+770613,21,PhD,Software,No,154206.58
+770614,17,Masters,Software,Yes,109565.6
+770615,6,Bachelors,Data Science,No,83099.87
+770616,2,Masters,Software,Yes,67619.81
+770617,12,Masters,Software,No,104515.63
+770618,2,Masters,Marketing,No,52397.22
+770619,3,Bachelors,HR,Yes,48863.12
+770620,11,Masters,HR,Yes,79640.0
+770621,17,Masters,HR,Yes,110760.76
+770622,16,Bachelors,Software,Yes,106774.83
+770623,10,Bachelors,Software,Yes,77323.75
+770624,18,Bachelors,Data Science,No,117983.95
+770625,12,Masters,Data Science,Yes,100941.29
+770626,6,Bachelors,Software,Yes,68200.24
+770627,7,Bachelors,Data Science,Yes,80640.96
+770628,20,PhD,Marketing,No,138456.51
+770629,6,Masters,Software,No,96393.05
+770630,21,PhD,Software,No,142374.13
+770631,10,Bachelors,HR,No,68477.14
+770632,17,Masters,HR,Yes,98412.0
+770633,11,Masters,Data Science,Yes,92415.34
+770634,23,Bachelors,Software,No,126876.25
+770635,12,Bachelors,Marketing,No,85206.66
+770636,10,Masters,Data Science,No,103067.16
+770637,13,Bachelors,Marketing,No,77233.35
+770638,7,Bachelors,Software,Yes,83723.22
+770639,6,PhD,Marketing,Yes,75274.87
+770640,20,Masters,Marketing,No,118529.36
+770641,5,Bachelors,Software,No,79275.57
+770642,10,Bachelors,Software,Yes,85903.15
+770643,14,Bachelors,Data Science,Yes,94187.28
+770644,0,Bachelors,Software,Yes,55340.98
+770645,14,Bachelors,HR,No,92811.24
+770646,12,Bachelors,Software,No,101047.01
+770647,18,Masters,Marketing,Yes,101879.24
+770648,23,Masters,HR,Yes,121912.89
+770649,14,Bachelors,Marketing,Yes,85630.35
+770650,20,Bachelors,Software,No,121438.59
+770651,0,Bachelors,Data Science,No,56575.28
+770652,24,Bachelors,HR,Yes,116663.63
+770653,16,Masters,Data Science,No,124980.81
+770654,2,Bachelors,Data Science,No,65393.38
+770655,11,Bachelors,Software,No,95750.18
+770656,12,Bachelors,Data Science,No,87885.75
+770657,23,Bachelors,Marketing,Yes,103359.33
+770658,18,Bachelors,Software,Yes,114386.42
+770659,5,Bachelors,Marketing,No,60637.87
+770660,8,Bachelors,HR,Yes,60494.57
+770661,10,Bachelors,Software,Yes,76997.56
+770662,24,Masters,HR,No,
+770663,14,Masters,Software,Yes,103508.0
+770664,9,Bachelors,Data Science,No,85810.93
+770665,11,Masters,Data Science,No,110287.77
+770666,23,Bachelors,HR,No,118722.33
+770667,3,Bachelors,Data Science,No,72869.03
+770668,15,PhD,Software,No,120560.56
+770669,12,Bachelors,HR,Yes,79949.12
+770670,1,Bachelors,Software,No,58499.08
+770671,13,Bachelors,Data Science,No,103693.43
+770672,0,Bachelors,Data Science,Yes,64808.68
+770673,19,Bachelors,Marketing,Yes,93730.83
+770674,5,Masters,Data Science,Yes,84642.43
+770675,11,Masters,Software,Yes,93323.75
+770676,19,Bachelors,Data Science,Yes,122350.33
+770677,19,Bachelors,Software,Yes,111273.73
+770678,1,Bachelors,Data Science,No,64886.41
+770679,2,Bachelors,Marketing,Yes,48165.75
+770680,22,Masters,HR,No,126197.76
+770681,17,Bachelors,Software,Yes,101951.46
+770682,19,PhD,Data Science,Yes,133634.19
+770683,13,PhD,Marketing,Yes,110258.28
+770684,21,Bachelors,Software,No,121665.12
+770685,4,Bachelors,Marketing,No,55836.54
+770686,20,Bachelors,HR,No,106423.42
+770687,0,Bachelors,Software,No,57716.88
+770688,24,Bachelors,Software,No,126060.21
+770689,0,Masters,HR,No,58298.77
+770690,0,Masters,Data Science,Yes,65456.76
+770691,2,Masters,Software,No,66138.44
+770692,4,Bachelors,Data Science,No,71875.56
+770693,23,Masters,Software,Yes,129321.8
+770694,4,Bachelors,Software,Yes,78767.23
+770695,5,PhD,Data Science,Yes,93839.04
+770696,24,Bachelors,HR,No,125032.74
+770697,22,Masters,HR,No,122309.84
+770698,20,Bachelors,Data Science,Yes,116236.45
+770699,1,Masters,Marketing,Yes,44516.56
+770700,14,Bachelors,Marketing,No,87991.08
+770701,0,Bachelors,Software,No,49424.91
+770702,21,Masters,Data Science,Yes,129249.2
+770703,10,Masters,Software,No,97441.57
+770704,6,Bachelors,Data Science,No,78751.05
+770705,16,Masters,Software,Yes,109355.19
+770706,24,Bachelors,HR,No,119061.16
+770707,1,PhD,Software,No,84491.53
+770708,17,Bachelors,HR,No,95834.84
+770709,13,Masters,Software,No,108301.81
+770710,16,Masters,Software,Yes,115993.91
+770711,19,Bachelors,Software,Yes,111992.29
+770712,17,Bachelors,Data Science,No,116008.9
+770713,10,Bachelors,Software,Yes,86861.01
+770714,11,Masters,Software,No,109247.45
+770715,2,Masters,Software,No,73299.83
+770716,12,Bachelors,Software,No,97221.29
+770717,14,Masters,HR,Yes,90197.1
+770718,8,Bachelors,Software,No,78213.05
+770719,0,Masters,Marketing,No,51552.36
+770720,11,Masters,Marketing,Yes,85977.84
+770721,0,Bachelors,Software,No,56717.38
+770722,6,Bachelors,Marketing,Yes,64953.59
+770723,18,Masters,HR,Yes,103437.73
+770724,2,Bachelors,Software,No,67818.22
+770725,1,Bachelors,Software,Yes,60324.3
+770726,13,Masters,Marketing,No,97462.86
+770727,23,Masters,HR,No,130632.0
+770728,18,PhD,Data Science,No,140833.96
+770729,6,Bachelors,Marketing,Yes,62424.46
+770730,23,Bachelors,Marketing,Yes,117227.91
+770731,2,Masters,Marketing,Yes,70907.41
+770732,13,Bachelors,Marketing,Yes,81365.33
+770733,1,Bachelors,Data Science,Yes,69439.16
+770734,14,Masters,Marketing,No,100573.66
+770735,2,Masters,Software,No,73547.72
+770736,24,Masters,Data Science,Yes,140866.48
+770737,3,Bachelors,Software,Yes,59331.93
+770738,13,Bachelors,Data Science,Yes,86174.55
+770739,24,Bachelors,Marketing,Yes,116485.48
+770740,23,Bachelors,Data Science,No,129554.04
+770741,15,Masters,Software,No,124135.44
+770742,11,PhD,Software,Yes,118774.69
+770743,15,Masters,Marketing,No,107486.43
+770744,2,Bachelors,Marketing,No,50904.02
+770745,5,Bachelors,HR,No,56087.44
+770746,11,PhD,Software,No,121690.17
+770747,21,Bachelors,Data Science,No,131718.09
+770748,11,Masters,HR,Yes,91061.66
+770749,24,Masters,Software,No,141226.16
+770750,5,Masters,Data Science,No,88142.78
+770751,20,Bachelors,HR,No,111424.26
+770752,8,PhD,Software,No,110023.34
+770753,5,Bachelors,Data Science,Yes,70380.5
+770754,12,Bachelors,Data Science,Yes,93769.94
+770755,22,Masters,Marketing,Yes,117916.64
+770756,4,Bachelors,HR,Yes,52223.95
+770757,8,Bachelors,Software,No,91796.02
+770758,16,Bachelors,Software,No,111908.49
+770759,2,Bachelors,Marketing,Yes,52900.38
+770760,14,Masters,Marketing,No,92653.6
+770761,14,Masters,Software,Yes,111912.45
+770762,21,Bachelors,Data Science,Yes,123788.48
+770763,3,PhD,Marketing,No,85094.09
+770764,5,Bachelors,Software,No,67903.81
+770765,12,Bachelors,Software,Yes,83309.81
+770766,0,Bachelors,Data Science,Yes,55864.23
+770767,18,Masters,Software,Yes,117665.75
+770768,8,Masters,Data Science,Yes,
+770769,14,Bachelors,Software,Yes,96113.56
+770770,1,Bachelors,Software,Yes,47428.23
+770771,2,Masters,Software,Yes,68430.93
+770772,6,Bachelors,Software,Yes,81833.62
+770773,0,Bachelors,Data Science,Yes,62153.13
+770774,0,Bachelors,Software,No,57036.13
+770775,7,Bachelors,Software,No,73212.43
+770776,4,Bachelors,Data Science,No,70496.75
+770777,18,Bachelors,Software,Yes,110321.65
+770778,21,Bachelors,HR,Yes,109068.69
+770779,4,Masters,Software,No,79110.98
+770780,17,Masters,Software,No,124041.64
+770781,24,Bachelors,Marketing,No,121212.2
+770782,22,Bachelors,Marketing,No,118520.63
+770783,17,Masters,Marketing,No,112334.71
+770784,7,Masters,Marketing,Yes,84393.75
+770785,4,Masters,Data Science,No,
+770786,12,PhD,Software,No,116244.74
+770787,23,Masters,Software,No,147476.78
+770788,15,Bachelors,Marketing,No,93219.86
+770789,17,Bachelors,Software,No,114514.76
+770790,9,Bachelors,Software,Yes,76783.94
+770791,4,Bachelors,Marketing,Yes,57057.65
+770792,4,Masters,Software,No,85436.23
+770793,24,Bachelors,Software,Yes,122992.87
+770794,18,Bachelors,Software,Yes,106031.94
+770795,17,Masters,HR,No,112443.36
+770796,9,Bachelors,Data Science,Yes,79735.1
+770797,13,Bachelors,HR,No,82458.7
+770798,16,Masters,HR,No,108877.73
+770799,24,Masters,Data Science,Yes,142937.31
+770800,15,Masters,Software,Yes,112507.59
+770801,5,Bachelors,Data Science,Yes,75637.4
+770802,18,PhD,Software,No,129886.35
+770803,12,Masters,Data Science,Yes,96792.55
+770804,12,Bachelors,Data Science,No,
+770805,13,Bachelors,Software,Yes,99808.38
+770806,21,Masters,Software,Yes,132901.77
+770807,18,Bachelors,Software,Yes,105758.0
+770808,19,Bachelors,HR,No,106303.55
+770809,17,Bachelors,Software,Yes,108195.57
+770810,14,Bachelors,Software,No,102897.54
+770811,12,Bachelors,HR,No,93285.22
+770812,0,Bachelors,Software,Yes,52690.2
+770813,22,Masters,Software,No,134547.21
+770814,15,Bachelors,HR,Yes,87988.14
+770815,15,Bachelors,Data Science,Yes,100244.16
+770816,23,Bachelors,Software,Yes,118924.1
+770817,20,Bachelors,Data Science,No,118858.21
+770818,5,Masters,Marketing,No,84185.72
+770819,22,Masters,Data Science,Yes,132159.0
+770820,11,Bachelors,Software,No,91085.4
+770821,13,PhD,Software,No,121700.01
+770822,14,Bachelors,Software,No,98904.35
+770823,18,Bachelors,Software,No,105245.34
+770824,10,Bachelors,Marketing,Yes,68207.24
+770825,7,Bachelors,Marketing,No,69858.74
+770826,5,Bachelors,Marketing,No,70553.23
+770827,13,Bachelors,Software,Yes,105868.17
+770828,15,Bachelors,Software,No,97569.56
+770829,3,Bachelors,Data Science,No,70745.77
+770830,17,PhD,HR,No,125969.47
+770831,3,Bachelors,HR,No,56681.45
+770832,15,Masters,Marketing,No,101652.31
+770833,15,Masters,Data Science,No,123060.81
+770834,15,Bachelors,HR,Yes,75118.07
+770835,4,Masters,HR,No,60675.72
+770836,8,Bachelors,Software,Yes,87623.0
+770837,15,Masters,Software,Yes,104251.02
+770838,18,Bachelors,Software,Yes,106425.6
+770839,10,Bachelors,HR,No,76845.58
+770840,6,Bachelors,Software,No,75392.91
+770841,24,Bachelors,HR,No,116940.65
+770842,22,Bachelors,Marketing,No,116082.77
+770843,12,Masters,Software,Yes,101184.19
+770844,2,PhD,Marketing,No,
+770845,23,Masters,Data Science,No,140411.13
+770846,4,Bachelors,Software,Yes,67307.81
+770847,20,Bachelors,Software,Yes,125343.83
+770848,3,Bachelors,Software,No,75515.63
+770849,4,Bachelors,Software,Yes,68646.64
+770850,15,Bachelors,Data Science,No,104033.43
+770851,1,Bachelors,HR,No,46731.38
+770852,12,Bachelors,Data Science,No,102291.74
+770853,21,Bachelors,Software,No,122351.87
+770854,20,Bachelors,HR,Yes,90399.3
+770855,20,Bachelors,Software,No,
+770856,20,Bachelors,Software,Yes,126243.26
+770857,8,Bachelors,Data Science,Yes,77001.89
+770858,21,Masters,Software,No,130454.81
+770859,8,Masters,Data Science,Yes,88940.71
+770860,3,Bachelors,HR,No,45393.1
+770861,20,Bachelors,Software,No,121106.85
+770862,24,Bachelors,Software,Yes,129748.4
+770863,11,Bachelors,Marketing,Yes,84264.57
+770864,13,Bachelors,Software,No,98748.26
+770865,23,Bachelors,Software,Yes,128467.94
+770866,24,Masters,Software,No,140306.5
+770867,7,Masters,Data Science,Yes,94148.03
+770868,3,Masters,Data Science,Yes,76022.49
+770869,12,Bachelors,Software,No,100967.56
+770870,20,Masters,Software,No,126144.04
+770871,1,Masters,Data Science,No,78114.6
+770872,23,Bachelors,Marketing,No,106422.73
+770873,17,Masters,HR,No,108334.9
+770874,10,Bachelors,Data Science,Yes,91434.15
+770875,15,Bachelors,Marketing,Yes,88865.92
+770876,4,Bachelors,Software,Yes,70973.39
+770877,18,Bachelors,Marketing,Yes,91663.81
+770878,3,Masters,Software,No,75393.44
+770879,4,Masters,Software,No,76757.79
+770880,13,Bachelors,HR,No,91281.21
+770881,2,Bachelors,Software,Yes,53326.15
+770882,14,Bachelors,Data Science,Yes,99776.64
+770883,16,Masters,Marketing,No,108334.89
+770884,19,Masters,HR,Yes,107523.34
+770885,17,Bachelors,Data Science,No,119934.58
+770886,1,Masters,Software,Yes,71170.4
+770887,0,Masters,HR,No,50773.68
+770888,14,PhD,Software,No,117533.68
+770889,9,Bachelors,Data Science,Yes,90429.55
+770890,22,Bachelors,Software,No,128196.02
+770891,9,Bachelors,Marketing,Yes,77899.16
+770892,18,Bachelors,Data Science,Yes,110735.94
+770893,24,Bachelors,Marketing,No,119202.41
+770894,16,Bachelors,Software,No,106915.74
+770895,9,Bachelors,Data Science,No,86582.43
+770896,23,Bachelors,Data Science,No,136003.3
+770897,11,Masters,Software,No,99300.58
+770898,7,Bachelors,HR,No,59715.98
+770899,11,Bachelors,Marketing,No,88108.05
+770900,4,Masters,Software,Yes,69361.08
+770901,8,Bachelors,Data Science,No,89037.57
+770902,2,Bachelors,Data Science,Yes,67603.3
+770903,4,Bachelors,Data Science,No,72484.55
+770904,15,Masters,Data Science,No,
+770905,7,Bachelors,Software,No,83601.45
+770906,13,Masters,Software,No,108692.24
+770907,21,Bachelors,Software,Yes,121467.75
+770908,13,Bachelors,Data Science,No,99759.6
+770909,1,Bachelors,Data Science,No,71371.42
+770910,18,Bachelors,Marketing,Yes,95198.36
+770911,14,Bachelors,Software,No,92860.14
+770912,9,PhD,Software,Yes,99810.14
+770913,20,Bachelors,HR,No,108368.68
+770914,16,Masters,Software,Yes,114742.53
+770915,7,Bachelors,HR,No,64628.39
+770916,1,Bachelors,Marketing,No,46111.62
+770917,7,Masters,Marketing,Yes,70479.79
+770918,20,Bachelors,Data Science,Yes,118401.93
+770919,15,Masters,Software,No,109745.51
+770920,23,Bachelors,Marketing,No,103062.93
+770921,18,PhD,Software,Yes,134564.96
+770922,3,Bachelors,Marketing,No,56828.31
+770923,9,Bachelors,Data Science,Yes,91556.83
+770924,0,Bachelors,Software,Yes,59731.75
+770925,4,Bachelors,Marketing,No,51889.93
+770926,23,Bachelors,Software,Yes,131239.12
+770927,1,Bachelors,Marketing,Yes,49855.85
+770928,1,Bachelors,HR,No,47932.0
+770929,17,Masters,Software,Yes,114523.19
+770930,8,Bachelors,Marketing,Yes,73521.17
+770931,17,Masters,Data Science,No,
+770932,3,Bachelors,Marketing,No,49616.59
+770933,2,Bachelors,HR,No,52891.2
+770934,20,Bachelors,Marketing,Yes,108203.63
+770935,21,Bachelors,Software,Yes,120603.09
+770936,13,Bachelors,HR,No,86176.64
+770937,7,Bachelors,Marketing,Yes,71335.48
+770938,13,Bachelors,Data Science,Yes,101788.79
+770939,8,Bachelors,HR,No,64116.19
+770940,4,Masters,Software,Yes,75164.71
+770941,15,PhD,Marketing,No,114486.3
+770942,16,Bachelors,Software,Yes,103938.49
+770943,2,Bachelors,Software,No,64683.22
+770944,22,Bachelors,Data Science,Yes,127867.01
+770945,24,Masters,Marketing,No,130575.42
+770946,10,Masters,Data Science,No,
+770947,11,Bachelors,Data Science,Yes,81716.5
+770948,16,Bachelors,Software,Yes,106339.15
+770949,17,Bachelors,Data Science,Yes,99978.16
+770950,24,Bachelors,Software,No,136826.26
+770951,15,Bachelors,Software,Yes,87456.15
+770952,5,Bachelors,HR,No,62401.11
+770953,18,Bachelors,Marketing,Yes,92600.43
+770954,12,Masters,Software,No,103574.65
+770955,21,Bachelors,Marketing,No,104170.49
+770956,2,Masters,Data Science,Yes,72933.16
+770957,17,Bachelors,Software,Yes,94417.84
+770958,21,Bachelors,Data Science,Yes,123908.92
+770959,13,Bachelors,Marketing,Yes,83061.61
+770960,14,Bachelors,Software,Yes,100569.31
+770961,4,Masters,Software,No,77039.86
+770962,20,Bachelors,HR,No,108132.46
+770963,17,Bachelors,Data Science,Yes,109077.53
+770964,24,Bachelors,Software,Yes,126088.05
+770965,11,Bachelors,Data Science,Yes,91048.74
+770966,21,Bachelors,Data Science,No,130540.54
+770967,1,Masters,Marketing,No,45327.89
+770968,18,Bachelors,HR,Yes,98143.91
+770969,9,Bachelors,Data Science,No,84276.26
+770970,5,Bachelors,Software,Yes,55683.61
+770971,1,Bachelors,Software,No,61949.93
+770972,12,Bachelors,Data Science,Yes,92485.1
+770973,23,Bachelors,Marketing,Yes,108693.05
+770974,3,Bachelors,Marketing,No,52838.64
+770975,13,Bachelors,Software,Yes,81563.07
+770976,4,Masters,Marketing,Yes,72963.2
+770977,20,PhD,Marketing,No,135073.75
+770978,20,Bachelors,Data Science,No,119571.18
+770979,12,PhD,Software,No,112115.52
+770980,13,Masters,Data Science,No,118104.48
+770981,23,Bachelors,HR,No,110803.91
+770982,21,Bachelors,Software,No,115916.05
+770983,22,Masters,Software,No,144266.46
+770984,2,Bachelors,Data Science,No,68854.87
+770985,17,Bachelors,Software,No,113278.94
+770986,10,Bachelors,Software,Yes,77348.72
+770987,10,Masters,Data Science,Yes,98030.34
+770988,17,Masters,HR,Yes,107921.78
+770989,3,Bachelors,HR,Yes,60110.11
+770990,22,Bachelors,Data Science,No,130659.83
+770991,5,Masters,Marketing,No,76190.5
+770992,22,Bachelors,Software,No,125631.55
+770993,22,Bachelors,Marketing,Yes,116901.76
+770994,9,Masters,Data Science,Yes,100378.82
+770995,3,Bachelors,Marketing,No,50746.02
+770996,7,Bachelors,HR,Yes,66742.73
+770997,0,Masters,Data Science,No,69672.59
+770998,23,Bachelors,Software,No,144880.99
+770999,17,Masters,Software,No,130107.91
+771000,17,Masters,Software,No,131726.26

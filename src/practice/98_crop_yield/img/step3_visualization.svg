@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa" rx="15" stroke="#e9ecef" stroke-width="2"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 단변수 분포 분석</text>
+  
+  <g transform="translate(150, 100)">
+    <rect width="500" height="200" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="10"/>
+    <text x="250" y="40" font-family="Arial" font-size="18" fill="#9b59b6" font-weight="bold" text-anchor="middle">투입 비료 브랜드 종류별 농가 수확량</text>
+    <text x="250" y="80" font-family="Arial" font-size="14" fill="#34495e" text-anchor="middle">유기농 비료, 화학 복합 비료 등 투입 비료에 따른 평균 경작 산출량 상자</text>
+    <rect x="50" y="110" width="400" height="60" fill="#f5eef8" rx="5"/>
+    <text x="250" y="145" font-family="Courier New" font-size="16" fill="#8e44ad" font-weight="bold" text-anchor="middle">sns.boxplot(x='FertilizerType', y='CropYield_kg')</text>
+  </g>
+  <rect x="150" y="330" width="500" height="40" fill="#ebf5fb" rx="5"/>
+  <text x="400" y="355" font-family="Arial" font-size="13" fill="#1b4f72" font-weight="bold" text-anchor="middle">특정 고성능 영양 비료(Organic) 투입군에서 좁고 높게 안정된 수확량 분포 판독</text>
+</svg>

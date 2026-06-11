@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 
 # GLUE 데이터셋 로드
@@ -38,7 +38,7 @@ df = sns.load_dataset('glue')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -88,7 +88,7 @@ display(df.head())
 pivot_df = df.pivot(index='Model', columns='Task', values='Score')
 
 # 보기 좋게 모델명 알파벳 순서(또는 인덱스)로 정렬되어 출력됩니다.
-display(pivot_df)
+print(pivot_df)
 ```
 
 > **💻 [실행 결과]**

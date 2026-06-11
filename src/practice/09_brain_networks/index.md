@@ -31,14 +31,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 
 # Brain Networks 데이터셋 로드 (header=[0, 1, 2] 로 다중 인덱스 설정)
 df = sns.load_dataset('brain_networks', header=[0, 1, 2], index_col=0)
 
 # 첫 5행 확인
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -79,7 +79,7 @@ network_1_nodes = df.xs(1, level='network', axis=1)
 corrmat = network_1_nodes.corr()
 
 print("--- 1번 네트워크의 상관계수 행렬 ---")
-display(corrmat.head())
+print(corrmat.head())
 ```
 
 > **💻 [실행 결과]**

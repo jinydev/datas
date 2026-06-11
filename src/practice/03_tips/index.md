@@ -33,7 +33,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("muted")
 
@@ -42,7 +42,7 @@ df = sns.load_dataset('tips')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -103,7 +103,7 @@ df['tip_rate'] = df['tip'] / df['total_bill']
 df['tip_percent'] = df['tip_rate'] * 100
 
 # 잘 만들어졌는지 팁 관련 컬럼들만 모아서 확인
-display(df[['total_bill', 'tip', 'tip_rate', 'tip_percent']].head())
+print(df[['total_bill', 'tip', 'tip_rate', 'tip_percent']].head())
 ```
 
 > **💻 [실행 결과]**

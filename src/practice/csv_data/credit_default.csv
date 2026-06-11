@@ -1,0 +1,1001 @@
+ID,LimitBal,Sex,Education,Age,Default
+1,100000,Male,University,50,1
+2,50000,Female,Graduate School,31,1
+3,300000,Male,University,32,0
+4,300000,Male,University,42,0
+5,200000,Male,University,50,0
+6,100000,Female,Graduate School,51,0
+7,100000,Male,High School,47,1
+8,50000,Male,University,21,1
+9,200000,Male,University,30,0
+10,300000,Male,University,44,0
+11,200000,Male,University,26,0
+12,100000,Female,Graduate School,22,0
+13,100000,Female,High School,33,1
+14,300000,Male,Graduate School,43,0
+15,300000,Female,Others,41,0
+16,50000,Male,University,34,0
+17,500000,Female,High School,64,0
+18,10000,Female,Graduate School,38,1
+19,50000,Female,Graduate School,25,1
+20,100000,Female,University,42,1
+21,200000,Male,Others,32,0
+22,200000,Male,University,34,1
+23,300000,Female,University,35,0
+24,200000,Male,University,60,0
+25,100000,Male,Graduate School,37,0
+26,100000,Female,Graduate School,34,0
+27,300000,Female,University,34,0
+28,50000,Male,Graduate School,61,0
+29,100000,Male,University,35,0
+30,10000,Female,University,50,1
+31,50000,Female,University,37,1
+32,300000,Female,Graduate School,50,0
+33,300000,Male,Graduate School,60,0
+34,200000,Male,Graduate School,33,0
+35,500000,Male,High School,36,0
+36,300000,Female,University,21,0
+37,300000,Female,University,32,0
+38,300000,Male,University,32,0
+39,200000,Male,University,47,1
+40,100000,Male,University,39,0
+41,100000,Male,University,22,1
+42,100000,Male,Graduate School,44,1
+43,100000,Female,University,40,0
+44,100000,Female,University,36,1
+45,50000,Female,University,56,0
+46,300000,Male,University,49,0
+47,100000,Male,Graduate School,34,1
+48,300000,Female,Graduate School,60,0
+49,100000,Male,University,25,1
+50,10000,Male,University,42,1
+51,200000,Female,High School,61,0
+52,200000,Female,University,60,1
+53,100000,Male,Graduate School,31,1
+54,10000,Male,Graduate School,40,1
+55,10000,Female,High School,48,1
+56,50000,Male,Graduate School,51,0
+57,200000,Female,Graduate School,36,1
+58,300000,Male,University,32,0
+59,10000,Male,University,24,1
+60,200000,Female,University,34,0
+61,50000,Male,University,57,0
+62,300000,Female,University,48,0
+63,200000,Male,University,35,1
+64,500000,Female,Graduate School,52,0
+65,50000,Male,University,44,1
+66,100000,Female,High School,53,0
+67,100000,Female,Graduate School,22,1
+68,200000,Female,University,64,0
+69,200000,Male,Graduate School,21,1
+70,200000,Male,University,32,0
+71,500000,Male,University,23,0
+72,200000,Male,University,60,0
+73,200000,Female,Graduate School,54,0
+74,200000,Female,University,38,0
+75,10000,Female,High School,58,1
+76,300000,Female,University,23,0
+77,200000,Male,Graduate School,25,1
+78,300000,Male,Graduate School,64,0
+79,100000,Female,University,58,0
+80,10000,Male,University,57,1
+81,300000,Male,Graduate School,40,0
+82,100000,Female,Graduate School,30,1
+83,300000,Male,Graduate School,22,0
+84,50000,Male,University,61,0
+85,50000,Male,University,40,1
+86,200000,Male,Others,23,0
+87,10000,Female,Graduate School,50,1
+88,200000,Female,University,41,0
+89,50000,Male,University,34,0
+90,100000,Female,High School,49,1
+91,100000,Male,High School,64,0
+92,300000,Male,University,40,0
+93,100000,Male,High School,24,0
+94,300000,Female,Graduate School,42,1
+95,200000,Female,University,48,1
+96,100000,Female,Graduate School,41,1
+97,200000,Male,Others,51,0
+98,10000,Female,University,52,1
+99,100000,Male,University,51,0
+100,100000,Male,High School,46,0
+101,200000,Female,Graduate School,21,0
+102,300000,Male,University,59,0
+103,100000,Male,Graduate School,36,1
+104,100000,Female,University,52,0
+105,300000,Male,University,47,0
+106,300000,Male,University,21,0
+107,200000,Male,University,28,0
+108,100000,Female,University,64,0
+109,300000,Female,Graduate School,56,0
+110,100000,Male,Graduate School,37,1
+111,300000,Female,University,22,0
+112,100000,Male,University,30,1
+113,100000,Female,University,63,0
+114,100000,Male,Graduate School,26,1
+115,200000,Female,University,60,0
+116,10000,Male,High School,57,1
+117,100000,Male,University,54,1
+118,100000,Female,Graduate School,56,1
+119,100000,Female,Graduate School,46,0
+120,100000,Male,University,38,0
+121,100000,Male,Graduate School,28,1
+122,50000,Female,Graduate School,50,1
+123,50000,Male,High School,30,1
+124,300000,Female,University,43,0
+125,200000,Female,University,22,0
+126,200000,Female,University,59,0
+127,300000,Female,High School,53,0
+128,300000,Female,University,37,0
+129,200000,Male,Graduate School,56,0
+130,50000,Female,Graduate School,55,1
+131,10000,Male,Graduate School,39,0
+132,100000,Female,University,48,0
+133,100000,Male,Graduate School,59,0
+134,50000,Male,Graduate School,23,0
+135,300000,Female,High School,54,0
+136,100000,Female,High School,56,0
+137,50000,Female,University,47,1
+138,200000,Male,University,57,0
+139,100000,Female,University,25,0
+140,10000,Male,University,44,1
+141,300000,Female,High School,31,0
+142,100000,Female,Graduate School,30,0
+143,100000,Male,University,33,0
+144,50000,Female,University,34,0
+145,100000,Female,Graduate School,46,0
+146,100000,Female,University,21,1
+147,50000,Female,High School,38,1
+148,200000,Female,University,61,0
+149,200000,Female,University,54,0
+150,50000,Female,University,37,0
+151,100000,Female,University,38,0
+152,100000,Male,High School,50,0
+153,50000,Male,University,43,1
+154,500000,Female,Graduate School,57,0
+155,10000,Female,University,32,1
+156,200000,Male,University,30,0
+157,50000,Female,Graduate School,39,1
+158,10000,Female,High School,23,1
+159,300000,Male,University,36,0
+160,50000,Female,University,61,0
+161,50000,Male,University,49,1
+162,300000,Female,Graduate School,21,0
+163,100000,Male,University,55,1
+164,50000,Male,University,46,1
+165,50000,Female,High School,30,1
+166,50000,Female,Graduate School,22,0
+167,200000,Female,Others,34,0
+168,50000,Female,University,41,1
+169,100000,Female,University,60,1
+170,50000,Male,University,55,0
+171,10000,Female,Graduate School,57,1
+172,200000,Female,University,42,1
+173,100000,Male,High School,44,1
+174,200000,Male,University,33,0
+175,100000,Male,Graduate School,57,0
+176,500000,Male,University,28,0
+177,10000,Male,Graduate School,63,1
+178,200000,Female,University,46,0
+179,200000,Male,Graduate School,52,0
+180,300000,Male,Graduate School,35,0
+181,100000,Male,Others,62,0
+182,300000,Female,Graduate School,54,0
+183,300000,Female,University,50,0
+184,200000,Male,University,22,0
+185,300000,Female,University,61,0
+186,50000,Female,University,34,1
+187,500000,Female,Graduate School,43,0
+188,10000,Male,University,43,1
+189,50000,Female,University,21,0
+190,100000,Female,High School,22,0
+191,200000,Female,University,39,0
+192,100000,Male,University,58,1
+193,100000,Male,University,24,1
+194,10000,Male,University,62,1
+195,100000,Female,University,28,1
+196,100000,Male,University,43,1
+197,50000,Male,Graduate School,46,0
+198,200000,Male,University,39,1
+199,50000,Male,Graduate School,23,1
+200,50000,Male,High School,55,0
+201,200000,Male,High School,50,0
+202,300000,Male,University,37,0
+203,100000,Female,University,27,1
+204,500000,Female,University,40,0
+205,100000,Female,University,35,1
+206,10000,Male,University,43,0
+207,200000,Female,University,24,0
+208,100000,Male,University,40,0
+209,500000,Female,Graduate School,37,0
+210,50000,Male,University,59,0
+211,10000,Male,University,39,1
+212,100000,Male,University,33,0
+213,10000,Male,High School,29,0
+214,100000,Male,University,51,0
+215,100000,Female,High School,52,0
+216,300000,Female,Graduate School,40,0
+217,200000,Female,University,44,0
+218,10000,Male,University,28,1
+219,100000,Female,Graduate School,45,0
+220,100000,Male,Graduate School,35,0
+221,50000,Female,University,44,1
+222,10000,Female,University,31,0
+223,50000,Male,University,27,0
+224,100000,Female,University,63,0
+225,200000,Male,University,56,0
+226,100000,Male,University,39,1
+227,10000,Female,University,34,1
+228,100000,Female,University,52,1
+229,100000,Male,University,61,0
+230,200000,Female,High School,49,0
+231,10000,Male,Graduate School,39,0
+232,200000,Female,University,48,0
+233,200000,Male,University,64,1
+234,50000,Male,University,64,0
+235,200000,Female,Graduate School,64,0
+236,500000,Female,Graduate School,45,0
+237,200000,Female,University,23,0
+238,50000,Male,University,41,0
+239,10000,Male,Graduate School,21,0
+240,100000,Male,High School,33,0
+241,500000,Male,University,32,0
+242,50000,Male,University,41,0
+243,100000,Female,Graduate School,29,0
+244,100000,Male,University,46,1
+245,500000,Female,University,49,0
+246,100000,Female,Others,38,1
+247,500000,Female,High School,45,0
+248,50000,Male,University,58,0
+249,100000,Female,High School,41,1
+250,100000,Female,University,33,1
+251,100000,Female,University,45,0
+252,200000,Male,Graduate School,22,0
+253,50000,Male,University,37,1
+254,300000,Female,Graduate School,48,0
+255,10000,Male,University,54,1
+256,300000,Female,University,41,0
+257,50000,Male,Graduate School,21,0
+258,300000,Female,Graduate School,49,0
+259,50000,Male,University,53,1
+260,200000,Female,High School,63,0
+261,500000,Female,High School,45,0
+262,100000,Male,High School,32,0
+263,100000,Male,University,37,1
+264,10000,Female,Graduate School,21,1
+265,200000,Male,University,31,0
+266,200000,Female,Graduate School,55,1
+267,10000,Female,Graduate School,36,1
+268,200000,Female,University,63,0
+269,300000,Male,High School,26,0
+270,500000,Male,Graduate School,33,0
+271,200000,Female,High School,38,0
+272,200000,Female,University,40,0
+273,200000,Male,University,28,1
+274,200000,Male,Graduate School,26,1
+275,50000,Female,University,44,1
+276,50000,Male,Graduate School,60,1
+277,10000,Female,University,48,1
+278,10000,Male,Graduate School,48,1
+279,100000,Female,Graduate School,53,0
+280,50000,Male,Graduate School,38,1
+281,100000,Male,University,33,1
+282,100000,Male,University,25,1
+283,200000,Female,University,30,0
+284,100000,Male,University,52,1
+285,200000,Female,Graduate School,42,1
+286,200000,Female,University,58,0
+287,50000,Female,University,22,1
+288,100000,Male,Graduate School,64,0
+289,200000,Female,University,45,0
+290,300000,Male,Others,40,0
+291,300000,Male,University,64,0
+292,10000,Female,Graduate School,27,1
+293,500000,Male,University,56,0
+294,100000,Female,University,60,1
+295,100000,Male,University,52,0
+296,200000,Female,University,58,1
+297,300000,Female,Graduate School,22,1
+298,50000,Female,University,61,1
+299,100000,Male,University,39,1
+300,200000,Male,Graduate School,63,0
+301,100000,Male,Graduate School,41,0
+302,50000,Male,Others,42,1
+303,50000,Female,Graduate School,37,0
+304,100000,Male,Graduate School,32,0
+305,50000,Female,Others,24,1
+306,100000,Female,Graduate School,61,1
+307,100000,Male,University,29,1
+308,100000,Female,University,62,0
+309,200000,Male,University,26,0
+310,100000,Female,Graduate School,40,0
+311,300000,Male,Graduate School,32,0
+312,200000,Female,University,27,0
+313,100000,Male,High School,56,1
+314,100000,Male,High School,59,0
+315,300000,Male,University,34,0
+316,200000,Female,University,31,0
+317,200000,Male,Graduate School,40,1
+318,100000,Male,University,39,0
+319,300000,Female,Graduate School,43,0
+320,10000,Female,University,21,1
+321,10000,Male,High School,28,1
+322,50000,Male,University,50,0
+323,50000,Female,Graduate School,36,1
+324,200000,Male,High School,36,0
+325,200000,Male,Graduate School,50,0
+326,200000,Male,High School,26,0
+327,300000,Male,University,28,0
+328,100000,Male,University,21,0
+329,50000,Male,High School,38,0
+330,200000,Female,University,47,0
+331,10000,Female,University,46,1
+332,200000,Female,Graduate School,43,1
+333,200000,Female,University,48,0
+334,100000,Female,University,36,1
+335,300000,Female,Graduate School,29,1
+336,50000,Male,High School,30,0
+337,100000,Male,University,34,1
+338,200000,Male,High School,51,0
+339,100000,Male,University,26,0
+340,300000,Female,High School,49,0
+341,100000,Male,University,64,0
+342,10000,Male,University,27,1
+343,50000,Male,University,49,1
+344,500000,Female,University,21,0
+345,10000,Male,Graduate School,28,1
+346,50000,Male,University,30,1
+347,50000,Female,High School,54,0
+348,100000,Male,Graduate School,43,0
+349,50000,Male,High School,39,1
+350,500000,Female,Graduate School,62,0
+351,300000,Male,University,35,0
+352,10000,Female,Others,25,1
+353,50000,Male,University,25,1
+354,300000,Female,University,63,0
+355,50000,Female,Graduate School,45,1
+356,200000,Female,University,53,0
+357,200000,Female,High School,30,0
+358,50000,Female,Graduate School,48,1
+359,10000,Female,University,49,0
+360,200000,Male,Graduate School,26,0
+361,200000,Male,University,31,0
+362,300000,Female,Others,50,0
+363,50000,Male,Graduate School,45,1
+364,200000,Male,University,34,0
+365,50000,Male,University,32,1
+366,10000,Female,Graduate School,63,1
+367,10000,Female,University,54,1
+368,300000,Male,University,21,0
+369,100000,Female,University,38,0
+370,10000,Female,University,58,1
+371,10000,Male,University,37,0
+372,500000,Female,University,39,0
+373,50000,Male,University,60,1
+374,300000,Male,Graduate School,34,0
+375,100000,Male,University,28,0
+376,100000,Female,Graduate School,23,1
+377,50000,Male,University,54,0
+378,50000,Male,Graduate School,46,1
+379,50000,Female,University,36,1
+380,200000,Female,University,52,0
+381,300000,Female,Graduate School,22,1
+382,300000,Male,University,24,0
+383,100000,Female,University,46,0
+384,300000,Male,Graduate School,22,0
+385,100000,Male,University,55,0
+386,300000,Female,Graduate School,57,0
+387,300000,Male,Graduate School,35,0
+388,100000,Female,Graduate School,22,0
+389,300000,Male,University,62,0
+390,200000,Female,University,58,0
+391,500000,Male,High School,36,0
+392,300000,Female,Graduate School,62,1
+393,50000,Male,Graduate School,63,1
+394,200000,Male,Others,45,0
+395,100000,Male,University,41,1
+396,50000,Male,University,45,1
+397,50000,Female,High School,53,1
+398,50000,Male,University,53,0
+399,10000,Male,University,23,1
+400,50000,Male,University,24,0
+401,200000,Male,University,45,0
+402,100000,Female,University,38,0
+403,100000,Male,Graduate School,35,1
+404,50000,Male,University,38,1
+405,50000,Male,Graduate School,26,0
+406,50000,Male,University,63,0
+407,500000,Male,University,57,0
+408,100000,Female,Graduate School,48,1
+409,50000,Female,Graduate School,26,1
+410,50000,Female,University,37,1
+411,300000,Female,University,42,0
+412,300000,Male,Graduate School,32,0
+413,500000,Male,Graduate School,54,0
+414,200000,Female,University,59,0
+415,500000,Female,High School,28,0
+416,10000,Male,University,21,0
+417,50000,Female,Graduate School,27,0
+418,200000,Female,Graduate School,23,0
+419,300000,Female,Others,51,0
+420,50000,Female,Others,23,1
+421,300000,Female,University,59,0
+422,200000,Female,Graduate School,26,1
+423,200000,Female,High School,23,0
+424,500000,Male,University,47,0
+425,300000,Male,University,62,0
+426,100000,Female,High School,23,1
+427,200000,Female,University,62,0
+428,10000,Female,University,49,0
+429,200000,Female,Graduate School,35,1
+430,50000,Male,University,49,1
+431,200000,Male,University,51,0
+432,50000,Female,University,31,1
+433,50000,Female,University,61,0
+434,10000,Female,University,26,1
+435,10000,Female,Graduate School,34,0
+436,100000,Male,University,61,0
+437,100000,Female,University,51,0
+438,50000,Female,University,43,1
+439,200000,Male,University,26,1
+440,300000,Female,Graduate School,35,0
+441,50000,Male,University,41,0
+442,100000,Male,Graduate School,24,0
+443,100000,Female,Others,28,1
+444,300000,Male,Graduate School,29,0
+445,100000,Female,University,28,1
+446,100000,Male,University,59,1
+447,300000,Male,University,51,0
+448,50000,Female,University,31,1
+449,100000,Female,Graduate School,44,1
+450,500000,Female,University,30,0
+451,50000,Male,University,64,1
+452,100000,Male,Graduate School,61,1
+453,300000,Male,University,63,0
+454,500000,Female,High School,38,0
+455,100000,Female,University,45,1
+456,300000,Female,University,41,1
+457,100000,Female,University,56,1
+458,300000,Female,University,55,0
+459,300000,Male,University,38,0
+460,100000,Female,University,56,1
+461,100000,Female,High School,36,1
+462,100000,Female,Graduate School,24,1
+463,100000,Male,University,32,1
+464,100000,Female,High School,38,0
+465,100000,Female,High School,35,0
+466,300000,Female,Graduate School,22,0
+467,100000,Female,University,61,0
+468,200000,Male,Graduate School,52,0
+469,200000,Female,High School,26,0
+470,100000,Male,University,34,0
+471,100000,Male,High School,52,1
+472,10000,Male,Graduate School,24,0
+473,100000,Male,University,38,1
+474,10000,Male,University,63,1
+475,300000,Female,University,42,0
+476,100000,Female,Graduate School,24,1
+477,300000,Male,University,28,1
+478,300000,Female,Graduate School,47,0
+479,300000,Male,University,62,0
+480,300000,Female,University,36,1
+481,10000,Female,University,46,0
+482,100000,Female,Graduate School,50,0
+483,100000,Female,University,63,1
+484,10000,Male,High School,46,1
+485,50000,Male,University,37,1
+486,10000,Male,Graduate School,29,1
+487,200000,Male,Graduate School,40,0
+488,50000,Female,High School,39,1
+489,50000,Female,High School,59,0
+490,300000,Male,University,22,0
+491,300000,Male,University,28,0
+492,500000,Female,University,60,0
+493,100000,Male,University,44,1
+494,200000,Female,University,33,0
+495,300000,Female,Graduate School,30,1
+496,200000,Female,University,43,0
+497,300000,Male,University,40,0
+498,300000,Male,High School,29,0
+499,200000,Female,University,53,1
+500,200000,Male,Graduate School,31,0
+501,300000,Female,University,51,0
+502,50000,Male,Graduate School,61,1
+503,50000,Male,Graduate School,55,0
+504,200000,Male,University,53,0
+505,100000,Female,Graduate School,39,1
+506,300000,Male,High School,41,0
+507,50000,Male,University,50,0
+508,100000,Male,University,51,0
+509,10000,Female,High School,43,0
+510,50000,Male,University,60,1
+511,50000,Female,University,39,0
+512,50000,Female,University,33,0
+513,50000,Female,Graduate School,52,1
+514,10000,Female,Graduate School,48,1
+515,100000,Male,University,33,0
+516,200000,Male,University,41,1
+517,100000,Female,Graduate School,27,0
+518,300000,Male,University,26,0
+519,10000,Female,Graduate School,55,1
+520,200000,Female,University,39,1
+521,50000,Female,University,52,1
+522,200000,Female,High School,57,0
+523,50000,Female,High School,41,1
+524,100000,Female,Graduate School,62,0
+525,50000,Female,University,27,1
+526,300000,Female,Graduate School,45,0
+527,100000,Male,Graduate School,59,1
+528,50000,Male,University,33,1
+529,50000,Female,University,38,1
+530,100000,Male,University,28,1
+531,50000,Male,University,54,0
+532,100000,Female,Others,29,0
+533,100000,Female,Graduate School,26,1
+534,10000,Male,High School,29,1
+535,300000,Male,Graduate School,54,0
+536,100000,Male,University,62,0
+537,200000,Female,University,63,0
+538,10000,Female,High School,55,1
+539,200000,Female,Graduate School,34,1
+540,300000,Male,University,26,0
+541,500000,Female,Graduate School,42,0
+542,10000,Female,University,22,1
+543,300000,Female,University,30,0
+544,10000,Male,Graduate School,63,0
+545,100000,Female,Graduate School,40,1
+546,10000,Male,University,55,1
+547,200000,Male,Graduate School,61,0
+548,200000,Female,University,47,0
+549,100000,Female,University,61,0
+550,10000,Male,University,48,1
+551,100000,Female,Graduate School,53,0
+552,10000,Female,University,53,1
+553,50000,Male,High School,40,0
+554,100000,Female,University,29,0
+555,100000,Male,University,63,1
+556,50000,Female,Graduate School,25,1
+557,300000,Female,University,41,0
+558,10000,Male,University,21,1
+559,50000,Male,Graduate School,49,0
+560,300000,Female,High School,43,0
+561,200000,Female,Graduate School,21,0
+562,100000,Male,University,28,0
+563,50000,Male,Graduate School,29,0
+564,300000,Female,University,24,1
+565,10000,Male,University,51,1
+566,500000,Female,Others,46,0
+567,10000,Male,University,39,1
+568,200000,Female,University,56,0
+569,200000,Female,Graduate School,52,0
+570,50000,Male,High School,29,0
+571,300000,Female,Graduate School,36,0
+572,100000,Male,University,57,0
+573,100000,Female,Graduate School,46,0
+574,50000,Male,Graduate School,26,0
+575,100000,Male,University,42,0
+576,50000,Male,University,46,1
+577,100000,Female,University,50,0
+578,100000,Male,Graduate School,33,0
+579,100000,Male,University,34,0
+580,50000,Female,Graduate School,53,0
+581,100000,Female,Graduate School,24,1
+582,10000,Male,Graduate School,41,0
+583,50000,Male,University,46,0
+584,10000,Female,University,27,1
+585,10000,Female,University,54,1
+586,200000,Male,University,22,0
+587,300000,Female,High School,55,0
+588,200000,Female,University,47,0
+589,500000,Male,Graduate School,57,0
+590,200000,Female,University,26,0
+591,50000,Female,Graduate School,63,1
+592,300000,Female,University,64,0
+593,100000,Female,University,22,0
+594,50000,Male,Others,51,0
+595,300000,Female,University,40,0
+596,100000,Female,Graduate School,56,1
+597,10000,Female,Graduate School,27,0
+598,50000,Female,Graduate School,63,0
+599,100000,Male,Others,56,1
+600,100000,Female,University,46,0
+601,300000,Male,Graduate School,42,0
+602,200000,Female,University,29,0
+603,10000,Female,High School,34,1
+604,100000,Male,University,21,1
+605,50000,Female,University,62,1
+606,200000,Male,Graduate School,55,0
+607,200000,Male,Graduate School,23,0
+608,200000,Male,University,43,0
+609,100000,Male,Graduate School,55,0
+610,10000,Male,University,60,1
+611,200000,Male,Graduate School,32,0
+612,100000,Female,University,50,0
+613,50000,Female,University,44,0
+614,50000,Female,University,23,0
+615,100000,Male,Graduate School,44,0
+616,200000,Male,High School,44,0
+617,500000,Female,University,43,0
+618,200000,Female,University,29,1
+619,100000,Male,University,37,0
+620,50000,Female,University,44,1
+621,200000,Male,University,31,1
+622,50000,Female,University,59,1
+623,200000,Female,High School,52,0
+624,50000,Female,Others,21,0
+625,100000,Male,High School,63,1
+626,500000,Female,University,21,0
+627,10000,Male,University,53,0
+628,100000,Female,University,40,0
+629,100000,Female,University,38,1
+630,300000,Male,Graduate School,24,0
+631,100000,Female,High School,29,0
+632,200000,Male,Graduate School,55,0
+633,50000,Female,High School,36,0
+634,10000,Male,University,28,1
+635,50000,Female,University,34,1
+636,200000,Male,Others,22,0
+637,300000,Female,University,54,1
+638,50000,Male,University,59,1
+639,200000,Female,University,63,0
+640,200000,Male,University,59,0
+641,200000,Female,University,42,0
+642,100000,Male,High School,55,0
+643,100000,Male,Others,43,1
+644,100000,Male,University,29,0
+645,100000,Female,University,42,0
+646,50000,Female,University,54,1
+647,300000,Male,High School,21,1
+648,200000,Female,University,23,0
+649,100000,Male,University,39,0
+650,10000,Male,University,47,1
+651,100000,Female,University,43,0
+652,300000,Male,High School,48,0
+653,10000,Male,University,28,0
+654,200000,Male,University,43,0
+655,50000,Female,University,53,0
+656,10000,Female,University,50,0
+657,200000,Male,University,44,1
+658,200000,Male,University,64,1
+659,200000,Female,University,21,1
+660,200000,Male,Graduate School,26,0
+661,200000,Male,Others,26,1
+662,100000,Male,University,47,1
+663,200000,Female,High School,61,0
+664,100000,Male,University,28,0
+665,200000,Female,High School,32,1
+666,200000,Male,University,40,0
+667,50000,Male,Graduate School,36,1
+668,10000,Female,University,30,1
+669,500000,Male,High School,38,0
+670,500000,Male,High School,51,0
+671,10000,Male,High School,31,1
+672,200000,Male,University,58,0
+673,100000,Female,University,28,0
+674,50000,Female,University,54,0
+675,200000,Female,Graduate School,61,0
+676,200000,Male,High School,60,0
+677,300000,Male,Graduate School,56,0
+678,50000,Female,Graduate School,30,1
+679,50000,Female,Graduate School,27,1
+680,100000,Female,University,32,1
+681,100000,Female,University,44,1
+682,100000,Male,University,23,1
+683,100000,Male,Graduate School,56,1
+684,500000,Male,High School,35,0
+685,100000,Female,High School,32,1
+686,200000,Female,University,33,0
+687,50000,Male,Graduate School,47,1
+688,200000,Female,University,37,1
+689,300000,Male,University,49,0
+690,100000,Female,Others,51,1
+691,300000,Male,University,26,0
+692,500000,Male,University,49,0
+693,200000,Male,Others,45,0
+694,300000,Female,Graduate School,32,0
+695,10000,Female,University,47,1
+696,200000,Male,Graduate School,35,0
+697,100000,Male,University,40,0
+698,200000,Female,High School,21,1
+699,300000,Female,High School,52,0
+700,500000,Female,Graduate School,43,0
+701,500000,Female,Graduate School,34,0
+702,50000,Male,University,32,1
+703,200000,Female,Graduate School,42,1
+704,100000,Male,Graduate School,56,1
+705,50000,Male,University,32,0
+706,100000,Female,Graduate School,42,0
+707,100000,Female,University,27,1
+708,100000,Male,University,55,1
+709,500000,Female,Graduate School,35,0
+710,200000,Female,Others,32,0
+711,300000,Female,University,36,0
+712,300000,Male,Graduate School,51,0
+713,50000,Female,Graduate School,59,0
+714,200000,Male,Graduate School,53,0
+715,100000,Female,Others,51,0
+716,500000,Female,University,44,0
+717,100000,Male,Graduate School,31,0
+718,10000,Male,University,46,0
+719,50000,Female,High School,45,0
+720,300000,Male,Others,44,0
+721,100000,Male,High School,51,1
+722,50000,Male,University,46,1
+723,100000,Male,High School,22,1
+724,200000,Female,Graduate School,32,0
+725,200000,Female,High School,40,1
+726,500000,Female,Others,49,0
+727,10000,Male,Graduate School,31,1
+728,50000,Female,University,29,1
+729,200000,Male,Others,59,0
+730,500000,Male,University,35,0
+731,50000,Female,High School,58,0
+732,50000,Male,Graduate School,64,1
+733,100000,Female,Graduate School,48,0
+734,200000,Female,University,57,1
+735,100000,Female,Graduate School,61,0
+736,300000,Female,High School,30,1
+737,100000,Male,University,39,0
+738,100000,Male,University,57,0
+739,50000,Male,University,60,1
+740,200000,Female,Graduate School,36,0
+741,200000,Male,Graduate School,46,1
+742,50000,Male,High School,53,1
+743,10000,Male,Graduate School,38,1
+744,50000,Female,High School,29,0
+745,100000,Female,Graduate School,54,0
+746,10000,Female,Graduate School,62,0
+747,200000,Male,University,44,0
+748,100000,Female,University,50,1
+749,300000,Female,University,37,0
+750,300000,Female,University,22,0
+751,200000,Male,Graduate School,38,0
+752,300000,Female,University,34,0
+753,50000,Female,University,22,1
+754,100000,Female,Graduate School,50,0
+755,100000,Female,High School,36,1
+756,50000,Male,University,57,1
+757,50000,Female,High School,39,1
+758,300000,Female,University,54,0
+759,100000,Male,University,24,0
+760,10000,Male,Graduate School,29,0
+761,100000,Male,High School,36,0
+762,100000,Male,Graduate School,58,0
+763,50000,Male,University,55,1
+764,200000,Male,University,59,1
+765,50000,Female,University,39,0
+766,10000,Female,University,51,1
+767,50000,Female,University,50,1
+768,10000,Female,High School,32,0
+769,100000,Male,Graduate School,46,1
+770,200000,Female,High School,63,1
+771,200000,Female,University,35,0
+772,100000,Male,University,28,0
+773,300000,Female,Graduate School,52,0
+774,50000,Male,University,45,1
+775,100000,Male,High School,45,1
+776,300000,Female,University,58,1
+777,200000,Male,High School,44,1
+778,300000,Female,Graduate School,56,1
+779,300000,Female,University,62,0
+780,200000,Male,University,58,1
+781,50000,Male,University,54,0
+782,200000,Male,University,64,0
+783,100000,Male,University,27,0
+784,200000,Male,Graduate School,56,1
+785,200000,Female,Graduate School,59,0
+786,100000,Male,Graduate School,36,1
+787,300000,Female,High School,33,0
+788,10000,Male,University,59,0
+789,100000,Male,Graduate School,63,1
+790,500000,Female,Graduate School,38,0
+791,100000,Female,University,30,0
+792,50000,Female,Graduate School,33,0
+793,200000,Male,University,50,0
+794,100000,Male,University,57,1
+795,200000,Female,Graduate School,57,1
+796,50000,Female,Others,51,1
+797,200000,Female,High School,64,0
+798,50000,Male,University,44,1
+799,100000,Male,High School,27,0
+800,50000,Male,University,41,0
+801,300000,Female,University,29,0
+802,100000,Male,High School,44,0
+803,200000,Male,High School,23,0
+804,100000,Male,University,53,0
+805,200000,Female,High School,31,0
+806,300000,Female,University,61,0
+807,200000,Female,Graduate School,63,0
+808,100000,Male,High School,40,0
+809,50000,Male,University,53,1
+810,100000,Male,University,29,1
+811,10000,Female,Graduate School,47,1
+812,50000,Female,Others,56,0
+813,50000,Female,Graduate School,47,1
+814,200000,Female,Graduate School,54,0
+815,300000,Female,University,41,0
+816,50000,Female,Others,36,1
+817,50000,Male,Graduate School,50,1
+818,50000,Female,University,63,0
+819,300000,Female,University,58,0
+820,200000,Female,University,55,0
+821,500000,Female,University,29,0
+822,50000,Female,University,44,1
+823,100000,Female,Graduate School,56,1
+824,100000,Male,University,53,0
+825,100000,Female,High School,45,0
+826,100000,Male,University,55,0
+827,100000,Female,High School,63,0
+828,100000,Female,University,49,1
+829,500000,Male,University,45,0
+830,100000,Male,University,44,1
+831,100000,Male,University,43,1
+832,50000,Female,Graduate School,41,1
+833,200000,Female,University,54,0
+834,200000,Male,University,24,1
+835,100000,Male,High School,30,1
+836,200000,Female,University,47,0
+837,100000,Female,Others,53,0
+838,10000,Male,University,39,1
+839,200000,Female,Graduate School,40,1
+840,200000,Male,Graduate School,24,0
+841,50000,Female,University,41,1
+842,200000,Female,University,50,1
+843,200000,Female,Graduate School,22,0
+844,10000,Male,Graduate School,34,1
+845,50000,Female,University,54,1
+846,100000,Female,University,43,1
+847,300000,Male,University,43,0
+848,300000,Female,Graduate School,56,0
+849,200000,Female,Graduate School,22,0
+850,100000,Female,Others,30,0
+851,100000,Female,Graduate School,41,1
+852,500000,Male,Others,29,0
+853,100000,Male,University,28,1
+854,200000,Female,Graduate School,31,0
+855,50000,Female,University,37,1
+856,100000,Male,Others,63,0
+857,50000,Male,High School,29,0
+858,300000,Female,Others,60,0
+859,200000,Female,Graduate School,60,0
+860,200000,Male,Graduate School,44,0
+861,100000,Male,University,59,0
+862,50000,Female,University,38,1
+863,100000,Female,Graduate School,64,1
+864,200000,Male,University,42,0
+865,200000,Male,University,28,1
+866,10000,Male,University,61,0
+867,200000,Female,University,21,0
+868,500000,Male,University,55,0
+869,200000,Female,University,23,0
+870,200000,Female,University,56,0
+871,200000,Female,Graduate School,63,0
+872,50000,Female,Graduate School,48,0
+873,200000,Male,University,35,1
+874,300000,Male,University,47,0
+875,100000,Female,Graduate School,61,0
+876,200000,Female,Graduate School,25,1
+877,100000,Female,High School,54,1
+878,100000,Female,University,58,1
+879,200000,Female,Graduate School,63,1
+880,50000,Female,University,46,1
+881,200000,Female,University,44,0
+882,50000,Female,University,39,0
+883,10000,Male,Graduate School,34,1
+884,100000,Male,University,51,1
+885,10000,Female,University,61,1
+886,100000,Male,University,27,0
+887,50000,Female,University,33,0
+888,100000,Male,Graduate School,54,1
+889,100000,Male,University,30,0
+890,200000,Female,Graduate School,30,0
+891,50000,Female,High School,25,0
+892,100000,Female,High School,31,0
+893,50000,Female,Graduate School,48,0
+894,50000,Female,High School,63,1
+895,200000,Male,High School,22,0
+896,500000,Male,Graduate School,62,0
+897,50000,Male,Others,29,1
+898,200000,Male,Graduate School,57,0
+899,50000,Female,University,61,0
+900,100000,Male,University,54,1
+901,300000,Female,University,47,0
+902,200000,Male,Graduate School,37,0
+903,200000,Male,University,40,0
+904,50000,Male,University,41,1
+905,300000,Male,Graduate School,60,0
+906,300000,Male,High School,57,0
+907,500000,Male,University,42,0
+908,100000,Female,Graduate School,38,1
+909,50000,Male,University,55,0
+910,200000,Male,University,45,0
+911,300000,Female,University,33,0
+912,200000,Male,High School,50,0
+913,200000,Male,Graduate School,37,0
+914,10000,Female,University,24,1
+915,500000,Male,University,32,0
+916,300000,Female,University,37,0
+917,10000,Female,University,35,1
+918,100000,Female,Graduate School,30,0
+919,10000,Female,University,42,0
+920,100000,Female,University,24,1
+921,100000,Male,Others,58,0
+922,50000,Female,Graduate School,36,0
+923,100000,Male,Graduate School,22,1
+924,200000,Male,University,40,0
+925,10000,Male,University,61,1
+926,10000,Male,University,55,1
+927,100000,Female,University,27,0
+928,200000,Male,University,48,0
+929,300000,Male,University,30,0
+930,50000,Male,Graduate School,47,0
+931,10000,Female,University,56,0
+932,10000,Female,High School,53,1
+933,500000,Male,High School,36,0
+934,300000,Male,High School,59,0
+935,200000,Female,Graduate School,63,1
+936,300000,Female,Others,41,0
+937,50000,Female,Graduate School,41,0
+938,100000,Male,Graduate School,59,1
+939,10000,Female,Graduate School,56,1
+940,300000,Male,University,40,0
+941,100000,Male,University,32,0
+942,200000,Male,University,58,0
+943,200000,Female,University,28,0
+944,100000,Male,Graduate School,27,0
+945,50000,Male,University,24,1
+946,300000,Male,University,58,0
+947,100000,Female,University,23,0
+948,300000,Female,University,49,0
+949,100000,Female,University,49,0
+950,50000,Female,University,28,1
+951,50000,Female,Graduate School,23,0
+952,50000,Male,University,32,1
+953,200000,Male,Others,47,1
+954,50000,Male,University,39,1
+955,50000,Female,University,37,0
+956,100000,Female,Graduate School,56,1
+957,300000,Female,Graduate School,23,0
+958,100000,Female,University,57,0
+959,300000,Male,University,63,0
+960,200000,Female,Graduate School,27,0
+961,100000,Male,High School,52,1
+962,10000,Male,University,62,1
+963,10000,Female,High School,21,0
+964,10000,Female,University,52,1
+965,200000,Female,High School,40,0
+966,100000,Male,University,22,1
+967,50000,Female,University,56,1
+968,500000,Female,Graduate School,49,0
+969,200000,Female,Graduate School,61,0
+970,50000,Female,Graduate School,31,1
+971,100000,Female,University,45,1
+972,100000,Female,University,27,1
+973,50000,Female,Graduate School,42,1
+974,200000,Female,University,54,0
+975,300000,Female,University,21,1
+976,50000,Female,University,55,0
+977,300000,Female,Graduate School,39,0
+978,50000,Female,University,49,1
+979,100000,Male,University,27,1
+980,100000,Male,High School,56,1
+981,100000,Male,University,41,1
+982,10000,Female,Graduate School,28,0
+983,50000,Male,Graduate School,30,1
+984,50000,Male,Graduate School,47,1
+985,100000,Female,High School,29,0
+986,300000,Female,University,32,0
+987,10000,Male,High School,48,1
+988,200000,Female,Graduate School,30,0
+989,50000,Female,Graduate School,51,0
+990,300000,Female,Others,30,0
+991,500000,Male,University,62,0
+992,50000,Female,High School,36,1
+993,100000,Male,University,60,0
+994,300000,Female,High School,48,0
+995,200000,Male,High School,54,0
+996,300000,Female,High School,51,0
+997,100000,Male,University,61,0
+998,300000,Male,University,24,0
+999,10000,Male,Graduate School,45,1
+1000,100000,Male,Graduate School,35,0

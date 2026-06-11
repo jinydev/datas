@@ -31,7 +31,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정 (한글 폰트 및 마이너스 기호 깨짐 방지)
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set2") # 부드러운 파스텔톤 팔레트 적용
 
@@ -39,7 +39,7 @@ sns.set_palette("Set2") # 부드러운 파스텔톤 팔레트 적용
 df = sns.load_dataset('titanic')
 
 # 처음 5개 행(Row) 확인
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -58,7 +58,7 @@ display(df.head())
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
 * `sns.load_dataset('titanic')`: Seaborn 라이브러리는 교육용으로 미리 정제된 유명한 데이터셋들을 인터넷에서 바로 다운로드하여 Pandas DataFrame 형태로 반환해 주는 편리한 기능을 제공합니다.
-* `display(df.head())`: 표 형태의 데이터를 시각적으로 깔끔하게 렌더링하여 첫 5줄을 보여줍니다. 
+* `print(df.head())`: 첫 5줄을 콘솔에 출력하여 보여줍니다. 
 
 **주요 컬럼(Columns) 해석:**
 * **Target (예측해야 할 정답):**

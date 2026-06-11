@@ -1,0 +1,1001 @@
+PatientID,Department,DoctorAvailable,AppointmentHour,WaitTime_Mins,SatisfactionRating
+830001,ENT,3.0,12,9.4,5.0
+830002,ENT,,9,15.3,4.1
+830003,Dermatology,2.0,15,23.9,4.5
+830004,Pediatrics,1.0,14,32.8,3.0
+830005,ENT,2.0,12,5.0,4.1
+830006,ENT,2.0,8,18.0,4.7
+830007,Internal Medicine,4.0,15,21.6,3.8
+830008,Dermatology,3.0,13,5.0,4.7
+830009,Pediatrics,2.0,13,5.3,4.6
+830010,Internal Medicine,6.0,9,21.4,3.4
+830011,ENT,2.0,17,15.5,4.5
+830012,Internal Medicine,3.0,10,28.9,5.0
+830013,Pediatrics,3.0,10,9.9,5.0
+830014,Internal Medicine,,14,52.0,2.2
+830015,Dermatology,2.0,11,33.2,3.2
+830016,Dermatology,1.0,15,11.8,4.8
+830017,Pediatrics,2.0,12,6.3,4.7
+830018,Dermatology,3.0,11,27.1,5.0
+830019,Pediatrics,3.0,15,29.8,4.7
+830020,Pediatrics,1.0,17,16.2,3.4
+830021,Internal Medicine,4.0,16,27.4,3.3
+830022,Internal Medicine,4.0,14,30.1,4.1
+830023,Internal Medicine,3.0,14,59.4,2.3
+830024,Pediatrics,3.0,9,8.7,5.0
+830025,Pediatrics,3.0,15,22.1,3.9
+830026,Dermatology,2.0,15,5.0,4.2
+830027,ENT,3.0,8,5.0,5.0
+830028,Pediatrics,1.0,9,24.0,4.7
+830029,Pediatrics,2.0,9,8.1,4.8
+830030,Dermatology,1.0,9,12.3,4.1
+830031,Pediatrics,3.0,13,32.8,4.2
+830032,Pediatrics,3.0,12,5.0,3.9
+830033,Dermatology,2.0,16,5.0,4.8
+830034,Dermatology,3.0,15,5.0,5.0
+830035,Internal Medicine,6.0,11,35.9,3.5
+830036,Pediatrics,3.0,9,5.0,5.0
+830037,Internal Medicine,3.0,16,27.5,3.5
+830038,Dermatology,2.0,17,29.0,3.4
+830039,Pediatrics,3.0,14,19.8,4.6
+830040,Pediatrics,1.0,10,24.3,4.5
+830041,ENT,2.0,17,5.0,4.3
+830042,Dermatology,3.0,16,5.0,4.5
+830043,Pediatrics,1.0,16,8.7,4.8
+830044,ENT,2.0,10,20.2,3.4
+830045,Dermatology,,15,5.0,5.0
+830046,Dermatology,2.0,8,10.3,5.0
+830047,Dermatology,3.0,14,23.4,4.1
+830048,Pediatrics,3.0,15,13.1,4.3
+830049,Pediatrics,,10,10.1,5.0
+830050,Pediatrics,1.0,10,19.3,4.6
+830051,ENT,3.0,17,5.0,5.0
+830052,ENT,2.0,12,12.8,4.2
+830053,Dermatology,3.0,13,10.0,4.6
+830054,Pediatrics,2.0,14,17.1,4.0
+830055,Internal Medicine,6.0,13,26.8,4.3
+830056,ENT,1.0,13,18.2,3.2
+830057,Pediatrics,3.0,16,5.0,4.8
+830058,Pediatrics,3.0,17,5.9,5.0
+830059,ENT,3.0,14,28.5,3.9
+830060,Pediatrics,,12,18.2,4.5
+830061,ENT,2.0,14,17.4,4.9
+830062,Dermatology,2.0,13,5.0,4.4
+830063,ENT,2.0,16,12.5,4.4
+830064,Dermatology,2.0,9,18.2,4.4
+830065,ENT,1.0,17,23.1,4.0
+830066,Dermatology,2.0,11,32.6,3.7
+830067,Dermatology,2.0,15,7.9,4.3
+830068,Internal Medicine,5.0,14,43.1,3.8
+830069,Dermatology,3.0,16,5.0,5.0
+830070,ENT,2.0,12,13.8,4.8
+830071,Dermatology,1.0,9,22.0,3.8
+830072,Pediatrics,3.0,12,19.5,4.1
+830073,Internal Medicine,5.0,15,15.3,3.4
+830074,Dermatology,1.0,12,9.6,4.4
+830075,Pediatrics,3.0,8,5.0,4.7
+830076,Dermatology,1.0,11,19.5,4.7
+830077,Pediatrics,1.0,17,14.5,5.0
+830078,Pediatrics,1.0,11,27.0,4.6
+830079,Dermatology,2.0,8,25.6,3.9
+830080,ENT,1.0,17,5.0,4.0
+830081,Pediatrics,2.0,11,28.2,3.6
+830082,Internal Medicine,4.0,16,32.6,3.4
+830083,Internal Medicine,6.0,11,32.8,4.3
+830084,Internal Medicine,6.0,13,31.3,3.9
+830085,Internal Medicine,6.0,17,12.1,4.2
+830086,Pediatrics,1.0,9,10.4,4.6
+830087,Dermatology,1.0,16,18.0,4.0
+830088,Internal Medicine,6.0,12,16.8,3.9
+830089,ENT,2.0,14,19.5,3.6
+830090,Internal Medicine,3.0,15,23.4,4.1
+830091,ENT,1.0,9,5.0,4.9
+830092,Pediatrics,2.0,8,17.0,4.3
+830093,Pediatrics,1.0,13,19.1,3.9
+830094,Internal Medicine,6.0,11,38.6,2.3
+830095,Dermatology,1.0,13,13.1,4.4
+830096,Internal Medicine,4.0,11,51.4,3.1
+830097,Dermatology,2.0,14,15.1,3.9
+830098,ENT,1.0,16,39.4,4.1
+830099,ENT,1.0,17,19.6,4.2
+830100,ENT,1.0,8,17.7,3.5
+830101,ENT,1.0,8,6.2,4.7
+830102,Internal Medicine,5.0,9,10.4,4.1
+830103,Dermatology,2.0,15,9.9,5.0
+830104,Internal Medicine,3.0,13,30.3,4.2
+830105,Internal Medicine,4.0,16,15.8,4.3
+830106,Dermatology,2.0,11,35.1,3.1
+830107,ENT,2.0,15,14.0,4.6
+830108,Internal Medicine,3.0,10,32.0,3.4
+830109,Dermatology,3.0,9,9.5,4.1
+830110,Pediatrics,3.0,10,34.7,3.3
+830111,Dermatology,1.0,14,24.7,3.5
+830112,Dermatology,2.0,8,5.0,4.4
+830113,ENT,2.0,17,5.0,4.3
+830114,Internal Medicine,6.0,17,6.3,5.0
+830115,ENT,2.0,14,18.9,3.8
+830116,Pediatrics,3.0,14,38.0,3.3
+830117,Pediatrics,1.0,11,36.7,3.0
+830118,Pediatrics,1.0,17,5.0,4.7
+830119,ENT,2.0,17,5.0,4.7
+830120,Internal Medicine,5.0,12,17.9,3.8
+830121,ENT,1.0,10,24.8,4.2
+830122,Internal Medicine,6.0,13,16.2,4.2
+830123,ENT,1.0,10,24.3,4.0
+830124,Dermatology,1.0,15,6.7,5.0
+830125,ENT,3.0,14,13.1,4.4
+830126,Pediatrics,,15,6.0,5.0
+830127,Internal Medicine,6.0,10,11.5,4.3
+830128,Pediatrics,3.0,8,5.0,5.0
+830129,Pediatrics,3.0,16,14.2,4.9
+830130,ENT,2.0,15,9.2,4.4
+830131,Pediatrics,2.0,17,5.0,4.2
+830132,Dermatology,1.0,16,9.9,4.9
+830133,Internal Medicine,4.0,14,42.9,2.7
+830134,Pediatrics,1.0,13,21.3,3.7
+830135,Pediatrics,3.0,13,8.1,5.0
+830136,Dermatology,3.0,16,5.0,4.8
+830137,ENT,3.0,9,19.0,4.3
+830138,Dermatology,3.0,16,12.6,4.7
+830139,Pediatrics,3.0,15,11.3,5.0
+830140,ENT,3.0,9,5.0,4.7
+830141,Internal Medicine,5.0,10,10.2,5.0
+830142,Dermatology,2.0,17,24.8,4.1
+830143,Internal Medicine,3.0,12,21.5,4.3
+830144,ENT,1.0,8,26.9,4.1
+830145,Pediatrics,1.0,12,10.4,4.3
+830146,ENT,1.0,15,12.4,4.6
+830147,Pediatrics,2.0,10,7.9,5.0
+830148,Dermatology,2.0,9,5.0,4.8
+830149,Internal Medicine,3.0,10,23.3,4.5
+830150,Pediatrics,3.0,9,12.6,4.6
+830151,Pediatrics,3.0,9,11.1,4.6
+830152,ENT,2.0,13,12.4,5.0
+830153,ENT,2.0,8,13.4,5.0
+830154,Pediatrics,3.0,15,5.0,4.2
+830155,Internal Medicine,6.0,17,5.0,4.1
+830156,Dermatology,1.0,9,7.8,3.8
+830157,Dermatology,1.0,12,11.9,4.3
+830158,Dermatology,1.0,16,13.4,4.5
+830159,Dermatology,3.0,11,22.5,3.2
+830160,Pediatrics,2.0,8,22.1,4.5
+830161,ENT,1.0,17,23.7,4.3
+830162,Pediatrics,3.0,15,8.7,4.7
+830163,Internal Medicine,6.0,15,12.3,4.8
+830164,Internal Medicine,4.0,17,11.0,5.0
+830165,Dermatology,3.0,12,25.0,3.6
+830166,Pediatrics,2.0,16,19.9,4.7
+830167,Dermatology,2.0,16,6.4,4.7
+830168,Pediatrics,1.0,12,12.4,4.5
+830169,ENT,1.0,14,31.9,3.5
+830170,Pediatrics,2.0,11,19.8,4.7
+830171,Pediatrics,3.0,11,32.4,3.4
+830172,ENT,1.0,15,14.5,3.7
+830173,Dermatology,1.0,9,6.1,5.0
+830174,Dermatology,2.0,15,5.0,4.9
+830175,Dermatology,3.0,12,5.0,4.8
+830176,Internal Medicine,6.0,11,32.4,4.2
+830177,Pediatrics,3.0,11,17.9,3.9
+830178,Dermatology,2.0,11,21.6,4.3
+830179,ENT,1.0,8,35.1,3.9
+830180,ENT,3.0,12,5.0,5.0
+830181,Dermatology,2.0,10,5.0,5.0
+830182,Pediatrics,2.0,8,5.0,4.6
+830183,Dermatology,3.0,12,6.8,4.9
+830184,Internal Medicine,3.0,17,28.3,4.1
+830185,Internal Medicine,4.0,12,40.8,4.6
+830186,Dermatology,2.0,13,16.1,4.5
+830187,Dermatology,1.0,16,9.1,5.0
+830188,Dermatology,1.0,10,12.6,5.0
+830189,Pediatrics,2.0,10,5.0,5.0
+830190,Pediatrics,3.0,8,15.8,4.5
+830191,ENT,1.0,15,25.0,3.4
+830192,Internal Medicine,5.0,13,16.7,3.6
+830193,Pediatrics,3.0,17,5.0,4.3
+830194,Pediatrics,2.0,13,8.9,5.0
+830195,Pediatrics,3.0,14,32.6,3.5
+830196,ENT,3.0,12,8.0,4.2
+830197,Pediatrics,1.0,8,24.2,3.8
+830198,Internal Medicine,3.0,14,44.3,2.9
+830199,ENT,3.0,16,6.0,4.2
+830200,ENT,3.0,16,9.5,4.1
+830201,ENT,1.0,12,14.4,4.3
+830202,Internal Medicine,3.0,16,23.2,4.4
+830203,Internal Medicine,6.0,17,24.5,4.2
+830204,ENT,2.0,11,20.7,4.4
+830205,Pediatrics,2.0,15,5.0,5.0
+830206,ENT,1.0,9,27.2,4.4
+830207,Dermatology,2.0,12,12.9,4.0
+830208,Dermatology,3.0,13,5.0,5.0
+830209,ENT,1.0,16,14.0,5.0
+830210,ENT,3.0,12,5.8,4.9
+830211,Internal Medicine,6.0,15,18.5,4.9
+830212,Pediatrics,1.0,15,18.7,4.0
+830213,Dermatology,3.0,15,5.0,4.5
+830214,ENT,2.0,8,12.3,4.2
+830215,ENT,3.0,9,5.0,5.0
+830216,Pediatrics,1.0,12,10.5,5.0
+830217,Internal Medicine,4.0,13,19.4,3.9
+830218,Pediatrics,2.0,9,5.0,5.0
+830219,Pediatrics,2.0,12,8.4,4.9
+830220,Internal Medicine,5.0,9,14.4,4.4
+830221,Pediatrics,3.0,17,6.2,4.2
+830222,Pediatrics,1.0,11,25.8,4.1
+830223,Dermatology,1.0,13,25.8,3.9
+830224,Pediatrics,3.0,12,5.0,4.0
+830225,Internal Medicine,3.0,8,40.1,3.3
+830226,Pediatrics,2.0,14,27.9,4.0
+830227,Dermatology,1.0,11,38.3,3.6
+830228,Internal Medicine,6.0,16,11.2,3.6
+830229,Pediatrics,2.0,16,5.0,5.0
+830230,ENT,2.0,17,17.8,4.2
+830231,Internal Medicine,6.0,9,23.7,3.5
+830232,Pediatrics,2.0,13,20.5,4.2
+830233,Internal Medicine,3.0,13,41.0,3.2
+830234,Pediatrics,3.0,12,5.0,4.2
+830235,ENT,,11,39.9,3.9
+830236,Pediatrics,2.0,9,5.6,4.1
+830237,Pediatrics,1.0,8,27.4,3.4
+830238,Dermatology,2.0,11,28.6,4.2
+830239,Internal Medicine,6.0,16,12.1,4.8
+830240,Dermatology,1.0,13,19.1,4.6
+830241,Dermatology,3.0,17,8.5,4.6
+830242,Dermatology,1.0,12,8.3,4.1
+830243,Dermatology,2.0,11,27.9,3.3
+830244,Pediatrics,3.0,16,5.0,4.8
+830245,Internal Medicine,6.0,16,5.0,5.0
+830246,Internal Medicine,4.0,14,20.2,3.6
+830247,ENT,3.0,8,5.0,4.6
+830248,Dermatology,3.0,16,22.6,4.8
+830249,ENT,3.0,11,14.9,4.9
+830250,Internal Medicine,4.0,16,32.2,3.8
+830251,Dermatology,1.0,17,22.5,5.0
+830252,Internal Medicine,6.0,13,8.5,4.6
+830253,ENT,2.0,16,5.0,5.0
+830254,Internal Medicine,4.0,15,24.5,4.8
+830255,Pediatrics,2.0,9,5.0,5.0
+830256,Pediatrics,1.0,11,37.4,3.9
+830257,Dermatology,1.0,14,21.6,3.8
+830258,Pediatrics,1.0,14,36.3,3.4
+830259,ENT,1.0,10,25.3,3.6
+830260,Pediatrics,2.0,12,26.0,3.4
+830261,ENT,2.0,8,12.2,4.2
+830262,Dermatology,3.0,13,5.0,4.0
+830263,Internal Medicine,3.0,8,36.2,4.1
+830264,Pediatrics,2.0,17,15.1,4.7
+830265,Internal Medicine,4.0,9,19.8,4.4
+830266,Dermatology,2.0,13,5.0,5.0
+830267,Pediatrics,1.0,11,39.8,3.1
+830268,ENT,1.0,16,25.7,4.0
+830269,Dermatology,2.0,17,12.2,3.1
+830270,Dermatology,3.0,8,5.0,5.0
+830271,Internal Medicine,4.0,15,23.2,4.5
+830272,Pediatrics,2.0,16,5.0,5.0
+830273,ENT,3.0,13,5.0,5.0
+830274,ENT,2.0,15,15.1,4.8
+830275,Dermatology,2.0,9,23.8,4.8
+830276,Internal Medicine,3.0,16,36.9,3.1
+830277,Pediatrics,2.0,10,20.9,4.6
+830278,Internal Medicine,3.0,14,58.8,3.1
+830279,Internal Medicine,3.0,13,23.9,4.3
+830280,ENT,1.0,11,18.1,4.4
+830281,Internal Medicine,3.0,11,47.3,3.2
+830282,Pediatrics,1.0,14,31.9,3.7
+830283,ENT,3.0,11,13.4,4.5
+830284,Pediatrics,2.0,11,20.3,3.9
+830285,ENT,2.0,14,17.1,4.6
+830286,ENT,2.0,13,6.6,4.7
+830287,ENT,3.0,8,9.9,5.0
+830288,Pediatrics,2.0,13,17.6,4.2
+830289,Internal Medicine,3.0,11,58.6,3.4
+830290,Pediatrics,2.0,15,10.7,4.9
+830291,Pediatrics,,13,6.1,5.0
+830292,ENT,3.0,11,5.0,4.4
+830293,Dermatology,3.0,17,11.0,4.6
+830294,Dermatology,2.0,11,27.4,3.5
+830295,Pediatrics,2.0,10,5.0,4.9
+830296,Pediatrics,2.0,9,23.1,4.4
+830297,Pediatrics,2.0,17,5.0,5.0
+830298,Pediatrics,2.0,15,5.0,3.9
+830299,Internal Medicine,3.0,16,42.0,4.1
+830300,Dermatology,3.0,14,24.7,3.2
+830301,Pediatrics,3.0,8,11.6,4.2
+830302,Internal Medicine,6.0,8,15.0,4.8
+830303,Pediatrics,2.0,14,17.1,4.7
+830304,Pediatrics,3.0,11,16.6,4.5
+830305,Pediatrics,1.0,14,40.9,3.6
+830306,ENT,2.0,9,7.2,5.0
+830307,ENT,2.0,17,5.0,4.9
+830308,Pediatrics,1.0,16,7.7,4.9
+830309,Pediatrics,1.0,13,12.8,4.4
+830310,Internal Medicine,4.0,9,22.1,3.2
+830311,Internal Medicine,4.0,17,13.1,4.2
+830312,Dermatology,3.0,11,28.2,3.6
+830313,Dermatology,3.0,14,33.0,3.7
+830314,Dermatology,2.0,14,30.0,2.9
+830315,ENT,3.0,12,5.0,4.5
+830316,ENT,3.0,11,38.1,3.5
+830317,Internal Medicine,5.0,16,12.9,4.5
+830318,Pediatrics,2.0,10,5.2,4.8
+830319,Dermatology,2.0,8,18.5,4.3
+830320,Pediatrics,3.0,9,5.0,5.0
+830321,Pediatrics,3.0,14,12.5,5.0
+830322,Pediatrics,1.0,16,5.0,4.9
+830323,Pediatrics,2.0,10,11.5,4.0
+830324,Internal Medicine,3.0,11,38.6,2.6
+830325,ENT,3.0,11,18.6,4.8
+830326,Internal Medicine,5.0,17,24.7,3.9
+830327,Internal Medicine,4.0,17,21.6,4.4
+830328,Dermatology,1.0,14,21.2,4.3
+830329,Internal Medicine,6.0,8,13.4,3.9
+830330,Internal Medicine,3.0,13,29.2,4.1
+830331,ENT,3.0,10,5.0,4.8
+830332,Pediatrics,1.0,13,10.6,3.7
+830333,Pediatrics,2.0,10,15.3,4.4
+830334,Dermatology,1.0,8,25.9,3.5
+830335,Internal Medicine,3.0,11,28.1,3.8
+830336,ENT,1.0,13,21.9,4.7
+830337,ENT,2.0,8,20.4,3.5
+830338,Dermatology,3.0,17,5.0,5.0
+830339,Pediatrics,1.0,10,5.0,5.0
+830340,Dermatology,1.0,14,43.0,3.0
+830341,Dermatology,3.0,11,5.0,4.8
+830342,ENT,3.0,14,8.2,4.4
+830343,Dermatology,3.0,9,5.0,5.0
+830344,Internal Medicine,5.0,10,13.8,3.8
+830345,Internal Medicine,6.0,12,13.1,4.3
+830346,Dermatology,3.0,12,5.0,4.0
+830347,Pediatrics,2.0,8,10.1,4.2
+830348,Dermatology,2.0,12,12.8,4.9
+830349,Internal Medicine,5.0,12,30.4,4.0
+830350,ENT,1.0,8,16.5,4.5
+830351,Internal Medicine,6.0,16,12.2,4.9
+830352,Pediatrics,3.0,8,10.2,4.8
+830353,Internal Medicine,5.0,8,32.1,2.8
+830354,Internal Medicine,4.0,13,16.4,4.8
+830355,Internal Medicine,6.0,11,37.0,3.6
+830356,ENT,3.0,15,5.8,4.8
+830357,ENT,2.0,15,13.8,4.7
+830358,Pediatrics,1.0,15,5.0,5.0
+830359,Internal Medicine,4.0,14,47.4,3.4
+830360,ENT,2.0,10,5.0,4.2
+830361,Dermatology,1.0,11,22.0,4.0
+830362,Pediatrics,2.0,16,5.0,4.2
+830363,ENT,2.0,15,8.3,3.3
+830364,Pediatrics,3.0,14,22.8,3.0
+830365,Internal Medicine,3.0,13,36.7,3.8
+830366,Dermatology,2.0,14,23.9,4.2
+830367,Pediatrics,2.0,13,11.0,4.0
+830368,Pediatrics,1.0,17,14.6,3.8
+830369,ENT,2.0,14,19.6,4.8
+830370,Dermatology,1.0,13,10.4,5.0
+830371,Dermatology,1.0,10,20.7,4.3
+830372,Dermatology,2.0,11,9.9,5.0
+830373,Internal Medicine,4.0,14,32.4,4.1
+830374,Internal Medicine,4.0,8,15.6,4.5
+830375,Pediatrics,2.0,8,20.8,3.9
+830376,ENT,2.0,10,10.2,3.9
+830377,ENT,3.0,11,22.2,3.5
+830378,ENT,1.0,15,12.6,5.0
+830379,Internal Medicine,3.0,12,18.8,4.5
+830380,Pediatrics,2.0,11,33.5,4.3
+830381,Dermatology,3.0,12,5.0,5.0
+830382,Pediatrics,1.0,9,10.2,4.9
+830383,Internal Medicine,6.0,9,26.3,3.9
+830384,Internal Medicine,5.0,9,16.3,4.7
+830385,Internal Medicine,4.0,13,30.3,3.4
+830386,ENT,3.0,11,25.0,3.9
+830387,Pediatrics,2.0,9,11.8,5.0
+830388,Pediatrics,1.0,12,5.3,4.2
+830389,Internal Medicine,4.0,10,27.2,4.7
+830390,Dermatology,3.0,13,13.2,5.0
+830391,ENT,2.0,16,13.1,5.0
+830392,ENT,1.0,13,16.9,4.5
+830393,Internal Medicine,3.0,16,31.3,4.4
+830394,Internal Medicine,3.0,14,65.4,2.4
+830395,Dermatology,1.0,8,17.4,4.0
+830396,Dermatology,3.0,11,25.9,4.0
+830397,Internal Medicine,5.0,8,19.4,4.0
+830398,Dermatology,1.0,10,9.1,4.2
+830399,Pediatrics,3.0,13,16.1,5.0
+830400,Internal Medicine,5.0,16,34.1,4.6
+830401,Internal Medicine,3.0,14,32.5,3.0
+830402,Pediatrics,2.0,11,36.6,3.5
+830403,Dermatology,1.0,8,17.4,5.0
+830404,ENT,2.0,14,20.2,3.5
+830405,Pediatrics,2.0,10,11.2,3.7
+830406,Dermatology,1.0,15,16.4,4.7
+830407,Pediatrics,3.0,17,5.0,5.0
+830408,ENT,3.0,8,5.0,5.0
+830409,Dermatology,1.0,16,5.0,4.4
+830410,Dermatology,2.0,17,11.1,4.6
+830411,Dermatology,,14,24.3,3.9
+830412,Dermatology,1.0,17,19.6,3.7
+830413,Dermatology,2.0,17,5.4,4.9
+830414,Dermatology,3.0,11,19.0,4.3
+830415,Internal Medicine,3.0,14,46.2,2.8
+830416,Dermatology,2.0,10,18.9,3.4
+830417,Internal Medicine,5.0,10,13.0,3.8
+830418,Internal Medicine,4.0,16,32.9,2.8
+830419,Dermatology,1.0,10,19.4,4.1
+830420,Dermatology,2.0,10,19.6,3.7
+830421,Dermatology,3.0,12,15.1,4.4
+830422,Dermatology,2.0,10,20.2,4.1
+830423,ENT,2.0,17,22.6,3.1
+830424,ENT,1.0,11,41.8,3.2
+830425,Dermatology,2.0,15,12.0,4.3
+830426,Dermatology,1.0,8,23.3,4.4
+830427,Pediatrics,2.0,8,13.3,4.5
+830428,ENT,3.0,10,14.0,5.0
+830429,Internal Medicine,4.0,10,9.8,5.0
+830430,Pediatrics,2.0,14,25.1,3.5
+830431,Pediatrics,1.0,10,26.9,4.0
+830432,Internal Medicine,5.0,10,25.4,3.7
+830433,ENT,1.0,10,15.6,4.2
+830434,Pediatrics,1.0,14,36.1,3.4
+830435,ENT,3.0,13,6.1,5.0
+830436,ENT,1.0,14,46.8,3.2
+830437,Pediatrics,3.0,12,5.1,4.2
+830438,Pediatrics,1.0,8,17.4,4.2
+830439,ENT,1.0,11,20.6,4.9
+830440,Pediatrics,1.0,8,20.0,3.9
+830441,ENT,1.0,10,15.3,4.5
+830442,Internal Medicine,4.0,8,22.2,4.2
+830443,Dermatology,1.0,9,20.8,4.8
+830444,Internal Medicine,3.0,9,13.4,4.7
+830445,Pediatrics,3.0,15,5.0,4.4
+830446,ENT,3.0,14,23.2,4.8
+830447,Internal Medicine,3.0,13,17.7,3.9
+830448,Pediatrics,3.0,17,13.0,5.0
+830449,ENT,3.0,9,12.7,3.8
+830450,Pediatrics,1.0,9,11.2,4.5
+830451,Internal Medicine,4.0,12,22.0,4.2
+830452,Dermatology,3.0,14,22.9,4.6
+830453,ENT,1.0,8,24.6,3.4
+830454,Pediatrics,1.0,12,5.0,5.0
+830455,Pediatrics,1.0,8,14.3,5.0
+830456,Pediatrics,3.0,16,9.8,4.4
+830457,Dermatology,3.0,15,5.0,4.7
+830458,ENT,3.0,11,15.9,4.4
+830459,Pediatrics,2.0,11,34.8,4.3
+830460,Internal Medicine,6.0,9,15.4,3.5
+830461,ENT,3.0,12,5.0,5.0
+830462,Pediatrics,2.0,12,5.0,4.6
+830463,Pediatrics,2.0,16,6.9,3.7
+830464,Pediatrics,1.0,15,22.6,4.2
+830465,ENT,2.0,17,5.0,4.6
+830466,Dermatology,3.0,12,9.1,4.9
+830467,Dermatology,1.0,10,30.4,3.3
+830468,ENT,1.0,11,23.6,4.2
+830469,ENT,2.0,10,5.0,4.1
+830470,Pediatrics,1.0,16,22.8,4.2
+830471,Internal Medicine,6.0,11,36.9,4.5
+830472,Dermatology,1.0,11,34.7,3.2
+830473,Internal Medicine,5.0,16,13.5,4.6
+830474,Dermatology,3.0,8,5.0,4.4
+830475,Pediatrics,3.0,10,17.1,3.9
+830476,ENT,3.0,14,16.1,4.6
+830477,Pediatrics,3.0,17,5.0,4.6
+830478,ENT,1.0,14,38.5,3.8
+830479,ENT,2.0,11,28.4,3.3
+830480,Dermatology,1.0,9,12.3,4.6
+830481,ENT,2.0,15,10.2,3.7
+830482,Pediatrics,3.0,17,17.3,3.6
+830483,Internal Medicine,3.0,17,37.5,3.6
+830484,Pediatrics,3.0,11,23.8,4.2
+830485,ENT,1.0,8,7.7,4.4
+830486,Dermatology,1.0,16,18.4,4.7
+830487,ENT,3.0,17,10.8,3.9
+830488,Pediatrics,1.0,9,21.5,4.1
+830489,Internal Medicine,4.0,16,30.8,3.8
+830490,Pediatrics,1.0,9,16.4,3.8
+830491,Pediatrics,2.0,9,28.9,3.4
+830492,ENT,1.0,8,24.9,3.6
+830493,Dermatology,3.0,14,16.9,4.3
+830494,Internal Medicine,6.0,12,11.1,3.4
+830495,ENT,3.0,14,30.7,4.8
+830496,Dermatology,2.0,13,13.2,4.6
+830497,Dermatology,1.0,9,11.4,4.7
+830498,Dermatology,2.0,11,22.2,4.2
+830499,Dermatology,3.0,14,12.1,4.9
+830500,Internal Medicine,3.0,12,26.2,4.5
+830501,Internal Medicine,6.0,11,16.6,3.6
+830502,ENT,3.0,13,7.3,4.7
+830503,ENT,1.0,15,17.8,4.0
+830504,Pediatrics,3.0,14,30.2,2.7
+830505,Dermatology,2.0,12,5.0,3.9
+830506,Pediatrics,3.0,13,5.0,4.9
+830507,Pediatrics,1.0,13,6.3,3.9
+830508,ENT,2.0,10,14.5,4.2
+830509,Dermatology,3.0,12,5.0,5.0
+830510,Internal Medicine,3.0,12,39.7,3.6
+830511,Pediatrics,2.0,13,5.0,5.0
+830512,Internal Medicine,3.0,14,47.9,2.7
+830513,Internal Medicine,3.0,15,23.0,4.1
+830514,Internal Medicine,6.0,11,26.9,4.4
+830515,Pediatrics,1.0,15,12.0,4.4
+830516,Internal Medicine,3.0,8,27.8,4.8
+830517,Dermatology,2.0,10,6.5,5.0
+830518,Pediatrics,3.0,11,24.5,4.3
+830519,Dermatology,3.0,9,22.8,3.0
+830520,Pediatrics,3.0,8,10.3,5.0
+830521,ENT,2.0,13,8.4,5.0
+830522,Pediatrics,3.0,13,14.7,5.0
+830523,Internal Medicine,4.0,11,38.1,3.7
+830524,Pediatrics,1.0,10,9.4,5.0
+830525,Dermatology,1.0,9,29.4,3.5
+830526,Dermatology,3.0,16,17.2,3.9
+830527,Dermatology,3.0,12,5.0,5.0
+830528,Internal Medicine,6.0,16,10.2,4.9
+830529,Internal Medicine,3.0,13,33.2,3.6
+830530,Pediatrics,3.0,15,5.0,5.0
+830531,Internal Medicine,4.0,17,9.9,4.5
+830532,Dermatology,3.0,12,5.0,4.6
+830533,ENT,2.0,16,5.0,3.9
+830534,Dermatology,3.0,17,5.0,4.6
+830535,Internal Medicine,5.0,12,5.4,4.4
+830536,Internal Medicine,6.0,8,11.5,4.3
+830537,ENT,2.0,15,9.2,4.7
+830538,Internal Medicine,3.0,16,31.5,3.5
+830539,ENT,1.0,13,7.9,4.6
+830540,Dermatology,3.0,17,5.0,4.8
+830541,ENT,3.0,11,13.5,4.8
+830542,Pediatrics,1.0,14,32.8,4.5
+830543,Internal Medicine,4.0,13,10.9,4.9
+830544,Dermatology,3.0,10,7.2,4.8
+830545,Pediatrics,1.0,12,16.7,4.9
+830546,Dermatology,,17,15.9,4.2
+830547,Pediatrics,1.0,16,26.7,4.4
+830548,ENT,3.0,17,5.0,4.8
+830549,Internal Medicine,6.0,9,25.7,4.7
+830550,Internal Medicine,4.0,11,43.8,2.8
+830551,Pediatrics,3.0,9,24.9,4.2
+830552,Pediatrics,1.0,8,26.3,4.4
+830553,Dermatology,1.0,11,25.3,2.7
+830554,Internal Medicine,6.0,12,8.5,5.0
+830555,Dermatology,1.0,10,10.7,3.3
+830556,Internal Medicine,6.0,9,5.0,5.0
+830557,Dermatology,3.0,9,5.0,5.0
+830558,Dermatology,1.0,14,39.1,2.7
+830559,Internal Medicine,4.0,11,40.6,3.1
+830560,Pediatrics,2.0,10,22.9,4.7
+830561,Internal Medicine,6.0,10,26.4,4.8
+830562,Pediatrics,1.0,11,26.0,3.6
+830563,Pediatrics,2.0,10,9.3,4.8
+830564,Pediatrics,1.0,15,29.6,3.6
+830565,Pediatrics,2.0,8,5.0,4.3
+830566,Internal Medicine,4.0,17,23.5,4.3
+830567,Dermatology,3.0,17,5.0,5.0
+830568,Pediatrics,1.0,12,12.7,4.5
+830569,ENT,2.0,10,21.3,4.7
+830570,Pediatrics,2.0,12,9.9,4.1
+830571,Internal Medicine,5.0,11,29.3,4.0
+830572,Internal Medicine,4.0,9,23.7,3.9
+830573,ENT,1.0,13,21.5,3.7
+830574,Internal Medicine,6.0,15,5.2,4.6
+830575,Internal Medicine,4.0,15,27.4,4.6
+830576,Internal Medicine,6.0,15,5.0,4.4
+830577,Internal Medicine,6.0,14,36.9,3.3
+830578,Dermatology,1.0,10,14.4,4.1
+830579,ENT,1.0,13,26.8,3.3
+830580,Dermatology,3.0,15,5.0,5.0
+830581,ENT,2.0,10,8.0,4.0
+830582,Dermatology,1.0,9,5.0,4.9
+830583,Dermatology,3.0,17,11.8,5.0
+830584,ENT,2.0,9,8.3,3.8
+830585,ENT,2.0,11,16.5,3.5
+830586,Pediatrics,3.0,17,14.0,3.6
+830587,ENT,1.0,17,22.9,4.3
+830588,Pediatrics,3.0,16,5.0,5.0
+830589,Dermatology,3.0,15,5.0,4.9
+830590,Dermatology,3.0,8,5.0,4.9
+830591,Pediatrics,3.0,8,7.5,4.6
+830592,Pediatrics,1.0,10,18.3,4.2
+830593,Dermatology,3.0,16,10.0,5.0
+830594,Internal Medicine,3.0,9,20.4,3.8
+830595,Internal Medicine,5.0,16,7.2,3.8
+830596,Pediatrics,3.0,14,5.0,5.0
+830597,Pediatrics,1.0,10,11.5,4.8
+830598,Internal Medicine,4.0,8,20.5,4.3
+830599,Dermatology,2.0,8,8.0,4.3
+830600,Dermatology,3.0,15,8.9,5.0
+830601,Internal Medicine,6.0,17,12.2,5.0
+830602,ENT,1.0,14,28.6,3.4
+830603,Pediatrics,3.0,16,5.0,5.0
+830604,Dermatology,3.0,11,23.3,4.3
+830605,ENT,1.0,10,5.1,5.0
+830606,Internal Medicine,5.0,15,40.1,2.4
+830607,Internal Medicine,5.0,8,31.1,2.9
+830608,Pediatrics,3.0,17,18.1,4.2
+830609,ENT,2.0,16,5.0,4.5
+830610,ENT,2.0,14,27.8,4.1
+830611,Dermatology,2.0,16,5.0,4.4
+830612,Dermatology,3.0,10,11.6,5.0
+830613,Pediatrics,1.0,15,7.9,4.6
+830614,Dermatology,3.0,17,6.5,4.3
+830615,Internal Medicine,5.0,12,26.4,4.1
+830616,ENT,1.0,12,18.5,4.1
+830617,ENT,2.0,9,18.1,4.4
+830618,Dermatology,2.0,8,8.2,4.6
+830619,Internal Medicine,5.0,11,40.2,3.1
+830620,Dermatology,3.0,12,15.7,3.8
+830621,Pediatrics,1.0,15,14.1,4.6
+830622,ENT,1.0,12,14.2,4.7
+830623,Internal Medicine,5.0,14,25.5,3.7
+830624,Pediatrics,1.0,13,25.0,4.2
+830625,Dermatology,2.0,8,15.1,5.0
+830626,Dermatology,2.0,13,5.0,4.6
+830627,Internal Medicine,3.0,13,31.0,3.6
+830628,ENT,3.0,8,5.0,4.3
+830629,Dermatology,2.0,10,5.0,5.0
+830630,Pediatrics,2.0,13,12.7,4.4
+830631,ENT,2.0,16,6.6,4.6
+830632,Pediatrics,1.0,12,26.6,4.3
+830633,Pediatrics,2.0,17,5.0,5.0
+830634,ENT,1.0,15,5.0,4.3
+830635,Internal Medicine,4.0,9,30.3,3.1
+830636,Dermatology,3.0,10,10.2,5.0
+830637,Internal Medicine,6.0,11,31.5,3.7
+830638,ENT,2.0,13,5.0,4.9
+830639,Dermatology,2.0,12,5.0,5.0
+830640,ENT,3.0,14,17.2,3.5
+830641,Pediatrics,2.0,15,15.5,3.9
+830642,ENT,3.0,17,7.4,4.9
+830643,Pediatrics,2.0,17,23.0,4.8
+830644,Pediatrics,2.0,13,6.3,4.4
+830645,ENT,3.0,14,23.5,3.7
+830646,ENT,3.0,9,5.0,4.5
+830647,Pediatrics,1.0,14,26.4,4.4
+830648,Pediatrics,1.0,10,5.0,4.8
+830649,Pediatrics,2.0,11,9.5,4.0
+830650,Dermatology,1.0,9,8.8,4.6
+830651,Pediatrics,1.0,9,12.4,4.7
+830652,Dermatology,1.0,17,19.1,3.9
+830653,Pediatrics,2.0,15,13.2,4.2
+830654,Dermatology,1.0,12,5.0,5.0
+830655,Pediatrics,1.0,8,5.8,5.0
+830656,Internal Medicine,3.0,15,31.6,3.8
+830657,Internal Medicine,6.0,15,5.0,4.1
+830658,Pediatrics,1.0,10,9.6,4.4
+830659,Pediatrics,2.0,14,43.7,3.1
+830660,ENT,3.0,13,6.3,4.8
+830661,ENT,1.0,14,24.8,4.7
+830662,Dermatology,1.0,10,5.0,4.6
+830663,Pediatrics,1.0,16,16.5,4.2
+830664,Pediatrics,3.0,16,6.9,4.0
+830665,Internal Medicine,5.0,9,23.8,4.2
+830666,Dermatology,2.0,13,14.9,4.8
+830667,Internal Medicine,6.0,13,7.6,3.9
+830668,ENT,3.0,11,33.8,3.3
+830669,Pediatrics,1.0,14,35.3,2.7
+830670,Dermatology,2.0,14,22.4,3.6
+830671,Dermatology,3.0,10,5.3,4.2
+830672,Pediatrics,3.0,17,19.5,3.8
+830673,Pediatrics,3.0,10,15.1,4.1
+830674,Dermatology,2.0,9,10.3,4.7
+830675,ENT,1.0,16,23.3,3.7
+830676,Dermatology,1.0,17,24.6,3.4
+830677,Pediatrics,1.0,11,43.1,3.6
+830678,Internal Medicine,4.0,15,20.0,5.0
+830679,Pediatrics,1.0,9,18.4,3.9
+830680,Internal Medicine,5.0,14,33.6,3.5
+830681,Pediatrics,2.0,16,17.1,4.5
+830682,Pediatrics,2.0,12,7.7,4.2
+830683,Internal Medicine,5.0,15,16.2,4.1
+830684,ENT,2.0,15,16.1,4.7
+830685,Dermatology,3.0,9,5.0,5.0
+830686,ENT,3.0,9,7.0,4.5
+830687,Pediatrics,3.0,8,5.0,5.0
+830688,Internal Medicine,5.0,9,14.4,4.0
+830689,Dermatology,3.0,16,6.1,4.2
+830690,ENT,3.0,9,12.6,3.9
+830691,ENT,1.0,16,25.4,3.6
+830692,Pediatrics,1.0,17,17.5,4.0
+830693,Internal Medicine,4.0,11,46.2,3.3
+830694,ENT,,14,44.8,2.5
+830695,Dermatology,1.0,17,12.1,5.0
+830696,Dermatology,2.0,12,8.1,5.0
+830697,Pediatrics,2.0,11,30.2,4.0
+830698,Pediatrics,2.0,10,13.0,4.6
+830699,Internal Medicine,4.0,9,23.6,4.6
+830700,Dermatology,3.0,8,5.0,4.7
+830701,ENT,3.0,8,5.0,4.9
+830702,Pediatrics,1.0,14,36.8,3.6
+830703,Internal Medicine,4.0,13,23.8,4.1
+830704,Dermatology,1.0,9,15.7,4.1
+830705,Pediatrics,3.0,12,5.9,5.0
+830706,Pediatrics,2.0,10,29.3,3.7
+830707,Pediatrics,3.0,11,24.6,3.2
+830708,Dermatology,3.0,12,5.0,4.8
+830709,ENT,1.0,17,12.5,5.0
+830710,Pediatrics,2.0,16,9.7,4.0
+830711,Pediatrics,3.0,13,5.0,4.6
+830712,ENT,3.0,13,10.1,4.3
+830713,Pediatrics,2.0,11,31.9,4.5
+830714,ENT,3.0,9,5.4,4.4
+830715,Pediatrics,2.0,17,6.8,4.4
+830716,Pediatrics,3.0,14,36.8,3.4
+830717,Internal Medicine,4.0,12,13.2,4.5
+830718,Pediatrics,1.0,9,12.5,4.7
+830719,Dermatology,1.0,10,14.5,4.5
+830720,Internal Medicine,6.0,14,21.9,4.2
+830721,Dermatology,2.0,9,29.2,3.3
+830722,ENT,2.0,13,5.0,5.0
+830723,ENT,1.0,13,21.4,5.0
+830724,Dermatology,3.0,16,5.0,5.0
+830725,Internal Medicine,6.0,8,5.0,5.0
+830726,Pediatrics,2.0,11,21.0,3.8
+830727,Dermatology,1.0,9,24.7,3.9
+830728,Dermatology,3.0,9,12.5,4.3
+830729,Pediatrics,3.0,8,8.6,4.9
+830730,Pediatrics,2.0,12,14.8,4.7
+830731,Internal Medicine,4.0,15,13.3,3.6
+830732,Internal Medicine,6.0,9,11.2,5.0
+830733,Pediatrics,1.0,13,12.5,4.7
+830734,Dermatology,3.0,15,5.0,5.0
+830735,ENT,2.0,14,18.1,4.6
+830736,Dermatology,3.0,9,13.2,3.6
+830737,Pediatrics,2.0,12,15.8,4.4
+830738,Pediatrics,3.0,9,15.8,4.0
+830739,Pediatrics,1.0,17,20.3,3.4
+830740,Pediatrics,2.0,17,15.6,3.8
+830741,Dermatology,2.0,11,27.6,3.6
+830742,Pediatrics,1.0,12,23.5,4.1
+830743,Internal Medicine,5.0,13,22.6,5.0
+830744,Internal Medicine,5.0,16,15.9,3.9
+830745,Internal Medicine,4.0,16,29.2,4.0
+830746,Dermatology,2.0,10,8.8,4.0
+830747,Internal Medicine,6.0,13,14.3,5.0
+830748,Pediatrics,1.0,12,11.8,4.9
+830749,Internal Medicine,6.0,16,8.2,4.2
+830750,ENT,2.0,9,5.0,4.2
+830751,ENT,1.0,17,15.3,4.3
+830752,ENT,2.0,14,17.6,5.0
+830753,Pediatrics,2.0,14,41.5,2.9
+830754,Pediatrics,3.0,8,12.8,4.5
+830755,Dermatology,1.0,16,13.1,4.8
+830756,Dermatology,2.0,15,5.6,5.0
+830757,Internal Medicine,3.0,14,49.4,2.8
+830758,ENT,2.0,17,5.0,4.8
+830759,ENT,1.0,17,28.1,4.3
+830760,Dermatology,3.0,17,8.9,5.0
+830761,Internal Medicine,5.0,11,40.1,4.4
+830762,Dermatology,1.0,9,13.3,4.8
+830763,Dermatology,2.0,12,12.0,4.9
+830764,ENT,1.0,8,18.0,3.8
+830765,ENT,2.0,16,21.9,4.3
+830766,Pediatrics,3.0,12,10.1,4.7
+830767,Pediatrics,3.0,13,8.3,5.0
+830768,Dermatology,3.0,8,5.0,4.9
+830769,Internal Medicine,6.0,11,25.5,3.2
+830770,Internal Medicine,4.0,17,25.9,4.1
+830771,Internal Medicine,6.0,13,14.5,4.2
+830772,Pediatrics,2.0,16,5.0,4.6
+830773,ENT,2.0,10,5.7,5.0
+830774,Pediatrics,1.0,8,28.9,3.7
+830775,Internal Medicine,6.0,10,16.7,3.5
+830776,Internal Medicine,5.0,14,41.8,3.4
+830777,Pediatrics,3.0,15,9.2,5.0
+830778,Dermatology,3.0,10,5.0,5.0
+830779,Dermatology,2.0,14,29.5,4.0
+830780,ENT,3.0,9,5.0,4.8
+830781,ENT,2.0,16,10.1,4.5
+830782,Pediatrics,1.0,17,33.4,2.9
+830783,Internal Medicine,5.0,17,17.8,4.9
+830784,Pediatrics,2.0,14,18.0,4.4
+830785,Pediatrics,2.0,10,5.0,5.0
+830786,Dermatology,3.0,14,30.8,4.0
+830787,Dermatology,1.0,10,17.8,3.9
+830788,Dermatology,1.0,8,9.8,4.1
+830789,Internal Medicine,3.0,16,30.8,3.6
+830790,Internal Medicine,4.0,17,14.0,3.8
+830791,Pediatrics,2.0,17,17.7,4.1
+830792,Internal Medicine,4.0,16,24.1,3.8
+830793,Dermatology,2.0,13,21.7,3.8
+830794,Dermatology,2.0,13,12.5,5.0
+830795,Pediatrics,1.0,11,22.4,4.5
+830796,Pediatrics,1.0,14,23.1,4.4
+830797,Internal Medicine,3.0,10,25.5,5.0
+830798,Internal Medicine,4.0,9,16.0,4.7
+830799,Pediatrics,2.0,17,10.8,5.0
+830800,Dermatology,1.0,15,12.7,4.8
+830801,Dermatology,3.0,16,5.0,3.9
+830802,Dermatology,1.0,11,25.0,4.2
+830803,ENT,2.0,10,12.8,5.0
+830804,ENT,3.0,13,12.6,5.0
+830805,ENT,1.0,17,33.0,4.4
+830806,ENT,1.0,14,32.0,3.5
+830807,ENT,1.0,8,16.5,4.3
+830808,Dermatology,1.0,14,38.3,3.9
+830809,Internal Medicine,3.0,8,21.0,4.7
+830810,Pediatrics,2.0,11,8.1,4.4
+830811,Dermatology,3.0,9,23.2,4.8
+830812,Pediatrics,2.0,17,24.6,3.5
+830813,Internal Medicine,4.0,12,32.2,3.2
+830814,Pediatrics,,17,5.8,4.4
+830815,Dermatology,2.0,12,5.0,5.0
+830816,ENT,2.0,8,7.7,4.5
+830817,Dermatology,2.0,17,13.9,4.3
+830818,Dermatology,3.0,17,5.0,4.7
+830819,Internal Medicine,6.0,9,9.9,4.6
+830820,ENT,1.0,14,22.6,4.5
+830821,Pediatrics,3.0,15,5.0,4.2
+830822,Pediatrics,1.0,12,5.0,4.3
+830823,Pediatrics,2.0,15,8.1,4.4
+830824,Dermatology,3.0,8,12.7,4.8
+830825,Pediatrics,1.0,17,26.1,4.7
+830826,Dermatology,2.0,14,5.3,5.0
+830827,Pediatrics,3.0,17,15.5,4.5
+830828,Dermatology,1.0,11,18.4,3.6
+830829,ENT,3.0,14,16.5,3.8
+830830,Internal Medicine,6.0,9,14.1,4.5
+830831,ENT,1.0,14,28.0,3.9
+830832,Pediatrics,3.0,13,8.0,4.1
+830833,Pediatrics,2.0,16,5.0,4.7
+830834,Internal Medicine,6.0,10,22.5,4.3
+830835,Dermatology,2.0,9,15.0,4.3
+830836,ENT,3.0,10,5.0,4.6
+830837,Pediatrics,2.0,8,12.9,4.7
+830838,Pediatrics,1.0,11,33.8,2.8
+830839,Pediatrics,3.0,9,10.5,4.4
+830840,Dermatology,1.0,8,10.3,4.7
+830841,Internal Medicine,3.0,10,37.2,4.0
+830842,ENT,1.0,15,16.1,3.6
+830843,Dermatology,2.0,8,14.0,5.0
+830844,Internal Medicine,3.0,17,28.0,3.7
+830845,ENT,1.0,12,10.5,4.9
+830846,ENT,2.0,9,11.5,3.9
+830847,Internal Medicine,6.0,10,8.8,4.3
+830848,ENT,3.0,12,5.0,4.7
+830849,ENT,3.0,16,5.5,4.8
+830850,Pediatrics,2.0,15,14.3,4.4
+830851,ENT,2.0,14,31.6,4.2
+830852,ENT,1.0,16,11.9,4.2
+830853,Internal Medicine,6.0,9,5.0,4.9
+830854,Pediatrics,1.0,11,35.1,3.6
+830855,Internal Medicine,5.0,10,24.8,3.8
+830856,Internal Medicine,5.0,14,33.1,3.1
+830857,Pediatrics,2.0,11,27.1,4.0
+830858,Pediatrics,1.0,16,20.0,4.6
+830859,Internal Medicine,5.0,12,12.9,5.0
+830860,ENT,3.0,10,10.0,5.0
+830861,Pediatrics,1.0,14,23.3,3.3
+830862,Internal Medicine,3.0,15,24.3,2.9
+830863,Internal Medicine,5.0,9,12.9,4.9
+830864,Internal Medicine,4.0,11,44.7,3.4
+830865,ENT,1.0,8,6.9,5.0
+830866,ENT,1.0,15,5.0,4.5
+830867,Pediatrics,1.0,11,25.8,4.1
+830868,Dermatology,2.0,14,26.6,4.6
+830869,Internal Medicine,6.0,16,9.0,5.0
+830870,Dermatology,3.0,15,13.7,4.7
+830871,Dermatology,3.0,9,5.0,5.0
+830872,Pediatrics,2.0,16,5.0,5.0
+830873,Dermatology,2.0,9,10.2,4.8
+830874,ENT,2.0,12,5.0,5.0
+830875,Dermatology,2.0,10,23.8,4.8
+830876,Pediatrics,2.0,16,6.4,4.7
+830877,Internal Medicine,6.0,17,21.4,4.4
+830878,Dermatology,2.0,9,27.5,3.8
+830879,ENT,1.0,15,14.3,4.8
+830880,Pediatrics,3.0,15,20.0,3.8
+830881,Pediatrics,1.0,9,5.0,4.3
+830882,ENT,1.0,16,19.7,4.3
+830883,ENT,1.0,9,30.4,4.2
+830884,Pediatrics,3.0,9,12.9,4.5
+830885,Dermatology,2.0,15,14.1,4.5
+830886,Pediatrics,3.0,16,15.9,4.7
+830887,Dermatology,3.0,13,5.0,4.9
+830888,Internal Medicine,3.0,15,25.2,3.7
+830889,Internal Medicine,3.0,16,21.0,3.5
+830890,Dermatology,2.0,14,19.4,4.8
+830891,Internal Medicine,4.0,10,17.1,5.0
+830892,Dermatology,2.0,15,18.7,2.9
+830893,Dermatology,1.0,11,35.4,3.7
+830894,ENT,2.0,15,6.6,4.3
+830895,Internal Medicine,4.0,12,34.1,4.3
+830896,Dermatology,2.0,9,6.2,4.7
+830897,Pediatrics,1.0,15,23.8,4.1
+830898,Dermatology,3.0,11,20.6,4.0
+830899,Internal Medicine,4.0,16,31.2,2.9
+830900,Internal Medicine,6.0,15,6.7,5.0
+830901,ENT,2.0,16,28.8,4.1
+830902,Pediatrics,1.0,10,31.4,3.4
+830903,Internal Medicine,3.0,16,36.8,4.4
+830904,ENT,2.0,8,9.5,3.7
+830905,Dermatology,1.0,16,27.4,4.1
+830906,Pediatrics,3.0,14,16.0,5.0
+830907,Pediatrics,1.0,9,21.3,4.6
+830908,Internal Medicine,3.0,8,16.4,4.7
+830909,Dermatology,2.0,9,5.0,5.0
+830910,ENT,3.0,14,15.5,3.5
+830911,Dermatology,3.0,12,5.6,4.4
+830912,ENT,1.0,17,21.3,4.5
+830913,Pediatrics,2.0,8,8.0,5.0
+830914,Internal Medicine,6.0,13,18.8,3.7
+830915,ENT,2.0,8,20.5,4.6
+830916,Dermatology,,9,13.7,5.0
+830917,Internal Medicine,5.0,16,13.2,4.0
+830918,Pediatrics,3.0,14,14.1,4.1
+830919,Dermatology,1.0,14,30.3,3.6
+830920,ENT,2.0,11,27.6,4.4
+830921,ENT,3.0,12,5.0,4.7
+830922,Pediatrics,1.0,15,22.3,4.5
+830923,Dermatology,1.0,13,12.2,4.4
+830924,Dermatology,3.0,11,6.8,5.0
+830925,Pediatrics,1.0,10,14.8,3.8
+830926,Dermatology,1.0,14,29.5,4.3
+830927,Internal Medicine,3.0,12,22.4,4.0
+830928,ENT,3.0,11,12.2,4.2
+830929,ENT,1.0,9,32.5,4.5
+830930,Pediatrics,3.0,10,5.0,5.0
+830931,Pediatrics,1.0,13,15.9,4.7
+830932,Internal Medicine,4.0,14,44.5,3.2
+830933,Internal Medicine,3.0,14,43.3,2.4
+830934,Dermatology,1.0,14,38.7,3.4
+830935,Internal Medicine,4.0,12,19.6,3.9
+830936,ENT,1.0,16,18.6,4.3
+830937,Dermatology,3.0,16,5.0,5.0
+830938,Internal Medicine,4.0,8,25.5,4.7
+830939,Internal Medicine,3.0,8,24.3,4.3
+830940,ENT,2.0,13,10.4,3.5
+830941,ENT,1.0,15,5.0,4.5
+830942,Internal Medicine,3.0,8,36.7,3.8
+830943,Internal Medicine,6.0,9,20.1,3.9
+830944,Pediatrics,3.0,15,5.0,5.0
+830945,Dermatology,3.0,9,25.8,4.5
+830946,Internal Medicine,3.0,13,24.3,4.3
+830947,Internal Medicine,4.0,13,43.7,3.9
+830948,Pediatrics,2.0,16,12.6,4.2
+830949,Dermatology,3.0,11,21.1,3.7
+830950,Internal Medicine,4.0,16,30.3,3.8
+830951,Dermatology,2.0,11,5.3,4.6
+830952,Dermatology,2.0,9,5.0,5.0
+830953,ENT,2.0,17,7.1,4.4
+830954,Pediatrics,3.0,16,5.0,5.0
+830955,ENT,1.0,15,23.9,4.4
+830956,Dermatology,3.0,11,13.3,4.2
+830957,Pediatrics,1.0,8,8.5,3.3
+830958,Internal Medicine,3.0,16,24.7,3.7
+830959,Pediatrics,3.0,10,5.0,5.0
+830960,Dermatology,1.0,16,29.5,4.1
+830961,Pediatrics,2.0,11,24.1,4.8
+830962,Internal Medicine,3.0,13,34.5,3.4
+830963,Internal Medicine,6.0,11,31.8,3.3
+830964,Internal Medicine,6.0,16,45.2,3.1
+830965,ENT,3.0,15,13.0,4.5
+830966,Dermatology,2.0,12,19.1,3.8
+830967,Pediatrics,3.0,14,34.2,2.7
+830968,Pediatrics,1.0,12,15.2,5.0
+830969,Internal Medicine,5.0,14,50.9,2.9
+830970,Dermatology,2.0,14,25.5,3.2
+830971,Dermatology,2.0,16,18.0,3.7
+830972,Pediatrics,1.0,9,22.2,3.4
+830973,Dermatology,1.0,11,32.6,3.5
+830974,Dermatology,3.0,16,6.0,5.0
+830975,Pediatrics,2.0,9,14.7,5.0
+830976,Internal Medicine,3.0,9,34.9,3.3
+830977,Internal Medicine,4.0,17,44.6,3.2
+830978,Dermatology,3.0,16,15.3,4.1
+830979,Pediatrics,3.0,11,33.4,3.1
+830980,ENT,1.0,14,35.5,4.3
+830981,Pediatrics,1.0,9,7.4,5.0
+830982,Pediatrics,3.0,15,5.0,4.9
+830983,Dermatology,1.0,14,25.4,3.6
+830984,Internal Medicine,4.0,17,36.6,3.6
+830985,Pediatrics,2.0,15,19.8,3.3
+830986,Internal Medicine,5.0,10,5.0,4.8
+830987,ENT,1.0,14,31.3,4.0
+830988,Dermatology,1.0,12,8.3,4.5
+830989,Internal Medicine,5.0,12,28.0,3.3
+830990,Pediatrics,2.0,12,18.8,4.5
+830991,Internal Medicine,3.0,13,31.3,4.1
+830992,Pediatrics,1.0,13,9.7,4.5
+830993,Internal Medicine,3.0,13,29.5,3.5
+830994,Pediatrics,2.0,16,9.1,4.3
+830995,Internal Medicine,6.0,17,6.3,3.9
+830996,ENT,3.0,12,8.5,5.0
+830997,Internal Medicine,5.0,16,17.1,4.9
+830998,Pediatrics,3.0,11,11.9,5.0
+830999,Internal Medicine,6.0,15,17.3,4.1
+831000,Dermatology,3.0,11,15.9,4.8

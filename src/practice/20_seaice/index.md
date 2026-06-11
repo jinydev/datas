@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("muted")
 
@@ -39,7 +39,7 @@ df = sns.load_dataset('seaice')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -85,8 +85,8 @@ df['Year'] = df['Date'].dt.year
 df['Month'] = df['Date'].dt.month
 
 # 3. 새로운 파생 변수가 잘 추가되었는지 확인
-display(df[['Date', 'Year', 'Month', 'Extent']].head())
-display(df[['Date', 'Year', 'Month', 'Extent']].tail())
+print(df[['Date', 'Year', 'Month', 'Extent']].head())
+print(df[['Date', 'Year', 'Month', 'Extent']].tail())
 ```
 
 > **💻 [실행 결과]**

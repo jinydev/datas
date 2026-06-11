@@ -33,7 +33,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 
 # Flights 데이터셋 로드
@@ -41,7 +41,7 @@ df = sns.load_dataset('flights')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -93,7 +93,7 @@ display(df.head())
 pivot_df = df.pivot(index='year', columns='month', values='passengers')
 
 # 2차원 매트릭스로 멋지게 변환된 데이터 확인
-display(pivot_df)
+print(pivot_df)
 ```
 
 > **💻 [실행 결과]**

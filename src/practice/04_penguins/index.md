@@ -30,14 +30,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 
 # Penguins 데이터셋 로드
 df = sns.load_dataset('penguins')
 
 # 첫 5행 확인
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**

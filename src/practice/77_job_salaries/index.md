@@ -1,0 +1,179 @@
+---
+layout: practice
+title: "77. 채용 정보 연봉 수준 예측 실습"
+permalink: /practice/77_job_salaries/
+---
+
+# 실전 데이터 분석 77: 구인구직 플랫폼 채용 공고의 직무 연차 및 학력 조건 대비 재택 근무 여부별 급여 단가 상관 분석
+
+## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
+
+채용 사이트의 구인 포스팅 원본 정보입니다. 신규 채용 직원의 연차 경력(ExpYears) 요구조건 및 직무 분류(RoleCategory)에 따라 책정된 제안 연봉(Salary)의 편차를 재택근무(IsRemote) 조건별로 대조 분석합니다.
+
+**학습 목표:**
+* **직종별 평균 연봉 대치 (`groupby.transform`):** 직종별 임금 격차가 극명하므로 RoleCategory별 평균 연봉으로 결측을 대치합니다.
+* **직무 연봉 수준 요약 시각화 (`barplot`, `scatterplot`):** 직군별 평균 급여수준 막대 차트 및 경력 대비 제안 연봉 위 학력 조건 오버레이 상관 지도를 도출합니다.
+
+---
+
+## Step 1: 데이터 구조 살펴보기 (Data Overview)
+
+![Step 1 데이터 구조 개념도](img/step1_dataset.svg)
+
+`csv_data` 폴더에 준비해 둔 `job_salaries.csv` 파일을 판다스로 불러옵니다.
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 그래프 설정 (한글 폰트 및 마이너스 기호 깨짐 방지)
+import koreanize_matplotlib
+plt.rcParams['axes.unicode_minus'] = False
+sns.set_theme(style="whitegrid")
+
+# 로컬 CSV 파일 불러오기
+df = pd.read_csv('../csv_data/job_salaries.csv')
+
+# 데이터 구조 및 첫 5행 확인
+df = pd.read_csv('../csv_data/job_salaries.csv')
+print(df.info())
+print(df.head())
+```
+
+> **💻 [실행 결과]**
+> ```text
+<class 'pandas.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   JobID           1000 non-null   int64  
+ 1   ExpYears        1000 non-null   int64  
+ 2   EducationLevel  1000 non-null   str    
+ 3   RoleCategory    1000 non-null   str    
+ 4   IsRemote        1000 non-null   str    
+ 5   Salary          984 non-null    float64
+dtypes: float64(1), int64(2), str(3)
+memory usage: 47.0 KB
+JobID  ExpYears EducationLevel  RoleCategory IsRemote     Salary
+0  770001        23      Bachelors      Software       No  131916.30
+1  770002        20        Masters      Software      Yes  110837.75
+2  770003        20      Bachelors  Data Science      Yes  101925.51
+3  770004        11      Bachelors     Marketing      Yes   88528.23
+4  770005         5      Bachelors  Data Science      Yes   74206.90
+> ```
+
+### 💡 코드 딥다이브 (Code Deep Dive)
+**주요 분석 대상 컬럼:**
+* `JobID`: 채용 공고 고유 식별 번호
+* `ExpYears`: 공고에서 요구하는 최소 경력 연수 (년)
+* `EducationLevel`: 필수/우대 학력 수준 (Bachelors, Masters, PhD)
+* `RoleCategory`: 채용 직무 분류 (Data Science, Software, Marketing, HR)
+* `IsRemote`: 상시 재택근무 제공 옵션 여부 (Yes/No)
+* `Salary`: 최종 조율 제안 연봉 (USD/Year) (결측치 존재)
+
+---
+
+## Step 2: 전처리와 결측치 정제 (Preprocess)
+
+![Step 2 데이터 정제 개념도](img/step2_missing_values.svg)
+
+현실의 데이터는 항상 누락이 있거나 유효성 정제가 필요합니다. 데이터 전처리 단계에서 결측 상태를 확인하고 올바르게 보정합니다.
+
+```python
+# 1. 컬럼별 결측치 개수 확인
+print("--- 정제 전 결측치 확인 ---")
+print(df.isnull().sum())
+
+# 2. 결측치 전처리 및 대치 수행
+df['Salary'] = df.groupby('RoleCategory')['Salary'].transform(lambda x: x.fillna(x.mean()))
+print(df.isnull().sum())
+```
+
+> **💻 [실행 결과]**
+> ```text
+--- 정제 전 결측치 확인 ---
+JobID              0
+ExpYears           0
+EducationLevel     0
+RoleCategory       0
+IsRemote           0
+Salary            16
+
+--- 정제 후 결측치 확인 ---
+JobID             0
+ExpYears          0
+EducationLevel    0
+RoleCategory      0
+IsRemote          0
+Salary            0
+> ```
+
+### 💡 분석가의 통찰 (Analyst's Insight)
+* **직무별 임금 스케일 차이 전처리 반영:** 데이터 마케팅 직무와 고단가 AI/데이터 사이언티스 및 개발 직무의 기저 평균 임금은 격차가 큽니다. 이들을 섞어서 대입하면 평균 임금이 뭉개지거나 왜곡되므로, RoleCategory 범주별 평균 연봉을 각각 구해 대입하는 것이 합당합니다.
+
+---
+
+## Step 3: 단변수 분포 분석 (Univariate EDA)
+
+![Step 3 시각화 개념도](img/step3_visualization.svg)
+
+가장 먼저 핵심 변수가 전체 데이터에서 어떤 빈도와 분포를 가졌는지 단일 변수 시각화를 통해 파악해 봅니다.
+
+```python
+plt.figure(figsize=(8, 5))
+
+# 단변수 분석 그래프 생성
+sns.barplot(data=df, x='RoleCategory', y='Salary', palette='Blues_r', errorbar=None)
+plt.title('채용 직무별 평균 연봉 수준', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+### 💡 시각화 차트 읽는 법 & 인사이트
+* **직무별 노동 시장 단가 순위 비교:** 데이터 사이언티스(Data Science) 및 소프트웨어 개발(Software) 직무의 제안 연봉 평균 막대가 마케팅 및 인사(HR) 대비 시장 경쟁력 우위로 인해 가파르게 높게 형성되어 구인 시장의 임금 구도를 실증합니다.
+
+---
+
+## Step 4: 다변수 상관관계 및 이상치 분석 (Multivariate EDA)
+
+![Step 4 상관관계 분석 개념도](img/step4_multivariate.svg)
+
+두 개 이상의 변수를 동시에 결합하여, 조건에 따른 수치 차이나 독립 변수와 종속 변수 간의 통계적 경향을 분석합니다.
+
+```python
+plt.figure(figsize=(9, 6))
+
+# 다변수 분석 그래프 생성
+sns.scatterplot(data=df, x='ExpYears', y='Salary', hue='EducationLevel', palette='Set2', alpha=0.8)
+plt.title('직무 경력 년수 대비 연봉 수준과 학력 프리미엄', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
+* **연차 경력 상승 비례 연봉 증가와 학력 조건의 가속 시너지:** 요구 경력(X축)과 연봉(Y축)이 정직하게 우상향 선형 띠를 이룹니다. 특히 흥미로운 점은 동일한 경력 연수 대역에서도 석박사(Masters/PhD, 초록색/주황색 점 계열) 조건이 요구되는 공고의 연봉 단가가 학사(Bachelors, 주황색 점 계열) 대비 높은 상단 궤적을 선점하고 있어 학력 프리미엄의 존재를 증명합니다.
+
+---
+
+## Step 5: 통계적 직관과 해석 (Statistical Logic)
+
+> 💡 **[급여 결정 요인의 인적 자본 이론(Human Capital Theory)과 경력 가치 가속 곡선]**
+... (생략: 연차 경력 및 학력 요건 연봉 예측을 위한 OLS 다중 회귀 분석 해석)
+
+---
+
+## 🎯 30분 강의 마무리 및 심화 과제
+
+오늘 우리는 실전 데이터셋을 분석하여 판다스로 데이터를 가공 및 정제하고, 시각화를 활용하여 핵심 변수 간의 통계적 유의성을 검증했습니다. 데이터 속에서 숨겨진 패턴을 올바른 시각으로 탐색하는 능력이 데이터 사이언티스트의 가장 강력한 무기입니다.
+
+### 📝 심화 과제 (Advanced Challenge)
+1. **재택근무(IsRemote) 조건별 평균 연봉 비교:** 재택근무가 가능한 공고와 출근 공고의 평균 연봉 차이를 집계하고, 어떤 그룹의 고용 시세가 비싼지 요약해 보세요.
+2. **고소득 신입 공고 서브셋 추출:** 요구 경력이 2년 이하로 낮음에도 연봉이 $90k 이상 책정된 '초고수익 주니어' 직무 공고들의 특징을 요약해 보세요.

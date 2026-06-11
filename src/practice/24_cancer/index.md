@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
@@ -39,7 +39,7 @@ df = pd.read_csv('../csv_data/breast_cancer.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -106,7 +106,7 @@ for col in features:
     df_scaled[col] = (df[col] - df[col].mean()) / df[col].std()
 
 # 스케일링 결과 확인
-display(df_scaled[['diagnosis'] + features].head())
+print(df_scaled[['diagnosis'] + features].head())
 ```
 
 > **💻 [실행 결과]**

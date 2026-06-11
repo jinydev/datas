@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("muted")
 
@@ -39,7 +39,7 @@ df = sns.load_dataset('diamonds')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -93,7 +93,7 @@ display(df.head())
 
 ```python
 # 숫자형 데이터의 통계량 확인
-display(df.describe())
+print(df.describe())
 
 # 논리적으로 불가능한 데이터(크기가 0인 다이아몬드) 필터링
 print("\n[정제 전] 크기가 0인 다이아몬드 개수:")

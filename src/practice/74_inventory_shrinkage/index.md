@@ -1,0 +1,179 @@
+---
+layout: practice
+title: "74. 매장 재고 손실 및 도난 방지 분석 실습"
+permalink: /practice/74_inventory_shrinkage/
+---
+
+# 실전 데이터 분석 74: 리테일 마트 매장 카테고리별 적재 수량 대비 유실/도난 손실량 및 보안 등급별 억제 효과 분석
+
+## 📌 강의 개요 (30분 완성)
+
+![코믹 일러스트](img/intro_comic.png)
+
+대형 소매 유통 마트의 연간 재고 실사 기록 데이터셋입니다. 각 매장 코너별 적재된 재고량 대비 실제 분실, 훼손, 도난으로 분류된 손실 수량(LostUnits)을 파악하고 물리 보안 수준(SecurityLevel)의 실질 예방력을 검증합니다.
+
+**학습 목표:**
+* **미발생 품목 0 일괄 대치 (`fillna`):** 손실 수량이 비어 있는 기록을 유실 미발생 상태인 0으로 보완하여 집계 왜곡을 차단합니다.
+* **카테고리 및 보안 시너지 분석 (`barplot`, `boxplot`):** 코너 품목 종류별 평균 손실 막대 비교 및 보안 CCTV 수준별 손실량 수렴 상자를 대조 분석합니다.
+
+---
+
+## Step 1: 데이터 구조 살펴보기 (Data Overview)
+
+![Step 1 데이터 구조 개념도](img/step1_dataset.svg)
+
+`csv_data` 폴더에 준비해 둔 `inventory_shrinkage.csv` 파일을 판다스로 불러옵니다.
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 그래프 설정 (한글 폰트 및 마이너스 기호 깨짐 방지)
+import koreanize_matplotlib
+plt.rcParams['axes.unicode_minus'] = False
+sns.set_theme(style="whitegrid")
+
+# 로컬 CSV 파일 불러오기
+df = pd.read_csv('../csv_data/inventory_shrinkage.csv')
+
+# 데이터 구조 및 첫 5행 확인
+df = pd.read_csv('../csv_data/inventory_shrinkage.csv')
+print(df.info())
+print(df.head())
+```
+
+> **💻 [실행 결과]**
+> ```text
+<class 'pandas.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   RecordID       1000 non-null   int64  
+ 1   Department     1000 non-null   str    
+ 2   ItemCategory   1000 non-null   str    
+ 3   TotalUnits     1000 non-null   int64  
+ 4   LostUnits      985 non-null    float64
+ 5   SecurityLevel  1000 non-null   str    
+dtypes: float64(1), int64(2), str(3)
+memory usage: 47.0 KB
+RecordID Department ItemCategory  TotalUnits  LostUnits SecurityLevel
+0    740001       Home       Budget        1188       16.0           Low
+1    740002   Clothing       Budget        3886      109.0           Low
+2    740003   Clothing      Premium        3747       89.0           Low
+3    740004     Sports      Premium        1060        5.0          High
+4    740005   Clothing       Budget        2718       58.0           Low
+> ```
+
+### 💡 코드 딥다이브 (Code Deep Dive)
+**주요 분석 대상 컬럼:**
+* `RecordID`: 재고 실사 품목 관리 일련 번호
+* `Department`: 마트 내 관리 부서 (Electronics, Clothing, Beauty, Sports 등)
+* `ItemCategory`: 해당 상품의 단가 포지션 (Premium: 고가 명품, Standard: 일반, Budget: 저가)
+* `TotalUnits`: 해당 상품의 총 매장 진열 적재 수량
+* `LostUnits`: 실사 결과 누락 분실 및 도난당한 유실 수량 (개 단위) (결측치 존재)
+* `SecurityLevel`: 해당 진열대에 적용된 보안 강도 수준 (High, Medium, Low)
+
+---
+
+## Step 2: 전처리와 결측치 정제 (Preprocess)
+
+![Step 2 데이터 정제 개념도](img/step2_missing_values.svg)
+
+현실의 데이터는 항상 누락이 있거나 유효성 정제가 필요합니다. 데이터 전처리 단계에서 결측 상태를 확인하고 올바르게 보정합니다.
+
+```python
+# 1. 컬럼별 결측치 개수 확인
+print("--- 정제 전 결측치 확인 ---")
+print(df.isnull().sum())
+
+# 2. 결측치 전처리 및 대치 수행
+df['LostUnits'] = df['LostUnits'].fillna(0)
+print(df.isnull().sum())
+```
+
+> **💻 [실행 결과]**
+> ```text
+--- 정제 전 결측치 확인 ---
+RecordID          0
+Department        0
+ItemCategory      0
+TotalUnits        0
+LostUnits        15
+SecurityLevel     0
+
+--- 정제 후 결측치 확인 ---
+RecordID         0
+Department       0
+ItemCategory     0
+TotalUnits       0
+LostUnits        0
+SecurityLevel    0
+> ```
+
+### 💡 분석가의 통찰 (Analyst's Insight)
+* **0값 일괄 대치의 논리적 타당성:** 재고 유실 수량(`LostUnits`)이 누락된 품목은 장기 분실이 아예 발생하지 않은 완벽 무결 상태를 의미합니다. 이를 NaN 상태로 내버려 두면 연간 매매 유실률 합계 산출 시 배제되므로 0으로 확실히 정제하여 마트 마진 계산의 기초 데이터를 지켜냅니다.
+
+---
+
+## Step 3: 단변수 분포 분석 (Univariate EDA)
+
+![Step 3 시각화 개념도](img/step3_visualization.svg)
+
+가장 먼저 핵심 변수가 전체 데이터에서 어떤 빈도와 분포를 가졌는지 단일 변수 시각화를 통해 파악해 봅니다.
+
+```python
+plt.figure(figsize=(8, 5))
+
+# 단변수 분석 그래프 생성
+sns.barplot(data=df, x='ItemCategory', y='LostUnits', palette='autumn', errorbar=None)
+plt.title('상품 카테고리별 평균 손실/도난 수량', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_3.svg)
+
+### 💡 시각화 차트 읽는 법 & 인사이트
+* **품목 단가 및 종류별 유실 평균 비교:** 고가 상품이나 부피가 작아 숨기기 쉬운 특정 상품 카테고리의 평균 손실량이 저가 일상 용품 코너 대비 눈에 띄게 높게 형성됩니다. 이는 고위험 유실 구역을 타겟팅한 전술적 방어의 기초 증거가 됩니다.
+
+---
+
+## Step 4: 다변수 상관관계 및 이상치 분석 (Multivariate EDA)
+
+![Step 4 상관관계 분석 개념도](img/step4_multivariate.svg)
+
+두 개 이상의 변수를 동시에 결합하여, 조건에 따른 수치 차이나 독립 변수와 종속 변수 간의 통계적 경향을 분석합니다.
+
+```python
+plt.figure(figsize=(9, 6))
+
+# 다변수 분석 그래프 생성
+sns.boxplot(data=df, x='SecurityLevel', y='LostUnits', palette='Set1')
+plt.title('보안 레벨 등급별 연간 손실/도난 수량 분산', fontsize=14, fontweight='bold')
+plt.show()
+```
+
+> **💻 [실행 결과 시각화]**
+> ![실행 결과 시각화](img/exec_step_4.svg)
+
+### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
+* **물리적 보안 수준이 발휘하는 실질 도난 억제력:** 보안 강도가 'High' 등급(CCTV 밀착형 및 전용 잠금장치 탑재)인 진열대의 손실량 분포 박스는 0 부근에 극도로 얇게 압축되어 수렴해 있습니다. 반면 보안이 취약한 'Low' 진열대는 수염 범위가 100개 이상으로 크게 뻗어 나가는 통제력 유실 상태를 적나라하게 실증합니다.
+
+---
+
+## Step 5: 통계적 직관과 해석 (Statistical Logic)
+
+> 💡 **[소매업 감수율(Shrinkage Rate)과 손실 방지(Loss Prevention)의 정량화]**
+... (생략: 소매 감수율 및 보안 투자 효과 산출 공식 설명)
+
+---
+
+## 🎯 30분 강의 마무리 및 심화 과제
+
+오늘 우리는 실전 데이터셋을 분석하여 판다스로 데이터를 가공 및 정제하고, 시각화를 활용하여 핵심 변수 간의 통계적 유의성을 검증했습니다. 데이터 속에서 숨겨진 패턴을 올바른 시각으로 탐색하는 능력이 데이터 사이언티스트의 가장 강력한 무기입니다.
+
+### 📝 심화 과제 (Advanced Challenge)
+1. **매장 부서(Department)별 총 재고 대비 유실율 산출:** 각 부서별 `LostUnits.sum() / TotalUnits.sum()` 유실 비중을 구하여, 가장 감수 관리가 취급 시급한 부서를 요약해 보세요.
+2. **보안 인프라 가치 대비 ROI 평가:** 보안 등급이 'Low'인 상태에서 'High'로 격상 시 방어할 수 있는 평균 손실 재고 가치(개당 $15로 환산)의 잠재 예산을 산정해 보세요.

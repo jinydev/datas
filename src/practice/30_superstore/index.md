@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
@@ -39,7 +39,7 @@ df = pd.read_csv('../csv_data/superstore.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -92,7 +92,7 @@ display(df.head())
 category_df = df.groupby('Category')[['Sales', 'Profit']].sum()
 
 # 숫자가 너무 기니까 보기 편하게 소수점 2자리까지만 반올림해서 출력
-display(category_df.round(2))
+print(category_df.round(2))
 ```
 
 > **💻 [실행 결과]**

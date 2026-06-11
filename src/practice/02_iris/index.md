@@ -31,7 +31,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("husl") # 붓꽃의 화려함에 어울리는 팔레트
 
@@ -39,7 +39,7 @@ sns.set_palette("husl") # 붓꽃의 화려함에 어울리는 팔레트
 df = sns.load_dataset('iris')
 
 # 데이터의 기초 통계량(min, max, mean 등) 확인
-display(df.describe())
+print(df.describe())
 
 # 품종별 개수 확인
 print(df['species'].value_counts())

@@ -1,0 +1,1001 @@
+country,points,price,province,variety
+France,100,311.0,Province 0,Chardonnay
+US,83,9.0,Province 1,Syrah
+France,97,215.0,Province 2,Merlot
+Italy,93,109.0,Province 3,Merlot
+Italy,83,19.0,Province 4,Syrah
+Italy,80,9.0,Province 5,Chardonnay
+US,100,299.0,Province 6,Chardonnay
+Spain,83,28.0,Province 7,Merlot
+US,95,194.0,Province 8,Pinot Noir
+US,90,70.0,Province 9,Chardonnay
+US,83,31.0,Province 10,Chardonnay
+US,87,49.0,Province 11,Chardonnay
+US,83,16.0,Province 12,Pinot Noir
+US,83,15.0,Province 13,Cabernet Sauvignon
+US,86,32.0,Province 14,Cabernet Sauvignon
+Italy,93,133.0,Province 15,Merlot
+France,84,25.0,Province 16,Pinot Noir
+US,81,20.0,Province 17,Cabernet Sauvignon
+Spain,94,159.0,Province 18,Syrah
+France,87,41.0,Province 19,Cabernet Sauvignon
+France,84,21.0,Province 20,Merlot
+Italy,99,276.0,Province 21,Pinot Noir
+France,80,12.0,Province 22,Pinot Noir
+France,90,97.0,Province 23,Pinot Noir
+Spain,84,29.0,Province 24,Pinot Noir
+Spain,89,56.0,Province 25,Cabernet Sauvignon
+Argentina,98,244.0,Province 26,Pinot Noir
+Argentina,88,33.0,Province 27,Cabernet Sauvignon
+US,88,57.0,Province 28,Chardonnay
+Argentina,90,71.0,Province 29,Cabernet Sauvignon
+US,98,243.0,Province 30,Pinot Noir
+France,96,190.0,Province 31,Syrah
+US,99,270.0,Province 32,Merlot
+Chile,100,293.0,Province 33,Syrah
+France,88,50.0,Province 34,Merlot
+France,99,285.0,Province 35,Cabernet Sauvignon
+US,98,239.0,Province 36,Syrah
+Spain,98,265.0,Province 37,Cabernet Sauvignon
+US,81,23.0,Province 38,Merlot
+US,92,97.0,Province 39,Merlot
+US,82,14.0,Province 40,Merlot
+France,91,77.0,Province 41,Merlot
+US,93,130.0,Province 42,Chardonnay
+France,82,10.0,Province 43,Chardonnay
+US,89,67.0,Province 44,Chardonnay
+US,97,215.0,Province 45,Syrah
+France,88,51.0,Province 46,Chardonnay
+France,89,57.0,Province 47,Pinot Noir
+US,84,11.0,Province 48,Cabernet Sauvignon
+US,82,,Province 49,Cabernet Sauvignon
+France,90,71.0,Province 50,Pinot Noir
+US,100,301.0,Province 51,Merlot
+US,86,36.0,Province 52,Pinot Noir
+US,92,104.0,Province 53,Syrah
+Chile,93,141.0,Province 54,Merlot
+US,91,98.0,Province 55,Pinot Noir
+Spain,98,258.0,Province 56,Syrah
+Italy,93,138.0,Province 57,Syrah
+US,97,222.0,Province 58,Chardonnay
+France,91,93.0,Province 59,Pinot Noir
+France,95,157.0,Province 60,Merlot
+Argentina,88,58.0,Province 61,Chardonnay
+US,97,219.0,Province 62,Syrah
+US,88,39.0,Province 63,Pinot Noir
+US,90,60.0,Province 64,Chardonnay
+Argentina,80,24.0,Province 65,Chardonnay
+Argentina,83,8.0,Province 66,Chardonnay
+Chile,85,43.0,Province 67,Pinot Noir
+Italy,80,13.0,Province 68,Merlot
+France,88,49.0,Province 69,Syrah
+Italy,90,,Province 70,Pinot Noir
+US,96,191.0,Province 71,Pinot Noir
+France,84,11.0,Province 72,Cabernet Sauvignon
+US,94,164.0,Province 73,Chardonnay
+US,82,21.0,Province 74,Cabernet Sauvignon
+US,86,45.0,Province 75,Merlot
+Spain,93,126.0,Province 76,Pinot Noir
+US,98,238.0,Province 77,Merlot
+Spain,85,8.0,Province 78,Cabernet Sauvignon
+Italy,96,194.0,Province 79,Chardonnay
+Spain,84,38.0,Province 80,Syrah
+Argentina,82,35.0,Province 81,Cabernet Sauvignon
+Argentina,91,105.0,Province 82,Merlot
+US,88,61.0,Province 83,Pinot Noir
+US,88,56.0,Province 84,Cabernet Sauvignon
+Argentina,84,22.0,Province 85,Cabernet Sauvignon
+Italy,82,,Province 86,Pinot Noir
+France,84,10.0,Province 87,Merlot
+US,98,256.0,Province 88,Cabernet Sauvignon
+Chile,81,10.0,Province 89,Cabernet Sauvignon
+Italy,90,79.0,Province 90,Cabernet Sauvignon
+US,90,73.0,Province 91,Syrah
+France,84,8.0,Province 92,Cabernet Sauvignon
+US,94,142.0,Province 93,Pinot Noir
+Italy,83,20.0,Province 94,Pinot Noir
+US,99,270.0,Province 95,Pinot Noir
+US,91,85.0,Province 96,Cabernet Sauvignon
+Spain,98,270.0,Province 97,Merlot
+US,92,114.0,Province 98,Cabernet Sauvignon
+US,87,46.0,Province 99,Chardonnay
+US,85,21.0,Province 100,Merlot
+US,97,,Province 101,Syrah
+US,93,121.0,Province 102,Syrah
+US,100,311.0,Province 103,Syrah
+US,86,30.0,Province 104,Merlot
+US,80,8.0,Province 105,Chardonnay
+Spain,85,40.0,Province 106,Merlot
+France,87,50.0,Province 107,Merlot
+US,95,178.0,Province 108,Pinot Noir
+Spain,89,62.0,Province 109,Chardonnay
+Chile,97,228.0,Province 110,Pinot Noir
+Italy,97,230.0,Province 111,Syrah
+Chile,81,20.0,Province 112,Cabernet Sauvignon
+US,84,29.0,Province 113,Pinot Noir
+Argentina,96,184.0,Province 114,Syrah
+US,98,237.0,Province 115,Syrah
+US,96,181.0,Province 116,Cabernet Sauvignon
+US,86,26.0,Province 117,Pinot Noir
+France,87,30.0,Province 118,Merlot
+Italy,90,83.0,Province 119,Cabernet Sauvignon
+Italy,100,318.0,Province 120,Pinot Noir
+Spain,96,197.0,Province 121,Syrah
+US,84,19.0,Province 122,Merlot
+France,82,31.0,Province 123,Cabernet Sauvignon
+US,84,31.0,Province 124,Chardonnay
+Argentina,90,86.0,Province 125,Merlot
+US,87,40.0,Province 126,Pinot Noir
+US,83,25.0,Province 127,Merlot
+Spain,80,21.0,Province 128,Syrah
+France,81,8.0,Province 129,Syrah
+US,90,85.0,Province 130,Cabernet Sauvignon
+Spain,86,24.0,Province 131,Cabernet Sauvignon
+US,99,282.0,Province 132,Syrah
+France,88,56.0,Province 133,Chardonnay
+Spain,90,76.0,Province 134,Pinot Noir
+US,97,216.0,Province 135,Merlot
+Italy,92,109.0,Province 136,Cabernet Sauvignon
+US,82,22.0,Province 137,Merlot
+US,85,24.0,Province 138,Pinot Noir
+Italy,100,312.0,Province 139,Cabernet Sauvignon
+France,86,42.0,Province 140,Chardonnay
+US,88,35.0,Province 141,Cabernet Sauvignon
+Italy,88,44.0,Province 142,Pinot Noir
+France,97,215.0,Province 143,Syrah
+Spain,90,74.0,Province 144,Syrah
+US,100,293.0,Province 145,Syrah
+US,81,23.0,Province 146,Merlot
+US,98,249.0,Province 147,Chardonnay
+US,80,8.0,Province 148,Cabernet Sauvignon
+France,86,44.0,Province 149,Cabernet Sauvignon
+Argentina,84,31.0,Province 150,Chardonnay
+Spain,85,19.0,Province 151,Chardonnay
+Chile,98,253.0,Province 152,Pinot Noir
+US,81,32.0,Province 153,Merlot
+US,98,240.0,Province 154,Pinot Noir
+US,95,170.0,Province 155,Syrah
+Chile,97,242.0,Province 156,Merlot
+Italy,98,250.0,Province 157,Chardonnay
+US,84,20.0,Province 158,Pinot Noir
+Chile,80,19.0,Province 159,Cabernet Sauvignon
+Chile,95,153.0,Province 160,Syrah
+US,98,266.0,Province 161,Merlot
+France,97,226.0,Province 162,Chardonnay
+US,92,100.0,Province 163,Syrah
+US,87,41.0,Province 164,Pinot Noir
+France,96,186.0,Province 165,Syrah
+US,93,133.0,Province 166,Merlot
+Spain,93,141.0,Province 167,Merlot
+US,95,185.0,Province 168,Chardonnay
+Spain,80,25.0,Province 169,Chardonnay
+Chile,99,269.0,Province 170,Pinot Noir
+US,86,29.0,Province 171,Pinot Noir
+Chile,81,8.0,Province 172,Pinot Noir
+US,97,223.0,Province 173,Pinot Noir
+US,85,21.0,Province 174,Merlot
+Spain,82,18.0,Province 175,Chardonnay
+Chile,89,67.0,Province 176,Cabernet Sauvignon
+Italy,99,274.0,Province 177,Merlot
+US,91,100.0,Province 178,Chardonnay
+Argentina,80,17.0,Province 179,Merlot
+Argentina,88,54.0,Province 180,Syrah
+US,82,10.0,Province 181,Chardonnay
+US,83,8.0,Province 182,Merlot
+Italy,100,293.0,Province 183,Pinot Noir
+US,87,48.0,Province 184,Cabernet Sauvignon
+Chile,88,65.0,Province 185,Chardonnay
+Italy,85,22.0,Province 186,Chardonnay
+Italy,96,193.0,Province 187,Syrah
+France,96,197.0,Province 188,Cabernet Sauvignon
+France,85,43.0,Province 189,Chardonnay
+US,89,58.0,Province 190,Chardonnay
+US,81,23.0,Province 191,Chardonnay
+US,80,30.0,Province 192,Pinot Noir
+US,89,82.0,Province 193,Cabernet Sauvignon
+Argentina,95,165.0,Province 194,Cabernet Sauvignon
+US,85,26.0,Province 195,Chardonnay
+France,80,8.0,Province 196,Cabernet Sauvignon
+France,92,103.0,Province 197,Chardonnay
+US,88,50.0,Province 198,Chardonnay
+France,80,29.0,Province 199,Chardonnay
+US,82,8.0,Province 200,Chardonnay
+US,94,146.0,Province 201,Pinot Noir
+US,95,159.0,Province 202,Pinot Noir
+Italy,90,66.0,Province 203,Merlot
+US,80,8.0,Province 204,Chardonnay
+France,86,34.0,Province 205,Pinot Noir
+US,93,132.0,Province 206,Cabernet Sauvignon
+Chile,98,260.0,Province 207,Pinot Noir
+Italy,85,40.0,Province 208,Syrah
+US,95,161.0,Province 209,Chardonnay
+US,90,88.0,Province 210,Cabernet Sauvignon
+US,92,,Province 211,Syrah
+Spain,90,85.0,Province 212,Merlot
+US,99,270.0,Province 213,Syrah
+US,80,17.0,Province 214,Syrah
+US,82,8.0,Province 215,Chardonnay
+US,95,153.0,Province 216,Pinot Noir
+US,80,16.0,Province 217,Merlot
+Spain,99,290.0,Province 218,Merlot
+US,89,68.0,Province 219,Merlot
+Argentina,96,206.0,Province 220,Syrah
+US,84,13.0,Province 221,Merlot
+US,95,159.0,Province 222,Merlot
+Argentina,89,69.0,Province 223,Pinot Noir
+US,88,35.0,Province 224,Pinot Noir
+Spain,88,43.0,Province 225,Syrah
+US,99,263.0,Province 226,Syrah
+US,90,93.0,Province 227,Chardonnay
+US,88,38.0,Province 228,Merlot
+Argentina,81,23.0,Province 229,Chardonnay
+Italy,84,36.0,Province 230,Merlot
+US,82,22.0,Province 231,Cabernet Sauvignon
+France,99,288.0,Province 232,Pinot Noir
+Italy,97,223.0,Province 233,Syrah
+Chile,81,23.0,Province 234,Pinot Noir
+Spain,83,8.0,Province 235,Cabernet Sauvignon
+Italy,91,58.0,Province 236,Merlot
+Spain,88,57.0,Province 237,Merlot
+US,87,41.0,Province 238,Chardonnay
+Argentina,95,156.0,Province 239,Cabernet Sauvignon
+US,98,246.0,Province 240,Cabernet Sauvignon
+Italy,96,204.0,Province 241,Cabernet Sauvignon
+Chile,81,13.0,Province 242,Merlot
+Argentina,96,195.0,Province 243,Pinot Noir
+US,93,132.0,Province 244,Chardonnay
+France,87,33.0,Province 245,Merlot
+Argentina,91,67.0,Province 246,Pinot Noir
+Argentina,80,8.0,Province 247,Syrah
+France,83,21.0,Province 248,Cabernet Sauvignon
+Spain,80,,Province 249,Cabernet Sauvignon
+Spain,98,220.0,Province 250,Syrah
+Argentina,97,219.0,Province 251,Pinot Noir
+Italy,99,258.0,Province 252,Cabernet Sauvignon
+Chile,94,146.0,Province 253,Merlot
+US,97,215.0,Province 254,Chardonnay
+US,86,49.0,Province 255,Pinot Noir
+Argentina,80,8.0,Province 256,Merlot
+Argentina,90,85.0,Province 257,Syrah
+US,81,8.0,Province 258,Chardonnay
+Spain,93,122.0,Province 259,Syrah
+Italy,93,122.0,Province 260,Cabernet Sauvignon
+Italy,88,53.0,Province 261,Cabernet Sauvignon
+Italy,92,118.0,Province 262,Pinot Noir
+US,97,222.0,Province 263,Chardonnay
+Argentina,100,305.0,Province 264,Cabernet Sauvignon
+US,84,14.0,Province 265,Syrah
+US,85,29.0,Province 266,Merlot
+France,90,72.0,Province 267,Pinot Noir
+US,92,121.0,Province 268,Chardonnay
+France,86,33.0,Province 269,Cabernet Sauvignon
+Spain,83,8.0,Province 270,Merlot
+US,80,8.0,Province 271,Pinot Noir
+US,84,25.0,Province 272,Syrah
+Italy,98,248.0,Province 273,Syrah
+Argentina,90,89.0,Province 274,Cabernet Sauvignon
+France,100,299.0,Province 275,Cabernet Sauvignon
+US,95,164.0,Province 276,Merlot
+US,86,38.0,Province 277,Chardonnay
+US,98,255.0,Province 278,Pinot Noir
+US,83,23.0,Province 279,Pinot Noir
+US,83,8.0,Province 280,Merlot
+US,93,123.0,Province 281,Merlot
+Spain,86,47.0,Province 282,Merlot
+US,81,18.0,Province 283,Cabernet Sauvignon
+US,87,56.0,Province 284,Chardonnay
+US,100,303.0,Province 285,Pinot Noir
+Chile,89,52.0,Province 286,Syrah
+France,89,60.0,Province 287,Syrah
+Italy,95,184.0,Province 288,Pinot Noir
+Argentina,91,82.0,Province 289,Pinot Noir
+US,94,130.0,Province 290,Merlot
+Italy,84,29.0,Province 291,Chardonnay
+US,88,49.0,Province 292,Pinot Noir
+US,85,32.0,Province 293,Chardonnay
+US,81,11.0,Province 294,Cabernet Sauvignon
+US,96,198.0,Province 295,Chardonnay
+US,95,183.0,Province 296,Cabernet Sauvignon
+France,89,62.0,Province 297,Cabernet Sauvignon
+US,87,47.0,Province 298,Cabernet Sauvignon
+US,96,195.0,Province 299,Syrah
+Chile,80,12.0,Province 300,Chardonnay
+Italy,95,168.0,Province 301,Syrah
+Spain,100,300.0,Province 302,Cabernet Sauvignon
+US,82,24.0,Province 303,Merlot
+US,91,91.0,Province 304,Cabernet Sauvignon
+France,80,14.0,Province 305,Pinot Noir
+US,85,33.0,Province 306,Syrah
+US,94,158.0,Province 307,Chardonnay
+Chile,82,24.0,Province 308,Merlot
+Italy,82,24.0,Province 309,Cabernet Sauvignon
+Italy,94,152.0,Province 310,Syrah
+Spain,81,8.0,Province 311,Pinot Noir
+US,99,277.0,Province 312,Cabernet Sauvignon
+Spain,84,22.0,Province 313,Chardonnay
+Italy,85,31.0,Province 314,Syrah
+France,91,99.0,Province 315,Chardonnay
+US,92,124.0,Province 316,Pinot Noir
+US,84,22.0,Province 317,Cabernet Sauvignon
+Spain,98,244.0,Province 318,Chardonnay
+US,98,236.0,Province 319,Pinot Noir
+US,92,134.0,Province 320,Merlot
+Argentina,88,59.0,Province 321,Pinot Noir
+Chile,88,48.0,Province 322,Chardonnay
+Italy,99,279.0,Province 323,Merlot
+US,95,175.0,Province 324,Syrah
+US,81,14.0,Province 325,Syrah
+Italy,96,192.0,Province 326,Chardonnay
+Argentina,96,186.0,Province 327,Chardonnay
+Argentina,89,55.0,Province 328,Merlot
+US,89,54.0,Province 329,Chardonnay
+US,88,52.0,Province 330,Chardonnay
+France,95,175.0,Province 331,Merlot
+France,89,70.0,Province 332,Cabernet Sauvignon
+France,98,247.0,Province 333,Syrah
+France,97,219.0,Province 334,Merlot
+France,98,251.0,Province 335,Merlot
+France,94,145.0,Province 336,Pinot Noir
+Chile,81,,Province 337,Merlot
+Italy,82,34.0,Province 338,Merlot
+Chile,93,129.0,Province 339,Merlot
+US,93,118.0,Province 340,Merlot
+Italy,91,99.0,Province 341,Chardonnay
+France,91,80.0,Province 342,Pinot Noir
+Chile,83,31.0,Province 343,Merlot
+France,80,11.0,Province 344,Chardonnay
+Chile,83,18.0,Province 345,Cabernet Sauvignon
+US,82,8.0,Province 346,Syrah
+France,95,169.0,Province 347,Merlot
+US,89,62.0,Province 348,Chardonnay
+US,94,165.0,Province 349,Cabernet Sauvignon
+US,93,137.0,Province 350,Pinot Noir
+Chile,98,245.0,Province 351,Cabernet Sauvignon
+Spain,85,27.0,Province 352,Chardonnay
+US,84,15.0,Province 353,Chardonnay
+US,92,102.0,Province 354,Merlot
+Argentina,93,123.0,Province 355,Pinot Noir
+Spain,90,78.0,Province 356,Chardonnay
+Chile,92,117.0,Province 357,Merlot
+France,94,156.0,Province 358,Cabernet Sauvignon
+Italy,81,26.0,Province 359,Syrah
+Argentina,91,93.0,Province 360,Syrah
+US,82,38.0,Province 361,Pinot Noir
+US,80,12.0,Province 362,Merlot
+Italy,97,221.0,Province 363,Chardonnay
+Spain,92,103.0,Province 364,Merlot
+Chile,92,95.0,Province 365,Cabernet Sauvignon
+US,86,32.0,Province 366,Merlot
+France,93,126.0,Province 367,Cabernet Sauvignon
+Italy,97,235.0,Province 368,Merlot
+US,88,55.0,Province 369,Merlot
+Italy,87,53.0,Province 370,Cabernet Sauvignon
+Spain,81,18.0,Province 371,Merlot
+Spain,100,289.0,Province 372,Syrah
+Italy,99,281.0,Province 373,Merlot
+US,100,316.0,Province 374,Syrah
+France,99,300.0,Province 375,Pinot Noir
+US,87,42.0,Province 376,Syrah
+US,84,17.0,Province 377,Syrah
+US,87,37.0,Province 378,Pinot Noir
+France,91,119.0,Province 379,Pinot Noir
+Italy,88,39.0,Province 380,Syrah
+US,94,145.0,Province 381,Cabernet Sauvignon
+US,83,35.0,Province 382,Pinot Noir
+Chile,99,279.0,Province 383,Pinot Noir
+France,88,44.0,Province 384,Merlot
+US,96,207.0,Province 385,Chardonnay
+US,97,234.0,Province 386,Syrah
+Italy,87,41.0,Province 387,Cabernet Sauvignon
+US,80,13.0,Province 388,Chardonnay
+US,81,8.0,Province 389,Merlot
+US,98,244.0,Province 390,Pinot Noir
+Italy,99,270.0,Province 391,Syrah
+Spain,96,198.0,Province 392,Chardonnay
+Italy,84,27.0,Province 393,Chardonnay
+US,88,48.0,Province 394,Merlot
+US,94,134.0,Province 395,Chardonnay
+France,96,184.0,Province 396,Merlot
+Spain,85,32.0,Province 397,Pinot Noir
+Spain,92,93.0,Province 398,Cabernet Sauvignon
+US,95,177.0,Province 399,Merlot
+Italy,100,325.0,Province 400,Syrah
+Chile,87,50.0,Province 401,Chardonnay
+France,95,162.0,Province 402,Syrah
+Italy,92,105.0,Province 403,Merlot
+Italy,85,29.0,Province 404,Cabernet Sauvignon
+US,92,126.0,Province 405,Chardonnay
+Argentina,83,22.0,Province 406,Cabernet Sauvignon
+Italy,82,31.0,Province 407,Merlot
+Chile,98,243.0,Province 408,Chardonnay
+US,86,35.0,Province 409,Syrah
+France,95,165.0,Province 410,Cabernet Sauvignon
+US,81,24.0,Province 411,Cabernet Sauvignon
+US,84,37.0,Province 412,Chardonnay
+France,92,98.0,Province 413,Pinot Noir
+Italy,87,45.0,Province 414,Pinot Noir
+US,88,57.0,Province 415,Merlot
+US,81,10.0,Province 416,Cabernet Sauvignon
+France,89,64.0,Province 417,Merlot
+US,89,76.0,Province 418,Cabernet Sauvignon
+Italy,96,217.0,Province 419,Syrah
+US,97,223.0,Province 420,Chardonnay
+Chile,97,209.0,Province 421,Merlot
+US,82,15.0,Province 422,Chardonnay
+France,89,64.0,Province 423,Syrah
+Chile,93,108.0,Province 424,Chardonnay
+France,92,101.0,Province 425,Syrah
+France,96,197.0,Province 426,Syrah
+US,99,272.0,Province 427,Chardonnay
+Chile,85,29.0,Province 428,Pinot Noir
+Spain,99,270.0,Province 429,Cabernet Sauvignon
+US,97,239.0,Province 430,Merlot
+Spain,90,84.0,Province 431,Cabernet Sauvignon
+Italy,80,9.0,Province 432,Chardonnay
+France,84,22.0,Province 433,Merlot
+US,94,142.0,Province 434,Pinot Noir
+Italy,96,199.0,Province 435,Syrah
+US,88,44.0,Province 436,Chardonnay
+Italy,81,24.0,Province 437,Cabernet Sauvignon
+Italy,88,60.0,Province 438,Pinot Noir
+France,86,31.0,Province 439,Syrah
+US,88,58.0,Province 440,Cabernet Sauvignon
+Argentina,96,203.0,Province 441,Merlot
+France,94,130.0,Province 442,Chardonnay
+US,87,51.0,Province 443,Merlot
+France,96,189.0,Province 444,Merlot
+Spain,100,313.0,Province 445,Merlot
+US,84,39.0,Province 446,Cabernet Sauvignon
+Spain,88,57.0,Province 447,Merlot
+US,91,95.0,Province 448,Syrah
+US,93,115.0,Province 449,Merlot
+Argentina,81,15.0,Province 450,Chardonnay
+US,90,79.0,Province 451,Cabernet Sauvignon
+US,83,16.0,Province 452,Syrah
+US,89,59.0,Province 453,Cabernet Sauvignon
+US,98,240.0,Province 454,Syrah
+Italy,90,61.0,Province 455,Pinot Noir
+US,93,133.0,Province 456,Merlot
+Chile,99,278.0,Province 457,Pinot Noir
+Italy,83,38.0,Province 458,Chardonnay
+Argentina,82,34.0,Province 459,Chardonnay
+US,81,27.0,Province 460,Chardonnay
+US,80,9.0,Province 461,Cabernet Sauvignon
+Chile,98,229.0,Province 462,Cabernet Sauvignon
+Italy,82,21.0,Province 463,Merlot
+US,92,103.0,Province 464,Cabernet Sauvignon
+US,92,120.0,Province 465,Chardonnay
+Spain,95,166.0,Province 466,Merlot
+US,93,107.0,Province 467,Syrah
+Italy,87,53.0,Province 468,Merlot
+Italy,85,26.0,Province 469,Chardonnay
+Italy,81,19.0,Province 470,Syrah
+France,96,197.0,Province 471,Syrah
+Argentina,97,207.0,Province 472,Merlot
+Italy,83,12.0,Province 473,Syrah
+France,93,128.0,Province 474,Chardonnay
+US,99,282.0,Province 475,Syrah
+US,85,,Province 476,Cabernet Sauvignon
+US,93,130.0,Province 477,Syrah
+US,94,154.0,Province 478,Pinot Noir
+US,92,127.0,Province 479,Syrah
+US,85,40.0,Province 480,Cabernet Sauvignon
+Italy,97,205.0,Province 481,Cabernet Sauvignon
+France,96,215.0,Province 482,Merlot
+Italy,82,29.0,Province 483,Cabernet Sauvignon
+US,82,21.0,Province 484,Syrah
+Chile,96,195.0,Province 485,Cabernet Sauvignon
+France,93,137.0,Province 486,Chardonnay
+Spain,92,127.0,Province 487,Chardonnay
+US,95,178.0,Province 488,Chardonnay
+Italy,87,45.0,Province 489,Cabernet Sauvignon
+Italy,96,190.0,Province 490,Chardonnay
+US,98,226.0,Province 491,Syrah
+US,80,13.0,Province 492,Pinot Noir
+Argentina,83,21.0,Province 493,Pinot Noir
+US,87,56.0,Province 494,Merlot
+France,94,165.0,Province 495,Cabernet Sauvignon
+Italy,90,73.0,Province 496,Chardonnay
+France,81,26.0,Province 497,Syrah
+Italy,94,139.0,Province 498,Chardonnay
+Chile,86,27.0,Province 499,Syrah
+US,95,183.0,Province 500,Syrah
+US,80,8.0,Province 501,Syrah
+Spain,92,118.0,Province 502,Cabernet Sauvignon
+US,82,12.0,Province 503,Syrah
+France,88,72.0,Province 504,Cabernet Sauvignon
+US,83,37.0,Province 505,Chardonnay
+US,85,36.0,Province 506,Syrah
+US,93,116.0,Province 507,Syrah
+US,90,68.0,Province 508,Chardonnay
+US,81,13.0,Province 509,Merlot
+Argentina,96,206.0,Province 510,Syrah
+France,86,31.0,Province 511,Chardonnay
+France,80,11.0,Province 512,Cabernet Sauvignon
+France,82,13.0,Province 513,Cabernet Sauvignon
+US,98,260.0,Province 514,Pinot Noir
+US,89,63.0,Province 515,Merlot
+Chile,97,213.0,Province 516,Pinot Noir
+US,98,229.0,Province 517,Syrah
+France,93,,Province 518,Merlot
+France,80,10.0,Province 519,Cabernet Sauvignon
+US,90,96.0,Province 520,Pinot Noir
+Spain,98,245.0,Province 521,Syrah
+Argentina,93,118.0,Province 522,Cabernet Sauvignon
+Chile,85,26.0,Province 523,Pinot Noir
+France,98,243.0,Province 524,Merlot
+Italy,93,128.0,Province 525,Cabernet Sauvignon
+France,90,71.0,Province 526,Merlot
+France,92,129.0,Province 527,Chardonnay
+Italy,82,32.0,Province 528,Cabernet Sauvignon
+US,91,95.0,Province 529,Pinot Noir
+Argentina,90,82.0,Province 530,Syrah
+US,87,59.0,Province 531,Pinot Noir
+US,89,63.0,Province 532,Cabernet Sauvignon
+Argentina,86,41.0,Province 533,Pinot Noir
+Spain,89,40.0,Province 534,Syrah
+France,81,20.0,Province 535,Merlot
+France,92,91.0,Province 536,Merlot
+Italy,97,206.0,Province 537,Merlot
+US,89,65.0,Province 538,Merlot
+US,98,252.0,Province 539,Merlot
+Italy,81,32.0,Province 540,Pinot Noir
+US,82,8.0,Province 541,Cabernet Sauvignon
+Argentina,89,70.0,Province 542,Merlot
+Spain,99,266.0,Province 543,Syrah
+US,84,40.0,Province 544,Cabernet Sauvignon
+France,100,317.0,Province 545,Chardonnay
+Argentina,97,241.0,Province 546,Syrah
+US,87,42.0,Province 547,Syrah
+France,84,25.0,Province 548,Syrah
+Chile,83,14.0,Province 549,Cabernet Sauvignon
+Italy,93,119.0,Province 550,Chardonnay
+France,90,85.0,Province 551,Merlot
+Chile,88,59.0,Province 552,Merlot
+US,97,212.0,Province 553,Merlot
+US,100,318.0,Province 554,Chardonnay
+US,98,241.0,Province 555,Merlot
+Italy,86,14.0,Province 556,Cabernet Sauvignon
+US,89,53.0,Province 557,Chardonnay
+US,87,52.0,Province 558,Pinot Noir
+Italy,91,82.0,Province 559,Chardonnay
+US,90,84.0,Province 560,Cabernet Sauvignon
+Spain,97,214.0,Province 561,Chardonnay
+France,83,34.0,Province 562,Merlot
+Argentina,98,253.0,Province 563,Merlot
+US,97,199.0,Province 564,Pinot Noir
+Spain,91,93.0,Province 565,Merlot
+US,99,278.0,Province 566,Merlot
+US,89,59.0,Province 567,Chardonnay
+US,80,8.0,Province 568,Cabernet Sauvignon
+US,96,183.0,Province 569,Merlot
+US,86,32.0,Province 570,Syrah
+US,93,130.0,Province 571,Syrah
+US,96,211.0,Province 572,Cabernet Sauvignon
+France,87,42.0,Province 573,Pinot Noir
+Italy,99,283.0,Province 574,Pinot Noir
+US,91,92.0,Province 575,Chardonnay
+France,86,44.0,Province 576,Pinot Noir
+US,87,33.0,Province 577,Merlot
+US,84,17.0,Province 578,Syrah
+Spain,93,118.0,Province 579,Cabernet Sauvignon
+France,98,238.0,Province 580,Syrah
+Chile,92,100.0,Province 581,Merlot
+France,99,271.0,Province 582,Pinot Noir
+Italy,92,121.0,Province 583,Chardonnay
+US,96,188.0,Province 584,Cabernet Sauvignon
+France,100,303.0,Province 585,Cabernet Sauvignon
+US,93,119.0,Province 586,Cabernet Sauvignon
+US,83,26.0,Province 587,Syrah
+US,100,326.0,Province 588,Merlot
+US,81,22.0,Province 589,Merlot
+US,89,62.0,Province 590,Chardonnay
+Chile,90,63.0,Province 591,Syrah
+US,87,49.0,Province 592,Chardonnay
+Spain,86,42.0,Province 593,Cabernet Sauvignon
+France,89,69.0,Province 594,Chardonnay
+France,87,41.0,Province 595,Syrah
+France,80,8.0,Province 596,Pinot Noir
+Italy,85,9.0,Province 597,Cabernet Sauvignon
+France,90,66.0,Province 598,Syrah
+US,96,187.0,Province 599,Syrah
+France,88,56.0,Province 600,Merlot
+US,84,24.0,Province 601,Cabernet Sauvignon
+US,96,195.0,Province 602,Cabernet Sauvignon
+Spain,95,188.0,Province 603,Syrah
+Spain,88,55.0,Province 604,Cabernet Sauvignon
+Argentina,100,316.0,Province 605,Syrah
+US,92,117.0,Province 606,Chardonnay
+Chile,82,18.0,Province 607,Merlot
+Italy,99,293.0,Province 608,Chardonnay
+US,90,90.0,Province 609,Syrah
+France,85,29.0,Province 610,Cabernet Sauvignon
+Chile,88,43.0,Province 611,Chardonnay
+France,87,48.0,Province 612,Cabernet Sauvignon
+Italy,89,,Province 613,Pinot Noir
+US,100,319.0,Province 614,Pinot Noir
+France,83,23.0,Province 615,Cabernet Sauvignon
+France,100,292.0,Province 616,Cabernet Sauvignon
+Argentina,93,131.0,Province 617,Pinot Noir
+Chile,90,68.0,Province 618,Pinot Noir
+US,84,41.0,Province 619,Merlot
+Argentina,92,102.0,Province 620,Chardonnay
+US,89,60.0,Province 621,Cabernet Sauvignon
+US,89,80.0,Province 622,Pinot Noir
+US,91,88.0,Province 623,Cabernet Sauvignon
+Italy,82,19.0,Province 624,Merlot
+US,84,31.0,Province 625,Cabernet Sauvignon
+US,100,327.0,Province 626,Cabernet Sauvignon
+France,82,8.0,Province 627,Chardonnay
+France,99,256.0,Province 628,Merlot
+Spain,96,197.0,Province 629,Chardonnay
+US,97,229.0,Province 630,Chardonnay
+US,82,21.0,Province 631,Pinot Noir
+US,86,23.0,Province 632,Pinot Noir
+US,98,257.0,Province 633,Merlot
+US,85,24.0,Province 634,Merlot
+US,85,60.0,Province 635,Cabernet Sauvignon
+Italy,84,,Province 636,Pinot Noir
+US,82,22.0,Province 637,Chardonnay
+France,99,279.0,Province 638,Cabernet Sauvignon
+US,93,126.0,Province 639,Cabernet Sauvignon
+Chile,97,208.0,Province 640,Pinot Noir
+Italy,85,36.0,Province 641,Pinot Noir
+Chile,82,28.0,Province 642,Pinot Noir
+US,95,150.0,Province 643,Syrah
+US,86,46.0,Province 644,Merlot
+Spain,93,131.0,Province 645,Merlot
+US,85,20.0,Province 646,Chardonnay
+US,91,82.0,Province 647,Chardonnay
+France,97,204.0,Province 648,Chardonnay
+Italy,83,17.0,Province 649,Pinot Noir
+Italy,99,272.0,Province 650,Pinot Noir
+France,82,8.0,Province 651,Chardonnay
+US,91,96.0,Province 652,Pinot Noir
+US,87,44.0,Province 653,Pinot Noir
+US,85,32.0,Province 654,Pinot Noir
+France,98,241.0,Province 655,Merlot
+France,98,254.0,Province 656,Merlot
+US,94,149.0,Province 657,Pinot Noir
+US,94,132.0,Province 658,Merlot
+US,90,70.0,Province 659,Pinot Noir
+Argentina,95,172.0,Province 660,Merlot
+France,84,25.0,Province 661,Chardonnay
+US,90,85.0,Province 662,Merlot
+France,85,16.0,Province 663,Cabernet Sauvignon
+France,80,8.0,Province 664,Chardonnay
+Italy,91,94.0,Province 665,Pinot Noir
+Italy,98,256.0,Province 666,Chardonnay
+Italy,94,135.0,Province 667,Cabernet Sauvignon
+Italy,88,41.0,Province 668,Cabernet Sauvignon
+Spain,91,87.0,Province 669,Cabernet Sauvignon
+US,80,8.0,Province 670,Pinot Noir
+France,99,269.0,Province 671,Cabernet Sauvignon
+US,94,139.0,Province 672,Pinot Noir
+France,87,43.0,Province 673,Chardonnay
+Italy,95,180.0,Province 674,Cabernet Sauvignon
+Chile,95,164.0,Province 675,Chardonnay
+France,97,197.0,Province 676,Chardonnay
+US,100,318.0,Province 677,Pinot Noir
+Argentina,91,83.0,Province 678,Syrah
+US,91,85.0,Province 679,Cabernet Sauvignon
+US,99,253.0,Province 680,Syrah
+US,97,208.0,Province 681,Cabernet Sauvignon
+France,94,155.0,Province 682,Chardonnay
+US,90,94.0,Province 683,Pinot Noir
+Spain,100,309.0,Province 684,Chardonnay
+US,99,275.0,Province 685,Cabernet Sauvignon
+France,83,15.0,Province 686,Syrah
+Italy,82,21.0,Province 687,Cabernet Sauvignon
+US,90,72.0,Province 688,Cabernet Sauvignon
+US,87,38.0,Province 689,Merlot
+Chile,87,43.0,Province 690,Syrah
+Italy,80,20.0,Province 691,Merlot
+Spain,85,43.0,Province 692,Chardonnay
+Spain,95,190.0,Province 693,Pinot Noir
+US,82,14.0,Province 694,Pinot Noir
+Argentina,90,73.0,Province 695,Chardonnay
+Spain,93,129.0,Province 696,Chardonnay
+France,96,180.0,Province 697,Chardonnay
+France,87,60.0,Province 698,Syrah
+US,85,27.0,Province 699,Pinot Noir
+US,99,262.0,Province 700,Syrah
+Spain,98,261.0,Province 701,Pinot Noir
+France,81,12.0,Province 702,Merlot
+US,97,203.0,Province 703,Merlot
+Chile,98,272.0,Province 704,Cabernet Sauvignon
+France,84,22.0,Province 705,Syrah
+US,94,147.0,Province 706,Chardonnay
+France,95,172.0,Province 707,Merlot
+France,97,225.0,Province 708,Syrah
+Italy,85,32.0,Province 709,Pinot Noir
+Spain,98,247.0,Province 710,Cabernet Sauvignon
+France,86,44.0,Province 711,Merlot
+US,83,23.0,Province 712,Cabernet Sauvignon
+US,90,69.0,Province 713,Pinot Noir
+Chile,80,25.0,Province 714,Cabernet Sauvignon
+US,83,12.0,Province 715,Cabernet Sauvignon
+Spain,83,26.0,Province 716,Pinot Noir
+Italy,82,19.0,Province 717,Chardonnay
+US,98,254.0,Province 718,Merlot
+US,90,72.0,Province 719,Merlot
+US,85,21.0,Province 720,Chardonnay
+France,82,27.0,Province 721,Syrah
+Italy,88,38.0,Province 722,Pinot Noir
+US,100,297.0,Province 723,Chardonnay
+Chile,82,19.0,Province 724,Cabernet Sauvignon
+US,92,98.0,Province 725,Cabernet Sauvignon
+France,95,173.0,Province 726,Syrah
+Italy,86,24.0,Province 727,Pinot Noir
+Chile,90,80.0,Province 728,Pinot Noir
+US,84,20.0,Province 729,Merlot
+US,100,318.0,Province 730,Merlot
+US,83,19.0,Province 731,Pinot Noir
+US,81,8.0,Province 732,Chardonnay
+US,84,17.0,Province 733,Syrah
+Spain,97,213.0,Province 734,Cabernet Sauvignon
+Spain,91,92.0,Province 735,Cabernet Sauvignon
+France,90,73.0,Province 736,Cabernet Sauvignon
+France,90,91.0,Province 737,Pinot Noir
+France,87,34.0,Province 738,Chardonnay
+France,95,167.0,Province 739,Merlot
+Italy,92,113.0,Province 740,Chardonnay
+France,84,22.0,Province 741,Cabernet Sauvignon
+France,97,220.0,Province 742,Syrah
+France,87,49.0,Province 743,Pinot Noir
+US,89,84.0,Province 744,Merlot
+US,85,24.0,Province 745,Syrah
+US,88,69.0,Province 746,Pinot Noir
+Argentina,97,216.0,Province 747,Cabernet Sauvignon
+Italy,97,229.0,Province 748,Merlot
+France,90,88.0,Province 749,Cabernet Sauvignon
+Spain,83,24.0,Province 750,Chardonnay
+US,81,24.0,Province 751,Syrah
+US,83,8.0,Province 752,Chardonnay
+Spain,88,60.0,Province 753,Syrah
+Chile,88,37.0,Province 754,Syrah
+US,92,111.0,Province 755,Merlot
+US,100,321.0,Province 756,Pinot Noir
+US,85,25.0,Province 757,Syrah
+US,97,232.0,Province 758,Syrah
+Argentina,86,22.0,Province 759,Cabernet Sauvignon
+Italy,86,36.0,Province 760,Chardonnay
+Italy,95,173.0,Province 761,Merlot
+US,81,27.0,Province 762,Syrah
+Italy,98,260.0,Province 763,Cabernet Sauvignon
+Spain,80,8.0,Province 764,Chardonnay
+US,85,22.0,Province 765,Cabernet Sauvignon
+US,96,194.0,Province 766,Syrah
+US,87,38.0,Province 767,Merlot
+Italy,90,79.0,Province 768,Syrah
+US,98,232.0,Province 769,Cabernet Sauvignon
+France,95,175.0,Province 770,Chardonnay
+France,96,196.0,Province 771,Merlot
+France,87,41.0,Province 772,Chardonnay
+France,83,26.0,Province 773,Pinot Noir
+France,93,131.0,Province 774,Pinot Noir
+Spain,90,95.0,Province 775,Syrah
+Spain,93,137.0,Province 776,Cabernet Sauvignon
+US,93,141.0,Province 777,Cabernet Sauvignon
+France,84,26.0,Province 778,Cabernet Sauvignon
+US,91,109.0,Province 779,Syrah
+France,90,62.0,Province 780,Cabernet Sauvignon
+France,94,148.0,Province 781,Syrah
+US,82,13.0,Province 782,Merlot
+US,91,90.0,Province 783,Pinot Noir
+US,97,221.0,Province 784,Chardonnay
+Italy,95,,Province 785,Pinot Noir
+France,85,39.0,Province 786,Syrah
+US,92,106.0,Province 787,Merlot
+Argentina,94,155.0,Province 788,Merlot
+US,86,45.0,Province 789,Merlot
+Italy,92,96.0,Province 790,Syrah
+Chile,91,84.0,Province 791,Cabernet Sauvignon
+France,93,120.0,Province 792,Merlot
+Italy,87,29.0,Province 793,Chardonnay
+US,87,44.0,Province 794,Merlot
+Argentina,90,67.0,Province 795,Pinot Noir
+Argentina,82,18.0,Province 796,Cabernet Sauvignon
+US,87,40.0,Province 797,Syrah
+US,82,23.0,Province 798,Cabernet Sauvignon
+Argentina,92,117.0,Province 799,Cabernet Sauvignon
+Spain,98,236.0,Province 800,Syrah
+France,92,98.0,Province 801,Cabernet Sauvignon
+Chile,94,148.0,Province 802,Chardonnay
+France,81,14.0,Province 803,Pinot Noir
+Chile,96,199.0,Province 804,Cabernet Sauvignon
+Italy,86,28.0,Province 805,Merlot
+Italy,83,32.0,Province 806,Pinot Noir
+US,97,217.0,Province 807,Merlot
+France,91,95.0,Province 808,Pinot Noir
+US,93,139.0,Province 809,Cabernet Sauvignon
+US,86,43.0,Province 810,Pinot Noir
+Spain,99,265.0,Province 811,Chardonnay
+France,91,103.0,Province 812,Syrah
+France,97,215.0,Province 813,Chardonnay
+Chile,96,178.0,Province 814,Cabernet Sauvignon
+US,100,316.0,Province 815,Chardonnay
+US,82,19.0,Province 816,Chardonnay
+Argentina,87,56.0,Province 817,Cabernet Sauvignon
+Italy,91,94.0,Province 818,Syrah
+US,96,207.0,Province 819,Cabernet Sauvignon
+US,93,130.0,Province 820,Chardonnay
+Chile,82,28.0,Province 821,Syrah
+Argentina,90,78.0,Province 822,Merlot
+US,87,50.0,Province 823,Merlot
+France,84,14.0,Province 824,Chardonnay
+US,90,79.0,Province 825,Pinot Noir
+Italy,81,15.0,Province 826,Cabernet Sauvignon
+US,98,244.0,Province 827,Pinot Noir
+US,90,78.0,Province 828,Chardonnay
+France,82,31.0,Province 829,Cabernet Sauvignon
+France,84,14.0,Province 830,Cabernet Sauvignon
+Chile,89,59.0,Province 831,Syrah
+Spain,98,254.0,Province 832,Chardonnay
+US,100,301.0,Province 833,Pinot Noir
+Spain,95,152.0,Province 834,Chardonnay
+Chile,96,198.0,Province 835,Merlot
+France,86,33.0,Province 836,Merlot
+Spain,99,277.0,Province 837,Cabernet Sauvignon
+US,95,173.0,Province 838,Syrah
+Argentina,91,71.0,Province 839,Merlot
+Argentina,82,9.0,Province 840,Chardonnay
+Italy,84,36.0,Province 841,Syrah
+Spain,80,8.0,Province 842,Merlot
+US,85,37.0,Province 843,Chardonnay
+Spain,97,209.0,Province 844,Cabernet Sauvignon
+France,93,138.0,Province 845,Cabernet Sauvignon
+France,100,279.0,Province 846,Merlot
+US,97,208.0,Province 847,Merlot
+US,87,42.0,Province 848,Pinot Noir
+Argentina,92,121.0,Province 849,Merlot
+US,84,29.0,Province 850,Pinot Noir
+US,100,302.0,Province 851,Merlot
+Argentina,84,23.0,Province 852,Merlot
+France,99,266.0,Province 853,Chardonnay
+Spain,91,124.0,Province 854,Cabernet Sauvignon
+France,91,86.0,Province 855,Chardonnay
+France,86,36.0,Province 856,Chardonnay
+Italy,87,28.0,Province 857,Merlot
+Argentina,96,193.0,Province 858,Syrah
+Italy,97,221.0,Province 859,Chardonnay
+US,93,146.0,Province 860,Syrah
+Italy,80,8.0,Province 861,Syrah
+US,90,68.0,Province 862,Syrah
+Italy,91,81.0,Province 863,Chardonnay
+Argentina,88,33.0,Province 864,Merlot
+Italy,82,20.0,Province 865,Merlot
+Argentina,83,29.0,Province 866,Pinot Noir
+Chile,86,39.0,Province 867,Syrah
+US,81,15.0,Province 868,Merlot
+US,100,310.0,Province 869,Cabernet Sauvignon
+France,85,19.0,Province 870,Syrah
+US,87,44.0,Province 871,Syrah
+US,94,145.0,Province 872,Chardonnay
+Argentina,97,224.0,Province 873,Syrah
+Argentina,85,24.0,Province 874,Pinot Noir
+US,99,280.0,Province 875,Syrah
+France,83,16.0,Province 876,Syrah
+France,98,235.0,Province 877,Chardonnay
+Italy,93,135.0,Province 878,Cabernet Sauvignon
+US,90,,Province 879,Pinot Noir
+US,84,28.0,Province 880,Pinot Noir
+Chile,98,246.0,Province 881,Chardonnay
+France,92,108.0,Province 882,Merlot
+US,80,19.0,Province 883,Pinot Noir
+France,84,21.0,Province 884,Syrah
+US,83,14.0,Province 885,Chardonnay
+Spain,94,144.0,Province 886,Cabernet Sauvignon
+Italy,81,19.0,Province 887,Chardonnay
+Italy,90,76.0,Province 888,Cabernet Sauvignon
+US,90,61.0,Province 889,Cabernet Sauvignon
+France,88,48.0,Province 890,Cabernet Sauvignon
+US,83,22.0,Province 891,Syrah
+Chile,99,263.0,Province 892,Syrah
+Italy,85,31.0,Province 893,Chardonnay
+US,100,297.0,Province 894,Merlot
+Italy,83,8.0,Province 895,Cabernet Sauvignon
+Spain,80,36.0,Province 896,Syrah
+US,100,296.0,Province 897,Syrah
+France,99,262.0,Province 898,Merlot
+US,93,118.0,Province 899,Chardonnay
+Italy,92,85.0,Province 900,Merlot
+France,88,53.0,Province 901,Pinot Noir
+US,94,147.0,Province 902,Cabernet Sauvignon
+US,87,43.0,Province 903,Pinot Noir
+US,90,67.0,Province 904,Cabernet Sauvignon
+France,100,306.0,Province 905,Cabernet Sauvignon
+France,95,170.0,Province 906,Syrah
+US,83,16.0,Province 907,Chardonnay
+US,90,64.0,Province 908,Pinot Noir
+US,100,317.0,Province 909,Chardonnay
+US,94,156.0,Province 910,Pinot Noir
+US,88,69.0,Province 911,Syrah
+US,90,,Province 912,Chardonnay
+France,84,26.0,Province 913,Chardonnay
+France,80,12.0,Province 914,Pinot Noir
+US,90,79.0,Province 915,Pinot Noir
+US,91,84.0,Province 916,Chardonnay
+France,94,151.0,Province 917,Pinot Noir
+Italy,89,70.0,Province 918,Chardonnay
+Italy,83,37.0,Province 919,Chardonnay
+Spain,88,35.0,Province 920,Merlot
+France,90,83.0,Province 921,Syrah
+France,96,195.0,Province 922,Merlot
+Spain,99,272.0,Province 923,Cabernet Sauvignon
+US,96,191.0,Province 924,Pinot Noir
+France,89,76.0,Province 925,Cabernet Sauvignon
+France,80,13.0,Province 926,Chardonnay
+Chile,92,115.0,Province 927,Cabernet Sauvignon
+US,83,33.0,Province 928,Cabernet Sauvignon
+US,84,25.0,Province 929,Cabernet Sauvignon
+US,95,179.0,Province 930,Merlot
+US,100,306.0,Province 931,Syrah
+US,100,318.0,Province 932,Merlot
+France,88,57.0,Province 933,Pinot Noir
+US,91,96.0,Province 934,Syrah
+Argentina,87,32.0,Province 935,Chardonnay
+Spain,80,18.0,Province 936,Syrah
+US,85,37.0,Province 937,Chardonnay
+US,83,35.0,Province 938,Syrah
+US,90,88.0,Province 939,Pinot Noir
+France,87,28.0,Province 940,Merlot
+US,80,8.0,Province 941,Chardonnay
+US,89,80.0,Province 942,Cabernet Sauvignon
+Chile,88,61.0,Province 943,Chardonnay
+Italy,98,230.0,Province 944,Syrah
+Chile,87,54.0,Province 945,Chardonnay
+Spain,85,36.0,Province 946,Merlot
+US,80,24.0,Province 947,Merlot
+Chile,86,37.0,Province 948,Syrah
+France,95,166.0,Province 949,Chardonnay
+Spain,99,282.0,Province 950,Chardonnay
+France,86,46.0,Province 951,Pinot Noir
+US,85,16.0,Province 952,Syrah
+US,89,44.0,Province 953,Chardonnay
+US,89,44.0,Province 954,Cabernet Sauvignon
+Italy,95,169.0,Province 955,Pinot Noir
+US,94,149.0,Province 956,Merlot
+Spain,82,,Province 957,Chardonnay
+Italy,85,35.0,Province 958,Pinot Noir
+Chile,88,59.0,Province 959,Merlot
+US,93,134.0,Province 960,Syrah
+Chile,82,8.0,Province 961,Merlot
+US,85,22.0,Province 962,Chardonnay
+US,100,315.0,Province 963,Pinot Noir
+France,83,8.0,Province 964,Pinot Noir
+France,89,49.0,Province 965,Merlot
+France,86,23.0,Province 966,Syrah
+Italy,97,243.0,Province 967,Merlot
+US,80,30.0,Province 968,Chardonnay
+Italy,91,97.0,Province 969,Cabernet Sauvignon
+Spain,83,30.0,Province 970,Chardonnay
+US,97,231.0,Province 971,Chardonnay
+France,96,195.0,Province 972,Pinot Noir
+France,100,325.0,Province 973,Pinot Noir
+Italy,91,99.0,Province 974,Merlot
+France,83,16.0,Province 975,Cabernet Sauvignon
+US,98,232.0,Province 976,Pinot Noir
+US,87,52.0,Province 977,Pinot Noir
+Italy,94,147.0,Province 978,Cabernet Sauvignon
+France,88,50.0,Province 979,Merlot
+Spain,81,20.0,Province 980,Pinot Noir
+US,84,35.0,Province 981,Chardonnay
+France,81,13.0,Province 982,Syrah
+Italy,88,45.0,Province 983,Cabernet Sauvignon
+US,83,35.0,Province 984,Syrah
+US,87,40.0,Province 985,Merlot
+Chile,100,316.0,Province 986,Merlot
+Italy,98,251.0,Province 987,Chardonnay
+France,94,140.0,Province 988,Chardonnay
+US,94,147.0,Province 989,Chardonnay
+US,85,32.0,Province 990,Merlot
+US,96,199.0,Province 991,Cabernet Sauvignon
+US,87,37.0,Province 992,Merlot
+France,85,34.0,Province 993,Chardonnay
+US,83,16.0,Province 994,Syrah
+Italy,88,55.0,Province 995,Merlot
+US,80,9.0,Province 996,Syrah
+US,100,290.0,Province 997,Chardonnay
+Italy,86,43.0,Province 998,Merlot
+US,83,8.0,Province 999,Syrah

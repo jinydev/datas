@@ -1,0 +1,1001 @@
+TicketID,TicketType,Channel,ResolutionTime_Hours,AgentExp_Months,CSAT_Score
+850001,Refund,Phone,2.9,30,5
+850002,Refund,Email,7.2,43,4
+850003,Account Access,Chat,0.5,55,5
+850004,General,Phone,0.5,24,5
+850005,Technical,Phone,22.1,7,2
+850006,Account Access,Chat,2.2,12,5
+850007,General,Email,1.3,34,5
+850008,General,Phone,0.5,44,5
+850009,General,Email,3.0,41,4
+850010,Refund,Email,10.0,13,2
+850011,Refund,Phone,5.7,28,2
+850012,Refund,Email,6.4,47,2
+850013,Refund,Chat,3.3,31,5
+850014,Technical,Chat,16.5,41,3
+850015,General,Phone,0.5,26,5
+850016,General,Chat,0.7,4,5
+850017,Refund,Phone,0.5,55,4
+850018,General,Email,2.0,42,4
+850019,Refund,Phone,5.0,27,2
+850020,Account Access,Phone,0.5,36,5
+850021,General,Email,6.6,7,4
+850022,General,Email,5.1,10,1
+850023,Account Access,Phone,0.5,53,5
+850024,Account Access,Phone,0.5,55,5
+850025,Account Access,Chat,0.5,36,5
+850026,Account Access,Email,6.0,13,2
+850027,Technical,Phone,19.3,27,1
+850028,Refund,Email,6.1,58,4
+850029,Technical,Phone,19.6,31,3
+850030,Technical,Chat,15.0,53,1
+850031,Account Access,Email,3.6,37,4
+850032,General,Chat,0.5,10,4
+850033,General,Chat,0.5,43,5
+850034,Refund,Phone,0.9,41,5
+850035,Account Access,Phone,0.5,6,5
+850036,General,Phone,0.5,18,4
+850037,General,Email,0.5,56,5
+850038,General,Chat,0.5,14,5
+850039,General,Chat,0.5,42,4
+850040,Account Access,Email,7.2,8,2
+850041,Account Access,Phone,1.5,1,5
+850042,Account Access,Email,2.9,43,4
+850043,Technical,Chat,19.6,19,2
+850044,General,Email,1.2,45,5
+850045,Refund,Chat,0.5,45,5
+850046,Technical,Email,30.9,1,2
+850047,Account Access,Phone,0.5,41,5
+850048,Account Access,Chat,0.5,30,5
+850049,General,Chat,0.5,43,5
+850050,Refund,Phone,0.5,59,5
+850051,General,Email,0.8,58,5
+850052,Technical,Email,19.8,54,1
+850053,Technical,Email,30.3,22,1
+850054,General,Phone,0.5,53,4
+850055,Technical,Phone,12.9,58,2
+850056,Technical,Email,24.1,36,2
+850057,Account Access,Chat,0.5,20,4
+850058,Technical,Chat,20.8,18,2
+850059,Technical,Email,20.7,42,4
+850060,General,Chat,0.5,31,5
+850061,Technical,Chat,14.6,48,3
+850062,Technical,Email,30.2,3,4
+850063,General,Chat,2.1,2,5
+850064,Technical,Email,28.9,18,1
+850065,Refund,Chat,0.5,44,5
+850066,General,Email,0.5,35,5
+850067,Technical,Chat,19.1,14,3
+850068,Technical,Email,25.1,33,2
+850069,Account Access,Phone,0.5,24,5
+850070,Account Access,Phone,1.2,19,5
+850071,General,Phone,0.5,44,5
+850072,Technical,Chat,20.8,11,3
+850073,Technical,Chat,15.2,51,3
+850074,General,Chat,0.5,42,5
+850075,Refund,Chat,3.7,32,4
+850076,Account Access,Chat,0.5,55,5
+850077,Technical,Chat,17.5,26,3
+850078,Refund,Chat,2.2,30,5
+850079,Refund,Email,13.7,1,2
+850080,Refund,Email,9.4,39,1
+850081,Account Access,Email,0.8,39,4
+850082,Account Access,Email,3.8,35,4
+850083,General,Chat,0.5,23,5
+850084,General,Email,3.3,24,4
+850085,Technical,Phone,16.1,48,2
+850086,Account Access,Phone,0.5,19,4
+850087,Technical,Chat,20.3,30,3
+850088,Technical,Chat,15.2,53,1
+850089,General,Chat,0.5,58,5
+850090,Refund,Phone,1.6,28,5
+850091,Refund,Chat,4.8,18,1
+850092,Refund,Chat,4.5,22,2
+850093,General,Phone,,34,5
+850094,Account Access,Phone,3.7,3,5
+850095,Refund,Email,6.0,40,3
+850096,Technical,Chat,15.5,51,1
+850097,Refund,Email,11.4,12,2
+850098,Account Access,Chat,,5,5
+850099,Refund,Phone,6.7,10,3
+850100,Account Access,Chat,1.0,1,5
+850101,Account Access,Chat,0.5,37,5
+850102,General,Chat,0.5,45,5
+850103,Refund,Phone,2.5,39,4
+850104,General,Chat,0.5,45,5
+850105,Refund,Chat,0.5,49,4
+850106,Account Access,Email,0.5,54,5
+850107,General,Chat,0.5,23,5
+850108,Account Access,Chat,0.5,28,4
+850109,Refund,Email,8.9,45,3
+850110,Refund,Chat,0.5,48,5
+850111,Account Access,Chat,0.5,58,5
+850112,General,Chat,0.5,38,5
+850113,Technical,Chat,19.6,19,1
+850114,Refund,Email,8.5,27,2
+850115,Account Access,Chat,0.5,34,5
+850116,General,Email,6.4,3,1
+850117,Refund,Email,13.1,12,2
+850118,Refund,Email,13.4,8,4
+850119,Technical,Phone,18.2,28,2
+850120,Technical,Email,18.2,52,1
+850121,General,Phone,0.5,46,5
+850122,General,Phone,0.5,21,5
+850123,Technical,Phone,15.9,56,4
+850124,Technical,Phone,15.5,50,2
+850125,Account Access,Email,0.5,51,5
+850126,Technical,Email,28.8,21,3
+850127,General,Email,4.1,21,1
+850128,Refund,Chat,0.5,53,5
+850129,General,Email,2.9,37,5
+850130,Account Access,Phone,0.5,31,5
+850131,General,Chat,0.5,29,5
+850132,Account Access,Chat,0.5,33,4
+850133,Refund,Chat,2.8,38,5
+850134,General,Email,1.7,43,5
+850135,Technical,Phone,13.7,57,2
+850136,Refund,Chat,5.7,24,4
+850137,Technical,Email,26.6,37,2
+850138,Account Access,Email,0.5,47,5
+850139,Refund,Chat,2.1,34,4
+850140,Refund,Email,8.4,44,4
+850141,Refund,Email,9.8,24,2
+850142,Technical,Email,29.0,15,1
+850143,General,Chat,2.5,5,5
+850144,Refund,Phone,0.7,55,4
+850145,General,Email,2.7,44,5
+850146,Account Access,Phone,0.5,38,5
+850147,Account Access,Phone,0.5,52,5
+850148,Refund,Phone,5.6,20,3
+850149,Technical,Chat,20.9,3,4
+850150,Account Access,Email,2.1,54,5
+850151,General,Chat,0.5,31,5
+850152,Account Access,Phone,1.8,8,5
+850153,Refund,Chat,2.3,26,5
+850154,Technical,Email,26.7,27,4
+850155,Refund,Chat,5.0,25,3
+850156,Technical,Chat,17.0,39,4
+850157,General,Email,3.3,13,4
+850158,Refund,Chat,5.1,23,2
+850159,Technical,Email,21.3,53,3
+850160,Technical,Phone,15.4,58,2
+850161,Refund,Phone,0.5,59,5
+850162,Technical,Email,30.2,15,3
+850163,Refund,Email,7.2,42,1
+850164,Technical,Phone,20.5,22,1
+850165,Refund,Email,13.5,1,3
+850166,General,Chat,1.7,9,5
+850167,Account Access,Email,2.0,29,5
+850168,Technical,Email,29.3,10,4
+850169,Technical,Phone,15.0,56,2
+850170,Technical,Chat,23.3,13,2
+850171,General,Phone,0.5,46,5
+850172,General,Phone,0.5,40,4
+850173,Refund,Phone,0.5,39,4
+850174,Refund,Email,11.2,20,3
+850175,Refund,Email,8.5,36,2
+850176,General,Email,1.3,37,5
+850177,General,Chat,0.5,29,4
+850178,General,Phone,0.5,38,4
+850179,General,Chat,0.8,10,5
+850180,General,Phone,0.5,43,5
+850181,Technical,Chat,24.7,13,3
+850182,Refund,Phone,1.3,48,4
+850183,General,Chat,0.5,34,4
+850184,Account Access,Email,1.7,44,5
+850185,General,Email,6.0,33,1
+850186,Technical,Phone,20.9,32,2
+850187,Technical,Email,26.6,18,2
+850188,Technical,Email,23.9,53,2
+850189,Account Access,Email,8.6,7,2
+850190,Technical,Phone,23.8,14,2
+850191,Technical,Phone,16.0,42,2
+850192,General,Phone,0.5,58,5
+850193,Technical,Chat,23.4,31,2
+850194,Technical,Phone,19.9,22,1
+850195,General,Email,4.9,33,2
+850196,General,Chat,0.5,22,5
+850197,General,Chat,0.5,39,4
+850198,General,Phone,0.5,36,5
+850199,General,Chat,0.5,58,5
+850200,General,Phone,0.5,16,4
+850201,Account Access,Chat,1.8,2,5
+850202,General,Phone,0.5,50,4
+850203,Technical,Phone,19.1,47,3
+850204,General,Phone,0.5,28,5
+850205,Refund,Email,10.4,10,2
+850206,Account Access,Chat,0.5,40,5
+850207,Refund,Chat,2.8,31,5
+850208,Technical,Email,27.5,14,3
+850209,Account Access,Phone,1.6,20,4
+850210,Refund,Phone,2.6,57,5
+850211,Account Access,Email,0.5,49,5
+850212,Technical,Chat,21.3,11,2
+850213,Account Access,Email,6.2,1,2
+850214,Account Access,Chat,1.5,1,4
+850215,General,Email,1.1,47,5
+850216,General,Phone,0.5,29,4
+850217,Technical,Email,25.9,22,1
+850218,General,Email,6.4,26,3
+850219,Account Access,Phone,0.5,27,5
+850220,Refund,Phone,6.1,6,2
+850221,General,Email,8.1,12,4
+850222,General,Chat,0.6,15,5
+850223,Account Access,Email,0.5,55,5
+850224,Technical,Email,29.6,27,1
+850225,Technical,Email,28.5,7,3
+850226,Account Access,Chat,0.5,54,4
+850227,General,Chat,0.5,55,4
+850228,Account Access,Email,0.5,58,5
+850229,Refund,Chat,0.5,40,5
+850230,Refund,Phone,3.6,27,4
+850231,Technical,Phone,17.1,48,2
+850232,General,Email,0.7,36,5
+850233,Refund,Phone,0.5,43,5
+850234,Refund,Chat,7.4,7,1
+850235,Account Access,Chat,0.5,30,5
+850236,Refund,Email,9.6,21,2
+850237,Account Access,Email,6.8,20,3
+850238,Technical,Email,27.6,21,1
+850239,General,Phone,0.5,33,5
+850240,General,Chat,1.7,7,4
+850241,Refund,Chat,0.5,55,5
+850242,Account Access,Email,1.4,35,5
+850243,General,Chat,0.5,22,4
+850244,Refund,Email,6.2,33,3
+850245,Technical,Chat,18.8,24,1
+850246,Refund,Email,,15,4
+850247,Refund,Phone,6.0,6,1
+850248,General,Chat,2.2,7,4
+850249,Account Access,Email,5.6,15,2
+850250,Refund,Email,7.0,57,4
+850251,Account Access,Phone,0.5,9,5
+850252,Technical,Email,27.1,21,1
+850253,Account Access,Phone,3.3,5,4
+850254,General,Phone,0.5,5,5
+850255,General,Phone,0.5,58,4
+850256,Technical,Phone,18.0,38,1
+850257,Refund,Email,9.9,23,4
+850258,General,Chat,0.5,17,5
+850259,Technical,Chat,17.7,52,1
+850260,General,Phone,0.5,53,5
+850261,General,Phone,0.5,46,5
+850262,Refund,Chat,0.5,59,4
+850263,Account Access,Email,8.0,2,3
+850264,General,Email,6.6,19,2
+850265,Refund,Chat,3.6,10,4
+850266,Account Access,Chat,0.5,35,5
+850267,Refund,Phone,0.5,45,5
+850268,Technical,Phone,18.2,7,3
+850269,Account Access,Email,2.9,45,5
+850270,Account Access,Phone,0.5,16,4
+850271,Account Access,Email,6.5,3,1
+850272,Technical,Email,21.9,58,2
+850273,Account Access,Chat,0.5,33,5
+850274,General,Email,3.8,25,5
+850275,General,Email,1.4,46,5
+850276,Refund,Email,9.3,40,2
+850277,General,Phone,0.5,17,5
+850278,Account Access,Phone,0.5,37,5
+850279,Refund,Email,10.7,35,3
+850280,Refund,Chat,6.6,12,4
+850281,Refund,Phone,0.5,46,5
+850282,Technical,Chat,19.0,44,4
+850283,Account Access,Email,2.4,43,5
+850284,Account Access,Chat,0.5,26,4
+850285,Refund,Phone,0.5,53,4
+850286,Account Access,Phone,1.3,24,5
+850287,General,Chat,0.5,40,5
+850288,General,Chat,0.5,32,5
+850289,Technical,Chat,26.3,4,4
+850290,Account Access,Phone,0.5,18,5
+850291,Refund,Chat,5.6,18,1
+850292,General,Email,8.1,8,2
+850293,Account Access,Email,5.1,7,2
+850294,Technical,Phone,22.3,1,2
+850295,General,Phone,0.5,16,4
+850296,Account Access,Chat,0.5,55,5
+850297,Account Access,Chat,0.5,15,5
+850298,General,Phone,0.5,17,5
+850299,Refund,Phone,5.0,21,4
+850300,Refund,Email,10.1,12,2
+850301,Technical,Email,28.0,33,1
+850302,General,Phone,3.7,15,4
+850303,Technical,Phone,17.6,43,1
+850304,Account Access,Chat,0.5,57,5
+850305,Account Access,Phone,2.0,14,5
+850306,General,Chat,0.5,3,5
+850307,Account Access,Chat,0.5,43,5
+850308,Refund,Phone,1.8,46,5
+850309,General,Chat,0.5,59,5
+850310,General,Chat,0.5,19,4
+850311,Technical,Email,24.6,37,3
+850312,General,Chat,0.5,56,4
+850313,Account Access,Chat,0.5,51,4
+850314,General,Phone,0.5,45,4
+850315,Technical,Phone,19.3,32,1
+850316,Technical,Email,28.1,25,4
+850317,General,Chat,0.5,40,5
+850318,General,Phone,0.5,7,5
+850319,Account Access,Chat,0.5,16,5
+850320,Account Access,Email,0.5,48,4
+850321,Refund,Phone,3.4,37,5
+850322,Refund,Email,15.8,8,4
+850323,Technical,Phone,16.7,34,1
+850324,Technical,Phone,17.4,54,4
+850325,Account Access,Email,0.5,55,5
+850326,Technical,Email,27.0,24,4
+850327,General,Email,0.5,43,5
+850328,General,Phone,0.5,27,4
+850329,General,Email,0.5,34,5
+850330,Technical,Email,21.4,58,2
+850331,Technical,Phone,18.1,24,3
+850332,Account Access,Chat,0.5,18,5
+850333,General,Chat,0.8,2,5
+850334,Refund,Chat,1.3,31,4
+850335,Account Access,Chat,2.8,21,5
+850336,Refund,Chat,1.1,32,5
+850337,Refund,Phone,7.8,10,4
+850338,Technical,Email,27.9,22,1
+850339,Account Access,Phone,0.5,30,5
+850340,Account Access,Chat,0.5,25,5
+850341,Refund,Email,10.4,29,3
+850342,Technical,Chat,25.3,5,2
+850343,Technical,Phone,18.4,24,3
+850344,Technical,Phone,22.7,16,4
+850345,Account Access,Email,0.5,48,5
+850346,General,Chat,2.9,10,5
+850347,Account Access,Email,2.5,36,5
+850348,General,Chat,0.5,51,5
+850349,Refund,Email,12.4,10,2
+850350,Account Access,Phone,2.9,4,5
+850351,General,Email,4.1,40,1
+850352,Refund,Email,8.9,40,1
+850353,General,Email,0.6,35,5
+850354,Refund,Phone,6.2,10,3
+850355,Account Access,Phone,0.5,33,5
+850356,General,Phone,3.0,14,5
+850357,Account Access,Chat,0.5,49,5
+850358,Account Access,Phone,0.5,35,4
+850359,Technical,Phone,17.7,47,1
+850360,Refund,Chat,7.2,1,4
+850361,General,Phone,4.8,15,4
+850362,Technical,Phone,23.3,11,3
+850363,General,Chat,0.5,45,5
+850364,Refund,Phone,5.3,21,1
+850365,General,Phone,0.5,32,5
+850366,Technical,Email,,21,3
+850367,Technical,Email,26.4,29,2
+850368,Account Access,Email,5.6,19,4
+850369,Technical,Phone,22.1,7,1
+850370,General,Chat,0.5,48,5
+850371,Refund,Chat,6.0,6,4
+850372,Refund,Chat,5.1,20,1
+850373,Account Access,Phone,3.1,11,4
+850374,Technical,Chat,18.3,30,1
+850375,Account Access,Email,3.3,46,5
+850376,Account Access,Chat,0.5,15,5
+850377,Account Access,Email,,34,5
+850378,Refund,Chat,1.5,43,5
+850379,Account Access,Email,1.2,43,5
+850380,General,Chat,0.5,28,5
+850381,General,Email,,9,3
+850382,Refund,Chat,5.6,31,4
+850383,Refund,Chat,6.6,15,4
+850384,General,Phone,0.5,23,5
+850385,General,Chat,0.5,34,4
+850386,General,Email,4.6,42,3
+850387,Account Access,Email,7.4,8,2
+850388,Refund,Chat,0.5,58,5
+850389,Refund,Phone,0.5,37,5
+850390,Refund,Email,10.6,26,3
+850391,Technical,Email,20.1,56,3
+850392,Account Access,Email,0.5,56,5
+850393,Technical,Email,26.2,27,2
+850394,Refund,Email,6.1,53,4
+850395,General,Chat,0.5,27,5
+850396,Technical,Email,23.4,35,3
+850397,Account Access,Email,0.5,49,4
+850398,Refund,Email,9.3,19,2
+850399,Technical,Chat,20.0,16,3
+850400,General,Phone,2.0,16,5
+850401,General,Email,2.8,38,4
+850402,Refund,Chat,1.3,45,5
+850403,Technical,Email,25.3,26,1
+850404,General,Chat,1.9,6,4
+850405,Account Access,Email,5.0,16,4
+850406,General,Chat,0.5,55,5
+850407,General,Email,3.9,33,5
+850408,Technical,Phone,19.3,35,3
+850409,Technical,Phone,22.3,23,1
+850410,Technical,Email,23.9,46,1
+850411,General,Email,5.8,25,3
+850412,Account Access,Email,1.4,48,5
+850413,General,Email,5.7,6,3
+850414,Technical,Email,28.5,22,3
+850415,General,Phone,0.6,10,4
+850416,General,Email,7.8,9,1
+850417,General,Phone,0.5,47,5
+850418,Account Access,Email,0.5,34,4
+850419,General,Phone,0.5,51,5
+850420,Technical,Phone,15.6,55,3
+850421,Account Access,Email,6.0,7,3
+850422,General,Email,5.2,25,4
+850423,Account Access,Chat,0.5,29,4
+850424,Account Access,Email,2.7,40,4
+850425,Refund,Phone,6.2,8,1
+850426,General,Chat,0.5,43,5
+850427,General,Phone,0.5,18,4
+850428,General,Email,6.3,8,3
+850429,General,Phone,0.8,2,4
+850430,General,Email,1.5,36,5
+850431,Account Access,Chat,0.5,21,5
+850432,Account Access,Email,8.3,1,3
+850433,Account Access,Email,2.0,43,5
+850434,Account Access,Email,5.0,7,4
+850435,Account Access,Phone,0.5,50,5
+850436,Technical,Chat,,2,4
+850437,General,Chat,0.5,56,5
+850438,Account Access,Email,5.7,3,2
+850439,Account Access,Email,10.5,5,4
+850440,Account Access,Phone,0.5,22,5
+850441,General,Email,0.5,53,5
+850442,General,Phone,0.5,54,5
+850443,Technical,Phone,18.2,35,3
+850444,Account Access,Chat,0.5,47,5
+850445,Technical,Phone,17.9,57,3
+850446,Technical,Phone,13.2,52,1
+850447,Refund,Phone,0.5,53,5
+850448,Technical,Chat,21.1,20,2
+850449,Account Access,Chat,0.5,45,5
+850450,Refund,Email,9.5,9,2
+850451,Refund,Chat,3.6,16,4
+850452,Account Access,Chat,0.5,28,5
+850453,Account Access,Chat,0.5,47,5
+850454,Account Access,Email,3.7,16,5
+850455,Refund,Phone,7.8,3,2
+850456,General,Chat,0.5,33,5
+850457,Refund,Email,9.2,28,2
+850458,Technical,Phone,13.8,59,4
+850459,Technical,Phone,17.4,32,1
+850460,Refund,Chat,0.5,39,4
+850461,Account Access,Email,6.2,18,2
+850462,Account Access,Email,3.6,37,5
+850463,Technical,Phone,16.5,43,3
+850464,General,Chat,1.9,14,5
+850465,Account Access,Chat,0.5,59,5
+850466,General,Chat,0.5,27,4
+850467,General,Phone,0.5,29,5
+850468,Technical,Phone,25.4,9,2
+850469,Technical,Chat,23.1,17,4
+850470,Refund,Chat,4.8,36,1
+850471,General,Email,1.8,43,4
+850472,Refund,Chat,1.8,45,5
+850473,Technical,Phone,17.7,35,4
+850474,Technical,Email,23.5,36,1
+850475,Account Access,Chat,0.5,48,4
+850476,Account Access,Phone,0.8,20,4
+850477,Technical,Chat,14.9,55,4
+850478,Technical,Chat,25.6,6,4
+850479,General,Email,5.6,5,1
+850480,Technical,Email,21.9,57,4
+850481,General,Phone,1.4,9,4
+850482,Technical,Email,20.3,49,2
+850483,Refund,Phone,2.1,16,5
+850484,Account Access,Phone,0.5,42,4
+850485,General,Chat,0.5,20,4
+850486,General,Chat,0.5,57,4
+850487,Technical,Phone,23.6,2,3
+850488,Account Access,Email,7.3,13,2
+850489,Refund,Chat,0.5,58,5
+850490,Refund,Email,7.2,45,3
+850491,Technical,Chat,22.2,4,1
+850492,General,Phone,0.6,10,5
+850493,Refund,Email,10.4,25,4
+850494,General,Phone,0.5,13,4
+850495,Technical,Email,27.1,15,3
+850496,Account Access,Chat,0.5,37,5
+850497,Refund,Email,14.7,3,3
+850498,Technical,Chat,15.7,39,3
+850499,Account Access,Phone,0.5,14,4
+850500,General,Phone,0.5,50,5
+850501,General,Email,3.7,21,5
+850502,Account Access,Chat,0.5,27,5
+850503,Refund,Email,11.4,24,1
+850504,General,Chat,0.5,59,5
+850505,Account Access,Chat,1.6,7,4
+850506,Refund,Phone,1.8,39,5
+850507,General,Email,7.4,12,4
+850508,Technical,Phone,21.8,26,1
+850509,Account Access,Email,7.8,3,3
+850510,Refund,Email,6.5,56,3
+850511,General,Phone,0.5,55,5
+850512,Account Access,Email,3.2,36,5
+850513,Technical,Chat,19.8,9,3
+850514,General,Chat,0.5,20,4
+850515,General,Chat,0.5,44,5
+850516,Technical,Email,21.4,49,3
+850517,Account Access,Phone,0.5,24,5
+850518,Account Access,Phone,0.5,19,4
+850519,Technical,Email,30.0,8,3
+850520,Refund,Email,8.6,56,4
+850521,General,Chat,0.5,51,5
+850522,Refund,Email,12.6,7,2
+850523,Technical,Email,23.8,17,3
+850524,Technical,Email,20.2,51,1
+850525,General,Phone,0.5,9,5
+850526,Technical,Phone,19.0,27,1
+850527,Technical,Email,23.6,31,2
+850528,Account Access,Chat,0.6,4,4
+850529,Account Access,Email,4.0,31,4
+850530,Account Access,Email,0.5,57,5
+850531,Technical,Email,26.4,7,3
+850532,Account Access,Phone,0.5,24,5
+850533,General,Chat,0.5,5,5
+850534,General,Email,0.5,46,4
+850535,General,Chat,1.3,3,5
+850536,Refund,Chat,3.5,21,4
+850537,General,Chat,0.5,44,4
+850538,Refund,Chat,1.9,47,4
+850539,Technical,Email,26.3,22,1
+850540,Technical,Email,27.1,5,3
+850541,Technical,Chat,16.2,39,1
+850542,Technical,Phone,22.4,25,2
+850543,Refund,Phone,4.7,5,4
+850544,Technical,Phone,16.5,58,3
+850545,Technical,Email,26.0,22,3
+850546,General,Chat,0.5,57,5
+850547,Account Access,Email,1.5,33,5
+850548,General,Phone,0.5,23,5
+850549,Refund,Email,9.9,34,4
+850550,Account Access,Chat,0.5,38,5
+850551,Technical,Phone,20.8,16,4
+850552,Account Access,Chat,0.5,17,5
+850553,Technical,Email,24.4,40,1
+850554,Account Access,Phone,0.5,5,4
+850555,Technical,Email,26.7,26,1
+850556,Refund,Chat,4.9,31,2
+850557,Account Access,Chat,0.5,36,5
+850558,Refund,Email,9.5,33,2
+850559,General,Phone,0.5,17,5
+850560,Refund,Phone,0.5,56,5
+850561,Account Access,Phone,0.5,51,5
+850562,Account Access,Phone,0.5,54,5
+850563,Account Access,Email,7.0,17,2
+850564,Refund,Chat,6.6,17,3
+850565,Account Access,Phone,3.3,6,5
+850566,Technical,Chat,15.7,53,4
+850567,Technical,Email,22.5,40,2
+850568,Account Access,Email,0.5,44,5
+850569,Technical,Phone,19.0,38,4
+850570,Refund,Phone,8.3,2,3
+850571,Technical,Chat,21.6,20,3
+850572,Refund,Chat,7.8,7,3
+850573,Technical,Email,24.4,47,2
+850574,Refund,Phone,0.5,55,5
+850575,Technical,Chat,16.9,48,1
+850576,Account Access,Phone,0.5,52,5
+850577,Account Access,Phone,0.5,5,5
+850578,Account Access,Chat,0.5,52,4
+850579,General,Phone,0.5,58,4
+850580,Account Access,Chat,0.5,9,5
+850581,Technical,Chat,19.9,27,1
+850582,Account Access,Email,1.8,56,4
+850583,Technical,Chat,23.9,9,3
+850584,Account Access,Email,0.5,55,5
+850585,Technical,Phone,16.8,45,4
+850586,Refund,Phone,6.1,5,3
+850587,Technical,Phone,21.7,15,4
+850588,Technical,Phone,22.2,1,1
+850589,Refund,Phone,0.5,45,5
+850590,Technical,Phone,16.6,41,4
+850591,General,Chat,0.5,22,5
+850592,Technical,Email,23.1,52,2
+850593,General,Phone,0.5,5,5
+850594,Account Access,Phone,0.5,36,5
+850595,Account Access,Phone,0.5,35,5
+850596,Technical,Phone,20.8,21,1
+850597,Account Access,Email,5.8,12,1
+850598,General,Chat,0.5,47,5
+850599,General,Chat,0.5,55,5
+850600,General,Chat,1.6,17,4
+850601,Account Access,Chat,0.5,57,5
+850602,Refund,Phone,3.9,27,5
+850603,Account Access,Email,1.7,37,5
+850604,Account Access,Chat,0.5,34,4
+850605,Technical,Phone,14.4,45,2
+850606,Refund,Chat,7.8,3,2
+850607,Technical,Chat,18.3,33,4
+850608,Account Access,Email,5.8,15,2
+850609,General,Chat,0.5,43,5
+850610,General,Email,0.5,44,5
+850611,Refund,Phone,6.8,2,3
+850612,Technical,Phone,16.7,49,3
+850613,Technical,Email,27.7,22,4
+850614,Refund,Phone,4.9,9,2
+850615,General,Email,1.7,49,4
+850616,General,Email,0.8,56,4
+850617,Refund,Email,11.7,16,3
+850618,Technical,Chat,24.4,11,2
+850619,Refund,Email,11.1,19,4
+850620,Refund,Phone,4.1,32,1
+850621,Technical,Phone,22.4,12,3
+850622,General,Email,0.5,53,4
+850623,Refund,Email,8.7,27,2
+850624,Account Access,Phone,0.5,56,5
+850625,Technical,Email,21.5,45,4
+850626,Account Access,Email,6.7,9,3
+850627,General,Email,,27,5
+850628,General,Email,5.4,23,3
+850629,Refund,Email,6.0,43,4
+850630,Account Access,Chat,0.5,40,5
+850631,General,Chat,3.1,8,4
+850632,General,Email,0.5,52,4
+850633,Refund,Phone,2.9,40,4
+850634,Account Access,Email,8.6,14,1
+850635,Account Access,Chat,0.5,23,4
+850636,General,Chat,0.5,51,5
+850637,Technical,Phone,19.9,12,4
+850638,Technical,Chat,14.7,57,3
+850639,Technical,Phone,21.3,24,1
+850640,General,Email,6.8,12,3
+850641,Refund,Email,8.7,42,1
+850642,Refund,Phone,1.7,34,5
+850643,General,Chat,2.4,15,5
+850644,Technical,Phone,13.2,59,2
+850645,General,Email,6.3,8,1
+850646,Account Access,Email,0.5,43,5
+850647,General,Chat,0.5,52,5
+850648,Account Access,Phone,3.7,1,4
+850649,Account Access,Phone,0.5,45,5
+850650,Refund,Chat,6.9,7,4
+850651,General,Email,9.5,7,2
+850652,Technical,Chat,17.8,28,3
+850653,General,Email,2.1,36,5
+850654,Refund,Email,7.0,51,3
+850655,General,Email,7.7,3,1
+850656,Technical,Email,20.6,46,2
+850657,Technical,Chat,23.5,12,2
+850658,Refund,Chat,6.9,12,3
+850659,General,Email,5.8,17,3
+850660,Account Access,Phone,2.1,1,5
+850661,Technical,Chat,16.0,56,3
+850662,Technical,Phone,18.3,34,2
+850663,General,Email,4.9,28,1
+850664,Account Access,Chat,0.7,10,4
+850665,General,Email,4.7,31,4
+850666,Refund,Email,5.7,41,3
+850667,Account Access,Chat,4.3,1,1
+850668,Technical,Chat,21.0,15,2
+850669,Refund,Phone,5.8,11,4
+850670,Technical,Email,27.5,16,2
+850671,General,Chat,0.5,11,5
+850672,Technical,Chat,26.8,2,1
+850673,Account Access,Email,6.9,5,4
+850674,General,Chat,0.5,33,5
+850675,Technical,Chat,19.5,39,3
+850676,Account Access,Chat,0.5,28,4
+850677,Technical,Email,28.3,7,2
+850678,Refund,Chat,1.7,16,5
+850679,Technical,Chat,14.0,59,3
+850680,Account Access,Chat,0.7,19,5
+850681,General,Phone,0.5,53,4
+850682,General,Chat,0.5,25,5
+850683,Technical,Phone,21.2,20,3
+850684,Technical,Phone,18.0,48,3
+850685,General,Phone,0.5,35,5
+850686,Account Access,Chat,0.8,3,5
+850687,Account Access,Chat,1.6,11,5
+850688,General,Email,1.3,33,5
+850689,General,Phone,0.5,36,5
+850690,Refund,Chat,0.5,58,5
+850691,Refund,Email,11.3,12,2
+850692,Refund,Phone,3.4,32,5
+850693,Technical,Chat,22.5,5,2
+850694,Account Access,Email,1.7,37,4
+850695,Refund,Email,8.3,52,4
+850696,Account Access,Email,5.6,17,2
+850697,Refund,Chat,4.5,28,2
+850698,General,Phone,0.5,31,5
+850699,General,Email,0.5,43,4
+850700,Account Access,Email,4.8,16,1
+850701,Account Access,Email,1.4,42,4
+850702,Refund,Chat,1.2,55,4
+850703,Technical,Chat,18.4,48,3
+850704,Refund,Email,9.9,18,4
+850705,Technical,Chat,21.2,42,4
+850706,General,Email,8.8,12,1
+850707,Refund,Phone,5.4,7,3
+850708,General,Email,2.3,45,4
+850709,Refund,Phone,3.0,50,5
+850710,Refund,Phone,6.7,13,4
+850711,Account Access,Phone,0.5,20,5
+850712,Technical,Phone,17.9,39,3
+850713,General,Email,0.5,52,5
+850714,Refund,Chat,3.6,29,5
+850715,Technical,Email,22.7,44,2
+850716,Technical,Email,20.6,55,3
+850717,General,Phone,,24,5
+850718,General,Email,0.5,48,4
+850719,Account Access,Chat,0.5,16,5
+850720,Account Access,Chat,,32,5
+850721,General,Email,4.8,15,4
+850722,Refund,Chat,8.2,8,4
+850723,Technical,Phone,21.0,24,3
+850724,Refund,Email,5.5,57,3
+850725,Refund,Chat,6.6,2,1
+850726,Refund,Email,4.2,56,4
+850727,Account Access,Phone,0.5,39,4
+850728,Account Access,Phone,0.5,56,5
+850729,General,Phone,0.5,6,5
+850730,General,Phone,0.5,9,5
+850731,Refund,Chat,3.5,11,4
+850732,General,Email,0.9,46,4
+850733,Account Access,Email,3.9,25,5
+850734,Technical,Email,23.7,53,2
+850735,Account Access,Chat,0.5,39,5
+850736,Refund,Chat,7.8,4,2
+850737,Technical,Email,28.8,32,1
+850738,Account Access,Phone,0.5,44,5
+850739,General,Email,0.5,57,4
+850740,General,Phone,0.5,21,5
+850741,Account Access,Email,3.8,24,4
+850742,Refund,Chat,7.0,6,2
+850743,General,Chat,0.5,35,5
+850744,Refund,Email,14.1,8,1
+850745,Technical,Email,20.5,57,2
+850746,Account Access,Phone,0.5,22,5
+850747,General,Email,2.8,26,5
+850748,Account Access,Chat,,1,5
+850749,General,Phone,1.1,8,5
+850750,Technical,Phone,22.3,7,3
+850751,Technical,Phone,21.6,28,2
+850752,Refund,Phone,3.7,22,5
+850753,Account Access,Email,4.7,31,3
+850754,Account Access,Phone,0.5,52,5
+850755,Account Access,Phone,0.5,7,5
+850756,Refund,Chat,4.9,19,4
+850757,Refund,Email,11.1,20,3
+850758,Technical,Phone,17.1,51,1
+850759,Refund,Email,5.5,52,2
+850760,General,Phone,0.5,31,4
+850761,Refund,Email,9.5,34,3
+850762,Account Access,Email,0.5,42,4
+850763,Technical,Email,24.7,42,4
+850764,General,Email,5.7,26,1
+850765,Account Access,Email,0.5,55,5
+850766,Refund,Chat,5.8,9,4
+850767,Account Access,Chat,0.5,50,5
+850768,Account Access,Chat,1.6,23,5
+850769,Technical,Email,20.9,59,1
+850770,General,Email,7.6,5,1
+850771,Account Access,Phone,0.5,27,5
+850772,Technical,Phone,15.4,53,3
+850773,General,Email,1.1,50,5
+850774,Refund,Phone,0.5,44,5
+850775,Technical,Chat,21.3,26,3
+850776,Account Access,Phone,0.5,56,5
+850777,Refund,Email,14.7,11,2
+850778,Account Access,Phone,2.0,2,5
+850779,Account Access,Phone,0.5,2,5
+850780,General,Email,0.5,58,4
+850781,Technical,Email,23.1,40,1
+850782,General,Phone,0.5,51,5
+850783,Refund,Email,8.1,30,2
+850784,Technical,Chat,18.8,34,3
+850785,Account Access,Chat,0.5,47,4
+850786,Refund,Email,2.9,50,5
+850787,Account Access,Chat,0.7,19,4
+850788,Technical,Email,24.8,48,2
+850789,Technical,Email,30.8,5,4
+850790,General,Email,8.0,5,1
+850791,General,Phone,0.5,35,4
+850792,Account Access,Email,0.5,59,5
+850793,Refund,Chat,1.0,37,4
+850794,General,Phone,0.5,42,5
+850795,Refund,Chat,6.9,10,4
+850796,Technical,Chat,23.9,11,4
+850797,Technical,Chat,16.2,45,4
+850798,Account Access,Phone,0.5,22,5
+850799,General,Phone,0.5,39,4
+850800,Refund,Phone,4.5,17,1
+850801,Account Access,Phone,0.5,3,5
+850802,Account Access,Chat,0.5,41,4
+850803,Account Access,Chat,0.5,18,4
+850804,General,Phone,0.5,41,5
+850805,Refund,Email,10.1,34,4
+850806,Refund,Chat,5.3,13,1
+850807,Refund,Chat,7.2,1,4
+850808,Refund,Email,11.3,12,2
+850809,Account Access,Chat,0.5,37,5
+850810,Technical,Email,23.9,23,1
+850811,Technical,Phone,17.8,39,3
+850812,Technical,Email,25.2,42,2
+850813,Technical,Email,25.5,30,2
+850814,Account Access,Chat,0.5,40,5
+850815,Account Access,Email,8.1,6,2
+850816,General,Phone,0.5,28,4
+850817,Technical,Email,26.0,29,3
+850818,General,Phone,0.5,12,4
+850819,General,Chat,0.5,48,4
+850820,General,Email,0.9,51,5
+850821,Account Access,Email,2.8,27,5
+850822,Account Access,Phone,0.5,19,4
+850823,Refund,Email,14.4,16,3
+850824,Refund,Email,10.0,22,1
+850825,Refund,Phone,4.5,32,4
+850826,Technical,Email,27.3,21,1
+850827,Account Access,Chat,0.5,27,5
+850828,General,Email,1.3,39,5
+850829,Refund,Chat,0.5,41,4
+850830,Account Access,Chat,0.5,24,5
+850831,Technical,Chat,16.9,47,2
+850832,Technical,Phone,19.3,32,4
+850833,Account Access,Chat,0.5,32,5
+850834,General,Phone,0.5,34,4
+850835,Refund,Chat,2.4,45,5
+850836,Technical,Email,23.3,35,2
+850837,Technical,Chat,18.6,28,4
+850838,Technical,Phone,14.9,54,2
+850839,General,Chat,0.5,51,5
+850840,Technical,Email,26.0,27,4
+850841,General,Email,3.5,24,5
+850842,Account Access,Chat,2.4,6,5
+850843,Account Access,Phone,0.5,45,4
+850844,Technical,Phone,19.5,37,3
+850845,Refund,Phone,7.1,10,4
+850846,Account Access,Chat,0.5,52,4
+850847,General,Email,3.4,29,5
+850848,Technical,Phone,15.5,55,1
+850849,Refund,Chat,5.7,25,2
+850850,Refund,Email,8.6,38,3
+850851,Technical,Email,27.4,18,1
+850852,Technical,Chat,24.7,7,1
+850853,Account Access,Email,2.0,36,5
+850854,Technical,Email,22.1,57,2
+850855,Refund,Phone,2.4,56,5
+850856,General,Phone,1.4,6,4
+850857,Technical,Chat,21.5,14,3
+850858,General,Chat,0.5,54,4
+850859,Technical,Chat,22.7,18,1
+850860,Technical,Email,24.8,23,2
+850861,Refund,Email,7.1,48,1
+850862,Technical,Phone,16.4,33,1
+850863,Technical,Chat,21.3,32,1
+850864,Technical,Chat,19.0,29,4
+850865,Technical,Phone,18.5,30,3
+850866,General,Phone,0.5,43,4
+850867,Account Access,Email,6.0,12,2
+850868,Account Access,Phone,0.5,51,5
+850869,Technical,Chat,20.4,34,1
+850870,General,Phone,0.5,56,5
+850871,Account Access,Email,3.5,46,5
+850872,General,Email,2.1,26,5
+850873,Account Access,Email,1.7,54,4
+850874,Account Access,Chat,3.2,7,5
+850875,Technical,Phone,17.7,50,3
+850876,Account Access,Email,2.0,23,5
+850877,Refund,Chat,4.9,20,4
+850878,Refund,Phone,1.3,39,5
+850879,General,Chat,0.5,44,5
+850880,Refund,Chat,2.2,48,5
+850881,Account Access,Chat,0.5,22,5
+850882,Account Access,Phone,0.6,14,4
+850883,Refund,Phone,1.8,44,5
+850884,Account Access,Email,7.1,13,3
+850885,Account Access,Chat,0.5,54,5
+850886,Technical,Chat,19.8,28,3
+850887,Account Access,Phone,0.5,42,4
+850888,Account Access,Email,4.3,26,1
+850889,Refund,Email,9.0,30,3
+850890,Refund,Chat,6.1,10,2
+850891,Account Access,Phone,0.5,15,5
+850892,Technical,Chat,22.3,15,1
+850893,Technical,Phone,17.1,43,2
+850894,Refund,Chat,3.7,43,5
+850895,Account Access,Chat,0.5,23,4
+850896,Refund,Chat,4.6,10,2
+850897,Refund,Email,8.1,41,1
+850898,Technical,Chat,17.9,57,1
+850899,General,Chat,0.5,34,4
+850900,Refund,Email,9.4,26,3
+850901,Technical,Chat,23.5,4,3
+850902,Account Access,Email,6.5,25,2
+850903,Refund,Phone,6.3,9,4
+850904,Account Access,Chat,,31,5
+850905,Technical,Email,22.6,46,3
+850906,Refund,Chat,0.5,47,5
+850907,Technical,Email,29.1,14,3
+850908,Account Access,Email,4.6,33,4
+850909,General,Email,5.1,22,2
+850910,General,Chat,0.5,43,5
+850911,General,Email,0.5,54,5
+850912,Account Access,Phone,0.5,32,4
+850913,Account Access,Phone,0.5,44,5
+850914,Account Access,Email,5.1,13,2
+850915,Account Access,Phone,0.5,39,4
+850916,General,Phone,0.5,24,5
+850917,Account Access,Phone,0.5,29,4
+850918,General,Phone,0.5,22,5
+850919,Technical,Chat,16.7,37,1
+850920,Account Access,Chat,0.5,31,5
+850921,General,Chat,0.5,43,5
+850922,General,Phone,0.5,30,5
+850923,Refund,Phone,6.8,4,2
+850924,Refund,Phone,7.5,1,2
+850925,Technical,Phone,20.3,22,2
+850926,Account Access,Email,6.7,13,4
+850927,Technical,Email,19.7,58,1
+850928,Refund,Phone,0.7,51,5
+850929,Account Access,Email,8.1,12,4
+850930,General,Phone,0.5,13,4
+850931,General,Email,0.5,52,5
+850932,Refund,Chat,0.5,55,5
+850933,General,Phone,0.5,15,5
+850934,Refund,Email,11.9,8,2
+850935,Account Access,Email,3.9,16,4
+850936,Refund,Email,10.2,11,3
+850937,Refund,Phone,0.5,43,5
+850938,Technical,Phone,22.8,17,3
+850939,Refund,Chat,5.3,12,1
+850940,Technical,Phone,14.2,51,2
+850941,Technical,Phone,16.1,41,2
+850942,General,Phone,0.5,45,5
+850943,Refund,Email,5.9,45,4
+850944,Refund,Chat,1.6,33,4
+850945,Refund,Email,7.4,51,4
+850946,Technical,Email,28.4,24,3
+850947,General,Phone,0.5,32,5
+850948,Refund,Phone,6.2,4,1
+850949,Account Access,Chat,0.5,38,5
+850950,General,Email,4.2,16,3
+850951,Account Access,Phone,0.5,47,5
+850952,General,Email,3.4,36,5
+850953,Technical,Chat,22.6,16,4
+850954,Technical,Email,31.3,6,2
+850955,Refund,Phone,4.2,22,3
+850956,Account Access,Phone,2.6,7,5
+850957,Technical,Email,30.6,3,2
+850958,Account Access,Email,11.8,2,1
+850959,General,Chat,0.5,4,4
+850960,Technical,Email,27.2,28,2
+850961,Refund,Chat,1.5,39,4
+850962,Technical,Chat,19.0,24,4
+850963,Technical,Chat,17.7,49,3
+850964,Account Access,Email,6.2,18,3
+850965,Account Access,Phone,0.5,29,5
+850966,Refund,Email,10.6,16,3
+850967,Account Access,Chat,0.5,40,5
+850968,General,Email,5.8,12,3
+850969,Refund,Phone,0.5,51,4
+850970,General,Phone,0.5,50,4
+850971,Account Access,Chat,0.7,18,5
+850972,Account Access,Phone,0.5,22,5
+850973,Refund,Email,11.2,14,3
+850974,Technical,Email,25.3,29,2
+850975,Technical,Chat,14.5,56,1
+850976,General,Email,0.5,56,5
+850977,General,Phone,0.5,15,5
+850978,Refund,Phone,0.8,34,4
+850979,General,Email,6.0,10,2
+850980,Technical,Email,26.3,30,2
+850981,Technical,Phone,18.5,31,1
+850982,General,Chat,0.5,33,5
+850983,Account Access,Email,6.3,3,1
+850984,Refund,Email,8.7,31,1
+850985,Refund,Chat,4.4,7,1
+850986,Technical,Phone,20.7,13,4
+850987,Refund,Email,14.8,2,2
+850988,General,Phone,0.5,59,5
+850989,General,Email,6.3,10,3
+850990,Refund,Phone,8.2,1,4
+850991,Account Access,Phone,2.8,6,5
+850992,Account Access,Email,4.8,11,1
+850993,Technical,Chat,19.2,52,3
+850994,General,Chat,0.5,53,5
+850995,Refund,Chat,2.3,38,5
+850996,General,Email,1.9,46,5
+850997,Technical,Phone,20.7,13,3
+850998,Technical,Email,27.2,21,2
+850999,Account Access,Phone,0.5,15,5
+851000,General,Phone,0.5,50,5

@@ -30,7 +30,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 그래프 설정
-plt.rcParams['font.family'] = 'AppleGothic'
+import koreanize_matplotlib
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set2")
 
@@ -39,7 +39,7 @@ df = sns.load_dataset('taxis')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
-display(df.head())
+print(df.head())
 ```
 
 > **💻 [실행 결과]**
@@ -108,7 +108,7 @@ df['pickup_hour'] = df['pickup'].dt.hour
 df['pickup_day'] = df['pickup'].dt.day_name() # 월~일요일 이름 반환
 
 # 변환이 잘 되었는지 확인
-display(df[['pickup', 'pickup_hour', 'pickup_day']].head())
+print(df[['pickup', 'pickup_hour', 'pickup_day']].head())
 ```
 
 > **💻 [실행 결과]**
