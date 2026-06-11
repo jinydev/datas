@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="auto">
+  <rect width="600" height="350" rx="12" fill="#0f172a" />
+  
+  <!-- Title -->
+  <text x="300" y="35" font-family="sans-serif" font-size="18" font-weight="bold" fill="#f8fafc" text-anchor="middle">Hypothesis Testing: Rejection Region &amp; p-value</text>
+  
+  <g transform="translate(60, 50)">
+    <!-- X-axis -->
+    <line x1="0" y1="220" x2="480" y2="220" stroke="#94a3b8" stroke-width="2" />
+    <text x="490" y="225" font-family="sans-serif" font-size="12" fill="#94a3b8">Z-score</text>
+    
+    <!-- Shaded Rejection Region (Alpha = 0.05 on right tail) -->
+    <!-- Path approximating right tail -->
+    <path d="M 370,220 L 370,165 Q 410,210 460,220 Z" fill="#ef4444" fill-opacity="0.4" />
+    
+    <!-- Bell Curve (Normal Distribution) -->
+    <path d="M 20,220 Q 120,220 180,130 T 240,40 T 300,130 T 460,220" fill="none" stroke="#38bdf8" stroke-width="3" />
+    
+    <!-- Critical Value Line (Alpha = 0.05 Boundary, Z = 1.645 approx) -->
+    <line x1="370" y1="70" x2="370" y2="230" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4" />
+    <text x="370" y="60" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="middle">Critical Value (α = 0.05)</text>
+    
+    <!-- Center Line (Mean, Z = 0) -->
+    <line x1="240" y1="40" x2="240" y2="220" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,4" />
+    <text x="240" y="238" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Z = 0 (Mean)</text>
+    
+    <!-- Observed Statistic Point (e.g. Z = 2.5) -->
+    <circle cx="410" cy="220" r="5" fill="#10b981" />
+    <line x1="410" y1="110" x2="410" y2="220" stroke="#10b981" stroke-width="1.5" />
+    <text x="410" y="100" font-family="sans-serif" font-size="11" font-weight="bold" fill="#10b981" text-anchor="middle">Observed Z-score (p &lt; 0.05)</text>
+    
+    <!-- Annotations -->
+    <!-- Null Hypothesis Area -->
+    <text x="200" y="150" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Fail to Reject H₀</text>
+    
+    <!-- Rejection Area -->
+    <text x="430" y="150" font-family="sans-serif" font-size="11" fill="#ef4444" font-weight="bold" text-anchor="middle">Rejection Region</text>
+  </g>
+  
+  <!-- Footer Note -->
+  <text x="300" y="315" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">If Observed Z-score falls in the Rejection Region, we reject the Null Hypothesis (H₀)</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="auto">
+  <rect width="600" height="350" rx="12" fill="#0f172a" />
+  
+  <!-- Title -->
+  <text x="300" y="35" font-family="sans-serif" font-size="18" font-weight="bold" fill="#f8fafc" text-anchor="middle">scipy.constants.physical_constants Dictionary</text>
+  
+  <!-- Search/Query Interface -->
+  <rect x="30" y="65" width="540" height="70" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+  <text x="50" y="90" font-family="sans-serif" font-size="14" font-weight="bold" fill="#38bdf8">Querying with find() and value()</text>
+  <text x="50" y="115" font-family="monospace" font-size="12" fill="#f1f5f9">const.find("electron")  ==&gt;  ['electron mass', 'electron volt', ...]</text>
+  
+  <!-- Database Schema Representation -->
+  <rect x="30" y="165" width="540" height="150" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2" />
+  <text x="50" y="190" font-family="sans-serif" font-size="14" font-weight="bold" fill="#10b981">Constant Metadata (Tuple Value)</text>
+  
+  <!-- Key -> Value, Unit, Uncertainty -->
+  <g transform="translate(50, 210)">
+    <!-- Header -->
+    <text x="0" y="0" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">Key (String)</text>
+    <text x="180" y="0" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">Value (Float)</text>
+    <text x="320" y="0" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">Unit (String)</text>
+    <text x="420" y="0" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">Uncertainty</text>
+    
+    <!-- Divider -->
+    <line x1="0" y1="10" x2="480" y2="10" stroke="#475569" stroke-width="1" />
+    
+    <!-- Row 1 -->
+    <text x="0" y="30" font-family="monospace" font-size="12" fill="#f8fafc">"electron mass"</text>
+    <text x="180" y="30" font-family="monospace" font-size="12" fill="#38bdf8">9.1093837e-31</text>
+    <text x="320" y="30" font-family="monospace" font-size="12" fill="#e2e8f0">kg</text>
+    <text x="420" y="30" font-family="monospace" font-size="12" fill="#f43f5e">1.3e-37</text>
+
+    <!-- Row 2 -->
+    <text x="0" y="55" font-family="monospace" font-size="12" fill="#f8fafc">"atomic mass unit"</text>
+    <text x="180" y="55" font-family="monospace" font-size="12" fill="#38bdf8">1.66053906e-27</text>
+    <text x="320" y="55" font-family="monospace" font-size="12" fill="#e2e8f0">kg</text>
+    <text x="420" y="55" font-family="monospace" font-size="12" fill="#f43f5e">2.9e-35</text>
+  </g>
+</svg>
