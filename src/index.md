@@ -70,4 +70,15 @@ description: "파이썬을 활용한 데이터 분석 입문 과정입니다."
 - [6.4 데이터프레임 정보 확인 및 수정](/pandas/04_data_modification/)
 - [6.5 데이터 입출력 및 수집](/pandas/05_file_io/)
 
+### [7. 사이파이(SciPy)](/scipy/)
+- [7.1 사이파이 기초](/scipy/01_scipy_basics/)
+- [7.2 물리/수학 상수](/scipy/02_constants/)
+- [7.3 희소 행렬](/scipy/03_sparse/)
+- [7.4 선형대수](/scipy/04_linalg/)
+- [7.5 수치 적분](/scipy/05_integrate/)
+- [7.6 최적화 및 방정식 해 구하기](/scipy/06_optimize/)
+- [7.7 보간법](/scipy/07_interpolate/)
+- [7.8 통계 및 가설 검정](/scipy/08_stats/)
+
+
 
