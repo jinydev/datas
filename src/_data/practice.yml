@@ -1,7 +1,7 @@
 main:
-  - title: '8.1 파이데이터 학습에 대한 안내'
+  - title: '8.1 학습 안내'
     url: '/practice/00_pydata_intro/'
-  - title: '8.2 파이데이터 기초 실습 (01~17)'
+  - title: '8.2 기초 실습'
     url: '/practice/01_titanic/'
     subitems:
       - title: '8.2.01 타이타닉 생존자 예측'
@@ -38,7 +38,7 @@ main:
         url: '/practice/16_dowjones/'
       - title: '8.2.17 인지 심리학(Attention) 데이터 분석'
         url: '/practice/17_attention/'
-  - title: '8.3 다차원 데이터 및 시계열 기초 (18~34)'
+  - title: '8.3 다차원/시계열'
     url: '/practice/18_planets/'
     subitems:
       - title: '8.3.18 외계 행성(Planets) 발견 데이터 분석'
@@ -75,7 +75,7 @@ main:
         url: '/practice/33_airbnb/'
       - title: '8.3.34 쇼핑몰 고객 세그먼트 분석'
         url: '/practice/34_customer_segmentation/'
-  - title: '8.4 실전 비즈니스 및 생활 데이터 분석 (35~50)'
+  - title: '8.4 비즈니스/생활'
     url: '/practice/35_retail_sales/'
     subitems:
       - title: '8.4.35 소매점 매출 분석'
@@ -110,7 +110,7 @@ main:
         url: '/practice/49_credit_default/'
       - title: '8.4.50 통신사 고객 이탈 요인 분석'
         url: '/practice/50_customer_churn/'
-  - title: '8.5 사용자 행동 및 이커머스 분석 (51~66)'
+  - title: '8.5 행동/이커머스'
     url: '/practice/51_us_census/'
     subitems:
       - title: '8.5.51 미국 인구 통계학 분석'
@@ -145,7 +145,7 @@ main:
         url: '/practice/65_course_reviews/'
       - title: '8.5.66 도심 범죄율 요인 분석'
         url: '/practice/66_city_crimes/'
-  - title: '8.6 공공 데이터 및 도시/교통 분석 (67~83)'
+  - title: '8.6 공공/도시'
     url: '/practice/67_hr_training/'
     subitems:
       - title: '8.6.67 사내 교육 연수 효율성 분석'
@@ -182,7 +182,7 @@ main:
         url: '/practice/82_product_pricing/'
       - title: '8.6.83 종합병원 진료 부서별 환자 대기 시간 분석'
         url: '/practice/83_patient_waiting/'
-  - title: '8.7 기업 운영 및 서비스 만족도 분석 (84~100)'
+  - title: '8.7 기업/서비스'
     url: '/practice/84_house_remodel/'
     subitems:
       - title: '8.7.84 부동산 리모델링 공사 비용 및 ROI 분석'
@@ -219,9 +219,9 @@ main:
         url: '/practice/99_fitness_club_churn/'
       - title: '8.7.100 가계 금융 포트폴리오 자산 건전성 분석'
         url: '/practice/100_personal_finance/'
-  - title: '8.8 중간고사 (실습 과제 및 평가)'
+  - title: '8.8 중간고사'
     url: '/practice/midterm/'
-  - title: '8.9 금융 및 신용 데이터 분석 (101~116)'
+  - title: '8.9 금융/신용'
     url: '/practice/101_p2p_loan_defaults/'
     subitems:
       - title: '8.9.101 개인간 (P2P) 대출 연체 요인'
@@ -256,7 +256,7 @@ main:
         url: '/practice/115_retail_price_elasticity/'
       - title: '8.9.116 쇼핑몰 핫딜/선착순 재고 품절 시간'
         url: '/practice/116_flash_sale_stockout/'
-  - title: '8.10 헬스케어 및 바이오 데이터 분석 (117~133)'
+  - title: '8.10 헬스/바이오'
     url: '/practice/117_customer_reviews_topics/'
     subitems:
       - title: '8.10.117 구매 상품 고객 리뷰 텍스트 토픽 모델링'
@@ -293,7 +293,7 @@ main:
         url: '/practice/132_lastmile_route_efficiency/'
       - title: '8.10.133 항만 컨테이너 부두 정박 적체 시간'
         url: '/practice/133_port_container_congestion/'
-  - title: '8.11 물류, 배송 및 모빌리티 분석 (134~150)'
+  - title: '8.11 물류/배송'
     url: '/practice/134_warehouse_robot_picking/'
     subitems:
       - title: '8.11.134 물류창고 피킹 로봇 충돌 방지 및 경로'
@@ -330,7 +330,7 @@ main:
         url: '/practice/149_workplace_safety_incidents/'
       - title: '8.11.150 기업 복지 포인트 사용처와 직원 리텐션'
         url: '/practice/150_wellness_program_satisfaction/'
-  - title: '8.12 공학, 스마트팜 및 대기 환경 분석 (151~166)'
+  - title: '8.12 공학/환경'
     url: '/practice/151_urban_noise_pollution/'
     subitems:
       - title: '8.12.151 도시 소음 공해 데시벨 및 민원 빈도'
@@ -365,7 +365,7 @@ main:
         url: '/practice/165_music_playlist_skips/'
       - title: '8.12.166 가상현실 (VR) 멀미 지수 및 플레이 한계'
         url: '/practice/166_vr_simulator_sickness/'
-  - title: '8.13 미디어, 엔터테인먼트 및 교육 데이터 분석 (167~183)'
+  - title: '8.13 미디어/교육'
     url: '/practice/167_online_forum_moderation/'
     subitems:
       - title: '8.13.167 커뮤니티 악성 댓글 오토 필터링 분석'
@@ -402,7 +402,7 @@ main:
         url: '/practice/182_residential_gas_heating/'
       - title: '8.13.183 스마트 홈 실내 온도 조절기 제어 효율'
         url: '/practice/183_smart_thermostat_control/'
-  - title: '8.14 스포츠, 식음료 및 시스템 안전 분석 (184~200)'
+  - title: '8.14 스포츠/안전'
     url: '/practice/184_dam_inflow_power/'
     subitems:
       - title: '8.14.184 수력 발전소 유입수와 수위 제어'
@@ -439,7 +439,7 @@ main:
         url: '/practice/199_sustainable_fishery_catch/'
       - title: '8.14.200 피트니스 심박수 리커버리 시간과 체력'
         url: '/practice/200_workout_heartrate_recovery/'
-  - title: '8.15 기말고사 (실습 프로젝트 및 평가)'
+  - title: '8.15 기말고사'
     url: '/practice/final/'
-  - title: '8.16 학기 마무리 및 최종 프로젝트 피드백'
+  - title: '8.16 학기 마무리'
     url: '/practice/wrapup/'
