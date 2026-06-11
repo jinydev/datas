@@ -1,0 +1,2271 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>15주차. 기말고사 (실습 프로젝트 및 평가) | 빅데이터 분석 (Big Data Analysis)</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="15주차. 기말고사 (실습 프로젝트 및 평가)" />
+<meta name="author" content="Hojin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
+<meta property="og:description" content="파이썬으로 배우는 데이터 분석 입문 강의 노트" />
+<link rel="canonical" href="https://datas.jiny.dev/practice/final/" />
+<meta property="og:url" content="https://datas.jiny.dev/practice/final/" />
+<meta property="og:site_name" content="빅데이터 분석 (Big Data Analysis)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="15주차. 기말고사 (실습 프로젝트 및 평가)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"파이썬으로 배우는 데이터 분석 입문 강의 노트","headline":"15주차. 기말고사 (실습 프로젝트 및 평가)","url":"https://datas.jiny.dev/practice/final/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/intro/">소개하기</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/setup/">학습환경</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/python/">파이썬 기초</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/numpy/">넘파이</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/mathplotlib/">시각화</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/pandas/">판다스</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/scipy/">사이파이</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 active"
+                href="/practice/">데이터 실습</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/datas" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+    <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+        <li class="bd-links-group py-2">
+            <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                데이터 분석 실습
+            </strong>
+            <ul class="list-unstyled fw-normal pb-2 small">
+                
+                <li>
+                    
+                    <a href="/practice/00_pydata_intro/"
+                        class="bd-links-link d-inline-block rounded ">
+                        1주차 (1번 강좌). 파이데이터 학습에 대한 안내
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-2"
+                        aria-expanded="false">
+                        2주차 (2번 강좌). 파이데이터 기초 실습 (01~17)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-2">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/01_titanic/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    01. 타이타닉 생존자 예측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/02_iris/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    02. 붓꽃 품종 분류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/03_tips/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    03. 레스토랑 팁 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/04_penguins/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    04. 펭귄 데이터 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/05_flights/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    05. 항공기 탑승객 시계열 데이터
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/06_diamonds/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    06. 다이아몬드 가격 예측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/07_mpg/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    07. 자동차 연비 데이터
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/08_anscombe/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    08. 앤스콤 콰르텟과 시각화의 중요성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/09_brain_networks/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    09. 뇌 신경망 상관관계
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/10_fmri/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    10. fMRI 뇌파 시계열 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/11_taxis/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    11. 뉴욕 택시 데이터 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/12_geyser/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    12. 간헐천(Geyser) 데이터
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/13_car_crashes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    13. 미국 교통사고 데이터
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/14_healthexp/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    14. 국가별 의료비 지출과 기대수명 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/15_exercise/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    15. 운동과 식단에 따른 심박수 변화
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/16_dowjones/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    16. 다우존스 주가지수 시계열 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/17_attention/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    17. 인지 심리학(Attention) 데이터 분석
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-3"
+                        aria-expanded="false">
+                        3주차 (3번 강좌). 다차원 데이터 및 시계열 기초 (18~34)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-3">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/18_planets/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    18. 외계 행성(Planets) 발견 데이터 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/19_glue/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    19. 언어 모델 벤치마크(GLUE) 히트맵 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/20_seaice/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    20. 북극 해빙 면적 시계열 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/21_wine/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    21. 와인 품질 데이터 코릴레이션(상관관계) 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/22_bike/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    22. 자전거 대여량 시계열 수요 예측 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/23_housing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    23. 캘리포니아 집값 분석과 지리적 산점도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/24_cancer/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    24. 유방암 진단 분류 데이터 시각화
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/25_student/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    25. 학생 성적 예측 데이터 시각화 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/26_heart/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    26. 심장 질환 예측과 연속형 변수 범주화
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/27_adult/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    27. 인구조사 소득 예측 데이터 시각화 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/28_marketing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    28. 은행 마케팅 캠페인 시각화 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/29_ecommerce/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    29. 이커머스 매출 트렌드 시계열 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/30_superstore/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    30. 마트 수익 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/31_netflix/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    31. 넷플릭스 콘텐츠 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/32_spotify/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    32. 스포티파이 음원 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/33_airbnb/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    33. 에어비앤비 숙소 가격 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/34_customer_segmentation/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    34. 쇼핑몰 고객 세그먼트 분석
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4"
+                        aria-expanded="false">
+                        4주차 (4번 강좌). 실전 비즈니스 및 생활 데이터 분석 (35~50)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-4">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/35_retail_sales/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    35. 소매점 매출 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/36_fifa_world_cup/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    36. FIFA 월드컵 역사 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/37_covid19/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    37. 코로나19 트렌드 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/38_employee_attrition/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    38. 직원 퇴사 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/39_food_delivery/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    39. 배달 앱 주문 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/40_pokemon/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    40. 포켓몬 능력치 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/41_youtube/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    41. 유튜브 인기 동영상 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/42_weather/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    42. 연간 날씨 및 기온 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/43_rideshare/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    43. 차량 공유 서비스 가격 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/44_wine_reviews/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    44. 와인 리뷰 감성 및 평점 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/45_game_sales/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    45. 비디오 게임 판매 내역 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/46_stackoverflow/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    46. 개발자 설문조사 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/47_health_tracker/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    47. 건강 스마트워치 데이터 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/48_ames_housing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    48. 에임스 주택 가격 예측 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/49_credit_default/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    49. 신용카드 연체 여부 예측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/50_customer_churn/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    50. 통신사 고객 이탈 요인 분석
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5"
+                        aria-expanded="false">
+                        5주차 (5번 강좌). 사용자 행동 및 이커머스 분석 (51~66)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-5">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/51_us_census/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    51. 미국 인구 통계학 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/52_grocery_orders/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    52. 온라인 식료품 주문 패턴 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/53_auto_insurance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    53. 자동차 보험 청구 및 이상 탐지
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/54_movie_ratings/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    54. 영화 평점 시계열 변동
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/55_product_reviews/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    55. 이커머스 제품 리뷰 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/56_air_quality/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    56. 대기 질 오염도 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/57_sub_churn/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    57. 구독 서비스 이탈 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/58_car_price/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    58. 중고차 가격 감가 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/59_flight_delays/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    59. 항공 지연 및 관제 운영 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/60_fitness_tracker/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    60. 운동 트래커 칼로리 소모 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/61_heart_disease_risk/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    61. 심장 질환 위험 인자 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/62_student_performance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    62. 학생 공부 시간과 성적 상관성 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/63_hotel_bookings/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    63. 호텔 예약 취소 및 노쇼 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/64_web_conversion/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    64. 웹 트래픽 및 구매 전환율 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/65_course_reviews/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    65. 온라인 강좌 만족도 및 추천 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/66_city_crimes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    66. 도심 범죄율 요인 분석
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6"
+                        aria-expanded="false">
+                        6주차 (6번 강좌). 공공 데이터 및 도시/교통 분석 (67~83)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-6">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/67_hr_training/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    67. 사내 교육 연수 효율성 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/68_rental_prices/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    68. 부동산 월세 임대 시세 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/69_store_traffic/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    69. 매장 유입도 및 일 매출 상관분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/70_credit_scores/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    70. 신용 평가 및 연체 예측 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/71_ev_battery/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    71. 전기차 배터리 효율 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/72_delivery_logistics/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    72. 배달 배송 물류 시간 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/73_energy_consumption/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    73. 건축물 에너지 소비량 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/74_inventory_shrinkage/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    74. 매장 재고 손실 및 도난 방지 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/75_stream_activity/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    75. 스트리밍 플랫폼 이탈 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/76_coffee_loyalty/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    76. 커피전문점 단골 고객 브랜드 로열티
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/77_job_salaries/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    77. 채용 정보 연봉 수준 예측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/78_co2_temp/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    78. 지구 대기 이산화탄소와 온난화 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/79_gaming_sessions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    79. 모바일 게임 플레이 몰입도 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/80_mental_health/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    80. 현대인 정신 건강 및 스트레스
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/81_employee_engagement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    81. 사내 직원 업무 몰입도 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/82_product_pricing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    82. SaaS 요금제 및 제품 가격 정책 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/83_patient_waiting/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    83. 종합병원 진료 부서별 환자 대기 시간 분석
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-7"
+                        aria-expanded="false">
+                        7주차 (7번 강좌). 기업 운영 및 서비스 만족도 분석 (84~100)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-7">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/84_house_remodel/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    84. 부동산 리모델링 공사 비용 및 ROI 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/85_customer_support/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    85. 고객 센터 문의 처리 속도 및 만족도 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/86_airline_loyalty/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    86. 항공사 우수 고객 등급 및 이탈 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/87_insurance_premiums/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    87. 건강 보험 납입료 결정 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/88_solar_energy/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    88. 태양광 발전소 발전 효율 및 기후 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/89_electric_grid/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    89. 스마트 그리드 정전 지속 시간 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/90_mobile_app_retention/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    90. 모바일 앱 신규 가입 유저 리텐션 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/91_telecom_network/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    91. 이동통신 기지국 통신 품질 및 Latency 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/92_elearning_engagement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    92. 이러닝 영상 학습 집중도 및 완강률 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/93_bank_loan_approval/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    93. 은행 가계 대출 심사 승인 여부 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/94_used_electronics/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    94. 중고 가전 및 전자기기 리셀 가격 감가 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/95_website_performance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    95. 웹 사이트 로딩 속도 및 성능 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/96_ride_hailing_demand/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    96. 호출 택시 매칭 및 수요 요금 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/97_retail_returns/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    97. 의류 커머스 반품 요인 및 환불 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/98_crop_yield/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    98. 스마트 팜 토양 수분 및 농작물 수확량 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/99_fitness_club_churn/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    99. 피트니스 클럽 회원 연장 및 Churn 이탈 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/100_personal_finance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    100. 가계 금융 포트폴리오 자산 건전성 분석
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/practice/midterm/"
+                        class="bd-links-link d-inline-block rounded ">
+                        8주차. 중간고사 (실습 과제 및 평가)
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-9"
+                        aria-expanded="false">
+                        9주차 (8번 강좌). 금융 및 신용 데이터 분석 (101~116)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-9">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/101_p2p_loan_defaults/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    101. 개인간 (P2P) 대출 연체 요인
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/102_crypto_volatility/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    102. 비트코인 등 가상자산 변동성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/103_stock_sentiment/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    103. 주식 시장 소셜 미디어 감성 지수
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/104_atm_cash_demand/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    104. 은행 ATM 기기 현금 출금 수요 예측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/105_bank_branch_service/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    105. 은행 지점 고객 대기 및 업무 시간
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/106_microfinance_repayment/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    106. 마이크로파이낸스 소액 대출 상환성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/107_credit_limit_optimization/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    107. 신용카드 이용 한도 최적화 모델
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/108_car_insurance_fraud/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    108. 자동차 사고 보험 청구 허위 사기 적발
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/109_startup_funding/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    109. 스타트업 벤처캐피탈(VC) 투자 라운드
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/110_reits_dividend_yield/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    110. 부동산 투자 신탁 (REITs) 배당 수익률
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/111_b2b_saas_clv/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    111. B2B SaaS 고객 평생 가치 (CLV)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/112_cart_abandonment/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    112. 쇼핑몰 장바구니 결제 포기 요인
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/113_recommendation_clicks/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    113. 하이브리드 협업 필터링 추천 시스템
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/114_marketing_attribution/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    114. 디지털 마케팅 채널 기여도 (Attribution)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/115_retail_price_elasticity/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    115. 시즌 의류 품목 가격 탄력성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/116_flash_sale_stockout/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    116. 쇼핑몰 핫딜/선착순 재고 품절 시간
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-10"
+                        aria-expanded="false">
+                        10주차 (9번 강좌). 헬스케어 및 바이오 데이터 분석 (117~133)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-10">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/117_customer_reviews_topics/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    117. 구매 상품 고객 리뷰 텍스트 토픽 모델링
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/118_loyalty_points_redemption/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    118. 멤버십 포인트 적립 및 소진 행동
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/119_subscription_box_churn/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    119. 구독 박스 서비스 정기 배송 해지 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/120_crossborder_shipping_delay/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    120. 해외 직구 물류 통관 대기 소요 시간
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/121_diabetes_readmission/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    121. 만성 당뇨 환자 병원 재입원 위험성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/122_sleep_apnea_tracker/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    122. 수면 스마트 밴드 무호흡 로그 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/123_hrv_stress_index/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    123. 웨어러블 심박 변동성 (HRV)과 스트레스
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/124_drug_adherence/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    124. 만성 질환 의약품 복용 순응도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/125_genomic_variants_disease/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    125. 유전자 변이(SNP) 발현 및 질환 매핑
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/126_medical_ai_accuracy/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    126. 의료 영상 인공지능 오탐 검진 판독
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/127_rehab_joint_rom/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    127. 물리치료 재활 운동 관절 가동 범위
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/128_diet_caloric_balance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    128. 칼로리 식단 기록 및 체지방 변동
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/129_blood_donor_supply/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    129. 헌혈 희망자 자격 검격 및 혈액 보존
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/130_dental_implant_complications/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    130. 치과 임플란트 시술 사후 염증 부작용
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/131_cold_chain_temp/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    131. 바이오 의약품 콜드체인 온도 모니터링
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/132_lastmile_route_efficiency/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    132. 택배 라스트마일 배송 경로 효율성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/133_port_container_congestion/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    133. 항만 컨테이너 부두 정박 적체 시간
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-11"
+                        aria-expanded="false">
+                        11주차 (10번 강좌). 물류, 배송 및 모빌리티 분석 (134~150)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-11">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/134_warehouse_robot_picking/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    134. 물류창고 피킹 로봇 충돌 방지 및 경로
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/135_fleet_maintenance_ev/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    135. 법인 차량 전기차 연비 및 정비 주기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/136_subway_rushhour_congestion/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    136. 도시 지하철 출퇴근 시간대 혼잡도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/137_ebike_battery_drain/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    137. 전기 자전거 공유 배터리 방전 속도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/138_air_cargo_damage/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    138. 항공 화물 수송 파손 손실 청구율
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/139_crossdocking_throughput/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    139. 허브 터미널 크로스도킹 처리 효율
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/140_drone_delivery_wind/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    140. 물류 배송 드론 풍속 저항 및 비행 한계
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/141_remotework_productivity/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    141. 원격 근무 스트레스 및 성과 상관성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/142_hr_recruitment_channels/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    142. 채용 플랫폼 광고 전환율 및 우수 인재
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/143_internal_job_mobility/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    143. 사내 직무 순환 및 부서 이동 승진 소요
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/144_freelancer_gig_matching/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    144. 프리랜서 마켓 매칭 속도 및 서비스 단가
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/145_coworking_noshow_rate/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    145. 공유 오피스 회의실 이용 예약 부도율
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/146_corporate_mentorship/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    146. 멘토링 프로그램 참여 신입사원 조기 잔존
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/147_sales_quota_attainment/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    147. 영업 조직 성과급 지급 체계 효율성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/148_coding_test_vs_performance/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    148. 코딩 테스트 성적 대비 입사 사후 성과
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/149_workplace_safety_incidents/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    149. 공장 근로 안전 수칙 위반 및 사고 위험
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/150_wellness_program_satisfaction/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    150. 기업 복지 포인트 사용처와 직원 리텐션
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-12"
+                        aria-expanded="false">
+                        12주차 (11번 강좌). 공학, 스마트팜 및 대기 환경 분석 (151~166)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-12">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/151_urban_noise_pollution/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    151. 도시 소음 공해 데시벨 및 민원 빈도
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/152_solar_panel_dust_efficiency/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    152. 태양광 패널 먼지 오염에 따른 효율 하강
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/153_wind_turbine_output/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    153. 해상 풍력 발전기 풍향 변동 및 발전량
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/154_smart_water_leakage/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    154. 지능형 스마트 계량기 상수도 누수 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/155_wildfire_risk_indices/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    155. 기후 산불 위험 지수 요인 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/156_ev_charging_wait_times/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    156. 전기차 충전소 충전 대기 유휴 시간
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/157_municipal_waste_recycling/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    157. 지자체 생활 쓰레기 배출량 및 재활용
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/158_sea_temp_coral_bleaching/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    158. 해수면 온도(SST) 상승 및 산호초 백화
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/159_urban_forest_heat_island/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    159. 도시 숲 가로수 캐노피 면적과 도심 열섬
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/160_highspeed_rail_vibration/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    160. 고속철도 주변 선로 소음 진동 계측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/161_game_matchmaking_fairness/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    161. 온라인 게임 매칭 공정성 지표 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/162_podcast_listener_dropoff/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    162. 팟캐스트 오디오 시청 청취 중도 이탈
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/163_influencer_post_engagement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    163. 인플루언서 피드 도달율 및 광고 반응
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/164_news_clickbait_engagement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    164. 뉴스 기사 낚시성 헤드라인과 독자 체류
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/165_music_playlist_skips/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    165. 음원 스트리밍 플레이리스트 추천 스킵
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/166_vr_simulator_sickness/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    166. 가상현실 (VR) 멀미 지수 및 플레이 한계
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-13"
+                        aria-expanded="false">
+                        13주차 (12번 강좌). 미디어, 엔터테인먼트 및 교육 데이터 분석 (167~183)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-13">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/167_online_forum_moderation/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    167. 커뮤니티 악성 댓글 오토 필터링 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/168_ebook_reading_retention/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    168. 전자책 독서 속도 및 북마크 독서 중단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/169_livestream_chat_spikes/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    169. 스트리머 실시간 방송 채팅 트래픽 스파이크
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/170_app_store_rating_version/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    170. 앱 마켓 릴리즈 버전별 평점 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/171_student_dropout_risk/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    171. 고교 학업 중도 탈락 위험 징후 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/172_language_app_retention/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    172. 외국어 학습 어플 일일 스트릭과 암기력
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/173_scholarship_gpa_progress/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    173. 대학 장학금 지원 예산 분배 효율성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/174_bootcamp_job_placement/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    174. 부트캠프 수료생 구직 소요 시간 및 초임
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/175_test_prep_score_increase/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    175. 모의평가(SAT/ACT) 수강 시간과 성적
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/176_digital_textbook_interactions/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    176. 디지털 교과서 뷰어 인터랙션 로그
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/177_teacher_burnout_turnover/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    177. 교사 소진율 및 공교육 교실 이탈 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/178_science_report_grades/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    178. 과학 실험 보고서 서술형 정밀 평가
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/179_tutor_matching_success/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    179. 온라인 튜터 매칭 만족도 및 재수강률
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/180_classroom_eye_tracking/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    180. 비대면 원격 화상 강의 시선집중 로그
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/181_cnc_tool_wear/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    181. 공장 선반 장비 예지정비 마모 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/182_residential_gas_heating/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    182. 아파트 도시가스 동절기 난방 최적화
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/183_smart_thermostat_control/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    183. 스마트 홈 실내 온도 조절기 제어 효율
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <button
+                        class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-14"
+                        aria-expanded="false">
+                        14주차 (13번 강좌). 스포츠, 식음료 및 시스템 안전 분석 (184~200)
+                        <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="collapse " id="collapse-14">
+                        <ul class="list-unstyled fw-normal pb-1 small ms-3">
+                            
+                            <li>
+                                <a href="/practice/184_dam_inflow_power/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    184. 수력 발전소 유입수와 수위 제어
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/185_welding_defect_detection/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    185. 조립 라인 로봇 용접 품질 불량율 예측
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/186_geothermal_heat_recovery/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    186. 지열 열 교환 에너지 추출 성능 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/187_workshift_errors_manufacturing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    187. 근무조 교대 근무 패턴과 작업 실수 상관
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/188_battery_storage_thermal/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    188. 대용량 ESS 배터리 충전 셀 온도 분산
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/189_smart_lighting_dimming/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    189. smart 가로등 디밍 통제 전력 절감량
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/190_chemical_reactor_safety/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    190. 화학 반응기 온도 임계점 경보 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/191_greenhouse_tomato_growth/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    191. 온실 토마토 줄기 두께 및 습도 제어
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/192_football_pass_accuracy/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    192. 프로 축구 패스 전개 성공율 요인 진단
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/193_wine_barrel_aging/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    193. 와인 오크통 숙성 보관 가스 변동
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/194_sports_ticket_dynamic_pricing/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    194. 스포츠 경기 티켓 동적 다이내믹 가격책정
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/195_coffee_roasting_profiles/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    195. 커피 원두 로스팅 아티산 온도 프로파일
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/196_drone_ndvi_crop_yield/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    196. 드론 정밀 식생 지수(NDVI)와 수확량
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/197_restaurant_food_waste/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    197. 뷔페 레스토랑 미끼 메뉴별 잔반 음식 쓰레기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/198_marathon_pace_bonking/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    198. 마라톤 페이스 오버페이스와 페이스 메이커
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/199_sustainable_fishery_catch/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    199. 연안 어업 선박 출하량 및 어종 보존성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/practice/200_workout_heartrate_recovery/"
+                                    class="bd-links-link d-inline-block rounded ">
+                                    200. 피트니스 심박수 리커버리 시간과 체력
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/practice/final/"
+                        class="bd-links-link d-inline-block rounded active">
+                        15주차. 기말고사 (실습 프로젝트 및 평가)
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    <a href="/practice/wrapup/"
+                        class="bd-links-link d-inline-block rounded ">
+                        16주차. 학기 마무리 및 최종 프로젝트 피드백
+                    </a>
+                    
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/practice/">Practice</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page">15주차. 기말고사 (실습 프로젝트 및 평가)</li>
+        
+        
+        
+    </ol>
+</nav>
+
+        <div class="bd-content ps-lg-4">
+            <h1 id="15주차-기말고사-실습-프로젝트-및-평가">15주차: 기말고사 (실습 프로젝트 및 평가)</h1>
+
+<h2 id="-기말고사-평가-개요">📌 기말고사 평가 개요</h2>
+
+<p><img src="/practice/01_titanic/img/step2_missing_values.svg" alt="기말고사 안내 이미지" /></p>
+
+<p>본 과정의 기말고사는 <strong>“캡스톤 데이터 분석 프로젝트”</strong> 형식으로 진행됩니다. 지난 한 학기 동안 학습한 200개의 실습 사례들을 관통하는 <strong>4단계 데이터 분석 프레임워크</strong>를 총동원하여, 수강생이 스스로 선정한 자유 주제 또는 제공된 고난도 데이터셋에 대해 깊이 있는 엔드투엔드(End-to-End) 데이터 사이언스 워크플로우를 완수하는 것을 목표로 합니다.</p>
+
+<hr />
+
+<h2 id="-진행-일정-및-제출-양식">📅 진행 일정 및 제출 양식</h2>
+
+<ul>
+  <li><strong>제출 마감</strong>: 15주차 종료 시점까지</li>
+  <li><strong>진행 방식</strong>:
+    <ol>
+      <li>기말고사 데이터셋 후보군 또는 자유 주제 데이터를 선정합니다.</li>
+      <li>수집된 데이터를 바탕으로 데이터 전처리, 심층 통계 분석, 고차원 시각화를 아우르는 분석 파이프라인 코드를 구현합니다.</li>
+      <li>도출된 인사이트를 바탕으로 프레젠테이션 또는 웹 보고서(Markdown) 형식의 결과물을 완성합니다.</li>
+      <li>본인의 Git Repository에 최종 Notebook 파일(<code class="language-plaintext highlighter-rouge">.ipynb</code>)과 Markdown 보고서를 push하고 Pull Request로 제출합니다.</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-주요-평가-기준-100점-만점">🎯 주요 평가 기준 (100점 만점)</h2>
+
+<ol>
+  <li><strong>주제 설정 및 데이터 수집 (15점)</strong>
+    <ul>
+      <li>분석하고자 하는 문제의 정의(Problem Definition)가 명확하고 비즈니스적 가치가 있는가</li>
+      <li>분석 목적에 부합하는 적절한 규모의 데이터셋을 준비했는가</li>
+    </ul>
+  </li>
+  <li><strong>고급 데이터 전처리 및 피처 엔지니어링 (25점)</strong>
+    <ul>
+      <li>결측치 및 이상치에 대한 과학적인 처리 기법 적용</li>
+      <li>원시 데이터에서 새로운 통계적 가치를 창출하는 파생 변수(Derived Features) 설계 능력</li>
+    </ul>
+  </li>
+  <li><strong>심층 탐색적 데이터 분석 (EDA) 및 고급 시각화 (40점)</strong>
+    <ul>
+      <li>단순 일변량 시각화를 넘어, 3변수 이상의 다변량 상관분석 및 오버레이 시각화 적용</li>
+      <li>도메인 지식과 차트 해석이 결합된 합리적 분석 흐름</li>
+    </ul>
+  </li>
+  <li><strong>최종 결론 및 추천 전략 (20점)</strong>
+    <ul>
+      <li>분석 결과를 토대로 구체적이고 실행 가능한 해결책(Actionable Item) 제시</li>
+      <li>기술적 한계 및 향후 개선 방안 기술</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="-기말고사-성공-전략">💡 기말고사 성공 전략</h2>
+
+<ul>
+  <li><strong>도메인 지식의 융합</strong>: 데이터만 쳐다보는 것이 아니라, 분석 대상이 되는 도메인(금융, 헬스케어, 물류 등)의 배경 지식을 분석 보고서에 녹여내세요.</li>
+  <li><strong>시각화의 고도화</strong>: 기본 Seaborn 차트에서 멈추지 말고, 로그 스케일 변환, 서브플롯 구성, 그리드 조절 등을 통해 업계 보고서 수준의 세련된 차트를 제작하세요.</li>
+  <li><strong>스토리텔링</strong>: 분석 흐름이 끊기지 않고 하나의 완성도 높은 스토리로 이어지도록 Markdown 문서를 꼼꼼하게 다듬으세요.</li>
+</ul>
+
+
+            <!-- 구글 애드센스 출력 -->
+            <div class="mt-5">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+    crossorigin="anonymous"></script>
+<!-- jinydev-java -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475" data-ad-slot="9323221865"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+        </div>
+
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    서브목차
+    <svg class="bi d-md-none ms-2" aria-hidden="true">
+      <use xlink:href="#chevron-expand"></use>
+    </svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">서브목차</strong>
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <nav id="TableOfContents">
+      <!--
+      <ul>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#cdn-links">CDN links</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+        <li><a href="#js-components">JS components</a></li>
+        <li><a href="#important-globals">Important globals</a>
+          <ul>
+            <li><a href="#html5-doctype">HTML5 doctype</a></li>
+            <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+            <li><a href="#box-sizing">Box-sizing</a></li>
+            <li><a href="#reboot">Reboot</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      -->
+    </nav>
+  </div>
+</div>
+    </main>
+</div>
+
+
+  <footer class="container">
+  <hr class="mt-5 mb-3">
+  <div class="row align-items-center pb-3">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <p class="mb-0 text-secondary">Copyright 2017~2026 JinyDev. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+      <a href="mailto:infohojin@naver.com" class="text-decoration-none text-secondary">Contact</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+
+</body>
+
+</html>
