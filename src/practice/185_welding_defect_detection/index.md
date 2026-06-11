@@ -23,6 +23,17 @@ permalink: /practice/185_welding_defect_detection/
 
 ---
 
+## 🧐 실무 도메인 지식 가이드 (Domain Knowledge Guide)
+
+> **⚙️ 제조 및 스마트팩토리 (Manufacturing & Smart Factory)**
+> 제조 데이터 분석은 설비의 진동/압력 센서 로그를 통해 고장을 사전에 감지하고(예지 보전) 공정 품질 불량을 최소화하는 분야입니다.
+>
+> * **예지 보전(Predictive Maintenance)**: 부품 마모율과 가동 로그의 한계를 통계적으로 진단하여, 불시의 가동 중단(Downtime) 손실을 차단합니다.
+> * **공정 불량(Defect) 상관성**: 온/습도 상태와 용접 등 기계 압력값을 매칭해 결함 원인이 되는 핵심 물리 피처를 규명합니다.
+> * **설비 수명 주기**: 장비 사용 누적 로그를 활용해 부품의 신뢰성 통계(Weibull 분포 등)를 구하고 최적의 설비 가용성을 확보합니다.
+
+---
+
 ## Step 1: 데이터 불러오기 및 기본 정보 확인 (Data Load)
 
 ![Step 1 데이터 수집 개념도](img/step1_dataset.svg)

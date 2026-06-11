@@ -20,6 +20,17 @@ permalink: /practice/67_hr_training/
 
 ---
 
+## 🧐 실무 도메인 지식 가이드 (Domain Knowledge Guide)
+
+> **👥 인사 및 조직 문화 (HR & Workplace Analysis)**
+> 인적 자원 관리(HR Analytics)는 핵심 인재의 이탈(Attrition) 방지, 사내 직무 이동 성과, 복지 리텐션을 다루는 과학적 기업 운영 분야입니다.
+>
+> * **직원 자발적 퇴사(Attrition)**: 야근 빈도, 직무 몰입도(Engagement), 급여 대비 승진 연한 격차 등을 통해 조기 이탈 리스크 직원을 경보합니다.
+> * **채용 채널 성과 분석**: 직무 코딩테스트 및 전형 결과와 입사 사후 실제 성과 데이터 간의 타당성(상관) 관계를 실증 분석합니다.
+> * **원격 근무 효율성**: 원격/사무실 하이브리드 근무자의 생산성 점수와 근무 만족도 분산 차이를 통계 검증(T-test 등)합니다.
+
+---
+
 ## Step 1: 데이터 구조 살펴보기 (Data Overview)
 
 ![Step 1 데이터 구조 개념도](img/step1_dataset.svg)
