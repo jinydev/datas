@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-25-학생-성적-예측과-다중-플롯-오버레이">실전 데이터 분석 25: 학생 성적 예측과 다중 플롯 오버레이</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2133,7 +2137,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_palette</span><span class="p">(</span><span class="sh">"</span><span class="s">Set2</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/student_performance.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./student_performance.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2142,7 +2146,28 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/student_performance.csv'
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   StudentID        1000 non-null   int64  
+ 1   StudyHours       1000 non-null   float64
+ 2   AttendanceRate   988 non-null    float64
+ 3   SleepHours       1000 non-null   float64
+ 4   ParentalSupport  1000 non-null   str    
+ 5   FinalGrade       1000 non-null   float64
+dtypes: float64(4), int64(1), str(1)
+memory usage: 51.8 KB
+None
+   StudentID  StudyHours  ...  ParentalSupport  FinalGrade
+0     620001         3.1  ...           Medium        62.7
+1     620002        18.1  ...             High        82.5
+2     620003        29.9  ...             High        94.6
+3     620004        15.6  ...             High        81.9
+4     620005        22.8  ...           Medium        86.2
+
+[5 rows x 6 columns]
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2175,7 +2200,7 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: 'G3'
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2208,7 +2233,7 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: Could not interpret value `G3` for `x`. An entry with this name does not appear in `data`.
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2245,7 +2270,7 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: Could not interpret value `failures` for `x`. An entry with this name does not appear in `data`.
 </code></pre></div>  </div>
 </blockquote>
 

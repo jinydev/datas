@@ -6,6 +6,8 @@ permalink: /practice/28_marketing/
 
 # 실전 데이터 분석 28: 은행 마케팅 성공 예측과 Stripplot의 시각적 파워
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/bank_marketing.csv')
+df = pd.read_csv('./bank_marketing.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/bank_marketing.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column     Non-Null Count  Dtype
+> ---  ------     --------------  -----
+>  0   age        1000 non-null   int64
+>  1   job        1000 non-null   str  
+>  2   marital    1000 non-null   str  
+>  3   education  1000 non-null   str  
+>  4   balance    1000 non-null   int64
+>  5   duration   1000 non-null   int64
+>  6   deposit    1000 non-null   str  
+> dtypes: int64(3), str(4)
+> memory usage: 80.5 KB
+> None
+>    age           job   marital  education  balance  duration deposit
+> 0   77     housemaid   married    primary     2212       916     yes
+> 1   31   blue-collar   married   tertiary     8848      1381     yes
+> 2   34  entrepreneur  divorced   tertiary      896       373      no
+> 3   47       student  divorced  secondary       89      1001     yes
+> 4   24    management    single    unknown     7674       929     yes
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -86,10 +107,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_2.svg)
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -120,10 +138,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -159,10 +174,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

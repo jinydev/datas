@@ -6,6 +6,8 @@ permalink: /practice/48_ames_housing/
 
 # 실전 데이터 분석 48: 에임스(Ames) 부동산 데이터 기반 주거 면적 및 건물 품질이 주택 거래가에 미치는 선형 회귀 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/ames_housing.csv')
+df = pd.read_csv('./ames_housing.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column        Non-Null Count  Dtype
+> ---  ------        --------------  -----
+>  0   HouseID       1000 non-null   int64
+>  1   GrLivArea     1000 non-null   int64
+>  2   YearBuilt     1000 non-null   int64
+>  3   Neighborhood  1000 non-null   str  
+>  4   OverallQual   1000 non-null   int64
+>  5   SalePrice     1000 non-null   int64
+> dtypes: int64(5), str(1)
+> memory usage: 53.8 KB
+> None
+>    HouseID  GrLivArea  YearBuilt Neighborhood  OverallQual  SalePrice
+> 0    40001        842       1961      OldTown            6     166187
+> 1    40002       2940       1952      NridgHt            3     262259
+> 2    40003       1484       1958      OldTown            5     162234
+> 3    40004       1518       1972      Edwards            6     235969
+> 4    40005       2701       1989      OldTown            8     354697
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -93,6 +118,28 @@ print(df.groupby('Neighborhood')['SalePrice'].mean().sort_values(ascending=False
 
 > **💻 [실행 결과]**
 > ```text
+> GrLivArea      SalePrice
+> count  1000.00000    1000.000000
+> mean   1992.87300  262834.940000
+> std     688.24394   83017.440776
+> min     801.00000   76691.000000
+> 25%    1419.25000  201349.500000
+> 50%    1959.00000  261166.500000
+> 75%    2587.25000  317397.250000
+> max    3199.00000  507126.000000
+> 
+> --- 동네별 평균 거래 가격 격차 ---
+> Neighborhood
+> Gilbert    269065.335260
+> OldTown    267680.574713
+> NridgHt    265813.319018
+> CollgCr    260902.018072
+> Somerst    256627.747059
+> Edwards    256144.116883
+> Name: SalePrice, dtype: float64
+> ```
+
+
           GrLivArea      SalePrice
 count   1000.00000    1000.000000
 mean    1992.87300  262834.940000
@@ -136,8 +183,9 @@ plt.ylabel('거래 가격 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **마감 등급 상승에 따른 선형적 매매가 상승:** 마감 품질(OverallQual)의 점수 상자가 우측으로 갈수록 거래 가격 축의 높은 고지대로 뚜렷하게 도약합니다. 마감 재료의 고급화 및 관리 상태가 부동산 평가 가치의 절대적인 척도로 가치 책정되고 있음을 박스 높이의 계단식 성장이 증명합니다.
@@ -162,8 +210,9 @@ plt.ylabel('거래 가격 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **면적과 품질의 다차원 시너지 시각화:** 산점도를 확인하면 거실 주거 면적(X축)과 실거래가(Y축)가 비례하여 상승하는 선형 분포를 띠고 있습니다. 여기에 품질이 좋은 주택들(붉은색/노란색 계열)이 그래프 상위에 걸려 있고, 면적이 작고 품질이 낮을수록 하단부(푸른색 계열)에 밀집되어 있어, 집 크기와 마감 품질이라는 두 축이 주택 가격을 공동 결정하는 강력한 독립 변수임을 말해줍니다.

@@ -6,6 +6,8 @@ permalink: /practice/46_stackoverflow/
 
 # 실전 데이터 분석 46: 스택 오버플로우 개발자 연차(YearsCode) 및 주력 언어별 연봉 격차 다차원 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/stackoverflow_survey.csv')
+df = pd.read_csv('./stackoverflow_survey.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype
+> ---  ------           --------------  -----
+>  0   RespondentID     1000 non-null   int64
+>  1   Country          1000 non-null   str  
+>  2   YearsCode        1000 non-null   int64
+>  3   Employment       1000 non-null   str  
+>  4   Salary           1000 non-null   int64
+>  5   PrimaryLanguage  1000 non-null   str  
+> dtypes: int64(3), str(3)
+> memory usage: 74.2 KB
+> None
+>    RespondentID Country  YearsCode          Employment  Salary PrimaryLanguage
+> 0        300001      US          6  Employed full-time   60606      JavaScript
+> 1        300002      US          9  Employed full-time   62752          Python
+> 2        300003   India         20  Employed full-time  118035          Python
+> 3        300004   India         19  Employed full-time  111392      JavaScript
+> 4        300005      US         12  Employed full-time   88502      JavaScript
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -94,6 +119,21 @@ print(df[df['Country'].isin(['US', 'India'])].groupby('Country')['YearsCode'].me
 
 > **💻 [실행 결과]**
 > ```text
+> --- 고용 형태별 평균 연봉 ($) ---
+> Employment
+> Employed full-time        79117.903869
+> Independent contractor    81049.441176
+> Not employed              77134.266667
+> Name: Salary, dtype: float64
+> 
+> --- US vs India 평균 코딩 연차 ---
+> Country
+> India    10.719665
+> US       10.628415
+> Name: YearsCode, dtype: float64
+> ```
+
+
 --- 고용 형태별 평균 연봉 ($) ---
 Employment
 Employed full-time        79093.208188
@@ -131,8 +171,9 @@ plt.ylabel('응답자 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **웹 개발 및 데이터 과학 언어의 대세:** 시각화 결과 파이썬(Python)과 자바스크립트(JavaScript)가 주력 언어 분포에서 가장 높은 비중을 차지하고 있습니다. 글로벌 개발 현업에서 프론트엔드/백엔드 웹 생태계와 AI/데이터 연산 분야의 주도권이 이 두 언어에 집중되어 있음을 실물 데이터가 그대로 대변합니다.
@@ -158,8 +199,9 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **경험 연차 비례 급여 우상향 및 고단가 신흥 언어 포착:** 연차가 올라갈수록 급여가 꾸준히 비례하여 상승하는 우상향 트렌드를 확인하는 한편, 고(Go)나 러스트(Rust)처럼 클라우드/시스템 엔지니어링에 최적화된 신흥 언어 그룹의 가격선이 파이썬이나 자바스크립트 평균선에 비해 상단에 따로 우뚝 솟아 고연봉 단가를 기록하는 **언어별 몸값 격차 현상**을 확인할 수 있습니다.

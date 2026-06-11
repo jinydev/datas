@@ -6,6 +6,8 @@ permalink: /practice/56_air_quality/
 
 # 실전 데이터 분석 56: 도시 및 계절별 초미세먼지(PM2.5) 오염도 대조 및 도시 교통량 대비 미세먼지 상관 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/air_quality.csv')
+df = pd.read_csv('./air_quality.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   Date           1000 non-null   str    
+>  1   City           1000 non-null   str    
+>  2   PM2_5          986 non-null    float64
+>  3   PM10           1000 non-null   float64
+>  4   Season         1000 non-null   str    
+>  5   Traffic_Index  1000 non-null   float64
+> dtypes: float64(3), str(3)
+> memory usage: 74.1 KB
+> None
+>                Date     City  PM2_5   PM10  Season  Traffic_Index
+> 0  2023-01-01 00:00  Daejeon   63.2   77.3  Winter           17.5
+> 1  2023-01-01 08:00    Seoul   97.5  166.1  Winter           78.9
+> 2  2023-01-01 16:00  Incheon   60.7   79.9  Autumn           95.1
+> 3  2023-01-02 00:00    Daegu   36.2   54.5  Autumn           23.3
+> 4  2023-01-02 08:00  Incheon   72.2  121.9  Spring           39.9
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +121,14 @@ print(df['PM2_5'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 개수 ---
+> 14
+> 
+> --- 정제 후 결측치 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 결측치 개수 ---
 14
 
@@ -126,8 +159,9 @@ plt.ylabel('평균 초미세먼지 (㎍/㎥)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **시각적으로 드러나는 계절성과 도시 특성:** 전반적으로 봄(Spring, 노란색)과 겨울(Winter, 붉은색) 막대 높이가 우뚝 솟아 있으며, 여름(Summer)은 눈에 띄게 낮게 하강합니다. 또한 서울(Seoul)과 인천(Incheon)과 같은 수도권 수도 벨트 지역의 연간 농도가 남부 거점 지역 대비 다소 높게 오버레이되어 밀집되어 있음을 보여줍니다.
@@ -152,8 +186,9 @@ plt.ylabel('초미세먼지 농도 (㎍/㎥)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **교통 정체와 대기 환경의 정비례 선형 연동:** 산점도 내 분포를 보면, 교통량 지수(X축)가 증가함에 따라 초미세먼지 오염도(Y축) 수치도 조밀하게 우상향 방향으로 뻗어가고 있습니다. 차량 배기가스가 지역 대기 질 하락의 중요한 독립 변수로서 통계적 기울기를 제공하고 있음을 명확히 증명합니다.

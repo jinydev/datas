@@ -5,6 +5,8 @@ permalink: /practice/91_telecom_network/
 ---
 
 # 91. 이동통신 기지국 통신 품질 및 Latency 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 91: 기지국 트래픽 부하 및 신호 세기 감도 조건별 데이터 전송 지연 속도 및 패킷 손실 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/telecom_network.csv')
+df = pd.read_csv('./telecom_network.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,27 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   TowerID              1000 non-null   int64  
+>  1   TrafficLoad_Percent  1000 non-null   float64
+>  2   PacketLoss           986 non-null    float64
+>  3   SignalStrength_dBm   1000 non-null   int64  
+>  4   Latency_ms           1000 non-null   float64
+> dtypes: float64(3), int64(2)
+> memory usage: 39.2 KB
+> None
+>    TowerID  TrafficLoad_Percent  PacketLoss  SignalStrength_dBm  Latency_ms
+> 0   910001                 63.4        0.00                 -75        41.1
+> 1   910002                 85.4        1.10                 -80        59.6
+> 2   910003                 93.2        3.93                 -58        83.0
+> 3   910004                 11.3        0.00                -102        30.9
+> 4   910005                 12.9        0.00                -109        32.3
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
  #   Column               Non-Null Count  Dtype  
@@ -87,6 +110,20 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > TowerID                 0
+> TrafficLoad_Percent     0
+> PacketLoss             14
+> SignalStrength_dBm      0
+> Latency_ms              0
+> dtype: int64
+> TowerID                0
+> TrafficLoad_Percent    0
+> PacketLoss             0
+> SignalStrength_dBm     0
+> Latency_ms             0
+> dtype: int64
+> ```
+
+
 TrafficLoad_Percent     0
 PacketLoss             14
 SignalStrength_dBm      0
@@ -120,8 +157,9 @@ plt.title('무선 데이터 통신 지연 속도(Latency, ms) 분포', fontsize=
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **안정적인 고속 통신 반응 구간 포진:** 무선망 지연 속도는 20~55ms 근방을 축으로 매우 조밀하게 밀집한 정규분포를 보입니다. 단말 사용자가 끊김 현상을 거의 느끼지 못하는 고성능 통신망 상태가 대다수를 점유함을 입증합니다.
@@ -143,8 +181,9 @@ plt.title('기지국 트래픽 부하 대비 데이터 지연 속도와 신호 �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **트래픽 임계 포화에 따른 지연 폭발 구간 규명:** 트래픽 부하율(X축)과 데이터 지연 속도(Y축)는 단순 선형 상승이 아닙니다. 부하율이 80%를 돌파하는 구역부터 지연 속도가 위로 수직 도약하는 망 포화 병목 곡선을 그립니다. 특히 신호 강도가 나쁜 감도 구역(붉은색 계열) 기지국에서 이 스파이크 반응이 더 극단적으로 발생하여, 트래픽 유입에 따른 무선 기지국 망 용량 증설 타이밍 설계의 필수 경계를 규명해 줍니다.

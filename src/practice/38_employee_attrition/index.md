@@ -6,6 +6,8 @@ permalink: /practice/38_employee_attrition/
 
 # 실전 데이터 분석 38: 기업 인사(HR) 데이터를 활용한 직원 직무 만족도 및 급여별 이탈(퇴사) 영향도 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/employee_attrition.csv')
+df = pd.read_csv('./employee_attrition.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,30 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   EmployeeID      1000 non-null   int64  
+>  1   Attrition       1000 non-null   str    
+>  2   Satisfaction    1000 non-null   float64
+>  3   LastEvaluation  1000 non-null   float64
+>  4   SalaryLevel     1000 non-null   str    
+>  5   Tenure          1000 non-null   int64  
+> dtypes: float64(2), int64(2), str(2)
+> memory usage: 53.7 KB
+> None
+>    EmployeeID Attrition  Satisfaction  LastEvaluation SalaryLevel  Tenure
+> 0       20001       Yes          2.85            3.30      Medium       4
+> 1       20002        No          4.51            3.46      Medium       5
+> 2       20003        No          4.80            2.60      Medium       1
+> 3       20004        No          3.96            3.17         Low       4
+> 4       20005        No          3.72            4.44        High       6
+> ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -94,6 +120,21 @@ print(df.groupby('SalaryLevel')['Attrition'].value_counts(normalize=True).unstac
 
 > **💻 [실행 결과]**
 > ```text
+> --- 퇴사 여부별 만족도 평균 ---
+> Attrition
+> No     3.704946
+> Yes    2.719487
+> Name: Satisfaction, dtype: float64
+> 
+> --- 급여 등급별 퇴사율 ---
+> Attrition          No       Yes
+> SalaryLevel                    
+> High         0.571429  0.428571
+> Low          0.529412  0.470588
+> Medium       0.571101  0.428899
+> ```
+
+
 --- 퇴사 여부별 만족도 평균 ---
 Attrition
 No     3.336496
@@ -131,8 +172,9 @@ plt.ylabel('직원 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **낮은 연봉에서의 퇴사자 절대적 비중 집중:** 시각화 막대를 보면, 급여 수준이 Low와 Medium인 직원의 퇴사자 수(주황색 막대)가 매우 높게 치솟아 있습니다. 고임금(High) 그룹은 전체 모수 자체가 적기도 하지만 퇴사자 비중이 훨씬 낮아 연봉 수준이 퇴사에 대한 훌륭한 방어벽이 됨을 시각적으로 알 수 있습니다.
@@ -157,8 +199,9 @@ plt.ylabel('직무 만족도 점수 (1~5점)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **퇴사자 만족도 박스의 하향 쏠림:** 박스플롯을 대조하면, 퇴사자 그룹(Yes)의 만족도 박스가 재직자 그룹(No)에 비해 훨씬 낮은 1.5~3.5점 구간에 가깝게 치우쳐 있습니다. 즉, 퇴사자의 상당수가 재직 기간 중 극심한 직무 불만족을 겪었음을 만족도 분포 하락이 입증해 줍니다.

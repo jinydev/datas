@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="139-허브-터미널-크로스도킹-처리-효율-실습">139. 허브 터미널 크로스도킹 처리 효율 실습</h1>
-<h2 id="실전-데이터-분석-139-물류-분류-터미널-크로스도킹-화물-처리-속도-상관">실전 데이터 분석 139: 물류 분류 터미널 크로스도킹 화물 처리 속도 상관</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-139-물류-분류-터미널-크로스도킹-화물-처리-속도-상관">실전 데이터 분석 139: 물류 분류 터미널 크로스도킹 화물 처리 속도 상관</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/crossdocking_throughput.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./crossdocking_throughput.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,39 @@ Data columns (total 6 columns):
  5   DockUtilizationScore  1000 non-null   float64
 dtypes: float64(5), int64(1)
 memory usage: 47.0 KB
+None
+   TerminalID  InboundTrucks  ...  StaffShiftCount  DockUtilizationScore
+0     1390001          141.2  ...            105.2                  31.7
+1     1390002           98.5  ...            162.7                  57.2
+2     1390003           92.6  ...            129.4                  62.1
+3     1390004           92.4  ...            108.8                  38.8
+4     1390005           74.8  ...             54.0                  35.4
 
-   TerminalID  InboundTrucks  CrossDockTimeMinutes  ThroughputQty  StaffShiftCount  DockUtilizationScore
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                Non-Null Count  Dtype<br />
+—  ——                ————–  —–<br />
+ 0   TerminalID            1000 non-null   int64<br />
+ 1   InboundTrucks         1000 non-null   float64
+ 2   CrossDockTimeMinutes  985 non-null    float64
+ 3   ThroughputQty         1000 non-null   float64
+ 4   StaffShiftCount       1000 non-null   float64
+ 5   DockUtilizationScore  1000 non-null   float64
+dtypes: float64(5), int64(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>TerminalID  InboundTrucks  CrossDockTimeMinutes  ThroughputQty  StaffShiftCount  DockUtilizationScore
 0     1390001          141.2                  21.7          134.1            105.2                  31.7
 1     1390002           98.5                  18.5           87.2            162.7                  57.2
 2     1390003           92.6                   3.3          102.5            129.4                  62.1
 3     1390004           92.4                  16.1          119.1            108.8                  38.8
 4     1390005           74.8                  50.1           51.4             54.0                  35.4
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-TerminalID                     0
-InboundTrucks                  0
+TerminalID               0
+InboundTrucks            0
+CrossDockTimeMinutes    15
+ThroughputQty            0
+StaffShiftCount          0
+DockUtilizationScore     0
+dtype: int64
+TerminalID              0
+InboundTrucks           0
+CrossDockTimeMinutes    0
+ThroughputQty           0
+StaffShiftCount         0
+DockUtilizationScore    0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>InboundTrucks                  0
 CrossDockTimeMinutes           15
 ThroughputQty                  0
 StaffShiftCount                0
-DockUtilizationScore           0
+DockUtilizationScore           0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 TerminalID                     0
 InboundTrucks                  0
 CrossDockTimeMinutes           0
 ThroughputQty                  0
 StaffShiftCount                0
 DockUtilizationScore           0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ DockUtilizationScore           0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ DockUtilizationScore           0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-50-통신-가입자-계약-형태-및-월별-납부-요금별-서비스-이탈churn-인과-관계-분석">실전 데이터 분석 50: 통신 가입자 계약 형태 및 월별 납부 요금별 서비스 이탈(Churn) 인과 관계 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/customer_churn.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./customer_churn.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,32 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype
+---  ------           --------------  -----
+ 0   CustomerID       1000 non-null   int64
+ 1   Contract         1000 non-null   str  
+ 2   MonthlyCharges   1000 non-null   int64
+ 3   Tenure_Months    1000 non-null   int64
+ 4   InternetService  1000 non-null   str  
+ 5   Churn            1000 non-null   str  
+dtypes: int64(3), str(3)
+memory usage: 66.2 KB
+None
+   CustomerID        Contract  ...  InternetService  Churn
+0       80001  Month-to-month  ...      Fiber optic     No
+1       80002        Two year  ...      Fiber optic     No
+2       80003        One year  ...      Fiber optic     No
+3       80004  Month-to-month  ...      Fiber optic    Yes
+4       80005        Two year  ...               No     No
+
+[5 rows x 6 columns]
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2196,14 +2223,27 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 가입자 이탈율 분포 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 가입자 이탈율 분포 ---
+Churn
+No     0.706
+Yes    0.294
+Name: proportion, dtype: float64
+
+--- 약정 조건별 해지율 비교 ---
+Contract
+Month-to-month    0.384016
+One year          0.194656
+Two year          0.204444
+Name: Churn, dtype: float64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 가입자 이탈율 분포 —
 Churn
 No     0.686
 Yes    0.314
 Name: proportion, dtype: float64</p>
-</blockquote>
 
 <p>— 약정 조건별 해지율 비교 —
 Contract
@@ -2240,7 +2280,7 @@ Name: Churn, dtype: float64</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2269,7 +2309,7 @@ Name: Churn, dtype: float64</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

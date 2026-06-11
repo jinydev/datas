@@ -70,13 +70,18 @@ def execute_blocks(file_path):
                 plt.savefig(svg_path, format='svg', bbox_inches='tight')
                 svg_created = True
                 plt.close("all")
-        
         # Inject our mock
         env_globals['plt'].show = mock_show
-
+        
         with contextlib.redirect_stdout(f_out):
             try:
-                exec(code, env_globals)
+                # Change CWD to the practice directory so relative CSV paths work correctly
+                original_cwd = os.getcwd()
+                os.chdir(base_dir)
+                try:
+                    exec(code, env_globals)
+                finally:
+                    os.chdir(original_cwd)
                 # If the code creates a figure but forgets to call plt.show(), we should check and save it anyway.
                 # Actually, many seaborn functions create plots without calling show(). 
                 # Let's save if there's an active figure after block execution.

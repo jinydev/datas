@@ -5,6 +5,8 @@ permalink: /practice/162_podcast_listener_dropoff/
 ---
 
 # 162. 팟캐스트 오디오 시청 청취 중도 이탈 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 162: 미디어 에피소드 몰입도 하락 구간 오디오 통계
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/podcast_listener_dropoff.csv')
+df = pd.read_csv('./podcast_listener_dropoff.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   ListenID            1000 non-null   int64  
+>  1   AudioLengthMinutes  1000 non-null   float64
+>  2   SpeakerPitchAvg     1000 non-null   float64
+>  3   AdCount             1000 non-null   float64
+>  4   DropoffTimeMinutes  985 non-null    float64
+>  5   Completed           1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    ListenID  AudioLengthMinutes  ...  DropoffTimeMinutes  Completed
+> 0   1620001               128.1  ...                 6.3       90.6
+> 1   1620002                80.3  ...                 NaN       79.1
+> 2   1620003               109.2  ...                14.7      143.0
+> 3   1620004               118.0  ...                 NaN       94.1
+> 4   1620005               102.4  ...                 2.1      141.5
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column              Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> ListenID                       0
+> ListenID               0
+> AudioLengthMinutes     0
+> SpeakerPitchAvg        0
+> AdCount                0
+> DropoffTimeMinutes    15
+> Completed              0
+> dtype: int64
+> ListenID              0
+> AudioLengthMinutes    0
+> SpeakerPitchAvg       0
+> AdCount               0
+> DropoffTimeMinutes    0
+> Completed             0
+> dtype: int64
+> ```
+
+
 AudioLengthMinutes             0
 SpeakerPitchAvg                0
 AdCount                        0
@@ -125,8 +167,9 @@ plt.title('팟캐스트 오디오 시청 청취 중도 이탈 빈도 분포', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** DropoffTimeMinutes 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('AudioLengthMinutes와 DropoffTimeMinutes 상관성 및 Completed 대�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, Completed 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

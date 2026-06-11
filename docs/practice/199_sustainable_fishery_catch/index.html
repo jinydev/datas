@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="199-연안-어업-선박-출하량-및-어종-보존성-실습">199. 연안 어업 선박 출하량 및 어종 보존성 실습</h1>
-<h2 id="실전-데이터-분석-199-기후-온난화-해수-수온-변동-대비-지속-가능-수산-자원-cpue">실전 데이터 분석 199: 기후 온난화 해수 수온 변동 대비 지속 가능 수산 자원 CPUE</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-199-기후-온난화-해수-수온-변동-대비-지속-가능-수산-자원-cpue">실전 데이터 분석 199: 기후 온난화 해수 수온 변동 대비 지속 가능 수산 자원 CPUE</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/sustainable_fishery_catch.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./sustainable_fishery_catch.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,13 +2160,33 @@ Data columns (total 6 columns):
  5   CatchOverQuota      1000 non-null   int64  
 dtypes: float64(4), int64(2)
 memory usage: 47.0 KB
+None
+    TripID  WaterTempCelsius  ...  TargetSpeciesRatio  CatchOverQuota
+0  1990001             153.2  ...                68.6               0
+1  1990002             110.3  ...                50.1               1
+2  1990003             188.7  ...                34.9               1
+3  1990004              64.6  ...                40.3               0
+4  1990005              74.0  ...                33.9               0
 
-    TripID  WaterTempCelsius  FishingEffortHours  CPUE_Index  TargetSpeciesRatio  CatchOverQuota
-0  1990001             153.2                15.9       113.6                68.6               0
-1  1990002             110.3                19.0        95.5                50.1               1
-2  1990003             188.7                31.4        71.1                34.9               1
-3  1990004              64.6                32.1       116.0                40.3               0
-4  1990005              74.0                30.9        88.3                33.9               0
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column              Non-Null Count  Dtype<br />
+—  ——              ————–  —–<br />
+ 0   TripID              1000 non-null   int64<br />
+ 1   WaterTempCelsius    1000 non-null   float64
+ 2   FishingEffortHours  1000 non-null   float64
+ 3   CPUE_Index          985 non-null    float64
+ 4   TargetSpeciesRatio  1000 non-null   float64
+ 5   CatchOverQuota      1000 non-null   int64<br />
+dtypes: float64(4), int64(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TripID  WaterTempCelsius  FishingEffortHours  CPUE_Index  TargetSpeciesRatio  CatchOverQuota 0  1990001             153.2                15.9       113.6                68.6               0 1  1990002             110.3                19.0        95.5                50.1               1 2  1990003             188.7                31.4        71.1                34.9               1 3  1990004              64.6                32.1       116.0                40.3               0 4  1990005              74.0                30.9        88.3                33.9               0 ```
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2187,21 +2211,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-TripID                         0
-WaterTempCelsius               0
+TripID                 0
+WaterTempCelsius       0
+FishingEffortHours     0
+CPUE_Index            15
+TargetSpeciesRatio     0
+CatchOverQuota         0
+dtype: int64
+TripID                0
+WaterTempCelsius      0
+FishingEffortHours    0
+CPUE_Index            0
+TargetSpeciesRatio    0
+CatchOverQuota        0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>WaterTempCelsius               0
 FishingEffortHours             0
 CPUE_Index                     15
 TargetSpeciesRatio             0
-CatchOverQuota                 0
+CatchOverQuota                 0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 TripID                         0
 WaterTempCelsius               0
 FishingEffortHours             0
 CPUE_Index                     0
 TargetSpeciesRatio             0
 CatchOverQuota                 0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2267,7 @@ CatchOverQuota                 0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2293,7 @@ CatchOverQuota                 0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

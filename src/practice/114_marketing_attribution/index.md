@@ -5,6 +5,8 @@ permalink: /practice/114_marketing_attribution/
 ---
 
 # 114. 디지털 마케팅 채널 기여도 (Attribution) 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 114: 다채널 마케팅 믹스 기여율 기여도 회귀선
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/marketing_attribution.csv')
+df = pd.read_csv('./marketing_attribution.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   CampaignID              1000 non-null   int64  
+>  1   AdSpend_K               985 non-null    float64
+>  2   SocialMediaImpressions  1000 non-null   float64
+>  3   SearchClicks            1000 non-null   float64
+>  4   DirectVisits            1000 non-null   float64
+>  5   ConversionRevenue       1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    CampaignID  AdSpend_K  ...  DirectVisits  ConversionRevenue
+> 0     1140001       74.6  ...          86.9            60062.0
+> 1     1140002       91.0  ...          94.9            67338.0
+> 2     1140003       61.8  ...         122.4            79283.0
+> 3     1140004      100.4  ...         101.6            78929.0
+> 4     1140005       76.3  ...         113.9            69391.0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> CampaignID                     0
+> CampaignID                 0
+> AdSpend_K                 15
+> SocialMediaImpressions     0
+> SearchClicks               0
+> DirectVisits               0
+> ConversionRevenue          0
+> dtype: int64
+> CampaignID                0
+> AdSpend_K                 0
+> SocialMediaImpressions    0
+> SearchClicks              0
+> DirectVisits              0
+> ConversionRevenue         0
+> dtype: int64
+> ```
+
+
 AdSpend_K                      15
 SocialMediaImpressions         0
 SearchClicks                   0
@@ -125,8 +167,9 @@ plt.title('디지털 마케팅 채널 기여도 (Attribution) 빈도 분포', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** ConversionRevenue 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('SocialMediaImpressions와 ConversionRevenue 상관성 및 SearchClick
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, SearchClicks 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

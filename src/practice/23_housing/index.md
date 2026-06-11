@@ -6,6 +6,8 @@ permalink: /practice/23_housing/
 
 # 실전 데이터 분석 23: 인위적 이상치(Ceiling Cap) 제거와 4차원 지리 데이터
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set2")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/california_housing.csv')
+df = pd.read_csv('./california_housing.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,33 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/california_housing.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 10 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   longitude           1000 non-null   float64
+>  1   latitude            1000 non-null   float64
+>  2   housing_median_age  1000 non-null   int64  
+>  3   total_rooms         1000 non-null   int64  
+>  4   total_bedrooms      1000 non-null   int64  
+>  5   population          1000 non-null   int64  
+>  6   households          1000 non-null   int64  
+>  7   median_income       1000 non-null   float64
+>  8   ocean_proximity     1000 non-null   str    
+>  9   median_house_value  1000 non-null   int64  
+> dtypes: float64(3), int64(6), str(1)
+> memory usage: 86.1 KB
+> None
+>     longitude   latitude  ...  ocean_proximity  median_house_value
+> 0 -120.385203  36.370751  ...           INLAND              365112
+> 1 -115.850496  36.953799  ...           ISLAND              227955
+> 2 -124.297591  36.396496  ...        <1H OCEAN              227043
+> 3 -122.614854  40.416361  ...           INLAND              109635
+> 4 -123.995765  34.662004  ...        <1H OCEAN              104730
+> 
+> [5 rows x 10 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -79,10 +105,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_2.svg)
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -130,10 +153,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -171,10 +191,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df_filtered' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

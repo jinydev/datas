@@ -5,6 +5,8 @@ permalink: /practice/108_car_insurance_fraud/
 ---
 
 # 108. 자동차 사고 보험 청구 허위 사기 적발 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 108: 적색 경보 이상 탐지 FDS 스코어링
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/car_insurance_fraud.csv')
+df = pd.read_csv('./car_insurance_fraud.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   ClaimID          1000 non-null   int64  
+>  1   ClaimAmount_K    1000 non-null   float64
+>  2   DamageScore      985 non-null    float64
+>  3   DashcamExists    1000 non-null   float64
+>  4   WeekendAccident  1000 non-null   float64
+>  5   IsFraud          1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    ClaimID  ClaimAmount_K  DamageScore  DashcamExists  WeekendAccident  IsFraud
+> 0  1080001           54.5          5.7          156.5             80.6        1
+> 1  1080002           79.4          5.0           87.8            140.8        1
+> 2  1080003           97.6          5.6          148.6             27.4        0
+> 3  1080004           97.9          6.8           76.3             91.4        0
+> 4  1080005           63.1          5.9          117.5            101.1        0
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column           Non-Null Count  Dtype  
@@ -89,7 +113,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> ClaimID                        0
+> ClaimID             0
+> ClaimAmount_K       0
+> DamageScore        15
+> DashcamExists       0
+> WeekendAccident     0
+> IsFraud             0
+> dtype: int64
+> ClaimID            0
+> ClaimAmount_K      0
+> DamageScore        0
+> DashcamExists      0
+> WeekendAccident    0
+> IsFraud            0
+> dtype: int64
+> ```
+
+
 ClaimAmount_K                  0
 DamageScore                    15
 DashcamExists                  0
@@ -125,8 +165,9 @@ plt.title('자동차 사고 보험 청구 허위 사기 적발 빈도 분포', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** ClaimAmount_K 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +189,9 @@ plt.title('DamageScore와 ClaimAmount_K 상관성 및 IsFraud 대조', fontsize=
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, IsFraud 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

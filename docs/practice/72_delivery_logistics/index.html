@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-72-푸드-배달-서비스-배송-거리-및-조리-소요시간-대비-라이더-배달-완료-시간-및-별점-시너지-분석">실전 데이터 분석 72: 푸드 배달 서비스 배송 거리 및 조리 소요시간 대비 라이더 배달 완료 시간 및 별점 시너지 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,41 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/delivery_logistics.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./delivery_logistics.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/delivery_logistics.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./delivery_logistics.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   OrderID            1000 non-null   int64  
+ 1   Distance_KM        1000 non-null   float64
+ 2   CourierExp_Months  1000 non-null   int64  
+ 3   PrepTime_Mins      1000 non-null   int64  
+ 4   DeliveryTime_Mins  988 non-null    float64
+ 5   Rating             1000 non-null   int64  
+dtypes: float64(2), int64(4)
+memory usage: 47.0 KB
+None
+   OrderID  Distance_KM  ...  DeliveryTime_Mins  Rating
+0   720001         1.73  ...               26.0       5
+1   720002         8.37  ...               52.8       1
+2   720003         6.65  ...               37.4       5
+3   720004         4.75  ...               43.3       4
+4   720005         5.25  ...               26.0       5
+
+[5 rows x 6 columns]
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2198,16 +2225,33 @@ OrderID  Distance_KM  CourierExp_Months  PrepTime_Mins  DeliveryTime_Mins  Ratin
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+OrderID               0
+Distance_KM           0
+CourierExp_Months     0
+PrepTime_Mins         0
+DeliveryTime_Mins    12
+Rating                0
+dtype: int64
+OrderID              0
+Distance_KM          0
+CourierExp_Months    0
+PrepTime_Mins        0
+DeliveryTime_Mins    0
+Rating               0
+DistanceGroup        0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 OrderID               0
 Distance_KM           0
 CourierExp_Months     0
 PrepTime_Mins         0
 DeliveryTime_Mins    12
 Rating                0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 OrderID              0
@@ -2243,7 +2287,7 @@ DistanceGroup        0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2269,7 +2313,7 @@ DistanceGroup        0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

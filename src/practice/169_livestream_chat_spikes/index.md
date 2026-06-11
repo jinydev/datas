@@ -5,6 +5,8 @@ permalink: /practice/169_livestream_chat_spikes/
 ---
 
 # 169. 스트리머 실시간 방송 채팅 트래픽 스파이크 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 169: 실시간 방송 인터랙션 폭주 대비 서버 버퍼 안정
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/livestream_chat_spikes.csv')
+df = pd.read_csv('./livestream_chat_spikes.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                 Non-Null Count  Dtype  
+> ---  ------                 --------------  -----  
+>  0   StreamID               1000 non-null   int64  
+>  1   ConcurrentViewers      1000 non-null   float64
+>  2   ChatRatePerMinute      985 non-null    float64
+>  3   ToxicityRatio_Percent  1000 non-null   float64
+>  4   NetworkLatency_ms      1000 non-null   float64
+>  5   ServerLoadLevel        1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    StreamID  ConcurrentViewers  ...  NetworkLatency_ms  ServerLoadLevel
+> 0   1690001               5.28  ...              111.0                1
+> 1   1690002               4.83  ...               73.4                1
+> 2   1690003               3.81  ...              123.7                1
+> 3   1690004               4.78  ...               91.0                1
+> 4   1690005               5.39  ...              133.5                1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                 Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> StreamID                       0
+> StreamID                  0
+> ConcurrentViewers         0
+> ChatRatePerMinute        15
+> ToxicityRatio_Percent     0
+> NetworkLatency_ms         0
+> ServerLoadLevel           0
+> dtype: int64
+> StreamID                 0
+> ConcurrentViewers        0
+> ChatRatePerMinute        0
+> ToxicityRatio_Percent    0
+> NetworkLatency_ms        0
+> ServerLoadLevel          0
+> dtype: int64
+> ```
+
+
 ConcurrentViewers              0
 ChatRatePerMinute              15
 ToxicityRatio_Percent          0
@@ -125,8 +167,9 @@ plt.title('스트리머 실시간 방송 채팅 트래픽 스파이크 빈도 �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** ChatRatePerMinute 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('ConcurrentViewers와 ChatRatePerMinute 상관성 및 ServerLoadLevel 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, ServerLoadLevel 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

@@ -64,7 +64,6 @@ print(df['species'].value_counts())
 > ```
 
 
-
 ### 💡 코드 딥다이브 (Code Deep Dive)
 * `df.describe()`: 데이터 프레임 내 모든 '숫자형' 컬럼에 대한 요약 통계를 한 번에 보여주는 아주 강력한 함수입니다. 가장 짧은 꽃잎이 몇 cm인지(`min`), 평균은 얼마인지(`mean`) 한눈에 파악할 수 있습니다.
 * `df['species'].value_counts()`: 종속 변수(Target)인 품종이 각각 몇 개씩 있는지 셉니다. 출력 결과를 보면 `setosa`, `versicolor`, `virginica`가 각각 정확히 50개씩 균형(Balanced)을 이루고 있습니다. 이는 머신러닝 학습에 있어 가장 이상적인 데이터 형태입니다.
@@ -107,7 +106,7 @@ print(df.isnull().sum())
 >  3   petal_width   150 non-null    float64
 >  4   species       150 non-null    str    
 > dtypes: float64(4), str(1)
-> memory usage: 6.0 KB
+> memory usage: 7.2 KB
 > None
 > ------------------------
 > 결측치 총합:
@@ -118,7 +117,6 @@ print(df.isnull().sum())
 > species         0
 > dtype: int64
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -150,7 +148,6 @@ plt.show()
 > ![실행 결과 시각화](img/exec_step_3.svg)
 
 
-
 ### 💡 시각화 차트 읽는 법
 * **Setosa (빨간색 영역)**: 그래프 맨 왼쪽에 `setosa`의 꽃잎 길이가 1~2cm 부근에 완전히 독립적으로 모여 있습니다. 다른 품종과 전혀 겹치지 않습니다. 즉, **"꽃잎 길이가 2.5cm 미만이면 무조건 Setosa이다"**라는 완벽한 규칙을 단 하나의 차트만으로 찾아낸 것입니다!
 * **Versicolor vs Virginica**: 반면, 두 번째(초록색)와 세 번째(파란색) 그룹은 4.5cm~5.0cm 부근에서 겹치는(Overlap) 영역이 발생합니다. 이 구간에 속한 붓꽃은 꽃잎 길이 하나만으로는 어떤 품종인지 100% 확신하기 어렵습니다. 이를 해결하기 위해서는 변수를 하나 더 추가해야 합니다.
@@ -178,7 +175,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 차트가 말해주는 인공지능의 원리

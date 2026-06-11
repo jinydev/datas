@@ -5,6 +5,8 @@ permalink: /practice/170_app_store_rating_version/
 ---
 
 # 170. 앱 마켓 릴리즈 버전별 평점 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 170: 신규 릴리즈 앱 크래시 폭증에 따른 사용자 별점 리스크
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/app_store_rating_version.csv')
+df = pd.read_csv('./app_store_rating_version.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   AppID               1000 non-null   int64  
+>  1   RatingScore         985 non-null    float64
+>  2   FeedbackLength      1000 non-null   float64
+>  3   CrashCount          1000 non-null   float64
+>  4   AppVersion          1000 non-null   float64
+>  5   NegativeReviewFlag  1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>      AppID  RatingScore  ...  AppVersion  NegativeReviewFlag
+> 0  1700001          7.3  ...        92.9                   0
+> 1  1700002          4.6  ...       104.9                   0
+> 2  1700003          8.2  ...       127.9                   1
+> 3  1700004         10.0  ...       119.3                   0
+> 4  1700005          7.1  ...        75.9                   0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column              Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> AppID                          0
+> AppID                  0
+> RatingScore           15
+> FeedbackLength         0
+> CrashCount             0
+> AppVersion             0
+> NegativeReviewFlag     0
+> dtype: int64
+> AppID                 0
+> RatingScore           0
+> FeedbackLength        0
+> CrashCount            0
+> AppVersion            0
+> NegativeReviewFlag    0
+> dtype: int64
+> ```
+
+
 RatingScore                    15
 FeedbackLength                 0
 CrashCount                     0
@@ -125,8 +167,9 @@ plt.title('앱 마켓 릴리즈 버전별 평점 분석 빈도 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** RatingScore 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('CrashCount와 RatingScore 상관성 및 NegativeReviewFlag 대조', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, NegativeReviewFlag 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

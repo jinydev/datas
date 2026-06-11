@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-80-직장인-주간-업무-근무-시간-및-수면-시간-대비-명상-습관-유무별-주관적-스트레스-지수-요인-분석">실전 데이터 분석 80: 직장인 주간 업무 근무 시간 및 수면 시간 대비 명상 습관 유무별 주관적 스트레스 지수 요인 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,41 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/mental_health.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./mental_health.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/mental_health.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./mental_health.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   RecordID            1000 non-null   int64  
+ 1   WorkHours_Weekly    1000 non-null   int64  
+ 2   StressLevel_Index   985 non-null    float64
+ 3   SleepHours          1000 non-null   float64
+ 4   ActivityMinutes     1000 non-null   int64  
+ 5   MeditationPractice  1000 non-null   str    
+dtypes: float64(2), int64(3), str(1)
+memory usage: 49.2 KB
+None
+   RecordID  WorkHours_Weekly  ...  ActivityMinutes  MeditationPractice
+0    800001                62  ...               47                 Yes
+1    800002                53  ...              145                  No
+2    800003                34  ...              179                  No
+3    800004                25  ...               64                 Yes
+4    800005                65  ...              136                 Yes
+
+[5 rows x 6 columns]
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2198,16 +2225,32 @@ RecordID  WorkHours_Weekly  StressLevel_Index  SleepHours  ActivityMinutes Medit
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+RecordID               0
+WorkHours_Weekly       0
+StressLevel_Index     15
+SleepHours             0
+ActivityMinutes        0
+MeditationPractice     0
+dtype: int64
+RecordID              0
+WorkHours_Weekly      0
+StressLevel_Index     0
+SleepHours            0
+ActivityMinutes       0
+MeditationPractice    0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 RecordID               0
 WorkHours_Weekly       0
 StressLevel_Index     15
 SleepHours             0
 ActivityMinutes        0
 MeditationPractice     0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 RecordID              0
@@ -2242,7 +2285,7 @@ MeditationPractice    0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2268,7 +2311,7 @@ MeditationPractice    0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

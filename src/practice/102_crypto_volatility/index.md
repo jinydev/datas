@@ -5,6 +5,8 @@ permalink: /practice/102_crypto_volatility/
 ---
 
 # 102. 비트코인 등 가상자산 변동성 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 102: 가상자산 시장 및 군중심리
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/crypto_volatility.csv')
+df = pd.read_csv('./crypto_volatility.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   DayID                1000 non-null   int64  
+>  1   TradingVolume_M      1000 non-null   float64
+>  2   SocialMentions       985 non-null    float64
+>  3   DailyReturn_Percent  1000 non-null   float64
+>  4   VIX_Index            1000 non-null   float64
+>  5   PriceVolatility      1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>      DayID  TradingVolume_M  ...  VIX_Index  PriceVolatility
+> 0  1020001            141.7  ...       15.9          85349.0
+> 1  1020002            123.1  ...       24.2          69832.0
+> 2  1020003            126.4  ...       21.2          59702.0
+> 3  1020004             77.0  ...       22.3          92270.0
+> 4  1020005            132.5  ...       20.7          74168.0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column               Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> DayID                          0
+> DayID                   0
+> TradingVolume_M         0
+> SocialMentions         15
+> DailyReturn_Percent     0
+> VIX_Index               0
+> PriceVolatility         0
+> dtype: int64
+> DayID                  0
+> TradingVolume_M        0
+> SocialMentions         0
+> DailyReturn_Percent    0
+> VIX_Index              0
+> PriceVolatility        0
+> dtype: int64
+> ```
+
+
 TradingVolume_M                0
 SocialMentions                 15
 DailyReturn_Percent            0
@@ -125,8 +167,9 @@ plt.title('비트코인 등 가상자산 변동성 빈도 분포', fontsize=14, 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** PriceVolatility 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('SocialMentions와 PriceVolatility 상관성 및 DailyReturn_Percent �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, DailyReturn_Percent 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

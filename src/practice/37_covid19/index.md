@@ -6,6 +6,8 @@ permalink: /practice/37_covid19/
 
 # 실전 데이터 분석 37: 글로벌 코로나19 감염 전파 경로 및 백신 접종과 확진자 상관관계 시각화
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/covid19.csv')
+df = pd.read_csv('./covid19.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './covid19.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 400 entries, 0 to 399
 Data columns (total 6 columns):
@@ -96,6 +102,10 @@ vaccinated_df = df[df['DailyVaccinations'] > 0]
 
 > **💻 [실행 결과]**
 > ```text
+> Error: name 'df' is not defined
+> ```
+
+
 --- 국가별 최종 누적 확진자 수 ---
 Country
 Japan     72502
@@ -132,8 +142,11 @@ plt.xticks(all_dates[::20], rotation=30)
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **시간차 확산과 감염 정점(Peak) 비교:** 선 그래프를 보면 시간이 지날수록 네 국가 모두 일일 신규 확진자 수가 꾸준히 상승하는 기하급수 패턴을 그립니다. 국가별로 방역 조치나 환경에 따라 곡선의 진폭과 피크 도달 시점이 살짝 어긋나는 확산 역학 양상을 눈으로 대조할 수 있습니다.
@@ -158,8 +171,11 @@ plt.ylabel('일일 신규 확진자 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **백신 보급과 감염 감소의 역상관 증명:** 산점도의 전체적인 우하향 궤도를 보면 백신 누적 접종자 수(X축)가 누적되어 오른쪽으로 늘어날수록, 일일 신규 확진자 수(Y축)가 고점을 찍고 아래로 급속하게 감소하는 억제 효과를 나타내고 있습니다. 즉, 백신 보급이 사회적 집단 면역을 유도하여 확진 억제에 절대적인 기여를 했음을 시각적으로 입증합니다.

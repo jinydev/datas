@@ -6,6 +6,8 @@ permalink: /practice/69_store_traffic/
 
 # 실전 데이터 분석 69: 오프라인 소매 상점의 기상 기후 및 세일 행사 여부 대비 유입 방문객 수와 하루 매출액 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,38 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/store_traffic.csv')
+df = pd.read_csv('./store_traffic.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/store_traffic.csv')
+df = pd.read_csv('./store_traffic.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   Date           1000 non-null   str    
+>  1   Weather        1000 non-null   str    
+>  2   VisitorCount   1000 non-null   int64  
+>  3   DailySales     986 non-null    float64
+>  4   DiscountEvent  1000 non-null   str    
+> dtypes: float64(1), int64(1), str(3)
+> memory usage: 56.2 KB
+> None
+>          Date Weather  VisitorCount  DailySales DiscountEvent
+> 0  2023-01-01   Sunny           561    11666.07            No
+> 1  2023-01-02   Rainy           486     6430.62           Yes
+> 2  2023-01-03   Sunny           580    16099.91            No
+> 3  2023-01-04  Cloudy           449    13359.85            No
+> 4  2023-01-05  Cloudy           408     7150.75            No
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
@@ -93,6 +117,22 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> Date              0
+> Weather           0
+> VisitorCount      0
+> DailySales       14
+> DiscountEvent     0
+> dtype: int64
+> Date             0
+> Weather          0
+> VisitorCount     0
+> DailySales       0
+> DiscountEvent    0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 Date              0
 Weather           0
@@ -128,8 +168,9 @@ plt.title('기상 조건별 일일 평균 매장 방문객 수', fontsize=14, fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **날씨가 오프라인 방문에 미치는 물리적 억제 효과:** 맑은 날(Sunny)과 흐린 날(Cloudy)의 막대 높이가 비가 오거나(Rainy) 눈이 내리는(Snowy) 궂은 날씨의 일일 방문객 유입 수준 대비 약 2~3배 높게 치솟아 있습니다. 이는 오프라인 매장의 운영 및 재고 관리가 당일 기상 예보와 매우 기민하게 연동되어 조율되어야 함을 증명합니다.
@@ -151,8 +192,9 @@ plt.title('방문객 수와 일일 총 매출액의 세일 연계 상관성', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **방문 유입과 매출의 선형 관계 및 세일 행사 시너지:** 방문객 규모(X축)가 증가함에 따라 일 매출(Y축)도 정직하고 가파르게 우상향합니다. 특히 할인 행사 진행일(DiscountEvent=Yes, 빨간 점)은 상대적으로 적은 유입 유모 조건하에서도 가파른 객단가 및 충동구매 유도로 매출 효율을 훨씬 위쪽 높이로 크게 뽑아내는 경향을 가시화합니다.

@@ -6,6 +6,8 @@ permalink: /practice/43_rideshare/
 
 # 실전 데이터 분석 43: 우버(Uber)와 리프트(Lyft)의 이동 거리 대비 이용 요금 및 날씨 요인 할증 비교
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/rideshare_prices.csv')
+df = pd.read_csv('./rideshare_prices.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   cab_type        1000 non-null   str    
+>  1   name            1000 non-null   str    
+>  2   distance        1000 non-null   float64
+>  3   price           1000 non-null   float64
+>  4   hour            1000 non-null   int64  
+>  5   weather_factor  1000 non-null   float64
+> dtypes: float64(3), int64(1), str(2)
+> memory usage: 58.3 KB
+> None
+>   cab_type      name  distance  price  hour  weather_factor
+> 0     Uber  Standard      1.36   9.08     2             1.0
+> 1     Uber   Premium      5.07  17.35    20             1.0
+> 2     Uber    Shared      1.50  12.89    18             1.0
+> 3     Uber    Shared      2.30   9.67    11             1.0
+> 4     Uber  Standard      2.95  13.46     5             1.2
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -93,6 +118,24 @@ print(df.groupby('cab_type')[['price', 'distance']].mean())
 
 > **💻 [실행 결과]**
 > ```text
+> distance        price
+> count  1000.000000  1000.000000
+> mean      4.340800    15.012100
+> std       2.172731     5.532212
+> min       0.520000     3.000000
+> 25%       2.557500    10.597500
+> 50%       4.380000    15.130000
+> 75%       6.232500    19.330000
+> max       7.990000    27.810000
+> 
+> --- 브랜드별 요금 및 거리 평균 ---
+>               price  distance
+> cab_type                     
+> Lyft      15.469501  4.390020
+> Uber      14.552866  4.291383
+> ```
+
+
           distance        price
 count  1000.000000  1000.000000
 mean      4.340800    15.012100
@@ -133,8 +176,9 @@ plt.ylabel('이용 요금 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **유사한 박스 구조와 편차 분포:** 두 플랫폼의 박스플롯 상자 높이(IQR)와 수염(Whisker) 범위는 매우 흡사한 형태를 유지하고 있습니다. 다만 리프트(Lyft)의 박스 위치와 중앙값이 우버(Uber) 대비 전체적으로 반 칸 정도 상향 편향되어 공급 가격대가 조금 더 높은 영역에 놓여 있음을 보여줍니다.
@@ -159,8 +203,9 @@ plt.ylabel('요금 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **거리당 요금의 정비례 선형 회귀 띠 형성:** 산점도의 두 색상 점들은 강한 우상향 선형 밴드를 이루며 조밀하게 뻗어 있습니다. 거리가 멀어질수록 이용 가격이 거의 정확히 선형 함수식($Y = aX + b$) 구조로 증가하며, 두 브랜드가 거리 비례식 요금 엔진을 메인 프라이싱 모델로 장착하고 있음을 증명합니다.

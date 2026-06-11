@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="94-중고-가전-및-전자기기-리셀-가격-감가-분석-실습">94. 중고 가전 및 전자기기 리셀 가격 감가 분석 실습</h1>
-<h2 id="실전-데이터-분석-94-중고-전자-디바이스의-브랜드-제조사-및-사용-기간-대비-기기-등급별-리셀-가격-감가상각-분석">실전 데이터 분석 94: 중고 전자 디바이스의 브랜드 제조사 및 사용 기간 대비 기기 등급별 리셀 가격 감가상각 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-94-중고-전자-디바이스의-브랜드-제조사-및-사용-기간-대비-기기-등급별-리셀-가격-감가상각-분석">실전 데이터 분석 94: 중고 전자 디바이스의 브랜드 제조사 및 사용 기간 대비 기기 등급별 리셀 가격 감가상각 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2135,7 +2139,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/used_electronics.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./used_electronics.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2154,15 +2158,40 @@ Data columns (total 6 columns):
  4   AccessoriesIncluded  1000 non-null   int64  
  5   ResalePrice          1000 non-null   float64
 dtypes: float64(2), int64(3), str(1)
-memory usage: 47.0 KB
+memory usage: 52.5 KB
+None
+   DeviceID    Brand  ...  AccessoriesIncluded  ResalePrice
+0    940001       LG  ...                    1       381.58
+1    940002  Samsung  ...                    1       984.60
+2    940003    Apple  ...                    1       918.99
+3    940004  Samsung  ...                    0       914.21
+4    940005    Apple  ...                    1      1178.50
 
-DeviceID    Brand  DeviceAge_Months  ConditionGrade  AccessoriesIncluded  ResalePrice
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column               Non-Null Count  Dtype<br />
+—  ——               ————–  —–<br />
+ 0   DeviceID             1000 non-null   int64<br />
+ 1   Brand                1000 non-null   str  <br />
+ 2   DeviceAge_Months     1000 non-null   int64<br />
+ 3   ConditionGrade       985 non-null    float64
+ 4   AccessoriesIncluded  1000 non-null   int64<br />
+ 5   ResalePrice          1000 non-null   float64
+dtypes: float64(2), int64(3), str(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>DeviceID    Brand  DeviceAge_Months  ConditionGrade  AccessoriesIncluded  ResalePrice
 0    940001       LG                22             3.0                    1       381.58
 1    940002  Samsung                 8             4.0                    1       984.60
 2    940003    Apple                24             3.0                    1       918.99
 3    940004  Samsung                 8             5.0                    0       914.21
 4    940005    Apple                18             5.0                    1      1178.50
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2191,15 +2220,32 @@ DeviceAge_Months        0
 ConditionGrade         15
 AccessoriesIncluded     0
 ResalePrice             0
-
---- 정제 후 결측치 확인 ---
+dtype: int64
 DeviceID               0
 Brand                  0
 DeviceAge_Months       0
 ConditionGrade         0
 AccessoriesIncluded    0
 ResalePrice            0
+dtype: int64
 </code></pre></div>  </div>
+</blockquote>
+
+<p>Brand                   0
+DeviceAge_Months        0
+ConditionGrade         15
+AccessoriesIncluded     0
+ResalePrice             0</p>
+<blockquote>
+
+  <p>— 정제 후 결측치 확인 —
+DeviceID               0
+Brand                  0
+DeviceAge_Months       0
+ConditionGrade         0
+AccessoriesIncluded    0
+ResalePrice            0
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2224,7 +2270,7 @@ ResalePrice            0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2250,7 +2296,7 @@ ResalePrice            0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

@@ -6,6 +6,8 @@ permalink: /practice/66_city_crimes/
 
 # 실전 데이터 분석 66: 도심 행정지구별 인구 밀도 및 치안 순찰인력 수 대비 강력/일반 범죄지수 상관성 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,41 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/city_crimes.csv')
+df = pd.read_csv('./city_crimes.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/city_crimes.csv')
+df = pd.read_csv('./city_crimes.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   RecordID           1000 non-null   int64  
+>  1   Neighborhood       1000 non-null   str    
+>  2   CrimeType          1000 non-null   str    
+>  3   PopulationDensity  1000 non-null   float64
+>  4   OfficerCount       987 non-null    float64
+>  5   CrimeRateIndex     1000 non-null   float64
+> dtypes: float64(3), int64(1), str(2)
+> memory usage: 63.9 KB
+> None
+>    RecordID Neighborhood  ... OfficerCount  CrimeRateIndex
+> 0    660001   District E  ...         35.0            61.8
+> 1    660002   District H  ...         20.0            80.0
+> 2    660003   District D  ...         18.0            85.8
+> 3    660004   District K  ...         16.0            78.5
+> 4    660005   District K  ...         29.0            28.4
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +123,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> RecordID              0
+> Neighborhood          0
+> CrimeType             0
+> PopulationDensity     0
+> OfficerCount         13
+> CrimeRateIndex        0
+> dtype: int64
+> RecordID             0
+> Neighborhood         0
+> CrimeType            0
+> PopulationDensity    0
+> OfficerCount         0
+> CrimeRateIndex       0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 RecordID              0
 Neighborhood          0
@@ -133,8 +178,9 @@ plt.title('범죄 유형별 평균 범죄 지수', fontsize=14, fontweight='bold
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **범죄 유형별 위험 지수 평균 분석:** 폭행(Assault)이나 강력 사건 유형의 평균 범죄지수 막대가 기물파손(Vandalism)이나 단순절도(Theft) 등 경범죄 대비 월등히 높게 형성됩니다. 이는 지역 치안 위험도 측정 시 범죄 유형별 가중치를 부여해야 함을 시사합니다.
@@ -156,8 +202,9 @@ plt.title('배치 순찰 요원 수 대비 범죄 지수 분산', fontsize=14, f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **치안 인력 밀도와 범죄 억제의 선형 음의 관계 규명:** 산점도를 분석하면 배치 순찰 경찰관 수(X축)가 증가할수록 범죄율 인덱스(Y축)가 아래로 떨어지는 뚜렷한 반비례 상관 구도가 나타납니다. 즉, 상주 순찰 인력을 늘리는 것이 도심 치안의 선제 예방 효과에 기여함을 보장해 줍니다.

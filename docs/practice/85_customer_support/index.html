@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="85-고객-센터-문의-처리-속도-및-만족도-분석-실습">85. 고객 센터 문의 처리 속도 및 만족도 분석 실습</h1>
-<h2 id="실전-데이터-분석-85-고객-지원-티켓-유형-및-인입-채널별-상담사-숙련도-대비-csat-만족도-점수-분석">실전 데이터 분석 85: 고객 지원 티켓 유형 및 인입 채널별 상담사 숙련도 대비 CSAT 만족도 점수 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-85-고객-지원-티켓-유형-및-인입-채널별-상담사-숙련도-대비-csat-만족도-점수-분석">실전 데이터 분석 85: 고객 지원 티켓 유형 및 인입 채널별 상담사 숙련도 대비 CSAT 만족도 점수 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2135,7 +2139,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/customer_support.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./customer_support.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2154,15 +2158,40 @@ Data columns (total 6 columns):
  4   AgentExp_Months       1000 non-null   int64  
  5   CSAT_Score            1000 non-null   int64  
 dtypes: float64(1), int64(3), str(2)
-memory usage: 47.0 KB
+memory usage: 60.4 KB
+None
+   TicketID      TicketType  ... AgentExp_Months  CSAT_Score
+0    850001          Refund  ...              30           5
+1    850002          Refund  ...              43           4
+2    850003  Account Access  ...              55           5
+3    850004         General  ...              24           5
+4    850005       Technical  ...               7           2
 
-TicketID      TicketType Channel  ResolutionTime_Hours  AgentExp_Months  CSAT_Score
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                Non-Null Count  Dtype<br />
+—  ——                ————–  —–<br />
+ 0   TicketID              1000 non-null   int64<br />
+ 1   TicketType            1000 non-null   str  <br />
+ 2   Channel               1000 non-null   str  <br />
+ 3   ResolutionTime_Hours  988 non-null    float64
+ 4   AgentExp_Months       1000 non-null   int64<br />
+ 5   CSAT_Score            1000 non-null   int64<br />
+dtypes: float64(1), int64(3), str(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>TicketID      TicketType Channel  ResolutionTime_Hours  AgentExp_Months  CSAT_Score
 0    850001          Refund   Phone                   2.9               30           5
 1    850002          Refund   Email                   7.2               43           4
 2    850003  Account Access    Chat                   0.5               55           5
 3    850004         General   Phone                   0.5               24           5
 4    850005       Technical   Phone                  22.1                7           2
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2192,15 +2221,32 @@ Channel                  0
 ResolutionTime_Hours    12
 AgentExp_Months          0
 CSAT_Score               0
-
---- 정제 후 결측치 확인 ---
+dtype: int64
 TicketID                0
 TicketType              0
 Channel                 0
 ResolutionTime_Hours    0
 AgentExp_Months         0
 CSAT_Score              0
+dtype: int64
 </code></pre></div>  </div>
+</blockquote>
+
+<p>TicketType               0
+Channel                  0
+ResolutionTime_Hours    12
+AgentExp_Months          0
+CSAT_Score               0</p>
+<blockquote>
+
+  <p>— 정제 후 결측치 확인 —
+TicketID                0
+TicketType              0
+Channel                 0
+ResolutionTime_Hours    0
+AgentExp_Months         0
+CSAT_Score              0
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2225,7 +2271,7 @@ CSAT_Score              0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2251,7 +2297,7 @@ CSAT_Score              0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

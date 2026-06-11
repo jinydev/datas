@@ -5,6 +5,8 @@ permalink: /practice/136_subway_rushhour_congestion/
 ---
 
 # 136. 도시 지하철 출퇴근 시간대 혼잡도 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 136: 출퇴근 전철 수용량 및 플랫폼 승객 병목 추정
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/subway_rushhour_congestion.csv')
+df = pd.read_csv('./subway_rushhour_congestion.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   StationID               1000 non-null   int64  
+>  1   BoardingPassengerCount  1000 non-null   float64
+>  2   IntervalTimeSeconds     1000 non-null   float64
+>  3   LineStatus              1000 non-null   str    
+>  4   CongestionScore         985 non-null    float64
+>  5   TrainDelayMinutes       1000 non-null   float64
+> dtypes: float64(4), int64(1), str(1)
+> memory usage: 52.9 KB
+> None
+>    StationID  BoardingPassengerCount  ...  CongestionScore TrainDelayMinutes
+> 0    1360001                    96.1  ...              7.1              17.8
+> 1    1360002                    96.1  ...              7.2               8.0
+> 2    1360003                    87.5  ...              6.1               3.5
+> 3    1360004                    89.7  ...              3.4               4.1
+> 4    1360005                    82.2  ...              9.0               6.1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> StationID                      0
+> StationID                  0
+> BoardingPassengerCount     0
+> IntervalTimeSeconds        0
+> LineStatus                 0
+> CongestionScore           15
+> TrainDelayMinutes          0
+> dtype: int64
+> StationID                 0
+> BoardingPassengerCount    0
+> IntervalTimeSeconds       0
+> LineStatus                0
+> CongestionScore           0
+> TrainDelayMinutes         0
+> dtype: int64
+> ```
+
+
 BoardingPassengerCount         0
 IntervalTimeSeconds            0
 LineStatus                     0
@@ -125,8 +167,9 @@ plt.title('도시 지하철 출퇴근 시간대 혼잡도 빈도 분포', fontsi
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** CongestionScore 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('BoardingPassengerCount와 CongestionScore 상관성 및 LineStatus �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, LineStatus 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

@@ -6,6 +6,8 @@ permalink: /practice/51_us_census/
 
 # 실전 데이터 분석 51: 미국 주별 인구 센서스 기반 소득 중위값, 교육 수지 및 빈곤율 격차 다차원 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/us_census.csv')
+df = pd.read_csv('./us_census.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,31 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 15 entries, 0 to 14
+> Data columns (total 6 columns):
+>  #   Column                 Non-Null Count  Dtype  
+> ---  ------                 --------------  -----  
+>  0   State                  15 non-null     str    
+>  1   Population             15 non-null     int64  
+>  2   MedianIncome           15 non-null     int64  
+>  3   PovertyRate            15 non-null     float64
+>  4   Under18_Percent        15 non-null     float64
+>  5   CollegeDegree_Percent  13 non-null     float64
+> dtypes: float64(3), int64(2), str(1)
+> memory usage: 983.0 bytes
+> None
+>           State  Population  ...  Under18_Percent  CollegeDegree_Percent
+> 0    California    28650599  ...             22.0                   34.6
+> 1         Texas     6564926  ...             21.9                   32.8
+> 2       Florida    17015628  ...             22.8                    NaN
+> 3      New York    27540690  ...             22.1                   40.5
+> 4  Pennsylvania    14947454  ...             25.1                   33.0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 15 entries, 0 to 14
 Data columns (total 6 columns):
@@ -97,6 +124,26 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> State                    0
+> Population               0
+> MedianIncome             0
+> PovertyRate              0
+> Under18_Percent          0
+> CollegeDegree_Percent    2
+> dtype: int64
+> 
+> --- 정제 후 결측치 확인 ---
+> State                    0
+> Population               0
+> MedianIncome             0
+> PovertyRate              0
+> Under18_Percent          0
+> CollegeDegree_Percent    0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 State                    0
 Population               0
@@ -139,8 +186,9 @@ plt.ylabel('주 (State)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **지역별 빈곤 격차 가시화:** 빈곤율 가로 막대를 비교해 보면, 일부 남부 및 특정 제조 벨트 주의 빈곤율이 20% 선을 상회하며 높은 빈도를 보이는 반면, 동부 IT/금융 거점 주들은 10% 초반대의 양호한 분산을 이룹니다. 이는 연방 차원의 복지 재원 분배 정책 수립에 정량적 기초 지표가 됩니다.
@@ -165,8 +213,9 @@ plt.ylabel('가구 소득 중위값 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **교육-소득-빈곤의 톱니바퀴 구조 판독:** 산점도의 점들이 강한 우상향 선형 띠를 형성합니다. 즉, 대학 학위 소지자 비중이 높을수록 가구 소득 중위값이 정직하게 상승합니다. 또한 소득이 높고 학위가 풍부한 우측 상단은 푸른빛(낮은 빈곤율)을 띠고, 좌측 하단은 붉은빛(높은 빈곤율)을 띠고 있어 교육 인프라 확보가 지역 소득 향상 및 빈곤 방어에 핵심적인 기여 요인임을 공간적으로 증명합니다.

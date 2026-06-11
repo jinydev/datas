@@ -6,6 +6,8 @@ permalink: /practice/60_fitness_tracker/
 
 # 실전 데이터 분석 60: 피트니스 세션별 운동 종목에 따른 평균 심박수 분산 및 운동 시간 대비 칼로리 소소 효율성 다선 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/fitness_tracker.csv')
+df = pd.read_csv('./fitness_tracker.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,31 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column            Non-Null Count  Dtype  
+> ---  ------            --------------  -----  
+>  0   SessionID         1000 non-null   int64  
+>  1   WorkoutType       1000 non-null   str    
+>  2   Duration_Minutes  1000 non-null   int64  
+>  3   Avg_HeartRate     1000 non-null   int64  
+>  4   CaloriesBurned    985 non-null    float64
+>  5   Gender            1000 non-null   str    
+> dtypes: float64(1), int64(3), str(2)
+> memory usage: 59.3 KB
+> None
+>    SessionID WorkoutType  ...  CaloriesBurned  Gender
+> 0     600001     Cycling  ...           459.4    Male
+> 1     600002     Running  ...           607.8  Female
+> 2     600003     Cycling  ...           185.9    Male
+> 3     600004        Yoga  ...            70.2    Male
+> 4     600005    Swimming  ...           815.6    Male
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +123,14 @@ print(df['CaloriesBurned'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 칼로리 결측 개수 ---
+> 15
+> 
+> --- 정제 후 칼로리 결측 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 칼로리 결측 개수 ---
 15
 
@@ -126,8 +161,9 @@ plt.ylabel('평균 심박수 (BPM)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **종목 고유의 유산소 자극 역치 차이 규명:** 상자 그림을 분석하면 러닝(Running)과 수영(Swimming) 상자는 130~160BPM 고부하 대역에 높게 분포해 강력한 유산소 운동 효과를 입증합니다. 반면 요가(Yoga) 상자는 60~80BPM의 안정 안정 시 대역 근방에 머물고 있어, 각 종목의 심폐 자극 특성이 기기 센서 데이터를 통해 완전히 차별화된 상자로 증명됩니다.
@@ -152,8 +188,9 @@ plt.ylabel('칼로리 소모량 (kcal)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **종목별 에너지 연소 효율 기울기 격차:** 시간(X)과 칼로리(Y)의 산점도를 보면, 모든 종목이 우상향 선형 관계를 가지지만 **종목 색상별로 기울기의 두께와 경사각이 뚜렷하게 갈라져** 있습니다. 가장 경사각이 가파르게 뻗은 붉은 점(Running)은 시간당 연소 효율이 가장 우수함을 보이고, 경사각이 가장 누워 있는 녹색 점(Yoga)은 장시간 운동하더라도 칼로리 연소 속도가 느림을 명확히 대조해 줍니다.

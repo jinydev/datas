@@ -6,6 +6,8 @@ permalink: /practice/72_delivery_logistics/
 
 # 실전 데이터 분석 72: 푸드 배달 서비스 배송 거리 및 조리 소요시간 대비 라이더 배달 완료 시간 및 별점 시너지 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,41 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/delivery_logistics.csv')
+df = pd.read_csv('./delivery_logistics.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/delivery_logistics.csv')
+df = pd.read_csv('./delivery_logistics.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   OrderID            1000 non-null   int64  
+>  1   Distance_KM        1000 non-null   float64
+>  2   CourierExp_Months  1000 non-null   int64  
+>  3   PrepTime_Mins      1000 non-null   int64  
+>  4   DeliveryTime_Mins  988 non-null    float64
+>  5   Rating             1000 non-null   int64  
+> dtypes: float64(2), int64(4)
+> memory usage: 47.0 KB
+> None
+>    OrderID  Distance_KM  ...  DeliveryTime_Mins  Rating
+> 0   720001         1.73  ...               26.0       5
+> 1   720002         8.37  ...               52.8       1
+> 2   720003         6.65  ...               37.4       5
+> 3   720004         4.75  ...               43.3       4
+> 4   720005         5.25  ...               26.0       5
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +123,25 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> OrderID               0
+> Distance_KM           0
+> CourierExp_Months     0
+> PrepTime_Mins         0
+> DeliveryTime_Mins    12
+> Rating                0
+> dtype: int64
+> OrderID              0
+> Distance_KM          0
+> CourierExp_Months    0
+> PrepTime_Mins        0
+> DeliveryTime_Mins    0
+> Rating               0
+> DistanceGroup        0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 OrderID               0
 Distance_KM           0
@@ -134,8 +180,9 @@ plt.title('음식 배달 총 소요 시간 분포', fontsize=14, fontweight='bol
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **배달 완료 시간의 효율적 트래픽 분포:** 소요시간 히스토그램은 35분 내외를 봉우리로 하여 양옆으로 정규 형태를 이룹니다. 대부분 25~45분 사이에 80% 이상의 배차가 안착해 있으며, 60분 초과 장기 지연 배달은 소수로 포진해 관리되고 있음을 요약합니다.
@@ -157,8 +204,9 @@ plt.title('배송 거리 대비 최종 배달 시간과 서비스 별점', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **배송 지연이 임계 돌파 시 별점 폭락 인과 규명:** 거리(X축)와 소요 시간(Y축)이 정직하게 비례하여 상승합니다. 주목할 점은 거리에 관계없이 **배달 소요 시간이 50분을 돌파하는 임계선** 위로 넘어가는 순간, 파란색 계열의 낮은 별점(1~2점)이 압도적으로 늘어납니다. 이는 지연 시간 차단이 고객 경험 방어의 핵심 지표임을 입증합니다.

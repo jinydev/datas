@@ -6,6 +6,8 @@ permalink: /practice/63_hotel_bookings/
 
 # 실전 데이터 분석 63: 호텔 예약 고객의 리드타임(Lead Time) 및 보증금 조건별 취소율(No-Show) 교차 빈도 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,42 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/hotel_bookings.csv')
+df = pd.read_csv('./hotel_bookings.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/hotel_bookings.csv')
+df = pd.read_csv('./hotel_bookings.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   BookingID       1000 non-null   int64  
+>  1   LeadTime        986 non-null    float64
+>  2   BookingChannel  1000 non-null   str    
+>  3   DepositType     1000 non-null   str    
+>  4   CustomerType    1000 non-null   str    
+>  5   IsCanceled      1000 non-null   str    
+> dtypes: float64(1), int64(1), str(4)
+> memory usage: 84.6 KB
+> None
+>    BookingID  LeadTime  ...     CustomerType IsCanceled
+> 0     630001      48.0  ...  Transient-Party         No
+> 1     630002      30.0  ...        Transient         No
+> 2     630003       2.0  ...        Transient         No
+> 3     630004      44.0  ...        Transient         No
+> 4     630005       9.0  ...  Transient-Party        Yes
+> 
+> [5 rows x 6 columns]
+> ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +124,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> BookingID          0
+> LeadTime          14
+> BookingChannel     0
+> DepositType        0
+> CustomerType       0
+> IsCanceled         0
+> dtype: int64
+> BookingID         0
+> LeadTime          0
+> BookingChannel    0
+> DepositType       0
+> CustomerType      0
+> IsCanceled        0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 BookingID          0
 LeadTime          14
@@ -133,8 +179,9 @@ plt.title('보증금 조건별 예약 취소 빈도', fontsize=14, fontweight='b
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **보증금 유형에 따른 취소 리스크의 극명한 격차:** 보증금 면제 조건인 'No Deposit' 영역에서 예약 취소 빈도가 비정상적으로 높게 검출되는 반면, 환불 불가 조건인 'Non Refund' 예약 집단에서는 취소 건수가 거의 잡히지 않습니다. 이는 보증금 및 환불 규정이 고객의 노쇼 방지에 절대적인 통제력을 발휘함을 입증합니다.
@@ -156,8 +203,9 @@ plt.title('예약 취소 여부별 예약 선행일(Lead Time) 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **기간 간격이 늘어날수록일정 변동 취소 증가 증명:** 예약이 정상 완료된 군(No) 대비 취소된 군(Yes)의 리드타임 상자 높이와 상단 수염 분포 폭이 월등히 긴 시간 대역에 분포하고 있습니다. 즉, 체크인 날짜보다 너무 오래전에 체결된 예약일수록 중장기 일정의 불확실성으로 인해 취소 행동으로 수렴할 위험이 비례하여 증가함을 보여줍니다.

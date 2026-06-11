@@ -5,6 +5,8 @@ permalink: /practice/107_credit_limit_optimization/
 ---
 
 # 107. 신용카드 이용 한도 최적화 모델 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 107: 한도 소진율 및 리스크 최적선
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/credit_limit_optimization.csv')
+df = pd.read_csv('./credit_limit_optimization.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                   Non-Null Count  Dtype  
+> ---  ------                   --------------  -----  
+>  0   CardID                   1000 non-null   int64  
+>  1   Limit_K                  1000 non-null   float64
+>  2   UtilizationRate_Percent  1000 non-null   float64
+>  3   MonthlySpend_K           985 non-null    float64
+>  4   DelinquencyCount         1000 non-null   float64
+>  5   LossGivenDefault         1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>     CardID  Limit_K  ...  DelinquencyCount  LossGivenDefault
+> 0  1070001    112.3  ...              97.7             139.9
+> 1  1070002     83.7  ...             105.6              62.4
+> 2  1070003     63.1  ...             120.4              83.7
+> 3  1070004    108.5  ...             110.2              94.8
+> 4  1070005     76.4  ...              82.0              65.6
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                   Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> CardID                         0
+> CardID                      0
+> Limit_K                     0
+> UtilizationRate_Percent     0
+> MonthlySpend_K             15
+> DelinquencyCount            0
+> LossGivenDefault            0
+> dtype: int64
+> CardID                     0
+> Limit_K                    0
+> UtilizationRate_Percent    0
+> MonthlySpend_K             0
+> DelinquencyCount           0
+> LossGivenDefault           0
+> dtype: int64
+> ```
+
+
 Limit_K                        0
 UtilizationRate_Percent        0
 MonthlySpend_K                 15
@@ -125,8 +167,9 @@ plt.title('신용카드 이용 한도 최적화 모델 빈도 분포', fontsize=
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** UtilizationRate_Percent 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('Limit_K와 UtilizationRate_Percent 상관성 및 DelinquencyCount 대
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, DelinquencyCount 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

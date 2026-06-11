@@ -5,6 +5,8 @@ permalink: /practice/110_reits_dividend_yield/
 ---
 
 # 110. 부동산 투자 신탁 (REITs) 배당 수익률 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 110: 상업용 부동산 공실 마진 인과 모델
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/reits_dividend_yield.csv')
+df = pd.read_csv('./reits_dividend_yield.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                 Non-Null Count  Dtype  
+> ---  ------                 --------------  -----  
+>  0   ReitID                 1000 non-null   int64  
+>  1   VacancyRate_Percent    985 non-null    float64
+>  2   AverageRent_K          1000 non-null   float64
+>  3   DividendYield_Percent  1000 non-null   float64
+>  4   AssetValue_M           1000 non-null   float64
+>  5   RiskRating             1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>     ReitID  VacancyRate_Percent  ...  AssetValue_M  RiskRating
+> 0  1100001                 49.9  ...           6.9        85.0
+> 1  1100002                 33.1  ...           2.8        66.0
+> 2  1100003                 66.0  ...           8.4       102.2
+> 3  1100004                 21.8  ...          12.9       129.1
+> 4  1100005                 62.5  ...           6.9       149.2
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                 Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> ReitID                         0
+> ReitID                    0
+> VacancyRate_Percent      15
+> AverageRent_K             0
+> DividendYield_Percent     0
+> AssetValue_M              0
+> RiskRating                0
+> dtype: int64
+> ReitID                   0
+> VacancyRate_Percent      0
+> AverageRent_K            0
+> DividendYield_Percent    0
+> AssetValue_M             0
+> RiskRating               0
+> dtype: int64
+> ```
+
+
 VacancyRate_Percent            15
 AverageRent_K                  0
 DividendYield_Percent          0
@@ -125,8 +167,9 @@ plt.title('부동산 투자 신탁 (REITs) 배당 수익률 빈도 분포', font
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** DividendYield_Percent 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('VacancyRate_Percent와 DividendYield_Percent 상관성 및 RiskRating
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, RiskRating 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

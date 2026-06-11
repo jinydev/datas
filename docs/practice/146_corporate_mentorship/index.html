@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="146-멘토링-프로그램-참여-신입사원-조기-잔존-실습">146. 멘토링 프로그램 참여 신입사원 조기 잔존 실습</h1>
-<h2 id="실전-데이터-분석-146-신입-온보딩-멘토링-프로그램-조기-이탈-방지-효과">실전 데이터 분석 146: 신입 온보딩 멘토링 프로그램 조기 이탈 방지 효과</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-146-신입-온보딩-멘토링-프로그램-조기-이탈-방지-효과">실전 데이터 분석 146: 신입 온보딩 멘토링 프로그램 조기 이탈 방지 효과</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/corporate_mentorship.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./corporate_mentorship.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2155,15 +2159,40 @@ Data columns (total 6 columns):
  4   JobSatisfaction      1000 non-null   float64
  5   OneYearRetention     1000 non-null   int64  
 dtypes: float64(3), int64(2), str(1)
-memory usage: 47.0 KB
+memory usage: 52.9 KB
+None
+   NewHireID  MentoringHours  ...  JobSatisfaction OneYearRetention
+0    1460001            24.9  ...            132.7                0
+1    1460002            29.8  ...            122.7                0
+2    1460003            17.0  ...            107.4                1
+3    1460004            15.4  ...             64.0                1
+4    1460005            18.4  ...             62.0                1
 
-   NewHireID  MentoringHours  MentorFeedbackScore   Department  JobSatisfaction  OneYearRetention
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column               Non-Null Count  Dtype<br />
+—  ——               ————–  —–<br />
+ 0   NewHireID            1000 non-null   int64<br />
+ 1   MentoringHours       1000 non-null   float64
+ 2   MentorFeedbackScore  985 non-null    float64
+ 3   Department           1000 non-null   str  <br />
+ 4   JobSatisfaction      1000 non-null   float64
+ 5   OneYearRetention     1000 non-null   int64<br />
+dtypes: float64(3), int64(2), str(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>NewHireID  MentoringHours  MentorFeedbackScore   Department  JobSatisfaction  OneYearRetention
 0    1460001            24.9                  6.7           HR            132.7                 0
 1    1460002            29.8                  8.3      Support            122.7                 0
 2    1460003            17.0                  5.7  Engineering            107.4                 1
 3    1460004            15.4                  6.5           HR             64.0                 1
 4    1460005            18.4                  7.1           HR             62.0                 1
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-NewHireID                      0
-MentoringHours                 0
+NewHireID               0
+MentoringHours          0
+MentorFeedbackScore    15
+Department              0
+JobSatisfaction         0
+OneYearRetention        0
+dtype: int64
+NewHireID              0
+MentoringHours         0
+MentorFeedbackScore    0
+Department             0
+JobSatisfaction        0
+OneYearRetention       0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>MentoringHours                 0
 MentorFeedbackScore            15
 Department                     0
 JobSatisfaction                0
-OneYearRetention               0
+OneYearRetention               0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 NewHireID                      0
 MentoringHours                 0
 MentorFeedbackScore            0
 Department                     0
 JobSatisfaction                0
 OneYearRetention               0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ OneYearRetention               0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ OneYearRetention               0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

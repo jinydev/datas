@@ -6,6 +6,8 @@ permalink: /practice/57_sub_churn/
 
 # 실전 데이터 분석 57: 피트니스 회원 가입 유지 기간 및 주간 평균 이용 빈도별 구독 이탈(Churn) 분포 상관분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/sub_churn.csv')
+df = pd.read_csv('./sub_churn.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column            Non-Null Count  Dtype  
+> ---  ------            --------------  -----  
+>  0   MemberID          1000 non-null   int64  
+>  1   MembershipMonths  1000 non-null   int64  
+>  2   AvgWeeklyVisits   988 non-null    float64
+>  3   Age               1000 non-null   int64  
+>  4   Churned           1000 non-null   str    
+> dtypes: float64(1), int64(3), str(1)
+> memory usage: 41.2 KB
+> None
+>    MemberID  MembershipMonths  AvgWeeklyVisits  Age Churned
+> 0    300001                16              4.5   46      No
+> 1    300002                23              3.7   46      No
+> 2    300003                 6              1.7   37      No
+> 3    300004                23              2.2   35      No
+> 4    300005                16              4.9   43      No
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
@@ -94,6 +118,14 @@ print(df['AvgWeeklyVisits'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 개수 ---
+> 12
+> 
+> --- 정제 후 결측치 확인 ---
+> 0
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 12
 
@@ -124,8 +156,9 @@ plt.ylabel('회원 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **이탈율 기저 수치 모니터링:** 1000명의 전체 회원 데이터 중 약 20~30% 영역의 사용자가 해지(Yes)를 진행했습니다. 구독형 비즈니스의 생명은 신규 유치보다 이탈 해지 방어에 있으므로 이 Churned Yes 비율의 등락 트랙을 분기별 핵심 통제 지표(KPI)로 상정해 분석합니다.
@@ -150,8 +183,9 @@ plt.ylabel('주간 평균 방문 횟수 (회)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **가입 초기 헬스장 불참자의 이탈 경계면 도출:** 산점도를 분석하면 붉은 점(이탈 Yes)들이 그래프의 **좌하단(가입 기간이 10개월 이하로 매우 짧고, 주 1.5회 미만으로 뜸하게 방문하는 영역)**에 고밀도로 정합하여 경계를 이룹니다. 반면 주 3회 이상 꾸준히 출석하고 1년 이상 잔존한 우수 고객들은 푸른 점(유지 No)으로 안착해 이탈하지 않습니다. 가입 초반 온보딩에 마케팅 예산을 쏟아야 하는 확실한 정량적 타겟이 매핑됩니다.

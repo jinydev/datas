@@ -5,6 +5,8 @@ permalink: /practice/140_drone_delivery_wind/
 ---
 
 # 140. 물류 배송 드론 풍속 저항 및 비행 한계 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 140: 배송 드론 페이로드 한계와 풍속 배터리 저항 매핑
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/drone_delivery_wind.csv')
+df = pd.read_csv('./drone_delivery_wind.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                   Non-Null Count  Dtype  
+> ---  ------                   --------------  -----  
+>  0   FlightID                 1000 non-null   int64  
+>  1   WindSpeedKmh             1000 non-null   float64
+>  2   PayloadWeight_Kg         1000 non-null   float64
+>  3   FlightRangeRemaining_Km  985 non-null    float64
+>  4   VoltageDrop_Volts        1000 non-null   float64
+>  5   MissionAborted           1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    FlightID  WindSpeedKmh  ...  VoltageDrop_Volts  MissionAborted
+> 0   1400001           9.7  ...               17.0            80.3
+> 1   1400002          13.5  ...               52.0           136.1
+> 2   1400003          12.9  ...               53.0           102.8
+> 3   1400004           7.9  ...               23.0            99.6
+> 4   1400005          11.8  ...               43.0            88.3
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                   Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> FlightID                       0
+> FlightID                    0
+> WindSpeedKmh                0
+> PayloadWeight_Kg            0
+> FlightRangeRemaining_Km    15
+> VoltageDrop_Volts           0
+> MissionAborted              0
+> dtype: int64
+> FlightID                   0
+> WindSpeedKmh               0
+> PayloadWeight_Kg           0
+> FlightRangeRemaining_Km    0
+> VoltageDrop_Volts          0
+> MissionAborted             0
+> dtype: int64
+> ```
+
+
 WindSpeedKmh                   0
 PayloadWeight_Kg               0
 FlightRangeRemaining_Km        15
@@ -125,8 +167,9 @@ plt.title('물류 배송 드론 풍속 저항 및 비행 한계 빈도 분포', 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** FlightRangeRemaining_Km 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('PayloadWeight_Kg와 FlightRangeRemaining_Km 상관성 및 MissionAbor
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, MissionAborted 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

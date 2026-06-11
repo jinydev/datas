@@ -5,6 +5,8 @@ permalink: /practice/92_elearning_engagement/
 ---
 
 # 92. 이러닝 영상 학습 집중도 및 완강률 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 92: 온라인 강의 러닝타임 및 멈춤 횟수 대비 단원 평가 점수와 동영상 최종 완강률 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/elearning_engagement.csv')
+df = pd.read_csv('./elearning_engagement.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   StudentID           1000 non-null   int64  
+>  1   VideoDuration_Mins  1000 non-null   float64
+>  2   PauseCount          1000 non-null   int64  
+>  3   SpeedMultiplier     988 non-null    float64
+>  4   QuizScore           1000 non-null   int64  
+>  5   CompletionRate      1000 non-null   float64
+> dtypes: float64(3), int64(3)
+> memory usage: 47.0 KB
+> None
+>    StudentID  VideoDuration_Mins  ...  QuizScore  CompletionRate
+> 0     920001                28.1  ...         58            61.5
+> 1     920002                21.6  ...         81            87.0
+> 2     920003                48.6  ...         64            72.5
+> 3     920004                38.4  ...         66            81.2
+> 4     920005                55.6  ...         76            83.4
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column              Non-Null Count  Dtype  
@@ -88,6 +114,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > StudentID              0
+> VideoDuration_Mins     0
+> PauseCount             0
+> SpeedMultiplier       12
+> QuizScore              0
+> CompletionRate         0
+> dtype: int64
+> StudentID             0
+> VideoDuration_Mins    0
+> PauseCount            0
+> SpeedMultiplier       0
+> QuizScore             0
+> CompletionRate        0
+> dtype: int64
+> ```
+
+
 VideoDuration_Mins     0
 PauseCount             0
 SpeedMultiplier       12
@@ -123,8 +165,9 @@ plt.title('이러닝 강의 동영상 완강률(Completion Rate) 분포', fontsi
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **온라인 수강생들의 고관여 집중 분포 확인:** 완강률 히스토그램을 분석하면 60~95% 대역에 봉우리를 그리며 우수한 관여도를 유지하는 패턴을 띱니다. 중도 이탈자 비율은 좌측 끝단에 소수로 모여 있어 이러닝 플랫폼 강좌 구성의 우수한 품질을 입증합니다.
@@ -146,8 +189,9 @@ plt.title('퀴즈 평가 점수 대비 비디오 완강률과 멈춤 횟수 상�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **강의 완강 관여도와 학업 성취 퀴즈 성적의 정비례 상관:** 단원 평가 퀴즈 점수(X축)와 동영상 완강률(Y축)은 매우 뚜렷한 우상향 선형 띠를 두르고 있습니다. 특히 퀴즈 고득점 구역(오른쪽 상단)에 일시정지 복습 횟수(PauseCount)가 활발했던 이력(연녹색 계열)들이 다수 오버레이되어 있어, 단순히 영상을 켜둔 것을 넘어 정지하고 뒤로 돌려보는 자기주도적 몰입 학습이 높은 학업 성취로 직결됨을 통계적 산점도로 완벽히 보장해 줍니다.

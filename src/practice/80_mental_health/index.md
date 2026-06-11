@@ -6,6 +6,8 @@ permalink: /practice/80_mental_health/
 
 # 실전 데이터 분석 80: 직장인 주간 업무 근무 시간 및 수면 시간 대비 명상 습관 유무별 주관적 스트레스 지수 요인 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,41 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/mental_health.csv')
+df = pd.read_csv('./mental_health.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/mental_health.csv')
+df = pd.read_csv('./mental_health.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   RecordID            1000 non-null   int64  
+>  1   WorkHours_Weekly    1000 non-null   int64  
+>  2   StressLevel_Index   985 non-null    float64
+>  3   SleepHours          1000 non-null   float64
+>  4   ActivityMinutes     1000 non-null   int64  
+>  5   MeditationPractice  1000 non-null   str    
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 49.2 KB
+> None
+>    RecordID  WorkHours_Weekly  ...  ActivityMinutes  MeditationPractice
+> 0    800001                62  ...               47                 Yes
+> 1    800002                53  ...              145                  No
+> 2    800003                34  ...              179                  No
+> 3    800004                25  ...               64                 Yes
+> 4    800005                65  ...              136                 Yes
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +123,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> RecordID               0
+> WorkHours_Weekly       0
+> StressLevel_Index     15
+> SleepHours             0
+> ActivityMinutes        0
+> MeditationPractice     0
+> dtype: int64
+> RecordID              0
+> WorkHours_Weekly      0
+> StressLevel_Index     0
+> SleepHours            0
+> ActivityMinutes       0
+> MeditationPractice    0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 RecordID               0
 WorkHours_Weekly       0
@@ -133,8 +178,9 @@ plt.title('명상 유무에 따른 주관적 스트레스 지수 분포', fontsi
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **명상 수련에 따른 스트레스 지표 하향 조절 효과:** 명상 및 마인드풀니스 습관을 실천 중인 그룹(Yes)의 스트레스 상자 범위와 중앙값선이 실천하지 않는 대조군(No) 대비 약 2~3단계 하강 조절된 녹색 박스를 이룹니다. 명상 루틴이 현대인 스트레스 완화에 통계적으로 유효함을 적나라하게 가시화합니다.
@@ -156,8 +202,9 @@ plt.title('주간 업무 강도 대비 스트레스 지수와 명상 수련 상�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **업무 시간 가중과 명상 습관의 방어벽 시너지 판독:** 주당 근무 시간(X축)이 증가할수록 스트레스 지수(Y축)도 비례하여 우상향합니다. 특히 주목할 지표는 주 55시간 이상 고강도 야근 영역에서도 명상 루틴이 있는 그룹(Yes, 파란색 점 계열)은 스트레스 지수가 상대적으로 낮게 하방 방어되는 반면, 미수련 그룹(No, 빨간 점)들은 9~10점 극단적 위험 대역에 포진해 명상이 스트레스 쿠션 버퍼 역할을 하고 있음을 실증합니다.

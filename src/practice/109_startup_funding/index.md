@@ -5,6 +5,8 @@ permalink: /practice/109_startup_funding/
 ---
 
 # 109. 스타트업 벤처캐피탈(VC) 투자 라운드 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 109: 스타트업 데스밸리 극복 생존 통계
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/startup_funding.csv')
+df = pd.read_csv('./startup_funding.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   StartupID        1000 non-null   int64  
+>  1   FounderExpYears  1000 non-null   float64
+>  2   PatentsCount     1000 non-null   float64
+>  3   FundingRound     1000 non-null   float64
+>  4   FundingAmount_M  985 non-null    float64
+>  5   ExitSuccess      1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    StartupID  FounderExpYears  ...  FundingAmount_M  ExitSuccess
+> 0    1090001              9.6  ...              6.5            0
+> 1    1090002              7.9  ...              7.0            0
+> 2    1090003             10.8  ...             13.4            1
+> 3    1090004              3.7  ...              8.0            0
+> 4    1090005             11.8  ...              5.3            1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column           Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> StartupID                      0
+> StartupID           0
+> FounderExpYears     0
+> PatentsCount        0
+> FundingRound        0
+> FundingAmount_M    15
+> ExitSuccess         0
+> dtype: int64
+> StartupID          0
+> FounderExpYears    0
+> PatentsCount       0
+> FundingRound       0
+> FundingAmount_M    0
+> ExitSuccess        0
+> dtype: int64
+> ```
+
+
 FounderExpYears                0
 PatentsCount                   0
 FundingRound                   0
@@ -125,8 +167,9 @@ plt.title('스타트업 벤처캐피탈(VC) 투자 라운드 빈도 분포', fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** FundingAmount_M 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('FounderExpYears와 FundingAmount_M 상관성 및 ExitSuccess 대조',
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, ExitSuccess 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

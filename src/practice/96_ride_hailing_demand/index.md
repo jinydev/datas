@@ -5,6 +5,8 @@ permalink: /practice/96_ride_hailing_demand/
 ---
 
 # 96. 호출 택시 매칭 및 수요 요금 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 96: 피크타임 배차 관할 행정구역 및 당일 기상 조건 대비 라이더 공급 부족과 탄력 요금(Surge) 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/ride_hailing_demand.csv')
+df = pd.read_csv('./ride_hailing_demand.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column            Non-Null Count  Dtype  
+> ---  ------            --------------  -----  
+>  0   SessionID         1000 non-null   int64  
+>  1   Neighborhood      1000 non-null   str    
+>  2   WeatherCondition  1000 non-null   str    
+>  3   SurgeMultiplier   1000 non-null   float64
+>  4   DriverSupply      987 non-null    float64
+>  5   DemandIndex       1000 non-null   float64
+> dtypes: float64(3), int64(1), str(2)
+> memory usage: 58.7 KB
+> None
+>    SessionID Neighborhood  ... DriverSupply  DemandIndex
+> 0     960001       Uptown  ...         18.0         55.0
+> 1     960002     Downtown  ...         14.0         60.8
+> 2     960003      Suburbs  ...         18.0         82.4
+> 3     960004      Airport  ...         23.0         88.9
+> 4     960005       Uptown  ...         47.0         45.8
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column            Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > SessionID            0
+> Neighborhood         0
+> WeatherCondition     0
+> SurgeMultiplier      0
+> DriverSupply        13
+> DemandIndex          0
+> dtype: int64
+> SessionID           0
+> Neighborhood        0
+> WeatherCondition    0
+> SurgeMultiplier     0
+> DriverSupply        0
+> DemandIndex         0
+> dtype: int64
+> ```
+
+
 Neighborhood         0
 WeatherCondition     0
 SurgeMultiplier      0
@@ -124,8 +166,9 @@ plt.title('당일 기상 조건별 배차 호출 수요 지표(Demand Index)', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **악기상이 초래하는 택시 대란 수요 폭증 규명:** 맑은 날(Clear) 대비 폭설(Snowy)이나 폭우(Rainy) 조건에서의 배차 호출 수요 지수 막대 높이가 현저하게 솟구칩니다. 이는 날씨 궂은 날 외출 수단으로 플랫폼 수요가 단기 급증함을 보여줍니다.
@@ -147,8 +190,9 @@ plt.title('상주 기사 공급 대비 호출 수요량과 피크 탄력 요금 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **공급부족 구역의 피크 수요 폭발 및 탄력 할증 가중 규명:** 공급 기사 수(X축)가 적고 수요 지수(Y축)가 폭등한 좌상단 구역(라이더 절대 공급 한계 쇼티지 영역)은 진한 빨간색 점(SurgeMultiplier >= 1.5 이상의 높은 할증 가산율)들로 도배되어 있습니다. 반면 공급이 넉넉한 하단 영역은 기본요금(파란색 점)을 띱니다. 이는 실시간 플랫폼 매칭 균형을 유도하기 위한 다이내믹 프라이싱(Dynamic Pricing)의 수학적 작동 증명입니다.

@@ -5,6 +5,8 @@ permalink: /practice/85_customer_support/
 ---
 
 # 85. 고객 센터 문의 처리 속도 및 만족도 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 85: 고객 지원 티켓 유형 및 인입 채널별 상담사 숙련도 대비 CSAT 만족도 점수 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/customer_support.csv')
+df = pd.read_csv('./customer_support.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                Non-Null Count  Dtype  
+> ---  ------                --------------  -----  
+>  0   TicketID              1000 non-null   int64  
+>  1   TicketType            1000 non-null   str    
+>  2   Channel               1000 non-null   str    
+>  3   ResolutionTime_Hours  988 non-null    float64
+>  4   AgentExp_Months       1000 non-null   int64  
+>  5   CSAT_Score            1000 non-null   int64  
+> dtypes: float64(1), int64(3), str(2)
+> memory usage: 60.4 KB
+> None
+>    TicketID      TicketType  ... AgentExp_Months  CSAT_Score
+> 0    850001          Refund  ...              30           5
+> 1    850002          Refund  ...              43           4
+> 2    850003  Account Access  ...              55           5
+> 3    850004         General  ...              24           5
+> 4    850005       Technical  ...               7           2
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > TicketID                 0
+> TicketType               0
+> Channel                  0
+> ResolutionTime_Hours    12
+> AgentExp_Months          0
+> CSAT_Score               0
+> dtype: int64
+> TicketID                0
+> TicketType              0
+> Channel                 0
+> ResolutionTime_Hours    0
+> AgentExp_Months         0
+> CSAT_Score              0
+> dtype: int64
+> ```
+
+
 TicketType               0
 Channel                  0
 ResolutionTime_Hours    12
@@ -124,8 +166,9 @@ plt.title('고객 상담 CSAT 만족도 스코어 빈도', fontsize=14, fontweig
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **안정적인 고평점 포진 만족도:** 고객 만족 스코어 카운트 막대를 보면 4점과 5점 영역에 높은 비중으로 빈도가 쏠려 있는 안정적 고객 응대 인프라 상태를 나타내며, 만족 품질 관리가 양호함을 입증합니다.
@@ -147,8 +190,9 @@ plt.title('상담사 근무 개월 수 대비 처리 시간과 만족도 분포'
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **상담사 숙련도가 가져오는 신속 해결 및 별점 상승 입증:** 상담사 근무 경력(X축)이 늘어날수록 처리 시간(Y축)이 좁게 수축하며 바닥에 안정적으로 안착하는 반비례 분산이 나타납니다. 특히 경력이 많은 구간에 파란색 계열(CSAT 4~5점) 점들이 빽빽이 락인되어 있어, 숙련 상담 인프라 확보가 해결 지연 억제 및 서비스 품질 상승의 중추 요인임을 증명합니다.

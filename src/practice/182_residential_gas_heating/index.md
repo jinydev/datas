@@ -5,6 +5,8 @@ permalink: /practice/182_residential_gas_heating/
 ---
 
 # 182. 아파트 도시가스 동절기 난방 최적화 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 182: 동절기 세대 난방 소비 효율 및 노후 빌딩 단열 성능
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/residential_gas_heating.csv')
+df = pd.read_csv('./residential_gas_heating.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   HouseholdID        1000 non-null   int64  
+>  1   LowestTempCelsius  1000 non-null   float64
+>  2   GasConsumption_M3  985 non-null    float64
+>  3   BuildingAgeYears   1000 non-null   float64
+>  4   ThermostatTemp     1000 non-null   float64
+>  5   HighEnergyBill     1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    HouseholdID  LowestTempCelsius  ...  ThermostatTemp  HighEnergyBill
+> 0      1820001              127.9  ...           108.6               0
+> 1      1820002              109.5  ...            68.5               1
+> 2      1820003              116.5  ...           111.3               1
+> 3      1820004              151.8  ...           179.3               0
+> 4      1820005              156.7  ...           111.6               1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column             Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> HouseholdID                    0
+> HouseholdID           0
+> LowestTempCelsius     0
+> GasConsumption_M3    15
+> BuildingAgeYears      0
+> ThermostatTemp        0
+> HighEnergyBill        0
+> dtype: int64
+> HouseholdID          0
+> LowestTempCelsius    0
+> GasConsumption_M3    0
+> BuildingAgeYears     0
+> ThermostatTemp       0
+> HighEnergyBill       0
+> dtype: int64
+> ```
+
+
 LowestTempCelsius              0
 GasConsumption_M3              15
 BuildingAgeYears               0
@@ -125,8 +167,9 @@ plt.title('아파트 도시가스 동절기 난방 최적화 빈도 분포', fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** GasConsumption_M3 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('LowestTempCelsius와 GasConsumption_M3 상관성 및 HighEnergyBill �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, HighEnergyBill 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

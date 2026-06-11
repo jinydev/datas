@@ -5,6 +5,8 @@ permalink: /practice/90_mobile_app_retention/
 ---
 
 # 90. 모바일 앱 신규 가입 유저 리텐션 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 90: 모바일 앱 광고 유입 마케팅 채널 및 온보딩 튜토리얼 완성 대비 7일 후 리텐션 잔존 효과 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/mobile_app_retention.csv')
+df = pd.read_csv('./mobile_app_retention.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   UserID               1000 non-null   int64  
+>  1   InstallSource        1000 non-null   str    
+>  2   OnboardingCompleted  1000 non-null   int64  
+>  3   NotificationsActive  985 non-null    float64
+>  4   SessionCount         1000 non-null   float64
+>  5   Day7_Retained        1000 non-null   str    
+> dtypes: float64(2), int64(2), str(2)
+> memory usage: 58.6 KB
+> None
+>    UserID InstallSource  ...  SessionCount  Day7_Retained
+> 0  900001     GoogleAds  ...          10.0             No
+> 1  900002      Referral  ...          21.0            Yes
+> 2  900003       Organic  ...          24.0            Yes
+> 3  900004   FacebookAds  ...          17.0             No
+> 4  900005     GoogleAds  ...           6.0             No
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column               Non-Null Count  Dtype  
@@ -88,6 +114,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > UserID                  0
+> InstallSource           0
+> OnboardingCompleted     0
+> NotificationsActive    15
+> SessionCount            0
+> Day7_Retained           0
+> dtype: int64
+> UserID                 0
+> InstallSource          0
+> OnboardingCompleted    0
+> NotificationsActive    0
+> SessionCount           0
+> Day7_Retained          0
+> dtype: int64
+> ```
+
+
 InstallSource           0
 OnboardingCompleted     0
 NotificationsActive    15
@@ -123,8 +165,9 @@ plt.title('앱 마케팅 유입 채널별 Day 7 리텐션 가입 잔존 빈도',
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **자연 검색 및 추천 유입 고객의 높은 잔존 품질 증명:** 광고비가 많이 드는 매체(GoogleAd) 유입 막대 대비, 자연적 검색(Organic) 및 지인 추천(Referral)을 통한 유저 집단이 7일 후 유지(Day7_Retained=Yes)되는 비중 막대 비율이 훨씬 높게 검출됩니다. 이는 오가닉 고객이 앱의 핏(Fit)에 부합하는 양질의 진성 유저임을 말해줍니다.
@@ -146,8 +189,9 @@ plt.title('7일 잔존 성공 여부별 최초 주간 세션 사용 횟수 비�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **초기 사용 관여도 세션 수와 리텐션의 강한 비례:** 가입 7일 차에 안정적으로 잔류에 성공한 그룹(Yes)의 최초 7일간 사용 세션 수 상자와 중앙값이 탈락자 그룹(No) 대비 매우 상단에 우뚝 솟아 조밀하게 퍼져 있습니다. 즉, 가입 초기 3~4회 이상 자발적 세션 실행을 유발하는 UX 설계가 리텐션을 유도하는 핵심 액션임을 시각적으로 증명합니다.

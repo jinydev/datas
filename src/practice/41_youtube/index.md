@@ -6,6 +6,8 @@ permalink: /practice/41_youtube/
 
 # 실전 데이터 분석 41: 유튜브 인기 동영상 카테고리별 조회 및 반응 지수(좋아요/댓글) 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/youtube_trending.csv')
+df = pd.read_csv('./youtube_trending.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,30 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   video_id       1000 non-null   str    
+>  1   title          1000 non-null   str    
+>  2   category       1000 non-null   str    
+>  3   views          1000 non-null   int64  
+>  4   likes          1000 non-null   int64  
+>  5   comment_count  988 non-null    float64
+> dtypes: float64(1), int64(2), str(3)
+> memory usage: 78.0 KB
+> None
+>   video_id             title       category   views  likes  comment_count
+> 0    v0001  Trending Video 1         Gaming   71335   3236          315.0
+> 1    v0002  Trending Video 2  Entertainment  111951   3793          487.0
+> 2    v0003  Trending Video 3  Entertainment  133336   5882          331.0
+> 3    v0004  Trending Video 4          Music   32524   2986          367.0
+> 4    v0005  Trending Video 5         Gaming  194964   7561         1123.0
+> ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +122,26 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> video_id          0
+> title             0
+> category          0
+> views             0
+> likes             0
+> comment_count    12
+> dtype: int64
+> 
+> --- 정제 후 결측치 확인 ---
+> video_id         0
+> title            0
+> category         0
+> views            0
+> likes            0
+> comment_count    0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 video_id          0
 title             0
@@ -139,8 +185,9 @@ plt.xticks(rotation=15)
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **특정 카테고리의 트래픽 지배:** 시각화 결과, Entertainment와 Music 카테고리가 전체 조회수의 큰 비중을 장악하고 있습니다. 대중적인 흥미 요소와 글로벌 확산력이 뛰어난 콘텐츠 카테고리가 유튜브 인기 급상승 알고리즘에 자주 노출되며 절대적인 누적 트래픽을 만들어내고 있음을 보여줍니다.
@@ -165,8 +212,9 @@ plt.ylabel('좋아요 수 (Likes)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **조회수와 호감 반응의 정비례 선형성:** 산점도에서 조회수가 증가함에 따라 좋아요 수도 뚜렷한 우상향 선형 형태를 그리며 흩어져 있습니다. 특히 Music 카테고리는 조회수 대비 좋아요 비중이 높게 형성되어, 팬덤 기반의 높은 참여도가 단순 조회 시청을 넘어 즉각적인 감정 표현(좋아요)으로 연결되고 있음을 입증합니다.

@@ -6,6 +6,8 @@ permalink: /practice/74_inventory_shrinkage/
 
 # 실전 데이터 분석 74: 리테일 마트 매장 카테고리별 적재 수량 대비 유실/도난 손실량 및 보안 등급별 억제 효과 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/inventory_shrinkage.csv')
+df = pd.read_csv('./inventory_shrinkage.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/inventory_shrinkage.csv')
+df = pd.read_csv('./inventory_shrinkage.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   RecordID       1000 non-null   int64  
+>  1   Department     1000 non-null   str    
+>  2   ItemCategory   1000 non-null   str    
+>  3   TotalUnits     1000 non-null   int64  
+>  4   LostUnits      985 non-null    float64
+>  5   SecurityLevel  1000 non-null   str    
+> dtypes: float64(1), int64(2), str(3)
+> memory usage: 65.1 KB
+> None
+>    RecordID Department ItemCategory  TotalUnits  LostUnits SecurityLevel
+> 0    740001       Home       Budget        1188       16.0           Low
+> 1    740002   Clothing       Budget        3886      109.0           Low
+> 2    740003   Clothing      Premium        3747       89.0           Low
+> 3    740004     Sports      Premium        1060        5.0          High
+> 4    740005   Clothing       Budget        2718       58.0           Low
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> RecordID          0
+> Department        0
+> ItemCategory      0
+> TotalUnits        0
+> LostUnits        15
+> SecurityLevel     0
+> dtype: int64
+> RecordID         0
+> Department       0
+> ItemCategory     0
+> TotalUnits       0
+> LostUnits        0
+> SecurityLevel    0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 RecordID          0
 Department        0
@@ -132,8 +175,9 @@ plt.title('상품 카테고리별 평균 손실/도난 수량', fontsize=14, fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **품목 단가 및 종류별 유실 평균 비교:** 고가 상품이나 부피가 작아 숨기기 쉬운 특정 상품 카테고리의 평균 손실량이 저가 일상 용품 코너 대비 눈에 띄게 높게 형성됩니다. 이는 고위험 유실 구역을 타겟팅한 전술적 방어의 기초 증거가 됩니다.
@@ -155,8 +199,9 @@ plt.title('보안 레벨 등급별 연간 손실/도난 수량 분산', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **물리적 보안 수준이 발휘하는 실질 도난 억제력:** 보안 강도가 'High' 등급(CCTV 밀착형 및 전용 잠금장치 탑재)인 진열대의 손실량 분포 박스는 0 부근에 극도로 얇게 압축되어 수렴해 있습니다. 반면 보안이 취약한 'Low' 진열대는 수염 범위가 100개 이상으로 크게 뻗어 나가는 통제력 유실 상태를 적나라하게 실증합니다.

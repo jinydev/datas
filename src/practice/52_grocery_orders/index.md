@@ -6,6 +6,8 @@ permalink: /practice/52_grocery_orders/
 
 # 실전 데이터 분석 52: 온라인 식료품 몰 가입자 주문 시간대별 트래픽 및 멤버십 혜택(객단가) 상자그림 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/grocery_orders.csv')
+df = pd.read_csv('./grocery_orders.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   OrderID          1000 non-null   int64  
+>  1   CustomerID       1000 non-null   int64  
+>  2   OrderTime_Hour   1000 non-null   int64  
+>  3   ItemCount        1000 non-null   int64  
+>  4   TotalPrice       985 non-null    float64
+>  5   IsLoyaltyMember  1000 non-null   str    
+> dtypes: float64(1), int64(4), str(1)
+> memory usage: 49.4 KB
+> None
+>    OrderID  CustomerID  OrderTime_Hour  ItemCount  TotalPrice IsLoyaltyMember
+> 0    50001       14631              18          1        8.73              No
+> 1    50002       10111               8         15      135.49             Yes
+> 2    50003       13593              11          6       47.86             Yes
+> 3    50004       13890              16         22      230.50             Yes
+> 4    50005       14436              10          9       99.82              No
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -97,6 +122,14 @@ print(df['TotalPrice'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 가격 결측 개수 ---
+> 15
+> 
+> --- 정제 후 가격 결측 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 가격 결측 개수 ---
 15
 
@@ -127,8 +160,9 @@ plt.ylabel('주문 건수')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **하루 2개의 쌍봉 트래픽 검출:** 히스토그램 분포를 보면 오전 10~12시(점심 준비 전 주문)와 오후 17~19시(퇴근길 모바일 당일 배송 주문) 시간대에 트래픽 빈도가 높게 형성됩니다. 쇼핑몰 운영 부서에서는 이 두 시간대에 맞춰 당일 배송 라이더를 집중 배치하거나 서버 부하 분산 스케줄링을 제어할 필요가 있습니다.
@@ -153,8 +187,9 @@ plt.ylabel('총 주문 금액 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **비회원 대비 회원 결제 분량 격차:** 상자 그림 결과, 멤버십 가입자(Yes) 그룹은 10%의 멤버십 즉시 할인이 기본 적용됨에도 불구하고, 상자의 하단과 상단 수염이 비회원(No) 그룹보다 훨씬 위쪽 대역에 넓게 분포하고 있습니다. 이는 가입 혜택으로 무료 배송 등이 지원되어 장바구니에 주저 없이 물건을 담는 '락인(Lock-in)' 유도 효과로 객단가(AOV)가 크게 증가했음을 직접 검증해 줍니다.

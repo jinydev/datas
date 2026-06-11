@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="155-기후-산불-위험-지수-요인-분석-실습">155. 기후 산불 위험 지수 요인 분석 실습</h1>
-<h2 id="실전-데이터-분석-155-기상-건조-지수와-산불-발화-위험-통계-분석">실전 데이터 분석 155: 기상 건조 지수와 산불 발화 위험 통계 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-155-기상-건조-지수와-산불-발화-위험-통계-분석">실전 데이터 분석 155: 기상 건조 지수와 산불 발화 위험 통계 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/wildfire_risk_indices.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./wildfire_risk_indices.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,39 @@ Data columns (total 6 columns):
  5   WildfireOccurred      1000 non-null   int64  
 dtypes: float64(4), int64(2)
 memory usage: 47.0 KB
+None
+   RegionID  SoilMoisture_Percent  ...  FMC_Percent  WildfireOccurred
+0   1550001                  54.4  ...         47.3                 0
+1   1550002                   NaN  ...         62.2                 0
+2   1550003                  51.2  ...         35.8                 0
+3   1550004                  28.1  ...         32.3                 1
+4   1550005                  43.2  ...         59.1                 0
 
-   RegionID  SoilMoisture_Percent  DryDaysCount  WindSpeedKmh  FMC_Percent  WildfireOccurred
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                Non-Null Count  Dtype<br />
+—  ——                ————–  —–<br />
+ 0   RegionID              1000 non-null   int64<br />
+ 1   SoilMoisture_Percent  985 non-null    float64
+ 2   DryDaysCount          1000 non-null   float64
+ 3   WindSpeedKmh          1000 non-null   float64
+ 4   FMC_Percent           1000 non-null   float64
+ 5   WildfireOccurred      1000 non-null   int64<br />
+dtypes: float64(4), int64(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>RegionID  SoilMoisture_Percent  DryDaysCount  WindSpeedKmh  FMC_Percent  WildfireOccurred
 0   1550001                  54.4          86.4          16.3         47.3                 0
 1   1550002                   NaN         104.2           5.2         62.2                 0
 2   1550003                  51.2          67.8          15.2         35.8                 0
 3   1550004                  28.1         167.6          11.5         32.3                 1
 4   1550005                  43.2          74.8           6.8         59.1                 0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-RegionID                       0
-SoilMoisture_Percent           15
+RegionID                 0
+SoilMoisture_Percent    15
+DryDaysCount             0
+WindSpeedKmh             0
+FMC_Percent              0
+WildfireOccurred         0
+dtype: int64
+RegionID                0
+SoilMoisture_Percent    0
+DryDaysCount            0
+WindSpeedKmh            0
+FMC_Percent             0
+WildfireOccurred        0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>SoilMoisture_Percent           15
 DryDaysCount                   0
 WindSpeedKmh                   0
 FMC_Percent                    0
-WildfireOccurred               0
+WildfireOccurred               0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 RegionID                       0
 SoilMoisture_Percent           0
 DryDaysCount                   0
 WindSpeedKmh                   0
 FMC_Percent                    0
 WildfireOccurred               0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ WildfireOccurred               0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ WildfireOccurred               0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

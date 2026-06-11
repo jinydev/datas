@@ -6,6 +6,8 @@ permalink: /practice/44_wine_reviews/
 
 # 실전 데이터 분석 44: 소믈리에 와인 리뷰 데이터 기반 평점 점수와 병당 판매 가격의 비선형 상관관계 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/wine_reviews.csv')
+df = pd.read_csv('./wine_reviews.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column    Non-Null Count  Dtype  
+> ---  ------    --------------  -----  
+>  0   country   1000 non-null   str    
+>  1   points    1000 non-null   int64  
+>  2   price     985 non-null    float64
+>  3   province  1000 non-null   str    
+>  4   variety   1000 non-null   str    
+> dtypes: float64(1), int64(1), str(3)
+> memory usage: 64.6 KB
+> None
+>   country  points  price    province     variety
+> 0  France     100  311.0  Province 0  Chardonnay
+> 1      US      83    9.0  Province 1       Syrah
+> 2  France      97  215.0  Province 2      Merlot
+> 3   Italy      93  109.0  Province 3      Merlot
+> 4   Italy      83   19.0  Province 4       Syrah
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
@@ -94,6 +118,14 @@ print(df['price'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 가격 결측치 ---
+> 15
+> 
+> --- 정제 후 가격 결측치 ---
+> 0
+> ```
+
+
 --- 정제 전 가격 결측치 ---
 15
 
@@ -124,8 +156,9 @@ plt.ylabel('평가 와인 수 (개)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **좌우 대칭 종형 정규분포의 형태:** 평가 점수는 최저 80점에서 최고 100점 범위에 널리 퍼져 있으며, 90점 부근을 최대 봉우리로 하는 대칭적인 정규분포 구조를 형성합니다. 극단적 초고평가 와인(98점 이상)이나 저가 와인은 수가 극도로 제한적입니다.
@@ -150,8 +183,9 @@ plt.ylabel('판매 가격 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **비선형(지수형) 가격 도약 관찰:** 평점이 80점에서 90점 초반까지 올라갈 때는 가격 상자의 상승세가 완만하지만, 95점을 넘겨 초고가 명품 와인 대역으로 들어서는 순간 상자의 기울기가 위쪽으로 급격하게 꺾여 치솟는 **지수 함수 형태의 상승 궤적**을 목격할 수 있습니다. 품질 등급 최상단의 명품 프리미엄 가치 책정 방식이 정량적으로 증명됩니다.

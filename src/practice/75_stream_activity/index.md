@@ -6,6 +6,8 @@ permalink: /practice/75_stream_activity/
 
 # 실전 데이터 분석 75: OTT 동영상 스트리밍 플랫폼 가입자 요금제 등급 및 주간 시청 시간대별 구독 해지 이탈 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/stream_activity.csv')
+df = pd.read_csv('./stream_activity.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/stream_activity.csv')
+df = pd.read_csv('./stream_activity.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   UserID               1000 non-null   int64  
+>  1   Age                  1000 non-null   int64  
+>  2   HoursWatched_Weekly  988 non-null    float64
+>  3   MonthlyCost          1000 non-null   float64
+>  4   PlanType             1000 non-null   str    
+>  5   Churned              1000 non-null   str    
+> dtypes: float64(2), int64(2), str(2)
+> memory usage: 55.9 KB
+> None
+>    UserID  Age  HoursWatched_Weekly  MonthlyCost  PlanType Churned
+> 0  750001   71                 32.4         13.0  Standard      No
+> 1  750002   63                 27.2          8.0     Basic     Yes
+> 2  750003   34                  9.1         18.0   Premium     Yes
+> 3  750004   32                 36.2          8.0     Basic      No
+> 4  750005   23                  9.8         18.0   Premium     Yes
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> UserID                  0
+> Age                     0
+> HoursWatched_Weekly    12
+> MonthlyCost             0
+> PlanType                0
+> Churned                 0
+> dtype: int64
+> UserID                 0
+> Age                    0
+> HoursWatched_Weekly    0
+> MonthlyCost            0
+> PlanType               0
+> Churned                0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 UserID                  0
 Age                     0
@@ -132,8 +175,9 @@ plt.title('요금제 플랜 유형별 가입자 이탈 분포', fontsize=14, fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **요금제 등급에 따른 구독 이탈 충성도 대조:** 프리미엄(Premium) 가입자들은 높은 비용 부담에도 불구하고 이탈 비율(Yes)이 가장 적어 서비스 결합 락인 효과가 양호한 반면, 기본형(Basic) 가입자들은 해지 이탈율 비중이 유의하게 높게 포착되어 가격 편익 대비 이탈에 민감함을 실증합니다.
@@ -155,8 +199,9 @@ plt.title('사용자 연령 및 주간 시청 시간대별 해지 상관성', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **시청 몰입 시간 붕괴와 해지 경계선 포착:** 가입자 연령대(X축)에 관계없이 **주간 시청 시간이 5시간 미만으로 바닥에 누운 유저층** 전체에서 빨간색 점(Churned = Yes, 구독 해지)이 압도적인 밀도로 군집해 있습니다. 이는 서비스 활용 빈도 자체가 플랫폼 구독 유지의 절대적 선행 요인이며, 5시간 선이 웰빙 관리의 중추 역치 지표임을 보여줍니다.

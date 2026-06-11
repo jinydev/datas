@@ -5,6 +5,8 @@ permalink: /practice/148_coding_test_vs_performance/
 ---
 
 # 148. 코딩 테스트 성적 대비 입사 사후 성과 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 148: IT 직무 선발 평가 도구의 타당성 및 예측 타당도
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/coding_test_vs_performance.csv')
+df = pd.read_csv('./coding_test_vs_performance.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   DeveloperID             1000 non-null   int64  
+>  1   CodingTestScore         985 non-null    float64
+>  2   InterviewGrade          1000 non-null   float64
+>  3   BugFixesCount           1000 non-null   float64
+>  4   CodeReviewRating        1000 non-null   float64
+>  5   PerformanceScore_1Year  1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    DeveloperID  CodingTestScore  ...  CodeReviewRating  PerformanceScore_1Year
+> 0      1480001              5.6  ...             100.5                     6.0
+> 1      1480002              7.5  ...             128.0                     7.4
+> 2      1480003             10.0  ...              94.0                     7.9
+> 3      1480004              9.2  ...             104.2                     5.9
+> 4      1480005              NaN  ...             107.0                     9.9
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> DeveloperID                    0
+> DeveloperID                0
+> CodingTestScore           15
+> InterviewGrade             0
+> BugFixesCount              0
+> CodeReviewRating           0
+> PerformanceScore_1Year     0
+> dtype: int64
+> DeveloperID               0
+> CodingTestScore           0
+> InterviewGrade            0
+> BugFixesCount             0
+> CodeReviewRating          0
+> PerformanceScore_1Year    0
+> dtype: int64
+> ```
+
+
 CodingTestScore                15
 InterviewGrade                 0
 BugFixesCount                  0
@@ -125,8 +167,9 @@ plt.title('코딩 테스트 성적 대비 입사 사후 성과 빈도 분포', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** PerformanceScore_1Year 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('CodingTestScore와 PerformanceScore_1Year 상관성 및 CodeReviewRat
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, CodeReviewRating 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

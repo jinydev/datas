@@ -5,6 +5,8 @@ permalink: /practice/98_crop_yield/
 ---
 
 # 98. 스마트 팜 토양 수분 및 농작물 수확량 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 98: 스마트 팜 경작지의 토양 수분 상태 및 투입 비료 브랜드별 기온 대비 농작물 단위 면적당 수확량 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/crop_yield.csv')
+df = pd.read_csv('./crop_yield.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   PlotID          1000 non-null   int64  
+>  1   SoilMoisture    1000 non-null   float64
+>  2   FertilizerType  802 non-null    str    
+>  3   Temperature     1000 non-null   float64
+>  4   Rainfall_mm     985 non-null    float64
+>  5   CropYield_kg    1000 non-null   float64
+> dtypes: float64(4), int64(1), str(1)
+> memory usage: 53.1 KB
+> None
+>    PlotID  SoilMoisture FertilizerType  Temperature  Rainfall_mm  CropYield_kg
+> 0  980001          67.2        Organic         12.4        920.2        1675.0
+> 1  980002          49.8       Chemical         25.2        531.9        1435.1
+> 2  980003          87.7       Chemical         19.0        724.7        2026.6
+> 3  980004          80.9        Organic         32.0       1549.1        2488.1
+> 4  980005          79.9       Chemical         36.2        654.1        1898.8
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column          Non-Null Count  Dtype  
@@ -89,6 +113,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > PlotID              0
+> SoilMoisture        0
+> FertilizerType    198
+> Temperature         0
+> Rainfall_mm        15
+> CropYield_kg        0
+> dtype: int64
+> PlotID              0
+> SoilMoisture        0
+> FertilizerType    198
+> Temperature         0
+> Rainfall_mm         0
+> CropYield_kg        0
+> dtype: int64
+> ```
+
+
 SoilMoisture        0
 FertilizerType    198
 Temperature         0
@@ -124,8 +164,9 @@ plt.title('투입 비료 종류별 단위 경작지 작물 수확량(Crop Yield,
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **비료 처리에 따른 수확량 증대 효과 입증:** 비료 시비 그룹(Organic, Chemical)의 수확량 상자가 무시비 대조군(None) 상자 높이를 큰 마진 격차로 추월하여 솟아 있습니다. 특히 화학 복합 비료(Chemical)가 수확량 절대 스케일을 강하게 보장하지만, 유기농(Organic) 비료 역시 그에 준하는 준수한 수확 잔존 가치 분포를 띰을 상자로 대조 증명합니다.
@@ -147,8 +188,9 @@ plt.title('토양 수분량 대비 작물 수확량과 기온 시너지 상관�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **수분-수확량의 최적 적정 포물선 함수 규명:** 토양 수분량(X축)과 수확량(Y축)의 분산 관계를 관찰하면 단순 직선이 아니라 수분량 50% 부근에서 최적의 피크 수확량을 띠고, 30% 이하 극건조 구역이나 80% 이상 과습 구역에서는 수확량이 바닥으로 떨어지는 포물선 궤도를 띱니다. 특히 최적 수분(50%) 조건 하에서도 생육 온도가 과도하게 뜨거운 고온(노란색 계열) 구역은 잎 마름으로 인해 수확 피크가 수축하여, 스마트 관수 자동화 시 온도에 연동한 관수 밸브 제어가 정밀 재배의 중추 요인임을 규명합니다.

@@ -5,6 +5,8 @@ permalink: /practice/97_retail_returns/
 ---
 
 # 97. 의류 커머스 반품 요인 및 환불 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 97: 패션 커머스 쇼핑몰의 상품 분류군 및 온/오프라인 구매 채널 대비 최종 반품 및 환불 여부 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/retail_returns.csv')
+df = pd.read_csv('./retail_returns.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   TransactionID    1000 non-null   int64  
+>  1   ProductCategory  1000 non-null   str    
+>  2   SizeMatch        985 non-null    float64
+>  3   DiscountApplied  1000 non-null   float64
+>  4   PurchaseChannel  1000 non-null   str    
+>  5   Returned         1000 non-null   str    
+> dtypes: float64(2), int64(1), str(3)
+> memory usage: 64.7 KB
+> None
+>    TransactionID ProductCategory  ...  PurchaseChannel  Returned
+> 0         970001     Electronics  ...         In-Store        No
+> 1         970002     Electronics  ...           Online        No
+> 2         970003     Electronics  ...           Online       Yes
+> 3         970004        Footwear  ...           Online        No
+> 4         970005     Electronics  ...           Online        No
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column           Non-Null Count  Dtype  
@@ -88,6 +114,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > TransactionID       0
+> ProductCategory     0
+> SizeMatch          15
+> DiscountApplied     0
+> PurchaseChannel     0
+> Returned            0
+> dtype: int64
+> TransactionID      0
+> ProductCategory    0
+> SizeMatch          0
+> DiscountApplied    0
+> PurchaseChannel    0
+> Returned           0
+> dtype: int64
+> ```
+
+
 ProductCategory     0
 SizeMatch          15
 DiscountApplied     0
@@ -123,8 +165,9 @@ plt.title('의류 제품군 종류별 최종 반품(Returned) 여부 빈도', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **제품 피팅 민감도에 따른 반품 환불 비중 격차:** 각 품목별 환불 막대를 비교하면 아우터(Outerwear)나 상의(Tops) 대비, 신발(Shoes) 및 하의(Bottoms) 품목군에서 반품(Returned=Yes) 신청 빈도 막대 비율이 두드러지게 높습니다. 이는 직접 착용해보지 못하고 구매하는 신발 등 신체 사이즈 맞춤이 까다로운 제품군의 온라인 판매 시 3D 피팅 시뮬레이션 서비스나 교환 지원 확대 등의 대응이 필요함을 명백히 가리킵니다.
@@ -146,8 +189,9 @@ plt.title('최종 반품 여부별 적용 할인율(Discount Applied) 범위 비
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **할인율 과다 품목에서 터지는 충동구매형 반품 인과 규명:** 상품을 최종 반품 완료한 고객군(Yes)의 적용 할인율 상자가 최종 구매를 확정한 고객군(No) 대비 위쪽의 고할인율 대역에 쏠려 분포합니다. 즉, 쇼핑몰의 과도한 파격 특가 세일(예: 40% 이상 반값 쿠폰 등)은 단기 결제 결단은 쉽게 부르지만, 제품 애착을 낮춰 수령 후 변심에 의한 반품 환불율 폭증이라는 역효과를 부름을 커머스 통계 상자로 규명한 것입니다.

@@ -6,6 +6,8 @@ permalink: /practice/53_auto_insurance/
 
 # 실전 데이터 분석 53: 차량 보험 가입 가구의 차종별 청구 규모 분산 및 연령별 사기 의심 패턴 이상 탐지 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/auto_insurance.csv')
+df = pd.read_csv('./auto_insurance.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column       Non-Null Count  Dtype  
+> ---  ------       --------------  -----  
+>  0   PolicyID     1000 non-null   int64  
+>  1   DriverAge    1000 non-null   int64  
+>  2   VehicleType  1000 non-null   str    
+>  3   PolicyType   1000 non-null   str    
+>  4   ClaimAmount  990 non-null    float64
+>  5   IsFraud      1000 non-null   str    
+> dtypes: float64(1), int64(2), str(3)
+> memory usage: 59.4 KB
+> None
+>    PolicyID  DriverAge VehicleType PolicyType  ClaimAmount IsFraud
+> 0     70001         44       Sedan      Basic      2157.20      No
+> 1     70002         48         SUV      Basic      7454.26      No
+> 2     70003         72       Sedan      Basic      4051.97      No
+> 3     70004         56       Sedan    Premium      9937.35      No
+> 4     70005         41         SUV    Premium      6780.25      No
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +121,14 @@ print(df['ClaimAmount'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 가격 결측 개수 ---
+> 10
+> 
+> --- 정제 후 가격 결측 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 가격 결측 개수 ---
 10
 
@@ -126,8 +159,9 @@ plt.ylabel('청구 금액 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **차종 등급에 비례한 청구 상자의 높이 변화:** 차종별 박스플롯을 분석하면, 스포츠카(Sports Car)와 대형 트럭(Truck) 상자의 50% 구간 및 중앙값선이 일반 세단(Sedan) 대비 약 2~3배 높게 설계되어 있습니다. 이는 물리적인 파손 복구 비용 단가가 사고 유형에 독립적으로 이미 높게 깔려 있음을 의미합니다.
@@ -152,8 +186,9 @@ plt.ylabel('보험 청구 금액 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **이상값(Outlier)과 사기(Fraud) 패턴의 공간 수렴:** 산점도 맵을 관찰하면 빨간 점(사기 Yes)들이 우측 상단 혹은 특정 나이 대역에 쏠리기보다 **$12,000 이상 고액 청구 영역**에 오버레이되어 매우 빈번히 흩어져 있습니다. 특히 고령 운전자보다는 일정 수준의 청구 금액 이상에 사기 패턴이 강력히 노출되어 있으므로 FDS(이상거래탐지시스템)에 이 단가 경계를 임계값으로 설정하는 조치가 시급합니다.

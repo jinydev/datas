@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-79-모바일-게임-가입자-플레이-지속시간-및-게임-모드-대비-인앱-광고-시청-수와-결제액-상관-분석">실전 데이터 분석 79: 모바일 게임 가입자 플레이 지속시간 및 게임 모드 대비 인앱 광고 시청 수와 결제액 상관 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,39 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/gaming_sessions.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./gaming_sessions.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/gaming_sessions.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./gaming_sessions.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   SessionID           1000 non-null   int64  
+ 1   PlayerLevel         1000 non-null   int64  
+ 2   SessionLength_Mins  1000 non-null   float64
+ 3   IAP_Amount          985 non-null    float64
+ 4   GameMode            1000 non-null   str    
+ 5   AdsWatched          1000 non-null   int64  
+dtypes: float64(2), int64(3), str(1)
+memory usage: 52.7 KB
+None
+   SessionID  PlayerLevel  SessionLength_Mins  IAP_Amount GameMode  AdsWatched
+0     790001           88                 8.7        0.00   Casual           0
+1     790002           62                58.1       16.51    Co-op           3
+2     790003           75                83.2       10.64   Casual           2
+3     790004           68                94.9       10.70   Casual           9
+4     790005           21                32.7        0.00   Casual           3
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2197,16 +2222,32 @@ SessionID  PlayerLevel  SessionLength_Mins  IAP_Amount GameMode  AdsWatched
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+SessionID              0
+PlayerLevel            0
+SessionLength_Mins     0
+IAP_Amount            15
+GameMode               0
+AdsWatched             0
+dtype: int64
+SessionID             0
+PlayerLevel           0
+SessionLength_Mins    0
+IAP_Amount            0
+GameMode              0
+AdsWatched            0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 SessionID              0
 PlayerLevel            0
 SessionLength_Mins     0
 IAP_Amount            15
 GameMode               0
 AdsWatched             0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 SessionID             0
@@ -2241,7 +2282,7 @@ AdsWatched            0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2267,7 +2308,7 @@ AdsWatched            0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

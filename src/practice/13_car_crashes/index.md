@@ -58,7 +58,7 @@ print(df.head())
 >  6   ins_losses      51 non-null     float64
 >  7   abbrev          51 non-null     str    
 > dtypes: float64(7), str(1)
-> memory usage: 3.3 KB
+> memory usage: 3.4 KB
 > None
 >    total  speeding  alcohol  ...  ins_premium  ins_losses  abbrev
 > 0   18.8     7.332    5.640  ...       784.55      145.08      AL
@@ -69,7 +69,6 @@ print(df.head())
 > 
 > [5 rows x 8 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -115,7 +114,6 @@ plt.show()
 > ![실행 결과 시각화](img/exec_step_2.svg)
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `sort_values(ascending=False)`라는 단 한 줄의 코드가 차트의 품질을 180도 바꿉니다.
 * **최악의 주 (왼쪽):** 사우스캐롤라이나(`SC`), 노스다코타(`ND`) 등이 사망률 1, 2위를 다투고 있습니다.
@@ -144,7 +142,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -177,7 +174,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트

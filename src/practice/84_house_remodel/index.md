@@ -5,6 +5,8 @@ permalink: /practice/84_house_remodel/
 ---
 
 # 84. 부동산 리모델링 공사 비용 및 ROI 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 84: 부동산 리모델링 공사 종류 및 투입 자재비 대비 자산 가치 회수율(ROI) 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/house_remodel.csv')
+df = pd.read_csv('./house_remodel.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   ProjectID      1000 non-null   int64  
+>  1   RemodelType    1000 non-null   str    
+>  2   YearBuilt      1000 non-null   int64  
+>  3   MaterialsCost  985 non-null    float64
+>  4   LaborHours     1000 non-null   int64  
+>  5   ROI_Percent    1000 non-null   float64
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 54.6 KB
+> None
+>    ProjectID RemodelType  YearBuilt  MaterialsCost  LaborHours  ROI_Percent
+> 0     840001    Basement       2008        5894.78         110         47.5
+> 1     840002     Kitchen       1975       18813.33         295         67.0
+> 2     840003    Exterior       2012        7068.00         122         46.5
+> 3     840004    Bathroom       1993        9685.37          57         55.3
+> 4     840005    Exterior       1965        8379.09         116         46.4
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column         Non-Null Count  Dtype  
@@ -89,6 +113,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > ProjectID         0
+> RemodelType       0
+> YearBuilt         0
+> MaterialsCost    15
+> LaborHours        0
+> ROI_Percent       0
+> dtype: int64
+> ProjectID        0
+> RemodelType      0
+> YearBuilt        0
+> MaterialsCost    0
+> LaborHours       0
+> ROI_Percent      0
+> dtype: int64
+> ```
+
+
 RemodelType       0
 YearBuilt         0
 MaterialsCost    15
@@ -124,8 +164,9 @@ plt.title('리모델링 공사 종류별 투자 회수율(ROI) 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **주방 개조 공사의 뛰어난 투자 수익성 확인:** 상자 그림을 분석하면 주방 개조(Kitchen) 그룹의 ROI 상자와 중앙값선이 다른 유형 대비 유의미하게 우위에 형성되어 있습니다. 이는 리모델링 시장에서 주방의 현대적 업그레이드가 주택 가격 상승에 가장 알짜배기 기여를 함을 입증합니다.
@@ -147,8 +188,9 @@ plt.title('자재 투입 비용 대비 투자 회수율(ROI) 분산', fontsize=1
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **자재비의 지나친 과투입과 ROI의 한계 효용 체감:** 자재비(X축)와 ROI(Y축)의 분산 관계를 관찰하면 자재비가 일정 수준(예: $20,000)을 넘는 우측 구역에서 ROI가 추가 도약하지 않고 수평 수축되거나 오히려 하락하는 흐름을 띱니다. 이는 공사 자재를 지나치게 고급으로 과투자할 때 발생하는 한계 효용 체감을 가시화하는 중요한 비즈니스 통찰입니다.

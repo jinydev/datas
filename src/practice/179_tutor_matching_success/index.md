@@ -5,6 +5,8 @@ permalink: /practice/179_tutor_matching_success/
 ---
 
 # 179. 온라인 튜터 매칭 만족도 및 재수강률 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 179: 개외 과외 중개 서비스 재구독 전환 요인 예측
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/tutor_matching_success.csv')
+df = pd.read_csv('./tutor_matching_success.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                    Non-Null Count  Dtype  
+> ---  ------                    --------------  -----  
+>  0   MatchID                   1000 non-null   int64  
+>  1   TutorExpYears             1000 non-null   float64
+>  2   ClassFeeHourly            1000 non-null   float64
+>  3   StudentSatisfactionScore  985 non-null    float64
+>  4   LessonsCompleted          1000 non-null   float64
+>  5   RenewedSubscription       1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    MatchID  TutorExpYears  ...  LessonsCompleted  RenewedSubscription
+> 0  1790001           14.3  ...             114.0                115.9
+> 1  1790002            5.1  ...             102.6                 79.1
+> 2  1790003           13.2  ...              87.4                106.7
+> 3  1790004           12.0  ...              82.2                100.6
+> 4  1790005            6.2  ...             106.8                 73.0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                    Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> MatchID                        0
+> MatchID                      0
+> TutorExpYears                0
+> ClassFeeHourly               0
+> StudentSatisfactionScore    15
+> LessonsCompleted             0
+> RenewedSubscription          0
+> dtype: int64
+> MatchID                     0
+> TutorExpYears               0
+> ClassFeeHourly              0
+> StudentSatisfactionScore    0
+> LessonsCompleted            0
+> RenewedSubscription         0
+> dtype: int64
+> ```
+
+
 TutorExpYears                  0
 ClassFeeHourly                 0
 StudentSatisfactionScore       15
@@ -125,8 +167,9 @@ plt.title('온라인 튜터 매칭 만족도 및 재수강률 빈도 분포', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** LessonsCompleted 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('TutorExpYears와 LessonsCompleted 상관성 및 RenewedSubscription �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, RenewedSubscription 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

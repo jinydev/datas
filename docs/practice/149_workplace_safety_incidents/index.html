@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="149-공장-근로-안전-수칙-위반-및-사고-위험-실습">149. 공장 근로 안전 수칙 위반 및 사고 위험 실습</h1>
-<h2 id="실전-데이터-분석-149-산업-안전-보건-교육의-아차사고-방지-인과-분석">실전 데이터 분석 149: 산업 안전 보건 교육의 아차사고 방지 인과 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-149-산업-안전-보건-교육의-아차사고-방지-인과-분석">실전 데이터 분석 149: 산업 안전 보건 교육의 아차사고 방지 인과 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/workplace_safety_incidents.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./workplace_safety_incidents.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,39 @@ Data columns (total 6 columns):
  5   AccidentOccurred     1000 non-null   int64  
 dtypes: float64(4), int64(2)
 memory usage: 47.0 KB
+None
+   WorkerID  SafetyTrainingHours  ...  MachineUsageHours  AccidentOccurred
+0   1490001                 40.3  ...               62.0                 0
+1   1490002                 44.2  ...               47.0                 0
+2   1490003                 39.6  ...               39.0                 1
+3   1490004                 38.5  ...               27.0                 1
+4   1490005                 41.4  ...               55.0                 0
 
-   WorkerID  SafetyTrainingHours  ComplianceScore  NearMissCount  MachineUsageHours  AccidentOccurred
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column               Non-Null Count  Dtype<br />
+—  ——               ————–  —–<br />
+ 0   WorkerID             1000 non-null   int64<br />
+ 1   SafetyTrainingHours  1000 non-null   float64
+ 2   ComplianceScore      1000 non-null   float64
+ 3   NearMissCount        985 non-null    float64
+ 4   MachineUsageHours    1000 non-null   float64
+ 5   AccidentOccurred     1000 non-null   int64<br />
+dtypes: float64(4), int64(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>WorkerID  SafetyTrainingHours  ComplianceScore  NearMissCount  MachineUsageHours  AccidentOccurred
 0   1490001                 40.3             55.6          115.1               62.0                 0
 1   1490002                 44.2             54.7           93.3               47.0                 0
 2   1490003                 39.6             51.7          116.1               39.0                 1
 3   1490004                 38.5             42.2          112.9               27.0                 1
 4   1490005                 41.4             57.8          118.6               55.0                 0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-WorkerID                       0
-SafetyTrainingHours            0
+WorkerID                0
+SafetyTrainingHours     0
+ComplianceScore         0
+NearMissCount          15
+MachineUsageHours       0
+AccidentOccurred        0
+dtype: int64
+WorkerID               0
+SafetyTrainingHours    0
+ComplianceScore        0
+NearMissCount          0
+MachineUsageHours      0
+AccidentOccurred       0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>SafetyTrainingHours            0
 ComplianceScore                0
 NearMissCount                  15
 MachineUsageHours              0
-AccidentOccurred               0
+AccidentOccurred               0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 WorkerID                       0
 SafetyTrainingHours            0
 ComplianceScore                0
 NearMissCount                  0
 MachineUsageHours              0
 AccidentOccurred               0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ AccidentOccurred               0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ AccidentOccurred               0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

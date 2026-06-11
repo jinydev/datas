@@ -6,6 +6,8 @@ permalink: /practice/61_heart_disease_risk/
 
 # 실전 데이터 분석 61: 환자 건강 검진 데이터 기반 콜레스테롤 및 혈압 수치가 심장 질환 발생률에 미치는 영향 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,40 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/heart_disease_risk.csv')
+df = pd.read_csv('./heart_disease_risk.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/heart_disease_risk.csv')
+df = pd.read_csv('./heart_disease_risk.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   PatientID      1000 non-null   int64  
+>  1   Age            1000 non-null   int64  
+>  2   Sex            1000 non-null   str    
+>  3   Cholesterol    985 non-null    float64
+>  4   BloodPressure  1000 non-null   int64  
+>  5   MaxHeartRate   1000 non-null   int64  
+>  6   Target         1000 non-null   int64  
+> dtypes: float64(1), int64(5), str(1)
+> memory usage: 55.8 KB
+> None
+>    PatientID  Age Sex  Cholesterol  BloodPressure  MaxHeartRate  Target
+> 0     610001   64   M        203.0            112           126       1
+> 1     610002   47   F        201.8             95           170       1
+> 2     610003   63   F        204.2            126           127       1
+> 3     610004   45   M        217.4            129           171       0
+> 4     610005   76   M        239.0            134           144       1
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 7 columns):
@@ -98,6 +124,26 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> PatientID         0
+> Age               0
+> Sex               0
+> Cholesterol      15
+> BloodPressure     0
+> MaxHeartRate      0
+> Target            0
+> dtype: int64
+> PatientID        0
+> Age              0
+> Sex              0
+> Cholesterol      0
+> BloodPressure    0
+> MaxHeartRate     0
+> Target           0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 PatientID         0
 Age               0
@@ -137,8 +183,9 @@ plt.title('심장 질환 여부별 콜레스테롤 분포', fontsize=14, fontwei
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **질환 여부와 콜레스테롤 수치 간의 양의 분산 관계:** 상자 그림을 분석하면 심장 질환을 앓고 있는 군(Target=1)의 콜레스테롤 중앙값선 및 전체 50% 박스 위치가 정상 대조군(Target=0)보다 뚜렷하게 높은 영역에 안착해 있습니다. 이는 높은 콜레스테롤 농도가 심장 질환 발병을 예측하는 강력한 지표임을 보여줍니다.
@@ -160,8 +207,9 @@ plt.title('콜레스테롤과 혈압 대비 심장 질환 환자 분포', fontsi
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **두 생체 인자의 시너지와 경계 역치 규명:** 산점도 맵을 보면, 우측 상단으로 이동할수록(콜레스테롤과 혈압이 동시에 높은 구역) 빨간색 점(Target=1, 질환군)의 점유 밀도가 압도적으로 늘어납니다. 이는 단일 생체 신호 기준 진단 대비 다변수 결합 임계치를 적용해 위험군을 필터링하는 복합 판독의 필요성을 명백히 드러냅니다.

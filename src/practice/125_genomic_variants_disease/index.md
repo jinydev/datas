@@ -5,6 +5,8 @@ permalink: /practice/125_genomic_variants_disease/
 ---
 
 # 125. 유전자 변이(SNP) 발현 및 질환 매핑 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 125: 유전적 감수성과 환경 기저 요인의 상관관계
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/genomic_variants_disease.csv')
+df = pd.read_csv('./genomic_variants_disease.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   SubjectID            1000 non-null   int64  
+>  1   MutatedAllelesCount  1000 non-null   float64
+>  2   GeneExpressionLevel  985 non-null    float64
+>  3   EnvironmentalScore   1000 non-null   float64
+>  4   Age                  1000 non-null   float64
+>  5   DiseaseOnset         1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    SubjectID  MutatedAllelesCount  ...   Age  DiseaseOnset
+> 0    1250001                 82.5  ...  31.0             0
+> 1    1250002                100.3  ...  60.0             0
+> 2    1250003                 76.3  ...  48.0             1
+> 3    1250004                108.2  ...  58.0             1
+> 4    1250005                107.9  ...  12.0             1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column               Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> SubjectID                      0
+> SubjectID               0
+> MutatedAllelesCount     0
+> GeneExpressionLevel    15
+> EnvironmentalScore      0
+> Age                     0
+> DiseaseOnset            0
+> dtype: int64
+> SubjectID              0
+> MutatedAllelesCount    0
+> GeneExpressionLevel    0
+> EnvironmentalScore     0
+> Age                    0
+> DiseaseOnset           0
+> dtype: int64
+> ```
+
+
 MutatedAllelesCount            0
 GeneExpressionLevel            15
 EnvironmentalScore             0
@@ -125,8 +167,9 @@ plt.title('유전자 변이(SNP) 발현 및 질환 매핑 빈도 분포', fontsi
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** GeneExpressionLevel 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('MutatedAllelesCount와 GeneExpressionLevel 상관성 및 DiseaseOnset
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, DiseaseOnset 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

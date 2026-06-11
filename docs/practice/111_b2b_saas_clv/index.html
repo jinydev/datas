@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="111-b2b-saas-고객-평생-가치-clv-실습">111. B2B SaaS 고객 평생 가치 (CLV) 실습</h1>
-<h2 id="실전-데이터-분석-111-구독-비즈니스-리텐션-락인-시너지">실전 데이터 분석 111: 구독 비즈니스 리텐션 락인 시너지</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-111-구독-비즈니스-리텐션-락인-시너지">실전 데이터 분석 111: 구독 비즈니스 리텐션 락인 시너지</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/b2b_saas_clv.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./b2b_saas_clv.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,39 @@ Data columns (total 6 columns):
  5   CustomerLifetimeValue  1000 non-null   float64
 dtypes: float64(5), int64(1)
 memory usage: 47.0 KB
+None
+   SubscriptionID  MonthlyFee  ...  TenureMonths  CustomerLifetimeValue
+0         1110001        74.6  ...          36.0                90160.0
+1         1110002       135.4  ...          44.0                75363.0
+2         1110003       179.9  ...          34.0                78370.0
+3         1110004       105.8  ...           8.0                78239.0
+4         1110005        88.5  ...          52.0                90611.0
 
-   SubscriptionID  MonthlyFee  UserSeats  ExpansionRevenue  TenureMonths  CustomerLifetimeValue
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                 Non-Null Count  Dtype<br />
+—  ——                 ————–  —–<br />
+ 0   SubscriptionID         1000 non-null   int64<br />
+ 1   MonthlyFee             1000 non-null   float64
+ 2   UserSeats              1000 non-null   float64
+ 3   ExpansionRevenue       985 non-null    float64
+ 4   TenureMonths           1000 non-null   float64
+ 5   CustomerLifetimeValue  1000 non-null   float64
+dtypes: float64(5), int64(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>SubscriptionID  MonthlyFee  UserSeats  ExpansionRevenue  TenureMonths  CustomerLifetimeValue
 0         1110001        74.6       64.3           66608.0          36.0                90160.0
 1         1110002       135.4       96.5           56757.0          44.0                75363.0
 2         1110003       179.9       89.0           68619.0          34.0                78370.0
 3         1110004       105.8      115.4           71797.0           8.0                78239.0
 4         1110005        88.5      112.5           56397.0          52.0                90611.0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-SubscriptionID                 0
-MonthlyFee                     0
+SubscriptionID            0
+MonthlyFee                0
+UserSeats                 0
+ExpansionRevenue         15
+TenureMonths              0
+CustomerLifetimeValue     0
+dtype: int64
+SubscriptionID           0
+MonthlyFee               0
+UserSeats                0
+ExpansionRevenue         0
+TenureMonths             0
+CustomerLifetimeValue    0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>MonthlyFee                     0
 UserSeats                      0
 ExpansionRevenue               15
 TenureMonths                   0
-CustomerLifetimeValue          0
+CustomerLifetimeValue          0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 SubscriptionID                 0
 MonthlyFee                     0
 UserSeats                      0
 ExpansionRevenue               0
 TenureMonths                   0
 CustomerLifetimeValue          0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ CustomerLifetimeValue          0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ CustomerLifetimeValue          0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

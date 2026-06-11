@@ -6,6 +6,8 @@ permalink: /practice/26_heart/
 
 # 실전 데이터 분석 26: 심장 질환 예측 (Binning과 그룹별 박스플롯)
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("muted")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/heart_disease.csv')
+df = pd.read_csv('./heart_disease.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/heart_disease.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 303 entries, 0 to 302
+> Data columns (total 7 columns):
+>  #   Column    Non-Null Count  Dtype
+> ---  ------    --------------  -----
+>  0   age       303 non-null    int64
+>  1   sex       303 non-null    int64
+>  2   cp        303 non-null    int64
+>  3   trestbps  303 non-null    int64
+>  4   chol      303 non-null    int64
+>  5   thalach   303 non-null    int64
+>  6   target    303 non-null    int64
+> dtypes: int64(7)
+> memory usage: 16.7 KB
+> None
+>    age  sex  cp  trestbps  chol  thalach  target
+> 0   41    1   1       137   274      154       1
+> 1   53    1   3       157   172      171       1
+> 2   33    0   3       118   158      125       0
+> 3   67    1   3       132   258      173       1
+> 4   57    1   0        85   291      174       1
 > ```
-
+> ![실행 결과 시각화](img/exec_step_1.svg)
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -82,9 +104,15 @@ print(df[['age', 'age_group', 'target']].sample(5))
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> 최소 연령: 29세, 최대 연령: 76세
+> 
+>      age age_group  target
+> 18    60       60s       1
+> 121   76       70s       1
+> 145   35    20-30s       0
+> 266   40       40s       1
+> 89    64       60s       1
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -118,10 +146,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -155,10 +180,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

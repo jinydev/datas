@@ -5,6 +5,8 @@ permalink: /practice/82_product_pricing/
 ---
 
 # 82. SaaS 요금제 및 제품 가격 정책 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 82: SaaS 가입 고객의 사용 계정 수 및 기능 활용도 대비 연간 계약 가치(ACV) 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/product_pricing.csv')
+df = pd.read_csv('./product_pricing.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,27 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   TierID          1000 non-null   int64  
+>  1   UserSeats       1000 non-null   int64  
+>  2   AnnualDiscount  1000 non-null   int64  
+>  3   FeaturesUsed    985 non-null    float64
+>  4   ContractValue   1000 non-null   float64
+> dtypes: float64(2), int64(3)
+> memory usage: 39.2 KB
+> None
+>    TierID  UserSeats  AnnualDiscount  FeaturesUsed  ContractValue
+> 0  820001         20               0          17.0        2747.05
+> 1  820002         10              10          29.0        1619.03
+> 2  820003         50               0          31.0        6449.93
+> 3  820004         50              20          25.0        4807.11
+> 4  820005         20              10          26.0        2631.37
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
  #   Column          Non-Null Count  Dtype  
@@ -88,6 +111,20 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > TierID             0
+> UserSeats          0
+> AnnualDiscount     0
+> FeaturesUsed      15
+> ContractValue      0
+> dtype: int64
+> TierID            0
+> UserSeats         0
+> AnnualDiscount    0
+> FeaturesUsed      0
+> ContractValue     0
+> dtype: int64
+> ```
+
+
 UserSeats          0
 AnnualDiscount     0
 FeaturesUsed      15
@@ -121,8 +158,9 @@ plt.title('가입 계정 수(User Seats)별 평균 연간 계약 가치(ACV)', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **계정 시트 규모에 따른 계단식 매출 도약:** 가입 시트 등급 규모에 비례하여 연간 계약액 막대 높이가 정직하게 큰 단위로 도약합니다. B2B 소프트웨어 시장의 대표적인 과금 모델인 'Seat-based Pricing'의 가격 계단 구조가 완벽히 투영되어 있습니다.
@@ -144,8 +182,9 @@ plt.title('기능 사용 종류 수 대비 계약 가치와 할인율 영향', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **기능 활용 비례 가치 상승 및 할인율 분산:** 솔루션 내 다양한 기능(FeaturesUsed)을 적극적으로 탐색하는 고객일수록 높은 요금제와 재계약 가치를 유지하는 선형 관계를 그립니다. 연간 할인(AnnualDiscount)이 묶인 고객(진한 붉은색)이 일부 계약 가치 분산 띠의 중하단을 형성하며 프로모션 협상 범위를 가시적으로 입증합니다.

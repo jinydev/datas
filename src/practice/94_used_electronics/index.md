@@ -5,6 +5,8 @@ permalink: /practice/94_used_electronics/
 ---
 
 # 94. 중고 가전 및 전자기기 리셀 가격 감가 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 94: 중고 전자 디바이스의 브랜드 제조사 및 사용 기간 대비 기기 등급별 리셀 가격 감가상각 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/used_electronics.csv')
+df = pd.read_csv('./used_electronics.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   DeviceID             1000 non-null   int64  
+>  1   Brand                1000 non-null   str    
+>  2   DeviceAge_Months     1000 non-null   int64  
+>  3   ConditionGrade       985 non-null    float64
+>  4   AccessoriesIncluded  1000 non-null   int64  
+>  5   ResalePrice          1000 non-null   float64
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 52.5 KB
+> None
+>    DeviceID    Brand  ...  AccessoriesIncluded  ResalePrice
+> 0    940001       LG  ...                    1       381.58
+> 1    940002  Samsung  ...                    1       984.60
+> 2    940003    Apple  ...                    1       918.99
+> 3    940004  Samsung  ...                    0       914.21
+> 4    940005    Apple  ...                    1      1178.50
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column               Non-Null Count  Dtype  
@@ -88,6 +114,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > DeviceID                0
+> Brand                   0
+> DeviceAge_Months        0
+> ConditionGrade         15
+> AccessoriesIncluded     0
+> ResalePrice             0
+> dtype: int64
+> DeviceID               0
+> Brand                  0
+> DeviceAge_Months       0
+> ConditionGrade         0
+> AccessoriesIncluded    0
+> ResalePrice            0
+> dtype: int64
+> ```
+
+
 Brand                   0
 DeviceAge_Months        0
 ConditionGrade         15
@@ -123,8 +165,9 @@ plt.title('제조 브랜드(Brand)별 중고 디바이스 리셀 시세 분포',
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **제조사 브랜드 파워에 따른 잔존 가치 격차:** 브랜드별 리셀 상자그림을 분석하면 특정 브랜드(Apple)의 중고 시세 상자 및 중앙값선이 타 제조사 대비 월등히 높은 영역에 우상향 포지셔닝되어 있습니다. 이는 중고 유통 시장에서의 브랜드 로열티와 높은 잔존가치 방어율을 입증합니다.
@@ -146,8 +189,9 @@ plt.title('기기 사용 연식 대비 중고 시세 감가상각과 등급 시�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **시간 경과에 따른 정직한 감가 곡선 및 상태 등급의 방어 효과:** 사용 개월 수(X축)가 증가함에 따라 리셀 시세(Y축)는 가파른 음의 선형 하락 궤도를 그립니다. 주목할 점은 사용 개월 수가 길어지더라도 외관 상태 점수(ConditionGrade)가 5점(S급)에 가까운 기기들(진한 갈색 계열)이 동일 연식 띠 내에서 항상 상단 시세를 굳건히 방어하는 흐름이 포착되어, 꼼꼼한 기기 관리가 감가방어에 절대적 기여를 함을 입증합니다.

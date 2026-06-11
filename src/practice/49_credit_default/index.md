@@ -6,6 +6,8 @@ permalink: /practice/49_credit_default/
 
 # 실전 데이터 분석 49: 고객 신용 한도액 및 연령층별 다음 달 신용카드 부도(Default) 위험도 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/credit_default.csv')
+df = pd.read_csv('./credit_default.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column     Non-Null Count  Dtype
+> ---  ------     --------------  -----
+>  0   ID         1000 non-null   int64
+>  1   LimitBal   1000 non-null   int64
+>  2   Sex        1000 non-null   str  
+>  3   Education  1000 non-null   str  
+>  4   Age        1000 non-null   int64
+>  5   Default    1000 non-null   int64
+> dtypes: int64(4), str(2)
+> memory usage: 63.1 KB
+> None
+>    ID  LimitBal     Sex        Education  Age  Default
+> 0   1    100000    Male       University   50        1
+> 1   2     50000  Female  Graduate School   31        1
+> 2   3    300000    Male       University   32        0
+> 3   4    300000    Male       University   42        0
+> 4   5    200000    Male       University   50        0
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -94,6 +119,22 @@ print(df.groupby('Education')['Default'].mean())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 전체 고객 대비 연체 비율 ---
+> Default
+> 0    0.609
+> 1    0.391
+> Name: proportion, dtype: float64
+> 
+> --- 학력 등급별 평균 부도 확률 ---
+> Education
+> Graduate School    0.401384
+> High School        0.352518
+> Others             0.318182
+> University         0.401515
+> Name: Default, dtype: float64
+> ```
+
+
 --- 전체 고객 대비 연체 비율 ---
 Default
 0    0.609
@@ -132,8 +173,9 @@ plt.ylabel('고객 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **정상(0) 막대의 확연한 우세성 관찰:** 이진 분류 데이터셋의 특성상 연체를 범하지 않는 정상 상환 고객(0) 막대 높이가 연체 부도(1) 높이에 비해 훨씬 크게 솟아 있습니다. 마케터나 신용 위험 관리 부서는 이러한 클래스 비율의 쏠림 현상을 전처리 단계에서 잘 식별해 두어야 기계학습 모델의 다수 범주 쏠림 오작동을 예방할 수 있습니다.
@@ -158,8 +200,9 @@ plt.ylabel('신용 한도 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **신용 한도와 상환율의 상관관계:** 박스플롯을 확인해 보면, 정상 상환 그룹(0)의 신용 한도 상자 위치와 중앙값선($100k)이 부도가 발생한 집단(1)의 한도 중앙값선($50k)에 비해 명확하게 높은 위치에 수평 안착되어 있습니다. 이는 금융사가 사전에 신뢰도가 낮거나 위험군으로 분류된 고객에게 작은 신용 한도액만을 대출 부여했음을 방증하거나, 소액 한도 부여 고객의 연쇄 연체 위험도가 상대적으로 더 취약함을 입증합니다.

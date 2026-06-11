@@ -5,6 +5,8 @@ permalink: /practice/118_loyalty_points_redemption/
 ---
 
 # 118. 멤버십 포인트 적립 및 소진 행동 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 118: 고객 충성 마케팅 락인 가치 회계
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/loyalty_points_redemption.csv')
+df = pd.read_csv('./loyalty_points_redemption.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                    Non-Null Count  Dtype  
+> ---  ------                    --------------  -----  
+>  0   MemberID                  1000 non-null   int64  
+>  1   PointsAccumulated         985 non-null    float64
+>  2   RedemptionIntervalMonths  1000 non-null   float64
+>  3   LoyaltyTier               1000 non-null   str    
+>  4   TotalSpend_K              1000 non-null   float64
+>  5   Redeemed                  1000 non-null   float64
+> dtypes: float64(4), int64(1), str(1)
+> memory usage: 52.9 KB
+> None
+>    MemberID  PointsAccumulated  ...  TotalSpend_K Redeemed
+> 0   1180001              102.9  ...          88.9    128.6
+> 1   1180002              116.0  ...          77.1    115.2
+> 2   1180003              113.7  ...          60.0    119.7
+> 3   1180004              104.4  ...          69.5    102.9
+> 4   1180005              105.1  ...          87.1     91.1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                    Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> MemberID                       0
+> MemberID                     0
+> PointsAccumulated           15
+> RedemptionIntervalMonths     0
+> LoyaltyTier                  0
+> TotalSpend_K                 0
+> Redeemed                     0
+> dtype: int64
+> MemberID                    0
+> PointsAccumulated           0
+> RedemptionIntervalMonths    0
+> LoyaltyTier                 0
+> TotalSpend_K                0
+> Redeemed                    0
+> dtype: int64
+> ```
+
+
 PointsAccumulated              15
 RedemptionIntervalMonths       0
 LoyaltyTier                    0
@@ -125,8 +167,9 @@ plt.title('멤버십 포인트 적립 및 소진 행동 빈도 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** PointsAccumulated 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('PointsAccumulated와 TotalSpend_K 상관성 및 Redeemed 대조', fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, Redeemed 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

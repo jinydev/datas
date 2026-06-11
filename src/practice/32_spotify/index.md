@@ -6,6 +6,8 @@ permalink: /practice/32_spotify/
 
 # 실전 데이터 분석 32: 스포티파이 인기 음원의 오디오 특성 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/spotify.csv')
+df = pd.read_csv('./spotify.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './spotify.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 7 columns):
@@ -95,6 +101,10 @@ df['popularity'] = df['popularity'].clip(0, 100)
 
 > **💻 [실행 결과]**
 > ```text
+> Error: name 'df' is not defined
+> ```
+
+
 인기도 최소값: 12
 인기도 최대값: 88
 > ```
@@ -122,8 +132,11 @@ plt.ylabel('음원 수 (개)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **정규분포를 따르는 인기도:** 차트를 보면 인기도는 약 45~50점 주변을 중심으로 좌우대칭 형태의 예쁜 **종 모양(정규분포)**을 형성하고 있습니다. 극단적으로 인기가 없거나(10점 이하) 극단적으로 히트한(90점 이상) 곡은 소수이며, 대부분의 대중 곡들은 평균적인 인기도 영역에 몰려 있음을 직관적으로 알 수 있습니다.
@@ -149,8 +162,11 @@ plt.legend(title='아티스트')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **댄스 리듬과 인기도의 우상향 상관관계:** 산점도(Scatterplot)의 점 분포를 보면 댄스 지수(X축)가 증가할수록 인기도(Y축)도 점진적으로 상승하는 우상향 트렌드를 나타냅니다. 즉, 비트가 선명하고 리드미컬한 댄스곡일수록 차트 인기도가 높아질 가능성이 크다는 비즈니스 패턴을 통계적으로 입증합니다.

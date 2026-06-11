@@ -6,6 +6,8 @@ permalink: /practice/30_superstore/
 
 # 실전 데이터 분석 30: 글로벌 슈퍼스토어 비즈니스 KPI 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/superstore.csv')
+df = pd.read_csv('./superstore.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -56,7 +58,7 @@ print(df.head())
 >  4   Sales         1000 non-null   float64
 >  5   Profit        1000 non-null   float64
 > dtypes: float64(2), str(4)
-> memory usage: 47.0 KB
+> memory usage: 96.4 KB
 > None
 >                    Order Date         Category  ...    Sales  Profit
 > 0  2022-01-01 00:00:00.000000  Office Supplies  ...  1518.12  105.72
@@ -67,8 +69,6 @@ print(df.head())
 > 
 > [5 rows x 6 columns]
 > ```
-
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -105,8 +105,6 @@ print(category_df.round(2))
 > ```
 
 
-
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 단 한 줄의 `groupby` 코드로 복잡했던 수만 건의 데이터가 'Furniture(가구)', 'Office Supplies(사무용품)', 'Technology(전자기기)' 딱 3줄짜리 요약 보고서로 변신했습니다.
 * **충격적인 팩트 체크:** Furniture(가구) 부서를 보세요. 고객들이 결제한 `Sales`는 약 18.8만 달러나 되는데, 회사가 남긴 `Profit`은 다른 카테고리에 비해 가장 낮습니다(약 2.3만 달러). 만약 전체 매출 대비 수익률이 이렇게 바닥을 치거나 적자(-마이너스)가 발생한다면 팔면 팔수록 회사가 손해를 보고 있다는 뜻이 됩니다. 원인을 시각화로 파헤쳐야 합니다.
@@ -138,8 +136,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -175,8 +171,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

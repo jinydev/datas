@@ -5,6 +5,8 @@ permalink: /practice/173_scholarship_gpa_progress/
 ---
 
 # 173. 대학 장학금 지원 예산 분배 효율성 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 173: 장학금 지원 규모가 학업 성과 성장에 미치는 기여
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/scholarship_gpa_progress.csv')
+df = pd.read_csv('./scholarship_gpa_progress.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                    Non-Null Count  Dtype  
+> ---  ------                    --------------  -----  
+>  0   StudentID                 1000 non-null   int64  
+>  1   ScholarshipAmount_K       1000 non-null   float64
+>  2   PriorGPA                  1000 non-null   float64
+>  3   PostGPA                   1000 non-null   float64
+>  4   StudyHoursWeekly          985 non-null    float64
+>  5   GPASignificantlyImproved  1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    StudentID  ScholarshipAmount_K  ...  StudyHoursWeekly  GPASignificantlyImproved
+> 0    1730001                 80.5  ...              27.7                         1
+> 1    1730002                 64.4  ...              18.9                         1
+> 2    1730003                126.3  ...              38.3                         1
+> 3    1730004                 88.8  ...              24.8                         1
+> 4    1730005                102.7  ...              39.8                         1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                    Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> StudentID                      0
+> StudentID                    0
+> ScholarshipAmount_K          0
+> PriorGPA                     0
+> PostGPA                      0
+> StudyHoursWeekly            15
+> GPASignificantlyImproved     0
+> dtype: int64
+> StudentID                   0
+> ScholarshipAmount_K         0
+> PriorGPA                    0
+> PostGPA                     0
+> StudyHoursWeekly            0
+> GPASignificantlyImproved    0
+> dtype: int64
+> ```
+
+
 ScholarshipAmount_K            0
 PriorGPA                       0
 PostGPA                        0
@@ -125,8 +167,9 @@ plt.title('대학 장학금 지원 예산 분배 효율성 빈도 분포', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** PostGPA 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('ScholarshipAmount_K와 PostGPA 상관성 및 GPASignificantlyImproved
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, GPASignificantlyImproved 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

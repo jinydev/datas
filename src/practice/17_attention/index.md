@@ -55,7 +55,7 @@ print(df.head())
 >  3   solutions   60 non-null     int64  
 >  4   score       60 non-null     float64
 > dtypes: float64(1), int64(3), str(1)
-> memory usage: 2.5 KB
+> memory usage: 2.9 KB
 > None
 >    Unnamed: 0  subject attention  solutions  score
 > 0           0        1   divided          1    2.0
@@ -64,7 +64,6 @@ print(df.head())
 > 3           3        4   divided          1    5.0
 > 4           4        5   divided          1    4.0
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -98,7 +97,6 @@ print(mean_scores)
 > ```
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 출력 결과를 보면 `focused`(집중) 그룹의 평균 점수가 `divided`(멀티태스킹) 그룹보다 더 높게 나옵니다.
 * 하지만 데이터 분석가는 여기서 멈추면 안 됩니다. **"이 차이가 그저 운이 좋아서(우연히 똑똑한 사람들이 집중 그룹에 배정되어서) 발생한 것은 아닐까?"**라는 의심을 가져야 합니다. 이를 눈으로 확인시켜 주는 도구가 바로 시각화의 신뢰구간(Error bar)입니다.
@@ -125,7 +123,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -161,7 +158,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

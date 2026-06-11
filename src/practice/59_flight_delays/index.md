@@ -6,6 +6,8 @@ permalink: /practice/59_flight_delays/
 
 # 실전 데이터 분석 59: 국내선 항공사별 평균 관제 지연 시간 대조 및 출발 시간대별 기상 악화 지표 다차원 연계 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/flight_delays.csv')
+df = pd.read_csv('./flight_delays.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,31 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   FlightID            1000 non-null   str    
+>  1   Airline             1000 non-null   str    
+>  2   ScheduledTime_Hour  1000 non-null   int64  
+>  3   Delay_Minutes       987 non-null    float64
+>  4   Weather_Severity    1000 non-null   float64
+>  5   IsWeekend           1000 non-null   str    
+> dtypes: float64(2), int64(1), str(3)
+> memory usage: 63.5 KB
+> None
+>   FlightID     Airline  ...  Weather_Severity  IsWeekend
+> 0  FL00001        Tway  ...               2.5         No
+> 1  FL00002  Korean Air  ...               1.4        Yes
+> 2  FL00003     Jin Air  ...               4.1         No
+> 3  FL00004  Korean Air  ...               3.6         No
+> 4  FL00005      Asiana  ...               4.2         No
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +123,14 @@ print(df['Delay_Minutes'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 지연 결측 개수 ---
+> 13
+> 
+> --- 정제 후 지연 결측 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 지연 결측 개수 ---
 13
 
@@ -126,8 +161,9 @@ plt.ylabel('평균 지연 시간 (분)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **정시 운항 관제 능력의 시각적 대조:** 대형 풀서비스 캐리어(FSC)와 저비용항공사(LCC) 간의 평균 지연 막대를 비교해 보면 편차가 크지 않고 유사하게 관리되고 있습니다. 다만 특정 LCC 항공사의 운항 지연 막대가 소폭 높게 서 있는 것은, 기재 부족이나 연속 회항 시스템 구조상 연계 지연(Connecting Delay)에 좀 더 취약하게 방치되어 있음을 가리킵니다.
@@ -152,8 +188,9 @@ plt.ylabel('지연 시간 (분)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **오후 누적 대기 체증 및 기상 시너지 규명:** 산점도를 보면 오전 시간대(6~11시)에는 기상 악화도가 다소 높더라도 지연 시간이 비교적 낮은 하단 대역에 묶여 있습니다. 하지만 오후 17시를 넘어서 야간으로 갈수록 짙은 주황색(심각한 기상 악화) 점들이 Y축 최상단(200분 이상)에 빈번하게 뭉쳐 있습니다. 이는 공항 관제망이 오전의 지연을 소화하지 못한 채 뒤편 항공편으로 **연계 지연을 누적 전달**하며 발생하는 공항 운영 병목 현상을 시각적으로 정교하게 대변해 줍니다.

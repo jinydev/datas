@@ -56,7 +56,7 @@ print(df.head())
 >  4   distance        808 non-null    float64
 >  5   year            1035 non-null   int64  
 > dtypes: float64(3), int64(2), str(1)
-> memory usage: 48.6 KB
+> memory usage: 60.5 KB
 > None
 >             method  number  orbital_period   mass  distance  year
 > 0  Radial Velocity       1         269.300   7.10     77.40  2006
@@ -65,7 +65,6 @@ print(df.head())
 > 3  Radial Velocity       1         326.030  19.40    110.62  2007
 > 4  Radial Velocity       1         516.220  10.50    119.47  2009
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -126,7 +125,6 @@ print(missing_by_method)
 > ```
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **Radial Velocity (시선 속도법):** 행성의 중력이 별을 미세하게 흔드는 것을 포착하는 방식입니다. 중력을 이용하므로 **행성의 질량(`mass`)을 계산할 수 있습니다.**
 * **Transit (천체면 통과법):** 행성이 별 앞을 지나갈 때 별빛이 어두워지는 그림자를 포착하는 방식입니다. 그림자의 크기를 통해 행성의 크기는 알 수 있지만, **질량(`mass`)은 알 수 없습니다.**
@@ -155,7 +153,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -194,7 +191,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

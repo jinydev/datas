@@ -5,6 +5,8 @@ permalink: /practice/93_bank_loan_approval/
 ---
 
 # 93. 은행 가계 대출 심사 승인 여부 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 93: 대출 신청 가계의 월 소득 및 신용 등급 점수 대비 대출 희망금액별 승인 여부 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/bank_loan_approval.csv')
+df = pd.read_csv('./bank_loan_approval.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   ApplicantID         1000 non-null   int64  
+>  1   ApplicantIncome     1000 non-null   int64  
+>  2   LoanAmount          984 non-null    float64
+>  3   CreditHistoryScore  1000 non-null   int64  
+>  4   CoApplicant         1000 non-null   int64  
+>  5   Approved            1000 non-null   str    
+> dtypes: float64(1), int64(4), str(1)
+> memory usage: 49.2 KB
+> None
+>    ApplicantID  ApplicantIncome  ...  CoApplicant  Approved
+> 0       930001             6177  ...            0        No
+> 1       930002             4386  ...            0        No
+> 2       930003             9698  ...            0        No
+> 3       930004             6081  ...            0        No
+> 4       930005            17705  ...            0        No
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column              Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > ApplicantID            0
+> ApplicantIncome        0
+> LoanAmount            16
+> CreditHistoryScore     0
+> CoApplicant            0
+> Approved               0
+> dtype: int64
+> ApplicantID           0
+> ApplicantIncome       0
+> LoanAmount            0
+> CreditHistoryScore    0
+> CoApplicant           0
+> Approved              0
+> dtype: int64
+> ```
+
+
 ApplicantIncome        0
 LoanAmount            16
 CreditHistoryScore     0
@@ -124,8 +166,9 @@ plt.title('은행 대출 최종 심사 승인(Approved) 빈도 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **엄격한 리스크 필터링 분포:** 대출 심사 승인(Yes)과 거절(No) 비율 막대는 과반의 균형 상태를 나타냅니다. 무조건적 대출 승인을 남발하지 않고 신용에 맞게 승인 장벽을 통제하는 여신 리스크 관리가 작동 중임을 보여줍니다.
@@ -147,8 +190,9 @@ plt.title('신청자 월 소득 대비 대출 희망금액과 승인 여부 분�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **DTI 임계선을 넘어서는 거절 벨트 규명:** 소득(X축) 대비 대출금(Y축)이 가파르게 솟은 좌상단 영역(소득은 적은데 빌려달라는 돈은 매우 큰 고위험 구역)은 빨간색 점(Approved=No, 거절)으로 도배되어 있습니다. 반면 소득 대비 대출 비율이 완만한 우상향 벨트와 하단 영역은 승인(Yes) 점들이 밀집해 있어, 은행의 소득 비례 부채 한도 필터링 규정이 시각적으로 선명한 대출 승인 경계를 형성함을 입증합니다.

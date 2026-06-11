@@ -6,6 +6,8 @@ permalink: /practice/64_web_conversion/
 
 # 실전 데이터 분석 64: 웹 사이트 세션 체류 시간 및 접속 기기별 이탈률(Bounce Rate) 대비 커머스 구매 전환율 비교 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/web_conversion.csv')
+df = pd.read_csv('./web_conversion.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/web_conversion.csv')
+df = pd.read_csv('./web_conversion.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   SessionID        1000 non-null   int64  
+>  1   SessionDuration  1000 non-null   float64
+>  2   DeviceType       1000 non-null   str    
+>  3   BounceRate       989 non-null    float64
+>  4   PagesViewed      1000 non-null   int64  
+>  5   Converted        1000 non-null   str    
+> dtypes: float64(2), int64(2), str(2)
+> memory usage: 55.2 KB
+> None
+>    SessionID  SessionDuration DeviceType  BounceRate  PagesViewed Converted
+> 0     640001             57.2     Mobile        74.2            3        No
+> 1     640002            100.5    Desktop        51.5            5        No
+> 2     640003            108.6     Mobile        49.1            5        No
+> 3     640004             71.7     Mobile        50.1            5        No
+> 4     640005             73.3     Mobile        58.2            5        No
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +121,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> SessionID           0
+> SessionDuration     0
+> DeviceType          0
+> BounceRate         11
+> PagesViewed         0
+> Converted           0
+> dtype: int64
+> SessionID          0
+> SessionDuration    0
+> DeviceType         0
+> BounceRate         0
+> PagesViewed        0
+> Converted          0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 SessionID           0
 SessionDuration     0
@@ -133,8 +176,9 @@ plt.title('세션 체류 시간(Session Duration) 분포', fontsize=14, fontweig
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **전형적인 롱테일(Long-tail) 형태의 체류 시간 분포:** 대부분의 유저 세션은 유입 후 1~2분 이내의 짧은 시간대에 압도적인 밀도로 쏠린 뒤, 시간이 길어질수록 막대 높이가 급격히 감소하는 비대칭 긴 꼬리 분포를 띱니다. 이는 대다수의 이탈 유저와 소수의 고관여 유저가 극명히 갈리는 이커머스 트래픽의 전형적인 패턴입니다.
@@ -156,8 +200,9 @@ plt.title('구매 전환 여부별 방문 체류 시간 분포 비교', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **체류 시간 증가와 구매 전환율의 인과관계 확인:** 실제 구매 전환을 완료한 유저군(Yes)의 체류 시간 상자 높이와 중앙값이 단순 이탈한 유저군(No)에 비해 압도적으로 높은 시간대에 넓게 치솟아 있습니다. 즉, 유저를 사이트에 더 오래 잔존시키는 마케팅/UI 설계가 구매 전환으로 즉각 이어진다는 임계 통계를 완벽히 지지합니다.

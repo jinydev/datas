@@ -5,6 +5,8 @@ permalink: /practice/174_bootcamp_job_placement/
 ---
 
 # 174. 부트캠프 수료생 구직 소요 시간 및 초임 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 174: IT 직무 전환 코딩 교육의 취업 예측 변수 규명
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/bootcamp_job_placement.csv')
+df = pd.read_csv('./bootcamp_job_placement.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   GraduateID              1000 non-null   int64  
+>  1   PortfolioProjectsCount  1000 non-null   float64
+>  2   JobSearchDurationDays   985 non-null    float64
+>  3   StartingSalary_K        1000 non-null   float64
+>  4   CodingInterviewGrade    1000 non-null   float64
+>  5   Hired                   1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    GraduateID  PortfolioProjectsCount  ...  CodingInterviewGrade  Hired
+> 0     1740001                   123.7  ...                  55.0      0
+> 1     1740002                    97.6  ...                  75.5      1
+> 2     1740003                    86.3  ...                  83.3      0
+> 3     1740004                    85.6  ...                 108.2      0
+> 4     1740005                    80.8  ...                 114.6      0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> GraduateID                     0
+> GraduateID                 0
+> PortfolioProjectsCount     0
+> JobSearchDurationDays     15
+> StartingSalary_K           0
+> CodingInterviewGrade       0
+> Hired                      0
+> dtype: int64
+> GraduateID                0
+> PortfolioProjectsCount    0
+> JobSearchDurationDays     0
+> StartingSalary_K          0
+> CodingInterviewGrade      0
+> Hired                     0
+> dtype: int64
+> ```
+
+
 PortfolioProjectsCount         0
 JobSearchDurationDays          15
 StartingSalary_K               0
@@ -125,8 +167,9 @@ plt.title('부트캠프 수료생 구직 소요 시간 및 초임 빈도 분포'
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** StartingSalary_K 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('PortfolioProjectsCount와 StartingSalary_K 상관성 및 Hired 대조
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, Hired 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

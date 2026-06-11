@@ -5,6 +5,8 @@ permalink: /practice/121_diabetes_readmission/
 ---
 
 # 121. 만성 당뇨 환자 병원 재입원 위험성 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 121: 만성 질환 퇴원 후 자가 간호 리스크 모델링
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/diabetes_readmission.csv')
+df = pd.read_csv('./diabetes_readmission.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   PatientID               1000 non-null   int64  
+>  1   Age                     1000 non-null   float64
+>  2   HbA1c_Level             985 non-null    float64
+>  3   DrugCompliance_Percent  1000 non-null   float64
+>  4   ComorbiditiesCount      1000 non-null   float64
+>  5   Readmitted              1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    PatientID   Age  ...  ComorbiditiesCount  Readmitted
+> 0    1210001  39.0  ...               153.8           1
+> 1    1210002  38.0  ...               132.2           0
+> 2    1210003  34.0  ...                55.0           0
+> 3    1210004  36.0  ...               100.6           0
+> 4    1210005  37.0  ...               132.3           0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> PatientID                      0
+> PatientID                  0
+> Age                        0
+> HbA1c_Level               15
+> DrugCompliance_Percent     0
+> ComorbiditiesCount         0
+> Readmitted                 0
+> dtype: int64
+> PatientID                 0
+> Age                       0
+> HbA1c_Level               0
+> DrugCompliance_Percent    0
+> ComorbiditiesCount        0
+> Readmitted                0
+> dtype: int64
+> ```
+
+
 Age                            0
 HbA1c_Level                    15
 DrugCompliance_Percent         0
@@ -125,8 +167,9 @@ plt.title('만성 당뇨 환자 병원 재입원 위험성 빈도 분포', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** HbA1c_Level 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('DrugCompliance_Percent와 HbA1c_Level 상관성 및 Readmitted 대조
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, Readmitted 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

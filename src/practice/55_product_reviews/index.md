@@ -6,6 +6,8 @@ permalink: /practice/55_product_reviews/
 
 # 실전 데이터 분석 55: 온라인 쇼핑몰 제품 카테고리별 추천 비율 카운트 및 리뷰 평점별 텍스트 길이 분산 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/product_reviews.csv')
+df = pd.read_csv('./product_reviews.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,28 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   ReviewID           1000 non-null   int64  
+>  1   Category           1000 non-null   str    
+>  2   ReviewText_Length  989 non-null    float64
+>  3   Rating             1000 non-null   int64  
+>  4   Recommended        1000 non-null   str    
+> dtypes: float64(1), int64(2), str(2)
+> memory usage: 49.7 KB
+> None
+>    ReviewID     Category  ReviewText_Length  Rating Recommended
+> 0    120001  Electronics              138.0       4         Yes
+> 1    120002       Sports              229.0       5         Yes
+> 2    120003     Clothing              101.0       4         Yes
+> 3    120004  Electronics              200.0       2          No
+> 4    120005     Clothing              112.0       5         Yes
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
@@ -94,6 +118,14 @@ print(df['ReviewText_Length'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 개수 ---
+> 11
+> 
+> --- 정제 후 결측치 확인 ---
+> 0
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 11
 
@@ -124,8 +156,9 @@ plt.ylabel('리뷰 수 (건)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **카테고리별 높은 추천(Yes) 비중 확인:** 전반적인 카테고리(의류, 가전 등) 모두에서 추천 Yes(녹색 막대)의 높이가 No(주황색 막대)보다 확연하게 높습니다. 이는 자사 이커머스 쇼핑몰의 공급 상품 전반에 대한 고객 충성도와 가치가 건강한 수준에 도달해 있음을 보여줍니다.
@@ -150,8 +183,9 @@ plt.ylabel('리뷰 텍스트 길이 (자)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **부정 고객의 장문 피드백 심리 증명:** 평점 등급별 상자 높이를 보면 만족도 1~2점 그룹의 글자수 상자 중앙값과 사분위 범위가 4~5점 만족 고객 상자에 비해 훨씬 높은 위치에 포지셔닝해 있습니다. 즉, 상품에 실망하고 분노한 구매자가 문제점(배송 지연, 제품 파손 등)을 꼼꼼히 기록하여 불만을 격렬하게 어필하려는 감성적 패턴이 텍스트 통계 상자로 규명됩니다.

@@ -6,6 +6,8 @@ permalink: /practice/31_netflix/
 
 # 실전 데이터 분석 31: 넷플릭스 영화 및 TV 프로그램 트렌드 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/netflix.csv')
+df = pd.read_csv('./netflix.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './netflix.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +102,11 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> Error: name 'df' is not defined
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 show_id          0
 type             0
@@ -138,8 +149,11 @@ plt.ylabel('작품 수 (개)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **영화 비중의 절대적 우위:** 시각화 결과를 보면 전체 1000개의 샘플 중 약 70%가 영화(Movie)이며, 약 30%가 TV 프로그램(TV Show)입니다. 플랫폼 내에서 소비 시간이 긴 시리즈물에 비해 단편 영화 형태의 콘텐츠가 더 큰 수량적 비중을 차지하고 있음을 알 수 있습니다.
@@ -164,8 +178,11 @@ plt.ylabel('영화 수 (개)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **최근 콘텐츠 인플레이션 및 등급 편향:** 히스토그램의 스택 막대를 보면 2018년 이후의 최근 연도로 갈수록 총 영화 등록 수(막대의 총 높이)가 기하급수적으로 증가합니다. 또한 성인 대상 등급인 **TV-MA**와 **R** 등급(빨간색/보라색 계열 등)의 누적 비중이 상단 대부분을 메우고 있어, 넷플릭스가 독창적인 성인 중심의 오리지널 영화 제작에 집중하고 있는 플랫폼 성격을 보여줍니다.

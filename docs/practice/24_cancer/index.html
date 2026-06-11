@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-24-유방암-종양-진단-violinplot과-pairplot">실전 데이터 분석 24: 유방암 종양 진단 (Violinplot과 Pairplot)</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2133,7 +2137,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_palette</span><span class="p">(</span><span class="sh">"</span><span class="s">colorblind</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/breast_cancer.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./breast_cancer.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2142,7 +2146,28 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/breast_cancer.csv'
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 569 entries, 0 to 568
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   radius_mean      569 non-null    float64
+ 1   texture_mean     569 non-null    float64
+ 2   perimeter_mean   569 non-null    float64
+ 3   area_mean        569 non-null    float64
+ 4   smoothness_mean  569 non-null    float64
+ 5   diagnosis        569 non-null    str    
+dtypes: float64(5), str(1)
+memory usage: 27.4 KB
+None
+   radius_mean  texture_mean  ...  smoothness_mean  diagnosis
+0    10.829562     18.792244  ...         0.094350          B
+1    15.486319     27.559409  ...         0.088709          M
+2    21.025487     19.007999  ...         0.095786          B
+3     9.234361     19.600472  ...         0.066164          B
+4    16.655371     18.496411  ...         0.101375          M
+
+[5 rows x 6 columns]
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2176,9 +2201,8 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_2.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2209,7 +2233,14 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diagnosis  radius_mean  ...  area_mean  smoothness_mean
+0         B    -0.901020  ...  -0.409960         0.393175
+1         M     0.417019  ...   0.924314        -0.170549
+2         B     1.984815  ...  -1.539129         0.536700
+3         B    -1.352523  ...  -0.810154        -2.423671
+4         M     0.747906  ...   0.352525         1.095222
+
+[5 rows x 6 columns]
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2257,9 +2288,8 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df_scaled' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>

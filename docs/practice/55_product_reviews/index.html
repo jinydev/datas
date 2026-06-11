@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-55-온라인-쇼핑몰-제품-카테고리별-추천-비율-카운트-및-리뷰-평점별-텍스트-길이-분산-분석">실전 데이터 분석 55: 온라인 쇼핑몰 제품 카테고리별 추천 비율 카운트 및 리뷰 평점별 텍스트 길이 분산 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/product_reviews.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./product_reviews.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,29 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 5 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   ReviewID           1000 non-null   int64  
+ 1   Category           1000 non-null   str    
+ 2   ReviewText_Length  989 non-null    float64
+ 3   Rating             1000 non-null   int64  
+ 4   Recommended        1000 non-null   str    
+dtypes: float64(1), int64(2), str(2)
+memory usage: 49.7 KB
+None
+   ReviewID     Category  ReviewText_Length  Rating Recommended
+0    120001  Electronics              138.0       4         Yes
+1    120002       Sports              229.0       5         Yes
+2    120003     Clothing              101.0       4         Yes
+3    120004  Electronics              200.0       2          No
+4    120005     Clothing              112.0       5         Yes
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
@@ -2196,11 +2220,17 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
-11</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 개수 ---
+11
+
+--- 정제 후 결측치 확인 ---
+0
+</code></pre></div>  </div>
 </blockquote>
+
+<p>— 정제 전 결측치 확인 —
+11</p>
 
 <p>— 정제 후 결측치 확인 —
 0</p>
@@ -2233,7 +2263,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2262,7 +2292,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

@@ -6,6 +6,8 @@ permalink: /practice/78_co2_temp/
 
 # 실전 데이터 분석 78: 글로벌 연도별 이산화탄소(CO2) ppm 농도 및 석탄 에너지 소비량 대비 온난화 온도 편차 시계열 상관성 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,38 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/co2_temp.csv')
+df = pd.read_csv('./co2_temp.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/co2_temp.csv')
+df = pd.read_csv('./co2_temp.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   Year             1000 non-null   int64  
+>  1   CO2_ppm          1000 non-null   float64
+>  2   Temp_Anomaly     987 non-null    float64
+>  3   CoalConsumption  1000 non-null   float64
+>  4   OceanHeatIndex   1000 non-null   float64
+> dtypes: float64(4), int64(1)
+> memory usage: 39.2 KB
+> None
+>    Year  CO2_ppm  Temp_Anomaly  CoalConsumption  OceanHeatIndex
+> 0  1024   -719.8         -9.62          -6697.4          -32.81
+> 1  1025   -719.3         -9.66          -6684.2          -32.85
+> 2  1026   -716.8         -9.50          -6718.7          -32.34
+> 3  1027   -715.7         -9.63          -6690.0          -33.01
+> 4  1028   -715.5         -9.63          -6659.6          -32.16
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
@@ -94,6 +118,22 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> Year                0
+> CO2_ppm             0
+> Temp_Anomaly       13
+> CoalConsumption     0
+> OceanHeatIndex      0
+> dtype: int64
+> Year               0
+> CO2_ppm            0
+> Temp_Anomaly       0
+> CoalConsumption    0
+> OceanHeatIndex     0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 Year                0
 CO2_ppm             0
@@ -129,8 +169,9 @@ plt.title('연도별 이산화탄소(CO2) 잔존 농도 변동 추이', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **매년 가파르게 치솟는 CO2 시계열 직선 관찰:** 연도별 대기 중 이산화탄소 농도(CO2_ppm) 꺾은선은 꺾임 없이 우상향하는 강력한 상승 직선을 그립니다. 이는 인류 산업화 이후 대기 중 탄소 잔류량이 지속 누적되고 있는 거시적 환경 패턴을 적나라하게 보여줍니다.
@@ -152,8 +193,9 @@ plt.title('대기 이산화탄소 농도와 지구 온난화 온도 편차 상�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **온도 편차 및 해양 열 누적의 양의 선형 상관성 증명:** CO2 농도(X축)가 증가함에 따라 온도 편차(Y축)가 양의 비례선으로 정직하게 상승합니다. 더불어 점들의 색상으로 오버레이한 해양 열지수(OceanHeatIndex)도 붉은 그라데이션으로 동반 상승하여 대기 탄소 누적이 기온뿐만 아니라 해양 심층 에너지 열량 축적에도 치명적인 요인임을 물리적으로 증명합니다.

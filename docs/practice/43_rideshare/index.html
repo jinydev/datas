@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-43-우버uber와-리프트lyft의-이동-거리-대비-이용-요금-및-날씨-요인-할증-비교">실전 데이터 분석 43: 우버(Uber)와 리프트(Lyft)의 이동 거리 대비 이용 요금 및 날씨 요인 할증 비교</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/rideshare_prices.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./rideshare_prices.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,30 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   cab_type        1000 non-null   str    
+ 1   name            1000 non-null   str    
+ 2   distance        1000 non-null   float64
+ 3   price           1000 non-null   float64
+ 4   hour            1000 non-null   int64  
+ 5   weather_factor  1000 non-null   float64
+dtypes: float64(3), int64(1), str(2)
+memory usage: 58.3 KB
+None
+  cab_type      name  distance  price  hour  weather_factor
+0     Uber  Standard      1.36   9.08     2             1.0
+1     Uber   Premium      5.07  17.35    20             1.0
+2     Uber    Shared      1.50  12.89    18             1.0
+3     Uber    Shared      2.30   9.67    11             1.0
+4     Uber  Standard      2.95  13.46     5             1.2
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2195,9 +2220,8 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-          distance        price
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>distance        price
 count  1000.000000  1000.000000
 mean      4.340800    15.012100
 std       2.172731     5.532212
@@ -2205,8 +2229,18 @@ min       0.520000     3.000000
 25%       2.557500    10.597500
 50%       4.380000    15.130000
 75%       6.232500    19.330000
-max       7.990000    27.810000</p>
+max       7.990000    27.810000
+
+--- 브랜드별 요금 및 거리 평균 ---
+              price  distance
+cab_type                     
+Lyft      15.469501  4.390020
+Uber      14.552866  4.291383
+</code></pre></div>  </div>
 </blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      distance        price count  1000.000000  1000.000000 mean      4.340800    15.012100 std       2.172731     5.532212 min       0.520000     3.000000 25%       2.557500    10.597500 50%       4.380000    15.130000 75%       6.232500    19.330000 max       7.990000    27.810000
+</code></pre></div></div>
 
 <p>— 브랜드별 요금 및 거리 평균 —
                 price  distance
@@ -2242,7 +2276,7 @@ Uber        14.673809  4.351680</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2271,7 +2305,7 @@ Uber        14.673809  4.351680</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

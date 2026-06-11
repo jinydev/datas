@@ -6,6 +6,8 @@ permalink: /practice/71_ev_battery/
 
 # 실전 데이터 분석 71: 전기차 구동 배터리 용량 및 주행 속도별 대기 온도 변동 대비 최대 주행 가능 거리 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/ev_battery.csv')
+df = pd.read_csv('./ev_battery.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/ev_battery.csv')
+df = pd.read_csv('./ev_battery.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column        Non-Null Count  Dtype  
+> ---  ------        --------------  -----  
+>  0   TestID        1000 non-null   int64  
+>  1   Capacity_kWh  1000 non-null   int64  
+>  2   AmbientTemp   1000 non-null   float64
+>  3   Speed_kmh     1000 non-null   float64
+>  4   Range_km      987 non-null    float64
+>  5   AC_On         1000 non-null   str    
+> dtypes: float64(3), int64(2), str(1)
+> memory usage: 49.3 KB
+> None
+>    TestID  Capacity_kWh  AmbientTemp  Speed_kmh  Range_km AC_On
+> 0  710001            60         14.9      102.8     300.8    No
+> 1  710002            75         -9.5      114.9     216.7    No
+> 2  710003            85         14.3       42.2     377.9    No
+> 3  710004            60          3.1       82.6     261.5   Yes
+> 4  710005           100         -8.5       95.8     395.3    No
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> TestID           0
+> Capacity_kWh     0
+> AmbientTemp      0
+> Speed_kmh        0
+> Range_km        13
+> AC_On            0
+> dtype: int64
+> TestID          0
+> Capacity_kWh    0
+> AmbientTemp     0
+> Speed_kmh       0
+> Range_km        0
+> AC_On           0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 TestID           0
 Capacity_kWh     0
@@ -132,8 +175,9 @@ plt.title('에어컨/히터 가동 여부별 주행 가능 거리 분포', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **공조 전력 소모에 따른 주행 마일리지 감가:** 공조 시스템을 가동한 그룹(Yes)의 주행 거리 상자 범위가 미가동 그룹(No) 대비 약 10~15% 하향 이동한 수축 양상을 띱니다. 차량 주행 외에 실내 냉난방 전력 소모가 배터리 방전율을 유의미하게 가속화함을 보장합니다.
@@ -155,8 +199,9 @@ plt.title('차량 주행 속도 대비 배터리 방전 거리 상관 분포', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **최적 속도 크루징 구간 및 혹한기 성능 저하 관찰:** 주행 속도가 너무 낮거나(30km/h 이하) 과도하게 높을 때(120km/h 이상) 공기저항 및 모터 부하로 거리가 줄어들며, 시속 80km 내외 크루징 영역에서 최고의 주행거리를 띠는 포물선 분포가 나타납니다. 아울러 혹한(AmbientTemp < 0, 파란색 계열) 기후 조건에서 고속 주행 시 배터리 화학 반응 둔화로 성능이 대폭 수축하는 패턴이 입증됩니다.

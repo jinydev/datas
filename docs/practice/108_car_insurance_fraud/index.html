@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="108-자동차-사고-보험-청구-허위-사기-적발-실습">108. 자동차 사고 보험 청구 허위 사기 적발 실습</h1>
-<h2 id="실전-데이터-분석-108-적색-경보-이상-탐지-fds-스코어링">실전 데이터 분석 108: 적색 경보 이상 탐지 FDS 스코어링</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-108-적색-경보-이상-탐지-fds-스코어링">실전 데이터 분석 108: 적색 경보 이상 탐지 FDS 스코어링</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/car_insurance_fraud.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./car_insurance_fraud.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,7 +2160,7 @@ Data columns (total 6 columns):
  5   IsFraud          1000 non-null   int64  
 dtypes: float64(4), int64(2)
 memory usage: 47.0 KB
-
+None
    ClaimID  ClaimAmount_K  DamageScore  DashcamExists  WeekendAccident  IsFraud
 0  1080001           54.5          5.7          156.5             80.6        1
 1  1080002           79.4          5.0           87.8            140.8        1
@@ -2164,6 +2168,29 @@ memory usage: 47.0 KB
 3  1080004           97.9          6.8           76.3             91.4        0
 4  1080005           63.1          5.9          117.5            101.1        0
 </code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype<br />
+—  ——           ————–  —–<br />
+ 0   ClaimID          1000 non-null   int64<br />
+ 1   ClaimAmount_K    1000 non-null   float64
+ 2   DamageScore      985 non-null    float64
+ 3   DashcamExists    1000 non-null   float64
+ 4   WeekendAccident  1000 non-null   float64
+ 5   IsFraud          1000 non-null   int64<br />
+dtypes: float64(4), int64(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>ClaimID  ClaimAmount_K  DamageScore  DashcamExists  WeekendAccident  IsFraud
+0  1080001           54.5          5.7          156.5             80.6        1
+1  1080002           79.4          5.0           87.8            140.8        1
+2  1080003           97.6          5.6          148.6             27.4        0
+3  1080004           97.9          6.8           76.3             91.4        0
+4  1080005           63.1          5.9          117.5            101.1        0
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2214,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-ClaimID                        0
-ClaimAmount_K                  0
+ClaimID             0
+ClaimAmount_K       0
+DamageScore        15
+DashcamExists       0
+WeekendAccident     0
+IsFraud             0
+dtype: int64
+ClaimID            0
+ClaimAmount_K      0
+DamageScore        0
+DashcamExists      0
+WeekendAccident    0
+IsFraud            0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>ClaimAmount_K                  0
 DamageScore                    15
 DashcamExists                  0
 WeekendAccident                0
-IsFraud                        0
+IsFraud                        0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 ClaimID                        0
 ClaimAmount_K                  0
 DamageScore                    0
 DashcamExists                  0
 WeekendAccident                0
 IsFraud                        0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2270,7 @@ IsFraud                        0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2296,7 @@ IsFraud                        0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

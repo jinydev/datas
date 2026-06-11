@@ -5,6 +5,8 @@ permalink: /practice/112_cart_abandonment/
 ---
 
 # 112. 쇼핑몰 장바구니 결제 포기 요인 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 112: 장바구니 전환 퍼널 결제 마찰 최소화
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/cart_abandonment.csv')
+df = pd.read_csv('./cart_abandonment.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                Non-Null Count  Dtype  
+> ---  ------                --------------  -----  
+>  0   CartID                1000 non-null   int64  
+>  1   TotalItems            1000 non-null   float64
+>  2   ShippingCostRatio     985 non-null    float64
+>  3   EasyPaymentUsed       1000 non-null   float64
+>  4   SessionDuration_Secs  1000 non-null   float64
+>  5   CartAbandoned         1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>     CartID  TotalItems  ...  SessionDuration_Secs  CartAbandoned
+> 0  1120001       136.9  ...                  41.8              0
+> 1  1120002        67.1  ...                  72.4              1
+> 2  1120003       114.6  ...                  68.4              1
+> 3  1120004       112.1  ...                  17.7              1
+> 4  1120005       108.5  ...                  26.2              0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> CartID                         0
+> CartID                   0
+> TotalItems               0
+> ShippingCostRatio       15
+> EasyPaymentUsed          0
+> SessionDuration_Secs     0
+> CartAbandoned            0
+> dtype: int64
+> CartID                  0
+> TotalItems              0
+> ShippingCostRatio       0
+> EasyPaymentUsed         0
+> SessionDuration_Secs    0
+> CartAbandoned           0
+> dtype: int64
+> ```
+
+
 TotalItems                     0
 ShippingCostRatio              15
 EasyPaymentUsed                0
@@ -125,8 +167,9 @@ plt.title('쇼핑몰 장바구니 결제 포기 요인 빈도 분포', fontsize=
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** ShippingCostRatio 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('SessionDuration_Secs와 ShippingCostRatio 상관성 및 CartAbandoned
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, CartAbandoned 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

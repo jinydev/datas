@@ -5,6 +5,8 @@ permalink: /practice/81_employee_engagement/
 ---
 
 # 81. 사내 직원 업무 몰입도 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 81: 직원 설문 조사 데이터 기반 근속 연수 및 소속 팀 규모가 종합 업무 몰입도에 미치는 영향 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/employee_engagement.csv')
+df = pd.read_csv('./employee_engagement.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column            Non-Null Count  Dtype  
+> ---  ------            --------------  -----  
+>  0   EmployeeID        1000 non-null   int64  
+>  1   Tenure_Years      1000 non-null   float64
+>  2   TeamSize          1000 non-null   int64  
+>  3   WorkSatisfaction  986 non-null    float64
+>  4   ManagerRating     1000 non-null   float64
+>  5   EngagementScore   1000 non-null   float64
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    EmployeeID  Tenure_Years  ...  ManagerRating  EngagementScore
+> 0      810001          10.1  ...            6.8             80.9
+> 1      810002          14.5  ...            1.5             76.0
+> 2      810003          13.4  ...            2.0             69.7
+> 3      810004           5.8  ...            3.5             54.2
+> 4      810005           8.0  ...            3.5             65.9
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column            Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > EmployeeID           0
+> Tenure_Years         0
+> TeamSize             0
+> WorkSatisfaction    14
+> ManagerRating        0
+> EngagementScore      0
+> dtype: int64
+> EmployeeID          0
+> Tenure_Years        0
+> TeamSize            0
+> WorkSatisfaction    0
+> ManagerRating       0
+> EngagementScore     0
+> dtype: int64
+> ```
+
+
 Tenure_Years         0
 TeamSize             0
 WorkSatisfaction    14
@@ -124,8 +166,9 @@ plt.title('직원 종합 업무 몰입도(Engagement Score) 분포', fontsize=14
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **안정적인 정규분포 몰입성 진단:** 업무 몰입도 점수 분포는 50~85점 대역을 중심으로 종형 정규분포 곡선을 그립니다. 극단적인 무기력군(30점 미만)과 완벽 몰입군(90점 초과)이 균형 있게 분포하는 표준적인 조직 상태입니다.
@@ -147,8 +190,9 @@ plt.title('근속 연수 대비 종합 몰입도와 업무 만족도 상관성',
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **근속 연수와 몰입 시너지:** 근속 연수(X축)가 증가함에 따라 업무 몰입도(Y축)가 전반적으로 수직 우상향하는 경향이 관찰됩니다. 특히 업무 만족도가 높은 직원들(노란색 계열)이 그래프 상단에 촘촘히 락인되어 있어, 직원 리텐션 관리에 만족도와 몰입도가 중추적인 결합 가치를 냄을 검증합니다.

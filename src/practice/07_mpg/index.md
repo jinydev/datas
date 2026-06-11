@@ -59,7 +59,7 @@ print(df.head())
 >  7   origin        398 non-null    str    
 >  8   name          398 non-null    str    
 > dtypes: float64(4), int64(3), str(2)
-> memory usage: 28.1 KB
+> memory usage: 35.9 KB
 > None
 >     mpg  cylinders  displacement  ...  model_year  origin                       name
 > 0  18.0          8         307.0  ...          70     usa  chevrolet chevelle malibu
@@ -70,7 +70,6 @@ print(df.head())
 > 
 > [5 rows x 9 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -126,7 +125,6 @@ print("\n결측치 처리 완료. 현재 결측치 수:", df['horsepower'].isnul
 > ```
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * **전체 평균의 함정:** 타이타닉호 승객의 나이처럼 전체가 비슷한 분포를 이룰 때는 전체 평균(또는 중앙값)을 써도 됩니다. 하지만 자동차는 4기통 소형차(약 78마력)와 8기통 대형차(약 158마력)의 체급 차이가 극심합니다. 만약 결측치가 난 소형차에 전체 평균인 104마력을 때려 넣으면, 졸지에 소형차가 스포츠카의 힘을 내는 심각한 데이터 왜곡이 발생합니다.
 * **Groupby Imputation:** 따라서 결측치를 채울 때는 항상 **"이 변수와 가장 연관성이 높은 다른 변수가 무엇일까?"**를 고민해야 합니다. 마력은 실린더(기통 수)와 물리적으로 완벽히 비례하므로, "같은 기통 수를 가진 차들의 평균"으로 채워 넣는 것이 가장 과학적인 접근법입니다.
@@ -153,7 +151,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -185,7 +182,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트

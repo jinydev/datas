@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-74-리테일-마트-매장-카테고리별-적재-수량-대비-유실도난-손실량-및-보안-등급별-억제-효과-분석">실전 데이터 분석 74: 리테일 마트 매장 카테고리별 적재 수량 대비 유실/도난 손실량 및 보안 등급별 억제 효과 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,39 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/inventory_shrinkage.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./inventory_shrinkage.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/inventory_shrinkage.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./inventory_shrinkage.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   RecordID       1000 non-null   int64  
+ 1   Department     1000 non-null   str    
+ 2   ItemCategory   1000 non-null   str    
+ 3   TotalUnits     1000 non-null   int64  
+ 4   LostUnits      985 non-null    float64
+ 5   SecurityLevel  1000 non-null   str    
+dtypes: float64(1), int64(2), str(3)
+memory usage: 65.1 KB
+None
+   RecordID Department ItemCategory  TotalUnits  LostUnits SecurityLevel
+0    740001       Home       Budget        1188       16.0           Low
+1    740002   Clothing       Budget        3886      109.0           Low
+2    740003   Clothing      Premium        3747       89.0           Low
+3    740004     Sports      Premium        1060        5.0          High
+4    740005   Clothing       Budget        2718       58.0           Low
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2197,16 +2222,32 @@ RecordID Department ItemCategory  TotalUnits  LostUnits SecurityLevel
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+RecordID          0
+Department        0
+ItemCategory      0
+TotalUnits        0
+LostUnits        15
+SecurityLevel     0
+dtype: int64
+RecordID         0
+Department       0
+ItemCategory     0
+TotalUnits       0
+LostUnits        0
+SecurityLevel    0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 RecordID          0
 Department        0
 ItemCategory      0
 TotalUnits        0
 LostUnits        15
 SecurityLevel     0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 RecordID         0
@@ -2241,7 +2282,7 @@ SecurityLevel    0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2267,7 +2308,7 @@ SecurityLevel    0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

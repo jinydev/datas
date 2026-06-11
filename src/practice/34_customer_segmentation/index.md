@@ -6,6 +6,8 @@ permalink: /practice/34_customer_segmentation/
 
 # 실전 데이터 분석 34: 소득과 소비 지수를 활용한 고객 행동 군집 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/customer_segmentation.csv')
+df = pd.read_csv('./customer_segmentation.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './customer_segmentation.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -93,6 +99,10 @@ print(df.groupby('Gender')['Spending Score (1-100)'].mean())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: name 'df' is not defined
+> ```
+
+
                Age  Annual Income (k$)  Spending Score (1-100)
 count  1000.000000         1000.000000             1000.000000
 mean     44.385000           57.653000               50.229000
@@ -133,8 +143,11 @@ plt.ylabel('고객 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **고른 연령 분포와 광범위한 타겟층:** 연령대 히스토그램을 보면 18세부터 70세까지 고객이 고르게 분포되어 있으며, 특정 세대에만 치우치지 않는 백화점식 고객 베이스를 보유하고 있습니다. 다만 30대 중반과 50대 초반 구간에 살짝 융기된 형태를 띠고 있습니다.
@@ -160,8 +173,11 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **비즈니스 가치가 가장 높은 VVIP 군집 식별:** 산점도를 통해 5개 집단(세그먼트)이 아주 명확하게 갈라지는 패턴을 목격할 수 있습니다.

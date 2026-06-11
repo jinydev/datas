@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="115-시즌-의류-품목-가격-탄력성-실습">115. 시즌 의류 품목 가격 탄력성 실습</h1>
-<h2 id="실전-데이터-분석-115-수요와-공급-법칙에-따른-가격-할인율-민감도">실전 데이터 분석 115: 수요와 공급 법칙에 따른 가격 할인율 민감도</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-115-수요와-공급-법칙에-따른-가격-할인율-민감도">실전 데이터 분석 115: 수요와 공급 법칙에 따른 가격 할인율 민감도</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/retail_price_elasticity.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./retail_price_elasticity.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,13 +2160,33 @@ Data columns (total 6 columns):
  5   ElasticityCategory    1000 non-null   float64
 dtypes: float64(5), int64(1)
 memory usage: 47.0 KB
+None
+    ItemID  OriginalPrice_K  ...  CompetitorPrice_K  ElasticityCategory
+0  1150001             87.4  ...               74.0               154.0
+1  1150002             56.4  ...              106.1                91.9
+2  1150003            107.2  ...              119.5               121.3
+3  1150004             38.8  ...               42.0                94.3
+4  1150005             58.5  ...               78.7               119.6
 
-    ItemID  OriginalPrice_K  DiscountRate_Percent  SalesQty_Weekly  CompetitorPrice_K  ElasticityCategory
-0  1150001             87.4                  36.1             94.1               74.0               154.0
-1  1150002             56.4                  31.5             88.3              106.1                91.9
-2  1150003            107.2                  58.8            106.3              119.5               121.3
-3  1150004             38.8                  68.6            159.2               42.0                94.3
-4  1150005             58.5                  41.2             79.0               78.7               119.6
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                Non-Null Count  Dtype<br />
+—  ——                ————–  —–<br />
+ 0   ItemID                1000 non-null   int64<br />
+ 1   OriginalPrice_K       1000 non-null   float64
+ 2   DiscountRate_Percent  1000 non-null   float64
+ 3   SalesQty_Weekly       1000 non-null   float64
+ 4   CompetitorPrice_K     985 non-null    float64
+ 5   ElasticityCategory    1000 non-null   float64
+dtypes: float64(5), int64(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ItemID  OriginalPrice_K  DiscountRate_Percent  SalesQty_Weekly  CompetitorPrice_K  ElasticityCategory 0  1150001             87.4                  36.1             94.1               74.0               154.0 1  1150002             56.4                  31.5             88.3              106.1                91.9 2  1150003            107.2                  58.8            106.3              119.5               121.3 3  1150004             38.8                  68.6            159.2               42.0                94.3 4  1150005             58.5                  41.2             79.0               78.7               119.6 ```
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2187,21 +2211,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-ItemID                         0
-OriginalPrice_K                0
+ItemID                   0
+OriginalPrice_K          0
+DiscountRate_Percent     0
+SalesQty_Weekly          0
+CompetitorPrice_K       15
+ElasticityCategory       0
+dtype: int64
+ItemID                  0
+OriginalPrice_K         0
+DiscountRate_Percent    0
+SalesQty_Weekly         0
+CompetitorPrice_K       0
+ElasticityCategory      0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>OriginalPrice_K                0
 DiscountRate_Percent           0
 SalesQty_Weekly                0
 CompetitorPrice_K              15
-ElasticityCategory             0
+ElasticityCategory             0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 ItemID                         0
 OriginalPrice_K                0
 DiscountRate_Percent           0
 SalesQty_Weekly                0
 CompetitorPrice_K              0
 ElasticityCategory             0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2267,7 @@ ElasticityCategory             0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2293,7 @@ ElasticityCategory             0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

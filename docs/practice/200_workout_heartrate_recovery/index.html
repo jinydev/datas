@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="200-피트니스-심박수-리커버리-시간과-체력-실습">200. 피트니스 심박수 리커버리 시간과 체력 실습</h1>
-<h2 id="실전-데이터-분석-200-운동-부하-검사-1분-회복-심박-강하율과-심폐-체력-척도">실전 데이터 분석 200: 운동 부하 검사 1분 회복 심박 강하율과 심폐 체력 척도</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-200-운동-부하-검사-1분-회복-심박-강하율과-심폐-체력-척도">실전 데이터 분석 200: 운동 부하 검사 1분 회복 심박 강하율과 심폐 체력 척도</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/workout_heartrate_recovery.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./workout_heartrate_recovery.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2155,15 +2159,40 @@ Data columns (total 6 columns):
  4   VO2Max_Estimate        1000 non-null   float64
  5   FitnessGrade           1000 non-null   str    
 dtypes: float64(4), int64(1), str(1)
-memory usage: 47.0 KB
+memory usage: 52.9 KB
+None
+   AthleteID  PeakHeartRate  ...  VO2Max_Estimate  FitnessGrade
+0    2000001           23.2  ...            115.3        Type_B
+1    2000002           73.7  ...             68.8        Type_B
+2    2000003           55.7  ...             98.1        Type_C
+3    2000004           41.3  ...            122.3        Type_B
+4    2000005           50.4  ...             79.8        Type_B
 
-   AthleteID  PeakHeartRate  RecoveryHeartRate_60s  ActiveWorkoutMinutes  VO2Max_Estimate FitnessGrade
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                 Non-Null Count  Dtype<br />
+—  ——                 ————–  —–<br />
+ 0   AthleteID              1000 non-null   int64<br />
+ 1   PeakHeartRate          1000 non-null   float64
+ 2   RecoveryHeartRate_60s  985 non-null    float64
+ 3   ActiveWorkoutMinutes   1000 non-null   float64
+ 4   VO2Max_Estimate        1000 non-null   float64
+ 5   FitnessGrade           1000 non-null   str  <br />
+dtypes: float64(4), int64(1), str(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>AthleteID  PeakHeartRate  RecoveryHeartRate_60s  ActiveWorkoutMinutes  VO2Max_Estimate FitnessGrade
 0    2000001           23.2                   49.5                 141.6            115.3       Type_B
 1    2000002           73.7                   56.6                  74.9             68.8       Type_B
 2    2000003           55.7                   59.6                  80.5             98.1       Type_C
 3    2000004           41.3                   68.7                  78.0            122.3       Type_B
 4    2000005           50.4                   32.9                  70.9             79.8       Type_B
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-AthleteID                      0
-PeakHeartRate                  0
+AthleteID                 0
+PeakHeartRate             0
+RecoveryHeartRate_60s    15
+ActiveWorkoutMinutes      0
+VO2Max_Estimate           0
+FitnessGrade              0
+dtype: int64
+AthleteID                0
+PeakHeartRate            0
+RecoveryHeartRate_60s    0
+ActiveWorkoutMinutes     0
+VO2Max_Estimate          0
+FitnessGrade             0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>PeakHeartRate                  0
 RecoveryHeartRate_60s          15
 ActiveWorkoutMinutes           0
 VO2Max_Estimate                0
-FitnessGrade                   0
+FitnessGrade                   0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 AthleteID                      0
 PeakHeartRate                  0
 RecoveryHeartRate_60s          0
 ActiveWorkoutMinutes           0
 VO2Max_Estimate                0
 FitnessGrade                   0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ FitnessGrade                   0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ FitnessGrade                   0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

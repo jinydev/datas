@@ -6,6 +6,8 @@ permalink: /practice/47_health_tracker/
 
 # 실전 데이터 분석 47: 스마트 웨어러블 로그 기반 일일 걸음 수, 활동 시간, 그리고 수면 품질 점수의 다차원 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/health_tracker.csv')
+df = pd.read_csv('./health_tracker.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 365 entries, 0 to 364
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   Date           365 non-null    str    
+>  1   Steps          365 non-null    int64  
+>  2   ActiveMinutes  365 non-null    int64  
+>  3   HeartRate_Avg  365 non-null    int64  
+>  4   SleepHours     365 non-null    float64
+>  5   SleepQuality   365 non-null    int64  
+> dtypes: float64(1), int64(4), str(1)
+> memory usage: 20.8 KB
+> None
+>          Date  Steps  ActiveMinutes  HeartRate_Avg  SleepHours  SleepQuality
+> 0  2023-01-01   5817             70             68         6.6             9
+> 1  2023-01-02  14067            147             74         6.0             5
+> 2  2023-01-03   5262             62             70         6.7             7
+> 3  2023-01-04  16670            179             68         8.5             9
+> 4  2023-01-05   7490             86             65         5.6             5
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 365 entries, 0 to 364
 Data columns (total 6 columns):
@@ -93,6 +118,23 @@ print(df[['Steps', 'ActiveMinutes']].corr())
 
 > **💻 [실행 결과]**
 > ```text
+> Steps  SleepHours  SleepQuality
+> count    365.000000  365.000000    365.000000
+> mean    9078.939726    6.942466      7.200000
+> std     3810.696618    1.007488      1.395046
+> min     1821.000000    4.000000      3.000000
+> 25%     6249.000000    6.300000      6.000000
+> 50%     8659.000000    7.000000      7.000000
+> 75%    11224.000000    7.700000      8.000000
+> max    23998.000000    9.300000     10.000000
+> 
+> --- 걸음수 vs 활동시간 상관계수 ---
+>                   Steps  ActiveMinutes
+> Steps          1.000000       0.991075
+> ActiveMinutes  0.991075       1.000000
+> ```
+
+
               Steps  SleepHours  SleepQuality
 count    365.000000  365.000000    365.000000
 mean    9078.939726     6.942466      7.200000
@@ -132,8 +174,9 @@ plt.ylabel('일수 (일)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **고른 대칭성을 띤 유산소 분포 형태:** 일일 걸음 수 분포는 8,000~10,000보 근방을 중앙값으로 하여 완만하게 퍼진 정규분포에 가까운 비중을 띱니다. 하루에 최소 2,000보 이하로 걷는 아주 비활동적인 날이나, 2만보 이상 격렬하게 야외 등산을 한 고강도 날은 전체 365일 중 극히 일부로 잡혀 기기의 장기 데이터 안정성을 가리킵니다.
@@ -158,8 +201,9 @@ plt.ylabel('실제 수면 시간 (시간)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **수면 시간 and 만족 품질의 양의 선형 격차:** 수면 만족도 점수(X축)가 높아질수록 박스플롯 상자의 전체 위치와 중앙 수면 시간(Y축)이 정직하게 계단식으로 우상향하여 배치됩니다. 특히 품질 점수 8점 이상을 기록한 최고의 피로 해소 날들은 최소 7시간 반 이상 충분한 잠을 잔 날들에 집중되어 있어, 물리적인 수면 확보량이 정신적 회복을 결정하는 직접적인 열쇠임을 통계 상자로 증명해 줍니다.

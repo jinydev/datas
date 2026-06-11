@@ -6,6 +6,8 @@ permalink: /practice/76_coffee_loyalty/
 
 # 실전 데이터 분석 76: 프랜차이즈 카페 고객의 월간 방문 빈도 및 객단가 대비 모바일 로열티 지수 상관성 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/coffee_loyalty.csv')
+df = pd.read_csv('./coffee_loyalty.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/coffee_loyalty.csv')
+df = pd.read_csv('./coffee_loyalty.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   CustomerID      1000 non-null   int64  
+>  1   Age             1000 non-null   int64  
+>  2   VisitsPerMonth  1000 non-null   int64  
+>  3   AvgSpend        985 non-null    float64
+>  4   FavoriteDrink   1000 non-null   str    
+>  5   LoyaltyScore    1000 non-null   int64  
+> dtypes: float64(1), int64(4), str(1)
+> memory usage: 53.3 KB
+> None
+>    CustomerID  Age  VisitsPerMonth  AvgSpend FavoriteDrink  LoyaltyScore
+> 0      760001   51              21      7.70      Smoothie             9
+> 1      760002   25               2      6.72      Smoothie             2
+> 2      760003   18              15      4.29           Tea             5
+> 3      760004   44               6      4.45     Cold Brew             5
+> 4      760005   60              14      4.26           Tea             7
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> CustomerID         0
+> Age                0
+> VisitsPerMonth     0
+> AvgSpend          15
+> FavoriteDrink      0
+> LoyaltyScore       0
+> dtype: int64
+> CustomerID        0
+> Age               0
+> VisitsPerMonth    0
+> AvgSpend          0
+> FavoriteDrink     0
+> LoyaltyScore      0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 CustomerID         0
 Age                0
@@ -132,8 +175,9 @@ plt.title('단골 고객 선호 음료 메뉴 점유 분포', fontsize=14, fontw
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **단골 고객 최애 음료 점유 분포:** 아메리카노/에스프레소 및 라떼 류의 전통 음료 제품군의 주문 빈도 카운트가 스무디나 스페셜 티 계열 대비 압도적인 볼륨을 보입니다. 매장 원두 재고 수급 관리 시 이 주문 점유율을 기초로 발주율을 튜닝하는 지표가 됩니다.
@@ -155,8 +199,9 @@ plt.title('월 방문 횟수 대비 브랜드 만족도와 결제 규모', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **방문 빈도 상승과 로열티 점수 및 결제 금액의 동반 팽창 시너지:** 월간 방문 빈도(X축)가 증가함에 따라 충성 지표인 로열티 점수(Y축)도 매우 가파른 선형 우상향을 띱니다. 이에 더해 점의 크기로 매핑한 1회 지출액(AvgSpend)도 우측 상단으로 갈수록 동반 팽창하여, 자주 오고 많이 결제하는 VIP 락인이 모바일 만족도 지표와 동일 궤적을 띱니다.

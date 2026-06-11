@@ -5,6 +5,8 @@ permalink: /practice/183_smart_thermostat_control/
 ---
 
 # 183. 스마트 홈 실내 온도 조절기 제어 효율 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 183: 지능형 홈 에너지 디바이스 원격 제약 및 효율 인자
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/smart_thermostat_control.csv')
+df = pd.read_csv('./smart_thermostat_control.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                   Non-Null Count  Dtype  
+> ---  ------                   --------------  -----  
+>  0   HomeID                   1000 non-null   int64  
+>  1   EcoModeDurationHours     1000 non-null   float64
+>  2   OutdoorHumidity_Percent  985 non-null    float64
+>  3   PowerSaved_Percent       1000 non-null   float64
+>  4   UserOverriddenCount      1000 non-null   float64
+>  5   SystemEfficiencyGrade    1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>     HomeID  EcoModeDurationHours  ...  UserOverriddenCount  SystemEfficiencyGrade
+> 0  1830001                  43.4  ...                109.0                      0
+> 1  1830002                  59.8  ...                 62.3                      1
+> 2  1830003                  49.6  ...                105.3                      1
+> 3  1830004                  28.6  ...                 53.4                      0
+> 4  1830005                  55.5  ...                 66.0                      1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                   Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> HomeID                         0
+> HomeID                      0
+> EcoModeDurationHours        0
+> OutdoorHumidity_Percent    15
+> PowerSaved_Percent          0
+> UserOverriddenCount         0
+> SystemEfficiencyGrade       0
+> dtype: int64
+> HomeID                     0
+> EcoModeDurationHours       0
+> OutdoorHumidity_Percent    0
+> PowerSaved_Percent         0
+> UserOverriddenCount        0
+> SystemEfficiencyGrade      0
+> dtype: int64
+> ```
+
+
 EcoModeDurationHours           0
 OutdoorHumidity_Percent        15
 PowerSaved_Percent             0
@@ -125,8 +167,9 @@ plt.title('스마트 홈 실내 온도 조절기 제어 효율 빈도 분포', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** PowerSaved_Percent 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('EcoModeDurationHours와 PowerSaved_Percent 상관성 및 SystemEffici
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, SystemEfficiencyGrade 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

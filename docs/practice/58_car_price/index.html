@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-58-중고차-매물의-엔진-크기-및-연료-타입별-가격-분산과-주행거리-대비-가격-비선형-감가-분석">실전 데이터 분석 58: 중고차 매물의 엔진 크기 및 연료 타입별 가격 분산과 주행거리 대비 가격 비선형 감가 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/car_price.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./car_price.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,30 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   CarID       1000 non-null   int64  
+ 1   Year        1000 non-null   int64  
+ 2   Mileage     1000 non-null   int64  
+ 3   EngineSize  1000 non-null   float64
+ 4   FuelType    1000 non-null   str    
+ 5   Price       984 non-null    float64
+dtypes: float64(2), int64(3), str(1)
+memory usage: 53.1 KB
+None
+    CarID  Year  Mileage  EngineSize  FuelType     Price
+0  150001  2013   108706         3.0    Diesel  33168.82
+1  150002  2010   163158         1.6    Diesel  26069.87
+2  150003  2017   104723         2.0  Electric  48934.57
+3  150004  2019    52495         1.6    Petrol  46125.91
+4  150005  2015   109561         1.6    Petrol  34901.02
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2198,11 +2223,17 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 가격 결측 개수 —
-16</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 가격 결측 개수 ---
+16
+
+--- 정제 후 가격 결측 개수 ---
+0
+</code></pre></div>  </div>
 </blockquote>
+
+<p>— 정제 전 가격 결측 개수 —
+16</p>
 
 <p>— 정제 후 가격 결측 개수 —
 0</p>
@@ -2235,7 +2266,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2264,7 +2295,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

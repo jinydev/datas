@@ -54,7 +54,7 @@ print(df.head())
 >  3   Task     64 non-null     str    
 >  4   Score    64 non-null     float64
 > dtypes: float64(1), int64(1), str(3)
-> memory usage: 2.6 KB
+> memory usage: 3.8 KB
 > None
 >          Model  Year      Encoder  Task  Score
 > 0        ERNIE  2019  Transformer  CoLA   75.5
@@ -63,7 +63,6 @@ print(df.head())
 > 3         BERT  2018  Transformer  CoLA   60.5
 > 4  BiLSTM+ELMo  2018         LSTM  CoLA   32.1
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -106,7 +105,6 @@ print(pivot_df)
 > ```
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 이처럼 데이터를 2차원 격자(Grid)로 재조립하는 과정을 **피벗(Pivot)**이라고 합니다.
 * 피벗 테이블을 만들고 나면, 빈칸(`NaN`)이 생길 수도 있습니다. (어떤 모델이 특정 과목 시험을 안 본 경우). 다행히 이 데이터셋은 모든 모델이 모든 시험을 치렀기 때문에 꽉 찬 숫자 배열이 완성되었습니다.
@@ -138,7 +136,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -174,7 +171,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

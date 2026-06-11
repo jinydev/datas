@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-47-스마트-웨어러블-로그-기반-일일-걸음-수-활동-시간-그리고-수면-품질-점수의-다차원-분석">실전 데이터 분석 47: 스마트 웨어러블 로그 기반 일일 걸음 수, 활동 시간, 그리고 수면 품질 점수의 다차원 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/health_tracker.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./health_tracker.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,30 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 365 entries, 0 to 364
+Data columns (total 6 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Date           365 non-null    str    
+ 1   Steps          365 non-null    int64  
+ 2   ActiveMinutes  365 non-null    int64  
+ 3   HeartRate_Avg  365 non-null    int64  
+ 4   SleepHours     365 non-null    float64
+ 5   SleepQuality   365 non-null    int64  
+dtypes: float64(1), int64(4), str(1)
+memory usage: 20.8 KB
+None
+         Date  Steps  ActiveMinutes  HeartRate_Avg  SleepHours  SleepQuality
+0  2023-01-01   5817             70             68         6.6             9
+1  2023-01-02  14067            147             74         6.0             5
+2  2023-01-03   5262             62             70         6.7             7
+3  2023-01-04  16670            179             68         8.5             9
+4  2023-01-05   7490             86             65         5.6             5
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 365 entries, 0 to 364
 Data columns (total 6 columns):
@@ -2195,18 +2220,26 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-              Steps  SleepHours  SleepQuality
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Steps  SleepHours  SleepQuality
 count    365.000000  365.000000    365.000000
-mean    9078.939726     6.942466      7.200000
-std     3810.696618      1.007488      1.395046
-min     1821.000000      4.000000      3.000000
-25%     6249.000000      6.300000      6.000000
-50%     8659.000000      7.000000      7.000000
-75%    11224.000000      7.700000      8.000000
-max    23998.000000      9.300000     10.000000</p>
+mean    9078.939726    6.942466      7.200000
+std     3810.696618    1.007488      1.395046
+min     1821.000000    4.000000      3.000000
+25%     6249.000000    6.300000      6.000000
+50%     8659.000000    7.000000      7.000000
+75%    11224.000000    7.700000      8.000000
+max    23998.000000    9.300000     10.000000
+
+--- 걸음수 vs 활동시간 상관계수 ---
+                  Steps  ActiveMinutes
+Steps          1.000000       0.991075
+ActiveMinutes  0.991075       1.000000
+</code></pre></div>  </div>
 </blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          Steps  SleepHours  SleepQuality count    365.000000  365.000000    365.000000 mean    9078.939726     6.942466      7.200000 std     3810.696618      1.007488      1.395046 min     1821.000000      4.000000      3.000000 25%     6249.000000      6.300000      6.000000 50%     8659.000000      7.000000      7.000000 75%    11224.000000      7.700000      8.000000 max    23998.000000      9.300000     10.000000
+</code></pre></div></div>
 
 <p>— 걸음수 vs 활동시간 상관계수 —
                   Steps  ActiveMinutes
@@ -2241,7 +2274,7 @@ ActiveMinutes  0.993427       1.000000</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2270,7 +2303,7 @@ ActiveMinutes  0.993427       1.000000</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

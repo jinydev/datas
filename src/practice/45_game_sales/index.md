@@ -6,6 +6,8 @@ permalink: /practice/45_game_sales/
 
 # 실전 데이터 분석 45: 글로벌 비디오 게임 플랫폼 및 장르별 패키지 누적 판매 실적 트렌드 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/video_game_sales.csv')
+df = pd.read_csv('./video_game_sales.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,33 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 8 columns):
+>  #   Column        Non-Null Count  Dtype  
+> ---  ------        --------------  -----  
+>  0   Name          1000 non-null   str    
+>  1   Platform      1000 non-null   str    
+>  2   Year          1000 non-null   int64  
+>  3   Genre         1000 non-null   str    
+>  4   NA_Sales      1000 non-null   float64
+>  5   EU_Sales      1000 non-null   float64
+>  6   JP_Sales      1000 non-null   float64
+>  7   Global_Sales  1000 non-null   float64
+> dtypes: float64(4), int64(1), str(3)
+> memory usage: 86.7 KB
+> None
+>            Name Platform  Year  ... EU_Sales  JP_Sales  Global_Sales
+> 0  Video Game 1      PS4  2006  ...     0.27      0.04          0.88
+> 1  Video Game 2      PS3  1998  ...     0.77      0.10          2.04
+> 2  Video Game 3       PC  1995  ...     0.28      0.04          0.84
+> 3  Video Game 4      PS4  2016  ...     0.17      0.02          0.61
+> 4  Video Game 5       PC  1998  ...     0.19      0.03          0.60
+> 
+> [5 rows x 8 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 8 columns):
@@ -96,6 +125,25 @@ print(df.groupby('Genre')['JP_Sales'].mean().sort_values(ascending=False))
 
 > **💻 [실행 결과]**
 > ```text
+> --- 지역별 누적 판매 합계 (백만 장) ---
+> NA_Sales         585.30
+> EU_Sales         379.75
+> JP_Sales         182.62
+> Global_Sales    1275.11
+> dtype: float64
+> 
+> --- 장르별 일본 시장 평균 판매 실적 ---
+> Genre
+> Role-Playing    0.735838
+> Misc            0.061026
+> Shooter         0.057922
+> Action          0.057841
+> Platform        0.056424
+> Sports          0.052195
+> Name: JP_Sales, dtype: float64
+> ```
+
+
 --- 지역별 누적 판매 합계 (백만 장) ---
 NA_Sales         585.30
 EU_Sales         379.75
@@ -137,8 +185,9 @@ plt.ylabel('글로벌 판매량 (백만 장)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **상위 흥행 장르의 쏠림 현상:** 전 세계적으로 스포츠(Sports)와 액션(Action) 게임 장르의 누적 총판매 막대 높이가 우뚝 솟아 가장 큰 볼륨을 자랑합니다. 대중성이 확보되어 진입장벽이 낮은 대형 타이틀 위주로 시장의 글로벌 트래픽이 지배되고 있음을 보여줍니다.
@@ -166,8 +215,9 @@ plt.ylabel('글로벌 총 판매량 (백만 장)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **시장 쇠퇴기 혹은 패키지 축소 트렌드:** 연도별 총 매출 꺾은선을 읽으면 2000년대 후반에 거대한 정점을 찍고 하향 안정세를 그리는 주기가 관찰됩니다. 이는 모바일 게임 시장으로의 대이동과 다운로드 중심의 디지털 ESD(Steam, PSN 등) 결제 확대로 오프라인 패키지 판매량이 점차 축소되고 있는 미디어 유통 패러다임 변화를 투영합니다.

@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="123-웨어러블-심박-변동성-hrv과-스트레스-실습">123. 웨어러블 심박 변동성 (HRV)과 스트레스 실습</h1>
-<h2 id="실전-데이터-분석-123-자율신경계-반응-지수와-수면-회복-인과성">실전 데이터 분석 123: 자율신경계 반응 지수와 수면 회복 인과성</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-123-자율신경계-반응-지수와-수면-회복-인과성">실전 데이터 분석 123: 자율신경계 반응 지수와 수면 회복 인과성</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/hrv_stress_index.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./hrv_stress_index.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,13 +2160,31 @@ Data columns (total 6 columns):
  5   SleepQualityScore  1000 non-null   float64
 dtypes: float64(5), int64(1)
 memory usage: 47.0 KB
-
+None
     UserID  HRV_ms  AveragePulse  ActivitySteps  StressScore  SleepQualityScore
 0  1230001    28.7          32.0           55.6          6.5                6.5
 1  1230002    60.0          50.0           70.0          8.1                8.8
 2  1230003    49.2          52.0          127.4          9.0                6.6
 3  1230004    22.4          28.0          121.5          8.5                6.7
 4  1230005    36.3          49.0           62.0         10.0                6.2
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column             Non-Null Count  Dtype<br />
+—  ——             ————–  —–<br />
+ 0   UserID             1000 non-null   int64<br />
+ 1   HRV_ms             985 non-null    float64
+ 2   AveragePulse       1000 non-null   float64
+ 3   ActivitySteps      1000 non-null   float64
+ 4   StressScore        1000 non-null   float64
+ 5   SleepQualityScore  1000 non-null   float64
+dtypes: float64(5), int64(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UserID  HRV_ms  AveragePulse  ActivitySteps  StressScore  SleepQualityScore 0  1230001    28.7          32.0           55.6          6.5                6.5 1  1230002    60.0          50.0           70.0          8.1                8.8 2  1230003    49.2          52.0          127.4          9.0                6.6 3  1230004    22.4          28.0          121.5          8.5                6.7 4  1230005    36.3          49.0           62.0         10.0                6.2 ```
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2187,21 +2209,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-UserID                         0
-HRV_ms                         15
+UserID                0
+HRV_ms               15
+AveragePulse          0
+ActivitySteps         0
+StressScore           0
+SleepQualityScore     0
+dtype: int64
+UserID               0
+HRV_ms               0
+AveragePulse         0
+ActivitySteps        0
+StressScore          0
+SleepQualityScore    0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>HRV_ms                         15
 AveragePulse                   0
 ActivitySteps                  0
 StressScore                    0
-SleepQualityScore              0
+SleepQualityScore              0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 UserID                         0
 HRV_ms                         0
 AveragePulse                   0
 ActivitySteps                  0
 StressScore                    0
 SleepQualityScore              0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2265,7 @@ SleepQualityScore              0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2291,7 @@ SleepQualityScore              0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

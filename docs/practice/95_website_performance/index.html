@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="95-웹-사이트-로딩-속도-및-성능-분석-실습">95. 웹 사이트 로딩 속도 및 성능 분석 실습</h1>
-<h2 id="실전-데이터-분석-95-글로벌-웹-서비스의-서버-지역-리전-및-cdn-캐시-유무별-페이지-용량-대비-로딩-속도p95-분석">실전 데이터 분석 95: 글로벌 웹 서비스의 서버 지역 리전 및 CDN 캐시 유무별 페이지 용량 대비 로딩 속도(p95) 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-95-글로벌-웹-서비스의-서버-지역-리전-및-cdn-캐시-유무별-페이지-용량-대비-로딩-속도p95-분석">실전 데이터 분석 95: 글로벌 웹 서비스의 서버 지역 리전 및 CDN 캐시 유무별 페이지 용량 대비 로딩 속도(p95) 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2135,7 +2139,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/website_performance.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./website_performance.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2154,15 +2158,38 @@ Data columns (total 6 columns):
  4   CacheStatus   1000 non-null   str    
  5   LoadTime_ms   1000 non-null   float64
 dtypes: float64(3), int64(1), str(2)
-memory usage: 47.0 KB
-
-RequestID ServerRegion  PageSize_MB  RequestCount CacheStatus  LoadTime_ms
+memory usage: 57.2 KB
+None
+   RequestID ServerRegion  PageSize_MB  RequestCount CacheStatus  LoadTime_ms
 0     950001      AP-East         6.03         247.0         Hit       1264.2
 1     950002      US-East         7.74         417.0         Hit       1573.7
 2     950003      US-East         3.69           NaN         Hit        801.3
 3     950004      AP-East         6.54         305.0         Hit       1494.6
 4     950005      AP-East         0.95         160.0         Hit        317.8
 </code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype<br />
+—  ——        ————–  —–<br />
+ 0   RequestID     1000 non-null   int64<br />
+ 1   ServerRegion  1000 non-null   str  <br />
+ 2   PageSize_MB   1000 non-null   float64
+ 3   RequestCount  985 non-null    float64
+ 4   CacheStatus   1000 non-null   str  <br />
+ 5   LoadTime_ms   1000 non-null   float64
+dtypes: float64(3), int64(1), str(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>RequestID ServerRegion  PageSize_MB  RequestCount CacheStatus  LoadTime_ms
+0     950001      AP-East         6.03         247.0         Hit       1264.2
+1     950002      US-East         7.74         417.0         Hit       1573.7
+2     950003      US-East         3.69           NaN         Hit        801.3
+3     950004      AP-East         6.54         305.0         Hit       1494.6
+4     950005      AP-East         0.95         160.0         Hit        317.8
+```</p>
 </blockquote>
 
 <hr />
@@ -2192,15 +2219,32 @@ PageSize_MB      0
 RequestCount    15
 CacheStatus      0
 LoadTime_ms      0
-
---- 정제 후 결측치 확인 ---
+dtype: int64
 RequestID       0
 ServerRegion    0
 PageSize_MB     0
 RequestCount    0
 CacheStatus     0
 LoadTime_ms     0
+dtype: int64
 </code></pre></div>  </div>
+</blockquote>
+
+<p>ServerRegion     0
+PageSize_MB      0
+RequestCount    15
+CacheStatus      0
+LoadTime_ms      0</p>
+<blockquote>
+
+  <p>— 정제 후 결측치 확인 —
+RequestID       0
+ServerRegion    0
+PageSize_MB     0
+RequestCount    0
+CacheStatus     0
+LoadTime_ms     0
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2225,7 +2269,7 @@ LoadTime_ms     0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2251,7 +2295,7 @@ LoadTime_ms     0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

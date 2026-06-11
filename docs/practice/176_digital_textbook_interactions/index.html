@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="176-디지털-교과서-뷰어-인터랙션-로그-실습">176. 디지털 교과서 뷰어 인터랙션 로그 실습</h1>
-<h2 id="실전-데이터-분석-176-스마트-학습-도구-상호작용-행동-성과-인과-모델">실전 데이터 분석 176: 스마트 학습 도구 상호작용 행동 성과 인과 모델</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-176-스마트-학습-도구-상호작용-행동-성과-인과-모델">실전 데이터 분석 176: 스마트 학습 도구 상호작용 행동 성과 인과 모델</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/digital_textbook_interactions.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./digital_textbook_interactions.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,39 @@ Data columns (total 6 columns):
  5   HighEngagement         1000 non-null   int64  
 dtypes: float64(4), int64(2)
 memory usage: 47.0 KB
+None
+   StudentID  HighlightCount  ...  ExamScore  HighEngagement
+0    1760001            70.2  ...        6.3               1
+1    1760002            85.2  ...        8.6               0
+2    1760003           127.9  ...        7.7               0
+3    1760004            84.0  ...        3.7               1
+4    1760005           142.3  ...        5.9               1
 
-   StudentID  HighlightCount  MemoCount  PageDwellTimeAvg_Secs  ExamScore  HighEngagement
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                 Non-Null Count  Dtype<br />
+—  ——                 ————–  —–<br />
+ 0   StudentID              1000 non-null   int64<br />
+ 1   HighlightCount         1000 non-null   float64
+ 2   MemoCount              1000 non-null   float64
+ 3   PageDwellTimeAvg_Secs  985 non-null    float64
+ 4   ExamScore              1000 non-null   float64
+ 5   HighEngagement         1000 non-null   int64<br />
+dtypes: float64(4), int64(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>StudentID  HighlightCount  MemoCount  PageDwellTimeAvg_Secs  ExamScore  HighEngagement
 0    1760001            70.2       99.4                   75.0        6.3               1
 1    1760002            85.2       90.2                   16.0        8.6               0
 2    1760003           127.9       93.0                   44.0        7.7               0
 3    1760004            84.0       86.1                   59.0        3.7               1
 4    1760005           142.3      115.9                   14.0        5.9               1
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-StudentID                      0
-HighlightCount                 0
+StudentID                 0
+HighlightCount            0
+MemoCount                 0
+PageDwellTimeAvg_Secs    15
+ExamScore                 0
+HighEngagement            0
+dtype: int64
+StudentID                0
+HighlightCount           0
+MemoCount                0
+PageDwellTimeAvg_Secs    0
+ExamScore                0
+HighEngagement           0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>HighlightCount                 0
 MemoCount                      0
 PageDwellTimeAvg_Secs          15
 ExamScore                      0
-HighEngagement                 0
+HighEngagement                 0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 StudentID                      0
 HighlightCount                 0
 MemoCount                      0
 PageDwellTimeAvg_Secs          0
 ExamScore                      0
 HighEngagement                 0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ HighEngagement                 0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ HighEngagement                 0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

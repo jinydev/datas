@@ -64,7 +64,7 @@ print(df.head())
 >  12  pickup_borough   6407 non-null   str           
 >  13  dropoff_borough  6388 non-null   str           
 > dtypes: datetime64[us](2), float64(5), int64(1), str(6)
-> memory usage: 703.7 KB
+> memory usage: 1.1 MB
 > None
 >                pickup             dropoff  ...  pickup_borough  dropoff_borough
 > 0 2019-03-23 20:21:09 2019-03-23 20:27:24  ...       Manhattan        Manhattan
@@ -75,7 +75,6 @@ print(df.head())
 > 
 > [5 rows x 14 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -122,7 +121,6 @@ print(df[['pickup', 'pickup_hour', 'pickup_day']].head())
 > ```
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * `dt` 접근자(Accessor): 판다스에서 날짜 데이터 뒤에 `.dt`를 붙이면, 연/월/일/시/분/초는 물론이고 요일, 분기 등 인간이 쓰는 모든 시간 개념을 마법처럼 쏙쏙 뽑아낼 수 있습니다. 이 기법은 시계열 데이터 분석에서 **절대 모르면 안 되는 가장 중요한 스킬**입니다.
 
@@ -148,7 +146,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -178,7 +175,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

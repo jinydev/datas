@@ -6,6 +6,8 @@ permalink: /practice/27_adult/
 
 # 실전 데이터 분석 27: 소득 예측과 기만적 결측치(Imposter) 처리
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/adult_income.csv')
+df = pd.read_csv('./adult_income.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,27 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/adult_income.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype
+> ---  ------          --------------  -----
+>  0   age             1000 non-null   int64
+>  1   workclass       1000 non-null   str  
+>  2   education       1000 non-null   str  
+>  3   marital.status  1000 non-null   str  
+>  4   hours.per.week  1000 non-null   int64
+>  5   income          1000 non-null   str  
+> dtypes: int64(2), str(4)
+> memory usage: 79.2 KB
+> None
+>    age workclass    education      marital.status  hours.per.week income
+> 0   51   Private  Prof-school            Divorced              29  <=50K
+> 1   18   Private   Assoc-acdm  Married-civ-spouse              36  <=50K
+> 2   77         ?   Assoc-acdm           Separated              53  <=50K
+> 3   72   Private   Assoc-acdm  Married-civ-spouse              33  <=50K
+> 4   71   Private         11th           Separated              45  <=50K
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -81,9 +101,17 @@ print(f"원본 데이터: {len(df)}명 -> 정제 후: {len(df_clean)}명")
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 workclass 카테고리 구성 ---
-> Error: name 'df' is not defined
+> workclass
+> Private             691
+> ?                   102
+> Self-emp-not-inc     84
+> Local-gov            74
+> State-gov            49
+> Name: count, dtype: int64
+> 
+> --- 정제 후 데이터 크기 비교 ---
+> 원본 데이터: 1000명 -> 정제 후: 898명
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -114,10 +142,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df_clean' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -162,10 +187,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df_clean' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

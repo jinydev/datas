@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="132-택배-라스트마일-배송-경로-효율성-실습">132. 택배 라스트마일 배송 경로 효율성 실습</h1>
-<h2 id="실전-데이터-분석-132-도심-정체-및-최종-택배-배송-지연-보틀넥-분석">실전 데이터 분석 132: 도심 정체 및 최종 택배 배송 지연 보틀넥 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-132-도심-정체-및-최종-택배-배송-지연-보틀넥-분석">실전 데이터 분석 132: 도심 정체 및 최종 택배 배송 지연 보틀넥 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/lastmile_route_efficiency.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./lastmile_route_efficiency.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,39 @@ Data columns (total 6 columns):
  5   OnTimeDelivery          1000 non-null   int64  
 dtypes: float64(4), int64(2)
 memory usage: 47.0 KB
+None
+   RouteID  DeliveryDistance_Km  ...  TimeWindowMinutes  OnTimeDelivery
+0  1320001                 12.1  ...                2.8               0
+1  1320002                  3.8  ...               18.1               0
+2  1320003                 14.1  ...                2.9               0
+3  1320004                 12.2  ...               23.3               1
+4  1320005                 12.9  ...                7.9               1
 
-   RouteID  DeliveryDistance_Km  TrafficCongestionIndex  StopCount  TimeWindowMinutes  OnTimeDelivery
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column                  Non-Null Count  Dtype<br />
+—  ——                  ————–  —–<br />
+ 0   RouteID                 1000 non-null   int64<br />
+ 1   DeliveryDistance_Km     1000 non-null   float64
+ 2   TrafficCongestionIndex  985 non-null    float64
+ 3   StopCount               1000 non-null   float64
+ 4   TimeWindowMinutes       1000 non-null   float64
+ 5   OnTimeDelivery          1000 non-null   int64<br />
+dtypes: float64(4), int64(2)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <p>RouteID  DeliveryDistance_Km  TrafficCongestionIndex  StopCount  TimeWindowMinutes  OnTimeDelivery
 0  1320001                 12.1                   114.3       95.3                2.8               0
 1  1320002                  3.8                   127.3       95.1               18.1               0
 2  1320003                 14.1                   108.0       38.2                2.9               0
 3  1320004                 12.2                    94.8       66.1               23.3               1
 4  1320005                 12.9                    97.6      123.1                7.9               1
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2187,21 +2216,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-RouteID                        0
-DeliveryDistance_Km            0
+RouteID                    0
+DeliveryDistance_Km        0
+TrafficCongestionIndex    15
+StopCount                  0
+TimeWindowMinutes          0
+OnTimeDelivery             0
+dtype: int64
+RouteID                   0
+DeliveryDistance_Km       0
+TrafficCongestionIndex    0
+StopCount                 0
+TimeWindowMinutes         0
+OnTimeDelivery            0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>DeliveryDistance_Km            0
 TrafficCongestionIndex         15
 StopCount                      0
 TimeWindowMinutes              0
-OnTimeDelivery                 0
+OnTimeDelivery                 0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 RouteID                        0
 DeliveryDistance_Km            0
 TrafficCongestionIndex         0
 StopCount                      0
 TimeWindowMinutes              0
 OnTimeDelivery                 0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2272,7 @@ OnTimeDelivery                 0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2298,7 @@ OnTimeDelivery                 0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

@@ -6,6 +6,8 @@ permalink: /practice/33_airbnb/
 
 # 실전 데이터 분석 33: 에어비앤비 객실 타입별 대여 요금 이상치 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/airbnb.csv')
+df = pd.read_csv('./airbnb.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './airbnb.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 7 columns):
@@ -99,6 +105,11 @@ print("\n상위 99% 가격 경계선 ($):", price_99_percentile)
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 ---
+> Error: name 'df' is not defined
+> ```
+
+
 --- 정제 전 결측치 ---
 id                   0
 name                 0
@@ -135,8 +146,11 @@ plt.ylabel('등록 수 (개)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **집 전체 및 개인실 중심 공급 구조:** 에어비앤비 플랫폼 내 숙소의 절반 이상(약 60%)이 'Entire home/apt'로 공간 전체 대여 형태를 띠고 있으며, 개인실(Private room)이 그 뒤를 잇습니다. 상대적으로 사생활 공유도가 높은 다인실(Shared room)은 아주 소수만 등록되어 있습니다.
@@ -161,8 +175,11 @@ plt.ylabel('1박 가격 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **공간 독립성에 비례하는 대여료 편차:** 박스플롯을 분석하면, 공간을 전체 빌리는 'Entire home/apt'의 요금 중앙값(상자 내 굵은선)이 약 180~200달러 선으로 가장 높고, 상자의 높이(요금 편차)도 매우 넓게 포진해 있습니다. 반면 다인실(Shared room)은 가격이 30~50달러 근방에 바짝 붙어 형성되며 이상치 점들도 거의 보이지 않습니다.

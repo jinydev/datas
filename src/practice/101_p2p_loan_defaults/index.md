@@ -5,6 +5,8 @@ permalink: /practice/101_p2p_loan_defaults/
 ---
 
 # 101. 개인간 (P2P) 대출 연체 요인 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 101: 신용평가 및 대출 리스크
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/p2p_loan_defaults.csv')
+df = pd.read_csv('./p2p_loan_defaults.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   LoanID           1000 non-null   int64  
+>  1   CreditScore      1000 non-null   float64
+>  2   DebtToIncome     985 non-null    float64
+>  3   AnnualIncome     1000 non-null   float64
+>  4   EmploymentYears  1000 non-null   float64
+>  5   Defaulted        1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>     LoanID  CreditScore  DebtToIncome  AnnualIncome  EmploymentYears  Defaulted
+> 0  1010001        850.0          54.8       37699.0             14.5          0
+> 1  1010002        724.0          43.9       86013.0              3.5          0
+> 2  1010003        744.0          39.2       81377.0              3.9          0
+> 3  1010004        715.0          51.6       63804.0              3.5          0
+> 4  1010005        726.0          37.4       61240.0              3.1          0
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column           Non-Null Count  Dtype  
@@ -89,7 +113,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> LoanID                         0
+> LoanID              0
+> CreditScore         0
+> DebtToIncome       15
+> AnnualIncome        0
+> EmploymentYears     0
+> Defaulted           0
+> dtype: int64
+> LoanID             0
+> CreditScore        0
+> DebtToIncome       0
+> AnnualIncome       0
+> EmploymentYears    0
+> Defaulted          0
+> dtype: int64
+> ```
+
+
 CreditScore                    0
 DebtToIncome                   15
 AnnualIncome                   0
@@ -125,8 +165,9 @@ plt.title('개인간 (P2P) 대출 연체 요인 빈도 분포', fontsize=14, fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** CreditScore 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +189,9 @@ plt.title('DebtToIncome와 AnnualIncome 상관성 및 Defaulted 대조', fontsiz
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, Defaulted 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

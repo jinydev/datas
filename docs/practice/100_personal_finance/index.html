@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="100-가계-금융-포트폴리오-자산-건전성-분석-실습">100. 가계 금융 포트폴리오 자산 건전성 분석 실습</h1>
-<h2 id="실전-데이터-분석-100-가계-월-소득-대비-저축률-및-주거외식비-지출-비율에-따른-가계-종합-금융-건전-지표fhs-분석">실전 데이터 분석 100: 가계 월 소득 대비 저축률 및 주거/외식비 지출 비율에 따른 가계 종합 금융 건전 지표(FHS) 분석</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-100-가계-월-소득-대비-저축률-및-주거외식비-지출-비율에-따른-가계-종합-금융-건전-지표fhs-분석">실전 데이터 분석 100: 가계 월 소득 대비 저축률 및 주거/외식비 지출 비율에 따른 가계 종합 금융 건전 지표(FHS) 분석</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2135,7 +2139,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/personal_finance.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./personal_finance.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,14 +2160,41 @@ Data columns (total 7 columns):
  6   FinancialHealthScore  1000 non-null   int64  
 dtypes: float64(4), int64(3)
 memory usage: 54.8 KB
+None
+    UserID  MonthlyIncome  ...  InvestmentAmount  FinancialHealthScore
+0  1000001          11651  ...            689.27                    39
+1  1000002           6695  ...            725.35                    35
+2  1000003           8215  ...            245.72                    27
+3  1000004           5776  ...           1581.90                    50
+4  1000005           4398  ...            944.25                    44
 
-UserID  MonthlyIncome  SavingsRate  HousingExpenses  DiningExpenses  InvestmentAmount  FinancialHealthScore
+[5 rows x 7 columns]
+</code></pre></div>  </div>
+  <p><img src="img/exec_step_1.svg" alt="실행 결과 시각화" /></p>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 7 columns):
+ #   Column                Non-Null Count  Dtype<br />
+—  ——                ————–  —–<br />
+ 0   UserID                1000 non-null   int64<br />
+ 1   MonthlyIncome         1000 non-null   int64<br />
+ 2   SavingsRate           985 non-null    float64
+ 3   HousingExpenses       1000 non-null   float64
+ 4   DiningExpenses        1000 non-null   float64
+ 5   InvestmentAmount      1000 non-null   float64
+ 6   FinancialHealthScore  1000 non-null   int64<br />
+dtypes: float64(4), int64(3)
+memory usage: 54.8 KB</p>
+<blockquote>
+
+  <p>UserID  MonthlyIncome  SavingsRate  HousingExpenses  DiningExpenses  InvestmentAmount  FinancialHealthScore
 0  1000001          11651         7.39          2839.71         1005.82            689.27                    39
 1  1000002           6695        13.54          2107.92         1315.00            725.35                    35
 2  1000003           8215         3.74          1864.26          539.18            245.72                    27
 3  1000004           5776        34.23          1071.82         1081.08           1581.90                    50
 4  1000005           4398        26.84           884.87          824.58            944.25                    44
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <hr />
@@ -2194,8 +2225,7 @@ HousingExpenses          0
 DiningExpenses           0
 InvestmentAmount         0
 FinancialHealthScore     0
-
---- 정제 후 결측치 확인 ---
+dtype: int64
 UserID                  0
 MonthlyIncome           0
 SavingsRate             0
@@ -2203,7 +2233,27 @@ HousingExpenses         0
 DiningExpenses          0
 InvestmentAmount        0
 FinancialHealthScore    0
+dtype: int64
 </code></pre></div>  </div>
+</blockquote>
+
+<p>MonthlyIncome            0
+SavingsRate             15
+HousingExpenses          0
+DiningExpenses           0
+InvestmentAmount         0
+FinancialHealthScore     0</p>
+<blockquote>
+
+  <p>— 정제 후 결측치 확인 —
+UserID                  0
+MonthlyIncome           0
+SavingsRate             0
+HousingExpenses         0
+DiningExpenses          0
+InvestmentAmount        0
+FinancialHealthScore    0
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2228,7 +2278,7 @@ FinancialHealthScore    0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2254,7 +2304,7 @@ FinancialHealthScore    0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

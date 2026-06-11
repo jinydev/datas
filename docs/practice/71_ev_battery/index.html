@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-71-전기차-구동-배터리-용량-및-주행-속도별-대기-온도-변동-대비-최대-주행-가능-거리-분석">실전 데이터 분석 71: 전기차 구동 배터리 용량 및 주행 속도별 대기 온도 변동 대비 최대 주행 가능 거리 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,39 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/ev_battery.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./ev_battery.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/ev_battery.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./ev_battery.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   TestID        1000 non-null   int64  
+ 1   Capacity_kWh  1000 non-null   int64  
+ 2   AmbientTemp   1000 non-null   float64
+ 3   Speed_kmh     1000 non-null   float64
+ 4   Range_km      987 non-null    float64
+ 5   AC_On         1000 non-null   str    
+dtypes: float64(3), int64(2), str(1)
+memory usage: 49.3 KB
+None
+   TestID  Capacity_kWh  AmbientTemp  Speed_kmh  Range_km AC_On
+0  710001            60         14.9      102.8     300.8    No
+1  710002            75         -9.5      114.9     216.7    No
+2  710003            85         14.3       42.2     377.9    No
+3  710004            60          3.1       82.6     261.5   Yes
+4  710005           100         -8.5       95.8     395.3    No
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2197,16 +2222,32 @@ TestID  Capacity_kWh  AmbientTemp  Speed_kmh  Range_km AC_On
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+TestID           0
+Capacity_kWh     0
+AmbientTemp      0
+Speed_kmh        0
+Range_km        13
+AC_On            0
+dtype: int64
+TestID          0
+Capacity_kWh    0
+AmbientTemp     0
+Speed_kmh       0
+Range_km        0
+AC_On           0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 TestID           0
 Capacity_kWh     0
 AmbientTemp      0
 Speed_kmh        0
 Range_km        13
 AC_On            0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 TestID          0
@@ -2241,7 +2282,7 @@ AC_On           0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2267,7 +2308,7 @@ AC_On           0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

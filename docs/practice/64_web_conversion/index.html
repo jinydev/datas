@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-64-웹-사이트-세션-체류-시간-및-접속-기기별-이탈률bounce-rate-대비-커머스-구매-전환율-비교-분석">실전 데이터 분석 64: 웹 사이트 세션 체류 시간 및 접속 기기별 이탈률(Bounce Rate) 대비 커머스 구매 전환율 비교 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,39 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/web_conversion.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./web_conversion.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/web_conversion.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./web_conversion.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   SessionID        1000 non-null   int64  
+ 1   SessionDuration  1000 non-null   float64
+ 2   DeviceType       1000 non-null   str    
+ 3   BounceRate       989 non-null    float64
+ 4   PagesViewed      1000 non-null   int64  
+ 5   Converted        1000 non-null   str    
+dtypes: float64(2), int64(2), str(2)
+memory usage: 55.2 KB
+None
+   SessionID  SessionDuration DeviceType  BounceRate  PagesViewed Converted
+0     640001             57.2     Mobile        74.2            3        No
+1     640002            100.5    Desktop        51.5            5        No
+2     640003            108.6     Mobile        49.1            5        No
+3     640004             71.7     Mobile        50.1            5        No
+4     640005             73.3     Mobile        58.2            5        No
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2198,16 +2223,32 @@ SessionID  SessionDuration DeviceType  BounceRate  PagesViewed Converted
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+SessionID           0
+SessionDuration     0
+DeviceType          0
+BounceRate         11
+PagesViewed         0
+Converted           0
+dtype: int64
+SessionID          0
+SessionDuration    0
+DeviceType         0
+BounceRate         0
+PagesViewed        0
+Converted          0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 SessionID           0
 SessionDuration     0
 DeviceType          0
 BounceRate         11
 PagesViewed         0
 Converted           0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 SessionID          0
@@ -2242,7 +2283,7 @@ Converted          0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2268,7 +2309,7 @@ Converted          0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

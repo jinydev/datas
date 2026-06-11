@@ -5,6 +5,8 @@ permalink: /practice/88_solar_energy/
 ---
 
 # 88. 태양광 발전소 발전 효율 및 기후 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 88: 발전 패널 표면 온도 및 일사량 세기 대비 태양광 발전소 일일 전력 생산량 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/solar_energy.csv')
+df = pd.read_csv('./solar_energy.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   DayID           1000 non-null   int64  
+>  1   PanelTemp       1000 non-null   float64
+>  2   SolarRadiation  1000 non-null   float64
+>  3   CloudCover      987 non-null    float64
+>  4   DailyPower_kWh  1000 non-null   float64
+>  5   Efficiency      1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>     DayID  PanelTemp  SolarRadiation  CloudCover  DailyPower_kWh  Efficiency
+> 0  880001       50.2           602.0        30.1           162.2       17.48
+> 1  880002       24.5           155.9         NaN            43.4       18.17
+> 2  880003       28.5           707.1        80.8           185.3       17.55
+> 3  880004       56.1           440.2        39.4           112.2       16.30
+> 4  880005       57.9           522.0        11.9           141.4       17.46
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column          Non-Null Count  Dtype  
@@ -89,6 +113,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > DayID              0
+> PanelTemp          0
+> SolarRadiation     0
+> CloudCover        13
+> DailyPower_kWh     0
+> Efficiency         0
+> dtype: int64
+> DayID             0
+> PanelTemp         0
+> SolarRadiation    0
+> CloudCover        0
+> DailyPower_kWh    0
+> Efficiency        0
+> dtype: int64
+> ```
+
+
 PanelTemp          0
 SolarRadiation     0
 CloudCover        13
@@ -124,8 +164,9 @@ plt.title('일일 태양광 전력 생산량 (Daily Power, kWh) 분포', fontsiz
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **연간 기상 흐름을 따르는 안정적 전력 생산 종형 분포:** 일 발전량 분포는 기후 주기에 따라 특정 전력 구간(예: 150~350 kWh)을 정점으로 부드러운 종형 곡선을 이룹니다. 장마철의 아주 낮은 발전 구간과 최고 화창한 하절기 발전이 양 극단 스케일을 형성합니다.
@@ -147,8 +188,9 @@ plt.title('일사량 강도 대비 일 전력 발전량과 패널 온도 효과'
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **일사량의 선형 증가와 고온으로 인한 패널 효율 저하 규명:** 일사량(X축)이 증가함에 따라 전력 발전량(Y축)도 기본적으로 가파르게 우상향합니다. 그러나 우상향 상단 영역을 보면, 패널 표면 온도(PanelTemp)가 과도하게 뜨거워진 고온 조건(붉은색 점 계열)에서 동일 일사량 대비 발전 전력이 일부 우하향 둔화되는 비선형 굴곡을 보입니다. 즉, 태양광 패널은 빛이 강할 때 발전 성능이 좋아지지만, 과열되면 오히려 발전 반도체의 저항 증가로 변환 효율이 감가된다는 에너지 열역학 특성을 완벽히 입증합니다.

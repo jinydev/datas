@@ -6,6 +6,8 @@ permalink: /practice/21_wine/
 
 # 실전 데이터 분석 21: 로컬 CSV 데이터 로드 및 타겟 상관관계 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -36,7 +38,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set2")
 
 # 로컬 CSV 파일 불러오기 (상대 경로 사용)
-df = pd.read_csv('../csv_data/winequality.csv')
+df = pd.read_csv('./winequality.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -45,9 +47,35 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/winequality.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 500 entries, 0 to 499
+> Data columns (total 12 columns):
+>  #   Column                Non-Null Count  Dtype  
+> ---  ------                --------------  -----  
+>  0   fixed_acidity         500 non-null    float64
+>  1   volatile_acidity      500 non-null    float64
+>  2   citric_acid           500 non-null    float64
+>  3   residual_sugar        500 non-null    float64
+>  4   chlorides             500 non-null    float64
+>  5   free_sulfur_dioxide   500 non-null    int64  
+>  6   total_sulfur_dioxide  500 non-null    int64  
+>  7   density               500 non-null    float64
+>  8   pH                    500 non-null    float64
+>  9   sulphates             500 non-null    float64
+>  10  alcohol               500 non-null    float64
+>  11  quality               500 non-null    int64  
+> dtypes: float64(9), int64(3)
+> memory usage: 47.0 KB
+> None
+>    fixed_acidity  volatile_acidity  citric_acid  ...  sulphates    alcohol  quality
+> 0       9.144414          0.685236     0.549871  ...   0.461598   9.391258        5
+> 1       8.064951          0.881883     0.454927  ...   0.920994  10.271701        3
+> 2       9.401071          0.220286     0.281926  ...   0.583271  11.554350        7
+> 3      10.889151          0.612594     0.140613  ...   0.546447  10.247255        5
+> 4       7.901939          0.369871     0.409645  ...   0.928595   9.630639        3
+> 
+> [5 rows x 12 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -77,9 +105,21 @@ print(quality_corr)
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> --- 와인 품질(Quality)과 가장 상관관계가 높은 성분들 ---
+> quality                 1.000000
+> alcohol                 0.377252
+> free_sulfur_dioxide     0.084002
+> residual_sugar          0.050118
+> total_sulfur_dioxide    0.034747
+> pH                      0.033851
+> sulphates              -0.001396
+> fixed_acidity          -0.014486
+> chlorides              -0.016108
+> density                -0.016198
+> citric_acid            -0.018609
+> volatile_acidity       -0.302268
+> Name: quality, dtype: float64
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -111,10 +151,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -145,10 +182,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

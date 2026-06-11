@@ -5,6 +5,8 @@ permalink: /practice/122_sleep_apnea_tracker/
 ---
 
 # 122. 수면 스마트 밴드 무호흡 로그 진단 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 122: 수면 생체 데이터 정밀 의학 진단 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/sleep_apnea_tracker.csv')
+df = pd.read_csv('./sleep_apnea_tracker.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   SessionID               1000 non-null   int64  
+>  1   SleepHours              1000 non-null   float64
+>  2   OxygenDropEvents        985 non-null    float64
+>  3   ApneaIndex              1000 non-null   float64
+>  4   DeepSleepRatio_Percent  1000 non-null   float64
+>  5   RiskSeverity            1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    SessionID  SleepHours  ...  DeepSleepRatio_Percent  RiskSeverity
+> 0    1220001        11.3  ...                    22.3         125.1
+> 1    1220002        33.1  ...                    50.1          80.8
+> 2    1220003        15.5  ...                    26.6          71.5
+> 3    1220004        23.1  ...                    39.9          87.8
+> 4    1220005        21.3  ...                    19.4          88.8
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> SessionID                      0
+> SessionID                  0
+> SleepHours                 0
+> OxygenDropEvents          15
+> ApneaIndex                 0
+> DeepSleepRatio_Percent     0
+> RiskSeverity               0
+> dtype: int64
+> SessionID                 0
+> SleepHours                0
+> OxygenDropEvents          0
+> ApneaIndex                0
+> DeepSleepRatio_Percent    0
+> RiskSeverity              0
+> dtype: int64
+> ```
+
+
 SleepHours                     0
 OxygenDropEvents               15
 ApneaIndex                     0
@@ -125,8 +167,9 @@ plt.title('수면 스마트 밴드 무호흡 로그 진단 빈도 분포', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** ApneaIndex 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('OxygenDropEvents와 ApneaIndex 상관성 및 RiskSeverity 대조', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, RiskSeverity 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

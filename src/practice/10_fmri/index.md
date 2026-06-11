@@ -57,7 +57,7 @@ print(df.head())
 >  3   region     1064 non-null   str    
 >  4   signal     1064 non-null   float64
 > dtypes: float64(1), int64(1), str(3)
-> memory usage: 41.7 KB
+> memory usage: 55.5 KB
 > None
 >   subject  timepoint event    region    signal
 > 0     s13         18  stim  parietal -0.017552
@@ -66,8 +66,6 @@ print(df.head())
 > 3     s11         18  stim  parietal -0.046134
 > 4     s10         18  stim  parietal -0.037970
 > ```
-> ![실행 결과 시각화](img/exec_step_1.svg)
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -110,7 +108,6 @@ print(time_0_df.head())
 > ```
 
 
-
 ### 💡 분석가의 통찰 (Analyst's Insight)
 * 일반적인 주식 데이터나 날씨 데이터라면 2024년 1월 1일의 종가는 딱 **1개** 존재합니다.
 * 하지만 이 fMRI 데이터는 0초(Timepoint=0)에 무려 **56개**의 데이터(14명 피험자 x 2개 자극 x 2개 뇌 부위)가 겹쳐 있습니다.
@@ -141,7 +138,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -181,7 +177,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트

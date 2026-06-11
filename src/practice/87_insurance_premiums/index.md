@@ -5,6 +5,8 @@ permalink: /practice/87_insurance_premiums/
 ---
 
 # 87. 건강 보험 납입료 결정 요인 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 87: 건강 보험 가입자의 나이, 흡연 여부 및 체질량 지수(BMI) 대비 연 보험료 결정 요인 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/insurance_premiums.csv')
+df = pd.read_csv('./insurance_premiums.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   PolicyID       1000 non-null   int64  
+>  1   Age            1000 non-null   int64  
+>  2   SmokerStatus   1000 non-null   str    
+>  3   BMI            985 non-null    float64
+>  4   Dependents     1000 non-null   int64  
+>  5   AnnualPremium  1000 non-null   float64
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 49.1 KB
+> None
+>    PolicyID  Age SmokerStatus    BMI  Dependents  AnnualPremium
+> 0    870001   56           No  16.12           5       14541.91
+> 1    870002   48           No  25.72           1       12895.03
+> 2    870003   64           No  42.84           1       17390.88
+> 3    870004   62           No  27.65           3       17976.62
+> 4    870005   57           No  27.61           3       16866.23
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column         Non-Null Count  Dtype  
@@ -89,6 +113,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > PolicyID          0
+> Age               0
+> SmokerStatus      0
+> BMI              15
+> Dependents        0
+> AnnualPremium     0
+> dtype: int64
+> PolicyID         0
+> Age              0
+> SmokerStatus     0
+> BMI              0
+> Dependents       0
+> AnnualPremium    0
+> dtype: int64
+> ```
+
+
 Age               0
 SmokerStatus      0
 BMI              15
@@ -124,8 +164,9 @@ plt.title('흡연 여부별 연간 보험 납입료(Annual Premium) 분포', fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **흡연 가중치가 가져오는 파격적 보험료 상승 증명:** 흡연자 그룹(Yes)의 연 보험료 상자가 비흡연자 그룹(No) 상단 수염 높이의 아득한 위쪽에 완전히 격리되어 솟아 있습니다. 흡연 여부가 보험율 할증에 단일 변수로서 가장 압도적인 리스크 가중치를 가짐을 증명합니다.
@@ -147,8 +188,9 @@ plt.title('나이 대비 연간 보험료와 BMI 수준 상관성', fontsize=14,
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **나이와 보험료의 기저 선형 증가와 고비만 가산세 관찰:** 나이가 늘어날수록 보험료가 계단식 선형 띠를 형성하며 정직하게 올라갑니다. 더욱 흥미로운 점은 동일 연령선 내에서도 BMI가 높은 고위험군(노란색 계열)이 할증 적용되어 해당 연령대 띠의 상층부를 형성하며 리스크 기반 가격 책정을 가시적으로 입증합니다.

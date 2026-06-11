@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-48-에임스ames-부동산-데이터-기반-주거-면적-및-건물-품질이-주택-거래가에-미치는-선형-회귀-분석">실전 데이터 분석 48: 에임스(Ames) 부동산 데이터 기반 주거 면적 및 건물 품질이 주택 거래가에 미치는 선형 회귀 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/ames_housing.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./ames_housing.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,30 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype
+---  ------        --------------  -----
+ 0   HouseID       1000 non-null   int64
+ 1   GrLivArea     1000 non-null   int64
+ 2   YearBuilt     1000 non-null   int64
+ 3   Neighborhood  1000 non-null   str  
+ 4   OverallQual   1000 non-null   int64
+ 5   SalePrice     1000 non-null   int64
+dtypes: int64(5), str(1)
+memory usage: 53.8 KB
+None
+   HouseID  GrLivArea  YearBuilt Neighborhood  OverallQual  SalePrice
+0    40001        842       1961      OldTown            6     166187
+1    40002       2940       1952      NridgHt            3     262259
+2    40003       1484       1958      OldTown            5     162234
+3    40004       1518       1972      Edwards            6     235969
+4    40005       2701       1989      OldTown            8     354697
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2195,18 +2220,31 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-          GrLivArea      SalePrice
-count   1000.00000    1000.000000
-mean    1992.87300  262834.940000
-std      688.24394   83017.440776
-min      801.00000   76691.000000
-25%     1419.25000  201349.500000
-50%     1959.00000  261166.500000
-75%     2587.25000  317397.250000
-max     3199.00000  507126.000000</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GrLivArea      SalePrice
+count  1000.00000    1000.000000
+mean   1992.87300  262834.940000
+std     688.24394   83017.440776
+min     801.00000   76691.000000
+25%    1419.25000  201349.500000
+50%    1959.00000  261166.500000
+75%    2587.25000  317397.250000
+max    3199.00000  507126.000000
+
+--- 동네별 평균 거래 가격 격차 ---
+Neighborhood
+Gilbert    269065.335260
+OldTown    267680.574713
+NridgHt    265813.319018
+CollgCr    260902.018072
+Somerst    256627.747059
+Edwards    256144.116883
+Name: SalePrice, dtype: float64
+</code></pre></div>  </div>
 </blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      GrLivArea      SalePrice count   1000.00000    1000.000000 mean    1992.87300  262834.940000 std      688.24394   83017.440776 min      801.00000   76691.000000 25%     1419.25000  201349.500000 50%     1959.00000  261166.500000 75%     2587.25000  317397.250000 max     3199.00000  507126.000000
+</code></pre></div></div>
 
 <p>— 동네별 평균 거래 가격 격차 —
 Neighborhood
@@ -2245,7 +2283,7 @@ Somerst         259779.620000</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2274,7 +2312,7 @@ Somerst         259779.620000</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

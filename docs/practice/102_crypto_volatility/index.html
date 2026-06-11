@@ -2102,7 +2102,11 @@
 
         <div class="bd-content ps-lg-4">
             <h1 id="102-비트코인-등-가상자산-변동성-실습">102. 비트코인 등 가상자산 변동성 실습</h1>
-<h2 id="실전-데이터-분석-102-가상자산-시장-및-군중심리">실전 데이터 분석 102: 가상자산 시장 및 군중심리</h2>
+
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+  <h2 id="실전-데이터-분석-102-가상자산-시장-및-군중심리">실전 데이터 분석 102: 가상자산 시장 및 군중심리</h2>
+</blockquote>
 
 <p><img src="img/intro_comic.png" alt="도입 만화" /></p>
 
@@ -2136,7 +2140,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 데이터 로드
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/crypto_volatility.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./crypto_volatility.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
@@ -2156,13 +2160,33 @@ Data columns (total 6 columns):
  5   PriceVolatility      1000 non-null   float64
 dtypes: float64(5), int64(1)
 memory usage: 47.0 KB
+None
+     DayID  TradingVolume_M  ...  VIX_Index  PriceVolatility
+0  1020001            141.7  ...       15.9          85349.0
+1  1020002            123.1  ...       24.2          69832.0
+2  1020003            126.4  ...       21.2          59702.0
+3  1020004             77.0  ...       22.3          92270.0
+4  1020005            132.5  ...       20.7          74168.0
 
-     DayID  TradingVolume_M  SocialMentions  DailyReturn_Percent  VIX_Index  PriceVolatility
-0  1020001            141.7           110.9                 56.7       15.9          85349.0
-1  1020002            123.1           112.7                 30.2       24.2          69832.0
-2  1020003            126.4           112.4                 44.2       21.2          59702.0
-3  1020004             77.0            97.2                 43.0       22.3          92270.0
-4  1020005            132.5           124.4                 46.0       20.7          74168.0
+[5 rows x 6 columns]
+</code></pre></div>  </div>
+</blockquote>
+
+<p>RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column               Non-Null Count  Dtype<br />
+—  ——               ————–  —–<br />
+ 0   DayID                1000 non-null   int64<br />
+ 1   TradingVolume_M      1000 non-null   float64
+ 2   SocialMentions       985 non-null    float64
+ 3   DailyReturn_Percent  1000 non-null   float64
+ 4   VIX_Index            1000 non-null   float64
+ 5   PriceVolatility      1000 non-null   float64
+dtypes: float64(5), int64(1)
+memory usage: 47.0 KB</p>
+<blockquote>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> DayID  TradingVolume_M  SocialMentions  DailyReturn_Percent  VIX_Index  PriceVolatility 0  1020001            141.7           110.9                 56.7       15.9          85349.0 1  1020002            123.1           112.7                 30.2       24.2          69832.0 2  1020003            126.4           112.4                 44.2       21.2          59702.0 3  1020004             77.0            97.2                 43.0       22.3          92270.0 4  1020005            132.5           124.4                 46.0       20.7          74168.0 ```
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2187,21 +2211,38 @@ memory usage: 47.0 KB
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
   <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
-DayID                          0
-TradingVolume_M                0
+DayID                   0
+TradingVolume_M         0
+SocialMentions         15
+DailyReturn_Percent     0
+VIX_Index               0
+PriceVolatility         0
+dtype: int64
+DayID                  0
+TradingVolume_M        0
+SocialMentions         0
+DailyReturn_Percent    0
+VIX_Index              0
+PriceVolatility        0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>TradingVolume_M                0
 SocialMentions                 15
 DailyReturn_Percent            0
 VIX_Index                      0
-PriceVolatility                0
+PriceVolatility                0</p>
+<blockquote>
 
---- 정제 후 결측치 확인 ---
+  <p>— 정제 후 결측치 확인 —
 DayID                          0
 TradingVolume_M                0
 SocialMentions                 0
 DailyReturn_Percent            0
 VIX_Index                      0
 PriceVolatility                0
-</code></pre></div>  </div>
+```</p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2226,7 +2267,7 @@ PriceVolatility                0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2252,7 +2293,7 @@ PriceVolatility                0
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

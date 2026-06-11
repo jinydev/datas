@@ -6,6 +6,8 @@ permalink: /practice/39_food_delivery/
 
 # 실전 데이터 분석 39: 배달 플랫폼 주문 가격 분포 및 배달 소요시간과 고객 별점 평점의 상관 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/food_delivery.csv')
+df = pd.read_csv('./food_delivery.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './food_delivery.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -93,6 +99,10 @@ print(df.groupby('FoodCategory')['DeliveryTime_Min'].mean())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: name 'df' is not defined
+> ```
+
+
                Cost  DeliveryTime_Min       Rating
 count   1000.000000       1000.000000  1000.000000
 mean   24128.530000         41.385000     3.785000
@@ -136,8 +146,11 @@ plt.ylabel('주문 건수 (건)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **1~3만 원대의 탄탄한 핵심 주문 구간:** 주문 금액 분포를 보면 1만 원대 중반부터 2만 원대 중반 구간에 가장 많은 주문(히스토그램의 최고점)이 포진하고 있습니다. 1인분 혹은 2인분 기준 세트 배달비 포함 단가에 주문량이 집중되어 있으며, 4만 원 이상의 고액 단체 주문으로 갈수록 건수가 완만하게 꼬리를 그리며 감소합니다.
@@ -162,8 +175,11 @@ plt.ylabel('배달 소요 시간 (분)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **50분 돌파 시 고객 별점 테러 발생:** 고객 평점별 배달 시간 상자(Box)들을 대조해 보면 대단히 흥미로운 패턴이 발견됩니다. 별점 4점과 5점을 준 고만족 고객 그룹의 배달 시간 중앙값은 35분 이하로 아주 신속했습니다. 반면 별점 1점과 2점을 준 고객 그룹은 배달 시간 박스의 하단선마저 50분을 돌파하여 대부분 55~80분대 배달 완료되었습니다. 즉, **'50분'**이 고객 만족도가 급락하는 임계 데드라인 시간임을 입증합니다.

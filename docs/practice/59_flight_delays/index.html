@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-59-국내선-항공사별-평균-관제-지연-시간-대조-및-출발-시간대별-기상-악화-지표-다차원-연계-분석">실전 데이터 분석 59: 국내선 항공사별 평균 관제 지연 시간 대조 및 출발 시간대별 기상 악화 지표 다차원 연계 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/flight_delays.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./flight_delays.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,32 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   FlightID            1000 non-null   str    
+ 1   Airline             1000 non-null   str    
+ 2   ScheduledTime_Hour  1000 non-null   int64  
+ 3   Delay_Minutes       987 non-null    float64
+ 4   Weather_Severity    1000 non-null   float64
+ 5   IsWeekend           1000 non-null   str    
+dtypes: float64(2), int64(1), str(3)
+memory usage: 63.5 KB
+None
+  FlightID     Airline  ...  Weather_Severity  IsWeekend
+0  FL00001        Tway  ...               2.5         No
+1  FL00002  Korean Air  ...               1.4        Yes
+2  FL00003     Jin Air  ...               4.1         No
+3  FL00004  Korean Air  ...               3.6         No
+4  FL00005      Asiana  ...               4.2         No
+
+[5 rows x 6 columns]
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2198,11 +2225,17 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 지연 결측 개수 —
-13</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 지연 결측 개수 ---
+13
+
+--- 정제 후 지연 결측 개수 ---
+0
+</code></pre></div>  </div>
 </blockquote>
+
+<p>— 정제 전 지연 결측 개수 —
+13</p>
 
 <p>— 정제 후 지연 결측 개수 —
 0</p>
@@ -2235,7 +2268,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2264,7 +2297,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

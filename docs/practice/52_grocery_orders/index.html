@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-52-온라인-식료품-몰-가입자-주문-시간대별-트래픽-및-멤버십-혜택객단가-상자그림-분석">실전 데이터 분석 52: 온라인 식료품 몰 가입자 주문 시간대별 트래픽 및 멤버십 혜택(객단가) 상자그림 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/grocery_orders.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./grocery_orders.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,30 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   OrderID          1000 non-null   int64  
+ 1   CustomerID       1000 non-null   int64  
+ 2   OrderTime_Hour   1000 non-null   int64  
+ 3   ItemCount        1000 non-null   int64  
+ 4   TotalPrice       985 non-null    float64
+ 5   IsLoyaltyMember  1000 non-null   str    
+dtypes: float64(1), int64(4), str(1)
+memory usage: 49.4 KB
+None
+   OrderID  CustomerID  OrderTime_Hour  ItemCount  TotalPrice IsLoyaltyMember
+0    50001       14631              18          1        8.73              No
+1    50002       10111               8         15      135.49             Yes
+2    50003       13593              11          6       47.86             Yes
+3    50004       13890              16         22      230.50             Yes
+4    50005       14436              10          9       99.82              No
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2199,11 +2224,17 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 가격 결측 개수 —
-15</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 가격 결측 개수 ---
+15
+
+--- 정제 후 가격 결측 개수 ---
+0
+</code></pre></div>  </div>
 </blockquote>
+
+<p>— 정제 전 가격 결측 개수 —
+15</p>
 
 <p>— 정제 후 가격 결측 개수 —
 0</p>
@@ -2236,7 +2267,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2265,7 +2296,7 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

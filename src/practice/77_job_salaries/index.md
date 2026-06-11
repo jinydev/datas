@@ -6,6 +6,8 @@ permalink: /practice/77_job_salaries/
 
 # 실전 데이터 분석 77: 구인구직 플랫폼 채용 공고의 직무 연차 및 학력 조건 대비 재택 근무 여부별 급여 단가 상관 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/job_salaries.csv')
+df = pd.read_csv('./job_salaries.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/job_salaries.csv')
+df = pd.read_csv('./job_salaries.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column          Non-Null Count  Dtype  
+> ---  ------          --------------  -----  
+>  0   JobID           1000 non-null   int64  
+>  1   ExpYears        1000 non-null   int64  
+>  2   EducationLevel  1000 non-null   str    
+>  3   RoleCategory    1000 non-null   str    
+>  4   IsRemote        1000 non-null   str    
+>  5   Salary          984 non-null    float64
+> dtypes: float64(1), int64(2), str(3)
+> memory usage: 65.2 KB
+> None
+>     JobID  ExpYears EducationLevel  RoleCategory IsRemote     Salary
+> 0  770001        23      Bachelors      Software       No  131916.30
+> 1  770002        20        Masters      Software      Yes  110837.75
+> 2  770003        20      Bachelors  Data Science      Yes  101925.51
+> 3  770004        11      Bachelors     Marketing      Yes   88528.23
+> 4  770005         5      Bachelors  Data Science      Yes   74206.90
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> JobID              0
+> ExpYears           0
+> EducationLevel     0
+> RoleCategory       0
+> IsRemote           0
+> Salary            16
+> dtype: int64
+> JobID             0
+> ExpYears          0
+> EducationLevel    0
+> RoleCategory      0
+> IsRemote          0
+> Salary            0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 JobID              0
 ExpYears           0
@@ -132,8 +175,9 @@ plt.title('채용 직무별 평균 연봉 수준', fontsize=14, fontweight='bold
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **직무별 노동 시장 단가 순위 비교:** 데이터 사이언티스(Data Science) 및 소프트웨어 개발(Software) 직무의 제안 연봉 평균 막대가 마케팅 및 인사(HR) 대비 시장 경쟁력 우위로 인해 가파르게 높게 형성되어 구인 시장의 임금 구도를 실증합니다.
@@ -155,8 +199,9 @@ plt.title('직무 경력 년수 대비 연봉 수준과 학력 프리미엄', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **연차 경력 상승 비례 연봉 증가와 학력 조건의 가속 시너지:** 요구 경력(X축)과 연봉(Y축)이 정직하게 우상향 선형 띠를 이룹니다. 특히 흥미로운 점은 동일한 경력 연수 대역에서도 석박사(Masters/PhD, 초록색/주황색 점 계열) 조건이 요구되는 공고의 연봉 단가가 학사(Bachelors, 주황색 점 계열) 대비 높은 상단 궤적을 선점하고 있어 학력 프리미엄의 존재를 증명합니다.

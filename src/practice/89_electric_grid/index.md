@@ -5,6 +5,8 @@ permalink: /practice/89_electric_grid/
 ---
 
 # 89. 스마트 그리드 정전 지속 시간 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 89: 전력망 관리 섹터별 예반 보수 점검 주기 대비 정전 지속 시간 및 피해 규모 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/electric_grid.csv')
+df = pd.read_csv('./electric_grid.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                   Non-Null Count  Dtype  
+> ---  ------                   --------------  -----  
+>  0   OutageID                 1000 non-null   int64  
+>  1   GridSector               1000 non-null   str    
+>  2   WeatherAnomalyIndex      1000 non-null   float64
+>  3   MaintenanceCycle_Months  986 non-null    float64
+>  4   OutageDuration_Hours     1000 non-null   float64
+>  5   CustomersAffected        1000 non-null   int64  
+> dtypes: float64(3), int64(2), str(1)
+> memory usage: 54.8 KB
+> None
+>    OutageID GridSector  ...  OutageDuration_Hours  CustomersAffected
+> 0    890001   Sector C  ...                   2.8               1288
+> 1    890002   Sector C  ...                  11.1               5355
+> 2    890003   Sector D  ...                   2.6               3247
+> 3    890004   Sector B  ...                  12.8              15000
+> 4    890005   Sector A  ...                  15.9               2421
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                   Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > OutageID                    0
+> GridSector                  0
+> WeatherAnomalyIndex         0
+> MaintenanceCycle_Months    14
+> OutageDuration_Hours        0
+> CustomersAffected           0
+> dtype: int64
+> OutageID                   0
+> GridSector                 0
+> WeatherAnomalyIndex        0
+> MaintenanceCycle_Months    0
+> OutageDuration_Hours       0
+> CustomersAffected          0
+> dtype: int64
+> ```
+
+
 GridSector                  0
 WeatherAnomalyIndex         0
 MaintenanceCycle_Months    14
@@ -124,8 +166,9 @@ plt.title('전력망 관리 섹터별 평균 정전 복구 소요 시간 (시간
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **노후 관리 섹터의 기저 복구 지연 규명:** 각 행정 파트의 복구 시간 막대를 비교하면 특정 섹터(예: Sector_C)의 평균 정전 지연 시간이 현저하게 치솟아 있습니다. 해당 구역의 송배전 배선 및 비상 대기 인프라 재점검과 예산 우선 투입이 요구됨을 강력히 대변합니다.
@@ -147,8 +190,9 @@ plt.title('정전 복구 지속 시간 대비 누적 피해 가구 수와 기상
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **정전 장기화에 따른 피해 규모의 지수 폭발 및 기상 재난 동조:** 정전 지속 시간(X축)과 피해 가구(Y축)는 단순 선형이 아니라 정전 시간이 늘어날수록 피해자 규모가 위로 둥글게 치솟는 양상을 띱니다. 특히 붉은색 계열(기상이변 지수가 매우 높은 날) 정전 발생 시, 복구 인력 접근 불가로 인해 정전이 장기화되며 광범위한 지역 블랙아웃(피해 가구 수직 상승)으로 동조화되는 재난 인과 흐름을 명백히 보여줍니다.

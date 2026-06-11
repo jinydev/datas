@@ -6,6 +6,8 @@ permalink: /practice/42_weather/
 
 # 실전 데이터 분석 42: 연간 일일 날씨 데이터 기반 기온 변동 트렌드 및 습도 분포 시계열 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/weather_trends.csv')
+df = pd.read_csv('./weather_trends.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 365 entries, 0 to 364
+> Data columns (total 6 columns):
+>  #   Column         Non-Null Count  Dtype  
+> ---  ------         --------------  -----  
+>  0   Date           365 non-null    str    
+>  1   Temperature    365 non-null    float64
+>  2   Humidity       365 non-null    float64
+>  3   WindSpeed      365 non-null    float64
+>  4   Precipitation  365 non-null    float64
+>  5   Condition      365 non-null    str    
+> dtypes: float64(4), str(2)
+> memory usage: 22.7 KB
+> None
+>          Date  Temperature  Humidity  WindSpeed  Precipitation Condition
+> 0  2023-01-01          3.3      44.5        2.8            0.0     Sunny
+> 1  2023-01-02          1.3      92.6        4.3           10.3     Rainy
+> 2  2023-01-03          3.5      30.8        2.6            0.0     Sunny
+> 3  2023-01-04          6.0      93.0        3.3           36.9     Rainy
+> 4  2023-01-05          0.7      32.8        1.3            0.0     Sunny
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 365 entries, 0 to 364
 Data columns (total 6 columns):
@@ -95,6 +120,15 @@ print(df[['Date', 'Month', 'Temperature']].head())
 
 > **💻 [실행 결과]**
 > ```text
+> Date  Month  Temperature
+> 0 2023-01-01      1          3.3
+> 1 2023-01-02      1          1.3
+> 2 2023-01-03      1          3.5
+> 3 2023-01-04      1          6.0
+> 4 2023-01-05      1          0.7
+> ```
+
+
         Date  Month  Temperature
 0 2023-01-01      1          3.3
 1 2023-01-02      1          1.3
@@ -126,8 +160,9 @@ plt.ylabel('일수 (일)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **양극화 혹은 평탄한 기후 분포:** 습도 분포 차트를 보면, 30% 근방의 건조한 영역과 80% 이상의 매우 습한 다습 대역이 고르게 퍼져 있거나 양쪽에 살짝 융기되어 있습니다. 이는 비가 오거나 흐린 다습한 날씨와 맑고 쾌청해 대기가 건조한 날이 계절 변화에 따라 뚜렷하게 나뉘는 지역 기후 특성을 정밀하게 설명합니다.
@@ -157,8 +192,9 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **계절 주기에 의한 선형 순환:** 기온 추세선을 확인하면 1월에 가장 춥고, 여름인 7~8월에 피크를 찍은 뒤, 다시 12월로 갈수록 하강하는 뚜렷한 포물선 대칭(Sine curve) 형태의 **계절성(Seasonality)**을 그리며 순환하고 있음을 보여줍니다.

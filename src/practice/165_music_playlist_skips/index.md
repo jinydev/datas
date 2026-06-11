@@ -5,6 +5,8 @@ permalink: /practice/165_music_playlist_skips/
 ---
 
 # 165. 음원 스트리밍 플레이리스트 추천 스킵 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 165: 음악 추천 알고리즘 템포 편차 유저 스킵 방지
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/music_playlist_skips.csv')
+df = pd.read_csv('./music_playlist_skips.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                   Non-Null Count  Dtype  
+> ---  ------                   --------------  -----  
+>  0   TrackID                  1000 non-null   int64  
+>  1   TempoBPM                 1000 non-null   float64
+>  2   SimilarityScore_Percent  985 non-null    float64
+>  3   SkipCount                1000 non-null   float64
+>  4   UserHistoryOverlap       1000 non-null   float64
+>  5   PlaylistCompleted        1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    TrackID  TempoBPM  ...  UserHistoryOverlap  PlaylistCompleted
+> 0  1650001     132.2  ...                75.3               97.5
+> 1  1650002     154.3  ...               109.3               64.6
+> 2  1650003     112.0  ...                98.7               86.0
+> 3  1650004     134.6  ...                58.2              167.2
+> 4  1650005     101.3  ...               108.2              101.3
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                   Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> TrackID                        0
+> TrackID                     0
+> TempoBPM                    0
+> SimilarityScore_Percent    15
+> SkipCount                   0
+> UserHistoryOverlap          0
+> PlaylistCompleted           0
+> dtype: int64
+> TrackID                    0
+> TempoBPM                   0
+> SimilarityScore_Percent    0
+> SkipCount                  0
+> UserHistoryOverlap         0
+> PlaylistCompleted          0
+> dtype: int64
+> ```
+
+
 TempoBPM                       0
 SimilarityScore_Percent        15
 SkipCount                      0
@@ -125,8 +167,9 @@ plt.title('음원 스트리밍 플레이리스트 추천 스킵 빈도 분포', 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** SkipCount 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('SimilarityScore_Percent와 SkipCount 상관성 및 PlaylistCompleted 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, PlaylistCompleted 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

@@ -6,6 +6,8 @@ permalink: /practice/67_hr_training/
 
 # 실전 데이터 분석 67: 부서별 직원의 사내 교육 이수시간 대비 평가 전후 성적 향상 및 인사고과 기여도 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,41 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/hr_training.csv')
+df = pd.read_csv('./hr_training.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/hr_training.csv')
+df = pd.read_csv('./hr_training.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   EmployeeID         1000 non-null   int64  
+>  1   Department         1000 non-null   str    
+>  2   TrainingHours      1000 non-null   int64  
+>  3   PreScore           1000 non-null   int64  
+>  4   PostScore          988 non-null    float64
+>  5   PerformanceRating  1000 non-null   int64  
+> dtypes: float64(1), int64(4), str(1)
+> memory usage: 53.6 KB
+> None
+>    EmployeeID   Department  ...  PostScore  PerformanceRating
+> 0      670001      Support  ...       68.0                  3
+> 1      670002           HR  ...       86.8                  5
+> 2      670003  Engineering  ...       93.0                  5
+> 3      670004  Engineering  ...       75.4                  4
+> 4      670005      Support  ...       61.5                  3
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +122,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> EmployeeID            0
+> Department            0
+> TrainingHours         0
+> PreScore              0
+> PostScore            12
+> PerformanceRating     0
+> dtype: int64
+> EmployeeID           0
+> Department           0
+> TrainingHours        0
+> PreScore             0
+> PostScore            0
+> PerformanceRating    0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 EmployeeID            0
 Department            0
@@ -132,8 +177,9 @@ plt.title('인사고과 등급별 직무 교육 시간 분포', fontsize=14, fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **교육 투자 시간과 우수 인사고과의 밀접한 연계:** 최종 인사고과 점수가 4~5점인 고성과 직원 그룹의 주간 직무 교육 이수 시간 상자가 1~2점 저성과 집단 대비 유의미하게 우상향 포지셔닝되어 있습니다. 이는 학습 시간이 고과 성과 창출에 주요한 밑바탕이 됨을 뒷받침합니다.
@@ -155,8 +201,9 @@ plt.title('직무 교육 전후의 평가 성적 상관 분포', fontsize=14, fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **교육 효과에 따른 역량 상승 도약선 관찰:** 교육 전 점수(X축) 대비 교육 후 점수(Y축)가 전반적으로 우상향 정비례 띠를 두릅니다. 특히 거의 모든 직원의 사후 성적 점수선이 사전 점수선 대비 큰 도약 성장 궤적을 띠며, 부서별 고른 성장을 이뤄냈음을 증명합니다.

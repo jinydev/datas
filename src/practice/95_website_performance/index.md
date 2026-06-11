@@ -5,6 +5,8 @@ permalink: /practice/95_website_performance/
 ---
 
 # 95. 웹 사이트 로딩 속도 및 성능 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 95: 글로벌 웹 서비스의 서버 지역 리전 및 CDN 캐시 유무별 페이지 용량 대비 로딩 속도(p95) 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/website_performance.csv')
+df = pd.read_csv('./website_performance.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,28 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column        Non-Null Count  Dtype  
+> ---  ------        --------------  -----  
+>  0   RequestID     1000 non-null   int64  
+>  1   ServerRegion  1000 non-null   str    
+>  2   PageSize_MB   1000 non-null   float64
+>  3   RequestCount  985 non-null    float64
+>  4   CacheStatus   1000 non-null   str    
+>  5   LoadTime_ms   1000 non-null   float64
+> dtypes: float64(3), int64(1), str(2)
+> memory usage: 57.2 KB
+> None
+>    RequestID ServerRegion  PageSize_MB  RequestCount CacheStatus  LoadTime_ms
+> 0     950001      AP-East         6.03         247.0         Hit       1264.2
+> 1     950002      US-East         7.74         417.0         Hit       1573.7
+> 2     950003      US-East         3.69           NaN         Hit        801.3
+> 3     950004      AP-East         6.54         305.0         Hit       1494.6
+> 4     950005      AP-East         0.95         160.0         Hit        317.8
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column        Non-Null Count  Dtype  
@@ -89,6 +113,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > RequestID        0
+> ServerRegion     0
+> PageSize_MB      0
+> RequestCount    15
+> CacheStatus      0
+> LoadTime_ms      0
+> dtype: int64
+> RequestID       0
+> ServerRegion    0
+> PageSize_MB     0
+> RequestCount    0
+> CacheStatus     0
+> LoadTime_ms     0
+> dtype: int64
+> ```
+
+
 ServerRegion     0
 PageSize_MB      0
 RequestCount    15
@@ -124,8 +164,9 @@ plt.title('CDN 캐시 상태(Cache Status)별 웹 페이지 로딩 속도 비교
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **캐시 히트가 보장하는 쾌속 로딩 속도 증명:** 캐시 히트(Hit) 그룹의 로딩 속도 상자 범위는 캐시 미스(Miss) 그룹 상자의 1/3 높이 바닥에 극도로 작게 수축해 포진해 있습니다. 이는 CDN 도입 인프라 투자가 사용자 체감 반응 속도 격차 개선에 절대적 기여를 함을 정량적 상자 밴드로 입증한 것입니다.
@@ -147,8 +188,9 @@ plt.title('전송 용량 대비 페이지 로딩 속도와 캐시 연동 상관�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **용량 증가에 직결되는 지연 지스 곡선 및 캐시 무력화 방어 효과:** 페이지 리소스 용량(X축)이 증가할수록 로딩 속도(Y축)가 가파르게 우상향합니다. 특히 주목할 점은 캐시 미스(Miss, 빨간색 점) 그룹은 용량 증가에 따라 경사도가 매우 가파르게 상승하여 대역폭 한계 지연을 겪는 반면, 캐시 히트(Hit, 파란색 점) 그룹은 용량이 늘어나더라도 상대적으로 매우 평평한 수평 지연 띠를 유지해 캐싱 기술의 부하 방어 기여를 시각적으로 선명히 증명합니다.

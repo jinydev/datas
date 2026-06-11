@@ -5,6 +5,8 @@ permalink: /practice/100_personal_finance/
 ---
 
 # 100. 가계 금융 포트폴리오 자산 건전성 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 100: 가계 월 소득 대비 저축률 및 주거/외식비 지출 비율에 따른 가계 종합 금융 건전 지표(FHS) 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/personal_finance.csv')
+df = pd.read_csv('./personal_finance.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,32 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 7 columns):
+>  #   Column                Non-Null Count  Dtype  
+> ---  ------                --------------  -----  
+>  0   UserID                1000 non-null   int64  
+>  1   MonthlyIncome         1000 non-null   int64  
+>  2   SavingsRate           985 non-null    float64
+>  3   HousingExpenses       1000 non-null   float64
+>  4   DiningExpenses        1000 non-null   float64
+>  5   InvestmentAmount      1000 non-null   float64
+>  6   FinancialHealthScore  1000 non-null   int64  
+> dtypes: float64(4), int64(3)
+> memory usage: 54.8 KB
+> None
+>     UserID  MonthlyIncome  ...  InvestmentAmount  FinancialHealthScore
+> 0  1000001          11651  ...            689.27                    39
+> 1  1000002           6695  ...            725.35                    35
+> 2  1000003           8215  ...            245.72                    27
+> 3  1000004           5776  ...           1581.90                    50
+> 4  1000005           4398  ...            944.25                    44
+> 
+> [5 rows x 7 columns]
+> ```
+> ![실행 결과 시각화](img/exec_step_1.svg)
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 7 columns):
  #   Column                Non-Null Count  Dtype  
@@ -90,6 +118,24 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > UserID                   0
+> MonthlyIncome            0
+> SavingsRate             15
+> HousingExpenses          0
+> DiningExpenses           0
+> InvestmentAmount         0
+> FinancialHealthScore     0
+> dtype: int64
+> UserID                  0
+> MonthlyIncome           0
+> SavingsRate             0
+> HousingExpenses         0
+> DiningExpenses          0
+> InvestmentAmount        0
+> FinancialHealthScore    0
+> dtype: int64
+> ```
+
+
 MonthlyIncome            0
 SavingsRate             15
 HousingExpenses          0
@@ -127,8 +173,9 @@ plt.title('가구 종합 금융 자산 건전지수(FHS) 빈도 분포', fontsiz
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **안정적 가계 건전 등급 정규분포 관찰:** 자산 건전지수 분포를 보면 50~80점 중위 구간에 대다수 가구가 안정적으로 정렬해 솟아 있는 건강한 벨 셰이프 정규곡선을 이룹니다. 자산 파산 리스크를 나타내는 30점 미만 고위험 구간은 일부 소수로 좁혀져 있습니다.
@@ -150,8 +197,9 @@ plt.title('가구 저축률 대비 종합 자산 건전지수와 주거비 지�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **저축의 자산 보호 장벽 및 고정 주거비의 건전지수 갉아먹기 규명:** 저축률(X축)과 금융 건전지수(Y축)는 뚜렷한 우상향 선형 상관을 그립니다. 한편, 동일한 저축율 수준 조건 하에서도 주거 비용 지출(HousingExpenses)이 매우 높은 월세 과지출 가구(진한 갈색 계열)들이 매달 빠져나가는 고정비 지출 부담으로 인해 자산 건전지수 띠의 하단부를 형성하며, 재무 설계 시 고정비(월세/이자) 통제가 가구 건전 보호에 중추 요소임을 시각적으로 증명합니다.

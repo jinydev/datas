@@ -5,6 +5,8 @@ permalink: /practice/177_teacher_burnout_turnover/
 ---
 
 # 177. 교사 소진율 및 공교육 교실 이탈 진단 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 177: 교사 직무 스트레스와 행정 업무 부담 상관 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/teacher_burnout_turnover.csv')
+df = pd.read_csv('./teacher_burnout_turnover.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                 Non-Null Count  Dtype  
+> ---  ------                 --------------  -----  
+>  0   TeacherID              1000 non-null   int64  
+>  1   WeeklyOvertimeHours    1000 non-null   float64
+>  2   ClassSize              1000 non-null   float64
+>  3   AdminWorkSatisfaction  985 non-null    float64
+>  4   BurnoutIndex           1000 non-null   float64
+>  5   TurnoverRisk           1000 non-null   int64  
+> dtypes: float64(4), int64(2)
+> memory usage: 47.0 KB
+> None
+>    TeacherID  WeeklyOvertimeHours  ...  BurnoutIndex  TurnoverRisk
+> 0    1770001                 10.5  ...         142.8             0
+> 1    1770002                 23.1  ...         104.0             1
+> 2    1770003                  8.8  ...         139.5             1
+> 3    1770004                  3.1  ...          75.6             0
+> 4    1770005                  5.0  ...         137.7             0
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                 Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> TeacherID                      0
+> TeacherID                 0
+> WeeklyOvertimeHours       0
+> ClassSize                 0
+> AdminWorkSatisfaction    15
+> BurnoutIndex              0
+> TurnoverRisk              0
+> dtype: int64
+> TeacherID                0
+> WeeklyOvertimeHours      0
+> ClassSize                0
+> AdminWorkSatisfaction    0
+> BurnoutIndex             0
+> TurnoverRisk             0
+> dtype: int64
+> ```
+
+
 WeeklyOvertimeHours            0
 ClassSize                      0
 AdminWorkSatisfaction          15
@@ -125,8 +167,9 @@ plt.title('교사 소진율 및 공교육 교실 이탈 진단 빈도 분포', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** BurnoutIndex 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('WeeklyOvertimeHours와 BurnoutIndex 상관성 및 TurnoverRisk 대조
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, TurnoverRisk 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

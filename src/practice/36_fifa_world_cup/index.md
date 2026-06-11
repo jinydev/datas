@@ -6,6 +6,8 @@ permalink: /practice/36_fifa_world_cup/
 
 # 실전 데이터 분석 36: 역대 FIFA 월드컵 대회 지표 및 최다 우승국 역사적 트렌드 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/fifa_world_cup.csv')
+df = pd.read_csv('./fifa_world_cup.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './fifa_world_cup.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 20 entries, 0 to 19
 Data columns (total 7 columns):
@@ -97,6 +103,11 @@ print(df.sort_values(by='Goals_per_Match', ascending=False)[['Year', 'Goals_per_
 
 > **💻 [실행 결과]**
 > ```text
+> 역대 대회 개최 연도 리스트:
+> Error: name 'df' is not defined
+> ```
+
+
 역대 대회 개최 연도 리스트:
 [1930 1934 1938 1950 1954 1958 1962 1966 1970 1974 1978 1982 1986 1990
  1994 1998 2002 2006 2010 2014]
@@ -133,8 +144,11 @@ plt.ylabel('국가명')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **남미와 유럽 축구 강국의 지배력:** 차트 빈도를 보면 브라질, 이탈리아, 독일 등 전통적인 축구 최강국들이 우승 막대의 대부분을 잠식하고 있습니다. 100년에 달하는 월드컵 역사에서 우승 타이틀을 거머쥔 국가가 전 세계적으로 단 10개국 안팎에 불과하다는 쏠림 현상을 직관적으로 확인할 수 있습니다.
@@ -160,8 +174,11 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **관람 흥행 규모의 현대적 퀀텀 점프:** 1950년대 이전 월드컵은 관람 인원이 수십만 명 수준에 그쳤으나, 교통수단 발달과 대형 돔 스타디움 도입 및 전세계 TV 중계 흥행에 힘입어 1990년대 이후부터는 총 관람객 규모가 수백만 명 선으로 폭발적으로 증가했습니다. 즉, 월드컵이 단순한 대회를 넘어 거대 스포츠 산업화가 되었음을 그래프의 우상향 기울기가 증명하고 있습니다.

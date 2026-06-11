@@ -5,6 +5,8 @@ permalink: /practice/116_flash_sale_stockout/
 ---
 
 # 116. 쇼핑몰 핫딜/선착순 재고 품절 시간 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 116: 선착순 트래픽 폭주 및 안전 리테일 마진
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/flash_sale_stockout.csv')
+df = pd.read_csv('./flash_sale_stockout.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                Non-Null Count  Dtype  
+> ---  ------                --------------  -----  
+>  0   EventID               1000 non-null   int64  
+>  1   StockQty              1000 non-null   float64
+>  2   ActiveUsers           985 non-null    float64
+>  3   DiscountRate_Percent  1000 non-null   float64
+>  4   StockoutTime_Secs     1000 non-null   float64
+>  5   HighDemandRisk        1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    EventID  StockQty  ...  StockoutTime_Secs  HighDemandRisk
+> 0  1160001      62.7  ...               10.9           129.1
+> 1  1160002      69.2  ...                2.4            87.3
+> 2  1160003      99.3  ...                1.2            98.6
+> 3  1160004      85.3  ...               13.9            88.5
+> 4  1160005     101.9  ...                7.2           117.7
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> EventID                        0
+> EventID                  0
+> StockQty                 0
+> ActiveUsers             15
+> DiscountRate_Percent     0
+> StockoutTime_Secs        0
+> HighDemandRisk           0
+> dtype: int64
+> EventID                 0
+> StockQty                0
+> ActiveUsers             0
+> DiscountRate_Percent    0
+> StockoutTime_Secs       0
+> HighDemandRisk          0
+> dtype: int64
+> ```
+
+
 StockQty                       0
 ActiveUsers                    15
 DiscountRate_Percent           0
@@ -125,8 +167,9 @@ plt.title('쇼핑몰 핫딜/선착순 재고 품절 시간 빈도 분포', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** StockoutTime_Secs 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('ActiveUsers와 StockoutTime_Secs 상관성 및 HighDemandRisk 대조'
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, HighDemandRisk 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

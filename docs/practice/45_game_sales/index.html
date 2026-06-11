@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-45-글로벌-비디오-게임-플랫폼-및-장르별-패키지-누적-판매-실적-트렌드-분석">실전 데이터 분석 45: 글로벌 비디오 게임 플랫폼 및 장르별 패키지 누적 판매 실적 트렌드 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2132,7 +2136,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/video_game_sales.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./video_game_sales.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2140,9 +2144,34 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 8 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Name          1000 non-null   str    
+ 1   Platform      1000 non-null   str    
+ 2   Year          1000 non-null   int64  
+ 3   Genre         1000 non-null   str    
+ 4   NA_Sales      1000 non-null   float64
+ 5   EU_Sales      1000 non-null   float64
+ 6   JP_Sales      1000 non-null   float64
+ 7   Global_Sales  1000 non-null   float64
+dtypes: float64(4), int64(1), str(3)
+memory usage: 86.7 KB
+None
+           Name Platform  Year  ... EU_Sales  JP_Sales  Global_Sales
+0  Video Game 1      PS4  2006  ...     0.27      0.04          0.88
+1  Video Game 2      PS3  1998  ...     0.77      0.10          2.04
+2  Video Game 3       PC  1995  ...     0.28      0.04          0.84
+3  Video Game 4      PS4  2016  ...     0.17      0.02          0.61
+4  Video Game 5       PC  1998  ...     0.19      0.03          0.60
+
+[5 rows x 8 columns]
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 8 columns):
@@ -2198,15 +2227,32 @@ None
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 지역별 누적 판매 합계 (백만 장) —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 지역별 누적 판매 합계 (백만 장) ---
+NA_Sales         585.30
+EU_Sales         379.75
+JP_Sales         182.62
+Global_Sales    1275.11
+dtype: float64
+
+--- 장르별 일본 시장 평균 판매 실적 ---
+Genre
+Role-Playing    0.735838
+Misc            0.061026
+Shooter         0.057922
+Action          0.057841
+Platform        0.056424
+Sports          0.052195
+Name: JP_Sales, dtype: float64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 지역별 누적 판매 합계 (백만 장) —
 NA_Sales         585.30
 EU_Sales         379.75
 JP_Sales         182.62
 Global_Sales    1275.11
 dtype: float64</p>
-</blockquote>
 
 <p>— 장르별 일본 시장 평균 판매 실적 —
 Genre
@@ -2246,7 +2292,7 @@ Name: JP_Sales, dtype: float64</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2278,7 +2324,7 @@ Name: JP_Sales, dtype: float64</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

@@ -54,7 +54,7 @@ print(df.head())
 >  2   Spending_USD     274 non-null    float64
 >  3   Life_Expectancy  274 non-null    float64
 > dtypes: float64(2), int64(1), str(1)
-> memory usage: 8.7 KB
+> memory usage: 10.4 KB
 > None
 >    Year        Country  Spending_USD  Life_Expectancy
 > 0  1970        Germany       252.311             70.6
@@ -63,7 +63,6 @@ print(df.head())
 > 3  1970          Japan       150.437             72.0
 > 4  1970            USA       326.961             70.9
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -116,7 +115,6 @@ plt.show()
 > ![실행 결과 시각화](img/exec_step_2.svg)
 
 
-
 ### 💡 시각화 차트 읽는 법
 * 1970년대에는 모든 선진국들이 사이좋게 바닥(약 $500 미만)에 모여 있었습니다.
 * 하지만 1990년대를 기점으로 빨간색 선(**USA, 미국**)이 다른 나라들과의 궤도를 이탈하여 미친 듯한 기울기로 수직 상승(Exponential growth)하기 시작합니다. 
@@ -152,7 +150,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

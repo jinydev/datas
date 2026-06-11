@@ -6,6 +6,8 @@ permalink: /practice/73_energy_consumption/
 
 # 실전 데이터 분석 73: 건물 용도 및 면적별 HVAC 공조기 연한 대비 연간 총 전력 사용량 및 에너지 등급 시너지 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,41 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/energy_consumption.csv')
+df = pd.read_csv('./energy_consumption.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/energy_consumption.csv')
+df = pd.read_csv('./energy_consumption.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                 Non-Null Count  Dtype  
+> ---  ------                 --------------  -----  
+>  0   BuildingID             1000 non-null   int64  
+>  1   SquareFootage          1000 non-null   int64  
+>  2   HVAC_Age               1000 non-null   int64  
+>  3   BuildingType           1000 non-null   str    
+>  4   EnergyConsumption_kWh  986 non-null    float64
+>  5   EnergyRating           1000 non-null   str    
+> dtypes: float64(1), int64(3), str(2)
+> memory usage: 58.2 KB
+> None
+>    BuildingID  SquareFootage  ...  EnergyConsumption_kWh EnergyRating
+> 0      730001          22851  ...                 5086.0            C
+> 1      730002          19313  ...                 3718.3            C
+> 2      730003          18404  ...                 4613.6            C
+> 3      730004          21748  ...                 1922.3            B
+> 4      730005          17761  ...                 9464.1            C
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +122,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> BuildingID                0
+> SquareFootage             0
+> HVAC_Age                  0
+> BuildingType              0
+> EnergyConsumption_kWh    14
+> EnergyRating              0
+> dtype: int64
+> BuildingID               0
+> SquareFootage            0
+> HVAC_Age                 0
+> BuildingType             0
+> EnergyConsumption_kWh    0
+> EnergyRating             0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 BuildingID                0
 SquareFootage             0
@@ -132,8 +177,9 @@ plt.title('건물 유형별 평균 연간 에너지 소비량', fontsize=14, fon
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **용도 유형별 전력 소비 강도 비교:** 24시간 가동되는 산업 시설(Industrial)의 막대 높이가 가장 거대하게 솟아 있으며, 상업 빌딩(Commercial)이 그 뒤를 잇고 주거용(Residential)이 가장 조밀하게 관리되고 있습니다. 이는 용도별 탄소 규제 배분 시 주요한 정량 데이터가 됩니다.
@@ -155,8 +201,9 @@ plt.title('건물 면적 대비 연간 전력 소모량과 에너지 등급', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **건물 면적 비례 상승과 친환경 품질 등급 밴드 판독:** 건물의 연면적(X축)과 전력 사용량(Y축)이 정직하게 비례하여 상승합니다. 주목할 점은 면적이 넓어짐에도 녹색 점 계열(EnergyRating = A 등급) 매물들은 기울기가 매우 완만하게 억제되어 누워 있는 반면, 노후화된 C 등급(빨간 점)들은 면적 증가에 따라 기하급수적으로 솟구쳐 오르는 에너지 낭비 비효율 띠를 형성합니다.

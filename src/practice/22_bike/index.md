@@ -6,6 +6,8 @@ permalink: /practice/22_bike/
 
 # 실전 데이터 분석 22: 시계열 피처 엔지니어링과 회귀 시각화
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
 # 로컬 CSV 파일 불러오기 (상대 경로)
-df = pd.read_csv('../csv_data/bike_sharing.csv')
+df = pd.read_csv('./bike_sharing.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,27 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/bike_sharing.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 730 entries, 0 to 729
+> Data columns (total 6 columns):
+>  #   Column     Non-Null Count  Dtype  
+> ---  ------     --------------  -----  
+>  0   date       730 non-null    str    
+>  1   season     730 non-null    str    
+>  2   temp       730 non-null    float64
+>  3   humidity   730 non-null    int64  
+>  4   windspeed  730 non-null    float64
+>  5   count      730 non-null    int64  
+> dtypes: float64(2), int64(2), str(2)
+> memory usage: 45.4 KB
+> None
+>          date  season  temp  humidity  windspeed  count
+> 0  2021-01-01  Winter  15.5        52        8.4   4281
+> 1  2021-01-02  Winter  13.6        68       15.0   3009
+> 2  2021-01-03  Winter  18.2        71       16.9   3579
+> 3  2021-01-04  Winter  16.4        63        8.0   4109
+> 4  2021-01-05  Winter  12.2        55       13.0   3662
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -78,9 +98,13 @@ print(df[['date', 'day_of_week', 'is_weekend', 'count']].sample(5))
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> date  day_of_week is_weekend  count
+> 570 2022-07-25            0         평일   4063
+> 729 2022-12-31            5         주말   2451
+> 625 2022-09-18            6         주말    821
+> 311 2021-11-08            0         평일   2453
+> 598 2022-08-22            0         평일   4535
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -114,10 +138,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -150,10 +171,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

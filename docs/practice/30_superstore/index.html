@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-30-글로벌-슈퍼스토어-비즈니스-kpi-분석">실전 데이터 분석 30: 글로벌 슈퍼스토어 비즈니스 KPI 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2133,7 +2137,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_palette</span><span class="p">(</span><span class="sh">"</span><span class="s">colorblind</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/superstore.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./superstore.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2154,7 +2158,7 @@ Data columns (total 6 columns):
  4   Sales         1000 non-null   float64
  5   Profit        1000 non-null   float64
 dtypes: float64(2), str(4)
-memory usage: 47.0 KB
+memory usage: 96.4 KB
 None
                    Order Date         Category  ...    Sales  Profit
 0  2022-01-01 00:00:00.000000  Office Supplies  ...  1518.12  105.72

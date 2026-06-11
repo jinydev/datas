@@ -5,6 +5,8 @@ permalink: /practice/197_restaurant_food_waste/
 ---
 
 # 197. 뷔페 레스토랑 미끼 메뉴별 잔반 음식 쓰레기 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 197: 외식 프랜차이즈 미끼 고단가 메뉴 비중과 식재료 낭비
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/restaurant_food_waste.csv')
+df = pd.read_csv('./restaurant_food_waste.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column                  Non-Null Count  Dtype  
+> ---  ------                  --------------  -----  
+>  0   TableID                 1000 non-null   int64  
+>  1   MenuPrice               1000 non-null   float64
+>  2   MeatItemsRatio_Percent  1000 non-null   float64
+>  3   TotalCustomerCount      1000 non-null   float64
+>  4   FoodWasteWeight_g       985 non-null    float64
+>  5   WasteLevel              1000 non-null   str    
+> dtypes: float64(4), int64(1), str(1)
+> memory usage: 52.9 KB
+> None
+>    TableID  MenuPrice  ...  FoodWasteWeight_g  WasteLevel
+> 0  1970001    70918.0  ...               96.0      Type_B
+> 1  1970002    72647.0  ...               64.2      Type_C
+> 2  1970003    48717.0  ...              112.1      Type_A
+> 3  1970004    82198.0  ...               98.3      Type_A
+> 4  1970005    81262.0  ...              110.3      Type_A
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column                  Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> TableID                        0
+> TableID                    0
+> MenuPrice                  0
+> MeatItemsRatio_Percent     0
+> TotalCustomerCount         0
+> FoodWasteWeight_g         15
+> WasteLevel                 0
+> dtype: int64
+> TableID                   0
+> MenuPrice                 0
+> MeatItemsRatio_Percent    0
+> TotalCustomerCount        0
+> FoodWasteWeight_g         0
+> WasteLevel                0
+> dtype: int64
+> ```
+
+
 MenuPrice                      0
 MeatItemsRatio_Percent         0
 TotalCustomerCount             0
@@ -125,8 +167,9 @@ plt.title('뷔페 레스토랑 미끼 메뉴별 잔반 음식 쓰레기 빈도 �
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** FoodWasteWeight_g 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('MeatItemsRatio_Percent와 FoodWasteWeight_g 상관성 및 WasteLevel 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, WasteLevel 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

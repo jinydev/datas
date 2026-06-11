@@ -6,6 +6,8 @@ permalink: /practice/54_movie_ratings/
 
 # 실전 데이터 분석 54: 영화 메타데이터 기반 상영시간(Runtime) 분포 및 개봉 연도별 관객 평점의 시계열 추세 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/movie_ratings.csv')
+df = pd.read_csv('./movie_ratings.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column       Non-Null Count  Dtype  
+> ---  ------       --------------  -----  
+>  0   MovieID      1000 non-null   int64  
+>  1   Title        1000 non-null   str    
+>  2   ReleaseYear  1000 non-null   int64  
+>  3   Genre        1000 non-null   str    
+>  4   Runtime      1000 non-null   int64  
+>  5   AvgRating    982 non-null    float64
+> dtypes: float64(1), int64(3), str(2)
+> memory usage: 67.2 KB
+> None
+>    MovieID          Title  ReleaseYear    Genre  Runtime  AvgRating
+> 0    90001  Movie Title 1         1985  Romance      106       2.94
+> 1    90002  Movie Title 2         1982   Horror       92        NaN
+> 2    90003  Movie Title 3         1995  Romance       98       3.88
+> 3    90004  Movie Title 4         2003   Comedy      145       3.98
+> 4    90005  Movie Title 5         2013   Action      107       2.63
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +121,14 @@ print(df['AvgRating'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 평점 결측 개수 ---
+> 18
+> 
+> --- 정제 후 평점 결측 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 평점 결측 개수 ---
 18
 
@@ -126,8 +159,9 @@ plt.ylabel('영화 편수')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **안정적인 종형 가우스 분포 완성:** 영화 상영 시간 히스토그램을 보면 110분(약 1시간 50분) 부근을 최고 정점으로 하여 좌우 대칭을 이루는 예쁜 종형 가우스(Gaussian) 정규분포를 취하고 있습니다. 너무 긴 180분 이상이나 극히 짧은 70분 미만의 독립 영화들은 양단 꼬리에 소수로 배치됩니다.
@@ -156,8 +190,9 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **시대적 평점 피로감 혹은 취향 세분화 추이 관찰:** 1980년대~1990년대 클래식 명작 영화들 대역에서는 관객들의 전반적인 만족 지표가 높은 평균을 이루고 있는 반면, 2010년대로 갈수록 정보의 투명성과 채널의 다양화로 관객 평점의 평균이 소폭 하락하거나 엄격하게 요동치는 시계열 트랙이 관찰됩니다.

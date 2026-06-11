@@ -6,6 +6,8 @@ permalink: /practice/79_gaming_sessions/
 
 # 실전 데이터 분석 79: 모바일 게임 가입자 플레이 지속시간 및 게임 모드 대비 인앱 광고 시청 수와 결제액 상관 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/gaming_sessions.csv')
+df = pd.read_csv('./gaming_sessions.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/gaming_sessions.csv')
+df = pd.read_csv('./gaming_sessions.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   SessionID           1000 non-null   int64  
+>  1   PlayerLevel         1000 non-null   int64  
+>  2   SessionLength_Mins  1000 non-null   float64
+>  3   IAP_Amount          985 non-null    float64
+>  4   GameMode            1000 non-null   str    
+>  5   AdsWatched          1000 non-null   int64  
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 52.7 KB
+> None
+>    SessionID  PlayerLevel  SessionLength_Mins  IAP_Amount GameMode  AdsWatched
+> 0     790001           88                 8.7        0.00   Casual           0
+> 1     790002           62                58.1       16.51    Co-op           3
+> 2     790003           75                83.2       10.64   Casual           2
+> 3     790004           68                94.9       10.70   Casual           9
+> 4     790005           21                32.7        0.00   Casual           3
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> SessionID              0
+> PlayerLevel            0
+> SessionLength_Mins     0
+> IAP_Amount            15
+> GameMode               0
+> AdsWatched             0
+> dtype: int64
+> SessionID             0
+> PlayerLevel           0
+> SessionLength_Mins    0
+> IAP_Amount            0
+> GameMode              0
+> AdsWatched            0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 SessionID              0
 PlayerLevel            0
@@ -132,8 +175,9 @@ plt.title('게임 모드별 플레이 체류 시간 분포', fontsize=14, fontwe
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **게임 모드별 게이머 잔존시간 비교:** 승부욕을 자극하는 경쟁전(Ranked) 모드의 플레이 시간 상자 중앙값선과 수염 범위가 일반 캐주얼(Casual) 및 협동전(Co-op) 모드 대비 유의미하게 롱타임 대역에 걸쳐 형성되어 가파른 몰입도를 입증합니다.
@@ -155,8 +199,9 @@ plt.title('게임 플레이 지속 시간 대비 인앱 결제 금액 상관성'
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **장기 몰입 및 결제 시너지 상관성:** 플레이 시간(X축)이 40분을 초과하기 전에는 인앱 결제 지출(Y축)이 0원 부근에 납작하게 누워 있지만, **40분 선을 돌파하며 게임에 잔존하는 시간이 늘어날수록** 결제 지출 규모가 수직으로 솟아오르는 비선형 시너지 구조를 띱니다. 특히 경쟁전(Ranked, 빨간 점) 모드 유저들의 고액 지출 점 군집이 압도적입니다.

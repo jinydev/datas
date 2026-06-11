@@ -5,6 +5,8 @@ permalink: /practice/86_airline_loyalty/
 ---
 
 # 86. 항공사 우수 고객 등급 및 이탈 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 86: 항공사 마일리지 회원의 등급별 탑승 빈도 대비 포인트 소모율과 이탈 예측 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/airline_loyalty.csv')
+df = pd.read_csv('./airline_loyalty.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   CustomerID         1000 non-null   int64  
+>  1   YearlyFlights      1000 non-null   int64  
+>  2   PointsAccumulated  986 non-null    float64
+>  3   MembershipClass    1000 non-null   str    
+>  4   RedemptionRate     1000 non-null   float64
+>  5   Churned            1000 non-null   str    
+> dtypes: float64(2), int64(2), str(2)
+> memory usage: 54.6 KB
+> None
+>    CustomerID  YearlyFlights  ...  RedemptionRate Churned
+> 0      860001              8  ...           84.52     Yes
+> 1      860002             12  ...           13.49      No
+> 2      860003             49  ...           28.60      No
+> 3      860004             28  ...           17.38      No
+> 4      860005             15  ...            5.93      No
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column             Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > CustomerID            0
+> YearlyFlights         0
+> PointsAccumulated    14
+> MembershipClass       0
+> RedemptionRate        0
+> Churned               0
+> dtype: int64
+> CustomerID           0
+> YearlyFlights        0
+> PointsAccumulated    0
+> MembershipClass      0
+> RedemptionRate       0
+> Churned              0
+> dtype: int64
+> ```
+
+
 YearlyFlights         0
 PointsAccumulated    14
 MembershipClass       0
@@ -124,8 +166,9 @@ plt.title('회원 등급별 가입 이탈(Churn) 빈도 대조', fontsize=14, fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **우수 회원 등급별 해지 이탈율 격차:** 최상위 플래티넘(Platinum) 회원 그룹에서는 이탈(Churned=Yes) 건수가 전체 비중 대비 극히 소수로 잡히는 반면, 하위 실버(Silver) 등급 회원군은 Churn 빈도 막대 비중이 매우 두드러집니다. 이는 항공사의 VIP 케어 혜택 및 등급 락인이 잘 작동하고 있음을 입증합니다.
@@ -147,8 +190,9 @@ plt.title('연간 탑승 수 대비 누적 포인트와 Churn 이탈 분산', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **비행 횟수 결핍과 Churn 인과관계 증명:** 연간 탑승 횟수(X축)와 포인트(Y축)가 적은 하위 영역(좌하단 구역)에 Churn=Yes(이탈 그룹) 점들이 밀집해 있으며, 탑승 횟수 10회를 초과하여 포인트가 단단히 적립된 우상향 영역은 Churn=No(유지) 점들로 묶여 잔존합니다. 이탈 징후 회원을 사전 식별하여 탑승 촉진 쿠폰을 제공하는 타겟 캠페인이 효과적임을 시각적으로 증명합니다.

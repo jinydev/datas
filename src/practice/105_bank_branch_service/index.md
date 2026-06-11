@@ -5,6 +5,8 @@ permalink: /practice/105_bank_branch_service/
 ---
 
 # 105. 은행 지점 고객 대기 및 업무 시간 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 105: 대기 행렬 이론 기반 창구 배치
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/bank_branch_service.csv')
+df = pd.read_csv('./bank_branch_service.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   TicketID           1000 non-null   int64  
+>  1   WaitTime_Mins      985 non-null    float64
+>  2   ServiceTime_Mins   1000 non-null   float64
+>  3   StaffCount         1000 non-null   float64
+>  4   PeakHours          1000 non-null   float64
+>  5   SatisfactionScore  1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    TicketID  WaitTime_Mins  ...  PeakHours  SatisfactionScore
+> 0   1050001            1.3  ...       16.2                7.5
+> 1   1050002            6.1  ...       42.6                5.1
+> 2   1050003           29.4  ...       36.3                4.1
+> 3   1050004            1.7  ...       23.0                7.1
+> 4   1050005           11.5  ...       42.5                7.6
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column             Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> TicketID                       0
+> TicketID              0
+> WaitTime_Mins        15
+> ServiceTime_Mins      0
+> StaffCount            0
+> PeakHours             0
+> SatisfactionScore     0
+> dtype: int64
+> TicketID             0
+> WaitTime_Mins        0
+> ServiceTime_Mins     0
+> StaffCount           0
+> PeakHours            0
+> SatisfactionScore    0
+> dtype: int64
+> ```
+
+
 WaitTime_Mins                  15
 ServiceTime_Mins               0
 StaffCount                     0
@@ -125,8 +167,9 @@ plt.title('은행 지점 고객 대기 및 업무 시간 빈도 분포', fontsiz
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** WaitTime_Mins 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('WaitTime_Mins와 SatisfactionScore 상관성 및 PeakHours 대조', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, PeakHours 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

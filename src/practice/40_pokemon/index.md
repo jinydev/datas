@@ -6,6 +6,8 @@ permalink: /practice/40_pokemon/
 
 # 실전 데이터 분석 40: 포켓몬 속성별 밸런스 및 일반 vs 전설의 포켓몬 물리 스펙 상관관계 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/pokemon.csv')
+df = pd.read_csv('./pokemon.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './pokemon.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 7 columns):
@@ -95,6 +101,10 @@ print(df.groupby('Legendary')['Attack'].mean())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: name 'df' is not defined
+> ```
+
+
                 HP       Attack      Defense        Speed
 count  1000.000000  1000.000000  1000.000000  1000.000000
 mean     76.785000    78.785000    76.785000    76.785000
@@ -135,8 +145,11 @@ plt.ylabel('속성 (Type)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **자연계 속성 중심 분포:** 물(Water), 불(Fire), 풀(Grass) 등 게임 시작 시 선택하게 되는 삼색 기본 자연 속성의 포켓몬 개체 비중이 가장 높으며, 상대적으로 전설이나 전기(Electric), 초능력(Psychic) 속성의 비중은 고르게 균형을 잡고 형성되어 있습니다.
@@ -161,8 +174,11 @@ plt.ylabel('방어력 (Defense)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **전설 등급의 우상단 고스펙 경계면 형성:** 산점도를 관측하면 일반 포켓몬(파란 점)들은 공격력과 방어력 모두 40~90 범위 내에 동그랗게 모여 있는 반면, 전설의 포켓몬(빨간 세모)들은 그래프의 극단적인 우상단(공격 100 이상, 방어 100 이상) 바운더리에 외따로 군집을 이루고 있습니다. 두 집단 간의 능력치 밸런스가 완전히 구분되어 있음을 시각화 한 장으로 명확히 읽을 수 있습니다.

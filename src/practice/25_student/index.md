@@ -6,6 +6,8 @@ permalink: /practice/25_student/
 
 # 실전 데이터 분석 25: 학생 성적 예측과 다중 플롯 오버레이
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("Set2")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/student_performance.csv')
+df = pd.read_csv('./student_performance.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/student_performance.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   StudentID        1000 non-null   int64  
+>  1   StudyHours       1000 non-null   float64
+>  2   AttendanceRate   988 non-null    float64
+>  3   SleepHours       1000 non-null   float64
+>  4   ParentalSupport  1000 non-null   str    
+>  5   FinalGrade       1000 non-null   float64
+> dtypes: float64(4), int64(1), str(1)
+> memory usage: 51.8 KB
+> None
+>    StudentID  StudyHours  ...  ParentalSupport  FinalGrade
+> 0     620001         3.1  ...           Medium        62.7
+> 1     620002        18.1  ...             High        82.5
+> 2     620003        29.9  ...             High        94.6
+> 3     620004        15.6  ...             High        81.9
+> 4     620005        22.8  ...           Medium        86.2
+> 
+> [5 rows x 6 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -77,9 +99,8 @@ print(g3_corr.tail(3)) # 하위 3개
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> Error: 'G3'
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -110,9 +131,8 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> Error: Could not interpret value `G3` for `x`. An entry with this name does not appear in `data`.
 > ```
-
 
 
 ### 💡 시각화 차트 읽는 법
@@ -147,9 +167,8 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> Error: Could not interpret value `failures` for `x`. An entry with this name does not appear in `data`.
 > ```
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

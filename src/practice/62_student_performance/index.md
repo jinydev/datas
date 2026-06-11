@@ -6,6 +6,8 @@ permalink: /practice/62_student_performance/
 
 # 실전 데이터 분석 62: 주간 자기주도 공부 시간, 수면 시간 및 부모 지원 수준 대비 최종 성적 향상 상관성 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,20 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/student_performance.csv')
+df = pd.read_csv('./student_performance.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/student_performance.csv')
+df = pd.read_csv('./student_performance.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './student_performance.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +102,11 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> Error: name 'df' is not defined
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 StudentID           0
 StudyHours          0
@@ -133,8 +144,11 @@ plt.title('주간 학습 시간(Study Hours) 분포', fontsize=14, fontweight='b
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **고른 학업 투입 시간의 정규분포 관찰:** 주간 공부 시간 분포 히스토그램을 보면 주 15시간 내외를 정점으로 양옆으로 완만히 떨어지는 정규분포 양상을 띱니다. 아주 열심히 하는 30시간 이상의 고학습 집단과 5시간 미만의 저학습 집단이 양단에 대칭 분포하고 있습니다.
@@ -156,8 +170,11 @@ plt.title('학습 시간 대비 성적 분포와 부모 지원 상관성', fonts
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **부모 관심도가 주는 성적 가속 시너지 규명:** 공부 시간(X축)과 최종 성적(Y축)이 뚜렷한 우상향 선형 상관성을 나타냅니다. 특히 흥미로운 점은 동일한 공부 시간을 투입하더라도 부모 지원 등급이 'High'(빨간 점 계열)인 학생 그룹이 'Low'(파란 점 계열) 그룹보다 성적 대역의 상단부를 선점하고 있어, 가정의 정서적 지원 환경이 중요한 변수임을 공간적으로 확인시켜 줍니다.

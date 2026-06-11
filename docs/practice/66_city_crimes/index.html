@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-66-도심-행정지구별-인구-밀도-및-치안-순찰인력-수-대비-강력일반-범죄지수-상관성-분석">실전 데이터 분석 66: 도심 행정지구별 인구 밀도 및 치안 순찰인력 수 대비 강력/일반 범죄지수 상관성 분석</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" /></p>
@@ -2133,18 +2137,41 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="sh">"</span><span class="s">whitegrid</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/city_crimes.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./city_crimes.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/city_crimes.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./city_crimes.csv</span><span class="sh">'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text</p>
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 6 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   RecordID           1000 non-null   int64  
+ 1   Neighborhood       1000 non-null   str    
+ 2   CrimeType          1000 non-null   str    
+ 3   PopulationDensity  1000 non-null   float64
+ 4   OfficerCount       987 non-null    float64
+ 5   CrimeRateIndex     1000 non-null   float64
+dtypes: float64(3), int64(1), str(2)
+memory usage: 63.9 KB
+None
+   RecordID Neighborhood  ... OfficerCount  CrimeRateIndex
+0    660001   District E  ...         35.0            61.8
+1    660002   District H  ...         20.0            80.0
+2    660003   District D  ...         18.0            85.8
+3    660004   District K  ...         16.0            78.5
+4    660005   District K  ...         29.0            28.4
+
+[5 rows x 6 columns]
+</code></pre></div>  </div>
 </blockquote>
+
 <p>&lt;class ‘pandas.DataFrame’&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -2198,16 +2225,32 @@ RecordID Neighborhood  CrimeType  PopulationDensity  OfficerCount  CrimeRateInde
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong>
-```text
-— 정제 전 결측치 확인 —
+  <p><strong>💻 [실행 결과]</strong></p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 정제 전 결측치 확인 ---
+RecordID              0
+Neighborhood          0
+CrimeType             0
+PopulationDensity     0
+OfficerCount         13
+CrimeRateIndex        0
+dtype: int64
+RecordID             0
+Neighborhood         0
+CrimeType            0
+PopulationDensity    0
+OfficerCount         0
+CrimeRateIndex       0
+dtype: int64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>— 정제 전 결측치 확인 —
 RecordID              0
 Neighborhood          0
 CrimeType             0
 PopulationDensity     0
 OfficerCount         13
 CrimeRateIndex        0</p>
-</blockquote>
 
 <p>— 정제 후 결측치 확인 —
 RecordID             0
@@ -2242,7 +2285,7 @@ CrimeRateIndex       0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
@@ -2268,7 +2311,7 @@ CrimeRateIndex       0</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과 시각화]</strong>
+  <p><strong>💻 [실행 결과]</strong>
 <img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 

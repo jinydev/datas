@@ -5,6 +5,8 @@ permalink: /practice/128_diet_caloric_balance/
 ---
 
 # 128. 칼로리 식단 기록 및 체지방 변동 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 128: 에너지 보존 법칙에 따른 다이어트 대사 통계
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/diet_caloric_balance.csv')
+df = pd.read_csv('./diet_caloric_balance.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   UserID              1000 non-null   int64  
+>  1   CalorieDeficit      1000 non-null   float64
+>  2   CarbsRatio_Percent  1000 non-null   float64
+>  3   ProteinIntake_g     985 non-null    float64
+>  4   WeightChange_Kg     1000 non-null   float64
+>  5   MetabolicRate       1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>     UserID  CalorieDeficit  ...  WeightChange_Kg  MetabolicRate
+> 0  1280001            90.0  ...             64.9           44.4
+> 1  1280002           115.5  ...             94.3           56.3
+> 2  1280003           117.5  ...             81.6           31.6
+> 3  1280004            68.7  ...             99.0           37.5
+> 4  1280005           111.5  ...            120.9           36.3
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column              Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> UserID                         0
+> UserID                 0
+> CalorieDeficit         0
+> CarbsRatio_Percent     0
+> ProteinIntake_g       15
+> WeightChange_Kg        0
+> MetabolicRate          0
+> dtype: int64
+> UserID                0
+> CalorieDeficit        0
+> CarbsRatio_Percent    0
+> ProteinIntake_g       0
+> WeightChange_Kg       0
+> MetabolicRate         0
+> dtype: int64
+> ```
+
+
 CalorieDeficit                 0
 CarbsRatio_Percent             0
 ProteinIntake_g                15
@@ -125,8 +167,9 @@ plt.title('칼로리 식단 기록 및 체지방 변동 빈도 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** WeightChange_Kg 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('CalorieDeficit와 WeightChange_Kg 상관성 및 ProteinIntake_g 대�
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, ProteinIntake_g 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

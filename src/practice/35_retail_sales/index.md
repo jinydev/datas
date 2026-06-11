@@ -6,6 +6,8 @@ permalink: /practice/35_retail_sales/
 
 # 실전 데이터 분석 35: 대형 소매점 거래 로그 기반 카테고리별 매출 및 월간 시계열 추이 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/retail_sales.csv')
+df = pd.read_csv('./retail_sales.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,10 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: [Errno 2] No such file or directory: './retail_sales.csv'
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 7 columns):
@@ -99,6 +105,10 @@ print(df[['Date', 'Month', 'Total_Revenue']].head())
 
 > **💻 [실행 결과]**
 > ```text
+> Error: name 'df' is not defined
+> ```
+
+
         Date  Month  Total_Revenue
 0 2023-01-01      1             13
 1 2023-01-01      1            312
@@ -130,8 +140,11 @@ plt.ylabel('총 매출액 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_3.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **단가 효과로 인한 가전(Electronics)의 매출 지배:** 판매량 자체는 의류(Clothing)가 많았지만, 개별 단가(Price)가 월등히 비싼 가전제품(Electronics) 부서가 누적 총매출액 관점에서는 막대그래프의 최고 높이를 기록하며 매출 효자 역할을 수행 중입니다.
@@ -161,8 +174,11 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
-> ![실행 결과 시각화](img/exec_step_4.svg)
+> **💻 [실행 결과]**
+> ```text
+> Error: name 'df' is not defined
+> ```
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **계절성 트렌드 및 매출 등락 진단:** 2023년의 월별 매출 실적 선 그래프를 보면 특정 계절이나 분기 말(예: 연말 쇼핑시즌 혹은 바캉스 시즌)에 꺾은선이 급등하는 **계절적 요인(Seasonality)**을 목격할 수 있습니다. 마케팅 기획팀은 이 선형 패턴을 보고 내년도 프로모션 예산 분배를 최적화할 수 있습니다.

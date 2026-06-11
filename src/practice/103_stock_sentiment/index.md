@@ -5,6 +5,8 @@ permalink: /practice/103_stock_sentiment/
 ---
 
 # 103. 주식 시장 소셜 미디어 감성 지수 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 103: 주식 센티먼트 및 소셜 여론
 
 ![도입 만화](img/intro_comic.png)
@@ -38,7 +40,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/stock_sentiment.csv')
+df = pd.read_csv('./stock_sentiment.csv')
 print(df.info())
 print(df.head())
 ```
@@ -46,6 +48,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column               Non-Null Count  Dtype  
+> ---  ------               --------------  -----  
+>  0   ArticleID            1000 non-null   int64  
+>  1   PolarityScore        1000 non-null   float64
+>  2   Volume_K             985 non-null    float64
+>  3   PriceGap_Percent     1000 non-null   float64
+>  4   Institutional_Ratio  1000 non-null   float64
+>  5   MarketImpactScore    1000 non-null   float64
+> dtypes: float64(5), int64(1)
+> memory usage: 47.0 KB
+> None
+>    ArticleID  PolarityScore  ...  Institutional_Ratio  MarketImpactScore
+> 0    1030001            5.3  ...                 68.7                7.5
+> 1    1030002            6.8  ...                 77.1                6.6
+> 2    1030003            7.8  ...                 23.3                8.4
+> 3    1030004            6.6  ...                 42.8                7.5
+> 4    1030005            5.6  ...                 38.8                7.5
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column               Non-Null Count  Dtype  
@@ -89,7 +115,23 @@ print(df.isnull().sum())
 > **💻 [실행 결과]**
 > ```text
 > --- 정제 전 결측치 확인 ---
-> ArticleID                      0
+> ArticleID               0
+> PolarityScore           0
+> Volume_K               15
+> PriceGap_Percent        0
+> Institutional_Ratio     0
+> MarketImpactScore       0
+> dtype: int64
+> ArticleID              0
+> PolarityScore          0
+> Volume_K               0
+> PriceGap_Percent       0
+> Institutional_Ratio    0
+> MarketImpactScore      0
+> dtype: int64
+> ```
+
+
 PolarityScore                  0
 Volume_K                       15
 PriceGap_Percent               0
@@ -125,8 +167,9 @@ plt.title('주식 시장 소셜 미디어 감성 지수 빈도 분포', fontsize
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **밀도 집중 대역 확인:** MarketImpactScore 변수의 종형 곡선 또는 비대칭 스케일을 관찰하여, 다수가 모여 있는 주류 대역과 이상 극단치 구간을 감별합니다.
@@ -148,8 +191,9 @@ plt.title('PolarityScore와 MarketImpactScore 상관성 및 Institutional_Ratio 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **분산 경향과 위험 타겟 집중 진단:** X축과 Y축 간의 선형 양/음의 관계선 흐름 속에서, Institutional_Ratio 색상 점들이 특정한 영역에 쏠려 있는지 판독하여 다중 요인의 연계 시너지를 증명합니다.

@@ -6,6 +6,8 @@ permalink: /practice/65_course_reviews/
 
 # 실전 데이터 분석 65: 수강 강의 카테고리별 평점 선호도 및 추천 유무별 피드백 리뷰 텍스트 글자수 분량 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,39 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/course_reviews.csv')
+df = pd.read_csv('./course_reviews.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/course_reviews.csv')
+df = pd.read_csv('./course_reviews.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column            Non-Null Count  Dtype  
+> ---  ------            --------------  -----  
+>  0   ReviewID          1000 non-null   int64  
+>  1   CourseCategory    1000 non-null   str    
+>  2   Rating            1000 non-null   int64  
+>  3   ReviewText_Words  985 non-null    float64
+>  4   HelpfulVotes      1000 non-null   int64  
+>  5   Recommend         1000 non-null   str    
+> dtypes: float64(1), int64(3), str(2)
+> memory usage: 58.8 KB
+> None
+>    ReviewID CourseCategory  Rating  ReviewText_Words  HelpfulVotes Recommend
+> 0    650001    Development       4              70.0             5       Yes
+> 1    650002    Development       5             126.0             5       Yes
+> 2    650003       Business       4             123.0            45       Yes
+> 3    650004    Development       5              42.0             1       Yes
+> 4    650005       Business       4              87.0             7       Yes
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +120,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> ReviewID             0
+> CourseCategory       0
+> Rating               0
+> ReviewText_Words    15
+> HelpfulVotes         0
+> Recommend            0
+> dtype: int64
+> ReviewID            0
+> CourseCategory      0
+> Rating              0
+> ReviewText_Words    0
+> HelpfulVotes        0
+> Recommend           0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 ReviewID             0
 CourseCategory       0
@@ -132,8 +175,9 @@ plt.title('온라인 강의 평점(Rating) 선호 분포', fontsize=14, fontweig
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **우측으로 고밀도 편향된 높은 강의 만족도:** 평점 카운트 분포를 보면 4점과 5점 영역에 대다수 리뷰가 중첩되어 솟아 있는 전형적인 양의 왜도 분포를 보입니다. 이는 플랫폼 내 강좌들의 교육 수준이 우수하게 락인되어 수강생 전반의 지지를 받고 있음을 말해줍니다.
@@ -155,8 +199,9 @@ plt.title('추천 여부별 리뷰 글자수 분량 분포 비교', fontsize=14,
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **비추천(No) 그룹에서 터지는 장문의 구체적 피드백 현상:** 강좌를 추천하지 않은 고객군(No)의 텍스트 단어수 상자 높이와 상단 수염 분포 폭이 추천 완료 고객군(Yes) 대비 확연하게 위쪽으로 길게 뻗어 있습니다. 즉, 상품에 실망하고 분노한 구매자가 문제점을 꼼꼼히 기록하여 불만을 격렬하게 어필하려는 감성적 패턴이 텍스트 통계 상자로 규명된 결과입니다.

@@ -6,6 +6,8 @@ permalink: /practice/24_cancer/
 
 # 실전 데이터 분석 24: 유방암 종양 진단 (Violinplot과 Pairplot)
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/breast_cancer.csv')
+df = pd.read_csv('./breast_cancer.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/breast_cancer.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 569 entries, 0 to 568
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   radius_mean      569 non-null    float64
+>  1   texture_mean     569 non-null    float64
+>  2   perimeter_mean   569 non-null    float64
+>  3   area_mean        569 non-null    float64
+>  4   smoothness_mean  569 non-null    float64
+>  5   diagnosis        569 non-null    str    
+> dtypes: float64(5), str(1)
+> memory usage: 27.4 KB
+> None
+>    radius_mean  texture_mean  ...  smoothness_mean  diagnosis
+> 0    10.829562     18.792244  ...         0.094350          B
+> 1    15.486319     27.559409  ...         0.088709          M
+> 2    21.025487     19.007999  ...         0.095786          B
+> 3     9.234361     19.600472  ...         0.066164          B
+> 4    16.655371     18.496411  ...         0.101375          M
+> 
+> [5 rows x 6 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -78,10 +100,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_2.svg)
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -111,9 +130,15 @@ print(df_scaled[['diagnosis'] + features].head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> diagnosis  radius_mean  ...  area_mean  smoothness_mean
+> 0         B    -0.901020  ...  -0.409960         0.393175
+> 1         M     0.417019  ...   0.924314        -0.170549
+> 2         B     1.984815  ...  -1.539129         0.536700
+> 3         B    -1.352523  ...  -0.810154        -2.423671
+> 4         M     0.747906  ...   0.352525         1.095222
+> 
+> [5 rows x 6 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)
@@ -153,10 +178,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df_scaled' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 시각화 차트 읽는 법

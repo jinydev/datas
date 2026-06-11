@@ -5,6 +5,8 @@ permalink: /practice/83_patient_waiting/
 ---
 
 # 83. 종합병원 진료 부서별 환자 대기 시간 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 83: 진료 부서 및 당직 의사 근무 조건별 내원 환자 평균 대기 시간 및 서비스 만족도 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/patient_waiting.csv')
+df = pd.read_csv('./patient_waiting.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,30 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column              Non-Null Count  Dtype  
+> ---  ------              --------------  -----  
+>  0   PatientID           1000 non-null   int64  
+>  1   Department          1000 non-null   str    
+>  2   DoctorAvailable     987 non-null    float64
+>  3   AppointmentHour     1000 non-null   int64  
+>  4   WaitTime_Mins       1000 non-null   float64
+>  5   SatisfactionRating  1000 non-null   float64
+> dtypes: float64(3), int64(2), str(1)
+> memory usage: 57.2 KB
+> None
+>    PatientID   Department  ...  WaitTime_Mins  SatisfactionRating
+> 0     830001          ENT  ...            9.4                 5.0
+> 1     830002          ENT  ...           15.3                 4.1
+> 2     830003  Dermatology  ...           23.9                 4.5
+> 3     830004   Pediatrics  ...           32.8                 3.0
+> 4     830005          ENT  ...            5.0                 4.1
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
  #   Column              Non-Null Count  Dtype  
@@ -89,6 +115,22 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > PatientID              0
+> Department             0
+> DoctorAvailable       13
+> AppointmentHour        0
+> WaitTime_Mins          0
+> SatisfactionRating     0
+> dtype: int64
+> PatientID             0
+> Department            0
+> DoctorAvailable       0
+> AppointmentHour       0
+> WaitTime_Mins         0
+> SatisfactionRating    0
+> dtype: int64
+> ```
+
+
 Department             0
 DoctorAvailable       13
 AppointmentHour        0
@@ -124,8 +166,9 @@ plt.title('진료 부서별 내원 환자 평균 대기 시간 (분)', fontsize=
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **진료 부서별 정체 및 병목 격차:** 특정 부서(예: 소아과, Pediatrics)의 평균 대기 시간 막대가 타 부서 대비 현저하게 높게 관찰됩니다. 이는 특정 요일이나 대기 스파이크에 대한 내과/소아과 인력 리소스 재조정이 시급함을 보여줍니다.
@@ -147,8 +190,9 @@ plt.title('대기 시간 대비 환자 만족도와 부서별 추이', fontsize=
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **40분 한계 지점 돌파 시 만족도 급락 입증:** 대기 시간(X축)과 만족도(Y축)의 상관 관계는 선형보다 비선형 임계 형태를 보입니다. 대기 시간이 40분을 돌파하는 시점부터 4~5점 평점 분포가 사라지고 1~2점 대역으로 급락하는 패턴이 관찰되어, 40분 이내 진료 개시라는 골든타임 목표 관리가 환자 평판 관리에 필수적임을 증명합니다.

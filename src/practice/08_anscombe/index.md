@@ -51,11 +51,10 @@ print("데이터셋 종류:", df['dataset'].unique())
 > 2       I  13.0  7.58
 > 3       I   9.0  8.81
 > 4       I  11.0  8.33
-> 데이터셋 종류: <StringArray>
+> 데이터셋 종류: <ArrowStringArray>
 > ['I', 'II', 'III', 'IV']
 > Length: 4, dtype: str
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -100,7 +99,6 @@ print(f"데이터셋 II의 상관계수: {corr_II:.3f}")
 > 데이터셋 I의 상관계수: 0.816
 > 데이터셋 II의 상관계수: 0.816
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -148,7 +146,6 @@ plt.show()
 
 > **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
-
 
 
 ### 💡 시각화 차트 읽는 법

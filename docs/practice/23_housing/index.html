@@ -2103,6 +2103,10 @@
         <div class="bd-content ps-lg-4">
             <h1 id="실전-데이터-분석-23-인위적-이상치ceiling-cap-제거와-4차원-지리-데이터">실전 데이터 분석 23: 인위적 이상치(Ceiling Cap) 제거와 4차원 지리 데이터</h1>
 
+<blockquote>
+  <p><strong>📥 <a href="practice.ipynb">실습 주피터 노트북(.ipynb) 다운로드</a></strong></p>
+</blockquote>
+
 <h2 id="-강의-개요-30분-완성">📌 강의 개요 (30분 완성)</h2>
 
 <p><img src="img/intro_comic.png" alt="코믹 일러스트" />
@@ -2133,7 +2137,7 @@
 <span class="n">sns</span><span class="p">.</span><span class="nf">set_palette</span><span class="p">(</span><span class="sh">"</span><span class="s">Set2</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># 로컬 CSV 파일 불러오기
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">../csv_data/california_housing.csv</span><span class="sh">'</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">./california_housing.csv</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># 데이터 구조 및 첫 5행 확인
 </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
@@ -2142,7 +2146,32 @@
 
 <blockquote>
   <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: [Errno 2] No such file or directory: '../csv_data/california_housing.csv'
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 10 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   longitude           1000 non-null   float64
+ 1   latitude            1000 non-null   float64
+ 2   housing_median_age  1000 non-null   int64  
+ 3   total_rooms         1000 non-null   int64  
+ 4   total_bedrooms      1000 non-null   int64  
+ 5   population          1000 non-null   int64  
+ 6   households          1000 non-null   int64  
+ 7   median_income       1000 non-null   float64
+ 8   ocean_proximity     1000 non-null   str    
+ 9   median_house_value  1000 non-null   int64  
+dtypes: float64(3), int64(6), str(1)
+memory usage: 86.1 KB
+None
+    longitude   latitude  ...  ocean_proximity  median_house_value
+0 -120.385203  36.370751  ...           INLAND              365112
+1 -115.850496  36.953799  ...           ISLAND              227955
+2 -124.297591  36.396496  ...        &lt;1H OCEAN              227043
+3 -122.614854  40.416361  ...           INLAND              109635
+4 -123.995765  34.662004  ...        &lt;1H OCEAN              104730
+
+[5 rows x 10 columns]
 </code></pre></div>  </div>
 </blockquote>
 
@@ -2177,9 +2206,8 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_2.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-분석가의-통찰-analysts-insight">💡 분석가의 통찰 (Analyst’s Insight)</h3>
@@ -2234,9 +2262,8 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_3.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-시각화-차트-읽는-법">💡 시각화 차트 읽는 법</h3>
@@ -2275,9 +2302,8 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>💻 [실행 결과]</strong></p>
-  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: name 'df_filtered' is not defined
-</code></pre></div>  </div>
+  <p><strong>💻 [실행 결과]</strong>
+<img src="img/exec_step_4.svg" alt="실행 결과 시각화" /></p>
 </blockquote>
 
 <h3 id="-코드-딥다이브--인사이트-매우-중요">💡 코드 딥다이브 &amp; 인사이트 (매우 중요!)</h3>

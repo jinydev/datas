@@ -5,6 +5,8 @@ permalink: /practice/99_fitness_club_churn/
 ---
 
 # 99. 피트니스 클럽 회원 연장 및 Churn 이탈 분석 실습
+
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
 ## 실전 데이터 분석 99: 피트니스 헬스장의 월 방문 빈도 및 단체 수업 참여 여부 대비 회원권 연장 재등록 예측 분석
 
 ![도입 만화](img/intro_comic.png)
@@ -37,7 +39,7 @@ import koreanize_matplotlib
 sns.set_theme(style="whitegrid")
 
 # 데이터 로드
-df = pd.read_csv('../csv_data/fitness_club_churn.csv')
+df = pd.read_csv('./fitness_club_churn.csv')
 print(df.info())
 print(df.head())
 ```
@@ -45,6 +47,29 @@ print(df.head())
 > **💻 [실행 결과]**
 > ```text
 > <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 5 columns):
+>  #   Column                     Non-Null Count  Dtype  
+> ---  ------                     --------------  -----  
+>  0   MemberID                   1000 non-null   int64  
+>  1   MonthlyVisits              985 non-null    float64
+>  2   MembershipDuration_Months  1000 non-null   int64  
+>  3   ClassParticipation         1000 non-null   int64  
+>  4   Renewed                    1000 non-null   str    
+> dtypes: float64(1), int64(3), str(1)
+> memory usage: 41.9 KB
+> None
+>    MemberID  MonthlyVisits  ...  ClassParticipation  Renewed
+> 0    990001           16.0  ...                   0       No
+> 1    990002            6.0  ...                   0       No
+> 2    990003           19.0  ...                   0      Yes
+> 3    990004           22.0  ...                   1      Yes
+> 4    990005           20.0  ...                   0      Yes
+> 
+> [5 rows x 5 columns]
+> ```
+
+
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 5 columns):
  #   Column                     Non-Null Count  Dtype  
@@ -87,6 +112,20 @@ print(df.isnull().sum())
 > ```text
 > --- 정제 전 결측치 확인 ---
 > MemberID                      0
+> MonthlyVisits                15
+> MembershipDuration_Months     0
+> ClassParticipation            0
+> Renewed                       0
+> dtype: int64
+> MemberID                     0
+> MonthlyVisits                0
+> MembershipDuration_Months    0
+> ClassParticipation           0
+> Renewed                      0
+> dtype: int64
+> ```
+
+
 MonthlyVisits                15
 MembershipDuration_Months     0
 ClassParticipation            0
@@ -120,8 +159,9 @@ plt.title('GX 단체 수업 참가 여부별 회원권 연장(Renewed) 빈도', 
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **단체 수업 참여가 보장하는 압도적 우수 고객 락인:** 요가/스피닝 단체 운동(GX)에 적극 참여한 그룹(1)의 만기 시 재등록(Renewed=Yes) 비율 막대가 미참가 그룹(0) 대비 확연하게 우위를 점합니다. 단체 운동을 통해 회원들 간의 커뮤니티가 묶이거나 강사 강제력이 부여되는 혜택이 이탈 억제에 중추적인 역할을 함을 입증합니다.
@@ -143,8 +183,9 @@ plt.title('회원 유지 기간 대비 월 방문 횟수와 재등록 분포', f
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **이탈 경고선 3회 방문 임계 경계선 규명:** 회원 유지 연차(X축)와 관계없이, 월 방문 횟수(Y축)가 3회 미만으로 떨어진 가로수 띠 구역은 거의 전부 Churn=No(해지 이탈) 빨간색 점들로 묶여 가시화됩니다. 아무리 2년 이상 장기 다닌 충성 회원일지라도 최근 월 방문이 3회 밑으로 떨어지면 해지 직전의 이탈 경보 상태로 수렴하므로, 매장 관리자는 즉시 출석 촉진 알림을 보내 락인해야 함을 통계적으로 입증합니다.

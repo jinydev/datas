@@ -6,6 +6,8 @@ permalink: /practice/68_rental_prices/
 
 # 실전 데이터 분석 68: 부동산 주거 면적 및 방 개수별 도심 거리 대비 월세 임대 가격 감가 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,16 +37,41 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/rental_prices.csv')
+df = pd.read_csv('./rental_prices.csv')
 
 # 데이터 구조 및 첫 5행 확인
-df = pd.read_csv('../csv_data/rental_prices.csv')
+df = pd.read_csv('./rental_prices.csv')
 print(df.info())
 print(df.head())
 ```
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype  
+> ---  ------           --------------  -----  
+>  0   PropertyID       1000 non-null   int64  
+>  1   Bedrooms         1000 non-null   int64  
+>  2   SquareFootage    1000 non-null   int64  
+>  3   CityDistance_KM  1000 non-null   float64
+>  4   PetFriendly      1000 non-null   str    
+>  5   RentalPrice      985 non-null    float64
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 49.3 KB
+> None
+>    PropertyID  Bedrooms  ...  PetFriendly  RentalPrice
+> 0      680001         1  ...          Yes       633.53
+> 1      680002         1  ...           No       500.00
+> 2      680003         2  ...           No      1488.13
+> 3      680004         1  ...           No       500.00
+> 4      680005         2  ...          Yes       903.49
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -95,6 +122,24 @@ print(df.isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 결측치 확인 ---
+> PropertyID          0
+> Bedrooms            0
+> SquareFootage       0
+> CityDistance_KM     0
+> PetFriendly         0
+> RentalPrice        15
+> dtype: int64
+> PropertyID         0
+> Bedrooms           0
+> SquareFootage      0
+> CityDistance_KM    0
+> PetFriendly        0
+> RentalPrice        0
+> dtype: int64
+> ```
+
+
 --- 정제 전 결측치 확인 ---
 PropertyID          0
 Bedrooms            0
@@ -132,8 +177,9 @@ plt.title('방 개수(Bedrooms)별 임대료 가격 분포', fontsize=14, fontwe
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **방 개수에 따른 월세 상자의 계단식 상승 지배력:** 원룸(1)에서 쓰리룸(3) 이상으로 방 개수가 확장됨에 따라 월세 상자의 중앙값과 분포 밴드가 선형적으로 높이 솟아오릅니다. 이는 룸 카테고리가 시세 형성의 기본 프레임을 결정하는 요인임을 입증합니다.
@@ -155,8 +201,9 @@ plt.title('임대 평수 면적 대비 월세 및 반려동물 프리미엄', fo
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **주거 면적 비례 상승과 반려동물 프리미엄 분산:** 면적(X축)과 월세(Y축)가 매우 조밀한 우상향 상관 밴드를 이룹니다. 특히 동일한 평수 수준에서도 반려동물 허용(Yes, 빨간 점) 옵션이 부여된 매물들의 월세 시세가 비허용(No, 파란 점) 매물보다 상단 영역을 선점하여 반려동물 라이프 선호 프리미엄이 월세에 녹아들어 있음을 입증합니다.

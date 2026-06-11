@@ -6,6 +6,8 @@ permalink: /practice/29_ecommerce/
 
 # 실전 데이터 분석 29: 이커머스 매출 분석과 피벗 히트맵
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -35,7 +37,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_palette("colorblind")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/ecommerce.csv')
+df = pd.read_csv('./ecommerce.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -44,9 +46,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: [Errno 2] No such file or directory: '../csv_data/ecommerce.csv'
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column       Non-Null Count  Dtype  
+> ---  ------       --------------  -----  
+>  0   CustomerID   1000 non-null   int64  
+>  1   InvoiceDate  1000 non-null   str    
+>  2   Description  1000 non-null   str    
+>  3   Quantity     1000 non-null   int64  
+>  4   UnitPrice    1000 non-null   float64
+>  5   Country      1000 non-null   str    
+> dtypes: float64(1), int64(2), str(3)
+> memory usage: 113.1 KB
+> None
+>    CustomerID                 InvoiceDate  ... UnitPrice         Country
+> 0       10061  2023-01-01 00:00:00.000000  ...      5.76  United Kingdom
+> 1       10959  2023-01-01 08:44:41.081081  ...      0.80            EIRE
+> 2       10900  2023-01-01 17:29:22.162162  ...     11.42  United Kingdom
+> 3       10565  2023-01-02 02:14:03.243243  ...     12.04         Germany
+> 4       10816  2023-01-02 10:58:44.324324  ...      6.47          France
+> 
+> [5 rows x 6 columns]
 > ```
-
 
 
 ### 💡 코드 딥다이브 (Code Deep Dive)
@@ -82,9 +104,13 @@ print(df[['Quantity', 'UnitPrice', 'TotalPrice', 'Month']].head())
 
 > **💻 [실행 결과]**
 > ```text
-> Error: name 'df' is not defined
+> Quantity  UnitPrice  TotalPrice  Month
+> 0        16       5.76       92.16      1
+> 1        29       0.80       23.20      1
+> 2        37      11.42      422.54      1
+> 3        44      12.04      529.76      1
+> 4         4       6.47       25.88      1
 > ```
-
 
 
 ### 💡 분석가의 통찰 (Analyst's Insight)
@@ -116,10 +142,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_3.svg)
 
 
 ### 💡 시각화 차트 읽는 법
@@ -155,10 +178,7 @@ plt.show()
 ```
 
 > **💻 [실행 결과]**
-> ```text
-> Error: name 'df' is not defined
-> ```
-
+> ![실행 결과 시각화](img/exec_step_4.svg)
 
 
 ### 💡 코드 딥다이브 & 인사이트 (매우 중요!)

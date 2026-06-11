@@ -6,6 +6,8 @@ permalink: /practice/50_customer_churn/
 
 # 실전 데이터 분석 50: 통신 가입자 계약 형태 및 월별 납부 요금별 서비스 이탈(Churn) 인과 관계 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/customer_churn.csv')
+df = pd.read_csv('./customer_churn.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,31 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column           Non-Null Count  Dtype
+> ---  ------           --------------  -----
+>  0   CustomerID       1000 non-null   int64
+>  1   Contract         1000 non-null   str  
+>  2   MonthlyCharges   1000 non-null   int64
+>  3   Tenure_Months    1000 non-null   int64
+>  4   InternetService  1000 non-null   str  
+>  5   Churn            1000 non-null   str  
+> dtypes: int64(3), str(3)
+> memory usage: 66.2 KB
+> None
+>    CustomerID        Contract  ...  InternetService  Churn
+> 0       80001  Month-to-month  ...      Fiber optic     No
+> 1       80002        Two year  ...      Fiber optic     No
+> 2       80003        One year  ...      Fiber optic     No
+> 3       80004  Month-to-month  ...      Fiber optic    Yes
+> 4       80005        Two year  ...               No     No
+> 
+> [5 rows x 6 columns]
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -94,6 +121,21 @@ print(df.groupby('Contract')['Churn'].apply(lambda x: (x == 'Yes').mean()))
 
 > **💻 [실행 결과]**
 > ```text
+> --- 가입자 이탈율 분포 ---
+> Churn
+> No     0.706
+> Yes    0.294
+> Name: proportion, dtype: float64
+> 
+> --- 약정 조건별 해지율 비교 ---
+> Contract
+> Month-to-month    0.384016
+> One year          0.194656
+> Two year          0.204444
+> Name: Churn, dtype: float64
+> ```
+
+
 --- 가입자 이탈율 분포 ---
 Churn
 No     0.686
@@ -131,8 +173,9 @@ plt.ylabel('고객 수 (명)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **단기 고객 중심의 연쇄 이탈 파란 봉우리:** 차트의 파란 막대(이탈 Yes)는 매달 요금을 결제하는 단기 고객군(Month-to-month)에 비정상적으로 높게 오버레이되어 밀집되어 있습니다. 1~2년 약정을 건 고객들은 이탈(파란 막대) 높이가 바닥에 붙어 있어, 이탈 방지 마케팅 리소스를 단기 자동갱신 가입 집단에 전적으로 투입해야 함을 알려주는 시각적 단서를 줍니다.
@@ -157,8 +200,9 @@ plt.ylabel('월간 이용 요금 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **이탈 고위험군 사분면 경계 식별:** 산점도 상에서 빨간 점(이탈 Yes)들이 그래프의 **좌상단(가입 기간이 매우 짧고, 매월 내는 요금이 비싼 영역)**에 비정상적으로 쏠려서 무리를 형성하고 있습니다. 반면 우하단(오래 가입하고 요금이 저렴한 결제군)에는 파란 점(유지 No)들이 빽빽히 안착해 있습니다. 이는 비싼 요금제로 가입 초기 10개월 이내의 신규 고객들이 가격 부담을 이기지 못하고 가장 먼저 이탈하는 이탈 고위험 고리임을 다차원 산점도가 공간적으로 완벽히 구획해 줍니다.

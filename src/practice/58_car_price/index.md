@@ -6,6 +6,8 @@ permalink: /practice/58_car_price/
 
 # 실전 데이터 분석 58: 중고차 매물의 엔진 크기 및 연료 타입별 가격 분산과 주행거리 대비 가격 비선형 감가 분석
 
+> **📥 [실습 주피터 노트북(.ipynb) 다운로드](practice.ipynb)**
+
 ## 📌 강의 개요 (30분 완성)
 
 ![코믹 일러스트](img/intro_comic.png)
@@ -34,7 +36,7 @@ plt.rcParams['axes.unicode_minus'] = False
 sns.set_theme(style="whitegrid")
 
 # 로컬 CSV 파일 불러오기
-df = pd.read_csv('../csv_data/car_price.csv')
+df = pd.read_csv('./car_price.csv')
 
 # 데이터 구조 및 첫 5행 확인
 print(df.info())
@@ -43,6 +45,29 @@ print(df.head())
 
 > **💻 [실행 결과]**
 > ```text
+> <class 'pandas.DataFrame'>
+> RangeIndex: 1000 entries, 0 to 999
+> Data columns (total 6 columns):
+>  #   Column      Non-Null Count  Dtype  
+> ---  ------      --------------  -----  
+>  0   CarID       1000 non-null   int64  
+>  1   Year        1000 non-null   int64  
+>  2   Mileage     1000 non-null   int64  
+>  3   EngineSize  1000 non-null   float64
+>  4   FuelType    1000 non-null   str    
+>  5   Price       984 non-null    float64
+> dtypes: float64(2), int64(3), str(1)
+> memory usage: 53.1 KB
+> None
+>     CarID  Year  Mileage  EngineSize  FuelType     Price
+> 0  150001  2013   108706         3.0    Diesel  33168.82
+> 1  150002  2010   163158         1.6    Diesel  26069.87
+> 2  150003  2017   104723         2.0  Electric  48934.57
+> 3  150004  2019    52495         1.6    Petrol  46125.91
+> 4  150005  2015   109561         1.6    Petrol  34901.02
+> ```
+
+
 <class 'pandas.DataFrame'>
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 6 columns):
@@ -96,6 +121,14 @@ print(df['Price'].isnull().sum())
 
 > **💻 [실행 결과]**
 > ```text
+> --- 정제 전 가격 결측 개수 ---
+> 16
+> 
+> --- 정제 후 가격 결측 개수 ---
+> 0
+> ```
+
+
 --- 정제 전 가격 결측 개수 ---
 16
 
@@ -126,8 +159,9 @@ plt.ylabel('가격 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_3.svg)
+
 
 ### 💡 시각화 차트 읽는 법 & 인사이트
 * **친환경 등급 가치 프리미엄 포착:** 박스플롯을 분석하면 전기차(Electric) 및 하이브리드(Hybrid) 차량 상자 영역의 고도와 중앙값선이 내연기관 차량(가솔린, 디젤) 대비 상향 포지셔닝되어 높은 분산을 보입니다. 이는 친환경 보조금 효과와 연료비 절감에 따른 감가 보존 메리트가 중고차 시장에도 적극 투영되어 가격 방어선이 높음을 시사합니다.
@@ -152,8 +186,9 @@ plt.ylabel('판매 가격 ($)')
 plt.show()
 ```
 
-> **💻 [실행 결과 시각화]**
+> **💻 [실행 결과]**
 > ![실행 결과 시각화](img/exec_step_4.svg)
+
 
 ### 💡 코드 딥다이브 & 비즈니스 통찰 (Analyst's Insight)
 * **마일리지 누적 비례 반비례 감가 지선 도출:** 산점도의 점들은 전체적으로 우하향 궤적의 뚜렷한 음의 선형 패턴을 그립니다. 주행 누적거리가 길어질수록 차량 기계 부품 손상과 보증 만료 위험으로 감가가 이루어지며, 연료 형태와 상관없이 모든 중고 차량 감가의 핵심 독립 변수로 기능함을 시각적으로 증명합니다.
